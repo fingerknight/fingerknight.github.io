@@ -155,10 +155,6 @@ body{
     padding: 1rem 0;
     margin: 0;
 }
-#content h1.post-title {
-    font-size: 1.7rem;
-    text-align: center;
-}
 
 #content .post-item > p {
     padding-bottom: 0.5rem;
@@ -240,6 +236,7 @@ body{
 /* Post */
 #preamble > .post-title {
     text-align: center;
+    font-size: 1.7rem;
 }
 
 #preamble > .post-date {

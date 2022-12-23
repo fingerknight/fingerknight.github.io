@@ -53,7 +53,7 @@ var Theme = /*#__PURE__*/function () {
                             header.innerHTML += "<span class=\"copy\"> Copy </span>";
                             node.insertBefore(header, codeElement);
                         }
-                        // hljs.highlightElement(codeElement);
+                        hljs.highlightElement(codeElement);
                     });
             }
         }

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noodp">
 <meta name="author" content=" Finger Knight ">
-<meta name="referrer" content="no-referrer"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<meta name="referrer" content="no-referrer"><link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
 <body>
 <div class="header">
 <div class="home-page">
@@ -24,65 +24,65 @@
 </div>
 </div>
 <div class="main">
-<div id="preamble" class="status"><div class="toc">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/highlight/dracula.css"><div class="toc">
 <h2 class="toc-title"> TOC </h2>
 <nav id="TableOfContents">
 
 <ul>
 <li>
-<a href="#org85a1e8c"> 简介 </a></li>
+<a href="#orga9cd1d7"> 简介 </a></li>
 <li>
-<a href="#org83e83bb"> 工具 </a></li>
+<a href="#orgebb2795"> 工具 </a></li>
 <li>
-<a href="#org9df2605"> 搭建流程 </a>
+<a href="#org5bd5113"> 搭建流程 </a>
 <ul>
 <li>
-<a href="#org4fb979b"> 安装 Hugo </a></li>
+<a href="#org3d5eccc"> 安装 Hugo </a></li>
 <li>
-<a href="#org852ac7b"> Github Page 配置 </a></li>
+<a href="#org9d52ebe"> Github Page 配置 </a></li>
 <li>
-<a href="#orgd64e1da"> Hugo 使用 </a></li>
+<a href="#org3898e73"> Hugo 使用 </a></li>
 <li>
-<a href="#orgfb3b4de"> 项目目录修改 </a></li>
+<a href="#orgb098191"> 项目目录修改 </a></li>
 <li>
-<a href="#org734e559"> Hugo 主题 </a></li>
+<a href="#org6f4258b"> Hugo 主题 </a></li>
 <li>
-<a href="#org8b686cb"> 我的 Hugo 配置 </a>
+<a href="#org077d226"> 我的 Hugo 配置 </a>
 <ul>
 <li>
-<a href="#org2cd1387"> 关于资源目录 </a></li>
+<a href="#orgc7cedf9"> 关于资源目录 </a></li>
 </ul>
 </li>
 <li>
-<a href="#orgcb813ee"> 安装 ox-hugo </a></li>
+<a href="#org2d75e42"> 安装 ox-hugo </a></li>
 <li>
-<a href="#orged22bcb"> ox-hugo 使用 </a></li>
+<a href="#orgd425c9f"> ox-hugo 使用 </a></li>
 <li>
-<a href="#orgfcf3500"> 设置评论 </a>
+<a href="#org1420334"> 设置评论 </a>
 <ul>
 <li>
-<a href="#org17e8a3a"> LoveIt 的 Bug </a></li>
+<a href="#org703921d"> LoveIt 的 Bug </a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<a href="#org1c18f2f"> 工作流程 </a></li>
+<a href="#org841d662"> 工作流程 </a></li>
 <li>
-<a href="#orge73d190"> 自动化 </a></li>
+<a href="#orga3b019d"> 自动化 </a></li>
 <li>
-<a href="#orgbe5ebd6"> 优化 </a>
+<a href="#org44874b4"> 优化 </a>
 <ul>
 <li>
-<a href="#orgeb185e3"> CDN 设置 </a></li>
+<a href="#orgd6aaab6"> CDN 设置 </a></li>
 <li>
-<a href="#org4095ccd"> Cloudflare Page </a></li>
+<a href="#org06170c2"> Cloudflare Page </a></li>
 <li>
-<a href="#org304228d"> Cloudflare + DNS </a></li>
+<a href="#org4ca721d"> Cloudflare + DNS </a></li>
 </ul>
 </li>
 <li>
-<a href="#orgfd1301e"> 后记 </a></li>
+<a href="#orgc8d5e9a"> 后记 </a></li>
 </ul>
 </nav>
 </div>
@@ -97,18 +97,18 @@
 </div>
 <div id="content">
 
-<div id="outline-container-org85a1e8c" class="outline-2">
-<h2 id="org85a1e8c">简介</h2>
-<div class="outline-text-2" id="text-org85a1e8c">
+<div id="outline-container-orga9cd1d7" class="outline-2">
+<h2 id="orga9cd1d7">简介</h2>
+<div class="outline-text-2" id="text-orga9cd1d7">
 <p>
 现在已经全面转战 Emacs 和 Org Mode 了，想搭个人博客，折腾了很久。这里记录搭建思路和过程，供参考。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org83e83bb" class="outline-2">
-<h2 id="org83e83bb">工具</h2>
-<div class="outline-text-2" id="text-org83e83bb">
+<div id="outline-container-orgebb2795" class="outline-2">
+<h2 id="orgebb2795">工具</h2>
+<div class="outline-text-2" id="text-orgebb2795">
 <ul class="org-ul">
 <li>Emacs + Org Mode</li>
 <li>Hugo 静态站点生成制作</li>
@@ -119,37 +119,38 @@
 </div>
 </div>
 
-<div id="outline-container-org9df2605" class="outline-2">
-<h2 id="org9df2605">搭建流程</h2>
-<div class="outline-text-2" id="text-org9df2605">
+<div id="outline-container-org5bd5113" class="outline-2">
+<h2 id="org5bd5113">搭建流程</h2>
+<div class="outline-text-2" id="text-org5bd5113">
 <p>
 假定已经安装了 <b>Emacs</b> 和 <b>Git</b> 。
 </p>
 </div>
 
-<div id="outline-container-org4fb979b" class="outline-3">
-<h3 id="org4fb979b">安装 Hugo</h3>
-<div class="outline-text-3" id="text-org4fb979b">
+<div id="outline-container-org3d5eccc" class="outline-3">
+<h3 id="org3d5eccc">安装 Hugo</h3>
+<div class="outline-text-3" id="text-org3d5eccc">
 <p>
 官方的下载页面在这里 <a href="https://gohugo.io/getting-started/installing">https://gohugo.io/getting-started/installing</a> ，根据自己的系统去安装即可。
 </p>
 
 <div class="org-src-container">
-<pre><code class="language-bash"> sudo pacman -S hugo
- </code></pre>
+<pre><code class="language-bash">
+sudo pacman -S hugo
+</code></pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org852ac7b" class="outline-3">
-<h3 id="org852ac7b">Github Page 配置</h3>
-<div class="outline-text-3" id="text-org852ac7b">
+<div id="outline-container-org9d52ebe" class="outline-3">
+<h3 id="org9d52ebe">Github Page 配置</h3>
+<div class="outline-text-3" id="text-org9d52ebe">
 <p>
 首先，新建一个仓库，仓库名必须是 <code>&lt;Name&gt;.github.io</code> ， <code>&lt;Name&gt;</code> 是的 github 的昵称。
 </p>
 
 
-<figure id="org1c921e7">
+<figure id="org4346a7f">
 <img src="/assets/2022-09-10_15-00-13.png" alt="2022-09-10_15-00-13.png">
 
 </figure>
@@ -158,17 +159,18 @@
 如果新建时选了自动建 <code>README.md</code> ，就好了。如果没有执行（里面的 <code>Name</code> 是 github 昵称）：
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash"> <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#38543;&#20415;&#19968;&#20010; REMAD.md</span>
-<span style="color: #8be9fd; font-style: italic;">echo</span> <span style="color: #f1fa8c;">"# Just a README"</span> &gt;&gt; README.md
+<pre><code class="language-bash">
+# 随便一个 REMAD.md
+echo "# Just a README" >> README.md
 git init
 git add README.md
-git commit -m <span style="color: #f1fa8c;">"first commit"</span>
-<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26032;&#22522;&#30784;&#20998;&#25903;</span>
+git commit -m "first commit"
+# 新基础分支
 git branch -M main
 git remote add origin git@github.com:Name/Name.github.io.git
-<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#25552;&#20132;&#21040;&#22522;&#30784;&#20998;&#25903;</span>
+# 提交到基础分支
 git push -u origin main
- </code></pre>
+</code></pre>
 </div>
 
 <p>
@@ -176,7 +178,7 @@ git push -u origin main
 </p>
 
 
-<figure id="orgd306252">
+<figure id="org2ddb776">
 <img src="/assets/2022-09-11_15-59-04.png" alt="2022-09-11_15-59-04.png">
 
 </figure>
@@ -187,21 +189,22 @@ git push -u origin main
 </div>
 </div>
 
-<div id="outline-container-orgd64e1da" class="outline-3">
-<h3 id="orgd64e1da">Hugo 使用</h3>
-<div class="outline-text-3" id="text-orgd64e1da">
+<div id="outline-container-org3898e73" class="outline-3">
+<h3 id="org3898e73">Hugo 使用</h3>
+<div class="outline-text-3" id="text-org3898e73">
 <p>
 新建项目， <code>blog</code> 是项目目录。
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash"> hugo new site blog
- </code></pre>
+<pre><code class="language-bash">
+hugo new site blog
+</code></pre>
 </div>
 
 <p>
 然后会生成如下的项目：
 </p>
-<pre class="example" id="orgc7d5cbb">
+<pre class="example" id="org9df8dfd">
 ├── blog
 │   ├── archetypes/
 │   ├── config.toml
@@ -217,7 +220,7 @@ git push -u origin main
 </p>
 <ul class="org-ul">
 <li><code>archetypes</code>, 内容模板，可以取参考里面看，暂时不用管。</li>
-<li><code>config.toml</code>, 配置文件，详见<a href="#org8b686cb">我的 Hugo 配置</a></li>
+<li><code>config.toml</code>, 配置文件，详见<a href="#org077d226">我的 Hugo 配置</a></li>
 <li><code>content</code>, 内容目录，用于存放 md 源文件。</li>
 <li><code>data</code>, 数据模板目录，暂时不用管。</li>
 <li><code>layouts</code>, HTML 模板目录，md 生成 HTML 的模板，有一套单独的语言描述。暂时也不用配。</li>
@@ -229,8 +232,9 @@ git push -u origin main
 测试时，进入 <code>blog</code> 目录，使用：
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash"> hugo server
- </code></pre>
+<pre><code class="language-bash">
+hugo server
+</code></pre>
 </div>
 <p>
 然后会开启默认端口，从输出信息中可以看到。从浏览器访问就能看到。
@@ -238,21 +242,22 @@ git push -u origin main
 </div>
 </div>
 
-<div id="outline-container-orgfb3b4de" class="outline-3">
-<h3 id="orgfb3b4de">项目目录修改</h3>
-<div class="outline-text-3" id="text-orgfb3b4de">
+<div id="outline-container-orgb098191" class="outline-3">
+<h3 id="orgb098191">项目目录修改</h3>
+<div class="outline-text-3" id="text-orgb098191">
 <p>
 克隆仓库：
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash"> <span style="color: #6272a4;"># </span><span style="color: #6272a4;">blog &#19979;</span>
-git clone git@github.com:&lt;Name&gt;/&lt;Name&gt;.github.io.git project
- </code></pre>
+<pre><code class="language-bash">
+# blog 下
+git clone git@github.com:<Name>/<Name>.github.io.git project
+</code></pre>
 </div>
 <p>
 在 <code>blog/project</code> 目录下新目录存放 org 源码的目录（手动建）：
 </p>
-<pre class="example" id="org6928fd9">
+<pre class="example" id="orgfd6df3f">
 ├── project
 │   ├── assets/
 │   ├── posts/
@@ -262,14 +267,14 @@ org 文件就放在 <code>blog/project/posts</code> 下，静态资源就放在 
 </p>
 
 <p>
-因为 Github Page 只能选 <code>/</code> 根目录或者 <code>/docs</code> 目录作为站点目录，所以需要在配置中把站点输出目录修改一下。在<a href="#org8b686cb">我的 Hugo 配置</a>那里我会说的。
+因为 Github Page 只能选 <code>/</code> 根目录或者 <code>/docs</code> 目录作为站点目录，所以需要在配置中把站点输出目录修改一下。在<a href="#org077d226">我的 Hugo 配置</a>那里我会说的。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org734e559" class="outline-3">
-<h3 id="org734e559">Hugo 主题</h3>
-<div class="outline-text-3" id="text-org734e559">
+<div id="outline-container-org6f4258b" class="outline-3">
+<h3 id="org6f4258b">Hugo 主题</h3>
+<div class="outline-text-3" id="text-org6f4258b">
 <p>
 主题可以去官网上找 <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a> ，我参考的是前辈用的 <a href="https://github.com/dillonzq/LoveIt">LoveIt</a> <sup>[<a id="fnr:2.1" class="footref" href="#fn:2">2</a>]</sup>，功能强大，界面美观，且不会太花哨。
 </p>
@@ -278,9 +283,10 @@ org 文件就放在 <code>blog/project/posts</code> 下，静态资源就放在 
 先找到主题的 github 仓库 <a href="https://github.com/dillonzq/LoveIt">https://github.com/dillonzq/LoveIt</a>，然后把它作为 hugo 项目的子模块
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash"> <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#22312; blog &#30446;&#24405;&#19979;&#25805;&#20316;</span>
+<pre><code class="language-bash">
+# 在 blog 目录下操作
 git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
- </code></pre>
+</code></pre>
 </div>
 <p>
 或者直接克隆也可以。
@@ -296,9 +302,9 @@ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 </div>
 </div>
 
-<div id="outline-container-org8b686cb" class="outline-3">
-<h3 id="org8b686cb">我的 Hugo 配置</h3>
-<div class="outline-text-3" id="text-org8b686cb">
+<div id="outline-container-org077d226" class="outline-3">
+<h3 id="org077d226">我的 Hugo 配置</h3>
+<div class="outline-text-3" id="text-org077d226">
 <p>
 配置文件可以说三种类型： <code>toml</code>, <code>yaml</code> 和 <code>json</code> ，我用的是 <code>yaml</code> ，简洁；把 LoveIt 官网给的完整配置转成 <code>yaml</code> ，然后手动调整，参考如下。
 </p>
@@ -307,7 +313,7 @@ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 因为配置里面可能会用到密钥什么的，因此不建议公开到 GitHub 上边，所以只上传 <b>Org 源码</b>, <b>静态文件</b> 和 <b>站点文件</b> 。如下所示:
 </p>
 
-<pre class="example" id="orge393a84">
+<pre class="example" id="org3e1844f">
 ├── project
 │   ├── assets/   # 存放静态文件
 │   ├── posts/    # 存放 org 
@@ -326,329 +332,330 @@ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 <code>config.yaml</code>
 </p>
 <div class="org-src-container">
-<pre><code class="language-yaml"> <span style="color: #f8f8f2; font-weight: bold;">publishDir</span>: project/docs
-<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#31449;&#28857;URL</span>
-<span style="color: #f8f8f2; font-weight: bold;">baseURL</span>: https://fingerknight.github.io/
-<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#40664;&#35748;&#35821;&#35328;</span>
-<span style="color: #f8f8f2; font-weight: bold;">defaultContentLanguage</span>: zh-cn
-<span style="color: #f8f8f2; font-weight: bold;">languageCode</span>: zh-CN
-<span style="color: #f8f8f2; font-weight: bold;">hasCJKLanguage</span>: <span style="color: #bd93f9;">true</span>
-<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#20027;&#39064;</span>
-<span style="color: #f8f8f2; font-weight: bold;">theme</span>: LoveIt
-<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#32593;&#31449;&#26631;&#39064;</span>
-<span style="color: #f8f8f2; font-weight: bold;">title</span>: &#25163;&#25351;&#39569;&#22763;&#30340;&#30149;&#25151;
-<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#20316;&#32773;</span>
-<span style="color: #f8f8f2; font-weight: bold;">author</span>:
-  <span style="color: #f8f8f2; font-weight: bold;">name</span>: Finger Knight
-  <span style="color: #f8f8f2; font-weight: bold;">email</span>: mrdust1880@outlook.com
-  <span style="color: #f8f8f2; font-weight: bold;">link</span>: https://fingerknight.github.io/about
-<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#40664;&#35748;&#27599;&#39029;&#21015;&#34920;&#26174;&#31034;&#30340;&#25991;&#31456;&#25968;&#30446;</span>
-<span style="color: #f8f8f2; font-weight: bold;">paginate</span>: 12
-<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#35895;&#27468;&#20998;&#26512;&#20195;&#21495; [UA-XXXXXXXX-X]</span>
-<span style="color: #f8f8f2; font-weight: bold;">googleAnalytics</span>: <span style="color: #f1fa8c;">""</span>
-<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#29256;&#26435;&#25551;&#36848;&#65292;&#20165;&#20165;&#29992;&#20110; SEO</span>
-<span style="color: #f8f8f2; font-weight: bold;">copyright</span>: <span style="color: #f1fa8c;">""</span>
-<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#20351;&#29992; robots.txt</span>
-<span style="color: #f8f8f2; font-weight: bold;">enableRobotsTXT</span>: <span style="color: #bd93f9;">true</span>
-<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#20351;&#29992; git &#20449;&#24687;</span>
-<span style="color: #f8f8f2; font-weight: bold;">enableGitInfo</span>: <span style="color: #bd93f9;">false</span>
-<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#20351;&#29992; emoji &#20195;&#30721;</span>
-<span style="color: #f8f8f2; font-weight: bold;">enableEmoji</span>: <span style="color: #bd93f9;">true</span>
-<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#24573;&#30053;&#19968;&#20123;&#26500;&#24314;&#38169;&#35823;</span>
-<span style="color: #f8f8f2; font-weight: bold;">ignoreErrors</span>: [<span style="color: #f1fa8c;">"error-remote-getjson"</span>, <span style="color: #f1fa8c;">"error-missing-instagram-accesstoken"</span>]
+<pre><code class="language-yaml">
+publishDir: project/docs
+# 站点URL
+baseURL: https://fingerknight.github.io/
+# 默认语言
+defaultContentLanguage: zh-cn
+languageCode: zh-CN
+hasCJKLanguage: true
+# 主题
+theme: LoveIt
+# 网站标题
+title: 手指骑士的病房
+# 作者
+author:
+  name: Finger Knight
+  email: mrdust1880@outlook.com
+  link: https://fingerknight.github.io/about
+# 默认每页列表显示的文章数目
+paginate: 12
+# 谷歌分析代号 [UA-XXXXXXXX-X]
+googleAnalytics: ""
+# 版权描述，仅仅用于 SEO
+copyright: ""
+# 是否使用 robots.txt
+enableRobotsTXT: true
+# 是否使用 git 信息
+enableGitInfo: false
+# 是否使用 emoji 代码
+enableEmoji: true
+# 忽略一些构建错误
+ignoreErrors: ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
-<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26631;&#35760;&#35821;&#35328;&#35774;&#32622;</span>
-<span style="color: #f8f8f2; font-weight: bold;">markup</span>:
-  <span style="color: #f8f8f2; font-weight: bold;">highlight</span>:
-    <span style="color: #f8f8f2; font-weight: bold;">noClasses</span>: <span style="color: #bd93f9;">false</span>
-    <span style="color: #f8f8f2; font-weight: bold;">codeFences</span>: <span style="color: #bd93f9;">true</span>
-    <span style="color: #f8f8f2; font-weight: bold;">guessSyntax</span>: <span style="color: #bd93f9;">true</span>
-    <span style="color: #f8f8f2; font-weight: bold;">lineNos</span>: <span style="color: #bd93f9;">true</span>
-    <span style="color: #f8f8f2; font-weight: bold;">lineNumbersInTable</span>: <span style="color: #bd93f9;">true</span>
-  <span style="color: #f8f8f2; font-weight: bold;">goldmark</span>:
-    <span style="color: #f8f8f2; font-weight: bold;">extensions</span>:
-      <span style="color: #f8f8f2; font-weight: bold;">definitionList</span>: <span style="color: #bd93f9;">true</span>
-      <span style="color: #f8f8f2; font-weight: bold;">footnote</span>: <span style="color: #bd93f9;">true</span>
-      <span style="color: #f8f8f2; font-weight: bold;">linkify</span>: <span style="color: #bd93f9;">true</span>
-      <span style="color: #f8f8f2; font-weight: bold;">strikethrough</span>: <span style="color: #bd93f9;">true</span>
-      <span style="color: #f8f8f2; font-weight: bold;">table</span>: <span style="color: #bd93f9;">true</span>
-      <span style="color: #f8f8f2; font-weight: bold;">taskList</span>: <span style="color: #bd93f9;">true</span>
-      <span style="color: #f8f8f2; font-weight: bold;">typographer</span>: <span style="color: #bd93f9;">true</span>
-    <span style="color: #f8f8f2; font-weight: bold;">renderer</span>:
-      <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#22312;&#25991;&#26723;&#20013;&#30452;&#25509;&#20351;&#29992; HTML &#26631;&#31614;</span>
-      <span style="color: #f8f8f2; font-weight: bold;">unsafe</span>: <span style="color: #bd93f9;">true</span>
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#30446;&#24405;</span>
-  <span style="color: #f8f8f2; font-weight: bold;">tableOfContents</span>:
-    <span style="color: #f8f8f2; font-weight: bold;">startLevel</span>: 2
-    <span style="color: #f8f8f2; font-weight: bold;">endLevel</span>: 6
+# 标记语言设置
+markup:
+  highlight:
+    noClasses: false
+    codeFences: true
+    guessSyntax: true
+    lineNos: true
+    lineNumbersInTable: true
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    renderer:
+      # 是否在文档中直接使用 HTML 标签
+      unsafe: true
+  # 目录
+  tableOfContents:
+    startLevel: 2
+    endLevel: 6
 
-<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#32593;&#31449;&#22320;&#22270;&#37197;&#32622;</span>
-<span style="color: #f8f8f2; font-weight: bold;">sitemap</span>:
-  <span style="color: #f8f8f2; font-weight: bold;">changefreq</span>: weekly
-  <span style="color: #f8f8f2; font-weight: bold;">filename</span>: sitemap.xml
-  <span style="color: #f8f8f2; font-weight: bold;">priority</span>: 0.5
+# 网站地图配置
+sitemap:
+  changefreq: weekly
+  filename: sitemap.xml
+  priority: 0.5
 
-<span style="color: #6272a4;"># </span><span style="color: #6272a4;">Permalinks &#37197;&#32622;</span>
-<span style="color: #f8f8f2; font-weight: bold;">Permalinks</span>:
-  <span style="color: #f8f8f2; font-weight: bold;">posts</span>: <span style="color: #f1fa8c;">':filename'</span>
+# Permalinks 配置
+Permalinks:
+  posts: ':filename'
 
-<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#36755;&#20986;&#35774;&#32622;</span>
+# 输出设置
 
-<span style="color: #f8f8f2; font-weight: bold;">outputs</span>:
-  <span style="color: #f8f8f2; font-weight: bold;">home</span>:
+outputs:
+  home:
     - HTML
     - JSON
-  <span style="color: #f8f8f2; font-weight: bold;">page</span>:
+  page:
     - HTML
     - MarkDown
-  <span style="color: #f8f8f2; font-weight: bold;">section</span>:
+  section:
     - HTML
-  <span style="color: #f8f8f2; font-weight: bold;">taxonomy</span>:
+  taxonomy:
     - HTML
-  <span style="color: #f8f8f2; font-weight: bold;">taxonomyTerm</span>:
+  taxonomyTerm:
     - HTML
 
-<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#35821;&#35328;&#35774;&#32622;</span>
-<span style="color: #f8f8f2; font-weight: bold;">language</span>:
-  <span style="color: #f8f8f2; font-weight: bold;">zh-cn</span>:
-    <span style="color: #f8f8f2; font-weight: bold;">contentDir</span>: content
-    <span style="color: #f8f8f2; font-weight: bold;">languageName</span>: &#20013;&#25991;
+# 语言设置
+language:
+  zh-cn:
+    contentDir: content
+    languageName: 中文
 
-<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#33756;&#21333;&#35774;&#32622;</span>
-<span style="color: #f8f8f2; font-weight: bold;">menus</span>:
-  <span style="color: #f8f8f2; font-weight: bold;">main</span>:
-    - <span style="color: #f8f8f2; font-weight: bold;">identifier</span>: main
-      <span style="color: #f8f8f2; font-weight: bold;">pre</span>: &lt;i class=<span style="color: #f1fa8c;">"fa-solid fa-house"</span>&gt;&lt;/i&gt;
-      <span style="color: #f8f8f2; font-weight: bold;">post</span>: <span style="color: #f1fa8c;">''</span>
-      <span style="color: #f8f8f2; font-weight: bold;">name</span>: 
-      <span style="color: #f8f8f2; font-weight: bold;">url</span>: /
-      <span style="color: #f8f8f2; font-weight: bold;">title</span>: &#20027;&#39029;
-      <span style="color: #f8f8f2; font-weight: bold;">weight</span>: 1
-    - <span style="color: #f8f8f2; font-weight: bold;">identifier</span>: tags
-      <span style="color: #f8f8f2; font-weight: bold;">pre</span>: &lt;i class=<span style="color: #f1fa8c;">"fa-solid fa-tags"</span>&gt;&lt;/i&gt;
-      <span style="color: #f8f8f2; font-weight: bold;">post</span>: <span style="color: #f1fa8c;">''</span>
-      <span style="color: #f8f8f2; font-weight: bold;">name</span>: <span style="color: #f1fa8c;">''</span>
-      <span style="color: #f8f8f2; font-weight: bold;">url</span>: /tags/
-      <span style="color: #f8f8f2; font-weight: bold;">title</span>: &#26631;&#31614;
-      <span style="color: #f8f8f2; font-weight: bold;">weight</span>: 2
-    - <span style="color: #f8f8f2; font-weight: bold;">identifier</span>: posts
-      <span style="color: #f8f8f2; font-weight: bold;">pre</span>: &lt;i class=<span style="color: #f1fa8c;">"fa-solid fa-layer-group"</span>&gt;&lt;/i&gt;
-      <span style="color: #f8f8f2; font-weight: bold;">post</span>: <span style="color: #f1fa8c;">''</span>
-      <span style="color: #f8f8f2; font-weight: bold;">name</span>: <span style="color: #f1fa8c;">''</span>
-      <span style="color: #f8f8f2; font-weight: bold;">url</span>: /posts/
-      <span style="color: #f8f8f2; font-weight: bold;">title</span>: &#24402;&#26723;
-      <span style="color: #f8f8f2; font-weight: bold;">weight</span>: 3
-    - <span style="color: #f8f8f2; font-weight: bold;">identifier</span>: about
-      <span style="color: #f8f8f2; font-weight: bold;">pre</span>: &lt;i class=<span style="color: #f1fa8c;">"fa-solid fa-bed-pulse"</span>&gt;&lt;/i&gt;
-      <span style="color: #f8f8f2; font-weight: bold;">post</span>: <span style="color: #f1fa8c;">''</span>
-      <span style="color: #f8f8f2; font-weight: bold;">name</span>: <span style="color: #f1fa8c;">''</span>
-      <span style="color: #f8f8f2; font-weight: bold;">url</span>: /about
-      <span style="color: #f8f8f2; font-weight: bold;">title</span>: &#30149;&#21382;
-      <span style="color: #f8f8f2; font-weight: bold;">weight</span>: 4
+# 菜单设置
+menus:
+  main:
+    - identifier: main
+      pre: <i class="fa-solid fa-house"></i>
+      post: ''
+      name: 
+      url: /
+      title: 主页
+      weight: 1
+    - identifier: tags
+      pre: <i class="fa-solid fa-tags"></i>
+      post: ''
+      name: ''
+      url: /tags/
+      title: 标签
+      weight: 2
+    - identifier: posts
+      pre: <i class="fa-solid fa-layer-group"></i>
+      post: ''
+      name: ''
+      url: /posts/
+      title: 归档
+      weight: 3
+    - identifier: about
+      pre: <i class="fa-solid fa-bed-pulse"></i>
+      post: ''
+      name: ''
+      url: /about
+      title: 病历
+      weight: 4
 
 
-<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#21442;&#25968;&#35774;&#32622;</span>
-<span style="color: #f8f8f2; font-weight: bold;">params</span>:
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#32593;&#31449;&#40664;&#35748;&#20027;&#39064;&#26679;&#24335; ["auto", "light", "dark"]</span>
-  <span style="color: #f8f8f2; font-weight: bold;">defaultTheme</span>: <span style="color: #f1fa8c;">"auto"</span>
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#21738;&#31181;&#21704;&#24076;&#20989;&#25968;&#29992;&#26469; SRI, &#20026;&#31354;&#26102;&#34920;&#31034;&#19981;&#20351;&#29992; SRI</span>
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">["sha256", "sha384", "sha512", "md5"]</span>
-  <span style="color: #f8f8f2; font-weight: bold;">fingerprint</span>: <span style="color: #f1fa8c;">"sha256"</span>
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26085;&#26399;&#26684;&#24335;</span>
-  <span style="color: #f8f8f2; font-weight: bold;">dateFormat</span>: <span style="color: #f1fa8c;">"2006-01-02"</span>
+# 参数设置
+params:
+  # 网站默认主题样式 ["auto", "light", "dark"]
+  defaultTheme: "auto"
+  # 哪种哈希函数用来 SRI, 为空时表示不使用 SRI
+  # ["sha256", "sha384", "sha512", "md5"]
+  fingerprint: "sha256"
+  # 日期格式
+  dateFormat: "2006-01-02"
 
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#32593;&#31449;&#26631;&#39064;, &#29992;&#20110; Open Graph &#21644; Twitter Cards</span>
-  <span style="color: #f8f8f2; font-weight: bold;">title</span>: <span style="color: #f1fa8c;">"&#25163;&#25351;&#39569;&#22763;&#30340;&#30149;&#25151;"</span>
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#32593;&#31449;&#25551;&#36848;, &#29992;&#20110; RSS, SEO, Open Graph &#21644; Twitter Cards</span>
-  <span style="color: #f8f8f2; font-weight: bold;">description</span>: <span style="color: #f1fa8c;">"&#30196;&#20154;&#35828;&#26790;"</span>
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#32593;&#31449;&#22270;&#29255;, &#29992;&#20110; Open Graph &#21644; Twitter Cards</span>
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">images:</span>
-  <span style="color: #6272a4;">#   </span><span style="color: #6272a4;">- /logo.png</span>
+  # 网站标题, 用于 Open Graph 和 Twitter Cards
+  title: "手指骑士的病房"
+  # 网站描述, 用于 RSS, SEO, Open Graph 和 Twitter Cards
+  description: "痴人说梦"
+  # 网站图片, 用于 Open Graph 和 Twitter Cards
+  # images:
+  #   - /logo.png
 
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#39318;&#37096;&#20803;&#32032;</span>
-  <span style="color: #f8f8f2; font-weight: bold;">header</span>:
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26700;&#38754;&#31471;&#23548;&#33322;&#26639;&#27169;&#24335; ["fixed", "normal", "auto"]</span>
-    <span style="color: #f8f8f2; font-weight: bold;">desktopMode</span>: fixed
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#31227;&#21160;&#31471;&#23548;&#33322;&#26639;&#27169;&#24335; ["fixed", "normal", "auto"]</span>
-    <span style="color: #f8f8f2; font-weight: bold;">mobileMode</span>: auto
-    <span style="color: #f8f8f2; font-weight: bold;">title</span>:
-      <span style="color: #6272a4;"># </span><span style="color: #6272a4;">logo: /avatar.png</span>
-      <span style="color: #f8f8f2; font-weight: bold;">name</span>: &#25163;&#25351;&#39569;&#22763;&#30340;&#30149;&#25151;
-      <span style="color: #f8f8f2; font-weight: bold;">pre</span>: <span style="color: #f1fa8c;">''</span>
-      <span style="color: #f8f8f2; font-weight: bold;">post</span>: <span style="color: #f1fa8c;">''</span>
-      <span style="color: #f8f8f2; font-weight: bold;">typeit</span>: <span style="color: #bd93f9;">false</span>
+  # 首部元素
+  header:
+    # 桌面端导航栏模式 ["fixed", "normal", "auto"]
+    desktopMode: fixed
+    # 移动端导航栏模式 ["fixed", "normal", "auto"]
+    mobileMode: auto
+    title:
+      # logo: /avatar.png
+      name: 手指骑士的病房
+      pre: ''
+      post: ''
+      typeit: false
 
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#23614;&#37096;&#20803;&#32032;</span>
-  <span style="color: #f8f8f2; font-weight: bold;">footer</span>:
-    <span style="color: #f8f8f2; font-weight: bold;">enable</span>: <span style="color: #bd93f9;">true</span>
-    <span style="color: #f8f8f2; font-weight: bold;">custom</span>: <span style="color: #f1fa8c;">''</span>
-    <span style="color: #f8f8f2; font-weight: bold;">hugo</span>: <span style="color: #bd93f9;">true</span>
-    <span style="color: #f8f8f2; font-weight: bold;">copyright</span>: <span style="color: #bd93f9;">true</span>
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#26174;&#31034;&#20316;&#32773;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">author</span>: <span style="color: #bd93f9;">true</span>
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#32593;&#31449;&#21019;&#31435;&#24180;&#20221;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">since</span>: 2022
-    <span style="color: #f8f8f2; font-weight: bold;">icp</span>: <span style="color: #f1fa8c;">''</span>
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#35768;&#21487;&#21327;&#35758;&#20449;&#24687; (&#25903;&#25345; HTML &#26684;&#24335;)</span>
-    <span style="color: #f8f8f2; font-weight: bold;">license</span>: &lt;a rel=<span style="color: #f1fa8c;">"license external nofollow noopener noreffer"</span> href=<span style="color: #f1fa8c;">"https://creativecommons.org/licenses/by-nc/4.0/"</span> target=<span style="color: #f1fa8c;">"_blank"</span>&gt;CC BY-NC 4.0&lt;/a&gt;
+  # 尾部元素
+  footer:
+    enable: true
+    custom: ''
+    hugo: true
+    copyright: true
+    # 是否显示作者
+    author: true
+    # 网站创立年份
+    since: 2022
+    icp: ''
+    # 许可协议信息 (支持 HTML 格式)
+    license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
 
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">Section (&#25152;&#26377;&#25991;&#31456;) &#39029;&#38754;&#37197;&#32622;</span>
-  <span style="color: #f8f8f2; font-weight: bold;">section</span>:
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">section &#39029;&#38754;&#27599;&#39029;&#26174;&#31034;&#25991;&#31456;&#25968;&#37327;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">paginate</span>: 20
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26085;&#26399;&#26684;&#24335; (&#26376;&#21644;&#26085;)</span>
-    <span style="color: #f8f8f2; font-weight: bold;">dateFormat</span>: 01-02
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">RSS &#25991;&#31456;&#25968;&#30446;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">rss</span>: 10
+  # Section (所有文章) 页面配置
+  section:
+    # section 页面每页显示文章数量
+    paginate: 20
+    # 日期格式 (月和日)
+    dateFormat: 01-02
+    # RSS 文章数目
+    rss: 10
 
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">List (&#30446;&#24405;&#25110;&#26631;&#31614;) &#39029;&#38754;&#37197;&#32622;</span>
-  <span style="color: #f8f8f2; font-weight: bold;">list</span>:
-    <span style="color: #f8f8f2; font-weight: bold;">paginate</span>: 20
-    <span style="color: #f8f8f2; font-weight: bold;">dateFormat</span>: 01-02
-    <span style="color: #f8f8f2; font-weight: bold;">rss</span>: 10
+  # List (目录或标签) 页面配置
+  list:
+    paginate: 20
+    dateFormat: 01-02
+    rss: 10
 
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#20027;&#39029;&#37197;&#32622;</span>
-  <span style="color: #f8f8f2; font-weight: bold;">home</span>:
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">RSS &#25991;&#31456;&#25968;&#30446;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">rss</span>: 10
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#20027;&#39029;&#20010;&#20154;&#20449;&#24687;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">profile</span>:
-      <span style="color: #f8f8f2; font-weight: bold;">enable</span>: <span style="color: #bd93f9;">true</span>
-      <span style="color: #6272a4;"># </span><span style="color: #6272a4;">gravatarEmail: ''</span>
-      <span style="color: #f8f8f2; font-weight: bold;">avatarURL</span>: /img/YunRuAvatar.jpg
-      <span style="color: #f8f8f2; font-weight: bold;">title</span>: <span style="color: #f1fa8c;">''</span>
-      <span style="color: #f8f8f2; font-weight: bold;">subtitle</span>: &#30196;&#20154;&#35828;&#26790;
-      <span style="color: #f8f8f2; font-weight: bold;">typeit</span>: <span style="color: #bd93f9;">false</span>
-      <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#26174;&#31034;&#31038;&#20132;&#36134;&#21495;</span>
-      <span style="color: #f8f8f2; font-weight: bold;">social</span>: <span style="color: #bd93f9;">false</span>
-      <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#20813;&#36131;&#22768;&#26126;</span>
-      <span style="color: #f8f8f2; font-weight: bold;">disclaimer</span>: <span style="color: #f1fa8c;">''</span>
-      <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#20027;&#39029;&#25991;&#31456;&#21015;&#34920;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">posts</span>:
-      <span style="color: #f8f8f2; font-weight: bold;">enable</span>: <span style="color: #bd93f9;">true</span>
-      <span style="color: #f8f8f2; font-weight: bold;">paginate</span>: 5
-      <span style="color: #f8f8f2; font-weight: bold;">defaultHiddenFromHomePage</span>: <span style="color: #bd93f9;">false</span>
+  # 主页配置
+  home:
+    # RSS 文章数目
+    rss: 10
+    # 主页个人信息
+    profile:
+      enable: true
+      # gravatarEmail: ''
+      avatarURL: /img/YunRuAvatar.jpg
+      title: ''
+      subtitle: 痴人说梦
+      typeit: false
+      # 是否显示社交账号
+      social: false
+      # 免责声明
+      disclaimer: ''
+      # 主页文章列表
+    posts:
+      enable: true
+      paginate: 5
+      defaultHiddenFromHomePage: false
 
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#25991;&#31456;&#39029;&#38754;&#20840;&#23616;&#37197;&#32622;</span>
-  <span style="color: #f8f8f2; font-weight: bold;">page</span>:
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#22312;&#20027;&#39029;&#38544;&#34255;&#19968;&#31687;&#25991;&#31456;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">hiddenFromHomePage</span>: <span style="color: #bd93f9;">false</span>
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#22312;&#25628;&#32034;&#32467;&#26524;&#20013;&#38544;&#34255;&#19968;&#31687;&#25991;&#31456;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">hiddenFromSearch</span>: <span style="color: #bd93f9;">false</span>
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#20351;&#29992; fontawesome &#25193;&#23637;&#35821;&#27861;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">fontawesome</span>: <span style="color: #bd93f9;">true</span>
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#22312; RSS &#20013;&#26174;&#31034;&#20840;&#25991;&#20869;&#23481;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">rssFullText</span>: <span style="color: #bd93f9;">false</span>
+  # 文章页面全局配置
+  page:
+    # 是否在主页隐藏一篇文章
+    hiddenFromHomePage: false
+    # 是否在搜索结果中隐藏一篇文章
+    hiddenFromSearch: false
+    # 是否使用 fontawesome 扩展语法
+    fontawesome: true
+    # 是否在 RSS 中显示全文内容
+    rssFullText: false
 
-    <span style="color: #f8f8f2; font-weight: bold;">prev</span>: <span style="color: #bd93f9;">false</span>
-    <span style="color: #f8f8f2; font-weight: bold;">next</span>: <span style="color: #bd93f9;">false</span>
-    <span style="color: #f8f8f2; font-weight: bold;">linktomarkdown</span>: <span style="color: #bd93f9;">false</span>
+    prev: false
+    next: false
+    linktomarkdown: false
 
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#24320;&#21551;&#19978;&#19979;&#31687;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">nav</span>: <span style="color: #bd93f9;">false</span>
+    # 开启上下篇
+    nav: false
 
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#30446;&#24405;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">toc</span>:
-      <span style="color: #f8f8f2; font-weight: bold;">enable</span>: <span style="color: #bd93f9;">true</span>
-      <span style="color: #6272a4;">#  </span><span style="color: #6272a4;">&#26159;&#21542;&#20445;&#25345;&#20351;&#29992;&#25991;&#31456;&#21069;&#38754;&#30340;&#38745;&#24577;&#30446;&#24405;</span>
-      <span style="color: #f8f8f2; font-weight: bold;">keepStatic</span>: <span style="color: #bd93f9;">false</span>
-      <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#20391;&#36793;&#30446;&#24405;&#33258;&#21160;&#25240;&#21472;&#23637;&#24320;</span>
-      <span style="color: #f8f8f2; font-weight: bold;">auto</span>: <span style="color: #bd93f9;">false</span>
+    # 目录
+    toc:
+      enable: true
+      #  是否保持使用文章前面的静态目录
+      keepStatic: false
+      # 是否侧边目录自动折叠展开
+      auto: false
 
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#20195;&#30721;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">code</span>:
-      <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#26174;&#31034;&#20195;&#30721;&#22359;&#30340;&#22797;&#21046;&#25353;&#38062;</span>
-      <span style="color: #f8f8f2; font-weight: bold;">copy</span>: <span style="color: #bd93f9;">true</span>
-      <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#40664;&#35748;&#23637;&#24320;&#26174;&#31034;&#30340;&#20195;&#30721;&#34892;&#25968;</span>
-      <span style="color: #f8f8f2; font-weight: bold;">maxShownLines</span>: 50
+    # 代码
+    code:
+      # 是否显示代码块的复制按钮
+      copy: true
+      # 默认展开显示的代码行数
+      maxShownLines: 50
 
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">KaTeX &#25968;&#23398;&#20844;&#24335;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">math</span>:
-      <span style="color: #f8f8f2; font-weight: bold;">enable</span>: <span style="color: #bd93f9;">true</span>
-      <span style="color: #f8f8f2; font-weight: bold;">inlineLeftDelimiter</span>: <span style="color: #f1fa8c;">''</span>
-      <span style="color: #f8f8f2; font-weight: bold;">inlineRightDelimiter</span>: <span style="color: #f1fa8c;">''</span>
-      <span style="color: #f8f8f2; font-weight: bold;">blockLeftDelimiter</span>: <span style="color: #f1fa8c;">''</span>
-      <span style="color: #f8f8f2; font-weight: bold;">blockRightDelimiter</span>: <span style="color: #f1fa8c;">''</span>
-      <span style="color: #f8f8f2; font-weight: bold;">copyTex</span>: <span style="color: #bd93f9;">true</span>
-      <span style="color: #f8f8f2; font-weight: bold;">mhchem</span>: <span style="color: #bd93f9;">true</span>
+    # KaTeX 数学公式
+    math:
+      enable: true
+      inlineLeftDelimiter: ''
+      inlineRightDelimiter: ''
+      blockLeftDelimiter: ''
+      blockRightDelimiter: ''
+      copyTex: true
+      mhchem: true
 
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#22320;&#22270;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">mapbox</span>:
-      <span style="color: #f8f8f2; font-weight: bold;">accessToken</span>: <span style="color: #f1fa8c;">''</span>
-      <span style="color: #f8f8f2; font-weight: bold;">lightStyle</span>: <span style="color: #f1fa8c;">'mapbox://styles/mapbox/light-v10?optimize=true'</span>
-      <span style="color: #f8f8f2; font-weight: bold;">darkStyle</span>: <span style="color: #f1fa8c;">'mapbox://styles/mapbox/dark-v10?optimize=true'</span>
-      <span style="color: #f8f8f2; font-weight: bold;">navigation</span>: <span style="color: #bd93f9;">true</span>
-      <span style="color: #f8f8f2; font-weight: bold;">geolocate</span>: <span style="color: #bd93f9;">true</span>
-      <span style="color: #f8f8f2; font-weight: bold;">scale</span>: <span style="color: #bd93f9;">true</span>
-      <span style="color: #f8f8f2; font-weight: bold;">fullscreen</span>: <span style="color: #bd93f9;">true</span>
+    # 地图
+    mapbox:
+      accessToken: ''
+      lightStyle: 'mapbox://styles/mapbox/light-v10?optimize=true'
+      darkStyle: 'mapbox://styles/mapbox/dark-v10?optimize=true'
+      navigation: true
+      geolocate: true
+      scale: true
+      fullscreen: true
 
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#20851;&#38381;&#20998;&#20139;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">share</span>:
-      <span style="color: #f8f8f2; font-weight: bold;">enable</span>: <span style="color: #bd93f9;">false</span>
+    # 关闭分享
+    share:
+      enable: false
 
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#35780;&#35770;&#30475;&#21518;&#38754;</span>
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">comment:</span>
-    <span style="color: #6272a4;">#   </span><span style="color: #6272a4;">enable: true</span>
-    <span style="color: #6272a4;">#   </span><span style="color: #6272a4;">gitalk:</span>
+    # 评论看后面
+    # comment:
+    #   enable: true
+    #   gitalk:
 
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#31532;&#19977;&#26041;&#38745;&#24577;&#36164;&#28304;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">library</span>:
-      <span style="color: #f8f8f2; font-weight: bold;">css</span>: {<span style="color: #f8f8f2; font-weight: bold;">}</span>
-<span style="color: #f8f8f2; font-weight: bold;">      js</span>: {}
+    # 第三方静态资源
+    library:
+      css: {}
+      js: {}
 
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#39029;&#38754; SEO &#37197;&#32622;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">seo</span>:
-      <span style="color: #f8f8f2; font-weight: bold;">images</span>: []
-      <span style="color: #f8f8f2; font-weight: bold;">publisher</span>:
-        <span style="color: #f8f8f2; font-weight: bold;">name</span>: <span style="color: #f1fa8c;">''</span>
-        <span style="color: #f8f8f2; font-weight: bold;">logoUrl</span>: <span style="color: #f1fa8c;">''</span>
+    # 页面 SEO 配置
+    seo:
+      images: []
+      publisher:
+        name: ''
+        logoUrl: ''
 
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">TypeIt &#37197;&#32622;</span>
-  <span style="color: #f8f8f2; font-weight: bold;">typeit</span>:
-    <span style="color: #f8f8f2; font-weight: bold;">speed</span>: 100
-    <span style="color: #f8f8f2; font-weight: bold;">cursorSpeed</span>: 1000
-    <span style="color: #f8f8f2; font-weight: bold;">cursorChar</span>: <span style="color: #f1fa8c;">'|'</span>
-    <span style="color: #f8f8f2; font-weight: bold;">duration</span>: -1
+  # TypeIt 配置
+  typeit:
+    speed: 100
+    cursorSpeed: 1000
+    cursorChar: '|'
+    duration: -1
 
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#32593;&#31449; SEO &#37197;&#32622;</span>
-  <span style="color: #f8f8f2; font-weight: bold;">seo</span>:
-    <span style="color: #f8f8f2; font-weight: bold;">image</span>: <span style="color: #f1fa8c;">''</span>
-    <span style="color: #f8f8f2; font-weight: bold;">thumbnailUrl</span>: <span style="color: #f1fa8c;">''</span>
+  # 网站 SEO 配置
+  seo:
+    image: ''
+    thumbnailUrl: ''
 
-  <span style="color: #6272a4;">#  </span><span style="color: #6272a4;">&#31532;&#19977;&#26041;&#24211;&#25991;&#20214;&#30340; CDN &#35774;&#32622;</span>
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">CDN &#25968;&#25454;&#25991;&#20214;&#21517;&#31216;, &#40664;&#35748;&#19981;&#21551;&#29992;</span>
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">["jsdelivr.yml"]</span>
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#20301;&#20110; "themes/LoveIt/assets/data/cdn/" &#30446;&#24405;</span>
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#21487;&#20197;&#22312;&#20320;&#30340;&#39033;&#30446;&#19979;&#30456;&#21516;&#36335;&#24452;&#23384;&#25918;&#20320;&#33258;&#24049;&#30340;&#25968;&#25454;&#25991;&#20214;:</span>
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">"assets/data/cdn/"</span>
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">cdn:</span>
-  <span style="color: #6272a4;">#   </span><span style="color: #6272a4;">data: ''</span>
+  #  第三方库文件的 CDN 设置
+  # CDN 数据文件名称, 默认不启用
+  # ["jsdelivr.yml"]
+  # 位于 "themes/LoveIt/assets/data/cdn/" 目录
+  # 可以在你的项目下相同路径存放你自己的数据文件:
+  # "assets/data/cdn/"
+  # cdn:
+  #   data: ''
 
-  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#25628;&#32034;&#35774;&#32622;</span>
-  <span style="color: #f8f8f2; font-weight: bold;">search</span>:
-    <span style="color: #f8f8f2; font-weight: bold;">enable</span>: <span style="color: #bd93f9;">true</span>
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#25628;&#32034;&#24341;&#25806;&#30340;&#31867;&#22411; ["lunr", "algolia"]</span>
-    <span style="color: #f8f8f2; font-weight: bold;">type</span>: lunr
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#25991;&#31456;&#20869;&#23481;&#26368;&#38271;&#32034;&#24341;&#38271;&#24230;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">contentLength</span>: 4000
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#25628;&#32034;&#26694;&#30340;&#21344;&#20301;&#25552;&#31034;&#35821;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">placeholder</span>: <span style="color: #f1fa8c;">''</span>
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26368;&#22823;&#32467;&#26524;&#25968;&#30446;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">maxResultLength</span>: 10
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#32467;&#26524;&#20869;&#23481;&#29255;&#27573;&#38271;&#24230;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">snippetLength</span>: 50
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#25628;&#32034;&#32467;&#26524;&#20013;&#39640;&#20142;&#37096;&#20998;&#30340; HTML &#26631;&#31614;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">highlightTag</span>: em
-    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#22312;&#25628;&#32034;&#32034;&#24341;&#20013;&#20351;&#29992;&#22522;&#20110; baseURL &#30340;&#32477;&#23545;&#36335;&#24452;</span>
-    <span style="color: #f8f8f2; font-weight: bold;">absoluteURL</span>: <span style="color: #bd93f9;">false</span>
+  # 搜索设置
+  search:
+    enable: true
+    # 搜索引擎的类型 ["lunr", "algolia"]
+    type: lunr
+    # 文章内容最长索引长度
+    contentLength: 4000
+    # 搜索框的占位提示语
+    placeholder: ''
+    # 最大结果数目
+    maxResultLength: 10
+    # 结果内容片段长度
+    snippetLength: 50
+    # 搜索结果中高亮部分的 HTML 标签
+    highlightTag: em
+    # 是否在搜索索引中使用基于 baseURL 的绝对路径
+    absoluteURL: false
 
- </code></pre>
+</code></pre>
 </div>
 </div>
 
-<div id="outline-container-org2cd1387" class="outline-4">
-<h4 id="org2cd1387">关于资源目录</h4>
-<div class="outline-text-4" id="text-org2cd1387">
+<div id="outline-container-orgc7cedf9" class="outline-4">
+<h4 id="orgc7cedf9">关于资源目录</h4>
+<div class="outline-text-4" id="text-orgc7cedf9">
 <p>
 假设有个写好了的 md ,位置 <code>content/test.md</code> ，那么它会出现在 <b>站点的根目录</b> ，也就是需要访问 <code>https://yoursite.com/test.md</code> 。
 </p>
@@ -664,22 +671,23 @@ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 </div>
 </div>
 
-<div id="outline-container-orgcb813ee" class="outline-3">
-<h3 id="orgcb813ee">安装 ox-hugo</h3>
-<div class="outline-text-3" id="text-orgcb813ee">
+<div id="outline-container-org2d75e42" class="outline-3">
+<h3 id="org2d75e42">安装 ox-hugo</h3>
+<div class="outline-text-3" id="text-org2d75e42">
 <p>
 官网的安装页面：<a href="https://ox-hugo.scripter.co/#installation">https://ox-hugo.scripter.co/#installation</a>。
 </p>
 
 <div class="org-src-container">
-<pre><code class="language-lisp"> <span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">with-eval-after-load</span> 'ox
-  <span style="color: #8be9fd;">(</span><span style="color: #ff79c6; font-weight: bold;">require</span> '<span style="color: #bd93f9;">ox-hugo</span><span style="color: #8be9fd;">)</span>
-  <span style="color: #8be9fd;">(</span>setq org-hugo-base-dir ../blog/<span style="color: #f1fa8c;">"</span>
-<span style="color: #f1fa8c;">    ;; org-hugo-section "</span>posts<span style="color: #f1fa8c;">"</span>
-<span style="color: #f1fa8c;">    org-hugo-default-static-subdirectory-for-externals "</span>img<span style="color: #f1fa8c;">"</span>
-<span style="color: #f1fa8c;">    org-hugo-auto-set-lastmod t</span>
-<span style="color: #f1fa8c;">    org-hugo-export-with-toc nil))</span>
- </code></pre>
+<pre><code class="language-lisp">
+(with-eval-after-load 'ox
+  (require 'ox-hugo)
+  (setq org-hugo-base-dir ../blog/"
+    ;; org-hugo-section "posts"
+    org-hugo-default-static-subdirectory-for-externals "img"
+    org-hugo-auto-set-lastmod t
+    org-hugo-export-with-toc nil))
+</code></pre>
 </div>
 <ul class="org-ul">
 <li><code>org-hugo-base-dir</code>, 项目的根目录</li>
@@ -691,13 +699,13 @@ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 </div>
 </div>
 
-<div id="outline-container-orged22bcb" class="outline-3">
-<h3 id="orged22bcb">ox-hugo 使用</h3>
-<div class="outline-text-3" id="text-orged22bcb">
+<div id="outline-container-orgd425c9f" class="outline-3">
+<h3 id="orgd425c9f">ox-hugo 使用</h3>
+<div class="outline-text-3" id="text-orgd425c9f">
 <p>
 Org file 的基础配置
 </p>
-<pre class="example" id="orgccf80b6">
+<pre class="example" id="orge230e7d">
 #+title: 文章标题
 #+date: [2022-09-10 Sat]
 #+hugo_tags: tags1 tags2
@@ -719,7 +727,7 @@ Org file 的基础配置
 <p>
 对于特定文件，可以在文件的头配置里面覆盖掉基础配置。比如“关于”页面 <code>about.org</code> 的内容：
 </p>
-<pre class="example" id="orgc040b0b">
+<pre class="example" id="orgd11a4ec">
 #+hugo_base_dir:../blog/
 #+hugo_section: ./
 #+hugo_auto_set_lastmod: t
@@ -735,9 +743,9 @@ Org file 的基础配置
 </div>
 </div>
 
-<div id="outline-container-orgfcf3500" class="outline-3">
-<h3 id="orgfcf3500">设置评论</h3>
-<div class="outline-text-3" id="text-orgfcf3500">
+<div id="outline-container-org1420334" class="outline-3">
+<h3 id="org1420334">设置评论</h3>
+<div class="outline-text-3" id="text-org1420334">
 <p>
 <code>LoveIt</code> 主题给出了很多选择，我用的是 Gitalk<sup>[<a id="fnr:3.1" class="footref" href="#fn:3">3</a>]</sup> ，它是基于 Github 的 Issue 模块设计的。它十分太巧妙，用一个 Github 仓库做评论存储 —— 并不是作为 code 来存。对于每个仓库，都有一个 Issue 区域，用来记录问题和反馈。每条 issue 下面都可以评论 —— 本质上 Issue 就是一个评论区，它在 Github 的作用就是反馈问题，用来当博客评论简直舒服（当然，评论者必须登录 GitHub 之后才能评论）。
 </p>
@@ -747,7 +755,7 @@ Org file 的基础配置
 </p>
 
 
-<figure id="org5a1017f">
+<figure id="orgf8d51e9">
 <img src="/assets/2022-09-12_13-18-04.png" alt="2022-09-12_13-18-04.png">
 
 </figure>
@@ -773,7 +781,7 @@ Org file 的基础配置
 </p>
 
 
-<figure id="org3612c25">
+<figure id="org5d8e690">
 <img src="/assets/2022-09-12_13-30-09.png" alt="2022-09-12_13-30-09.png">
 
 </figure>
@@ -794,7 +802,7 @@ Org file 的基础配置
 </p>
 
 
-<figure id="orgfbf7c1a">
+<figure id="orgc43d18b">
 <img src="/assets/2022-09-12_13-39-14.png" alt="2022-09-12_13-39-14.png">
 
 </figure>
@@ -808,9 +816,9 @@ Org file 的基础配置
 </p>
 </div>
 
-<div id="outline-container-org17e8a3a" class="outline-4">
-<h4 id="org17e8a3a">LoveIt 的 Bug</h4>
-<div class="outline-text-4" id="text-org17e8a3a">
+<div id="outline-container-org703921d" class="outline-4">
+<h4 id="org703921d">LoveIt 的 Bug</h4>
+<div class="outline-text-4" id="text-org703921d">
 <p>
 如果你有好几篇文章同时生成和发布，那么就有可能出现这个 bug ，会导致评论共用，就是 A 文章下面的评论和 B 文章下面的评论一样， A 文章下面发的评论在 B 文章那里也可以看到。
 </p>
@@ -820,7 +828,7 @@ Org file 的基础配置
 </p>
 
 
-<figure id="org03402bb">
+<figure id="org14adff4">
 <img src="/assets/2022-09-12_13-46-33.png" alt="2022-09-12_13-46-33.png">
 
 </figure>
@@ -838,7 +846,7 @@ LoveIt 的默认 <code>id</code> 是写死的，就是 <code>Date</code> ，所�
 </p>
 
 
-<figure id="orgc937ac2">
+<figure id="org65bf47d">
 <img src="/assets/2022-09-12_13-53-46.png" alt="2022-09-12_13-53-46.png">
 
 </figure>
@@ -851,9 +859,9 @@ LoveIt 的默认 <code>id</code> 是写死的，就是 <code>Date</code> ，所�
 </div>
 </div>
 
-<div id="outline-container-org1c18f2f" class="outline-2">
-<h2 id="org1c18f2f">工作流程</h2>
-<div class="outline-text-2" id="text-org1c18f2f">
+<div id="outline-container-org841d662" class="outline-2">
+<h2 id="org841d662">工作流程</h2>
+<div class="outline-text-2" id="text-org841d662">
 <p>
 至此 <b>一个博客就搭建好了</b> ，接下来说明它的工作流程。
 </p>
@@ -864,10 +872,11 @@ LoveIt 的默认 <code>id</code> 是写死的，就是 <code>Date</code> ，所�
 <li>最后提交到 Github</li>
 </ol>
 <div class="org-src-container">
-<pre><code class="language-bash"> git add *
-git commit -m <span style="color: #f1fa8c;">"&#27880;&#37322;"</span>
+<pre><code class="language-bash">
+git add *
+git commit -m "注释"
 git push
- </code></pre>
+</code></pre>
 </div>
 
 <p>
@@ -876,9 +885,9 @@ git push
 </div>
 </div>
 
-<div id="outline-container-orge73d190" class="outline-2">
-<h2 id="orge73d190">自动化</h2>
-<div class="outline-text-2" id="text-orge73d190">
+<div id="outline-container-orga3b019d" class="outline-2">
+<h2 id="orga3b019d">自动化</h2>
+<div class="outline-text-2" id="text-orga3b019d">
 <p>
 如果每次都那么搞就太麻烦了。因此我写了一些东西，使得整个流程直接一步到位，可以参考。
 </p>
@@ -889,31 +898,31 @@ git push
 </div>
 </div>
 
-<div id="outline-container-orgbe5ebd6" class="outline-2">
-<h2 id="orgbe5ebd6">优化</h2>
-<div class="outline-text-2" id="text-orgbe5ebd6">
+<div id="outline-container-org44874b4" class="outline-2">
+<h2 id="org44874b4">优化</h2>
+<div class="outline-text-2" id="text-org44874b4">
 </div>
-<div id="outline-container-orgeb185e3" class="outline-3">
-<h3 id="orgeb185e3">CDN 设置</h3>
-<div class="outline-text-3" id="text-orgeb185e3">
+<div id="outline-container-orgd6aaab6" class="outline-3">
+<h3 id="orgd6aaab6">CDN 设置</h3>
+<div class="outline-text-3" id="text-orgd6aaab6">
 <p>
 复制 LoveIt 目录 <code>themes/LoveIt/assets/data/cdn/</code> 到../blog/assets/data/cdn/~ (<code>assets</code> 需要自己创)<sup>[<a id="fnr:4.1" class="footref" href="#fn:4">4</a>]</sup>。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org4095ccd" class="outline-3">
-<h3 id="org4095ccd">Cloudflare Page</h3>
-<div class="outline-text-3" id="text-org4095ccd">
+<div id="outline-container-org06170c2" class="outline-3">
+<h3 id="org06170c2">Cloudflare Page</h3>
+<div class="outline-text-3" id="text-org06170c2">
 <p>
 Cloudflare Page 也可以直接托管静态站点了，它是联动 GitHub ，把仓库的 HTML 等站点文件克隆到它的服务器然后部署。参考《<a href="https://zhuanlan.zhihu.com/p/416269228">几分钟、零基础搭建个人网页！- 高速直连，基于Cloudflare Page - 知乎</a>》。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org304228d" class="outline-3">
-<h3 id="org304228d">Cloudflare + DNS</h3>
-<div class="outline-text-3" id="text-org304228d">
+<div id="outline-container-org4ca721d" class="outline-3">
+<h3 id="org4ca721d">Cloudflare + DNS</h3>
+<div class="outline-text-3" id="text-org4ca721d">
 <p>
 我是自己注册了一个域名，然后用 Cloudflare 托管，具体可以参考我的另一篇博客《<a href="/Computer/20221223T150015--gihub-page-cloudflare-namesilo-的域名配置__cloudflare_dns_githubpage_namesilo_site">GiHub Page + Cloudflare + NameSilo 的域名配置</a>》
 </p>
@@ -921,9 +930,9 @@ Cloudflare Page 也可以直接托管静态站点了，它是联动 GitHub ，�
 </div>
 </div>
 
-<div id="outline-container-orgfd1301e" class="outline-2">
-<h2 id="orgfd1301e">后记</h2>
-<div class="outline-text-2" id="text-orgfd1301e">
+<div id="outline-container-orgc8d5e9a" class="outline-2">
+<h2 id="orgc8d5e9a">后记</h2>
+<div class="outline-text-2" id="text-orgc8d5e9a">
 <p>
 搞了好几天终于算可以了，留一些尾巴后面处理。
 </p>
@@ -971,8 +980,11 @@ Gitalk: <a href="https://github.com/gitalk/gitalk/">https://github.com/gitalk/gi
 </div>
 </div>
 </div>
-<div id="postamble" class="status"><script>
-window.config={}
+<div id="postamble" class="status"><script src="/static/highlight/highlight.min.js"></script>
+
+<script>
+window.config={"code": {"header": false,
+"exclude": ["mermaid"]}, }
 </script>
 <script src="/static/style/style.js"></script>
 </div>
