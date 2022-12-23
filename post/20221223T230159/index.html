@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="I choose to see the beauty.">
+<title>[Emacs] Org-Beamer 导出 slidshow (PDF)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noodp">
+<meta name="author" content=" Finger Knight ">
+<meta name="referrer" content="no-referrer"><link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<body>
+<div class="header">
+<div class="home-page">
+<a href="/">手指骑士的病房</a></div><div class="nav">
+<div class="nav item">
+<a href="/tags">标签</a>
+</div>
+<div class="nav item">
+<a href="/archive">归档</a>
+</div>
+<div class="nav item">
+<a href="/about">关于</a>
+</div>
+</div>
+</div>
+<div class="main">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/katex/katex.min.css">
+<link rel="stylesheet" href="/static/highlight/dracula.css"><div class="toc">
+<h2 class="toc-title"> TOC </h2>
+<nav id="TableOfContents">
+
+<ul>
+<li>
+<a href="#org68ff8fc"> 简介 </a>
+<ul>
+<li>
+<a href="#orgf239d9d"> reveal.js vs spectacle.js </a></li>
+<li>
+<a href="#org7a9405e"> Beamer </a></li>
+</ul>
+</li>
+<li>
+<a href="#orge82d65d"> 安装 </a></li>
+<li>
+<a href="#org68cf5e2"> Emacs 配置 </a></li>
+<li>
+<a href="#org10bda28"> 基本概念 </a></li>
+<li>
+<a href="#orgf1d9bab"> org-beamer 使用 </a>
+<ul>
+<li>
+<a href="#org9e603c6"> 编辑增强 </a></li>
+<li>
+<a href="#orgbc2eb46"> org-beamer-frame-level </a></li>
+<li>
+<a href="#org13f4a0d"> 头信息 </a></li>
+<li>
+<a href="#org4592b6b"> 富文本 </a></li>
+<li>
+<a href="#orgf9bc614"> Block 块 </a>
+<ul>
+<li>
+<a href="#org9d7f878"> 类型 </a></li>
+<li>
+<a href="#org962d652"> 宽度 </a></li>
+</ul>
+</li>
+<li>
+<a href="#orgd7c711b"> 单行 columns </a></li>
+<li>
+<a href="#orgc654b12"> 动画 </a>
+<ul>
+<li>
+<a href="#org7f5e56c"> \pause </a></li>
+<li>
+<a href="#org46ad4b2"> 块的动画 </a></li>
+<li>
+<a href="#orgb0efcdc"> 文本强调 </a></li>
+<li>
+<a href="#orga961917"> 列表 </a></li>
+</ul>
+</li>
+<li>
+<a href="#org0ffb78d"> 图片 </a></li>
+<li>
+<a href="#org80949e8"> 重复页面 </a></li>
+<li>
+<a href="#org8c91abb"> 其他 Latex 命令 </a></li>
+<li>
+<a href="#org398c87d"> 目录 </a></li>
+</ul>
+</li>
+<li>
+<a href="#org3b1dceb"> 自定义样式 </a>
+<ul>
+<li>
+<a href="#org3012f3e"> 结构 </a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<h1 class="post-title"> [Emacs] Org-Beamer 导出 slidshow (PDF) </h1>
+<div class="post-date">2022-12-17</div>
+<div class="taglist"><a href="/tag/beamer"> #beamer </a>
+<a href="/tag/emacs"> #emacs </a>
+<a href="/tag/latex"> #latex </a>
+<a href="/tag/orgmode"> #orgmode </a>
+<a href="/tag/presentation"> #presentation </a>
+</div>
+</div>
+<div id="content">
+
+<div id="outline-container-org68ff8fc" class="outline-2">
+<h2 id="org68ff8fc">简介</h2>
+<div class="outline-text-2" id="text-org68ff8fc">
+<p>
+在之前公司转正答辩做 PPT 的时候就已经萌生了这种想法了： <b>通过写代码来做 PPT</b> 。这种想法起源很简单， Latex 就是一个典型的例子嘛，丢弃鼠标，完全通过代码控制排版。当时想的是这种东西应该有很多成熟的项目，而后来没怎么做 PPT 也就忘了。直到前段时间刷到一个视频，它介绍了如何通过 Markdown 来做 PPT, 于是死灰复燃，开始折腾起来。跟 Org Mode 相关的项目也有，我试了几个：
+</p>
+<ul class="org-ul">
+<li><a href="https://orgmode.org/org.html#Beamer-Export" target="_blank">org-beamer</a>: Org Mode buildin 的，通过 latex 的 beamer 来导出 pdf</li>
+<li><a href="https://github.com/yjwen/org-reveal/" target="_blank">ox-reveal</a>: 基于 <a href="https://revealjs.com/" target="_blank">reveal.js</a> ，用于制作网页的幻灯片</li>
+<li><a href="https://github.com/lorniu/ox-spectacle" target="_blank">ox-spectacle</a>: 这个是大佬刚开始做的，基于 <a href="https://formidable.com/open-source/spectacle/" target="_blank">spectacle.js</a>, 也是用于制作 HTML 的演示</li>
+</ul>
+</div>
+
+<div id="outline-container-orgf239d9d" class="outline-3">
+<h3 id="orgf239d9d">reveal.js vs spectacle.js</h3>
+<div class="outline-text-3" id="text-orgf239d9d">
+<p>
+reveal.js 把每个 frame 放到 section 下，具体可以去看官网。 spectacle.js 就类似传统的幻灯片。
+</p>
+
+<p>
+这两个 HTML 的演示都非常好看，动画丝滑流畅，且可以做到 all-in-one, 就是把所有 js, css 压缩到一个 HTML, 方便携带。
+</p>
+
+<p>
+我只是想做一些简单的幻灯片，想着不整这么复杂，这些主题啊什么的要用 js/css 去调，我不太会，最终转向 org-beamer.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7a9405e" class="outline-3">
+<h3 id="org7a9405e">Beamer</h3>
+<div class="outline-text-3" id="text-org7a9405e">
+<p>
+<a href="https://latex-beamer.com" target="_blank">Beamer</a> 属于 Latex 的一个库，通过 latex 文档生成幻灯片。我想的是它是 org mode 内置的，使用起来应该比较简单，事实上也很简单 -&#x2013;&#x2014; 如果你使用别人的样式的话。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge82d65d" class="outline-2">
+<h2 id="orge82d65d">安装</h2>
+<div class="outline-text-2" id="text-orge82d65d">
+<p>
+org-beamer 是 Org Mode 自带的，因此只需要安装 Beamer 相关的环境就行了。
+</p>
+
+<p>
+我使用的是 <a href="https://tug.org/texlive/" target="_blank">Tex Live</a> ，安装 Arch Linux 官网上，把能安装的都安装了：
+</p>
+<div class="org-src-container">
+<pre><code class="language-bash">sudo pacman -S texlive-most texlive-lang texlive-fontsextra</code></pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org68cf5e2" class="outline-2">
+<h2 id="org68cf5e2">Emacs 配置</h2>
+<div class="outline-text-2" id="text-org68cf5e2">
+<p>
+Emacs 这边不需要太多配置，主要是解决中文相关的问题 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup> ：
+</p>
+<div class="org-src-container">
+<pre><code class="language-lisp">(with-eval-after 'ox-latex
+  ;; 使用xelatex一步生成PDF
+  (setq org-latex-pdf-process
+        '("xelatex -interaction nonstopmode -output-directory %o %f"
+          "xelatex -interaction nonstopmode -output-directory %o %f"
+          "xelatex -interaction nonstopmode -output-directory %o %f"))
+
+  ;; 设置默认后端为 `xelatex'
+  (setq org-latex-compiler "xelatex")
+
+  ;; 在 Latex 文档导言区添加 \userpackage{xeCJK}
+  (add-to-list 'org-latex-packages-alist '("" "xeCJK"))
+
+  ;; 幻灯片标题
+  (setq org-beamer-frame-level 2)
+  )</code></pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org10bda28" class="outline-2">
+<h2 id="org10bda28">基本概念</h2>
+<div class="outline-text-2" id="text-org10bda28">
+<p>
+在 Beamer 中，架构如下所示：
+</p>
+
+
+<figure id="org07f18dd">
+
+
+</figure>
+
+<ul class="org-ul">
+<li>绿色、紫色（大概是，我也不知道我调的啥色）代表了两个 Sections, 即章节，每个章节包含了多张幻灯片</li>
+<li>每一张切片是一个 Frame, 也就是一张幻灯片</li>
+<li>蓝色和红色代表 Blocks, 即块，就是幻灯片里面的小窗口</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf1d9bab" class="outline-2">
+<h2 id="orgf1d9bab">org-beamer 使用</h2>
+<div class="outline-text-2" id="text-orgf1d9bab">
+<p>
+官方文档：《<a href="https://orgmode.org/org.html#Beamer-Export" target="_blank">The Org Manual</a>》
+</p>
+</div>
+
+<div id="outline-container-org9e603c6" class="outline-3">
+<h3 id="org9e603c6">编辑增强</h3>
+<div class="outline-text-3" id="text-org9e603c6">
+<p>
+在 <code>.org</code> 里面加上头： <code>#+startup: beamer</code>, 可以提供额外的编辑帮助，比如补全标签、补全属性等。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbc2eb46" class="outline-3">
+<h3 id="orgbc2eb46">org-beamer-frame-level</h3>
+<div class="outline-text-3" id="text-orgbc2eb46">
+<p>
+首先要关注的是一个变量： <code>org-beamer-frame-level</code>, 在配置那里给它设成了 2 ，它的含义是：
+</p>
+<ul class="org-ul">
+<li>所有等级 <b>小于</b> 它的标题，会被视为 Section</li>
+<li>所有等级 <b>等于</b> 它的标题，会被视为 Frame</li>
+<li>所有等级 <b>大于</b> 它的标题，会被视为 Block</li>
+</ul>
+
+<p>
+来看一段框架：
+</p>
+<div class="org-src-container">
+<pre><code class="language-org">* 第一章 
+** （第一张幻灯片）
+第一张幻灯片的内容
+
+** （第二张幻灯片）
+第二张幻灯片的内容
+
+* 第二章
+** 块的展示
+这里展示两个块元素
+
+*** 第一块
+这里是第一块
+
+*** 第二块
+这里是第二块</code></pre>
+</div>
+
+<p>
+使用 <code>C-c C-e l P</code> 来在同一目录生成同名的 PDF 文件。输出如下：
+</p>
+
+
+<figure id="org0581a4d">
+
+
+<figcaption><span class="figure-number">Figure 1: </span>目录</figcaption>
+</figure>
+
+
+<figure id="orge43aa47">
+
+
+<figcaption><span class="figure-number">Figure 2: </span>内容</figcaption>
+</figure>
+
+<p>
+对于不同的文件，可以通过 options 来设置：
+</p>
+<div class="org-src-container">
+<pre><code class="language-org">#+options: H:1</code></pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org13f4a0d" class="outline-3">
+<h3 id="org13f4a0d">头信息</h3>
+<div class="outline-text-3" id="text-org13f4a0d">
+<p>
+文件设置头消息，然后 org-beamer 会根据模板为我们生成封面、页眉、页脚、侧边栏等。
+</p>
+
+<div class="org-src-container">
+<pre><code class="language-org">#+title: 示例幻灯片
+#+subtitle: 子标题，如果没有就不显示
+#+date: 2022-01-01，如果没有就默认是今天
+
+# 显示作者
+#+options: author: t
+#+author: Finger Knight
+
+# 使用主题， Madrid 是 Beamer 内置的
+#+BEAMER_THEME: Madrid</code></pre>
+</div>
+
+<p>
+输出封面：
+</p>
+
+
+<figure id="org4597a83">
+
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org4592b6b" class="outline-3">
+<h3 id="org4592b6b">富文本</h3>
+<div class="outline-text-3" id="text-org4592b6b">
+<p>
+<b>强调</b> ， <i>倾斜</i> 等富文本正常使用。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf9bc614" class="outline-3">
+<h3 id="orgf9bc614">Block 块</h3>
+<div class="outline-text-3" id="text-orgf9bc614">
+<p>
+根据前面的配置， 3 级标题及以上会被视作块，也就是每张 Frame 里面的小框框。
+</p>
+</div>
+
+<div id="outline-container-org9d7f878" class="outline-4">
+<h4 id="org9d7f878">类型</h4>
+<div class="outline-text-4" id="text-org9d7f878">
+<p>
+在 Beamer 中有三种不同类型的 Block: 普通、警告和示例。通过设置标题的属性 <code>BEAMER_ENV</code> 来实现，三者分别对应的是 <code>block</code>, <code>alertblock</code>, <code>example</code>.
+</p>
+<div class="org-src-container">
+<pre><code class="language-org">** 块类型
+*** 普通块
+:PROPERTIES:
+:BEAMER_ENV: block
+:END:
+这里是普通块。
+
+*** 警告块
+:PROPERTIES:
+:BEAMER_ENV: alertblock
+:END:
+这里是警告块。
+
+*** 示例块
+:PROPERTIES:
+:BEAMER_ENV: example
+:END:
+这里是示例块。</code></pre>
+</div>
+
+
+<figure id="org6c74d55">
+
+
+</figure>
+
+<div class="admonition" id="org63b9909">
+<p>
+没有设置 <code>BEAMER_ENV</code> 的块默认为普通快（block）
+</p>
+
+</div>
+
+<p>
+此外，还有一种类型 <code>ignoreheading</code>, 即忽视标题，这个块会像一个段落一样，不会有框框作用在上边。但如果想要标题背景，不想要文字，标题留空不行，要用到  <code>@@beamer: ~~@@</code>, 见后面的<a href="#orgd7c711b" target="_blank">例子</a> <sup>[<a id="fnr:2.1" class="footref" href="#fn:2">2</a>]</sup> 。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org962d652" class="outline-4">
+<h4 id="org962d652">宽度</h4>
+<div class="outline-text-4" id="text-org962d652">
+<p>
+通过标题属性 <code>BEAMER_COL</code> 来设置列宽。它是一个 [0,1] 区间上的一个小数，表示当前块宽度占整个 Frame 宽度的比例。如果相邻两个快的宽度之和小于 1 ，就可以实现两个并排的块。
+</p>
+
+<p>
+如果同一 Frame 下的连续块太多，宽度和超过 1 org-beamer 不会自动换行，然后所有块都挤到一行。目前我找到的办法是在该分行的地方创建一个空块：
+</p>
+<div class="org-src-container">
+<pre><code class="language-org">***
+:PROPERTIES:
+:BEAMER_ENV: ignoreheading
+:END:</code></pre>
+</div>
+
+<p>
+因为空文本，所以它不会占据空间。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd7c711b" class="outline-3">
+<h3 id="orgd7c711b">单行 columns</h3>
+<div class="outline-text-3" id="text-orgd7c711b">
+<p>
+有一个 <code>BEAMER_ENV</code> 的值 <code>columns</code>, 它用于把它下面的标题变成块，使得它们都限定在当前行内。因此它可以做到无视块之间的间距，尽管它们可能会重合 <sup>[<a id="fnr:2.2" class="footref" href="#fn:2">2</a>]</sup> 。
+</p>
+<div class="org-src-container">
+<pre><code class="language-org">** Frame
+*** 第一行
+:PROPERTIES:
+:BEAMER_env: columns
+:END:
+**** 左边
+:PROPERTIES:
+:BEAMER_env: block
+:BEAMER_col: 0.5
+:END:
+
+**** 右边
+:PROPERTIES:
+:BEAMER_env: block
+:BEAMER_col: 0.50
+:END:   
+
+*** 第二行
+:PROPERTIES:
+:BEAMER_env: columns
+:END:
+**** @@beamer: ~@@
+:PROPERTIES:
+:BEAMER_env: block
+:BEAMER_col: 0.99
+:END:
+即使左边 0.99 也能排下
+
+**** @@beamer: ~@@
+:PROPERTIES:
+:BEAMER_env: block
+:BEAMER_col: 0.01
+:END:</code></pre>
+</div>
+
+
+<figure id="org4badd4b">
+
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-orgc654b12" class="outline-3">
+<h3 id="orgc654b12">动画</h3>
+<div class="outline-text-3" id="text-orgc654b12">
+<p>
+“动画”是给伪概念， PDF 哪来的动画一说，只能说是简单的通过重叠重复的方式来实现块元素的出现和消失。
+</p>
+</div>
+
+<div id="outline-container-org7f5e56c" class="outline-4">
+<h4 id="org7f5e56c">\pause</h4>
+<div class="outline-text-4" id="text-org7f5e56c">
+<p>
+\pause 就像断点一样，在当前处放了之后，演示到这里时会“停下”，即后续内容先不展示，下一页开始出现。
+</p>
+
+<p>
+在 Org Mode 中的使用是： <code>#+BEAMER: \pause</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org46ad4b2" class="outline-4">
+<h4 id="org46ad4b2">块的动画</h4>
+<div class="outline-text-4" id="text-org46ad4b2">
+<p>
+通过设置 <code>BEAMER_ACT</code> 属性来控制动画，其值用一对尖括号 <code>&lt;N&gt;</code> 包裹，其中 <code>N</code> 表示出现的位置。
+</p>
+
+<p>
+<b>单个数字</b> ，表示第几个位置出现。如 <code>&lt;1&gt;</code> 表示在一开始就出现， <code>&lt;2&gt;</code> 表示在第二个位置出现，即下一页。以此类推。这个数字并不会真正改变当前的“页数” -&#x2013;&#x2014; 见下图，右下角，还是在同一 Frame 下 -&#x2013;&#x2014; 所以我更愿意称它做“位置”。
+</p>
+
+<div class="org-src-container">
+<pre><code class="language-org">** 动画
+*** A
+:PROPERTIES:
+:BEAMER_ENV: block
+:BEAMER_ACT: <1>
+:END:
+
+*** B
+:PROPERTIES:
+:BEAMER_ENV: block
+:BEAMER_ACT: <2>
+:END:
+
+*** C
+:PROPERTIES:
+:BEAMER_ACT: <3>
+:BEAMER_ENV: block
+:END:</code></pre>
+</div>
+
+<p>
+输出会得到三张幻灯片：
+</p>
+
+
+<figure id="org925ffa8">
+
+
+</figure>
+
+<p>
+<b>横杠</b> (-) 表示连续范围，如：  <code>&lt;1-2&gt;</code> 表示出现在 1 和 2 位置。如果横杠后的数字没制定如 <code>&lt;2-&gt;</code> ，就表示出现到当前 Frame 结束.
+</p>
+
+<div class="org-src-container">
+<pre><code class="language-org">** 动画
+*** A
+:PROPERTIES:
+:BEAMER_ENV: block
+:BEAMER_ACT: <1->
+:END:
+一直出现
+
+*** B
+:PROPERTIES:
+:BEAMER_ENV: block
+:BEAMER_ACT: <2>
+:END:
+位置 2 出现，其他位置不出现
+
+*** C
+:PROPERTIES:
+:BEAMER_ACT: <2-3>
+:BEAMER_ENV: block
+:END:
+地址 2 到地址 3 出现，其他位置不出现
+
+*** D
+:PROPERTIES:
+:BEAMER_ACT: <4>
+:BEAMER_ENV: block
+:END:
+地址 4 才出现</code></pre>
+</div>
+
+
+<figure id="org254a313">
+
+
+<figcaption><span class="figure-number">Figure 3: </span>输入法问题，“位置”打成“地址”，但不想改了</figcaption>
+</figure>
+
+<p>
+<b>逗号</b> (,) 表示“与”，可以用来指定离散开的页数，如 <code>&lt;1,3,6&gt;</code> 表示出现在位置 1, 3 和 6 。也可以和范围组合，如 <code>1,4,7-10</code> 表示出现在位置 1, 4, 7, 8, 9.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb0efcdc" class="outline-4">
+<h4 id="orgb0efcdc">文本强调</h4>
+<div class="outline-text-4" id="text-orgb0efcdc">
+<p>
+给一段文本加上强调，在到达位置时会变色。先用 <code>*</code> 把文本包裹，然后在文本前加上命令： <code>*@@beamer:&lt;N&gt;@@要强调的文本*</code> 。
+</p>
+
+<div class="org-src-container">
+<pre><code class="language-org">** 文本强调
+这是一段文本，最后两个字是强调 *@@beamer:<2>@@文本* 。因为是 2 所以是下一页强调，如果是 1 就是当前页。</code></pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga961917" class="outline-4">
+<h4 id="orga961917">列表</h4>
+<div class="outline-text-4" id="text-orga961917">
+<p>
+在列表前添加属性 <code>#+attr_beamer: :overlay &lt;+-&gt;</code> ，接下来列表的各项会依次出现，且出现过的一次出现。对于某一项，可以在其对应行开头使用 <code>@@beamer:&lt;N&gt;@@</code> 单独设置。
+</p>
+
+<div class="org-src-container">
+<pre><code class="language-org">** 列表
+#+attr_beamer: :overlay <+->
+- Item1
+- Item2
+- Item3
+- @@beamer:<3>@@ Item4
+- Item5</code></pre>
+</div>
+
+
+<figure id="org8f3efe9">
+
+
+</figure>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0ffb78d" class="outline-3">
+<h3 id="org0ffb78d">图片</h3>
+<div class="outline-text-3" id="text-org0ffb78d">
+<p>
+直接通过 Org Mode 的链接插入即可，通过 <code>#+attr_latex:</code> 来设置属性，比如常用的宽度 <code>:width .6\textwidth</code> , 或者是缩放 <code>:scale 0.5</code> ，标题 <code>:caption Title</code> 等等
+</p>
+</div>
+</div>
+
+<div id="outline-container-org80949e8" class="outline-3">
+<h3 id="org80949e8">重复页面</h3>
+<div class="outline-text-3" id="text-org80949e8">
+<p>
+重复页面简单说就是复制之前的某个页面，比如讲到后面的内容，需要回顾前面的某些页面 <sup>[<a id="fnr:3.1" class="footref" href="#fn:3">3</a>]</sup> 。
+</p>
+<div class="org-src-container">
+<pre><code class="language-org">** Again
+:PROPERTIES:
+:BEAMER_ENV: againframe
+:BEAMER_ACT: 2-
+:BEAMER_ref: id:a047ce4d-288b-4137-853a-d4e757d293c4
+:END:</code></pre>
+</div>
+
+<ul class="org-ul">
+<li><code>BEAMER_ENV</code> 设为 <code>againframe</code>, 标题不用，因为重复了目标页面的标题</li>
+<li><code>BEAMER_ACT</code> 表示显示范围，和动画的格式一致，只是不用加尖括号</li>
+<li><code>BEAMER_ref</code> 要重复的页面，可以用 <code>*标题</code> 来跳转，但为了防止某些重名标题，最好使用 ID. 目标页面通过 <code>M-x org-id-get-create</code> 来添加一个随机 ID, 然后使用 <code>id:xxx</code> 链接过去。</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8c91abb" class="outline-3">
+<h3 id="org8c91abb">其他 Latex 命令</h3>
+<div class="outline-text-3" id="text-org8c91abb">
+<p>
+想使用额外的 Latex 命令，用 <code>@@beamer:code@@</code> 来执行。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org398c87d" class="outline-3">
+<h3 id="org398c87d">目录</h3>
+<div class="outline-text-3" id="text-org398c87d">
+<p>
+开启目录： <code>#+options: toc: t</code>, 便会在封面首页之后插入一页目录页。
+</p>
+
+<p>
+设置 <code>#+TOC: headlines [currentsection]</code>, 则会在进入每一个章节的时候插入目录页，同时高亮即将要进入的章节。
+</p>
+
+<p>
+<code>#+options: toc: nil</code>, 关闭目录。
+</p>
+
+<p>
+具体目录层次及其他更多相关设置参考文档：《<a href="https://orgmode.org/org.html#Table-of-Contents" target="_blank">The Org Manual</a>》。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3b1dceb" class="outline-2">
+<h2 id="org3b1dceb">自定义样式</h2>
+<div class="outline-text-2" id="text-org3b1dceb">
+<p>
+这里给一个博主的博文，有很大帮助：《<a href="https://www.cnblogs.com/nangongergou/category/1840504.html" target="_blank">Latex - 随笔分类 - 南宫二狗 - 博客园</a>》，找到 Beamer 相关文章即可。
+</p>
+</div>
+
+<div id="outline-container-org3012f3e" class="outline-3">
+<h3 id="org3012f3e">结构</h3>
+<div class="outline-text-3" id="text-org3012f3e">
+<p>
+Beamer 将样式分为 4 块：
+</p>
+<ul class="org-ul">
+<li>主题，包含了方方面面的样式，一般以下三个会包含其中。通过 <code>#+BEAMER_THEME:</code> 来调用</li>
+<li>颜色主题，就是规定了各个模块，如文字、 Frame 标题等的颜色。通过 <code>#+BEAMER_COLOR_THEME:</code> 来调用</li>
+<li>字体主题，规定了各个模块使用的字体。通过 <code>#+BEAMER_FONT_THEME:</code> 来调用</li>
+<li>内部主题，规定了比如 Block, 列表的样式，像是无须列表前是原点还是小方块。通过 <code>#+BEAMER_INNER_THEME:</code> 来调用</li>
+<li>外部主题，规定了各组分之间如页眉页脚、侧边栏等的样式。通过 <code>#+BEAMER_OUTER_THEME:</code> 来调用</li>
+</ul>
+
+<p>
+事实上，也可以通过一个文件就全部包含了，这样模块化的好处就是可以弄出各种各样的组合，满足不同场景，更加灵活。
+</p>
+
+<p>
+这里给内置的样式 <sup>[<a id="fnr:4.1" class="footref" href="#fn:4">4</a>]</sup> ，没用完，我基于其中的主题自己写了一套。
+</p>
+<ul class="org-ul">
+<li>theme: Madrid, sidebar, Bergen &#x2026;</li>
+<li>colortheme: dolphin, dove, seagull &#x2026;</li>
+<li>fonttheme: default, professionalfonts, serif, structurebold, structureitalicserif, structuresmallcapsserif</li>
+<li>innertheme: default, circles, rectangles, rounded, inmargin</li>
+<li>outertheme: default, infolines, miniframes, smoothbars, sidebar, split, shadow, tree, smoothtree</li>
+</ul>
+
+
+<p>
+想要自定义颜色，需要基于内置的主题做参考去配置，其路径在 <code>tex/latex/beamer</code>, 在 Arch Linux 下绝对路径： <code>/usr/share/texmf-dist/tex/latex/beamer</code>.
+</p>
+
+<p>
+其命名方式是： <code>beamer&lt;type&gt;&lt;name&gt;.sty</code>, 其中 <code>&lt;type&gt;</code> 是主题类型， <code>&lt;name&gt;</code> 是主题名字。比如要写一个名字为 <code>mylight</code> 的 <b>颜色</b> 主题就是 <code>beamercolorthememylight.sty</code>, 把它放到环境变量的路径下就能够识别了。
+</p>
+
+<p>
+在主题（ theme ）中，通过 <code>\usecolortheme{}</code>, <code>\usefonttheme{}</code>, <code>\useinnertheme</code>, <code>\useoutertheme</code> 来导入相关的样式。
+</p>
+
+<p>
+我的主题在 <a href="https://github.com/fingerknight/presentation" target="_blank">fingerknight/presentation</a> ，自己也是摸爬打滚、复制粘贴过来的，我没有总结出系统性的内容，但 <b>目前</b> 满足我的需求。更多资料可以看参考资料：
+</p>
+
+<ul class="org-ul">
+<li>删除导航栏：<a href="https://tex.stackexchange.com/a/545125" target="_blank">header footer - How to remove footline on the title page of beamer slides - TeX - LaTeX Stack Exchange</a></li>
+<li>背景图片透明度：<a href="https://tex.stackexchange.com/questions/74038/transparent-image-background-in-beamer" target="_blank">graphics - Transparent image background in beamer - TeX - LaTeX Stack Exchange</a></li>
+<li>文字的背景颜色，用于调控比如行内代码的背景：<a href="https://tex.stackexchange.com/questions/136742/changing-background-color-of-text-in-latex" target="_blank">Changing background color of text in Latex - TeX - LaTeX Stack Exchange</a></li>
+<li>超链接的颜色：<a href="https://tex.stackexchange.com/questions/401884/how-do-i-change-hyperlinks-color-only" target="_blank">beamer - How do I change hyperlinks' color only? - TeX - LaTeX Stack Exchange</a></li>
+<li>列表的表头样式：<a href="https://tex.stackexchange.com/questions/11168/change-bullet-style-formatting-in-beamer" target="_blank">lists - Change bullet style / formatting in Beamer - TeX - LaTeX Stack Exchange</a></li>
+<li>定义一个尾页：<a href="https://tex.stackexchange.com/questions/338458/how-to-define-a-final-slide-in-a-beamer-template" target="_blank">How to define a "final slide" in a beamer template? - TeX - LaTeX Stack Exchange</a></li>
+<li>高亮代码快：<a href="https://stackoverflow.com/questions/21402157/colour-for-r-code-chunk-in-listings-package" target="_blank">latex - Colour for R code chunk in listings package - Stack Overflow</a></li>
+<li>高亮代码快：<a href="https://tex.stackexchange.com/questions/164353/lstlisting-in-beamer-presentation" target="_blank">listings - Lstlisting in beamer presentation - TeX - LaTeX Stack Exchange</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="text-footnotes" role="doc-endnotes">
+<ol>
+<li id="fn:1">
+<p class="footpara">
+<a href="https://emacs-china.org/t/latex/4820/14" target="_blank">Latex编译中中文问题 - Org-mode - Emacs China</a>
+<a href="#fnr:1.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+<li id="fn:2">
+<p class="footpara">
+<a href="https://stackoverflow.com/questions/48129974/org-mode-beamer-stop-a-2-column-block-and-display-following-text-throughout-pag" target="_blank">Org-mode beamer, stop a 2-column block and display following text throughout page width - Stack Overflow</a>
+<a href="#fnr:2.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+<a href="#fnr:2.2" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+<li id="fn:3">
+<p class="footpara">
+<a href="https://stackoverflow.com/questions/9621281/how-can-i-repeat-a-beamer-frame-with-org-mode" target="_blank">emacs - How can I repeat a beamer frame with Org-mode? - Stack Overflow</a>
+<a href="#fnr:3.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+<li id="fn:4">
+<p class="footpara">
+<a href="https://zhuanlan.zhihu.com/p/136431290" target="_blank">beamer模板设计（三）内置主题(theme)的设计理念 - 知乎</a> （好像是某部手册的翻译）
+<a href="#fnr:4.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status"><script defer src="/static/katex/katex.min.js"></script>
+<script defer src="/static/katex/auto-render.min.js"></script>
+
+<script src="/static/highlight/highlight.min.js"></script>
+
+<script>
+window.config={"math": {"delimiters": [
+{"display": true,"left": "$$","right": "$$"},
+{"display": true,"left": "\\[","right": "\\]"},
+{"display": true,"left": "\\begin{equation}","right": "\\end{equation}"},
+{"display": true,"left": "\\begin{equation*}","right": "\\end{equation*}"},
+{"display": true,"left": "\\begin{align}","right": "\\end{align}"},
+{"display": true,"left": "\\begin{align*}","right": "\\end{align*}"},
+{"display": true,"left": "\\begin{alignat}","right": "\\end{alignat}"},
+{"display": true,"left": "\\begin{alignat*}","right": "\\end{alignat*}"},
+{"display": true,"left": "\\begin{gather}","right": "\\end{gather}"},
+{"display": true,"left": "\\begin{CD}","right": "\\end{CD}"},
+{"display": false,"left": "$","right": "$"},
+{"display": false,"left": "\\(","right": "\\)"}
+],
+"macros": {
+"\\C": "\\mathbb{C}",
+"\\N": "\\mathbb{N}",
+"\\Q": "\\mathbb{Q}",
+"\\R": "\\mathbb{R}",
+"\\Z": "\\mathbb{Z}",
+"’": "'"
+},
+"strict": false
+}, "code": {"header": false,
+"exclude": ["mermaid"]}, }
+</script>
+<script src="/static/style/style.js"></script>
+</div>
+</div>
+<div class="footer">
+<center> The End </center></div>
+</body>
+</html>

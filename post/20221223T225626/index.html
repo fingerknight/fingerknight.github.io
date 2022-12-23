@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="I choose to see the beauty.">
+<title>[Emacs] Org-Drill: 个人单词本</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noodp">
+<meta name="author" content=" Finger Knight ">
+<meta name="referrer" content="no-referrer"><link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<body>
+<div class="header">
+<div class="home-page">
+<a href="/">手指骑士的病房</a></div><div class="nav">
+<div class="nav item">
+<a href="/tags">标签</a>
+</div>
+<div class="nav item">
+<a href="/archive">归档</a>
+</div>
+<div class="nav item">
+<a href="/about">关于</a>
+</div>
+</div>
+</div>
+<div class="main">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/highlight/dracula.css"><div class="toc">
+<h2 class="toc-title"> TOC </h2>
+<nav id="TableOfContents">
+
+<ul>
+<li>
+<a href="#org8b1fbab"> 简介 </a></li>
+<li>
+<a href="#org933d197"> 安装配置 </a></li>
+<li>
+<a href="#orgae522ac"> 使用 </a>
+<ul>
+<li>
+<a href="#orged54e69"> 卡片内容 </a></li>
+<li>
+<a href="#org03fb996"> 如何开始 </a></li>
+<li>
+<a href="#orgd0437ad"> 读入卡片 </a></li>
+<li>
+<a href="#org706c941"> 任务量 </a></li>
+</ul>
+</li>
+<li>
+<a href="#org6ffe64e"> 个人单词库制作 </a>
+<ul>
+<li>
+<a href="#orgdbcec5a"> 单词库 </a></li>
+<li>
+<a href="#org44de088"> 大文件 </a></li>
+</ul>
+</li>
+<li>
+<a href="#org46793b6"> 后记 </a></li>
+</ul>
+</nav>
+</div>
+<h1 class="post-title"> [Emacs] Org-Drill: 个人单词本 </h1>
+<div class="post-date">2022-12-08</div>
+<div class="taglist"><a href="/tag/emacs"> #emacs </a>
+<a href="/tag/language"> #language </a>
+<a href="/tag/learning"> #learning </a>
+<a href="/tag/orgmode"> #orgmode </a>
+</div>
+</div>
+<div id="content">
+
+<div id="outline-container-org8b1fbab" class="outline-2">
+<h2 id="org8b1fbab">简介</h2>
+<div class="outline-text-2" id="text-org8b1fbab">
+<p>
+最近开始准备英语的终身学习，开始物色背单词软件，第一个想到的是 <a href="https://ankisrs.net/" target="_blank">Anki</a> 。虽然安装了，但是在 Arch Linux 官网中关于 Anki 的 wiki 提到了另一个同类项目 org-drill<sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>, 我马上点开，很快啊。秉持着“ALL IN ONE”的理念，马上在 Emacs 上配置来试用，感觉还不错。
+</p>
+
+<p>
+Org-Drill 是 Ord mode 的一个扩展，是一个基于分布复习算法的记背应用，简单说就是用来背东西的。
+</p>
+
+<p>
+个人的 GitLab 项目地址：<a href="https://gitlab.com/phillord/org-drill/" target="_blank">https://gitlab.com/phillord/org-drill/</a>.
+</p>
+
+<p>
+Fork 到 GitHub 的仓库地址：<a href="https://github.com/louietan/org-drill" target="_blank">https://github.com/louietan/org-drill</a>.
+</p>
+
+<p>
+文档就在项目里边，写得还是比较详细。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org933d197" class="outline-2">
+<h2 id="org933d197">安装配置</h2>
+<div class="outline-text-2" id="text-org933d197">
+<p>
+可以通过 MELPA 安装，直接 <code>M-x package-install RET org-drill RET</code>, 或者克隆仓库到本地。
+</p>
+
+<p>
+简单配置：
+</p>
+
+<div class="org-src-container">
+<pre><code class="language-lisp">(require 'org-drill)
+(require 'org-drill-anki)
+
+  ;;; config
+(setq org-drill-maximum-items-per-session 40
+      org-drill-maximum-duration 30    ; 30 minutes
+      ;; org-drill-scope 'directory
+      )
+
+(defalias 'destructuring-bind 'cl-destructuring-bind)</code></pre>
+</div>
+
+<p>
+我在使用过程中会发现它报找不到 <code>destructuring-bind</code> 函数的错，然后发现这个函数现在加了个前缀 <code>cl-destructuring-bind</code>, 所以写一个昵称。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgae522ac" class="outline-2">
+<h2 id="orgae522ac">使用</h2>
+<div class="outline-text-2" id="text-orgae522ac">
+<p>
+它提供了多种卡片的类型，有普通型、填空型、双面型等，当然也支持自定义。因为是我用来背单词的，只需要用普通型的就好，有需要的可以参考文档的配置。
+</p>
+</div>
+
+<div id="outline-container-orged54e69" class="outline-3">
+<h3 id="orged54e69">卡片内容</h3>
+<div class="outline-text-3" id="text-orged54e69">
+<p>
+卡片是写在一个 <code>.org</code> 文件内：
+</p>
+
+
+<figure id="org038e80c">
+
+
+</figure>
+
+<p>
+一个带有 <code>drill</code> 标签的标题就是一张卡片， <b>它的第一个标题</b> 就是答案。问题和答案的标题无所谓，其文本是标题下的文本。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org03fb996" class="outline-3">
+<h3 id="org03fb996">如何开始</h3>
+<div class="outline-text-3" id="text-org03fb996">
+<p>
+在当前 buffer 下，执行 <code>org-drill</code> (<code>M-x org-drill RET</code>) 。它首先会读取数据，然后进入到 <code>drill session</code>.
+</p>
+
+<p>
+其他的标题都会被收起来，只留下一个打了 <code>drill</code> 的标签（也就是要背的）。问题的文本会展示： forever 和它的音标 -&#x2013;&#x2014; 这里音标被隐藏了，估计是因为我用了中括号。
+</p>
+
+
+<figure id="org83dc879">
+
+
+</figure>
+
+<p>
+按下 <b>任意键</b> ，答案就会显示。这时你会被询问记忆情况，从 0-5 打分。按下之后会记录到 <code>.org</code> 文件中，接着是下一张卡片。
+</p>
+
+
+<figure id="org1772693">
+
+
+</figure>
+
+<p>
+可以使用的按键：
+</p>
+<ul class="org-ul">
+<li><code>?</code> 查看分数的标准（按 <code>q</code> 返回）</li>
+<li><code>t</code> 改当前卡片的标签，然后继续学习</li>
+<li><code>q</code> 暂停学习，可通过 <code>org-drill-resume</code> 继续学习</li>
+<li><code>e</code> 跳转的标题处，可以编辑标题，此时已经退出学习模式了，可通过 <code>org-drill-resume</code> 继续学习</li>
+</ul>
+
+<p>
+各个分数标准为：
+</p>
+<ul class="org-ul">
+<li>0 完全忘记</li>
+<li>1 看到答案后还是要想一会儿（其他的比背单词更抽象的记忆会用的）</li>
+<li>2 看到答案后就想起了</li>
+<li>3 花了一小会儿还是想起来了</li>
+<li>4 稍加思索就想起来</li>
+<li>5 立刻记起</li>
+</ul>
+
+<p>
+其中，0-2 分表示你已经记不到了，接下来还会碰到； 3-5 分表示你记住了，会安排在几天之后复习。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd0437ad" class="outline-3">
+<h3 id="orgd0437ad">读入卡片</h3>
+<div class="outline-text-3" id="text-orgd0437ad">
+<p>
+org-drill 通过一个变量 <code>org-drill-scope</code> 用来指定哪些文件里的内容使用，它的值都是符号（可以是列表），根据文档它有以下类型：
+</p>
+<ul class="org-ul">
+<li><code>file</code> 当前 buffer 的内容，忽略隐藏项目。 <b>默认</b></li>
+<li><code>tree</code> 当前光标的子树</li>
+<li><code>file-no-restriction</code> 当前 buffer ，不论是否为隐藏</li>
+<li><code>file-with-archives</code> 当前 buffer ，且与其有关联的归档文件</li>
+<li><code>agenda</code> 所有 agenda 的文件</li>
+<li><code>agenda-with-archives</code> 所有 agenda 的且关联的改好文件</li>
+<li><code>directory</code> 与当前文件所在目录下的所有 <code>.org</code> 文件</li>
+<li><code>(file1 file2 …)</code> 文件名列表，列出的文件都会被扫描</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org706c941" class="outline-3">
+<h3 id="org706c941">任务量</h3>
+<div class="outline-text-3" id="text-org706c941">
+<div class="org-src-container">
+<pre><code class="language-lisp">(setq org-drill-maximum-items-per-session 40
+        org-drill-maximum-duration 30)</code></pre>
+</div>
+
+<p>
+每次学习的任务量最多不超过 40 张卡片，学习时长最多不超过 30 <b>分钟</b> 。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6ffe64e" class="outline-2">
+<h2 id="org6ffe64e">个人单词库制作</h2>
+<div class="outline-text-2" id="text-org6ffe64e">
+</div>
+<div id="outline-container-orgdbcec5a" class="outline-3">
+<h3 id="orgdbcec5a">单词库</h3>
+<div class="outline-text-3" id="text-orgdbcec5a">
+<p>
+我在网上找了一堆，最后找到了一个词汇列表的项目： <a href="https://github.com/jnoodle/English-Vocabulary-Word-List" target="_blank">GitHub - jnoodle/English-Vocabulary-Word-List: Common English Vocabulary Word List</a>, 它里面提供了单词列表，就是纯单词，没有音标也没有翻译。
+</p>
+
+<p>
+根据另一个大佬的大佬的词典项目：<a href="https://github.com/skywind3000/ECDICT" target="_blank">GitHub - skywind3000/ECDICT: Free English to Chinese Dictionary Database</a>, 给单词列表优化，加上音标和翻译。
+</p>
+
+<p>
+把两个项目都克隆下来，需要用到的分别是单词列表 <code>Oxford 3000.txt</code>, <code>Oxford 5000.txt</code> 和词典工具 <code>stardict.py</code> 以及词库（7z 压缩包）。
+</p>
+
+<p>
+首先合并单词列表，3000 是基础， 5000 是扩展：
+</p>
+
+<div class="org-src-container">
+<pre><code class="language-bash">cat 'Oxford 3000.txt' 'Oxford 5000.txt' > Oxfort.txt</code></pre>
+</div>
+
+<p>
+写一个 Python 脚本，用来读取单词列表，在词库中查询它的翻译：
+</p>
+
+<div class="org-src-container">
+<pre><code class="language-python">from stardict import DictCsv
+import os
+
+dict_file = os.path.expanduser("~/pyfile/ecdict.csv")
+sdict = DictCsv(dict_file)
+
+with open(os.path.expanduser("~/pyfile/Oxford.txt")) as f:
+    lst = f.readlines()
+
+lst = [each.replace("\n", "") for each in lst]
+
+
+# 将文件分成 26 个，a.org, b.org, ...
+for n in range(97,123):
+    char = chr(n)
+
+    filename = os.path.expanduser("~/drill/%s.org" % char)
+    with open(filename, "w") as f:
+        f.write("#+startup: overview\n* English Words: %s\n\n" % char.capitalize())
+        for word in filter(lambda w: w[0] == char, lst):
+            data = sdict.query(word)
+            if not data:
+                continue
+
+            content = "** English :drill:\n" + word +"\n"
+            if data["phonetic"]:
+                content += "/%s/" % data["phonetic"] + "\n"
+                content += "\n"
+
+            content += "*** Chinese\n"
+            content += data["translation"]
+            content += "\n\n"
+
+             f.write(content)</code></pre>
+</div>
+
+<p>
+如果怕词库不够大，去拿这个：<a href="https://github.com/skywind3000/ECDICT-ultimate/releases/tag/1.0.0" target="_blank">https://github.com/skywind3000/ECDICT-ultimate/releases/tag/1.0.0</a>, 修改相应的代码。
+</p>
+
+<p>
+在 Emacs 中配置：
+</p>
+
+<div class="org-src-container">
+<pre><code class="language-lisp">(setq org-drill-scope
+      (directory-files "~/drill/english-words/" t "[^.]"))</code></pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org44de088" class="outline-3">
+<h3 id="org44de088">大文件</h3>
+<div class="outline-text-3" id="text-org44de088">
+<p>
+如果把所有单词都放到一个 <code>.org</code> 文件的话，学习时会非常卡，加载下一张卡片需要很长时间。根据文档建议，把大文件化小，放到一个目录下。这样时间花销就只有初始化的数据加载。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org46793b6" class="outline-2">
+<h2 id="org46793b6">后记</h2>
+<div class="outline-text-2" id="text-org46793b6">
+<p>
+目前暂时不考虑诸如记忆效率参数的调整，也仅用于背单词，如果后续用上了再更新。
+</p>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="text-footnotes" role="doc-endnotes">
+<ol>
+<li id="fn:1">
+<p class="footpara">
+<a href="https://wiki.archlinux.org/title/Anki" target="_blank">Anki - ArchWiki</a>
+<a href="#fnr:1.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status"><script src="/static/highlight/highlight.min.js"></script>
+
+<script>
+window.config={"code": {"header": false,
+"exclude": ["mermaid"]}, }
+</script>
+<script src="/static/style/style.js"></script>
+</div>
+</div>
+<div class="footer">
+<center> The End </center></div>
+</body>
+</html>
