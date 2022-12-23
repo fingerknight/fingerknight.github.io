@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="I choose to see the beauty.">
+<title>GiHub Page + Cloudflare + NameSilo 的域名配置</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noodp">
+<meta name="author" content=" Finger Knight ">
+<meta name="referrer" content="no-referrer"><link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<body>
+<div class="header">
+<div class="home-page">
+<a href="/">手指骑士的病房</a></div><div class="nav">
+<div class="nav item">
+<a href="/tags">标签</a>
+</div>
+<div class="nav item">
+<a href="/archive">归档</a>
+</div>
+<div class="nav item">
+<a href="/about">关于</a>
+</div>
+</div>
+</div>
+<div class="main">
+<div id="preamble" class="status"><div class="toc">
+<h2 class="toc-title"> TOC </h2>
+<nav id="TableOfContents">
+
+<ul>
+<li>
+<a href="#org34b770d"> 简介 </a></li>
+<li>
+<a href="#org9c41f3f"> 域名购买 </a></li>
+<li>
+<a href="#org63c5a57"> 域名配置 </a></li>
+<li>
+<a href="#org68153f0"> Cloudflare 接管 </a>
+<ul>
+<li>
+<a href="#orge7857e6"> 注册站点 </a></li>
+<li>
+<a href="#orgede6641"> 托管域名服务器 </a></li>
+<li>
+<a href="#org2e73e9e"> Cloudflare 域名解析 </a></li>
+<li>
+<a href="#orgfe4c811"> 配置 HTTPS </a></li>
+<li>
+<a href="#org1d3fbcc"> Github Page 自定义域名 </a></li>
+<li>
+<a href="#org2e4b385"> 问题记录 </a>
+<ul>
+<li>
+<a href="#org50c1124"> 301 无限循环 </a></li>
+<li>
+<a href="#org6b17b7b"> 无效 TSL ，状态码返回 526 </a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<h1 class="post-title"> GiHub Page + Cloudflare + NameSilo 的域名配置 </h1>
+<div class="post-date">2022-09-28</div>
+<div class="taglist"><a href="/tag/cloudflare"> #cloudflare </a>
+<a href="/tag/dns"> #dns </a>
+<a href="/tag/githubpage"> #githubpage </a>
+<a href="/tag/namesilo"> #namesilo </a>
+<a href="/tag/site"> #site </a>
+</div>
+</div>
+<div id="content">
+
+<div id="outline-container-org34b770d" class="outline-2">
+<h2 id="org34b770d">简介</h2>
+<div class="outline-text-2" id="text-org34b770d">
+<p>
+先是折腾了一下 GitHub Page 的子项目，目的是可以让博客和其他项目分开（比如我想做的一些教程），分别用不同的模板。详见：<a href="/home/mrdust/Note/Computer/github-page-project">GitHub Page 多项目</a>。
+</p>
+
+<p>
+老早就想有一个自己的域名 —— 主要还是之前用的好友的域名买设备施展魔法，然后发现速度不行，还是得用人家的服务。折腾 GitHub Page 多项目的时候发现有些文章提到子域名，这么一想感觉也挺合适。于是在好友的推荐下给自己的博客买了个域名，这里记录一下过程。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9c41f3f" class="outline-2">
+<h2 id="org9c41f3f">域名购买</h2>
+<div class="outline-text-2" id="text-org9c41f3f">
+<p>
+好友推荐了几个厂商，口碑都不错，如下：
+</p>
+<ul class="org-ul">
+<li><a href="https://www.godaddy.com/">Domain Names, Websites, Hosting &amp; Online Marketing Tools - GoDaddy SG</a></li>
+<li><a href="https://porkbun.com">porkbun.com | An oddly satisfying experience.</a></li>
+<li><a href="https://alldomains.hosting">alldomains.hosting | Web Hosting &amp; 400+ Domains kaufen | 1A Qualität</a></li>
+<li><a href="https://www.namesilo.com/">Cheap Domain Names &amp; Web Hosting Starting at $0.99! | NameSilo</a></li>
+</ul>
+
+<p>
+最终我选择了 <a href="https://www.namesilo.com/">NameSilo</a> ，一个是它比较实惠，二是我在它找到了 <code>.icu</code> 的后缀，我更没有理由不拿。
+</p>
+
+<p>
+购买过程就很简单，注册帐号，搜索域名，认准之后就下单，选择支付宝支付，这就到手了。
+</p>
+
+<p>
+具体可以参考这篇文章：<a href="https://zhuanlan.zhihu.com/p/33921436">Namesilo 域名购买及使用教程（附 Namesilo 优惠码） - 知乎</a>，里面连配置都给说了。
+</p>
+
+<p>
+注意看好价格呀，它一般 <b>首年会优惠</b> ，之后回到正常价格，所以别看人家很便宜，然后直接买个好几年。支付的时候也注意一下，别搞错了。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org63c5a57" class="outline-2">
+<h2 id="org63c5a57">域名配置</h2>
+<div class="outline-text-2" id="text-org63c5a57">
+<p>
+配置也可以参照<a href="#org9c41f3f">域名购买</a>那一章贴出的文章。
+</p>
+
+<p>
+因为 NameSilo 它家的管理界面很老，有些不习惯，不小心就找不到按钮 —— 它按钮藏在很像广告的框框里，并不是我眼睛不好。
+</p>
+
+<p>
+进入域名管理 <code>Manage My Domains</code> ，在右上角那里
+</p>
+
+
+<figure id="orgfe94958">
+<img src="/assets/2022-09-28_15-47-00.png" alt="2022-09-28_15-47-00.png">
+
+</figure>
+
+<p>
+点对应的域名右边那个蓝色小球球。
+</p>
+
+
+<figure id="orgfbe6230">
+<img src="/assets/2022-09-28_15-50-59.png" alt="2022-09-28_15-50-59.png">
+
+</figure>
+
+<p>
+进去之后先把默认的配置删了，然后自己手动配置。
+</p>
+
+<p>
+找到自己的域名要指向的 IP 。比如我是为了用在 GitHub Page 上的，所以先 ping 站点的 GitHub 的 IP ，目前结合网上的资料，现在 GitHub 这 4 个 IP 没变过：
+</p>
+
+
+<figure id="orgeeaaebd">
+<img src="/assets/2022-12-07_22-40-16.png" alt="2022-12-07_22-40-16.png">
+
+</figure>
+
+
+<p>
+选其中一个建一条 <code>A</code> 记录。
+</p>
+
+
+<figure id="org55b09f8">
+<img src="/assets/2022-09-28_16-02-48.png" alt="2022-09-28_16-02-48.png">
+
+</figure>
+
+
+<figure id="org468ca41">
+<img src="/assets/2022-09-28_16-04-14.png" alt="2022-09-28_16-04-14.png">
+
+</figure>
+
+<p>
+我可以再建一条 <code>CNAME</code> 用来指向 <code>example.com</code> 或者 <code>&lt;name&gt;.github.io</code> 。也可以配置两条 <code>A</code> 记录，参考：<a href="https://zhuanlan.zhihu.com/p/86961133">Namesilo DNS 域名解析教程和常见问题解决方法汇总 - 知乎</a>
+</p>
+
+<p>
+至此，域名就配好了。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org68153f0" class="outline-2">
+<h2 id="org68153f0">Cloudflare 接管</h2>
+<div class="outline-text-2" id="text-org68153f0">
+<p>
+虽然是在 NameSilo 注册的域名，但是我想把它托管到 <a href="https://www.cloudflare.com/">Cloudflare</a> 上 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>。
+</p>
+</div>
+
+<div id="outline-container-orge7857e6" class="outline-3">
+<h3 id="orge7857e6">注册站点</h3>
+<div class="outline-text-3" id="text-orge7857e6">
+<p>
+新添加一个站点，把域名填进去，
+</p>
+
+
+<figure id="orgf771983">
+<img src="/assets/2022-09-28_16-14-55.png" alt="2022-09-28_16-14-55.png">
+
+</figure>
+
+<p>
+一系列操作后拿到两条 <code>Name Server</code> (NS) 的记录：
+</p>
+<ul class="org-ul">
+<li><code>chance.ns.cloudflare</code></li>
+<li><code>gloria.ns.cloudflare.com</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgede6641" class="outline-3">
+<h3 id="orgede6641">托管域名服务器</h3>
+<div class="outline-text-3" id="text-orgede6641">
+<p>
+回到 NameSilo ，勾域名前面的勾，然点上面的 <code>Change NameServer</code> （我真的觉得整个页面充斥着一股广告味儿）<sup>[<a id="fnr:2.1" class="footref" href="#fn:2">2</a>]</sup>。
+</p>
+
+
+<figure id="org77653a1">
+<img src="/assets/2022-09-28_16-20-38.png" alt="2022-09-28_16-20-38.png">
+
+</figure>
+
+<p>
+把里面默认的三条记录删掉，然后把 Cloudflare 的两条域名服务器添加。
+</p>
+
+
+<figure id="org17b766d">
+<img src="/assets/2022-12-07_22-44-41.png" alt="2022-12-07_22-44-41.png">
+
+</figure>
+
+<p>
+一旦 Cloudflare 接管之后，原来在 NameSilo的那些记录就用不了了，需要的 CLoudflare 去管理。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2e73e9e" class="outline-3">
+<h3 id="org2e73e9e">Cloudflare 域名解析</h3>
+<div class="outline-text-3" id="text-org2e73e9e">
+<p>
+在 Cloudflare 的 DNS 配置中添加如下记录：
+</p>
+<ul class="org-ul">
+<li>A 记录，名字 <code>你的域名</code> ，地址 <code>185.199.108.153</code></li>
+<li>A 记录，名字 <code>你的域名</code> ，地址 <code>185.199.109.153</code></li>
+<li>A 记录，名字 <code>你的域名</code> ，地址 <code>185.199.110.153</code></li>
+<li>A 记录，名字 <code>你的域名</code> ，地址 <code>185.199.111.153</code></li>
+<li>CNAME 记录，名字 <code>WWW</code> ，目标 <code>&lt;name&gt;.github.io</code>, <code>&lt;name&gt;</code> 是你 GiHub 的名字</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfe4c811" class="outline-3">
+<h3 id="orgfe4c811">配置 HTTPS</h3>
+<div class="outline-text-3" id="text-orgfe4c811">
+<p>
+在 SSl/TLS 里的 Edge Certification 里选上 <code>Always Use HTTPS</code>.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org1d3fbcc" class="outline-3">
+<h3 id="org1d3fbcc">Github Page 自定义域名</h3>
+<div class="outline-text-3" id="text-org1d3fbcc">
+<p>
+最后在 Github Page 设置自定义域名即可。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2e4b385" class="outline-3">
+<h3 id="org2e4b385">问题记录</h3>
+<div class="outline-text-3" id="text-org2e4b385">
+</div>
+<div id="outline-container-org50c1124" class="outline-4">
+<h4 id="org50c1124">301 无限循环</h4>
+<div class="outline-text-4" id="text-org50c1124">
+<p>
+我刚配好 Cloudflare 的时候出现了这个问题，那就是请求域名的时候，放回的全是 HTTP 状态码 301 ，然后跳转的 location 还是当前的链接，最终导致无限重定向。
+</p>
+
+<p>
+这个问题有前辈之前遇到过并记录了，感谢<sup>[<a id="fnr:3.1" class="footref" href="#fn:3">3</a>]</sup>！
+</p>
+
+<p>
+简单说，就是更改一下 Cloudflare 的 HTTPS 的策略。
+</p>
+
+
+<figure id="org43d0acb">
+<img src="/assets/2022-09-28_20-12-53.png" alt="2022-09-28_20-12-53.png">
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org6b17b7b" class="outline-4">
+<h4 id="org6b17b7b">无效 TSL ，状态码返回 526</h4>
+<div class="outline-text-4" id="text-org6b17b7b">
+<p>
+问题情景我忘记截图了，去网上借了一张 <sup>[<a id="fnr:4.1" class="footref" href="#fn:4">4</a>]</sup>
+</p>
+
+
+<figure id="org9e61458">
+<img src="/assets/Cloudflare-error-526-844x.png" alt="Cloudflare-error-526-844x.png">
+
+</figure>
+
+<p>
+折腾了一波，最后找到了答案，感谢前辈们 <sup>[<a id="fnr:5.1" class="footref" href="#fn:5">5</a>]</sup> <sup>, </sup><sup>[<a id="fnr:6.1" class="footref" href="#fn:6">6</a>]</sup> ！
+</p>
+
+<p>
+首先检查 GitHub Page 的设置，在输入了自定义域名之后，下面有个 <code>Enforce HTTPS</code> ，但是我勾不了，旁边有一行解释：
+</p>
+<blockquote>
+<p> Unavailable for your site because your domain is not properly configured to support HTTPS </p></blockquote>
+
+<p>
+但具体没说为什么，给了一个 FAQ 的链接也没说清楚。我去 ping 了我的域名的地址，发现返回的是 Cloudflare 的地址。根据文章的建议，修改 Cloudflare 的域名解析的代理模式，在添加新条目时，它默认是 <code>Proxied</code>, 我把所有的都关了，变成 <code>DNS Only</code>. 等一会儿之后再 ping 就能解析到 Github 的地址上面。
+</p>
+
+
+<figure id="orge0ae0e3">
+<img src="/assets/2022-12-07_23-02-43.png" alt="2022-12-07_23-02-43.png">
+
+</figure>
+
+<p>
+最后，先把 Github Page 之前填写的自定义域名删掉，等 <code>&lt;name&gt;.github.io</code> 能够正常访问之后再重新配一次。然后它提示说正在处理，等个 15 分钟（still 忘记截图），过了一会儿之后再回来就可以勾选 <code>Enforce HTTPS</code> 了。
+</p>
+
+<p>
+这时候再次访问域名就没有 526 错误了。
+</p>
+
+<p>
+（但是我这几个月都没设置，它也好好的，这几天才发现访问不到）
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="text-footnotes" role="doc-endnotes">
+<ol>
+<li id="fn:1">
+<p class="footpara">
+<a href="https://monkeywie.cn/2020/08/20/fast-github-page-with-cloudflare/">使用cloudflare免费加速github page | MonkeyWie's Blog</a>
+<a href="#fnr:1.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+<li id="fn:2">
+<p class="footpara">
+<a href="https://hostdash.com/kb/article/change-namesilo-nameservers/">How To Change Your Nameservers At NameSilo | HostDash</a>
+<a href="#fnr:2.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+<li id="fn:3">
+<p class="footpara">
+<a href="https://vircloud.net/operations/enable-cloudflare-ssl.html#selection-21.17-21.22">如何正确启用 CloudFlare SSL - VirCloud's Blog - Learning&amp;Sharing</a>
+<a href="#fnr:3.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+<li id="fn:4">
+<p class="footpara">
+<a href="https://bobcares.com/blog/how-to-fix-cloudflare-error-526-invalid-ssl-certificate/">How to fix Cloudflare error 526 – Invalid SSL certificate</a>
+<a href="#fnr:4.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+<li id="fn:5">
+<p class="footpara">
+<a href="https://zhuanlan.zhihu.com/p/494971703">cloudflare解析域名 - 知乎</a>
+<a href="#fnr:5.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+<li id="fn:6">
+<p class="footpara">
+<a href="https://cloud.tencent.com/developer/news/381127">自定义域名Github Page 博客Hugo配置 https - 腾讯云开发者社区-腾讯云</a>
+<a href="#fnr:6.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status"><script>
+window.config={}
+</script>
+<script src="/static/style/style.js"></script>
+</div>
+</div>
+<div class="footer">
+<center> The End </center></div>
+</body>
+</html>

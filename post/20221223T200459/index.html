@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="I choose to see the beauty.">
+<title>[Emacs] EMMS: 媒体播放器</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noodp">
+<meta name="author" content=" Finger Knight ">
+<meta name="referrer" content="no-referrer"><link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<body>
+<div class="header">
+<div class="home-page">
+<a href="/">手指骑士的病房</a></div><div class="nav">
+<div class="nav item">
+<a href="/tags">标签</a>
+</div>
+<div class="nav item">
+<a href="/archive">归档</a>
+</div>
+<div class="nav item">
+<a href="/about">关于</a>
+</div>
+</div>
+</div>
+<div class="main">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/highlight/dracula.css"><div class="toc">
+<h2 class="toc-title"> TOC </h2>
+<nav id="TableOfContents">
+
+<ul>
+<li>
+<a href="#org936974e"> 简介 </a></li>
+<li>
+<a href="#org8e1d5e9"> 安装 </a></li>
+<li>
+<a href="#org199bb1e"> 快速配置 </a></li>
+<li>
+<a href="#org12d28f8"> 自定义配置 </a>
+<ul>
+<li>
+<a href="#org62555fa"> 后端选择 </a></li>
+<li>
+<a href="#orgf5eccb1"> 本地音乐路径 </a></li>
+<li>
+<a href="#orgab1793c"> 本地音乐管理 </a></li>
+<li>
+<a href="#orgdc0a2e9"> 播放列表 </a>
+<ul>
+<li>
+<a href="#orge75ebae"> 播放列表配置 </a></li>
+<li>
+<a href="#org41e3031"> 播放列表操作 </a></li>
+</ul>
+</li>
+<li>
+<a href="#org5f2413b"> 音量设置 </a></li>
+<li>
+<a href="#orgc7ecc80"> 歌词配置 </a></li>
+<li>
+<a href="#org774c0a2"> 歌词来源 Lyrics-fetcher </a>
+<ul>
+<li>
+<a href="#org35d7cfc"> 曲目元数据的添加和统一 </a></li>
+<li>
+<a href="#orgc445d0f"> 获取音乐元数据 </a></li>
+<li>
+<a href="#org261aa79"> lyrics-fetcher 配置 </a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<h1 class="post-title"> [Emacs] EMMS: 媒体播放器 </h1>
+<div class="post-date">2022-11-19</div>
+<div class="taglist"><a href="/tag/emacs"> #emacs </a>
+<a href="/tag/emms"> #emms </a>
+<a href="/tag/music"> #music </a>
+</div>
+</div>
+<div id="content">
+
+<div id="outline-container-org936974e" class="outline-2">
+<h2 id="org936974e">简介</h2>
+<div class="outline-text-2" id="text-org936974e">
+<p>
+EMMS 全称 Emacs Multimedia System ，即 <b>Emacs 的多媒体系统</b> ，用于在 Emacs 中展示和播放多媒体 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup> ，可以接入多种后端。我把它用来做音乐播放器，离入魔又近了一步。
+</p>
+
+<p>
+EMMS 有非常详细的文档，用于参阅检索：《<a href="https://www.gnu.org/software/emms/manual/">The Emms Manual</a>》。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8e1d5e9" class="outline-2">
+<h2 id="org8e1d5e9">安装</h2>
+<div class="outline-text-2" id="text-org8e1d5e9">
+<p>
+可以直接用 <code>package.el</code> 的 <code>M-x package-install RET emms</code> 来安装，也可以下载到本地，通过 <code>(add-to-list 'load-path "/path/to/emms")</code> 来导入。
+</p>
+
+<p>
+EMMS 的各个模块的功能拆成了许多小型的库，自定义程度高的话可通过一个个库的导入来灵活安排自己的配置。对于懒得折腾的用户， EMMS 提供了一步导入的配置。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org199bb1e" class="outline-2">
+<h2 id="org199bb1e">快速配置</h2>
+<div class="outline-text-2" id="text-org199bb1e">
+<p>
+EMMS 在库 <code>emms-setup</code> 给出了标准配置，可以通过它，直接使用标准配置。
+</p>
+
+<div class="org-src-container">
+<pre><code class="language-lisp">
+(require 'emms-setup)
+
+(emms-minimalistic)
+;; or
+(emms-all)
+
+;; (emms-default-players)
+</code></pre>
+</div>
+
+<ul class="org-ul">
+<li><code>emms-minimalistic</code> 导入最小配置， <code>emms-all</code> 导入标准配置，二者选一个即可。</li>
+<li><code>emms-default-player</code> 用于指明默认后端，最初的状态是没有指明的。 <code>emms-minimalistic</code> 和 <code>emms-all</code> 都调用了这个函数来初始化可选后端。</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org12d28f8" class="outline-2">
+<h2 id="org12d28f8">自定义配置</h2>
+<div class="outline-text-2" id="text-org12d28f8">
+<p>
+我最后选择的是使用自定义的、模块化的配置，顺便学习一下 EMMS 的相关内容。
+</p>
+</div>
+
+<div id="outline-container-org62555fa" class="outline-3">
+<h3 id="org62555fa">后端选择</h3>
+<div class="outline-text-3" id="text-org62555fa">
+<p>
+我的系统是 <a href="https://www.archlinux.org">Arch Linux</a> ，平时用的多媒体播放器是 <a href="https://mpv.io/">mpv</a> -&#x2013;&#x2014; 之前一直是用来播放视频的，它当然也能播放音乐。调用 EMMS 封装的 mpv 相关接口 <sup>[<a id="fnr:1.2" class="footref" href="#fn:1">1</a>]</sup> ：
+</p>
+
+<div class="org-src-container">
+<pre><code class="language-lisp">
+(require 'emms-player-mpv)
+
+(setq-default emms-player-list '(emms-player-mpv)
+              emms-player-mpv-environment '("PULSE_PROP_media.role=music")
+              emms-player-mpv-parameters '("--quiet" "--really-quiet"
+                                           "--no-audio-display" "--force-window=no" "--vo=null"))
+</code></pre>
+</div>
+
+<p>
+EMMS 支持的后端蛮多的，有 ogg123, mpg321, mpv, vlc 等，其余后端可以去参考手册的配置。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf5eccb1" class="outline-3">
+<h3 id="orgf5eccb1">本地音乐路径</h3>
+<div class="outline-text-3" id="text-orgf5eccb1">
+<p>
+我转用本地音乐的原因就是 <b>稳定</b> 。之前尝试过的音乐软件有：
+</p>
+<ul class="org-ul">
+<li><a href="https://github.com/qier222/YesPlayMusic">YesPlayMusic</a>, 高颜值的第三方网易云音乐客户端</li>
+<li><a href="https://listen1.github.io/listen1/">Listen 1</a>, 整合多平台的音乐客户端</li>
+<li><a href="https://github.com/feeluown/FeelUOwn">FeelUOwn</a>, Python 写的音乐客户端，比较生猛，把各个平台以及各种功能分为插件，折腾起来还不错</li>
+</ul>
+
+<p>
+用的时候都是实时去各大音乐平台的接口请求，然后由于各种版权和会员的原因，很多音乐都无法播放或者返回的资源是一些听感不妥的 Live 版本，最终决定把音乐保存到本地。之前一直没落实是怕占空间，结果弄完发现才 2G 左右，所以归根结底还是 <b>懒</b> ……
+</p>
+
+<p>
+既然我都用本地音乐了，为什么不用更简单的播放器呢？所以就尝试了使用 EMMS 的想法 &#x2013; 虽然配置以及下载花了一天的时间。
+</p>
+
+<p>
+下面是关于本地音乐路径寻找的配置：
+</p>
+<div class="org-src-container">
+<pre><code class="language-lisp">
+(require 'emms-source-file)
+
+(setq-default emms-source-file-default-directory "~/Music/")
+</code></pre>
+</div>
+<p>
+有一个可选变量 <code>emms-source-file-directory-tree-function</code>, 这个变量指定了读取本地音乐的函数，它的默认值是 <code>emms-source-file-directory-tree-internal</code>, 有个备选 <code>emms-source-file-directory-tree-find</code> ，前者速度慢一些，后者速度更快，但是需要有 GNU 的 <code>find</code> 命令。
+</p>
+
+<p>
+你也可以自定义这样一个函数，然后通过 <code>(setq-default emms-source-file-directory-tree-function your-func)</code> 配置。它传入两个参数，第一个是 <code>dir</code> ，即扫描的目录；第二个是 <code>regex</code> ，一个正则匹配样式，扫描出的文件需要符合才会纳入。你可以通过这个来自定义一些子目录或者屏蔽一些类型的文件。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgab1793c" class="outline-3">
+<h3 id="orgab1793c">本地音乐管理</h3>
+<div class="outline-text-3" id="text-orgab1793c">
+<p>
+在默认目录 <code>emms-source-file-default-directory</code> 下，建立子目录， <b>每个子目录代表一张歌单</b> ，每个歌单放入相应的本地音乐文件。我写了一个用于快速切换歌单的函数，依赖是 <a href="https://github.com/rejeep/f.el">f.el</a>, 一组与文件目录相关的 API ：
+</p>
+<div class="org-src-container">
+<pre><code class="language-lisp">
+(defun emms-switch-playlist ()
+  "Switch to a new playlist, selected from `emms-source-file-default-directory',
+and start playing immediately."
+  (interactive)
+  ;; 如果播放列表打开了，那么先关闭
+  (when (get-buffer emms-playlist-buffer-name)
+    (kill-buffer emms-playlist-buffer-name))
+
+  ;; 添加目录下的音乐文件到播放列表
+  (emms-add-directory
+   (f-expand
+    ;; 选择歌单
+    (completing-read "Switch to: "
+                     (-map #'f-base
+                           (f-directories
+                            emms-source-file-default-directory
+                            #'(lambda (dir)
+                                ;; 这里排除了 lyrics 目录
+                                ;; 它是用来存放歌词文件的
+                                (not (member (f-base dir) '("lyrics")))))))
+    emms-source-file-default-directory))
+  ;; 随机打乱播放列表
+  (emms-shuffle)
+  ;; 重新打开播放列表的 buffer
+  (switch-to-buffer-other-window emms-playlist-buffer-name)
+  ;; 开始播放
+  (emms-playlist-mode-play-smart))
+</code></pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdc0a2e9" class="outline-3">
+<h3 id="orgdc0a2e9">播放列表</h3>
+<div class="outline-text-3" id="text-orgdc0a2e9">
+</div>
+<div id="outline-container-orge75ebae" class="outline-4">
+<h4 id="orge75ebae">播放列表配置</h4>
+<div class="outline-text-4" id="text-orge75ebae">
+<p>
+播放列表 <b>本质上就是一个 buffer</b> ，它把列表中的曲目打印到该 buffer 中，设置其为不可写并创生新的键盘映射。因此理论上说，可以打开多个播放列表，每个播放列表对应不同的歌单。不过似乎没什么必要。
+</p>
+
+<div class="org-src-container">
+<pre><code class="language-lisp">
+(require 'emms-browser)
+
+(setq-default
+ ;; 使当前播放的曲目居中于播放列表
+ emms-playlist-mode-center-when-go t
+ ;; 播放列表的 buffer 的 mode
+ emms-playlist-default-major-mode 'emms-playlist-mode
+ ;; 播放列表的 buffer 的名字
+ emms-playlist-buffer-name "*Music*"
+
+ emms-track-description-function (lambda (track)
+                                   "Function for describing an EMMS track"
+                                   (let ((name (f-base (emms-track-name track))))
+                                     (seq-let (artist title) (split-string name " - ")
+                                       (format "%s - %s" title artist))))
+)
+</code></pre>
+</div>
+
+<p>
+<code>emms-track-description-function</code> 是曲目在播放列表中的显示函数，传入 <code>track</code> ，一个 ALIST, 装有歌曲的各种信息。它原本会把整个歌曲的本地路径输出，形如： <code>/home/user/Music/love/Linkin Park - In the End.mp3</code>, 过于抽象。再按照我的习惯把歌曲名字放前面，变成： <code>In the End - Linkin Park</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org41e3031" class="outline-4">
+<h4 id="org41e3031">播放列表操作</h4>
+<div class="outline-text-4" id="text-org41e3031">
+<p>
+这里列举了一部分，更多的参见手册：<a href="https://www.gnu.org/software/emms/manual/#Interactive-Playlists">https://www.gnu.org/software/emms/manual/#Interactive-Playlists</a>
+</p>
+<ul class="org-ul">
+<li><code>n</code>, 播放下一首</li>
+<li><code>p</code>, 播放上一首</li>
+<li><code>RET</code>, 播放光标所在行的曲目</li>
+<li><code>&gt;</code>, 快进 10s</li>
+<li><code>&lt;</code>, 倒退 10s</li>
+<li><code>d</code>, 将光标所在行的曲目移出播放列表</li>
+<li><code>P</code>, 暂停播放</li>
+<li><code>s</code>, 停止播放</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5f2413b" class="outline-3">
+<h3 id="org5f2413b">音量设置</h3>
+<div class="outline-text-3" id="text-org5f2413b">
+<p>
+配置：
+</p>
+<div class="org-src-container">
+<pre><code class="language-lisp">
+(require 'emms-volume)
+
+(global-set-key (kbd "C-c +") 'emms-volume-mode-plus)
+(global-set-key (kbd "C-c -") 'emms-volume-mode-minus)
+
+;; (setq-default emms-volume-change-amount 2
+              ;; emms-volume-mode-timeout 2)
+
+</code></pre>
+</div>
+
+<p>
+这两个全局快捷键用于调高、降低音量。可以通过 <code>C-c + + +</code> 来增加 3 次音量，或 <code>C-c - - - - -</code> 来降低 5 次音量。以增加音量举例，它的工作过程是：先使用 <code>C-c +</code> 即 <code>emms-volume-mode-plus</code> 来增加一次音量，并临时将当前的 mode 改为一个全新的 plus-mode ；在这个模式下， <code>+</code> 绑定到增加音量，按了之后便可以继续增加，同时刷新当前模式的生存时间；如果不再按 <code>+</code> ，过了生存时间后退出这个模式。
+</p>
+
+<p>
+可以通过 <code>emms-volume-mode-timeout</code> 来指定 plus-mode 的生存时间，默认是 2s 。
+</p>
+
+<p>
+此外，可以通过设置 <code>emms-volume-change-amount</code> 来表明每次增加或降低的音量的百分比，默认是 2 ，也就是每次调整 2% 。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc7ecc80" class="outline-3">
+<h3 id="orgc7ecc80">歌词配置</h3>
+<div class="outline-text-3" id="text-orgc7ecc80">
+<p>
+基本配置：
+</p>
+<div class="org-src-container">
+<pre><code class="language-lisp">
+(require 'emms-lyrics)
+
+(setq-default
+ ;; 歌词文件存放路径
+ emms-lyrics-dir "~/Music/lyrics"
+ ;; 歌词显示在 minibuffer
+ emms-lyrics-display-on-minibuffer t
+ ;; 歌词不滚动
+ emms-lyrics-scroll-p nil)
+
+;; 开启歌词
+(emms-lyrics 1)
+</code></pre>
+</div>
+
+<p>
+配置里面可以让歌词显示在 minibuffer 或状态栏，分别设置 <code>emms-lyrics-display-on-minibuffer</code> / <code>emms-lyrics-display-on-modeline</code> 为 <code>t</code> 或 <code>nil</code>.
+</p>
+
+<p>
+我看配置可以配置一个单独的 buffer 来显示歌词，但是我没配成功，我选择了在 minibuffer 。
+</p>
+
+<p>
+歌词文件与歌曲同名（后缀不同），放在 <code>emms-lyrics-dir</code> 目录下即可。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org774c0a2" class="outline-3">
+<h3 id="org774c0a2">歌词来源 Lyrics-fetcher</h3>
+<div class="outline-text-3" id="text-org774c0a2">
+<p>
+我用的是一个在论坛 <sup>[<a id="fnr:2.1" class="footref" href="#fn:2">2</a>]</sup> 里看到的前辈分享的包 <a href="https://github.com/SqrtMinusOne/lyrics-fetcher.el">lyrics-fetcher</a> 来获取歌词，目前他可以从 <a href="https://docs.genius.com/">genius.com</a> 或者网易云音乐获取，我用的是后者，它更容易找到中文歌的歌词。
+</p>
+
+<p>
+安装过程参见其文档。
+</p>
+
+<div class="admonition" id="org7375fe8">
+<p>
+lyrics-fetcher 并不可靠
+</p>
+
+</div>
+
+<p>
+lyrics-fetcher 根据歌曲的元数据去查歌词，因此需要保证歌曲有元数据。
+</p>
+</div>
+
+<div id="outline-container-org35d7cfc" class="outline-4">
+<h4 id="org35d7cfc">曲目元数据的添加和统一</h4>
+<div class="outline-text-4" id="text-org35d7cfc">
+<p>
+我用的是 Python 的 <a href="https://mutagen.readthedocs.io/">mutagen</a> 库来编辑曲目的元数据。
+</p>
+<div class="org-src-container">
+<pre><code class="language-bash">
+pip install mutagen
+</code></pre>
+</div>
+
+<p>
+把歌曲的保存成 <code>歌手 - 歌名.mp3</code> 的格式，然后执行：
+</p>
+<div class="org-src-container">
+<pre><code class="language-python">
+import os
+import mutagen
+from mutagen.id3 import ID3, TIT2, TALB, TPE1, TPE2
+
+path = os.path.expanduser("~/Music/")
+
+for pl in os.listdir(path):
+    current_playlist = os.path.join(path, pl)
+    lst = os.listdir(current_playlist)
+
+    for each in lst:
+        base, ext = os.path.splitext(each)
+        artist, title = base.split(" - ")
+        artist = artist.strip()
+        title = title.strip()
+        filename = os.path.join(current_playlist, each)
+        print("%s" % filename)
+        try:
+            audio = ID3(filename)
+        except:
+            meta = mutagen.File(old_filename)
+            meta.add_tags()
+            meta.save()
+            audio = ID3(old_filename)
+
+        audio.add(TALB(encoding=1, text=title))
+        audio.add(TIT2(encoding=1, text=title))
+        audio.add(TPE1(encoding=1, text=artist))
+        audio.add(TPE2(encoding=1, text=artist))
+        audio.save()
+</code></pre>
+</div>
+
+<p>
+它会遍历本地音乐目录下的子目录，即歌单中的所有音乐文件，修改其元数据，主要改的是歌名和歌手。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc445d0f" class="outline-4">
+<h4 id="orgc445d0f">获取音乐元数据</h4>
+<div class="outline-text-4" id="text-orgc445d0f">
+<p>
+EMMS 提供了几种工具的接口，参见：<a href="https://www.gnu.org/software/emms/manual/#Track-Information">https://www.gnu.org/software/emms/manual/#Track-Information</a>.
+</p>
+
+<p>
+我选用的是 <a href="https://pypi.org/project/tinytag/">tinytag</a>. 安装： <code>pip install tinytag</code>.
+</p>
+
+<p>
+然后是 Emacs 的配置。
+</p>
+<div class="org-src-container">
+<pre><code class="language-lisp">
+(require 'emms-info-tinytag)
+
+(setq-default
+ ;; 同步获取音乐元信息
+ emms-info-asynchronously nil
+ ;; 音乐信息获取后端后端
+ emms-info-functions '(emms-info-tinytag))
+
+;; 获取音乐列表同时获取元信息
+(add-to-list 'emms-track-initialize-functions #'emms-info-initialize-track)
+
+</code></pre>
+</div>
+
+<p>
+注意的就是 <code>emms-info-asynchronously</code> 一定要是 <code>nil</code>, 也就是阻塞式读取元数据，否则 lyrics-fetcher 无法正常工作 -&#x2013;&#x2014; 异步读取， lyrics-fetcher 要获取歌词时歌曲的元数据信息还是空，所以会获取不到。
+</p>
+
+<p>
+这样的话，在读取歌单时会小卡一下，取决歌单曲目数量。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org261aa79" class="outline-4">
+<h4 id="org261aa79">lyrics-fetcher 配置</h4>
+<div class="outline-text-4" id="text-org261aa79">
+<p>
+最后就是 lyrics-fetcher 的配置了。
+</p>
+<div class="org-src-container">
+<pre><code class="language-lisp">
+(require 'lyrics-fetcher)
+
+;; 歌词存放目录
+;; (setq lyrics-fetcher-lyrics-folder "~/Music/lyrics")
+
+;; 歌词获取后端：网易云
+(lyrics-fetcher-use-backend 'neteasecloud)
+
+;; 播放歌曲前获取歌词
+(add-hook 'emms-player-started-hook
+          #'(lambda ()
+              (lyrics-fetcher-show-lyrics nil
+                                          :suppress-open t
+                                          :suppress-switch nil)))
+</code></pre>
+</div>
+
+<p>
+这样一来，每次播放歌曲的时候就是去拿歌词存到本地，下次就会直接调用。
+</p>
+
+<p>
+lyrics-fetcher 还可以下封面，更多操作可以去看文档。我是走的极简，所以不用封面。
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="text-footnotes" role="doc-endnotes">
+<ol>
+<li id="fn:1">
+<p class="footpara">
+<a href="https://www.gnu.org/software/emms/">GNU Emms</a>
+<a href="#fnr:1.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+<a href="#fnr:1.2" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+<li id="fn:2">
+<p class="footpara">
+<a href="https://emacs-china.org/t/lyrics-fetcher/18246">[插件推荐] lyrics-fetcher - Emacs-general - Emacs China</a>
+<a href="#fnr:2.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status"><script src="/static/highlight/highlight.min.js"></script>
+
+<script>
+window.config={"code": {"header": false,
+"exclude": ["mermaid"]}, }
+</script>
+<script src="/static/style/style.js"></script>
+</div>
+</div>
+<div class="footer">
+<center> The End </center></div>
+</body>
+</html>
