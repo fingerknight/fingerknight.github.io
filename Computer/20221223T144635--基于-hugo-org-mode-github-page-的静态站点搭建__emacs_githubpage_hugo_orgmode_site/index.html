@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="I choose to see the beauty.">
+<title>基于 Hugo + Org Mode + Github Page 的静态站点搭建</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noodp">
+<meta name="author" content=" Finger Knight ">
+<meta name="referrer" content="no-referrer"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<body>
+<div class="header">
+<div class="home-page">
+<a href="/">手指骑士的病房</a></div><div class="nav">
+<div class="nav item">
+<a href="/tags">标签</a>
+</div>
+<div class="nav item">
+<a href="/archive">归档</a>
+</div>
+<div class="nav item">
+<a href="/about">关于</a>
+</div>
+</div>
+</div>
+<div class="main">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/highlight/dracula.css"><div class="toc">
+<h2 class="toc-title"> TOC </h2>
+<nav id="TableOfContents">
+
+<ul>
+<li>
+<a href="#orgdd9c6df"> 简介 </a></li>
+<li>
+<a href="#org1ed92be"> 工具 </a></li>
+<li>
+<a href="#org58f2d2c"> 搭建流程 </a>
+<ul>
+<li>
+<a href="#orgecc1cc5"> 安装 Hugo </a></li>
+<li>
+<a href="#orged7abd2"> Github Page 配置 </a></li>
+<li>
+<a href="#orgfc7f2be"> Hugo 使用 </a></li>
+<li>
+<a href="#org4652219"> 项目目录修改 </a></li>
+<li>
+<a href="#org39600c1"> Hugo 主题 </a></li>
+<li>
+<a href="#orgdb3a678"> 我的 Hugo 配置 </a>
+<ul>
+<li>
+<a href="#org6dc35aa"> 关于资源目录 </a></li>
+</ul>
+</li>
+<li>
+<a href="#org3c646df"> 安装 ox-hugo </a></li>
+<li>
+<a href="#org49143c6"> ox-hugo 使用 </a></li>
+<li>
+<a href="#org6a63428"> 设置评论 </a>
+<ul>
+<li>
+<a href="#org9096f0a"> LoveIt 的 Bug </a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#orgf73b0e6"> 工作流程 </a></li>
+<li>
+<a href="#org5353dc9"> 自动化 </a></li>
+<li>
+<a href="#orgf90db3a"> 优化 </a>
+<ul>
+<li>
+<a href="#orgb34a2d8"> CDN 设置 </a></li>
+<li>
+<a href="#orgf5e0584"> Cloudflare Page </a></li>
+<li>
+<a href="#org7a28ddb"> Cloudflare + DNS </a></li>
+</ul>
+</li>
+<li>
+<a href="#orgf58de48"> 后记 </a></li>
+</ul>
+</nav>
+</div>
+<h1 class="post-title"> 基于 Hugo + Org Mode + Github Page 的静态站点搭建 </h1>
+<div class="post-date">2022-09-10</div>
+<div class="taglist"><a href="/tag-emacs/"> #emacs </a>
+<a href="/tag-githubpage/"> #githubpage </a>
+<a href="/tag-hugo/"> #hugo </a>
+<a href="/tag-orgmode/"> #orgmode </a>
+<a href="/tag-site/"> #site </a>
+</div>
+</div>
+<div id="content">
+
+<div id="outline-container-orgdd9c6df" class="outline-2">
+<h2 id="orgdd9c6df">简介</h2>
+<div class="outline-text-2" id="text-orgdd9c6df">
+<p>
+现在已经全面转战 Emacs 和 Org Mode 了，想搭个人博客，折腾了很久。这里记录搭建思路和过程，供参考。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1ed92be" class="outline-2">
+<h2 id="org1ed92be">工具</h2>
+<div class="outline-text-2" id="text-org1ed92be">
+<ul class="org-ul">
+<li>Emacs + Org Mode</li>
+<li>Hugo 静态站点生成制作</li>
+<li>ox-hugo 将 org 文件转换成 md 文件</li>
+<li>GitHub Page 博客托管平台</li>
+<li>Gitalk 博客评论，基于 GitHub 的 Issue</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org58f2d2c" class="outline-2">
+<h2 id="org58f2d2c">搭建流程</h2>
+<div class="outline-text-2" id="text-org58f2d2c">
+<p>
+假定已经安装了 <b>Emacs</b> 和 <b>Git</b> 。
+</p>
+</div>
+
+<div id="outline-container-orgecc1cc5" class="outline-3">
+<h3 id="orgecc1cc5">安装 Hugo</h3>
+<div class="outline-text-3" id="text-orgecc1cc5">
+<p>
+官方的下载页面在这里 <a href="https://gohugo.io/getting-started/installing">https://gohugo.io/getting-started/installing</a> ，根据自己的系统去安装即可。
+</p>
+
+<div class="org-src-container">
+<pre><code class="language-bash"> sudo pacman -S hugo
+ </code></pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orged7abd2" class="outline-3">
+<h3 id="orged7abd2">Github Page 配置</h3>
+<div class="outline-text-3" id="text-orged7abd2">
+<p>
+首先，新建一个仓库，仓库名必须是 <code>&lt;Name&gt;.github.io</code> ， <code>&lt;Name&gt;</code> 是的 github 的昵称。
+</p>
+
+
+<figure id="org3c5165c">
+<img src="/assets/2022-09-10_15-00-13.png" alt="2022-09-10_15-00-13.png">
+
+</figure>
+
+<p>
+如果新建时选了自动建 <code>README.md</code> ，就好了。如果没有执行（里面的 <code>Name</code> 是 github 昵称）：
+</p>
+<div class="org-src-container">
+<pre><code class="language-bash"> <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#38543;&#20415;&#19968;&#20010; REMAD.md</span>
+<span style="color: #696C77;">echo</span> <span style="color: #50A14F;">"# Just a README"</span> &gt;&gt; README.md
+git init
+git add README.md
+git commit -m <span style="color: #50A14F;">"first commit"</span>
+<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26032;&#22522;&#30784;&#20998;&#25903;</span>
+git branch -M main
+git remote add origin git@github.com:Name/Name.github.io.git
+<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#25552;&#20132;&#21040;&#22522;&#30784;&#20998;&#25903;</span>
+git push -u origin main
+ </code></pre>
+</div>
+
+<p>
+在 <code>Settings</code> 里边，在左边那里点开 <code>Page</code> 。
+</p>
+
+
+<figure id="orgc8fe506">
+<img src="/assets/2022-09-11_15-59-04.png" alt="2022-09-11_15-59-04.png">
+
+</figure>
+
+<p>
+至此 GitHub Page 就搭建好了，等几分钟它那边部署，然后就可以去访问 <code>https://&lt;Name&gt;.github.io/</code> 了（&lt;Name&gt; 是 github 昵称），不过现在应该是 404 ，里面什么东西都还没有。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfc7f2be" class="outline-3">
+<h3 id="orgfc7f2be">Hugo 使用</h3>
+<div class="outline-text-3" id="text-orgfc7f2be">
+<p>
+新建项目， <code>blog</code> 是项目目录。
+</p>
+<div class="org-src-container">
+<pre><code class="language-bash"> hugo new site blog
+ </code></pre>
+</div>
+
+<p>
+然后会生成如下的项目：
+</p>
+<pre class="example" id="org5e0ab96">
+├── blog
+│   ├── archetypes/
+│   ├── config.toml
+│   ├── content/
+│   ├── data/
+│   ├── layouts/
+│   ├── public/
+│   ├── static/
+│   ├── themes/
+</pre>
+<p>
+具体作用如下<sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>：
+</p>
+<ul class="org-ul">
+<li><code>archetypes</code>, 内容模板，可以取参考里面看，暂时不用管。</li>
+<li><code>config.toml</code>, 配置文件，详见<a href="#orgdb3a678">我的 Hugo 配置</a></li>
+<li><code>content</code>, 内容目录，用于存放 md 源文件。</li>
+<li><code>data</code>, 数据模板目录，暂时不用管。</li>
+<li><code>layouts</code>, HTML 模板目录，md 生成 HTML 的模板，有一套单独的语言描述。暂时也不用配。</li>
+<li><code>public</code>, 发布目录，生成的 HTML 会存到这个目录下边。后面需要修改。</li>
+<li><code>themes</code>, 主题目录，用于存放主题相关配置。</li>
+</ul>
+
+<p>
+测试时，进入 <code>blog</code> 目录，使用：
+</p>
+<div class="org-src-container">
+<pre><code class="language-bash"> hugo server
+ </code></pre>
+</div>
+<p>
+然后会开启默认端口，从输出信息中可以看到。从浏览器访问就能看到。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4652219" class="outline-3">
+<h3 id="org4652219">项目目录修改</h3>
+<div class="outline-text-3" id="text-org4652219">
+<p>
+克隆仓库：
+</p>
+<div class="org-src-container">
+<pre><code class="language-bash"> <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">blog &#19979;</span>
+git clone git@github.com:&lt;Name&gt;/&lt;Name&gt;.github.io.git project
+ </code></pre>
+</div>
+<p>
+在 <code>blog/project</code> 目录下新目录存放 org 源码的目录（手动建）：
+</p>
+<pre class="example" id="org5fd6077">
+├── project
+│   ├── assets/
+│   ├── posts/
+</pre>
+<p>
+org 文件就放在 <code>blog/project/posts</code> 下，静态资源就放在 <code>blog/project/assets</code> 下。
+</p>
+
+<p>
+因为 Github Page 只能选 <code>/</code> 根目录或者 <code>/docs</code> 目录作为站点目录，所以需要在配置中把站点输出目录修改一下。在<a href="#orgdb3a678">我的 Hugo 配置</a>那里我会说的。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org39600c1" class="outline-3">
+<h3 id="org39600c1">Hugo 主题</h3>
+<div class="outline-text-3" id="text-org39600c1">
+<p>
+主题可以去官网上找 <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a> ，我参考的是前辈用的 <a href="https://github.com/dillonzq/LoveIt">LoveIt</a> <sup>[<a id="fnr:2.1" class="footref" href="#fn:2">2</a>]</sup>，功能强大，界面美观，且不会太花哨。
+</p>
+
+<p>
+先找到主题的 github 仓库 <a href="https://github.com/dillonzq/LoveIt">https://github.com/dillonzq/LoveIt</a>，然后把它作为 hugo 项目的子模块
+</p>
+<div class="org-src-container">
+<pre><code class="language-bash"> <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#22312; blog &#30446;&#24405;&#19979;&#25805;&#20316;</span>
+git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
+ </code></pre>
+</div>
+<p>
+或者直接克隆也可以。
+</p>
+
+<p>
+配置信息：<a href="https://hugoloveit.com/zh-cn/theme-documentation-basics/#basic-configuration">基础配置</a>，<a href="https://hugoloveit.com/zh-cn/theme-documentation-basics/#3-%E9%85%8D%E7%BD%AE">完整配置</a>。
+</p>
+
+<p>
+复制之后直接贴到 <code>config.toml</code> 即可。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdb3a678" class="outline-3">
+<h3 id="orgdb3a678">我的 Hugo 配置</h3>
+<div class="outline-text-3" id="text-orgdb3a678">
+<p>
+配置文件可以说三种类型： <code>toml</code>, <code>yaml</code> 和 <code>json</code> ，我用的是 <code>yaml</code> ，简洁；把 LoveIt 官网给的完整配置转成 <code>yaml</code> ，然后手动调整，参考如下。
+</p>
+
+<p>
+因为配置里面可能会用到密钥什么的，因此不建议公开到 GitHub 上边，所以只上传 <b>Org 源码</b>, <b>静态文件</b> 和 <b>站点文件</b> 。如下所示:
+</p>
+
+<pre class="example" id="org64cc23c">
+├── project
+│   ├── assets/   # 存放静态文件
+│   ├── posts/    # 存放 org 
+│   ├── docs/     # 站点文件
+</pre>
+
+<p>
+在 GitHub Page 的设置中把分支那里的目录设置成 <code>/docs</code> （只能是 <code>/(root)</code> 或 <code>/docs</code> ），配置文件中修改输出目录 <code>publishDir</code> 为 <code>project/docs</code> ，以适配 Github Page  ， <code>public</code> 目录就可以不要了，我把这个设置放到了第一行。
+</p>
+
+<p>
+这样源码 org 文件和站点代码都可以被托管到 GitHub 上。
+</p>
+
+<p>
+<code>config.yaml</code>
+</p>
+<div class="org-src-container">
+<pre><code class="language-yaml"> <span style="color: #C18401;">publishDir</span>: project/docs
+<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#31449;&#28857;URL</span>
+<span style="color: #C18401;">baseURL</span>: https://fingerknight.github.io/
+<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#40664;&#35748;&#35821;&#35328;</span>
+<span style="color: #C18401;">defaultContentLanguage</span>: zh-cn
+<span style="color: #C18401;">languageCode</span>: zh-CN
+<span style="color: #C18401;">hasCJKLanguage</span>: <span style="color: #50A14F;">true</span>
+<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#20027;&#39064;</span>
+<span style="color: #C18401;">theme</span>: LoveIt
+<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#32593;&#31449;&#26631;&#39064;</span>
+<span style="color: #C18401;">title</span>: &#25163;&#25351;&#39569;&#22763;&#30340;&#30149;&#25151;
+<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#20316;&#32773;</span>
+<span style="color: #C18401;">author</span>:
+  <span style="color: #C18401;">name</span>: Finger Knight
+  <span style="color: #C18401;">email</span>: mrdust1880@outlook.com
+  <span style="color: #C18401;">link</span>: https://fingerknight.github.io/about
+<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#40664;&#35748;&#27599;&#39029;&#21015;&#34920;&#26174;&#31034;&#30340;&#25991;&#31456;&#25968;&#30446;</span>
+<span style="color: #C18401;">paginate</span>: 12
+<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#35895;&#27468;&#20998;&#26512;&#20195;&#21495; [UA-XXXXXXXX-X]</span>
+<span style="color: #C18401;">googleAnalytics</span>: <span style="color: #50A14F;">""</span>
+<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#29256;&#26435;&#25551;&#36848;&#65292;&#20165;&#20165;&#29992;&#20110; SEO</span>
+<span style="color: #C18401;">copyright</span>: <span style="color: #50A14F;">""</span>
+<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#20351;&#29992; robots.txt</span>
+<span style="color: #C18401;">enableRobotsTXT</span>: <span style="color: #50A14F;">true</span>
+<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#20351;&#29992; git &#20449;&#24687;</span>
+<span style="color: #C18401;">enableGitInfo</span>: <span style="color: #50A14F;">false</span>
+<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#20351;&#29992; emoji &#20195;&#30721;</span>
+<span style="color: #C18401;">enableEmoji</span>: <span style="color: #50A14F;">true</span>
+<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#24573;&#30053;&#19968;&#20123;&#26500;&#24314;&#38169;&#35823;</span>
+<span style="color: #C18401;">ignoreErrors</span>: [<span style="color: #50A14F;">"error-remote-getjson"</span>, <span style="color: #50A14F;">"error-missing-instagram-accesstoken"</span>]
+
+<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26631;&#35760;&#35821;&#35328;&#35774;&#32622;</span>
+<span style="color: #C18401;">markup</span>:
+  <span style="color: #C18401;">highlight</span>:
+    <span style="color: #C18401;">noClasses</span>: <span style="color: #50A14F;">false</span>
+    <span style="color: #C18401;">codeFences</span>: <span style="color: #50A14F;">true</span>
+    <span style="color: #C18401;">guessSyntax</span>: <span style="color: #50A14F;">true</span>
+    <span style="color: #C18401;">lineNos</span>: <span style="color: #50A14F;">true</span>
+    <span style="color: #C18401;">lineNumbersInTable</span>: <span style="color: #50A14F;">true</span>
+  <span style="color: #C18401;">goldmark</span>:
+    <span style="color: #C18401;">extensions</span>:
+      <span style="color: #C18401;">definitionList</span>: <span style="color: #50A14F;">true</span>
+      <span style="color: #C18401;">footnote</span>: <span style="color: #50A14F;">true</span>
+      <span style="color: #C18401;">linkify</span>: <span style="color: #50A14F;">true</span>
+      <span style="color: #C18401;">strikethrough</span>: <span style="color: #50A14F;">true</span>
+      <span style="color: #C18401;">table</span>: <span style="color: #50A14F;">true</span>
+      <span style="color: #C18401;">taskList</span>: <span style="color: #50A14F;">true</span>
+      <span style="color: #C18401;">typographer</span>: <span style="color: #50A14F;">true</span>
+    <span style="color: #C18401;">renderer</span>:
+      <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#22312;&#25991;&#26723;&#20013;&#30452;&#25509;&#20351;&#29992; HTML &#26631;&#31614;</span>
+      <span style="color: #C18401;">unsafe</span>: <span style="color: #50A14F;">true</span>
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#30446;&#24405;</span>
+  <span style="color: #C18401;">tableOfContents</span>:
+    <span style="color: #C18401;">startLevel</span>: 2
+    <span style="color: #C18401;">endLevel</span>: 6
+
+<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#32593;&#31449;&#22320;&#22270;&#37197;&#32622;</span>
+<span style="color: #C18401;">sitemap</span>:
+  <span style="color: #C18401;">changefreq</span>: weekly
+  <span style="color: #C18401;">filename</span>: sitemap.xml
+  <span style="color: #C18401;">priority</span>: 0.5
+
+<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">Permalinks &#37197;&#32622;</span>
+<span style="color: #C18401;">Permalinks</span>:
+  <span style="color: #C18401;">posts</span>: <span style="color: #50A14F;">':filename'</span>
+
+<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#36755;&#20986;&#35774;&#32622;</span>
+
+<span style="color: #C18401;">outputs</span>:
+  <span style="color: #C18401;">home</span>:
+    - HTML
+    - JSON
+  <span style="color: #C18401;">page</span>:
+    - HTML
+    - MarkDown
+  <span style="color: #C18401;">section</span>:
+    - HTML
+  <span style="color: #C18401;">taxonomy</span>:
+    - HTML
+  <span style="color: #C18401;">taxonomyTerm</span>:
+    - HTML
+
+<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#35821;&#35328;&#35774;&#32622;</span>
+<span style="color: #C18401;">language</span>:
+  <span style="color: #C18401;">zh-cn</span>:
+    <span style="color: #C18401;">contentDir</span>: content
+    <span style="color: #C18401;">languageName</span>: &#20013;&#25991;
+
+<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#33756;&#21333;&#35774;&#32622;</span>
+<span style="color: #C18401;">menus</span>:
+  <span style="color: #C18401;">main</span>:
+    - <span style="color: #C18401;">identifier</span>: main
+      <span style="color: #C18401;">pre</span>: &lt;i class=<span style="color: #50A14F;">"fa-solid fa-house"</span>&gt;&lt;/i&gt;
+      <span style="color: #C18401;">post</span>: <span style="color: #50A14F;">''</span>
+      <span style="color: #C18401;">name</span>: 
+      <span style="color: #C18401;">url</span>: /
+      <span style="color: #C18401;">title</span>: &#20027;&#39029;
+      <span style="color: #C18401;">weight</span>: 1
+    - <span style="color: #C18401;">identifier</span>: tags
+      <span style="color: #C18401;">pre</span>: &lt;i class=<span style="color: #50A14F;">"fa-solid fa-tags"</span>&gt;&lt;/i&gt;
+      <span style="color: #C18401;">post</span>: <span style="color: #50A14F;">''</span>
+      <span style="color: #C18401;">name</span>: <span style="color: #50A14F;">''</span>
+      <span style="color: #C18401;">url</span>: /tags/
+      <span style="color: #C18401;">title</span>: &#26631;&#31614;
+      <span style="color: #C18401;">weight</span>: 2
+    - <span style="color: #C18401;">identifier</span>: posts
+      <span style="color: #C18401;">pre</span>: &lt;i class=<span style="color: #50A14F;">"fa-solid fa-layer-group"</span>&gt;&lt;/i&gt;
+      <span style="color: #C18401;">post</span>: <span style="color: #50A14F;">''</span>
+      <span style="color: #C18401;">name</span>: <span style="color: #50A14F;">''</span>
+      <span style="color: #C18401;">url</span>: /posts/
+      <span style="color: #C18401;">title</span>: &#24402;&#26723;
+      <span style="color: #C18401;">weight</span>: 3
+    - <span style="color: #C18401;">identifier</span>: about
+      <span style="color: #C18401;">pre</span>: &lt;i class=<span style="color: #50A14F;">"fa-solid fa-bed-pulse"</span>&gt;&lt;/i&gt;
+      <span style="color: #C18401;">post</span>: <span style="color: #50A14F;">''</span>
+      <span style="color: #C18401;">name</span>: <span style="color: #50A14F;">''</span>
+      <span style="color: #C18401;">url</span>: /about
+      <span style="color: #C18401;">title</span>: &#30149;&#21382;
+      <span style="color: #C18401;">weight</span>: 4
+
+
+<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#21442;&#25968;&#35774;&#32622;</span>
+<span style="color: #C18401;">params</span>:
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#32593;&#31449;&#40664;&#35748;&#20027;&#39064;&#26679;&#24335; ["auto", "light", "dark"]</span>
+  <span style="color: #C18401;">defaultTheme</span>: <span style="color: #50A14F;">"auto"</span>
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#21738;&#31181;&#21704;&#24076;&#20989;&#25968;&#29992;&#26469; SRI, &#20026;&#31354;&#26102;&#34920;&#31034;&#19981;&#20351;&#29992; SRI</span>
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">["sha256", "sha384", "sha512", "md5"]</span>
+  <span style="color: #C18401;">fingerprint</span>: <span style="color: #50A14F;">"sha256"</span>
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26085;&#26399;&#26684;&#24335;</span>
+  <span style="color: #C18401;">dateFormat</span>: <span style="color: #50A14F;">"2006-01-02"</span>
+
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#32593;&#31449;&#26631;&#39064;, &#29992;&#20110; Open Graph &#21644; Twitter Cards</span>
+  <span style="color: #C18401;">title</span>: <span style="color: #50A14F;">"&#25163;&#25351;&#39569;&#22763;&#30340;&#30149;&#25151;"</span>
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#32593;&#31449;&#25551;&#36848;, &#29992;&#20110; RSS, SEO, Open Graph &#21644; Twitter Cards</span>
+  <span style="color: #C18401;">description</span>: <span style="color: #50A14F;">"&#30196;&#20154;&#35828;&#26790;"</span>
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#32593;&#31449;&#22270;&#29255;, &#29992;&#20110; Open Graph &#21644; Twitter Cards</span>
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">images:</span>
+  <span style="color: #A0A1A7; font-style: italic;">#   </span><span style="color: #A0A1A7; font-style: italic;">- /logo.png</span>
+
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#39318;&#37096;&#20803;&#32032;</span>
+  <span style="color: #C18401;">header</span>:
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26700;&#38754;&#31471;&#23548;&#33322;&#26639;&#27169;&#24335; ["fixed", "normal", "auto"]</span>
+    <span style="color: #C18401;">desktopMode</span>: fixed
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#31227;&#21160;&#31471;&#23548;&#33322;&#26639;&#27169;&#24335; ["fixed", "normal", "auto"]</span>
+    <span style="color: #C18401;">mobileMode</span>: auto
+    <span style="color: #C18401;">title</span>:
+      <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">logo: /avatar.png</span>
+      <span style="color: #C18401;">name</span>: &#25163;&#25351;&#39569;&#22763;&#30340;&#30149;&#25151;
+      <span style="color: #C18401;">pre</span>: <span style="color: #50A14F;">''</span>
+      <span style="color: #C18401;">post</span>: <span style="color: #50A14F;">''</span>
+      <span style="color: #C18401;">typeit</span>: <span style="color: #50A14F;">false</span>
+
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#23614;&#37096;&#20803;&#32032;</span>
+  <span style="color: #C18401;">footer</span>:
+    <span style="color: #C18401;">enable</span>: <span style="color: #50A14F;">true</span>
+    <span style="color: #C18401;">custom</span>: <span style="color: #50A14F;">''</span>
+    <span style="color: #C18401;">hugo</span>: <span style="color: #50A14F;">true</span>
+    <span style="color: #C18401;">copyright</span>: <span style="color: #50A14F;">true</span>
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#26174;&#31034;&#20316;&#32773;</span>
+    <span style="color: #C18401;">author</span>: <span style="color: #50A14F;">true</span>
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#32593;&#31449;&#21019;&#31435;&#24180;&#20221;</span>
+    <span style="color: #C18401;">since</span>: 2022
+    <span style="color: #C18401;">icp</span>: <span style="color: #50A14F;">''</span>
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#35768;&#21487;&#21327;&#35758;&#20449;&#24687; (&#25903;&#25345; HTML &#26684;&#24335;)</span>
+    <span style="color: #C18401;">license</span>: &lt;a rel=<span style="color: #50A14F;">"license external nofollow noopener noreffer"</span> href=<span style="color: #50A14F;">"https://creativecommons.org/licenses/by-nc/4.0/"</span> target=<span style="color: #50A14F;">"_blank"</span>&gt;CC BY-NC 4.0&lt;/a&gt;
+
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">Section (&#25152;&#26377;&#25991;&#31456;) &#39029;&#38754;&#37197;&#32622;</span>
+  <span style="color: #C18401;">section</span>:
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">section &#39029;&#38754;&#27599;&#39029;&#26174;&#31034;&#25991;&#31456;&#25968;&#37327;</span>
+    <span style="color: #C18401;">paginate</span>: 20
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26085;&#26399;&#26684;&#24335; (&#26376;&#21644;&#26085;)</span>
+    <span style="color: #C18401;">dateFormat</span>: 01-02
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">RSS &#25991;&#31456;&#25968;&#30446;</span>
+    <span style="color: #C18401;">rss</span>: 10
+
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">List (&#30446;&#24405;&#25110;&#26631;&#31614;) &#39029;&#38754;&#37197;&#32622;</span>
+  <span style="color: #C18401;">list</span>:
+    <span style="color: #C18401;">paginate</span>: 20
+    <span style="color: #C18401;">dateFormat</span>: 01-02
+    <span style="color: #C18401;">rss</span>: 10
+
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#20027;&#39029;&#37197;&#32622;</span>
+  <span style="color: #C18401;">home</span>:
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">RSS &#25991;&#31456;&#25968;&#30446;</span>
+    <span style="color: #C18401;">rss</span>: 10
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#20027;&#39029;&#20010;&#20154;&#20449;&#24687;</span>
+    <span style="color: #C18401;">profile</span>:
+      <span style="color: #C18401;">enable</span>: <span style="color: #50A14F;">true</span>
+      <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">gravatarEmail: ''</span>
+      <span style="color: #C18401;">avatarURL</span>: /img/YunRuAvatar.jpg
+      <span style="color: #C18401;">title</span>: <span style="color: #50A14F;">''</span>
+      <span style="color: #C18401;">subtitle</span>: &#30196;&#20154;&#35828;&#26790;
+      <span style="color: #C18401;">typeit</span>: <span style="color: #50A14F;">false</span>
+      <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#26174;&#31034;&#31038;&#20132;&#36134;&#21495;</span>
+      <span style="color: #C18401;">social</span>: <span style="color: #50A14F;">false</span>
+      <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#20813;&#36131;&#22768;&#26126;</span>
+      <span style="color: #C18401;">disclaimer</span>: <span style="color: #50A14F;">''</span>
+      <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#20027;&#39029;&#25991;&#31456;&#21015;&#34920;</span>
+    <span style="color: #C18401;">posts</span>:
+      <span style="color: #C18401;">enable</span>: <span style="color: #50A14F;">true</span>
+      <span style="color: #C18401;">paginate</span>: 5
+      <span style="color: #C18401;">defaultHiddenFromHomePage</span>: <span style="color: #50A14F;">false</span>
+
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#25991;&#31456;&#39029;&#38754;&#20840;&#23616;&#37197;&#32622;</span>
+  <span style="color: #C18401;">page</span>:
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#22312;&#20027;&#39029;&#38544;&#34255;&#19968;&#31687;&#25991;&#31456;</span>
+    <span style="color: #C18401;">hiddenFromHomePage</span>: <span style="color: #50A14F;">false</span>
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#22312;&#25628;&#32034;&#32467;&#26524;&#20013;&#38544;&#34255;&#19968;&#31687;&#25991;&#31456;</span>
+    <span style="color: #C18401;">hiddenFromSearch</span>: <span style="color: #50A14F;">false</span>
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#20351;&#29992; fontawesome &#25193;&#23637;&#35821;&#27861;</span>
+    <span style="color: #C18401;">fontawesome</span>: <span style="color: #50A14F;">true</span>
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#22312; RSS &#20013;&#26174;&#31034;&#20840;&#25991;&#20869;&#23481;</span>
+    <span style="color: #C18401;">rssFullText</span>: <span style="color: #50A14F;">false</span>
+
+    <span style="color: #C18401;">prev</span>: <span style="color: #50A14F;">false</span>
+    <span style="color: #C18401;">next</span>: <span style="color: #50A14F;">false</span>
+    <span style="color: #C18401;">linktomarkdown</span>: <span style="color: #50A14F;">false</span>
+
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#24320;&#21551;&#19978;&#19979;&#31687;</span>
+    <span style="color: #C18401;">nav</span>: <span style="color: #50A14F;">false</span>
+
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#30446;&#24405;</span>
+    <span style="color: #C18401;">toc</span>:
+      <span style="color: #C18401;">enable</span>: <span style="color: #50A14F;">true</span>
+      <span style="color: #A0A1A7; font-style: italic;">#  </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#20445;&#25345;&#20351;&#29992;&#25991;&#31456;&#21069;&#38754;&#30340;&#38745;&#24577;&#30446;&#24405;</span>
+      <span style="color: #C18401;">keepStatic</span>: <span style="color: #50A14F;">false</span>
+      <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#20391;&#36793;&#30446;&#24405;&#33258;&#21160;&#25240;&#21472;&#23637;&#24320;</span>
+      <span style="color: #C18401;">auto</span>: <span style="color: #50A14F;">false</span>
+
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#20195;&#30721;</span>
+    <span style="color: #C18401;">code</span>:
+      <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#26174;&#31034;&#20195;&#30721;&#22359;&#30340;&#22797;&#21046;&#25353;&#38062;</span>
+      <span style="color: #C18401;">copy</span>: <span style="color: #50A14F;">true</span>
+      <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#40664;&#35748;&#23637;&#24320;&#26174;&#31034;&#30340;&#20195;&#30721;&#34892;&#25968;</span>
+      <span style="color: #C18401;">maxShownLines</span>: 50
+
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">KaTeX &#25968;&#23398;&#20844;&#24335;</span>
+    <span style="color: #C18401;">math</span>:
+      <span style="color: #C18401;">enable</span>: <span style="color: #50A14F;">true</span>
+      <span style="color: #C18401;">inlineLeftDelimiter</span>: <span style="color: #50A14F;">''</span>
+      <span style="color: #C18401;">inlineRightDelimiter</span>: <span style="color: #50A14F;">''</span>
+      <span style="color: #C18401;">blockLeftDelimiter</span>: <span style="color: #50A14F;">''</span>
+      <span style="color: #C18401;">blockRightDelimiter</span>: <span style="color: #50A14F;">''</span>
+      <span style="color: #C18401;">copyTex</span>: <span style="color: #50A14F;">true</span>
+      <span style="color: #C18401;">mhchem</span>: <span style="color: #50A14F;">true</span>
+
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#22320;&#22270;</span>
+    <span style="color: #C18401;">mapbox</span>:
+      <span style="color: #C18401;">accessToken</span>: <span style="color: #50A14F;">''</span>
+      <span style="color: #C18401;">lightStyle</span>: <span style="color: #50A14F;">'mapbox://styles/mapbox/light-v10?optimize=true'</span>
+      <span style="color: #C18401;">darkStyle</span>: <span style="color: #50A14F;">'mapbox://styles/mapbox/dark-v10?optimize=true'</span>
+      <span style="color: #C18401;">navigation</span>: <span style="color: #50A14F;">true</span>
+      <span style="color: #C18401;">geolocate</span>: <span style="color: #50A14F;">true</span>
+      <span style="color: #C18401;">scale</span>: <span style="color: #50A14F;">true</span>
+      <span style="color: #C18401;">fullscreen</span>: <span style="color: #50A14F;">true</span>
+
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#20851;&#38381;&#20998;&#20139;</span>
+    <span style="color: #C18401;">share</span>:
+      <span style="color: #C18401;">enable</span>: <span style="color: #50A14F;">false</span>
+
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#35780;&#35770;&#30475;&#21518;&#38754;</span>
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">comment:</span>
+    <span style="color: #A0A1A7; font-style: italic;">#   </span><span style="color: #A0A1A7; font-style: italic;">enable: true</span>
+    <span style="color: #A0A1A7; font-style: italic;">#   </span><span style="color: #A0A1A7; font-style: italic;">gitalk:</span>
+
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#31532;&#19977;&#26041;&#38745;&#24577;&#36164;&#28304;</span>
+    <span style="color: #C18401;">library</span>:
+      <span style="color: #C18401;">css</span>: {<span style="color: #C18401;">}</span>
+<span style="color: #C18401;">      js</span>: {}
+
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#39029;&#38754; SEO &#37197;&#32622;</span>
+    <span style="color: #C18401;">seo</span>:
+      <span style="color: #C18401;">images</span>: []
+      <span style="color: #C18401;">publisher</span>:
+        <span style="color: #C18401;">name</span>: <span style="color: #50A14F;">''</span>
+        <span style="color: #C18401;">logoUrl</span>: <span style="color: #50A14F;">''</span>
+
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">TypeIt &#37197;&#32622;</span>
+  <span style="color: #C18401;">typeit</span>:
+    <span style="color: #C18401;">speed</span>: 100
+    <span style="color: #C18401;">cursorSpeed</span>: 1000
+    <span style="color: #C18401;">cursorChar</span>: <span style="color: #50A14F;">'|'</span>
+    <span style="color: #C18401;">duration</span>: -1
+
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#32593;&#31449; SEO &#37197;&#32622;</span>
+  <span style="color: #C18401;">seo</span>:
+    <span style="color: #C18401;">image</span>: <span style="color: #50A14F;">''</span>
+    <span style="color: #C18401;">thumbnailUrl</span>: <span style="color: #50A14F;">''</span>
+
+  <span style="color: #A0A1A7; font-style: italic;">#  </span><span style="color: #A0A1A7; font-style: italic;">&#31532;&#19977;&#26041;&#24211;&#25991;&#20214;&#30340; CDN &#35774;&#32622;</span>
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">CDN &#25968;&#25454;&#25991;&#20214;&#21517;&#31216;, &#40664;&#35748;&#19981;&#21551;&#29992;</span>
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">["jsdelivr.yml"]</span>
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#20301;&#20110; "themes/LoveIt/assets/data/cdn/" &#30446;&#24405;</span>
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#21487;&#20197;&#22312;&#20320;&#30340;&#39033;&#30446;&#19979;&#30456;&#21516;&#36335;&#24452;&#23384;&#25918;&#20320;&#33258;&#24049;&#30340;&#25968;&#25454;&#25991;&#20214;:</span>
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">"assets/data/cdn/"</span>
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">cdn:</span>
+  <span style="color: #A0A1A7; font-style: italic;">#   </span><span style="color: #A0A1A7; font-style: italic;">data: ''</span>
+
+  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#25628;&#32034;&#35774;&#32622;</span>
+  <span style="color: #C18401;">search</span>:
+    <span style="color: #C18401;">enable</span>: <span style="color: #50A14F;">true</span>
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#25628;&#32034;&#24341;&#25806;&#30340;&#31867;&#22411; ["lunr", "algolia"]</span>
+    <span style="color: #C18401;">type</span>: lunr
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#25991;&#31456;&#20869;&#23481;&#26368;&#38271;&#32034;&#24341;&#38271;&#24230;</span>
+    <span style="color: #C18401;">contentLength</span>: 4000
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#25628;&#32034;&#26694;&#30340;&#21344;&#20301;&#25552;&#31034;&#35821;</span>
+    <span style="color: #C18401;">placeholder</span>: <span style="color: #50A14F;">''</span>
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26368;&#22823;&#32467;&#26524;&#25968;&#30446;</span>
+    <span style="color: #C18401;">maxResultLength</span>: 10
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#32467;&#26524;&#20869;&#23481;&#29255;&#27573;&#38271;&#24230;</span>
+    <span style="color: #C18401;">snippetLength</span>: 50
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#25628;&#32034;&#32467;&#26524;&#20013;&#39640;&#20142;&#37096;&#20998;&#30340; HTML &#26631;&#31614;</span>
+    <span style="color: #C18401;">highlightTag</span>: em
+    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#22312;&#25628;&#32034;&#32034;&#24341;&#20013;&#20351;&#29992;&#22522;&#20110; baseURL &#30340;&#32477;&#23545;&#36335;&#24452;</span>
+    <span style="color: #C18401;">absoluteURL</span>: <span style="color: #50A14F;">false</span>
+
+ </code></pre>
+</div>
+</div>
+
+<div id="outline-container-org6dc35aa" class="outline-4">
+<h4 id="org6dc35aa">关于资源目录</h4>
+<div class="outline-text-4" id="text-org6dc35aa">
+<p>
+假设有个写好了的 md ,位置 <code>content/test.md</code> ，那么它会出现在 <b>站点的根目录</b> ，也就是需要访问 <code>https://yoursite.com/test.md</code> 。
+</p>
+
+<p>
+同理，静态资源是存在 <code>static</code> 下边的，假如你有网站图标和某个 css 在它下边， <code>static/favicon.ico</code> 和 <code>static/test.css</code> ，那么访问的时候是 <code>https://yoursite.com/favicon.ico</code> 和 <code>https://yoursite.com/test.css</code> 。
+</p>
+
+<p>
+所以对于文本中出现的图片，可以新建一个目录 <code>static/assets/</code> ,放在里面，后续访问就是 <code>https://yoursite.com/assets/xx</code> 。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3c646df" class="outline-3">
+<h3 id="org3c646df">安装 ox-hugo</h3>
+<div class="outline-text-3" id="text-org3c646df">
+<p>
+官网的安装页面：<a href="https://ox-hugo.scripter.co/#installation">https://ox-hugo.scripter.co/#installation</a>。
+</p>
+
+<div class="org-src-container">
+<pre><code class="language-emacs-lisp"> <span style="color: #0184BC;">(</span><span style="color: #E45649;">with-eval-after-load</span> 'ox
+  <span style="color: #986801;">(</span><span style="color: #E45649;">require</span> '<span style="color: #50A14F;">ox-hugo</span><span style="color: #986801;">)</span>
+  <span style="color: #986801;">(</span><span style="color: #E45649;">setq</span> org-hugo-base-dir ../blog/<span style="color: #50A14F;">"</span>
+<span style="color: #50A14F;">    ;; org-hugo-section "</span>posts<span style="color: #50A14F;">"</span>
+<span style="color: #50A14F;">    org-hugo-default-static-subdirectory-for-externals "</span>img<span style="color: #50A14F;">"</span>
+<span style="color: #50A14F;">    org-hugo-auto-set-lastmod t</span>
+<span style="color: #50A14F;">    org-hugo-export-with-toc nil)</span>
+<span style="color: #50A14F;">  )</span>
+ </code></pre>
+</div>
+<ul class="org-ul">
+<li><code>org-hugo-base-dir</code>, 项目的根目录</li>
+<li><code>org-hugo-section</code>, 文档的目录，相对于 <code>contnet</code> 而言。如果值是 <code>posts</code> ，它的路径就是 ../blog/content/posts/~ 。这里注释了是因为默认就是 <code>posts</code></li>
+<li><code>org-hugo-auto-set-lastmod</code>, 自动修改“最近更新时间”</li>
+<li><code>org-hugo-export-with-toc</code>, 是是否开启文档目录。这个目录放到文章开头， Hugo 配置里面有目录了，所以不用。</li>
+<li><code>org-hugo-default-static-subdirectory-for-externals</code>, 静态文件的目录，相对于 <code>static</code> 而言。例如它的值是 <code>img</code>, 那么图片就会存在 ../blog/static/img~</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org49143c6" class="outline-3">
+<h3 id="org49143c6">ox-hugo 使用</h3>
+<div class="outline-text-3" id="text-org49143c6">
+<p>
+Org file 的基础配置
+</p>
+<div class="org-src-container">
+<pre><code class="language-org"> <span style="color: #A0A1A7;">title:</span> <span style="color: #191970; font-weight: bold;">&#25991;&#31456;&#26631;&#39064;</span>
+<span style="color: #A0A1A7;">date:</span>  <span style="color: #191970;">2022-09-10 Sat </span>
+<span style="color: #A0A1A7; font-style: italic;">hugo_tags: tags1 tags2</span>
+<span style="color: #A0A1A7; font-style: italic;">hugo_categories: Class</span>
+<span style="color: #A0A1A7; font-style: italic;">hugo_draft: true</span>
+ </code></pre>
+</div>
+
+<p>
+解释如下：
+</p>
+<ul class="org-ul">
+<li><code>title</code>, 文章标题</li>
+<li><code>date</code>, 文章创建日期</li>
+<li><code>hugo_tags</code>, 标签。空格分隔</li>
+<li><code>hugo_categories</code>, 分类</li>
+<li><code>hugo_draft</code>, 是否为草稿，如果是的话，不会发布</li>
+</ul>
+
+<p>
+对于特定文件，可以在文件的头配置里面覆盖掉基础配置。比如“关于”页面 <code>about.org</code> 的内容：
+</p>
+<div class="org-src-container">
+<pre><code class="language-org"> <span style="color: #A0A1A7; font-style: italic;">hugo_base_dir:../blog/</span>
+<span style="color: #A0A1A7; font-style: italic;">hugo_section: ./</span>
+<span style="color: #A0A1A7; font-style: italic;">hugo_auto_set_lastmod: t</span>
+<span style="color: #A0A1A7; font-style: italic;">hugo_custom_front_matter: :toc false</span>
+ </code></pre>
+</div>
+<p>
+这样就使得输出的 <code>about.md</code> 直接在 <code>blog/content/</code> 下面，覆盖了 <code>.emacs</code> 配置里面写的 <code>blog/content/posts</code>
+</p>
+
+<p>
+使用命令 <code>C-c C-e H h</code> ，输出当前文件为 md，这是启动 <code>hugo server</code> 就能看到了。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6a63428" class="outline-3">
+<h3 id="org6a63428">设置评论</h3>
+<div class="outline-text-3" id="text-org6a63428">
+<p>
+<code>LoveIt</code> 主题给出了很多选择，我用的是 Gitalk<sup>[<a id="fnr:3.1" class="footref" href="#fn:3">3</a>]</sup> ，它是基于 Github 的 Issue 模块设计的。它十分太巧妙，用一个 Github 仓库做评论存储 —— 并不是作为 code 来存。对于每个仓库，都有一个 Issue 区域，用来记录问题和反馈。每条 issue 下面都可以评论 —— 本质上 Issue 就是一个评论区，它在 Github 的作用就是反馈问题，用来当博客评论简直舒服（当然，评论者必须登录 GitHub 之后才能评论）。
+</p>
+
+<p>
+首先建立一个 Github App，我找不到在哪里，教程里面的 url 直接跳转：<a href="https://github.com/settings/applications/new">Register GiHub Application</a>.
+</p>
+
+
+<figure id="org956a77f">
+<img src="/assets/2022-09-12_13-18-04.png" alt="2022-09-12_13-18-04.png">
+
+</figure>
+
+<p>
+之后可以到个人设置 - <code>Developer Settings</code> - <code>OAuth Apps</code> 里面管理。
+</p>
+
+<p>
+建好之后会生成一个 <code>Cilent ID</code> 和一个 <code>Client Secrets</code> ，记着。
+</p>
+
+<p>
+然后到 Hugo 的配置里面。如果你用的是我的配置，那么文件就在 <code>params.yaml</code> 里面，如果用的官方单文件配置，找到对应位置即可。
+</p>
+
+<p>
+找到评论这一块，关键词 <code>comment</code> 。 <code>enable</code> 设为 <code>true</code> ，表示开启评论。
+</p>
+
+<p>
+配置 Gitalk ， <code>enable</code> 也设为 <code>true</code> ，然加上几条配置。
+</p>
+
+
+<figure id="orgeb59635">
+<img src="/assets/2022-09-12_13-30-09.png" alt="2022-09-12_13-30-09.png">
+
+</figure>
+
+<ul class="org-ul">
+<li><code>owner</code>, 仓库拥有者，你的 Github 昵称。</li>
+<li><code>admin</code>, 仓库管理者，一个列表，里面也是你的 Github 昵称。</li>
+<li><code>repo</code>, 仓库名，指明要用哪个仓库的 Issue 来存评论。我用的和博客同一个仓库，方便自动化，你也可以用其他的仓库。只需要名称，我的某个仓库 <code>fingerknight/some-repo</code> ，那么这里就填 <code>some-repo</code></li>
+<li><code>clientId</code>, <code>clientSecret</code> ，就是刚才的提到的。</li>
+</ul>
+
+<p>
+注意，这个 Github 仓库一定要是公开的 <code>public</code> ，不然会出现找不到。
+</p>
+
+<p>
+第一次使用可能会出现如下情况：
+</p>
+
+
+<figure id="org65fa644">
+<img src="/assets/2022-09-12_13-39-14.png" alt="2022-09-12_13-39-14.png">
+
+</figure>
+
+<p>
+这是因为对应的 Issue 还没建立，点 <code>使用 Github 登录</code> ，做一些授权就好了。此外，对于新的一篇文章，需要用你带着 Github 的 Cookie 去访问一次，它就会自动建立 Issue，否则，比如其他人看也会出现这个情况。
+</p>
+
+<p>
+目前在 LoveIt 那边有提需求说应该把这个自动化，但目前 (2022-09-12) 还没有实现。
+</p>
+</div>
+
+<div id="outline-container-org9096f0a" class="outline-4">
+<h4 id="org9096f0a">LoveIt 的 Bug</h4>
+<div class="outline-text-4" id="text-org9096f0a">
+<p>
+如果你有好几篇文章同时生成和发布，那么就有可能出现这个 bug ，会导致评论共用，就是 A 文章下面的评论和 B 文章下面的评论一样， A 文章下面发的评论在 B 文章那里也可以看到。
+</p>
+
+<p>
+这个问题是因为二者共用了同一个 Issue ，或者说定位到了同一个 Issue 。Gitalk 是用一个 <code>id</code> 关键字区分不同文章的，你去你的 Issue 可以看到，每个 Issue 都有两个标签，一个是 <code>Gitalk</code> ，一个默认是标准格式日期（我的不是是因为我改了）。前者用来让 Gitalk 知道哪些 Issue 是用来存评论的，哪些是真的问题反馈；后者就是 <code>id</code> ，用来区分不同文章的。
+</p>
+
+
+<figure id="org7101eb1">
+<img src="/assets/2022-09-12_13-46-33.png" alt="2022-09-12_13-46-33.png">
+
+</figure>
+
+<p>
+LoveIt 的默认 <code>id</code> 是写死的，就是 <code>Date</code> ，所以如果几篇文章同时发布， <code>Date</code> 就是一样的，那就会定位到同一个 Issue 。
+</p>
+
+<p>
+2022-09-11 我已经向项目提了一个 <a href="https://github.com/dillonzq/LoveIt/issues/743">Bug 的 Issue</a> ，等待后续结果。
+</p>
+
+<p>
+手动改如下。在 <code>blog/themes/LoveIt/layouts/partials/comment.html</code> 里面边，找到 Gitalk 相关代码：
+</p>
+
+
+<figure id="orgc808015">
+<img src="/assets/2022-09-12_13-53-46.png" alt="2022-09-12_13-53-46.png">
+
+</figure>
+
+<p>
+把图示中 <code>id</code> 后面的 <code>.Date</code> 给改掉。 Gitalk 官网说长度小于 50 ，参照网友的意见用 MD5 摘要，所以我改成 <code>(md5 .File.Path)</code> ，文章相对于 <code>blog/content/</code> 的相对路径的 MD5 摘要。
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf73b0e6" class="outline-2">
+<h2 id="orgf73b0e6">工作流程</h2>
+<div class="outline-text-2" id="text-orgf73b0e6">
+<p>
+至此 <b>一个博客就搭建好了</b> ，接下来说明它的工作流程。
+</p>
+<ol class="org-ol">
+<li>编写 org 文件。把博客文章的内容写到 org 文件中，记得加头部设置。</li>
+<li>格式化 org 为 md。使用命令 <code>C-c C-e H h</code> 格式化。</li>
+<li>发布成 HTML。把所有要发布的内容格式化成 md 后，可以 <code>hugo server</code> 测试一下，或者直接发布，使用 <code>hugo</code> 就可以看到 <code>project/docs</code> 目录下生成了站点文件。</li>
+<li>最后提交到 Github</li>
+</ol>
+<div class="org-src-container">
+<pre><code class="language-bash"> git add *
+git commit -m <span style="color: #50A14F;">"&#27880;&#37322;"</span>
+git push
+ </code></pre>
+</div>
+
+<p>
+等一会儿再去访问你的 github.io 应该就好了。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5353dc9" class="outline-2">
+<h2 id="org5353dc9">自动化</h2>
+<div class="outline-text-2" id="text-org5353dc9">
+<p>
+如果每次都那么搞就太麻烦了。因此我写了一些东西，使得整个流程直接一步到位，可以参考。
+</p>
+
+<p>
+地址：<a href="https://github.com/fingerknight/org-hugo-lazy.el">https://github.com/fingerknight/org-hugo-lazy.el</a>，这个流程就是基于我上述的搭建过程写的，如果你是完全按照我上面的搭建 Hugo ，那么这个扩展应该很容易上手。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf90db3a" class="outline-2">
+<h2 id="orgf90db3a">优化</h2>
+<div class="outline-text-2" id="text-orgf90db3a">
+</div>
+<div id="outline-container-orgb34a2d8" class="outline-3">
+<h3 id="orgb34a2d8">CDN 设置</h3>
+<div class="outline-text-3" id="text-orgb34a2d8">
+<p>
+复制 LoveIt 目录 <code>themes/LoveIt/assets/data/cdn/</code> 到../blog/assets/data/cdn/~ (<code>assets</code> 需要自己创)<sup>[<a id="fnr:4.1" class="footref" href="#fn:4">4</a>]</sup>。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf5e0584" class="outline-3">
+<h3 id="orgf5e0584">Cloudflare Page</h3>
+<div class="outline-text-3" id="text-orgf5e0584">
+<p>
+Cloudflare Page 也可以直接托管静态站点了，它是联动 GitHub ，把仓库的 HTML 等站点文件克隆到它的服务器然后部署。参考《<a href="https://zhuanlan.zhihu.com/p/416269228">几分钟、零基础搭建个人网页！- 高速直连，基于Cloudflare Page - 知乎</a>》。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7a28ddb" class="outline-3">
+<h3 id="org7a28ddb">Cloudflare + DNS</h3>
+<div class="outline-text-3" id="text-org7a28ddb">
+<p>
+我是自己注册了一个域名，然后用 Cloudflare 托管，具体可以参考我的另一篇博客《<a href="/Computer/20221223T150015--gihub-page-cloudflare-namesilo-的域名配置__cloudflare_dns_githubpage_namesilo_site">GiHub Page + Cloudflare + NameSilo 的域名配置</a>》
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf58de48" class="outline-2">
+<h2 id="orgf58de48">后记</h2>
+<div class="outline-text-2" id="text-orgf58de48">
+<p>
+搞了好几天终于算可以了，留一些尾巴后面处理。
+</p>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> 评论功能</li>
+<li class="on"><code>[X]</code> CDN 加速</li>
+<li class="on"><code>[X]</code> 样式调一下，这个主题整体显得比较挤，还有字体。如果有精力把配色也改一下</li>
+<li class="off"><code>[&#xa0;]</code> 还有就是 SEO 、挂友链，挤进搜索引擎，增加曝光度，这个貌似 LoveIt 已经帮忙调好了。</li>
+</ul>
+
+<p>
+希望对你有帮助！
+</p>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="text-footnotes" role="doc-endnotes">
+<ol>
+<li id="fn:1">
+<p class="footpara">
+<a href="https://www.jianshu.com/p/c5297a8bb1e7">Hugo 不完美教程 - II: Hugo 目录组织 - 简书</a>
+<a href="#fnr:1.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+<li id="fn:2">
+<p class="footpara">
+<a href="https://wowow005.github.io/posts/20../%E5%A6%82%E4%BD%95%E7%94%A8hugo%E5%92%8Corg-mode%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">如何用 hugo 和 org-mode 搭建个人博客 - 牧师的博客</a>
+<a href="#fnr:2.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+<li id="fn:3">
+<p class="footpara">
+Gitalk: <a href="https://github.com/gitalk/gitalk/">https://github.com/gitalk/gitalk/</a>
+<a href="#fnr:3.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+<li id="fn:4">
+<p class="footpara">
+<a href="https://www.techkoala.top/hugo_loveit_q_a/">Hugo 搭配 LoveIt 技巧总结 - TechKoala - Input/Output</a>
+<a href="#fnr:4.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status"><script src="/static/highlight/highlight.min.js"></script>
+
+<script>
+window.config={"code": {"header": false,
+"exclude": ["mermaid"]}, }
+</script>
+<script src="/static/style/style.js"></script>
+</div>
+</div>
+<div class="footer">
+<center> The End </center></div>
+</body>
+</html>
