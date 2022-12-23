@@ -24,65 +24,65 @@
 </div>
 </div>
 <div class="main">
-<div id="preamble" class="status"><link rel="stylesheet" href="/static/highlight/dracula.css"><div class="toc">
+<div id="preamble" class="status"><div class="toc">
 <h2 class="toc-title"> TOC </h2>
 <nav id="TableOfContents">
 
 <ul>
 <li>
-<a href="#orgdd9c6df"> 简介 </a></li>
+<a href="#org85a1e8c"> 简介 </a></li>
 <li>
-<a href="#org1ed92be"> 工具 </a></li>
+<a href="#org83e83bb"> 工具 </a></li>
 <li>
-<a href="#org58f2d2c"> 搭建流程 </a>
+<a href="#org9df2605"> 搭建流程 </a>
 <ul>
 <li>
-<a href="#orgecc1cc5"> 安装 Hugo </a></li>
+<a href="#org4fb979b"> 安装 Hugo </a></li>
 <li>
-<a href="#orged7abd2"> Github Page 配置 </a></li>
+<a href="#org852ac7b"> Github Page 配置 </a></li>
 <li>
-<a href="#orgfc7f2be"> Hugo 使用 </a></li>
+<a href="#orgd64e1da"> Hugo 使用 </a></li>
 <li>
-<a href="#org4652219"> 项目目录修改 </a></li>
+<a href="#orgfb3b4de"> 项目目录修改 </a></li>
 <li>
-<a href="#org39600c1"> Hugo 主题 </a></li>
+<a href="#org734e559"> Hugo 主题 </a></li>
 <li>
-<a href="#orgdb3a678"> 我的 Hugo 配置 </a>
+<a href="#org8b686cb"> 我的 Hugo 配置 </a>
 <ul>
 <li>
-<a href="#org6dc35aa"> 关于资源目录 </a></li>
+<a href="#org2cd1387"> 关于资源目录 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org3c646df"> 安装 ox-hugo </a></li>
+<a href="#orgcb813ee"> 安装 ox-hugo </a></li>
 <li>
-<a href="#org49143c6"> ox-hugo 使用 </a></li>
+<a href="#orged22bcb"> ox-hugo 使用 </a></li>
 <li>
-<a href="#org6a63428"> 设置评论 </a>
+<a href="#orgfcf3500"> 设置评论 </a>
 <ul>
 <li>
-<a href="#org9096f0a"> LoveIt 的 Bug </a></li>
+<a href="#org17e8a3a"> LoveIt 的 Bug </a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<a href="#orgf73b0e6"> 工作流程 </a></li>
+<a href="#org1c18f2f"> 工作流程 </a></li>
 <li>
-<a href="#org5353dc9"> 自动化 </a></li>
+<a href="#orge73d190"> 自动化 </a></li>
 <li>
-<a href="#orgf90db3a"> 优化 </a>
+<a href="#orgbe5ebd6"> 优化 </a>
 <ul>
 <li>
-<a href="#orgb34a2d8"> CDN 设置 </a></li>
+<a href="#orgeb185e3"> CDN 设置 </a></li>
 <li>
-<a href="#orgf5e0584"> Cloudflare Page </a></li>
+<a href="#org4095ccd"> Cloudflare Page </a></li>
 <li>
-<a href="#org7a28ddb"> Cloudflare + DNS </a></li>
+<a href="#org304228d"> Cloudflare + DNS </a></li>
 </ul>
 </li>
 <li>
-<a href="#orgf58de48"> 后记 </a></li>
+<a href="#orgfd1301e"> 后记 </a></li>
 </ul>
 </nav>
 </div>
@@ -97,18 +97,18 @@
 </div>
 <div id="content">
 
-<div id="outline-container-orgdd9c6df" class="outline-2">
-<h2 id="orgdd9c6df">简介</h2>
-<div class="outline-text-2" id="text-orgdd9c6df">
+<div id="outline-container-org85a1e8c" class="outline-2">
+<h2 id="org85a1e8c">简介</h2>
+<div class="outline-text-2" id="text-org85a1e8c">
 <p>
 现在已经全面转战 Emacs 和 Org Mode 了，想搭个人博客，折腾了很久。这里记录搭建思路和过程，供参考。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org1ed92be" class="outline-2">
-<h2 id="org1ed92be">工具</h2>
-<div class="outline-text-2" id="text-org1ed92be">
+<div id="outline-container-org83e83bb" class="outline-2">
+<h2 id="org83e83bb">工具</h2>
+<div class="outline-text-2" id="text-org83e83bb">
 <ul class="org-ul">
 <li>Emacs + Org Mode</li>
 <li>Hugo 静态站点生成制作</li>
@@ -119,17 +119,17 @@
 </div>
 </div>
 
-<div id="outline-container-org58f2d2c" class="outline-2">
-<h2 id="org58f2d2c">搭建流程</h2>
-<div class="outline-text-2" id="text-org58f2d2c">
+<div id="outline-container-org9df2605" class="outline-2">
+<h2 id="org9df2605">搭建流程</h2>
+<div class="outline-text-2" id="text-org9df2605">
 <p>
 假定已经安装了 <b>Emacs</b> 和 <b>Git</b> 。
 </p>
 </div>
 
-<div id="outline-container-orgecc1cc5" class="outline-3">
-<h3 id="orgecc1cc5">安装 Hugo</h3>
-<div class="outline-text-3" id="text-orgecc1cc5">
+<div id="outline-container-org4fb979b" class="outline-3">
+<h3 id="org4fb979b">安装 Hugo</h3>
+<div class="outline-text-3" id="text-org4fb979b">
 <p>
 官方的下载页面在这里 <a href="https://gohugo.io/getting-started/installing">https://gohugo.io/getting-started/installing</a> ，根据自己的系统去安装即可。
 </p>
@@ -141,15 +141,15 @@
 </div>
 </div>
 
-<div id="outline-container-orged7abd2" class="outline-3">
-<h3 id="orged7abd2">Github Page 配置</h3>
-<div class="outline-text-3" id="text-orged7abd2">
+<div id="outline-container-org852ac7b" class="outline-3">
+<h3 id="org852ac7b">Github Page 配置</h3>
+<div class="outline-text-3" id="text-org852ac7b">
 <p>
 首先，新建一个仓库，仓库名必须是 <code>&lt;Name&gt;.github.io</code> ， <code>&lt;Name&gt;</code> 是的 github 的昵称。
 </p>
 
 
-<figure id="org3c5165c">
+<figure id="org1c921e7">
 <img src="/assets/2022-09-10_15-00-13.png" alt="2022-09-10_15-00-13.png">
 
 </figure>
@@ -158,15 +158,15 @@
 如果新建时选了自动建 <code>README.md</code> ，就好了。如果没有执行（里面的 <code>Name</code> 是 github 昵称）：
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash"> <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#38543;&#20415;&#19968;&#20010; REMAD.md</span>
-<span style="color: #696C77;">echo</span> <span style="color: #50A14F;">"# Just a README"</span> &gt;&gt; README.md
+<pre><code class="language-bash"> <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#38543;&#20415;&#19968;&#20010; REMAD.md</span>
+<span style="color: #8be9fd; font-style: italic;">echo</span> <span style="color: #f1fa8c;">"# Just a README"</span> &gt;&gt; README.md
 git init
 git add README.md
-git commit -m <span style="color: #50A14F;">"first commit"</span>
-<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26032;&#22522;&#30784;&#20998;&#25903;</span>
+git commit -m <span style="color: #f1fa8c;">"first commit"</span>
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26032;&#22522;&#30784;&#20998;&#25903;</span>
 git branch -M main
 git remote add origin git@github.com:Name/Name.github.io.git
-<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#25552;&#20132;&#21040;&#22522;&#30784;&#20998;&#25903;</span>
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#25552;&#20132;&#21040;&#22522;&#30784;&#20998;&#25903;</span>
 git push -u origin main
  </code></pre>
 </div>
@@ -176,7 +176,7 @@ git push -u origin main
 </p>
 
 
-<figure id="orgc8fe506">
+<figure id="orgd306252">
 <img src="/assets/2022-09-11_15-59-04.png" alt="2022-09-11_15-59-04.png">
 
 </figure>
@@ -187,9 +187,9 @@ git push -u origin main
 </div>
 </div>
 
-<div id="outline-container-orgfc7f2be" class="outline-3">
-<h3 id="orgfc7f2be">Hugo 使用</h3>
-<div class="outline-text-3" id="text-orgfc7f2be">
+<div id="outline-container-orgd64e1da" class="outline-3">
+<h3 id="orgd64e1da">Hugo 使用</h3>
+<div class="outline-text-3" id="text-orgd64e1da">
 <p>
 新建项目， <code>blog</code> 是项目目录。
 </p>
@@ -201,7 +201,7 @@ git push -u origin main
 <p>
 然后会生成如下的项目：
 </p>
-<pre class="example" id="org5e0ab96">
+<pre class="example" id="orgc7d5cbb">
 ├── blog
 │   ├── archetypes/
 │   ├── config.toml
@@ -217,7 +217,7 @@ git push -u origin main
 </p>
 <ul class="org-ul">
 <li><code>archetypes</code>, 内容模板，可以取参考里面看，暂时不用管。</li>
-<li><code>config.toml</code>, 配置文件，详见<a href="#orgdb3a678">我的 Hugo 配置</a></li>
+<li><code>config.toml</code>, 配置文件，详见<a href="#org8b686cb">我的 Hugo 配置</a></li>
 <li><code>content</code>, 内容目录，用于存放 md 源文件。</li>
 <li><code>data</code>, 数据模板目录，暂时不用管。</li>
 <li><code>layouts</code>, HTML 模板目录，md 生成 HTML 的模板，有一套单独的语言描述。暂时也不用配。</li>
@@ -238,21 +238,21 @@ git push -u origin main
 </div>
 </div>
 
-<div id="outline-container-org4652219" class="outline-3">
-<h3 id="org4652219">项目目录修改</h3>
-<div class="outline-text-3" id="text-org4652219">
+<div id="outline-container-orgfb3b4de" class="outline-3">
+<h3 id="orgfb3b4de">项目目录修改</h3>
+<div class="outline-text-3" id="text-orgfb3b4de">
 <p>
 克隆仓库：
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash"> <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">blog &#19979;</span>
+<pre><code class="language-bash"> <span style="color: #6272a4;"># </span><span style="color: #6272a4;">blog &#19979;</span>
 git clone git@github.com:&lt;Name&gt;/&lt;Name&gt;.github.io.git project
  </code></pre>
 </div>
 <p>
 在 <code>blog/project</code> 目录下新目录存放 org 源码的目录（手动建）：
 </p>
-<pre class="example" id="org5fd6077">
+<pre class="example" id="org6928fd9">
 ├── project
 │   ├── assets/
 │   ├── posts/
@@ -262,14 +262,14 @@ org 文件就放在 <code>blog/project/posts</code> 下，静态资源就放在 
 </p>
 
 <p>
-因为 Github Page 只能选 <code>/</code> 根目录或者 <code>/docs</code> 目录作为站点目录，所以需要在配置中把站点输出目录修改一下。在<a href="#orgdb3a678">我的 Hugo 配置</a>那里我会说的。
+因为 Github Page 只能选 <code>/</code> 根目录或者 <code>/docs</code> 目录作为站点目录，所以需要在配置中把站点输出目录修改一下。在<a href="#org8b686cb">我的 Hugo 配置</a>那里我会说的。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org39600c1" class="outline-3">
-<h3 id="org39600c1">Hugo 主题</h3>
-<div class="outline-text-3" id="text-org39600c1">
+<div id="outline-container-org734e559" class="outline-3">
+<h3 id="org734e559">Hugo 主题</h3>
+<div class="outline-text-3" id="text-org734e559">
 <p>
 主题可以去官网上找 <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a> ，我参考的是前辈用的 <a href="https://github.com/dillonzq/LoveIt">LoveIt</a> <sup>[<a id="fnr:2.1" class="footref" href="#fn:2">2</a>]</sup>，功能强大，界面美观，且不会太花哨。
 </p>
@@ -278,7 +278,7 @@ org 文件就放在 <code>blog/project/posts</code> 下，静态资源就放在 
 先找到主题的 github 仓库 <a href="https://github.com/dillonzq/LoveIt">https://github.com/dillonzq/LoveIt</a>，然后把它作为 hugo 项目的子模块
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash"> <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#22312; blog &#30446;&#24405;&#19979;&#25805;&#20316;</span>
+<pre><code class="language-bash"> <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#22312; blog &#30446;&#24405;&#19979;&#25805;&#20316;</span>
 git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
  </code></pre>
 </div>
@@ -296,9 +296,9 @@ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 </div>
 </div>
 
-<div id="outline-container-orgdb3a678" class="outline-3">
-<h3 id="orgdb3a678">我的 Hugo 配置</h3>
-<div class="outline-text-3" id="text-orgdb3a678">
+<div id="outline-container-org8b686cb" class="outline-3">
+<h3 id="org8b686cb">我的 Hugo 配置</h3>
+<div class="outline-text-3" id="text-org8b686cb">
 <p>
 配置文件可以说三种类型： <code>toml</code>, <code>yaml</code> 和 <code>json</code> ，我用的是 <code>yaml</code> ，简洁；把 LoveIt 官网给的完整配置转成 <code>yaml</code> ，然后手动调整，参考如下。
 </p>
@@ -307,7 +307,7 @@ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 因为配置里面可能会用到密钥什么的，因此不建议公开到 GitHub 上边，所以只上传 <b>Org 源码</b>, <b>静态文件</b> 和 <b>站点文件</b> 。如下所示:
 </p>
 
-<pre class="example" id="org64cc23c">
+<pre class="example" id="orge393a84">
 ├── project
 │   ├── assets/   # 存放静态文件
 │   ├── posts/    # 存放 org 
@@ -326,329 +326,329 @@ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 <code>config.yaml</code>
 </p>
 <div class="org-src-container">
-<pre><code class="language-yaml"> <span style="color: #C18401;">publishDir</span>: project/docs
-<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#31449;&#28857;URL</span>
-<span style="color: #C18401;">baseURL</span>: https://fingerknight.github.io/
-<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#40664;&#35748;&#35821;&#35328;</span>
-<span style="color: #C18401;">defaultContentLanguage</span>: zh-cn
-<span style="color: #C18401;">languageCode</span>: zh-CN
-<span style="color: #C18401;">hasCJKLanguage</span>: <span style="color: #50A14F;">true</span>
-<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#20027;&#39064;</span>
-<span style="color: #C18401;">theme</span>: LoveIt
-<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#32593;&#31449;&#26631;&#39064;</span>
-<span style="color: #C18401;">title</span>: &#25163;&#25351;&#39569;&#22763;&#30340;&#30149;&#25151;
-<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#20316;&#32773;</span>
-<span style="color: #C18401;">author</span>:
-  <span style="color: #C18401;">name</span>: Finger Knight
-  <span style="color: #C18401;">email</span>: mrdust1880@outlook.com
-  <span style="color: #C18401;">link</span>: https://fingerknight.github.io/about
-<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#40664;&#35748;&#27599;&#39029;&#21015;&#34920;&#26174;&#31034;&#30340;&#25991;&#31456;&#25968;&#30446;</span>
-<span style="color: #C18401;">paginate</span>: 12
-<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#35895;&#27468;&#20998;&#26512;&#20195;&#21495; [UA-XXXXXXXX-X]</span>
-<span style="color: #C18401;">googleAnalytics</span>: <span style="color: #50A14F;">""</span>
-<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#29256;&#26435;&#25551;&#36848;&#65292;&#20165;&#20165;&#29992;&#20110; SEO</span>
-<span style="color: #C18401;">copyright</span>: <span style="color: #50A14F;">""</span>
-<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#20351;&#29992; robots.txt</span>
-<span style="color: #C18401;">enableRobotsTXT</span>: <span style="color: #50A14F;">true</span>
-<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#20351;&#29992; git &#20449;&#24687;</span>
-<span style="color: #C18401;">enableGitInfo</span>: <span style="color: #50A14F;">false</span>
-<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#20351;&#29992; emoji &#20195;&#30721;</span>
-<span style="color: #C18401;">enableEmoji</span>: <span style="color: #50A14F;">true</span>
-<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#24573;&#30053;&#19968;&#20123;&#26500;&#24314;&#38169;&#35823;</span>
-<span style="color: #C18401;">ignoreErrors</span>: [<span style="color: #50A14F;">"error-remote-getjson"</span>, <span style="color: #50A14F;">"error-missing-instagram-accesstoken"</span>]
+<pre><code class="language-yaml"> <span style="color: #f8f8f2; font-weight: bold;">publishDir</span>: project/docs
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#31449;&#28857;URL</span>
+<span style="color: #f8f8f2; font-weight: bold;">baseURL</span>: https://fingerknight.github.io/
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#40664;&#35748;&#35821;&#35328;</span>
+<span style="color: #f8f8f2; font-weight: bold;">defaultContentLanguage</span>: zh-cn
+<span style="color: #f8f8f2; font-weight: bold;">languageCode</span>: zh-CN
+<span style="color: #f8f8f2; font-weight: bold;">hasCJKLanguage</span>: <span style="color: #bd93f9;">true</span>
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#20027;&#39064;</span>
+<span style="color: #f8f8f2; font-weight: bold;">theme</span>: LoveIt
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#32593;&#31449;&#26631;&#39064;</span>
+<span style="color: #f8f8f2; font-weight: bold;">title</span>: &#25163;&#25351;&#39569;&#22763;&#30340;&#30149;&#25151;
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#20316;&#32773;</span>
+<span style="color: #f8f8f2; font-weight: bold;">author</span>:
+  <span style="color: #f8f8f2; font-weight: bold;">name</span>: Finger Knight
+  <span style="color: #f8f8f2; font-weight: bold;">email</span>: mrdust1880@outlook.com
+  <span style="color: #f8f8f2; font-weight: bold;">link</span>: https://fingerknight.github.io/about
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#40664;&#35748;&#27599;&#39029;&#21015;&#34920;&#26174;&#31034;&#30340;&#25991;&#31456;&#25968;&#30446;</span>
+<span style="color: #f8f8f2; font-weight: bold;">paginate</span>: 12
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#35895;&#27468;&#20998;&#26512;&#20195;&#21495; [UA-XXXXXXXX-X]</span>
+<span style="color: #f8f8f2; font-weight: bold;">googleAnalytics</span>: <span style="color: #f1fa8c;">""</span>
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#29256;&#26435;&#25551;&#36848;&#65292;&#20165;&#20165;&#29992;&#20110; SEO</span>
+<span style="color: #f8f8f2; font-weight: bold;">copyright</span>: <span style="color: #f1fa8c;">""</span>
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#20351;&#29992; robots.txt</span>
+<span style="color: #f8f8f2; font-weight: bold;">enableRobotsTXT</span>: <span style="color: #bd93f9;">true</span>
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#20351;&#29992; git &#20449;&#24687;</span>
+<span style="color: #f8f8f2; font-weight: bold;">enableGitInfo</span>: <span style="color: #bd93f9;">false</span>
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#20351;&#29992; emoji &#20195;&#30721;</span>
+<span style="color: #f8f8f2; font-weight: bold;">enableEmoji</span>: <span style="color: #bd93f9;">true</span>
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#24573;&#30053;&#19968;&#20123;&#26500;&#24314;&#38169;&#35823;</span>
+<span style="color: #f8f8f2; font-weight: bold;">ignoreErrors</span>: [<span style="color: #f1fa8c;">"error-remote-getjson"</span>, <span style="color: #f1fa8c;">"error-missing-instagram-accesstoken"</span>]
 
-<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26631;&#35760;&#35821;&#35328;&#35774;&#32622;</span>
-<span style="color: #C18401;">markup</span>:
-  <span style="color: #C18401;">highlight</span>:
-    <span style="color: #C18401;">noClasses</span>: <span style="color: #50A14F;">false</span>
-    <span style="color: #C18401;">codeFences</span>: <span style="color: #50A14F;">true</span>
-    <span style="color: #C18401;">guessSyntax</span>: <span style="color: #50A14F;">true</span>
-    <span style="color: #C18401;">lineNos</span>: <span style="color: #50A14F;">true</span>
-    <span style="color: #C18401;">lineNumbersInTable</span>: <span style="color: #50A14F;">true</span>
-  <span style="color: #C18401;">goldmark</span>:
-    <span style="color: #C18401;">extensions</span>:
-      <span style="color: #C18401;">definitionList</span>: <span style="color: #50A14F;">true</span>
-      <span style="color: #C18401;">footnote</span>: <span style="color: #50A14F;">true</span>
-      <span style="color: #C18401;">linkify</span>: <span style="color: #50A14F;">true</span>
-      <span style="color: #C18401;">strikethrough</span>: <span style="color: #50A14F;">true</span>
-      <span style="color: #C18401;">table</span>: <span style="color: #50A14F;">true</span>
-      <span style="color: #C18401;">taskList</span>: <span style="color: #50A14F;">true</span>
-      <span style="color: #C18401;">typographer</span>: <span style="color: #50A14F;">true</span>
-    <span style="color: #C18401;">renderer</span>:
-      <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#22312;&#25991;&#26723;&#20013;&#30452;&#25509;&#20351;&#29992; HTML &#26631;&#31614;</span>
-      <span style="color: #C18401;">unsafe</span>: <span style="color: #50A14F;">true</span>
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#30446;&#24405;</span>
-  <span style="color: #C18401;">tableOfContents</span>:
-    <span style="color: #C18401;">startLevel</span>: 2
-    <span style="color: #C18401;">endLevel</span>: 6
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26631;&#35760;&#35821;&#35328;&#35774;&#32622;</span>
+<span style="color: #f8f8f2; font-weight: bold;">markup</span>:
+  <span style="color: #f8f8f2; font-weight: bold;">highlight</span>:
+    <span style="color: #f8f8f2; font-weight: bold;">noClasses</span>: <span style="color: #bd93f9;">false</span>
+    <span style="color: #f8f8f2; font-weight: bold;">codeFences</span>: <span style="color: #bd93f9;">true</span>
+    <span style="color: #f8f8f2; font-weight: bold;">guessSyntax</span>: <span style="color: #bd93f9;">true</span>
+    <span style="color: #f8f8f2; font-weight: bold;">lineNos</span>: <span style="color: #bd93f9;">true</span>
+    <span style="color: #f8f8f2; font-weight: bold;">lineNumbersInTable</span>: <span style="color: #bd93f9;">true</span>
+  <span style="color: #f8f8f2; font-weight: bold;">goldmark</span>:
+    <span style="color: #f8f8f2; font-weight: bold;">extensions</span>:
+      <span style="color: #f8f8f2; font-weight: bold;">definitionList</span>: <span style="color: #bd93f9;">true</span>
+      <span style="color: #f8f8f2; font-weight: bold;">footnote</span>: <span style="color: #bd93f9;">true</span>
+      <span style="color: #f8f8f2; font-weight: bold;">linkify</span>: <span style="color: #bd93f9;">true</span>
+      <span style="color: #f8f8f2; font-weight: bold;">strikethrough</span>: <span style="color: #bd93f9;">true</span>
+      <span style="color: #f8f8f2; font-weight: bold;">table</span>: <span style="color: #bd93f9;">true</span>
+      <span style="color: #f8f8f2; font-weight: bold;">taskList</span>: <span style="color: #bd93f9;">true</span>
+      <span style="color: #f8f8f2; font-weight: bold;">typographer</span>: <span style="color: #bd93f9;">true</span>
+    <span style="color: #f8f8f2; font-weight: bold;">renderer</span>:
+      <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#22312;&#25991;&#26723;&#20013;&#30452;&#25509;&#20351;&#29992; HTML &#26631;&#31614;</span>
+      <span style="color: #f8f8f2; font-weight: bold;">unsafe</span>: <span style="color: #bd93f9;">true</span>
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#30446;&#24405;</span>
+  <span style="color: #f8f8f2; font-weight: bold;">tableOfContents</span>:
+    <span style="color: #f8f8f2; font-weight: bold;">startLevel</span>: 2
+    <span style="color: #f8f8f2; font-weight: bold;">endLevel</span>: 6
 
-<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#32593;&#31449;&#22320;&#22270;&#37197;&#32622;</span>
-<span style="color: #C18401;">sitemap</span>:
-  <span style="color: #C18401;">changefreq</span>: weekly
-  <span style="color: #C18401;">filename</span>: sitemap.xml
-  <span style="color: #C18401;">priority</span>: 0.5
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#32593;&#31449;&#22320;&#22270;&#37197;&#32622;</span>
+<span style="color: #f8f8f2; font-weight: bold;">sitemap</span>:
+  <span style="color: #f8f8f2; font-weight: bold;">changefreq</span>: weekly
+  <span style="color: #f8f8f2; font-weight: bold;">filename</span>: sitemap.xml
+  <span style="color: #f8f8f2; font-weight: bold;">priority</span>: 0.5
 
-<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">Permalinks &#37197;&#32622;</span>
-<span style="color: #C18401;">Permalinks</span>:
-  <span style="color: #C18401;">posts</span>: <span style="color: #50A14F;">':filename'</span>
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">Permalinks &#37197;&#32622;</span>
+<span style="color: #f8f8f2; font-weight: bold;">Permalinks</span>:
+  <span style="color: #f8f8f2; font-weight: bold;">posts</span>: <span style="color: #f1fa8c;">':filename'</span>
 
-<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#36755;&#20986;&#35774;&#32622;</span>
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#36755;&#20986;&#35774;&#32622;</span>
 
-<span style="color: #C18401;">outputs</span>:
-  <span style="color: #C18401;">home</span>:
+<span style="color: #f8f8f2; font-weight: bold;">outputs</span>:
+  <span style="color: #f8f8f2; font-weight: bold;">home</span>:
     - HTML
     - JSON
-  <span style="color: #C18401;">page</span>:
+  <span style="color: #f8f8f2; font-weight: bold;">page</span>:
     - HTML
     - MarkDown
-  <span style="color: #C18401;">section</span>:
+  <span style="color: #f8f8f2; font-weight: bold;">section</span>:
     - HTML
-  <span style="color: #C18401;">taxonomy</span>:
+  <span style="color: #f8f8f2; font-weight: bold;">taxonomy</span>:
     - HTML
-  <span style="color: #C18401;">taxonomyTerm</span>:
+  <span style="color: #f8f8f2; font-weight: bold;">taxonomyTerm</span>:
     - HTML
 
-<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#35821;&#35328;&#35774;&#32622;</span>
-<span style="color: #C18401;">language</span>:
-  <span style="color: #C18401;">zh-cn</span>:
-    <span style="color: #C18401;">contentDir</span>: content
-    <span style="color: #C18401;">languageName</span>: &#20013;&#25991;
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#35821;&#35328;&#35774;&#32622;</span>
+<span style="color: #f8f8f2; font-weight: bold;">language</span>:
+  <span style="color: #f8f8f2; font-weight: bold;">zh-cn</span>:
+    <span style="color: #f8f8f2; font-weight: bold;">contentDir</span>: content
+    <span style="color: #f8f8f2; font-weight: bold;">languageName</span>: &#20013;&#25991;
 
-<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#33756;&#21333;&#35774;&#32622;</span>
-<span style="color: #C18401;">menus</span>:
-  <span style="color: #C18401;">main</span>:
-    - <span style="color: #C18401;">identifier</span>: main
-      <span style="color: #C18401;">pre</span>: &lt;i class=<span style="color: #50A14F;">"fa-solid fa-house"</span>&gt;&lt;/i&gt;
-      <span style="color: #C18401;">post</span>: <span style="color: #50A14F;">''</span>
-      <span style="color: #C18401;">name</span>: 
-      <span style="color: #C18401;">url</span>: /
-      <span style="color: #C18401;">title</span>: &#20027;&#39029;
-      <span style="color: #C18401;">weight</span>: 1
-    - <span style="color: #C18401;">identifier</span>: tags
-      <span style="color: #C18401;">pre</span>: &lt;i class=<span style="color: #50A14F;">"fa-solid fa-tags"</span>&gt;&lt;/i&gt;
-      <span style="color: #C18401;">post</span>: <span style="color: #50A14F;">''</span>
-      <span style="color: #C18401;">name</span>: <span style="color: #50A14F;">''</span>
-      <span style="color: #C18401;">url</span>: /tags/
-      <span style="color: #C18401;">title</span>: &#26631;&#31614;
-      <span style="color: #C18401;">weight</span>: 2
-    - <span style="color: #C18401;">identifier</span>: posts
-      <span style="color: #C18401;">pre</span>: &lt;i class=<span style="color: #50A14F;">"fa-solid fa-layer-group"</span>&gt;&lt;/i&gt;
-      <span style="color: #C18401;">post</span>: <span style="color: #50A14F;">''</span>
-      <span style="color: #C18401;">name</span>: <span style="color: #50A14F;">''</span>
-      <span style="color: #C18401;">url</span>: /posts/
-      <span style="color: #C18401;">title</span>: &#24402;&#26723;
-      <span style="color: #C18401;">weight</span>: 3
-    - <span style="color: #C18401;">identifier</span>: about
-      <span style="color: #C18401;">pre</span>: &lt;i class=<span style="color: #50A14F;">"fa-solid fa-bed-pulse"</span>&gt;&lt;/i&gt;
-      <span style="color: #C18401;">post</span>: <span style="color: #50A14F;">''</span>
-      <span style="color: #C18401;">name</span>: <span style="color: #50A14F;">''</span>
-      <span style="color: #C18401;">url</span>: /about
-      <span style="color: #C18401;">title</span>: &#30149;&#21382;
-      <span style="color: #C18401;">weight</span>: 4
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#33756;&#21333;&#35774;&#32622;</span>
+<span style="color: #f8f8f2; font-weight: bold;">menus</span>:
+  <span style="color: #f8f8f2; font-weight: bold;">main</span>:
+    - <span style="color: #f8f8f2; font-weight: bold;">identifier</span>: main
+      <span style="color: #f8f8f2; font-weight: bold;">pre</span>: &lt;i class=<span style="color: #f1fa8c;">"fa-solid fa-house"</span>&gt;&lt;/i&gt;
+      <span style="color: #f8f8f2; font-weight: bold;">post</span>: <span style="color: #f1fa8c;">''</span>
+      <span style="color: #f8f8f2; font-weight: bold;">name</span>: 
+      <span style="color: #f8f8f2; font-weight: bold;">url</span>: /
+      <span style="color: #f8f8f2; font-weight: bold;">title</span>: &#20027;&#39029;
+      <span style="color: #f8f8f2; font-weight: bold;">weight</span>: 1
+    - <span style="color: #f8f8f2; font-weight: bold;">identifier</span>: tags
+      <span style="color: #f8f8f2; font-weight: bold;">pre</span>: &lt;i class=<span style="color: #f1fa8c;">"fa-solid fa-tags"</span>&gt;&lt;/i&gt;
+      <span style="color: #f8f8f2; font-weight: bold;">post</span>: <span style="color: #f1fa8c;">''</span>
+      <span style="color: #f8f8f2; font-weight: bold;">name</span>: <span style="color: #f1fa8c;">''</span>
+      <span style="color: #f8f8f2; font-weight: bold;">url</span>: /tags/
+      <span style="color: #f8f8f2; font-weight: bold;">title</span>: &#26631;&#31614;
+      <span style="color: #f8f8f2; font-weight: bold;">weight</span>: 2
+    - <span style="color: #f8f8f2; font-weight: bold;">identifier</span>: posts
+      <span style="color: #f8f8f2; font-weight: bold;">pre</span>: &lt;i class=<span style="color: #f1fa8c;">"fa-solid fa-layer-group"</span>&gt;&lt;/i&gt;
+      <span style="color: #f8f8f2; font-weight: bold;">post</span>: <span style="color: #f1fa8c;">''</span>
+      <span style="color: #f8f8f2; font-weight: bold;">name</span>: <span style="color: #f1fa8c;">''</span>
+      <span style="color: #f8f8f2; font-weight: bold;">url</span>: /posts/
+      <span style="color: #f8f8f2; font-weight: bold;">title</span>: &#24402;&#26723;
+      <span style="color: #f8f8f2; font-weight: bold;">weight</span>: 3
+    - <span style="color: #f8f8f2; font-weight: bold;">identifier</span>: about
+      <span style="color: #f8f8f2; font-weight: bold;">pre</span>: &lt;i class=<span style="color: #f1fa8c;">"fa-solid fa-bed-pulse"</span>&gt;&lt;/i&gt;
+      <span style="color: #f8f8f2; font-weight: bold;">post</span>: <span style="color: #f1fa8c;">''</span>
+      <span style="color: #f8f8f2; font-weight: bold;">name</span>: <span style="color: #f1fa8c;">''</span>
+      <span style="color: #f8f8f2; font-weight: bold;">url</span>: /about
+      <span style="color: #f8f8f2; font-weight: bold;">title</span>: &#30149;&#21382;
+      <span style="color: #f8f8f2; font-weight: bold;">weight</span>: 4
 
 
-<span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#21442;&#25968;&#35774;&#32622;</span>
-<span style="color: #C18401;">params</span>:
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#32593;&#31449;&#40664;&#35748;&#20027;&#39064;&#26679;&#24335; ["auto", "light", "dark"]</span>
-  <span style="color: #C18401;">defaultTheme</span>: <span style="color: #50A14F;">"auto"</span>
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#21738;&#31181;&#21704;&#24076;&#20989;&#25968;&#29992;&#26469; SRI, &#20026;&#31354;&#26102;&#34920;&#31034;&#19981;&#20351;&#29992; SRI</span>
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">["sha256", "sha384", "sha512", "md5"]</span>
-  <span style="color: #C18401;">fingerprint</span>: <span style="color: #50A14F;">"sha256"</span>
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26085;&#26399;&#26684;&#24335;</span>
-  <span style="color: #C18401;">dateFormat</span>: <span style="color: #50A14F;">"2006-01-02"</span>
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#21442;&#25968;&#35774;&#32622;</span>
+<span style="color: #f8f8f2; font-weight: bold;">params</span>:
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#32593;&#31449;&#40664;&#35748;&#20027;&#39064;&#26679;&#24335; ["auto", "light", "dark"]</span>
+  <span style="color: #f8f8f2; font-weight: bold;">defaultTheme</span>: <span style="color: #f1fa8c;">"auto"</span>
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#21738;&#31181;&#21704;&#24076;&#20989;&#25968;&#29992;&#26469; SRI, &#20026;&#31354;&#26102;&#34920;&#31034;&#19981;&#20351;&#29992; SRI</span>
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">["sha256", "sha384", "sha512", "md5"]</span>
+  <span style="color: #f8f8f2; font-weight: bold;">fingerprint</span>: <span style="color: #f1fa8c;">"sha256"</span>
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26085;&#26399;&#26684;&#24335;</span>
+  <span style="color: #f8f8f2; font-weight: bold;">dateFormat</span>: <span style="color: #f1fa8c;">"2006-01-02"</span>
 
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#32593;&#31449;&#26631;&#39064;, &#29992;&#20110; Open Graph &#21644; Twitter Cards</span>
-  <span style="color: #C18401;">title</span>: <span style="color: #50A14F;">"&#25163;&#25351;&#39569;&#22763;&#30340;&#30149;&#25151;"</span>
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#32593;&#31449;&#25551;&#36848;, &#29992;&#20110; RSS, SEO, Open Graph &#21644; Twitter Cards</span>
-  <span style="color: #C18401;">description</span>: <span style="color: #50A14F;">"&#30196;&#20154;&#35828;&#26790;"</span>
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#32593;&#31449;&#22270;&#29255;, &#29992;&#20110; Open Graph &#21644; Twitter Cards</span>
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">images:</span>
-  <span style="color: #A0A1A7; font-style: italic;">#   </span><span style="color: #A0A1A7; font-style: italic;">- /logo.png</span>
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#32593;&#31449;&#26631;&#39064;, &#29992;&#20110; Open Graph &#21644; Twitter Cards</span>
+  <span style="color: #f8f8f2; font-weight: bold;">title</span>: <span style="color: #f1fa8c;">"&#25163;&#25351;&#39569;&#22763;&#30340;&#30149;&#25151;"</span>
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#32593;&#31449;&#25551;&#36848;, &#29992;&#20110; RSS, SEO, Open Graph &#21644; Twitter Cards</span>
+  <span style="color: #f8f8f2; font-weight: bold;">description</span>: <span style="color: #f1fa8c;">"&#30196;&#20154;&#35828;&#26790;"</span>
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#32593;&#31449;&#22270;&#29255;, &#29992;&#20110; Open Graph &#21644; Twitter Cards</span>
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">images:</span>
+  <span style="color: #6272a4;">#   </span><span style="color: #6272a4;">- /logo.png</span>
 
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#39318;&#37096;&#20803;&#32032;</span>
-  <span style="color: #C18401;">header</span>:
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26700;&#38754;&#31471;&#23548;&#33322;&#26639;&#27169;&#24335; ["fixed", "normal", "auto"]</span>
-    <span style="color: #C18401;">desktopMode</span>: fixed
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#31227;&#21160;&#31471;&#23548;&#33322;&#26639;&#27169;&#24335; ["fixed", "normal", "auto"]</span>
-    <span style="color: #C18401;">mobileMode</span>: auto
-    <span style="color: #C18401;">title</span>:
-      <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">logo: /avatar.png</span>
-      <span style="color: #C18401;">name</span>: &#25163;&#25351;&#39569;&#22763;&#30340;&#30149;&#25151;
-      <span style="color: #C18401;">pre</span>: <span style="color: #50A14F;">''</span>
-      <span style="color: #C18401;">post</span>: <span style="color: #50A14F;">''</span>
-      <span style="color: #C18401;">typeit</span>: <span style="color: #50A14F;">false</span>
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#39318;&#37096;&#20803;&#32032;</span>
+  <span style="color: #f8f8f2; font-weight: bold;">header</span>:
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26700;&#38754;&#31471;&#23548;&#33322;&#26639;&#27169;&#24335; ["fixed", "normal", "auto"]</span>
+    <span style="color: #f8f8f2; font-weight: bold;">desktopMode</span>: fixed
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#31227;&#21160;&#31471;&#23548;&#33322;&#26639;&#27169;&#24335; ["fixed", "normal", "auto"]</span>
+    <span style="color: #f8f8f2; font-weight: bold;">mobileMode</span>: auto
+    <span style="color: #f8f8f2; font-weight: bold;">title</span>:
+      <span style="color: #6272a4;"># </span><span style="color: #6272a4;">logo: /avatar.png</span>
+      <span style="color: #f8f8f2; font-weight: bold;">name</span>: &#25163;&#25351;&#39569;&#22763;&#30340;&#30149;&#25151;
+      <span style="color: #f8f8f2; font-weight: bold;">pre</span>: <span style="color: #f1fa8c;">''</span>
+      <span style="color: #f8f8f2; font-weight: bold;">post</span>: <span style="color: #f1fa8c;">''</span>
+      <span style="color: #f8f8f2; font-weight: bold;">typeit</span>: <span style="color: #bd93f9;">false</span>
 
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#23614;&#37096;&#20803;&#32032;</span>
-  <span style="color: #C18401;">footer</span>:
-    <span style="color: #C18401;">enable</span>: <span style="color: #50A14F;">true</span>
-    <span style="color: #C18401;">custom</span>: <span style="color: #50A14F;">''</span>
-    <span style="color: #C18401;">hugo</span>: <span style="color: #50A14F;">true</span>
-    <span style="color: #C18401;">copyright</span>: <span style="color: #50A14F;">true</span>
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#26174;&#31034;&#20316;&#32773;</span>
-    <span style="color: #C18401;">author</span>: <span style="color: #50A14F;">true</span>
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#32593;&#31449;&#21019;&#31435;&#24180;&#20221;</span>
-    <span style="color: #C18401;">since</span>: 2022
-    <span style="color: #C18401;">icp</span>: <span style="color: #50A14F;">''</span>
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#35768;&#21487;&#21327;&#35758;&#20449;&#24687; (&#25903;&#25345; HTML &#26684;&#24335;)</span>
-    <span style="color: #C18401;">license</span>: &lt;a rel=<span style="color: #50A14F;">"license external nofollow noopener noreffer"</span> href=<span style="color: #50A14F;">"https://creativecommons.org/licenses/by-nc/4.0/"</span> target=<span style="color: #50A14F;">"_blank"</span>&gt;CC BY-NC 4.0&lt;/a&gt;
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#23614;&#37096;&#20803;&#32032;</span>
+  <span style="color: #f8f8f2; font-weight: bold;">footer</span>:
+    <span style="color: #f8f8f2; font-weight: bold;">enable</span>: <span style="color: #bd93f9;">true</span>
+    <span style="color: #f8f8f2; font-weight: bold;">custom</span>: <span style="color: #f1fa8c;">''</span>
+    <span style="color: #f8f8f2; font-weight: bold;">hugo</span>: <span style="color: #bd93f9;">true</span>
+    <span style="color: #f8f8f2; font-weight: bold;">copyright</span>: <span style="color: #bd93f9;">true</span>
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#26174;&#31034;&#20316;&#32773;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">author</span>: <span style="color: #bd93f9;">true</span>
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#32593;&#31449;&#21019;&#31435;&#24180;&#20221;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">since</span>: 2022
+    <span style="color: #f8f8f2; font-weight: bold;">icp</span>: <span style="color: #f1fa8c;">''</span>
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#35768;&#21487;&#21327;&#35758;&#20449;&#24687; (&#25903;&#25345; HTML &#26684;&#24335;)</span>
+    <span style="color: #f8f8f2; font-weight: bold;">license</span>: &lt;a rel=<span style="color: #f1fa8c;">"license external nofollow noopener noreffer"</span> href=<span style="color: #f1fa8c;">"https://creativecommons.org/licenses/by-nc/4.0/"</span> target=<span style="color: #f1fa8c;">"_blank"</span>&gt;CC BY-NC 4.0&lt;/a&gt;
 
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">Section (&#25152;&#26377;&#25991;&#31456;) &#39029;&#38754;&#37197;&#32622;</span>
-  <span style="color: #C18401;">section</span>:
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">section &#39029;&#38754;&#27599;&#39029;&#26174;&#31034;&#25991;&#31456;&#25968;&#37327;</span>
-    <span style="color: #C18401;">paginate</span>: 20
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26085;&#26399;&#26684;&#24335; (&#26376;&#21644;&#26085;)</span>
-    <span style="color: #C18401;">dateFormat</span>: 01-02
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">RSS &#25991;&#31456;&#25968;&#30446;</span>
-    <span style="color: #C18401;">rss</span>: 10
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">Section (&#25152;&#26377;&#25991;&#31456;) &#39029;&#38754;&#37197;&#32622;</span>
+  <span style="color: #f8f8f2; font-weight: bold;">section</span>:
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">section &#39029;&#38754;&#27599;&#39029;&#26174;&#31034;&#25991;&#31456;&#25968;&#37327;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">paginate</span>: 20
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26085;&#26399;&#26684;&#24335; (&#26376;&#21644;&#26085;)</span>
+    <span style="color: #f8f8f2; font-weight: bold;">dateFormat</span>: 01-02
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">RSS &#25991;&#31456;&#25968;&#30446;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">rss</span>: 10
 
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">List (&#30446;&#24405;&#25110;&#26631;&#31614;) &#39029;&#38754;&#37197;&#32622;</span>
-  <span style="color: #C18401;">list</span>:
-    <span style="color: #C18401;">paginate</span>: 20
-    <span style="color: #C18401;">dateFormat</span>: 01-02
-    <span style="color: #C18401;">rss</span>: 10
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">List (&#30446;&#24405;&#25110;&#26631;&#31614;) &#39029;&#38754;&#37197;&#32622;</span>
+  <span style="color: #f8f8f2; font-weight: bold;">list</span>:
+    <span style="color: #f8f8f2; font-weight: bold;">paginate</span>: 20
+    <span style="color: #f8f8f2; font-weight: bold;">dateFormat</span>: 01-02
+    <span style="color: #f8f8f2; font-weight: bold;">rss</span>: 10
 
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#20027;&#39029;&#37197;&#32622;</span>
-  <span style="color: #C18401;">home</span>:
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">RSS &#25991;&#31456;&#25968;&#30446;</span>
-    <span style="color: #C18401;">rss</span>: 10
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#20027;&#39029;&#20010;&#20154;&#20449;&#24687;</span>
-    <span style="color: #C18401;">profile</span>:
-      <span style="color: #C18401;">enable</span>: <span style="color: #50A14F;">true</span>
-      <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">gravatarEmail: ''</span>
-      <span style="color: #C18401;">avatarURL</span>: /img/YunRuAvatar.jpg
-      <span style="color: #C18401;">title</span>: <span style="color: #50A14F;">''</span>
-      <span style="color: #C18401;">subtitle</span>: &#30196;&#20154;&#35828;&#26790;
-      <span style="color: #C18401;">typeit</span>: <span style="color: #50A14F;">false</span>
-      <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#26174;&#31034;&#31038;&#20132;&#36134;&#21495;</span>
-      <span style="color: #C18401;">social</span>: <span style="color: #50A14F;">false</span>
-      <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#20813;&#36131;&#22768;&#26126;</span>
-      <span style="color: #C18401;">disclaimer</span>: <span style="color: #50A14F;">''</span>
-      <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#20027;&#39029;&#25991;&#31456;&#21015;&#34920;</span>
-    <span style="color: #C18401;">posts</span>:
-      <span style="color: #C18401;">enable</span>: <span style="color: #50A14F;">true</span>
-      <span style="color: #C18401;">paginate</span>: 5
-      <span style="color: #C18401;">defaultHiddenFromHomePage</span>: <span style="color: #50A14F;">false</span>
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#20027;&#39029;&#37197;&#32622;</span>
+  <span style="color: #f8f8f2; font-weight: bold;">home</span>:
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">RSS &#25991;&#31456;&#25968;&#30446;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">rss</span>: 10
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#20027;&#39029;&#20010;&#20154;&#20449;&#24687;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">profile</span>:
+      <span style="color: #f8f8f2; font-weight: bold;">enable</span>: <span style="color: #bd93f9;">true</span>
+      <span style="color: #6272a4;"># </span><span style="color: #6272a4;">gravatarEmail: ''</span>
+      <span style="color: #f8f8f2; font-weight: bold;">avatarURL</span>: /img/YunRuAvatar.jpg
+      <span style="color: #f8f8f2; font-weight: bold;">title</span>: <span style="color: #f1fa8c;">''</span>
+      <span style="color: #f8f8f2; font-weight: bold;">subtitle</span>: &#30196;&#20154;&#35828;&#26790;
+      <span style="color: #f8f8f2; font-weight: bold;">typeit</span>: <span style="color: #bd93f9;">false</span>
+      <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#26174;&#31034;&#31038;&#20132;&#36134;&#21495;</span>
+      <span style="color: #f8f8f2; font-weight: bold;">social</span>: <span style="color: #bd93f9;">false</span>
+      <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#20813;&#36131;&#22768;&#26126;</span>
+      <span style="color: #f8f8f2; font-weight: bold;">disclaimer</span>: <span style="color: #f1fa8c;">''</span>
+      <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#20027;&#39029;&#25991;&#31456;&#21015;&#34920;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">posts</span>:
+      <span style="color: #f8f8f2; font-weight: bold;">enable</span>: <span style="color: #bd93f9;">true</span>
+      <span style="color: #f8f8f2; font-weight: bold;">paginate</span>: 5
+      <span style="color: #f8f8f2; font-weight: bold;">defaultHiddenFromHomePage</span>: <span style="color: #bd93f9;">false</span>
 
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#25991;&#31456;&#39029;&#38754;&#20840;&#23616;&#37197;&#32622;</span>
-  <span style="color: #C18401;">page</span>:
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#22312;&#20027;&#39029;&#38544;&#34255;&#19968;&#31687;&#25991;&#31456;</span>
-    <span style="color: #C18401;">hiddenFromHomePage</span>: <span style="color: #50A14F;">false</span>
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#22312;&#25628;&#32034;&#32467;&#26524;&#20013;&#38544;&#34255;&#19968;&#31687;&#25991;&#31456;</span>
-    <span style="color: #C18401;">hiddenFromSearch</span>: <span style="color: #50A14F;">false</span>
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#20351;&#29992; fontawesome &#25193;&#23637;&#35821;&#27861;</span>
-    <span style="color: #C18401;">fontawesome</span>: <span style="color: #50A14F;">true</span>
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#22312; RSS &#20013;&#26174;&#31034;&#20840;&#25991;&#20869;&#23481;</span>
-    <span style="color: #C18401;">rssFullText</span>: <span style="color: #50A14F;">false</span>
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#25991;&#31456;&#39029;&#38754;&#20840;&#23616;&#37197;&#32622;</span>
+  <span style="color: #f8f8f2; font-weight: bold;">page</span>:
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#22312;&#20027;&#39029;&#38544;&#34255;&#19968;&#31687;&#25991;&#31456;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">hiddenFromHomePage</span>: <span style="color: #bd93f9;">false</span>
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#22312;&#25628;&#32034;&#32467;&#26524;&#20013;&#38544;&#34255;&#19968;&#31687;&#25991;&#31456;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">hiddenFromSearch</span>: <span style="color: #bd93f9;">false</span>
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#20351;&#29992; fontawesome &#25193;&#23637;&#35821;&#27861;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">fontawesome</span>: <span style="color: #bd93f9;">true</span>
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#22312; RSS &#20013;&#26174;&#31034;&#20840;&#25991;&#20869;&#23481;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">rssFullText</span>: <span style="color: #bd93f9;">false</span>
 
-    <span style="color: #C18401;">prev</span>: <span style="color: #50A14F;">false</span>
-    <span style="color: #C18401;">next</span>: <span style="color: #50A14F;">false</span>
-    <span style="color: #C18401;">linktomarkdown</span>: <span style="color: #50A14F;">false</span>
+    <span style="color: #f8f8f2; font-weight: bold;">prev</span>: <span style="color: #bd93f9;">false</span>
+    <span style="color: #f8f8f2; font-weight: bold;">next</span>: <span style="color: #bd93f9;">false</span>
+    <span style="color: #f8f8f2; font-weight: bold;">linktomarkdown</span>: <span style="color: #bd93f9;">false</span>
 
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#24320;&#21551;&#19978;&#19979;&#31687;</span>
-    <span style="color: #C18401;">nav</span>: <span style="color: #50A14F;">false</span>
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#24320;&#21551;&#19978;&#19979;&#31687;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">nav</span>: <span style="color: #bd93f9;">false</span>
 
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#30446;&#24405;</span>
-    <span style="color: #C18401;">toc</span>:
-      <span style="color: #C18401;">enable</span>: <span style="color: #50A14F;">true</span>
-      <span style="color: #A0A1A7; font-style: italic;">#  </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#20445;&#25345;&#20351;&#29992;&#25991;&#31456;&#21069;&#38754;&#30340;&#38745;&#24577;&#30446;&#24405;</span>
-      <span style="color: #C18401;">keepStatic</span>: <span style="color: #50A14F;">false</span>
-      <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#20391;&#36793;&#30446;&#24405;&#33258;&#21160;&#25240;&#21472;&#23637;&#24320;</span>
-      <span style="color: #C18401;">auto</span>: <span style="color: #50A14F;">false</span>
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#30446;&#24405;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">toc</span>:
+      <span style="color: #f8f8f2; font-weight: bold;">enable</span>: <span style="color: #bd93f9;">true</span>
+      <span style="color: #6272a4;">#  </span><span style="color: #6272a4;">&#26159;&#21542;&#20445;&#25345;&#20351;&#29992;&#25991;&#31456;&#21069;&#38754;&#30340;&#38745;&#24577;&#30446;&#24405;</span>
+      <span style="color: #f8f8f2; font-weight: bold;">keepStatic</span>: <span style="color: #bd93f9;">false</span>
+      <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#20391;&#36793;&#30446;&#24405;&#33258;&#21160;&#25240;&#21472;&#23637;&#24320;</span>
+      <span style="color: #f8f8f2; font-weight: bold;">auto</span>: <span style="color: #bd93f9;">false</span>
 
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#20195;&#30721;</span>
-    <span style="color: #C18401;">code</span>:
-      <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#26174;&#31034;&#20195;&#30721;&#22359;&#30340;&#22797;&#21046;&#25353;&#38062;</span>
-      <span style="color: #C18401;">copy</span>: <span style="color: #50A14F;">true</span>
-      <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#40664;&#35748;&#23637;&#24320;&#26174;&#31034;&#30340;&#20195;&#30721;&#34892;&#25968;</span>
-      <span style="color: #C18401;">maxShownLines</span>: 50
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#20195;&#30721;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">code</span>:
+      <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#26174;&#31034;&#20195;&#30721;&#22359;&#30340;&#22797;&#21046;&#25353;&#38062;</span>
+      <span style="color: #f8f8f2; font-weight: bold;">copy</span>: <span style="color: #bd93f9;">true</span>
+      <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#40664;&#35748;&#23637;&#24320;&#26174;&#31034;&#30340;&#20195;&#30721;&#34892;&#25968;</span>
+      <span style="color: #f8f8f2; font-weight: bold;">maxShownLines</span>: 50
 
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">KaTeX &#25968;&#23398;&#20844;&#24335;</span>
-    <span style="color: #C18401;">math</span>:
-      <span style="color: #C18401;">enable</span>: <span style="color: #50A14F;">true</span>
-      <span style="color: #C18401;">inlineLeftDelimiter</span>: <span style="color: #50A14F;">''</span>
-      <span style="color: #C18401;">inlineRightDelimiter</span>: <span style="color: #50A14F;">''</span>
-      <span style="color: #C18401;">blockLeftDelimiter</span>: <span style="color: #50A14F;">''</span>
-      <span style="color: #C18401;">blockRightDelimiter</span>: <span style="color: #50A14F;">''</span>
-      <span style="color: #C18401;">copyTex</span>: <span style="color: #50A14F;">true</span>
-      <span style="color: #C18401;">mhchem</span>: <span style="color: #50A14F;">true</span>
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">KaTeX &#25968;&#23398;&#20844;&#24335;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">math</span>:
+      <span style="color: #f8f8f2; font-weight: bold;">enable</span>: <span style="color: #bd93f9;">true</span>
+      <span style="color: #f8f8f2; font-weight: bold;">inlineLeftDelimiter</span>: <span style="color: #f1fa8c;">''</span>
+      <span style="color: #f8f8f2; font-weight: bold;">inlineRightDelimiter</span>: <span style="color: #f1fa8c;">''</span>
+      <span style="color: #f8f8f2; font-weight: bold;">blockLeftDelimiter</span>: <span style="color: #f1fa8c;">''</span>
+      <span style="color: #f8f8f2; font-weight: bold;">blockRightDelimiter</span>: <span style="color: #f1fa8c;">''</span>
+      <span style="color: #f8f8f2; font-weight: bold;">copyTex</span>: <span style="color: #bd93f9;">true</span>
+      <span style="color: #f8f8f2; font-weight: bold;">mhchem</span>: <span style="color: #bd93f9;">true</span>
 
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#22320;&#22270;</span>
-    <span style="color: #C18401;">mapbox</span>:
-      <span style="color: #C18401;">accessToken</span>: <span style="color: #50A14F;">''</span>
-      <span style="color: #C18401;">lightStyle</span>: <span style="color: #50A14F;">'mapbox://styles/mapbox/light-v10?optimize=true'</span>
-      <span style="color: #C18401;">darkStyle</span>: <span style="color: #50A14F;">'mapbox://styles/mapbox/dark-v10?optimize=true'</span>
-      <span style="color: #C18401;">navigation</span>: <span style="color: #50A14F;">true</span>
-      <span style="color: #C18401;">geolocate</span>: <span style="color: #50A14F;">true</span>
-      <span style="color: #C18401;">scale</span>: <span style="color: #50A14F;">true</span>
-      <span style="color: #C18401;">fullscreen</span>: <span style="color: #50A14F;">true</span>
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#22320;&#22270;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">mapbox</span>:
+      <span style="color: #f8f8f2; font-weight: bold;">accessToken</span>: <span style="color: #f1fa8c;">''</span>
+      <span style="color: #f8f8f2; font-weight: bold;">lightStyle</span>: <span style="color: #f1fa8c;">'mapbox://styles/mapbox/light-v10?optimize=true'</span>
+      <span style="color: #f8f8f2; font-weight: bold;">darkStyle</span>: <span style="color: #f1fa8c;">'mapbox://styles/mapbox/dark-v10?optimize=true'</span>
+      <span style="color: #f8f8f2; font-weight: bold;">navigation</span>: <span style="color: #bd93f9;">true</span>
+      <span style="color: #f8f8f2; font-weight: bold;">geolocate</span>: <span style="color: #bd93f9;">true</span>
+      <span style="color: #f8f8f2; font-weight: bold;">scale</span>: <span style="color: #bd93f9;">true</span>
+      <span style="color: #f8f8f2; font-weight: bold;">fullscreen</span>: <span style="color: #bd93f9;">true</span>
 
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#20851;&#38381;&#20998;&#20139;</span>
-    <span style="color: #C18401;">share</span>:
-      <span style="color: #C18401;">enable</span>: <span style="color: #50A14F;">false</span>
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#20851;&#38381;&#20998;&#20139;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">share</span>:
+      <span style="color: #f8f8f2; font-weight: bold;">enable</span>: <span style="color: #bd93f9;">false</span>
 
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#35780;&#35770;&#30475;&#21518;&#38754;</span>
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">comment:</span>
-    <span style="color: #A0A1A7; font-style: italic;">#   </span><span style="color: #A0A1A7; font-style: italic;">enable: true</span>
-    <span style="color: #A0A1A7; font-style: italic;">#   </span><span style="color: #A0A1A7; font-style: italic;">gitalk:</span>
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#35780;&#35770;&#30475;&#21518;&#38754;</span>
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">comment:</span>
+    <span style="color: #6272a4;">#   </span><span style="color: #6272a4;">enable: true</span>
+    <span style="color: #6272a4;">#   </span><span style="color: #6272a4;">gitalk:</span>
 
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#31532;&#19977;&#26041;&#38745;&#24577;&#36164;&#28304;</span>
-    <span style="color: #C18401;">library</span>:
-      <span style="color: #C18401;">css</span>: {<span style="color: #C18401;">}</span>
-<span style="color: #C18401;">      js</span>: {}
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#31532;&#19977;&#26041;&#38745;&#24577;&#36164;&#28304;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">library</span>:
+      <span style="color: #f8f8f2; font-weight: bold;">css</span>: {<span style="color: #f8f8f2; font-weight: bold;">}</span>
+<span style="color: #f8f8f2; font-weight: bold;">      js</span>: {}
 
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#39029;&#38754; SEO &#37197;&#32622;</span>
-    <span style="color: #C18401;">seo</span>:
-      <span style="color: #C18401;">images</span>: []
-      <span style="color: #C18401;">publisher</span>:
-        <span style="color: #C18401;">name</span>: <span style="color: #50A14F;">''</span>
-        <span style="color: #C18401;">logoUrl</span>: <span style="color: #50A14F;">''</span>
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#39029;&#38754; SEO &#37197;&#32622;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">seo</span>:
+      <span style="color: #f8f8f2; font-weight: bold;">images</span>: []
+      <span style="color: #f8f8f2; font-weight: bold;">publisher</span>:
+        <span style="color: #f8f8f2; font-weight: bold;">name</span>: <span style="color: #f1fa8c;">''</span>
+        <span style="color: #f8f8f2; font-weight: bold;">logoUrl</span>: <span style="color: #f1fa8c;">''</span>
 
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">TypeIt &#37197;&#32622;</span>
-  <span style="color: #C18401;">typeit</span>:
-    <span style="color: #C18401;">speed</span>: 100
-    <span style="color: #C18401;">cursorSpeed</span>: 1000
-    <span style="color: #C18401;">cursorChar</span>: <span style="color: #50A14F;">'|'</span>
-    <span style="color: #C18401;">duration</span>: -1
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">TypeIt &#37197;&#32622;</span>
+  <span style="color: #f8f8f2; font-weight: bold;">typeit</span>:
+    <span style="color: #f8f8f2; font-weight: bold;">speed</span>: 100
+    <span style="color: #f8f8f2; font-weight: bold;">cursorSpeed</span>: 1000
+    <span style="color: #f8f8f2; font-weight: bold;">cursorChar</span>: <span style="color: #f1fa8c;">'|'</span>
+    <span style="color: #f8f8f2; font-weight: bold;">duration</span>: -1
 
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#32593;&#31449; SEO &#37197;&#32622;</span>
-  <span style="color: #C18401;">seo</span>:
-    <span style="color: #C18401;">image</span>: <span style="color: #50A14F;">''</span>
-    <span style="color: #C18401;">thumbnailUrl</span>: <span style="color: #50A14F;">''</span>
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#32593;&#31449; SEO &#37197;&#32622;</span>
+  <span style="color: #f8f8f2; font-weight: bold;">seo</span>:
+    <span style="color: #f8f8f2; font-weight: bold;">image</span>: <span style="color: #f1fa8c;">''</span>
+    <span style="color: #f8f8f2; font-weight: bold;">thumbnailUrl</span>: <span style="color: #f1fa8c;">''</span>
 
-  <span style="color: #A0A1A7; font-style: italic;">#  </span><span style="color: #A0A1A7; font-style: italic;">&#31532;&#19977;&#26041;&#24211;&#25991;&#20214;&#30340; CDN &#35774;&#32622;</span>
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">CDN &#25968;&#25454;&#25991;&#20214;&#21517;&#31216;, &#40664;&#35748;&#19981;&#21551;&#29992;</span>
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">["jsdelivr.yml"]</span>
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#20301;&#20110; "themes/LoveIt/assets/data/cdn/" &#30446;&#24405;</span>
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#21487;&#20197;&#22312;&#20320;&#30340;&#39033;&#30446;&#19979;&#30456;&#21516;&#36335;&#24452;&#23384;&#25918;&#20320;&#33258;&#24049;&#30340;&#25968;&#25454;&#25991;&#20214;:</span>
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">"assets/data/cdn/"</span>
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">cdn:</span>
-  <span style="color: #A0A1A7; font-style: italic;">#   </span><span style="color: #A0A1A7; font-style: italic;">data: ''</span>
+  <span style="color: #6272a4;">#  </span><span style="color: #6272a4;">&#31532;&#19977;&#26041;&#24211;&#25991;&#20214;&#30340; CDN &#35774;&#32622;</span>
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">CDN &#25968;&#25454;&#25991;&#20214;&#21517;&#31216;, &#40664;&#35748;&#19981;&#21551;&#29992;</span>
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">["jsdelivr.yml"]</span>
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#20301;&#20110; "themes/LoveIt/assets/data/cdn/" &#30446;&#24405;</span>
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#21487;&#20197;&#22312;&#20320;&#30340;&#39033;&#30446;&#19979;&#30456;&#21516;&#36335;&#24452;&#23384;&#25918;&#20320;&#33258;&#24049;&#30340;&#25968;&#25454;&#25991;&#20214;:</span>
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">"assets/data/cdn/"</span>
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">cdn:</span>
+  <span style="color: #6272a4;">#   </span><span style="color: #6272a4;">data: ''</span>
 
-  <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#25628;&#32034;&#35774;&#32622;</span>
-  <span style="color: #C18401;">search</span>:
-    <span style="color: #C18401;">enable</span>: <span style="color: #50A14F;">true</span>
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#25628;&#32034;&#24341;&#25806;&#30340;&#31867;&#22411; ["lunr", "algolia"]</span>
-    <span style="color: #C18401;">type</span>: lunr
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#25991;&#31456;&#20869;&#23481;&#26368;&#38271;&#32034;&#24341;&#38271;&#24230;</span>
-    <span style="color: #C18401;">contentLength</span>: 4000
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#25628;&#32034;&#26694;&#30340;&#21344;&#20301;&#25552;&#31034;&#35821;</span>
-    <span style="color: #C18401;">placeholder</span>: <span style="color: #50A14F;">''</span>
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26368;&#22823;&#32467;&#26524;&#25968;&#30446;</span>
-    <span style="color: #C18401;">maxResultLength</span>: 10
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#32467;&#26524;&#20869;&#23481;&#29255;&#27573;&#38271;&#24230;</span>
-    <span style="color: #C18401;">snippetLength</span>: 50
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#25628;&#32034;&#32467;&#26524;&#20013;&#39640;&#20142;&#37096;&#20998;&#30340; HTML &#26631;&#31614;</span>
-    <span style="color: #C18401;">highlightTag</span>: em
-    <span style="color: #A0A1A7; font-style: italic;"># </span><span style="color: #A0A1A7; font-style: italic;">&#26159;&#21542;&#22312;&#25628;&#32034;&#32034;&#24341;&#20013;&#20351;&#29992;&#22522;&#20110; baseURL &#30340;&#32477;&#23545;&#36335;&#24452;</span>
-    <span style="color: #C18401;">absoluteURL</span>: <span style="color: #50A14F;">false</span>
+  <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#25628;&#32034;&#35774;&#32622;</span>
+  <span style="color: #f8f8f2; font-weight: bold;">search</span>:
+    <span style="color: #f8f8f2; font-weight: bold;">enable</span>: <span style="color: #bd93f9;">true</span>
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#25628;&#32034;&#24341;&#25806;&#30340;&#31867;&#22411; ["lunr", "algolia"]</span>
+    <span style="color: #f8f8f2; font-weight: bold;">type</span>: lunr
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#25991;&#31456;&#20869;&#23481;&#26368;&#38271;&#32034;&#24341;&#38271;&#24230;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">contentLength</span>: 4000
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#25628;&#32034;&#26694;&#30340;&#21344;&#20301;&#25552;&#31034;&#35821;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">placeholder</span>: <span style="color: #f1fa8c;">''</span>
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26368;&#22823;&#32467;&#26524;&#25968;&#30446;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">maxResultLength</span>: 10
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#32467;&#26524;&#20869;&#23481;&#29255;&#27573;&#38271;&#24230;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">snippetLength</span>: 50
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#25628;&#32034;&#32467;&#26524;&#20013;&#39640;&#20142;&#37096;&#20998;&#30340; HTML &#26631;&#31614;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">highlightTag</span>: em
+    <span style="color: #6272a4;"># </span><span style="color: #6272a4;">&#26159;&#21542;&#22312;&#25628;&#32034;&#32034;&#24341;&#20013;&#20351;&#29992;&#22522;&#20110; baseURL &#30340;&#32477;&#23545;&#36335;&#24452;</span>
+    <span style="color: #f8f8f2; font-weight: bold;">absoluteURL</span>: <span style="color: #bd93f9;">false</span>
 
  </code></pre>
 </div>
 </div>
 
-<div id="outline-container-org6dc35aa" class="outline-4">
-<h4 id="org6dc35aa">关于资源目录</h4>
-<div class="outline-text-4" id="text-org6dc35aa">
+<div id="outline-container-org2cd1387" class="outline-4">
+<h4 id="org2cd1387">关于资源目录</h4>
+<div class="outline-text-4" id="text-org2cd1387">
 <p>
 假设有个写好了的 md ,位置 <code>content/test.md</code> ，那么它会出现在 <b>站点的根目录</b> ，也就是需要访问 <code>https://yoursite.com/test.md</code> 。
 </p>
@@ -664,22 +664,21 @@ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 </div>
 </div>
 
-<div id="outline-container-org3c646df" class="outline-3">
-<h3 id="org3c646df">安装 ox-hugo</h3>
-<div class="outline-text-3" id="text-org3c646df">
+<div id="outline-container-orgcb813ee" class="outline-3">
+<h3 id="orgcb813ee">安装 ox-hugo</h3>
+<div class="outline-text-3" id="text-orgcb813ee">
 <p>
 官网的安装页面：<a href="https://ox-hugo.scripter.co/#installation">https://ox-hugo.scripter.co/#installation</a>。
 </p>
 
 <div class="org-src-container">
-<pre><code class="language-emacs-lisp"> <span style="color: #0184BC;">(</span><span style="color: #E45649;">with-eval-after-load</span> 'ox
-  <span style="color: #986801;">(</span><span style="color: #E45649;">require</span> '<span style="color: #50A14F;">ox-hugo</span><span style="color: #986801;">)</span>
-  <span style="color: #986801;">(</span><span style="color: #E45649;">setq</span> org-hugo-base-dir ../blog/<span style="color: #50A14F;">"</span>
-<span style="color: #50A14F;">    ;; org-hugo-section "</span>posts<span style="color: #50A14F;">"</span>
-<span style="color: #50A14F;">    org-hugo-default-static-subdirectory-for-externals "</span>img<span style="color: #50A14F;">"</span>
-<span style="color: #50A14F;">    org-hugo-auto-set-lastmod t</span>
-<span style="color: #50A14F;">    org-hugo-export-with-toc nil)</span>
-<span style="color: #50A14F;">  )</span>
+<pre><code class="language-lisp"> <span style="color: #f8f8f2;">(</span><span style="color: #ff79c6; font-weight: bold;">with-eval-after-load</span> 'ox
+  <span style="color: #8be9fd;">(</span><span style="color: #ff79c6; font-weight: bold;">require</span> '<span style="color: #bd93f9;">ox-hugo</span><span style="color: #8be9fd;">)</span>
+  <span style="color: #8be9fd;">(</span>setq org-hugo-base-dir ../blog/<span style="color: #f1fa8c;">"</span>
+<span style="color: #f1fa8c;">    ;; org-hugo-section "</span>posts<span style="color: #f1fa8c;">"</span>
+<span style="color: #f1fa8c;">    org-hugo-default-static-subdirectory-for-externals "</span>img<span style="color: #f1fa8c;">"</span>
+<span style="color: #f1fa8c;">    org-hugo-auto-set-lastmod t</span>
+<span style="color: #f1fa8c;">    org-hugo-export-with-toc nil))</span>
  </code></pre>
 </div>
 <ul class="org-ul">
@@ -692,20 +691,19 @@ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 </div>
 </div>
 
-<div id="outline-container-org49143c6" class="outline-3">
-<h3 id="org49143c6">ox-hugo 使用</h3>
-<div class="outline-text-3" id="text-org49143c6">
+<div id="outline-container-orged22bcb" class="outline-3">
+<h3 id="orged22bcb">ox-hugo 使用</h3>
+<div class="outline-text-3" id="text-orged22bcb">
 <p>
 Org file 的基础配置
 </p>
-<div class="org-src-container">
-<pre><code class="language-org"> <span style="color: #A0A1A7;">title:</span> <span style="color: #191970; font-weight: bold;">&#25991;&#31456;&#26631;&#39064;</span>
-<span style="color: #A0A1A7;">date:</span>  <span style="color: #191970;">2022-09-10 Sat </span>
-<span style="color: #A0A1A7; font-style: italic;">hugo_tags: tags1 tags2</span>
-<span style="color: #A0A1A7; font-style: italic;">hugo_categories: Class</span>
-<span style="color: #A0A1A7; font-style: italic;">hugo_draft: true</span>
- </code></pre>
-</div>
+<pre class="example" id="orgccf80b6">
+#+title: 文章标题
+#+date: [2022-09-10 Sat]
+#+hugo_tags: tags1 tags2
+#+hugo_categories: Class
+#+hugo_draft: true
+</pre>
 
 <p>
 解释如下：
@@ -721,13 +719,12 @@ Org file 的基础配置
 <p>
 对于特定文件，可以在文件的头配置里面覆盖掉基础配置。比如“关于”页面 <code>about.org</code> 的内容：
 </p>
-<div class="org-src-container">
-<pre><code class="language-org"> <span style="color: #A0A1A7; font-style: italic;">hugo_base_dir:../blog/</span>
-<span style="color: #A0A1A7; font-style: italic;">hugo_section: ./</span>
-<span style="color: #A0A1A7; font-style: italic;">hugo_auto_set_lastmod: t</span>
-<span style="color: #A0A1A7; font-style: italic;">hugo_custom_front_matter: :toc false</span>
- </code></pre>
-</div>
+<pre class="example" id="orgc040b0b">
+#+hugo_base_dir:../blog/
+#+hugo_section: ./
+#+hugo_auto_set_lastmod: t
+#+hugo_custom_front_matter: :toc false
+</pre>
 <p>
 这样就使得输出的 <code>about.md</code> 直接在 <code>blog/content/</code> 下面，覆盖了 <code>.emacs</code> 配置里面写的 <code>blog/content/posts</code>
 </p>
@@ -738,9 +735,9 @@ Org file 的基础配置
 </div>
 </div>
 
-<div id="outline-container-org6a63428" class="outline-3">
-<h3 id="org6a63428">设置评论</h3>
-<div class="outline-text-3" id="text-org6a63428">
+<div id="outline-container-orgfcf3500" class="outline-3">
+<h3 id="orgfcf3500">设置评论</h3>
+<div class="outline-text-3" id="text-orgfcf3500">
 <p>
 <code>LoveIt</code> 主题给出了很多选择，我用的是 Gitalk<sup>[<a id="fnr:3.1" class="footref" href="#fn:3">3</a>]</sup> ，它是基于 Github 的 Issue 模块设计的。它十分太巧妙，用一个 Github 仓库做评论存储 —— 并不是作为 code 来存。对于每个仓库，都有一个 Issue 区域，用来记录问题和反馈。每条 issue 下面都可以评论 —— 本质上 Issue 就是一个评论区，它在 Github 的作用就是反馈问题，用来当博客评论简直舒服（当然，评论者必须登录 GitHub 之后才能评论）。
 </p>
@@ -750,7 +747,7 @@ Org file 的基础配置
 </p>
 
 
-<figure id="org956a77f">
+<figure id="org5a1017f">
 <img src="/assets/2022-09-12_13-18-04.png" alt="2022-09-12_13-18-04.png">
 
 </figure>
@@ -776,7 +773,7 @@ Org file 的基础配置
 </p>
 
 
-<figure id="orgeb59635">
+<figure id="org3612c25">
 <img src="/assets/2022-09-12_13-30-09.png" alt="2022-09-12_13-30-09.png">
 
 </figure>
@@ -797,7 +794,7 @@ Org file 的基础配置
 </p>
 
 
-<figure id="org65fa644">
+<figure id="orgfbf7c1a">
 <img src="/assets/2022-09-12_13-39-14.png" alt="2022-09-12_13-39-14.png">
 
 </figure>
@@ -811,9 +808,9 @@ Org file 的基础配置
 </p>
 </div>
 
-<div id="outline-container-org9096f0a" class="outline-4">
-<h4 id="org9096f0a">LoveIt 的 Bug</h4>
-<div class="outline-text-4" id="text-org9096f0a">
+<div id="outline-container-org17e8a3a" class="outline-4">
+<h4 id="org17e8a3a">LoveIt 的 Bug</h4>
+<div class="outline-text-4" id="text-org17e8a3a">
 <p>
 如果你有好几篇文章同时生成和发布，那么就有可能出现这个 bug ，会导致评论共用，就是 A 文章下面的评论和 B 文章下面的评论一样， A 文章下面发的评论在 B 文章那里也可以看到。
 </p>
@@ -823,7 +820,7 @@ Org file 的基础配置
 </p>
 
 
-<figure id="org7101eb1">
+<figure id="org03402bb">
 <img src="/assets/2022-09-12_13-46-33.png" alt="2022-09-12_13-46-33.png">
 
 </figure>
@@ -841,7 +838,7 @@ LoveIt 的默认 <code>id</code> 是写死的，就是 <code>Date</code> ，所�
 </p>
 
 
-<figure id="orgc808015">
+<figure id="orgc937ac2">
 <img src="/assets/2022-09-12_13-53-46.png" alt="2022-09-12_13-53-46.png">
 
 </figure>
@@ -854,9 +851,9 @@ LoveIt 的默认 <code>id</code> 是写死的，就是 <code>Date</code> ，所�
 </div>
 </div>
 
-<div id="outline-container-orgf73b0e6" class="outline-2">
-<h2 id="orgf73b0e6">工作流程</h2>
-<div class="outline-text-2" id="text-orgf73b0e6">
+<div id="outline-container-org1c18f2f" class="outline-2">
+<h2 id="org1c18f2f">工作流程</h2>
+<div class="outline-text-2" id="text-org1c18f2f">
 <p>
 至此 <b>一个博客就搭建好了</b> ，接下来说明它的工作流程。
 </p>
@@ -868,7 +865,7 @@ LoveIt 的默认 <code>id</code> 是写死的，就是 <code>Date</code> ，所�
 </ol>
 <div class="org-src-container">
 <pre><code class="language-bash"> git add *
-git commit -m <span style="color: #50A14F;">"&#27880;&#37322;"</span>
+git commit -m <span style="color: #f1fa8c;">"&#27880;&#37322;"</span>
 git push
  </code></pre>
 </div>
@@ -879,9 +876,9 @@ git push
 </div>
 </div>
 
-<div id="outline-container-org5353dc9" class="outline-2">
-<h2 id="org5353dc9">自动化</h2>
-<div class="outline-text-2" id="text-org5353dc9">
+<div id="outline-container-orge73d190" class="outline-2">
+<h2 id="orge73d190">自动化</h2>
+<div class="outline-text-2" id="text-orge73d190">
 <p>
 如果每次都那么搞就太麻烦了。因此我写了一些东西，使得整个流程直接一步到位，可以参考。
 </p>
@@ -892,31 +889,31 @@ git push
 </div>
 </div>
 
-<div id="outline-container-orgf90db3a" class="outline-2">
-<h2 id="orgf90db3a">优化</h2>
-<div class="outline-text-2" id="text-orgf90db3a">
+<div id="outline-container-orgbe5ebd6" class="outline-2">
+<h2 id="orgbe5ebd6">优化</h2>
+<div class="outline-text-2" id="text-orgbe5ebd6">
 </div>
-<div id="outline-container-orgb34a2d8" class="outline-3">
-<h3 id="orgb34a2d8">CDN 设置</h3>
-<div class="outline-text-3" id="text-orgb34a2d8">
+<div id="outline-container-orgeb185e3" class="outline-3">
+<h3 id="orgeb185e3">CDN 设置</h3>
+<div class="outline-text-3" id="text-orgeb185e3">
 <p>
 复制 LoveIt 目录 <code>themes/LoveIt/assets/data/cdn/</code> 到../blog/assets/data/cdn/~ (<code>assets</code> 需要自己创)<sup>[<a id="fnr:4.1" class="footref" href="#fn:4">4</a>]</sup>。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgf5e0584" class="outline-3">
-<h3 id="orgf5e0584">Cloudflare Page</h3>
-<div class="outline-text-3" id="text-orgf5e0584">
+<div id="outline-container-org4095ccd" class="outline-3">
+<h3 id="org4095ccd">Cloudflare Page</h3>
+<div class="outline-text-3" id="text-org4095ccd">
 <p>
 Cloudflare Page 也可以直接托管静态站点了，它是联动 GitHub ，把仓库的 HTML 等站点文件克隆到它的服务器然后部署。参考《<a href="https://zhuanlan.zhihu.com/p/416269228">几分钟、零基础搭建个人网页！- 高速直连，基于Cloudflare Page - 知乎</a>》。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org7a28ddb" class="outline-3">
-<h3 id="org7a28ddb">Cloudflare + DNS</h3>
-<div class="outline-text-3" id="text-org7a28ddb">
+<div id="outline-container-org304228d" class="outline-3">
+<h3 id="org304228d">Cloudflare + DNS</h3>
+<div class="outline-text-3" id="text-org304228d">
 <p>
 我是自己注册了一个域名，然后用 Cloudflare 托管，具体可以参考我的另一篇博客《<a href="/Computer/20221223T150015--gihub-page-cloudflare-namesilo-的域名配置__cloudflare_dns_githubpage_namesilo_site">GiHub Page + Cloudflare + NameSilo 的域名配置</a>》
 </p>
@@ -924,9 +921,9 @@ Cloudflare Page 也可以直接托管静态站点了，它是联动 GitHub ，�
 </div>
 </div>
 
-<div id="outline-container-orgf58de48" class="outline-2">
-<h2 id="orgf58de48">后记</h2>
-<div class="outline-text-2" id="text-orgf58de48">
+<div id="outline-container-orgfd1301e" class="outline-2">
+<h2 id="orgfd1301e">后记</h2>
+<div class="outline-text-2" id="text-orgfd1301e">
 <p>
 搞了好几天终于算可以了，留一些尾巴后面处理。
 </p>
@@ -974,11 +971,8 @@ Gitalk: <a href="https://github.com/gitalk/gitalk/">https://github.com/gitalk/gi
 </div>
 </div>
 </div>
-<div id="postamble" class="status"><script src="/static/highlight/highlight.min.js"></script>
-
-<script>
-window.config={"code": {"header": false,
-"exclude": ["mermaid"]}, }
+<div id="postamble" class="status"><script>
+window.config={}
 </script>
 <script src="/static/style/style.js"></script>
 </div>

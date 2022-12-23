@@ -156,7 +156,7 @@ body{
     margin: 0;
 }
 #content h1.post-title {
-    font-size: 2rem;
+    font-size: 1.7rem;
     text-align: center;
 }
 
@@ -258,7 +258,7 @@ body{
 
 #content p {
     margin: 0 0 1rem 0;
-    padding:  0.3rem 1rem;
+    padding:  0 0.5rem;
 }
 
 #content p.quote-source {
@@ -360,6 +360,12 @@ body{
 
 /* Code */
 #content p code {
+    color: var(--one-light-orange);
+    background-color: var(--inline-code-bg-color);
+    padding: 0 0.3rem;
+}
+
+#content li code {
     color: var(--one-light-orange);
     background-color: var(--inline-code-bg-color);
     padding: 0 0.3rem;
