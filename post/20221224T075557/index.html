@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="I choose to see the beauty.">
+<title>Arch Linux 从 kde 转移到 Gnome</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noodp">
+<meta name="author" content=" Finger Knight ">
+<meta name="referrer" content="no-referrer"><link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<body>
+<div class="header">
+<div class="home-page">
+<a href="/">手指骑士的病房</a></div><div class="nav">
+<div class="nav item">
+<a href="/tags">标签</a>
+</div>
+<div class="nav item">
+<a href="/archive">归档</a>
+</div>
+<div class="nav item">
+<a href="/about">关于</a>
+</div>
+</div>
+</div>
+<div class="main">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/highlight/dracula.css"><div class="toc">
+<h2 class="toc-title"> TOC </h2>
+<nav id="TableOfContents">
+
+<ul>
+<li>
+<a href="#orge1dde07"> 起因 </a></li>
+<li>
+<a href="#orgd84e6b9"> 安装 </a></li>
+<li>
+<a href="#orgb9e0468"> 基本配置 </a>
+<ul>
+<li>
+<a href="#org1ab09ff"> 快捷键 </a></li>
+</ul>
+</li>
+<li>
+<a href="#org6c83426"> 插件安装 </a>
+<ul>
+<li>
+<a href="#org19caeca"> 准备 </a></li>
+<li>
+<a href="#org59e08dc"> 使用 </a></li>
+<li>
+<a href="#org5a04cc6"> 插件列表 </a></li>
+</ul>
+</li>
+<li>
+<a href="#orga6b42dd"> Miscellaneous </a>
+<ul>
+<li>
+<a href="#org1d97f99"> 修改 Alt + Tab 的行为 </a></li>
+<li>
+<a href="#org5b3c379"> 卸除 KDE </a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<h1 class="post-title"> Arch Linux 从 kde 转移到 Gnome </h1>
+<div class="post-date">2022-10-24</div>
+<div class="taglist"><a href="/tag/archlinux"> #archlinux </a>
+<a href="/tag/kde"> #kde </a>
+<a href="/tag/gnome"> #gnome </a>
+</div>
+</div>
+<div id="content">
+
+<div id="outline-container-orge1dde07" class="outline-2">
+<h2 id="orge1dde07">起因</h2>
+<div class="outline-text-2" id="text-orge1dde07">
+<p>
+最开始用的是 <a href="https://kde.org" target="_blank">KDE</a> 桌面，有一说一，它的 UI 真的很漂亮，自定义起来也很方便，很多东西都是可以直接用鼠标调的，不用真的去改配置文件。但是它最大的问题是<b>不稳定</b>，这也是我替换它的主要原因。时不时会遇到标题栏卡住、任务栏卡住的情况，鼠标键盘还能动，视频音乐也继续放着，但是鼠标关不掉窗口，只能重启解决。偶尔出现几次还能接受，但它最近频发让我有点难顶，因此打算换一个桌面 &#x2013; 等到后面如果 kde 6 优化起飞的话还是会换会 KDE, 用着真的爽。
+</p>
+
+<p>
+考虑的方案有： <a href="https://www.gnome.org" target="_blank">Gnome</a> 和 <a href="https://i3wm.org" target="_blank">i3wm</a> 。 Gnome 和 KDE 一样，生态比较完整，配置几乎是全套； i3wm 要配置的东西比较多，我懒得于是选了 gnome （后面有时间可以折腾一下 i3wm ）。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd84e6b9" class="outline-2">
+<h2 id="orgd84e6b9">安装</h2>
+<div class="outline-text-2" id="text-orgd84e6b9">
+<div class="org-src-container">
+<pre><code class="language-bash">sudo pacman -S gnome gdm gnome-tweaks gnome-browser-connector</code></pre>
+</div>
+<ul class="org-ul">
+<li><code>gnome</code>: 整个 Gnome 组包括基本组件和基本应用比如内置浏览器、终端、文件管理器都会安装</li>
+<li><code>gdm</code>: 适配 Gnome 的登录管理界面</li>
+<li><code>gnome-tweaks</code>: 额外的优化选项</li>
+<li><code>gnome-browser-connector</code>: 集成浏览器插件，用来安装管理 Gnome 插件</li>
+</ul>
+
+<p>
+将登录管理器从 SDDM 替换成 GDM:
+</p>
+<div class="org-src-container">
+<pre><code class="language-bash">sudo systemctl disable sddm --now
+sudo systemctl disable gdm --now</code></pre>
+</div>
+
+<p>
+这是重启或者注消的登录管理界面应该替换成 GDM 了，然后选择合适的桌面环境进入即可。我选用的是 <code>Gnome on xorg</code> 。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb9e0468" class="outline-2">
+<h2 id="orgb9e0468">基本配置</h2>
+<div class="outline-text-2" id="text-orgb9e0468">
+<p>
+这里不过多解释，通过 <code>系统设置</code> 和 <code>gnome-tweaks</code> 配置就行了。
+</p>
+</div>
+
+<div id="outline-container-org1ab09ff" class="outline-3">
+<h3 id="org1ab09ff">快捷键</h3>
+<div class="outline-text-3" id="text-org1ab09ff">
+<p>
+<code>系统设置</code> &gt; <code>键盘</code> 里面修改
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6c83426" class="outline-2">
+<h2 id="org6c83426">插件安装</h2>
+<div class="outline-text-2" id="text-org6c83426">
+</div>
+<div id="outline-container-org19caeca" class="outline-3">
+<h3 id="org19caeca">准备</h3>
+<div class="outline-text-3" id="text-org19caeca">
+<p>
+过程可参见：<a href="https://wiki.gnome.org/action/show/Projects/GnomeShellIntegration/Installation" target="_blank">Projects/GnomeShellIntegration/Installation - GNOME Wiki!</a>
+</p>
+
+<ol class="org-ol">
+<li>安装 <code>gnome-browser-connector</code> ，前面已经安装了</li>
+<li>安装浏览器插件，支持 <a href="https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep" target="_blank">Chrome</a>, <a href="https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/" target="_blank">Firefox</a></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org59e08dc" class="outline-3">
+<h3 id="org59e08dc">使用</h3>
+<div class="outline-text-3" id="text-org59e08dc">
+<p>
+通过点击浏览器插件，或者直接访问 <a href="https://extensions.gnome.org" target="_blank">https://extensions.gnome.org</a> 进入插件管理界面。进入 <code>Installed entensions</code> 或者 <a href="https://extensions.gnome.org/local/" target="_blank">https://extensions.gnome.org/local/</a> 查看本地已安装的插件。注意要把 <code>Disable all extensions</code> 置为 <code>Off</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5a04cc6" class="outline-3">
+<h3 id="org5a04cc6">插件列表</h3>
+<div class="outline-text-3" id="text-org5a04cc6">
+<ul class="org-ul">
+<li><a href="https://extensions.gnome.org/extension/779/clipboard-indicator/" target="_blank">Clipboard Indicator</a>: 任务栏添加剪切板托盘</li>
+<li><a href="https://extensions.gnome.org/extension/307/dash-to-dock/" target="_blank">Dash to Dock</a>: Dock 配置</li>
+<li><a href="https://extensions.gnome.org/extension/4655/date-menu-formatter/" target="_blank">Date Menu Formatter</a>: 自定义任务栏的时间格式</li>
+<li><a href="https://extensions.gnome.org/extension/744/hide-activities-button/" target="_blank">Hide Activities Button</a>: 隐藏任务栏的“活动”（Activities）</li>
+<li><a href="https://extensions.gnome.org/extension/261/kimpanel/" target="_blank">Input Method Panel</a>: 任务栏添加输入法托盘</li>
+<li><a href="https://extensions.gnome.org/extension/4651/notification-banner-reloaded/" target="_blank">Notification Banner Reloaded</a>: 修改通知的在屏幕出现的位置</li>
+<li><a href="https://extensions.gnome.org/extension/5380/notification-filter/" target="_blank">Notification Filter</a>: 过滤通知。最开始考虑的是过滤掉 flameshot 截屏时中途退出发出的通知</li>
+<li><a href="https://extensions.gnome.org/extension/3795/notification-timeout/" target="_blank">Notification Timeout</a>: 通知超时关闭</li>
+<li><a href="https://extensions.gnome.org/extension/7/removable-drive-menu/" target="_blank">Removable Drive Menu</a>: 任务栏显示 USB 设备管理</li>
+<li><a href="https://extensions.gnome.org/extension/906/sound-output-device-chooser/" target="_blank">Sound Input &amp; Output Device Chooser</a>: 任务栏声音设置可以选择设备</li>
+<li><a href="https://extensions.gnome.org/extension/1460/vitals/" target="_blank">Vitals</a>: 任务栏显示系统信息，如 CPU 使用率、温度、网速等</li>
+<li><a href="https://extensions.gnome.org/extension/2890/tray-icons-reloaded/" target="_blank">Tray Icons: Reloaded</a>: 任务栏显示应用的托盘。 Gnome 默认是不显示的</li>
+<li><a href="https://extensions.gnome.org/extension/4812/wallpaper-switcher/" target="_blank">Wallpaper Switcher</a>: 桌面壁纸幻灯片</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga6b42dd" class="outline-2">
+<h2 id="orga6b42dd">Miscellaneous</h2>
+<div class="outline-text-2" id="text-orga6b42dd">
+</div>
+<div id="outline-container-org1d97f99" class="outline-3">
+<h3 id="org1d97f99">修改 Alt + Tab 的行为</h3>
+<div class="outline-text-3" id="text-org1d97f99">
+<p>
+gnome 的 <code>Alt+Tab</code> 默认是切换应用，如果一个应用开了多个窗口，只能转到最近使用的一个，或者在使用方向键控制。在设置里将 <code>Alt+Tab</code> 绑定到 <code>交换窗口</code> 即可 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5b3c379" class="outline-3">
+<h3 id="org5b3c379">卸除 KDE</h3>
+<div class="outline-text-3" id="text-org5b3c379">
+<p>
+先把基本的东西卸除 <sup>[<a id="fnr:2.1" class="footref" href="#fn:2">2</a>]</sup>：
+</p>
+<div class="org-src-container">
+<pre><code class="language-bash">sudo pacman -Rns plasma-meta kde-applications</code></pre>
+</div>
+<ul class="org-ul">
+<li>我安装的是 <code>plasma-meta</code>, 如果不同自行切换</li>
+<li>如果提示依赖，手动加载后面。最好别用 <code>-c</code> 把依赖一起删除，这个会把 <code>NetworkManage</code> 给删了，gnome 依赖它来管理网络。幸好有包的缓存，上不了网等于结束。</li>
+</ul>
+
+<p>
+然后在手动把一些 <code>konsole</code> 相关的东西删了就差不多了。
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="text-footnotes" role="doc-endnotes">
+<ol>
+<li id="fn:1">
+<p class="footpara">
+<a href="https://askubuntu.com/a/996410" target="_blank">shortcut keys - How do I "alt-tab" between windows using Gnome 3? - Ask Ubuntu</a>
+<a href="#fnr:1.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+<li id="fn:2">
+<p class="footpara">
+<a href="https://bbs.archlinux.org/viewtopic.php?pid=1833416#p1833416" target="_blank">fully uninstall kde / Newbie Corner / Arch Linux Forums</a>
+<a href="#fnr:2.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status"><script src="/static/highlight/highlight.min.js"></script>
+
+<script>
+window.config={"code": {"header": false,
+"exclude": ["mermaid"]}, }
+</script>
+<script src="/static/style/style.js"></script>
+</div>
+</div>
+<div class="footer">
+<center> The End </center></div>
+</body>
+</html>

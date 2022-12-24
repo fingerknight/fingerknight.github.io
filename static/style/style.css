@@ -150,6 +150,10 @@ body{
     color: var(--link-hover)
 }
 
+#content h2.post-title {
+    font-size: 1.2rem;
+}
+
 #content .post-title {
     font-size: 1.5rem;
     padding: 1rem 0;

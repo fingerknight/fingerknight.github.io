@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="I choose to see the beauty.">
+<title>Goldendict 词典客户端</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noodp">
+<meta name="author" content=" Finger Knight ">
+<meta name="referrer" content="no-referrer"><link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<body>
+<div class="header">
+<div class="home-page">
+<a href="/">手指骑士的病房</a></div><div class="nav">
+<div class="nav item">
+<a href="/tags">标签</a>
+</div>
+<div class="nav item">
+<a href="/archive">归档</a>
+</div>
+<div class="nav item">
+<a href="/about">关于</a>
+</div>
+</div>
+</div>
+<div class="main">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/highlight/dracula.css"><div class="toc">
+<h2 class="toc-title"> TOC </h2>
+<nav id="TableOfContents">
+
+<ul>
+<li>
+<a href="#org9069034"> 简介 </a></li>
+<li>
+<a href="#orge37abeb"> 安装 </a></li>
+<li>
+<a href="#org97ac080"> 词典管理 </a></li>
+<li>
+<a href="#orgcbd1f02"> 离线词典 </a></li>
+<li>
+<a href="#org993afc7"> 在线词典 </a></li>
+<li>
+<a href="#org8c24ae0"> 构词法 </a></li>
+<li>
+<a href="#org7aac30e"> 取词 </a></li>
+<li>
+<a href="#orga09f1a8"> 翻译 </a></li>
+<li>
+<a href="#orgf69285c"> 程序 </a></li>
+<li>
+<a href="#org92a6869"> 发音 </a></li>
+</ul>
+</nav>
+</div>
+<h1 class="post-title"> Goldendict 词典客户端 </h1>
+<div class="post-date">2022-12-03</div>
+<div class="taglist"><a href="/tag/archlinux"> #archlinux </a>
+<a href="/tag/dictionary"> #dictionary </a>
+<a href="/tag/goldendict"> #goldendict </a>
+<a href="/tag/language"> #language </a>
+</div>
+</div>
+<div id="content">
+
+<div id="outline-container-org9069034" class="outline-2">
+<h2 id="org9069034">简介</h2>
+<div class="outline-text-2" id="text-org9069034">
+<p>
+Goldendict 一个开源的、可定制的词典，跨平台，支持一个词典所必需的功能：取词翻译、整句翻译、自定义词典等等。“可定制”也意味着不是开箱即用，需要配置。刚安装之后几乎只是一个空盒子，需要自己去添加配置各种功能。
+</p>
+
+<p>
+Goldendict 项目地址：<a href="https://github.com/goldendict/goldendict" target="_blank">https://github.com/goldendict/goldendict</a>. 参考手册在“wiki”里边。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge37abeb" class="outline-2">
+<h2 id="orge37abeb">安装</h2>
+<div class="outline-text-2" id="text-orge37abeb">
+<p>
+在 Arch Linux 中通过包管理器安装：
+</p>
+<div class="org-src-container">
+<pre><code class="language-bash">sudo pacman -S goldendict-git</code></pre>
+</div>
+
+<p>
+初始界面如下 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup> （借一张初始化的图）：
+</p>
+
+
+<figure id="orge07ed8d">
+<a href="/assets/b77f3c1d326af022.png" target="_blank"><img src="/assets/b77f3c1d326af022.png" alt="b77f3c1d326af022.png"></a>
+
+</figure>
+</div>
+</div>
+
+<div id="outline-container-org97ac080" class="outline-2">
+<h2 id="org97ac080">词典管理</h2>
+<div class="outline-text-2" id="text-org97ac080">
+<p>
+在 <code>编辑</code> - <code>词典</code> 里面的 ~词典来源可以管理词典。它有如下选项：
+</p>
+<ul class="org-ul">
+<li><b>文件</b>，即离线词典的位置。</li>
+<li><b>音频文件目录</b>，用于播放读音，后面的<a href="#org92a6869" target="_blank">发音</a>章节中会用到</li>
+<li><b>构词法规则库</b>，用于识别词法变换，如搜索“looked”会定位到“look”，后面<a href="#org8c24ae0" target="_blank">构词法</a>章节中会用到</li>
+<li><b>维基百科</b>，字面意义上，就是在维基百科上查词。需要魔法</li>
+<li><b>网站</b>，通过 Web API 去查词</li>
+<li><b>词典服务器</b>，词典服务器，我不用这个</li>
+<li><b>程序</b>，通过本地的程序去查询，后面<a href="#orga09f1a8" target="_blank">翻译</a>章节会用到</li>
+</ul>
+
+<p>
+后边两个我用不到。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcbd1f02" class="outline-2">
+<h2 id="orgcbd1f02">离线词典</h2>
+<div class="outline-text-2" id="text-orgcbd1f02">
+<p>
+在词典管理里面的 <code>文件</code> 添加。它添加的条目是一个<b>目录</b>，提供的递归搜索，因此只需要把所有词典放到一个目录下边就能全部添加。
+</p>
+
+<p>
+Goldendict 支持的词典类型很多，手册上给出如下 <sup>[<a id="fnr:2.1" class="footref" href="#fn:2">2</a>]</sup> ：
+</p>
+
+<blockquote>
+<p> nil </p></blockquote>
+
+<p>
+可自行网上搜各种词典。之前用的是这为博主分享的词典 <sup>[<a id="fnr:3.1" class="footref" href="#fn:3">3</a>]</sup> ：
+</p>
+<blockquote>
+<p> nil </p></blockquote>
+
+<p>
+需要可以去原文里面找到，博主慷慨提供了提供百度网盘和 Dropbox 的分享。
+</p>
+
+<p>
+我最近忘了在哪儿找到了一个项目，维护了一个词典，我的评价是：无敌。我现在就单单用这一个作为离线词典，完全足够。下载地址：<a href="https://github.com/skywind3000/ECDICT-ultimate/releases/tag/1.0.0" target="_blank">https://github.com/skywind3000/ECDICT-ultimate/releases/tag/1.0.0</a>, 我下载的是 <code>ecdict-ultimate-mdx.zip</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org993afc7" class="outline-2">
+<h2 id="org993afc7">在线词典</h2>
+<div class="outline-text-2" id="text-org993afc7">
+<p>
+在词典管理里面的 <code>网站</code> 添加。下面给出一些常用的 API <sup>[<a id="fnr:1.2" class="footref" href="#fn:1">1</a>]</sup> <sup>, </sup><sup>[<a id="fnr:4.1" class="footref" href="#fn:4">4</a>]</sup>:
+</p>
+<div class="org-src-container">
+<pre><code class="language-plaintext"># 欧路
+https://dict.eudic.net/dicts/en/%GDWORD%
+
+# 有道词典 / 翻译
+http://dict.youdao.com/search?q=%GDWORD%&ue=utf8
+
+# Collins Online Dictionary
+https://www.collinsdictionary.com/dictionary/english/%GDWORD%
+
+# Dictonary.com
+https://www.dictionary.com/browse/%GDWORD%
+
+# 金山词霸
+http://www.iciba.com/word?w=%GDWORD%</code></pre>
+</div>
+
+<p>
+其中， <code>%GDWORD%</code> 是要搜索的词。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8c24ae0" class="outline-2">
+<h2 id="org8c24ae0">构词法</h2>
+<div class="outline-text-2" id="text-org8c24ae0">
+<p>
+默认情况下，如果搜索“testing”， Goldendict 会去找词典中<b>完全匹配</b>的单词，如果词典没有收录自然找不到。而我们希望一个词典能够识别出单词的词性，让它给我们定位到“test”，这就需要构词法来完成。
+</p>
+
+<p>
+前往 Goldendict 的 Source Forge ：<a href="https://sourceforge.net/projects/goldendict/files/better%20morphologies/1.0/" target="_blank">https://sourceforge.net/projects/goldendict/files/better%20morphologies/1.0/</a>, 下载 <code>en_US_1.0.zip</code> ，然后在词典管理里面的 <code>构词法规则库</code> 添加 <sup>[<a id="fnr:1.3" class="footref" href="#fn:1">1</a>]</sup> 。
+</p>
+
+<p>
+它还提供了一些如近义词之类的功能。为了更好的使用，建议将它作为词典列表中的第一个，这样显示界面就会优先显示它。在词典配置中拖拽就能移动顺序。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7aac30e" class="outline-2">
+<h2 id="org7aac30e">取词</h2>
+<div class="outline-text-2" id="text-org7aac30e">
+<p>
+在 <code>编辑</code> - <code>首选项</code> 里面的 <code>屏幕取词</code> 可以对其做一些配置。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga09f1a8" class="outline-2">
+<h2 id="orga09f1a8">翻译</h2>
+<div class="outline-text-2" id="text-orga09f1a8">
+<p>
+可以通过 Web API 的方式来获取平台的翻译接口，比如 Google 翻译：
+</p>
+<div class="org-src-container">
+<pre><code class="language-plaintext">https://translate.google.com/?hl=zh-CN&sl=en&text=%GDWORD%&op=translate</code></pre>
+</div>
+
+<p>
+它既可以翻译词，又可以翻译句子。
+</p>
+
+<p>
+在 <code>编辑</code> - <code>首选项</code> 里面的 <code>热键</code> 开启“使用下列热键翻译剪切板中的单词”，就可以选中一句话，然后使用该热键弹出 Goldendict 的小窗口，选择翻译的字典 <sup>[<a id="fnr:1.4" class="footref" href="#fn:1">1</a>]</sup> 。这样可以非常方便的翻译句子。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf69285c" class="outline-2">
+<h2 id="orgf69285c">程序</h2>
+<div class="outline-text-2" id="text-orgf69285c">
+<p>
+程序就是通过执行本地程序，来获得其标准输出（也就出 print/echo 的内容）。给两个例子。
+</p>
+
+<p>
+第一个是 Bing 翻译。在浏览器上看 Bing 翻译的 url 很简单，但是放到 Goldendict 就用不了，因为它需要加一些请求头。有一个项目：<a href="https://github.com/oldoldstone/bing-dictionary-for-goldendict" target="_blank">必应极简在线词典forGoldenDict</a>, 它写了一个爬虫去请求。安装好后通过 <code>python bingdict.py word</code> 来获得结果。因此可以在词典管理的 <code>程序</code> 中添加下面的命令来获得 Bing 翻译：
+</p>
+<div class="org-src-container">
+<pre><code class="language-bash">python /path/to/bingdict.py %GDWORD%</code></pre>
+</div>
+
+<p>
+第二个是使用 <a href="https://github.com/soimort/translate-shell" target="_blank">translate-shell</a> 来进行句子翻译，它提供多个翻译接口，包括 Google, Bing, Yandex. 安装好之后在 <code>程序</code> 中添加 <sup>[<a id="fnr:1.5" class="footref" href="#fn:1">1</a>]</sup> ：
+</p>
+<div class="org-src-container">
+<pre><code class="language-bash">trans -e google -s auto -t zh-CN -show-original n -show-original-phonetics n -show-translation y -no-ansi -show-translation-phonetics n -show-prompt-message n -show-languages n -show-original-dictionary n -show-dictionary n -show-alternatives n %GDWORD%</code></pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org92a6869" class="outline-2">
+<h2 id="org92a6869">发音</h2>
+<div class="outline-text-2" id="text-org92a6869">
+<p>
+在词库管理 <code>音频</code> 中可以添加音频文件的目录，一般它是与词典绑定的。比如你下了前面提到的牛津高阶词典(英英)第8版，那么把解压后的目录添加即可。
+</p>
+
+<p>
+在 <code>首选项</code> 中可以设置发音的后端。
+</p>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="text-footnotes" role="doc-endnotes">
+<ol>
+<li id="fn:1">
+<p class="footpara">
+<a href="https://www.cnblogs.com/keatonlao/p/12702571.html" target="_blank">安装使用 GoldenDict 查词神器 (Windows/Mac/Linux) - keatonlao - 博客园</a>
+<a href="#fnr:1.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+<a href="#fnr:1.2" class="footnote-backref" role="doc-backlink">↩︎</a>
+<a href="#fnr:1.3" class="footnote-backref" role="doc-backlink">↩︎</a>
+<a href="#fnr:1.4" class="footnote-backref" role="doc-backlink">↩︎</a>
+<a href="#fnr:1.5" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+<li id="fn:2">
+<p class="footpara">
+<a href="https://github.com/goldendict/goldendict/wiki/Supported-Dictionary-Formats" target="_blank">Supported Dictionary Formats · goldendict/goldendict Wiki · GitHub</a>
+<a href="#fnr:2.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+<li id="fn:3">
+<p class="footpara">
+<a href="https://blog.yuanbin.me/posts/2013-01/2013-01-31_23-07-00/" target="_blank">goldendict下优质词典简介及安装 - 东海一叶</a>
+<a href="#fnr:3.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+<li id="fn:4">
+<p class="footpara">
+<a href="https://zhuanlan.zhihu.com/p/151810213" target="_blank">GoldenDict 中设置在线词典 - 知乎</a>
+<a href="#fnr:4.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status"><script src="/static/highlight/highlight.min.js"></script>
+
+<script>
+window.config={"code": {"header": false,
+"exclude": ["mermaid"]}, }
+</script>
+<script src="/static/style/style.js"></script>
+</div>
+</div>
+<div class="footer">
+<center> The End </center></div>
+</body>
+</html>

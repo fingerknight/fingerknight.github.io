@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="I choose to see the beauty.">
+<title>Arch Linux 各种软件的折腾</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noodp">
+<meta name="author" content=" Finger Knight ">
+<meta name="referrer" content="no-referrer"><link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<body>
+<div class="header">
+<div class="home-page">
+<a href="/">手指骑士的病房</a></div><div class="nav">
+<div class="nav item">
+<a href="/tags">标签</a>
+</div>
+<div class="nav item">
+<a href="/archive">归档</a>
+</div>
+<div class="nav item">
+<a href="/about">关于</a>
+</div>
+</div>
+</div>
+<div class="main">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/highlight/dracula.css"><div class="toc">
+<h2 class="toc-title"> TOC </h2>
+<nav id="TableOfContents">
+
+<ul>
+<li>
+<a href="#org40ab75c"> 网盘 </a></li>
+<li>
+<a href="#org4b771f5"> MPV 播放器 </a></li>
+<li>
+<a href="#orge6ddb91"> 清理不用的软件包 </a></li>
+<li>
+<a href="#org2c4e169"> GIF 录制 Peek + Screen Key </a></li>
+<li>
+<a href="#org416f2ba"> 安装之前版本的包 </a></li>
+<li>
+<a href="#orgd6950b1"> GitHub 升级子模块 </a></li>
+<li>
+<a href="#orgc39654b"> usbutils </a></li>
+<li>
+<a href="#orgf24c705"> Arch Linux CN 仓库 </a></li>
+<li>
+<a href="#orgbc8f3f7"> ThinkPad x270 指纹 </a></li>
+</ul>
+</nav>
+</div>
+<h1 class="post-title"> Arch Linux 各种软件的折腾 </h1>
+<div class="post-date">2022-09-17</div>
+<div class="taglist"><a href="/tag/archlinux"> #archlinux </a>
+</div>
+</div>
+<div id="content">
+
+<div id="outline-container-org40ab75c" class="outline-2">
+<h2 id="org40ab75c">网盘</h2>
+<div class="outline-text-2" id="text-org40ab75c">
+<ul class="org-ul">
+<li>百度网盘： <a href="https://github.com/foyoux/aligo" target="_blank">GitHub - foyoux/aligo: 🔥简单、易用、可扩展的阿里云盘 API 接口库🚀</a></li>
+<li>阿里网盘： <a href="https://github.com/foyoux/aligo" target="_blank">GitHub - foyoux/aligo: 🔥简单、易用、可扩展的阿里云盘 API 接口库🚀</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4b771f5" class="outline-2">
+<h2 id="org4b771f5">MPV 播放器</h2>
+<div class="outline-text-2" id="text-org4b771f5">
+<p>
+简单无比的播放器，它的功能也少。目前需要的是播放列表，不然每次只能播放完一个视频就要手动点开下一个。
+</p>
+
+<p>
+插件: <a href="https://github.com/jonniek/mpv-playlistmanager" target="_blank">GitHub - jonniek/mpv-playlistmanager: Mpv lua script to create and manage playlists</a>
+</p>
+
+<p>
+放到在 mpv 配置文件目录下。 <code>playlistmanager.lua</code> 放到  <code>~/.config/mpv/scripts/</code> 下，这是插件的位置；然后 <code>playlistmanager.conf</code> 放到 <code>~/.config/mpv/script-opts</code> 下，这是配置文件的位置。
+</p>
+
+<p>
+指定加载的文件后缀，不够后面再补充
+</p>
+<div class="org-src-container">
+<pre><code class="language-plaintext">loadfiles_filetypes=["mp4","m4a","mkv","avi","flv","m4v","wmv"]</code></pre>
+</div>
+
+<p>
+加载同一目录下的所以文件
+</p>
+<div class="org-src-container">
+<pre><code class="language-plaintext">loadfiles_on_start=yes
+loadfiles_on_idle_start=yes</code></pre>
+</div>
+
+<p>
+列表字体大小，根据配置文件里面的说明调整，我只需要改大小就可以。
+</p>
+<div class="org-src-container">
+<pre><code class="language-plaintext">style_ass_tags={\fs10}</code></pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge6ddb91" class="outline-2">
+<h2 id="orge6ddb91">清理不用的软件包</h2>
+<div class="outline-text-2" id="text-orge6ddb91">
+<div class="org-src-container">
+<pre><code class="language-bash">sudo pacman -Qqdt | sudo pacman -Rs -</code></pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2c4e169" class="outline-2">
+<h2 id="org2c4e169">GIF 录制 Peek + Screen Key</h2>
+<div class="outline-text-2" id="text-org2c4e169">
+<div class="org-src-container">
+<pre><code class="language-bash">sudo pacman -S peek screenkey</code></pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org416f2ba" class="outline-2">
+<h2 id="org416f2ba">安装之前版本的包</h2>
+<div class="outline-text-2" id="text-org416f2ba">
+<p>
+缓存地址： <code>/var/cache/pacman/pkg</code>
+</p>
+
+<p>
+安装： <code>sudo pacman -U /var/cache/pacman/pkg/xxxx.pkg.tar.zst</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd6950b1" class="outline-2">
+<h2 id="orgd6950b1">GitHub 升级子模块</h2>
+<div class="outline-text-2" id="text-orgd6950b1">
+<div class="org-src-container">
+<pre><code class="language-bash">git submodule update --remote</code></pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc39654b" class="outline-2">
+<h2 id="orgc39654b">usbutils</h2>
+<div class="outline-text-2" id="text-orgc39654b">
+<p>
+问题：
+</p>
+<ul class="org-ul">
+<li>找不到 <code>lsusb</code></li>
+</ul>
+
+<p>
+安装 <code>sudo pacman -S usbutils</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf24c705" class="outline-2">
+<h2 id="orgf24c705">Arch Linux CN 仓库</h2>
+<div class="outline-text-2" id="text-orgf24c705">
+<ul class="org-ul">
+<li><p>
+向 <code>/etc/pacman.conf</code> 添加：
+</p>
+<div class="org-src-container">
+<pre><code class="language-plaintext">[archlinuxcn]
+Server = https://repo.archlinuxcn.org/$arch</code></pre>
+</div></li>
+<li><code>sudo pacman -Sy &amp;&amp; sudo pacman -S archlinuxcn-keyring</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgbc8f3f7" class="outline-2">
+<h2 id="orgbc8f3f7">ThinkPad x270 指纹</h2>
+<div class="outline-text-2" id="text-orgbc8f3f7">
+<p>
+到 arch 官网上才看到的： <a href="https://wiki.archlinux.org/title/Lenovo_ThinkPad_X270" target="_blank">https://wiki.archlinux.org/title/Lenovo_ThinkPad_X270</a>
+</p>
+
+<ul class="org-ul">
+<li><p>
+安装 <code>python-validity</code>:
+</p>
+<div class="org-src-container">
+<pre><code class="language-bash">yay -S python-validity</code></pre>
+</div></li>
+<li>启动服务 <code>sudo systemctl start systemctl status python3-validity</code></li>
+<li>录入指纹 <code>fprintd-enroll -f 手指</code>, 手指类型：
+<ul class="org-ul">
+<li><code>left-thumb</code>: 左手拇指</li>
+<li><code>left-index</code>: 左手食指</li>
+<li><code>left-middle-finger</code>: 左手中指</li>
+<li><code>left-ring-finger</code>: 左手无名指</li>
+<li><code>left—little-finger</code>: 左手小指</li>
+<li>把 left 改成 right 就是右手</li>
+<li>录指纹的时候多抬起几次，直到它自行结束 "Enroll result: enroll-completed"</li>
+</ul></li>
+<li>检验指纹 <code>fprintd-verify</code> 。 <code>verify-match</code> 表示识别成功， <code>verify-no-match</code> 表示失败</li>
+<li>添加到 SDDM 登录界面： <code>vim /etc/pam.d/system-local-login</code>, 在最上方加 <code>auth sufficient pam_fprintd.so</code></li>
+<li>添加到 KDE 锁屏：  <code>vim /etc/pam.d/kde</code>, 在最上方加 <code>auth sufficient pam_fprintd.so</code></li>
+</ul>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="text-footnotes" role="doc-endnotes">
+<ol>
+
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status"><script src="/static/highlight/highlight.min.js"></script>
+
+<script>
+window.config={"code": {"header": false,
+"exclude": ["mermaid"]}, }
+</script>
+<script src="/static/style/style.js"></script>
+</div>
+</div>
+<div class="footer">
+<center> The End </center></div>
+</body>
+</html>

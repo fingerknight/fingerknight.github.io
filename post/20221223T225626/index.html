@@ -30,33 +30,33 @@
 
 <ul>
 <li>
-<a href="#org5fea70a"> 简介 </a></li>
+<a href="#orgbc3da8c"> 简介 </a></li>
 <li>
-<a href="#orgeb591d2"> 安装配置 </a></li>
+<a href="#orgf337736"> 安装配置 </a></li>
 <li>
-<a href="#org061ff87"> 使用 </a>
+<a href="#orgea89727"> 使用 </a>
 <ul>
 <li>
-<a href="#orgeee99db"> 卡片内容 </a></li>
+<a href="#orgdebe4a9"> 卡片内容 </a></li>
 <li>
-<a href="#orgd3f4f27"> 如何开始 </a></li>
+<a href="#orgda48e71"> 如何开始 </a></li>
 <li>
-<a href="#org939ce57"> 读入卡片 </a></li>
+<a href="#org31d07b5"> 读入卡片 </a></li>
 <li>
-<a href="#org7db3cd7"> 任务量 </a></li>
+<a href="#org053b2cc"> 任务量 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org4f3f84d"> 个人单词库制作 </a>
+<a href="#org61f64b0"> 个人单词库制作 </a>
 <ul>
 <li>
-<a href="#org140f50c"> 单词库 </a></li>
+<a href="#org7328566"> 单词库 </a></li>
 <li>
-<a href="#orgf59f0c3"> 大文件 </a></li>
+<a href="#org2862c61"> 大文件 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org5c1b5fe"> 后记 </a></li>
+<a href="#orga5b8319"> 后记 </a></li>
 </ul>
 </nav>
 </div>
@@ -70,9 +70,9 @@
 </div>
 <div id="content">
 
-<div id="outline-container-org5fea70a" class="outline-2">
-<h2 id="org5fea70a">简介</h2>
-<div class="outline-text-2" id="text-org5fea70a">
+<div id="outline-container-orgbc3da8c" class="outline-2">
+<h2 id="orgbc3da8c">简介</h2>
+<div class="outline-text-2" id="text-orgbc3da8c">
 <p>
 最近开始准备英语的终身学习，开始物色背单词软件，第一个想到的是 <a href="https://ankisrs.net/" target="_blank">Anki</a> 。虽然安装了，但是在 Arch Linux 官网中关于 Anki 的 wiki 提到了另一个同类项目 org-drill<sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>, 我马上点开，很快啊。秉持着“ALL IN ONE”的理念，马上在 Emacs 上配置来试用，感觉还不错。
 </p>
@@ -95,9 +95,9 @@ Fork 到 GitHub 的仓库地址：<a href="https://github.com/louietan/org-drill
 </div>
 </div>
 
-<div id="outline-container-orgeb591d2" class="outline-2">
-<h2 id="orgeb591d2">安装配置</h2>
-<div class="outline-text-2" id="text-orgeb591d2">
+<div id="outline-container-orgf337736" class="outline-2">
+<h2 id="orgf337736">安装配置</h2>
+<div class="outline-text-2" id="text-orgf337736">
 <p>
 可以通过 MELPA 安装，直接 <code>M-x package-install RET org-drill RET</code>, 或者克隆仓库到本地。
 </p>
@@ -125,36 +125,36 @@ Fork 到 GitHub 的仓库地址：<a href="https://github.com/louietan/org-drill
 </div>
 </div>
 
-<div id="outline-container-org061ff87" class="outline-2">
-<h2 id="org061ff87">使用</h2>
-<div class="outline-text-2" id="text-org061ff87">
+<div id="outline-container-orgea89727" class="outline-2">
+<h2 id="orgea89727">使用</h2>
+<div class="outline-text-2" id="text-orgea89727">
 <p>
 它提供了多种卡片的类型，有普通型、填空型、双面型等，当然也支持自定义。因为是我用来背单词的，只需要用普通型的就好，有需要的可以参考文档的配置。
 </p>
 </div>
 
-<div id="outline-container-orgeee99db" class="outline-3">
-<h3 id="orgeee99db">卡片内容</h3>
-<div class="outline-text-3" id="text-orgeee99db">
+<div id="outline-container-orgdebe4a9" class="outline-3">
+<h3 id="orgdebe4a9">卡片内容</h3>
+<div class="outline-text-3" id="text-orgdebe4a9">
 <p>
 卡片是写在一个 <code>.org</code> 文件内：
 </p>
 
 
-<figure id="org6cc98c6">
-<img src="/assets/2022-12-08_23-24-26.png" alt="2022-12-08_23-24-26.png">
+<figure id="org48b8056">
+<a href="/assets/2022-12-08_23-24-26.png" target="_blank"><img src="/assets/2022-12-08_23-24-26.png" alt="2022-12-08_23-24-26.png"></a>
 
 </figure>
 
 <p>
-一个带有 <code>drill</code> 标签的标题就是一张卡片， <b>它的第一个标题</b> 就是答案。问题和答案的标题无所谓，其文本是标题下的文本。
+一个带有 <code>drill</code> 标签的标题就是一张卡片，<b>它的第一个标题</b>就是答案。问题和答案的标题无所谓，其文本是标题下的文本。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgd3f4f27" class="outline-3">
-<h3 id="orgd3f4f27">如何开始</h3>
-<div class="outline-text-3" id="text-orgd3f4f27">
+<div id="outline-container-orgda48e71" class="outline-3">
+<h3 id="orgda48e71">如何开始</h3>
+<div class="outline-text-3" id="text-orgda48e71">
 <p>
 在当前 buffer 下，执行 <code>org-drill</code> (<code>M-x org-drill RET</code>) 。它首先会读取数据，然后进入到 <code>drill session</code>.
 </p>
@@ -164,18 +164,18 @@ Fork 到 GitHub 的仓库地址：<a href="https://github.com/louietan/org-drill
 </p>
 
 
-<figure id="orge384775">
-<img src="/assets/2022-12-08_22-27-29.png" alt="2022-12-08_22-27-29.png">
+<figure id="orgf799229">
+<a href="/assets/2022-12-08_22-27-29.png" target="_blank"><img src="/assets/2022-12-08_22-27-29.png" alt="2022-12-08_22-27-29.png"></a>
 
 </figure>
 
 <p>
-按下 <b>任意键</b> ，答案就会显示。这时你会被询问记忆情况，从 0-5 打分。按下之后会记录到 <code>.org</code> 文件中，接着是下一张卡片。
+按下<b>任意键</b>，答案就会显示。这时你会被询问记忆情况，从 0-5 打分。按下之后会记录到 <code>.org</code> 文件中，接着是下一张卡片。
 </p>
 
 
-<figure id="org8f68677">
-<img src="/assets/2022-12-08_22-28-17.png" alt="2022-12-08_22-28-17.png">
+<figure id="orge606572">
+<a href="/assets/2022-12-08_22-28-17.png" target="_blank"><img src="/assets/2022-12-08_22-28-17.png" alt="2022-12-08_22-28-17.png"></a>
 
 </figure>
 
@@ -207,14 +207,14 @@ Fork 到 GitHub 的仓库地址：<a href="https://github.com/louietan/org-drill
 </div>
 </div>
 
-<div id="outline-container-org939ce57" class="outline-3">
-<h3 id="org939ce57">读入卡片</h3>
-<div class="outline-text-3" id="text-org939ce57">
+<div id="outline-container-org31d07b5" class="outline-3">
+<h3 id="org31d07b5">读入卡片</h3>
+<div class="outline-text-3" id="text-org31d07b5">
 <p>
 org-drill 通过一个变量 <code>org-drill-scope</code> 用来指定哪些文件里的内容使用，它的值都是符号（可以是列表），根据文档它有以下类型：
 </p>
 <ul class="org-ul">
-<li><code>file</code> 当前 buffer 的内容，忽略隐藏项目。 <b>默认</b></li>
+<li><code>file</code> 当前 buffer 的内容，忽略隐藏项目。<b>默认</b></li>
 <li><code>tree</code> 当前光标的子树</li>
 <li><code>file-no-restriction</code> 当前 buffer ，不论是否为隐藏</li>
 <li><code>file-with-archives</code> 当前 buffer ，且与其有关联的归档文件</li>
@@ -226,28 +226,28 @@ org-drill 通过一个变量 <code>org-drill-scope</code> 用来指定哪些文�
 </div>
 </div>
 
-<div id="outline-container-org7db3cd7" class="outline-3">
-<h3 id="org7db3cd7">任务量</h3>
-<div class="outline-text-3" id="text-org7db3cd7">
+<div id="outline-container-org053b2cc" class="outline-3">
+<h3 id="org053b2cc">任务量</h3>
+<div class="outline-text-3" id="text-org053b2cc">
 <div class="org-src-container">
 <pre><code class="language-lisp">(setq org-drill-maximum-items-per-session 40
         org-drill-maximum-duration 30)</code></pre>
 </div>
 
 <p>
-每次学习的任务量最多不超过 40 张卡片，学习时长最多不超过 30 <b>分钟</b> 。
+每次学习的任务量最多不超过 40 张卡片，学习时长最多不超过 30 <b>分钟</b>。
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org4f3f84d" class="outline-2">
-<h2 id="org4f3f84d">个人单词库制作</h2>
-<div class="outline-text-2" id="text-org4f3f84d">
+<div id="outline-container-org61f64b0" class="outline-2">
+<h2 id="org61f64b0">个人单词库制作</h2>
+<div class="outline-text-2" id="text-org61f64b0">
 </div>
-<div id="outline-container-org140f50c" class="outline-3">
-<h3 id="org140f50c">单词库</h3>
-<div class="outline-text-3" id="text-org140f50c">
+<div id="outline-container-org7328566" class="outline-3">
+<h3 id="org7328566">单词库</h3>
+<div class="outline-text-3" id="text-org7328566">
 <p>
 我在网上找了一堆，最后找到了一个词汇列表的项目： <a href="https://github.com/jnoodle/English-Vocabulary-Word-List" target="_blank">GitHub - jnoodle/English-Vocabulary-Word-List: Common English Vocabulary Word List</a>, 它里面提供了单词列表，就是纯单词，没有音标也没有翻译。
 </p>
@@ -324,9 +324,9 @@ for n in range(97,123):
 </div>
 </div>
 
-<div id="outline-container-orgf59f0c3" class="outline-3">
-<h3 id="orgf59f0c3">大文件</h3>
-<div class="outline-text-3" id="text-orgf59f0c3">
+<div id="outline-container-org2862c61" class="outline-3">
+<h3 id="org2862c61">大文件</h3>
+<div class="outline-text-3" id="text-org2862c61">
 <p>
 如果把所有单词都放到一个 <code>.org</code> 文件的话，学习时会非常卡，加载下一张卡片需要很长时间。根据文档建议，把大文件化小，放到一个目录下。这样时间花销就只有初始化的数据加载。
 </p>
@@ -334,9 +334,9 @@ for n in range(97,123):
 </div>
 </div>
 
-<div id="outline-container-org5c1b5fe" class="outline-2">
-<h2 id="org5c1b5fe">后记</h2>
-<div class="outline-text-2" id="text-org5c1b5fe">
+<div id="outline-container-orga5b8319" class="outline-2">
+<h2 id="orga5b8319">后记</h2>
+<div class="outline-text-2" id="text-orga5b8319">
 <p>
 目前暂时不考虑诸如记忆效率参数的调整，也仅用于背单词，如果后续用上了再更新。
 </p>

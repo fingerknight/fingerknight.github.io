@@ -30,55 +30,55 @@
 
 <ul>
 <li>
-<a href="#orgabc81b6"> 简介 </a></li>
+<a href="#org81c89ef"> 简介 </a></li>
 <li>
-<a href="#org06b1cc5"> 安装 </a></li>
+<a href="#orgd95e209"> 安装 </a></li>
 <li>
-<a href="#orgeafca97"> 测试 </a></li>
+<a href="#org9d43e85"> 测试 </a></li>
 <li>
-<a href="#org5446762"> 数据库 </a>
+<a href="#org08bc0ae"> 数据库 </a>
 <ul>
 <li>
-<a href="#orgfafe30f"> 新建数据库 </a></li>
+<a href="#orgc7e1b41"> 新建数据库 </a></li>
 <li>
-<a href="#orge4a6b3c"> 从 BBDB 迁移 </a></li>
+<a href="#org5861477"> 从 BBDB 迁移 </a></li>
 <li>
-<a href="#org148f696"> 从 Org Contacts 迁移 </a></li>
+<a href="#orgd618356"> 从 Org Contacts 迁移 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org1aaa34f"> EBEB Buffer </a>
+<a href="#org215eb49"> EBEB Buffer </a>
 <ul>
 <li>
-<a href="#orgf9733e5"> 数据库级操作 </a></li>
+<a href="#org2f2b0a8"> 数据库级操作 </a></li>
 <li>
-<a href="#orgfa4c7b5"> 光标移动 </a></li>
+<a href="#org1263633"> 光标移动 </a></li>
 <li>
-<a href="#org1060a18"> 展示 </a></li>
+<a href="#orgcef0b8e"> 展示 </a></li>
 <li>
-<a href="#org0539b8a"> 复制 </a></li>
+<a href="#org03b7f95"> 复制 </a></li>
 <li>
-<a href="#org54decea"> 数据项操作 </a>
+<a href="#orgfa2b4a4"> 数据项操作 </a>
 <ul>
 <li>
-<a href="#org51e6c8e"> 增 </a></li>
+<a href="#org613d6a7"> 增 </a></li>
 <li>
-<a href="#org7dfe7b5"> 删 </a></li>
+<a href="#orgfee3f3a"> 删 </a></li>
 <li>
-<a href="#org19c0d25"> 改 </a></li>
+<a href="#org99f4d35"> 改 </a></li>
 <li>
-<a href="#org6204876"> 查 </a></li>
+<a href="#orgd9b8dc9"> 查 </a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<a href="#org6fc7a21"> 集成 GNUS </a>
+<a href="#org2d93dc1"> 集成 GNUS </a>
 <ul>
 <li>
-<a href="#org8c01709"> 保存收件人 </a></li>
+<a href="#orgdc2e668"> 保存收件人 </a></li>
 <li>
-<a href="#org14d4471"> 补全发件人 </a></li>
+<a href="#org2e25ff5"> 补全发件人 </a></li>
 </ul>
 </li>
 </ul>
@@ -94,9 +94,9 @@
 </div>
 <div id="content">
 
-<div id="outline-container-orgabc81b6" class="outline-2">
-<h2 id="orgabc81b6">简介</h2>
-<div class="outline-text-2" id="text-orgabc81b6">
+<div id="outline-container-org81c89ef" class="outline-2">
+<h2 id="org81c89ef">简介</h2>
+<div class="outline-text-2" id="text-org81c89ef">
 <p>
 EBDB 是一个联系人数据库，用于存储联系人的信息，如姓名、邮箱、电话、地址等，可单独作为通讯录使用，也可与 MUA(Mail User Agent) 、 Org Mode 等集成使用。 EBDB 是 <a href="https://savannah.nongnu.org/projects/bbdb/" target="_blank">BBDB</a> (Big Brother DataBase) 的重写，对中文支持更好。
 </p>
@@ -111,18 +111,18 @@ EBDB 是一个联系人数据库，用于存储联系人的信息，如姓名、
 </div>
 </div>
 
-<div id="outline-container-org06b1cc5" class="outline-2">
-<h2 id="org06b1cc5">安装</h2>
-<div class="outline-text-2" id="text-org06b1cc5">
+<div id="outline-container-orgd95e209" class="outline-2">
+<h2 id="orgd95e209">安装</h2>
+<div class="outline-text-2" id="text-orgd95e209">
 <p>
 可以通过 ELPA 直接安装，也可以 clone 到本地然后把路径添加到 <code>load-path</code> 。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgeafca97" class="outline-2">
-<h2 id="orgeafca97">测试</h2>
-<div class="outline-text-2" id="text-orgeafca97">
+<div id="outline-container-org9d43e85" class="outline-2">
+<h2 id="org9d43e85">测试</h2>
+<div class="outline-text-2" id="text-org9d43e85">
 <p>
 一般而言， EBDB 不单独使用，但是我一开始就是想试一下功能，于是摸索了一番，去 GitHub 上问了一下人家。
 </p>
@@ -137,26 +137,26 @@ EBDB 是一个联系人数据库，用于存储联系人的信息，如姓名、
 </div>
 </div>
 
-<div id="outline-container-org5446762" class="outline-2">
-<h2 id="org5446762">数据库</h2>
-<div class="outline-text-2" id="text-org5446762">
+<div id="outline-container-org08bc0ae" class="outline-2">
+<h2 id="org08bc0ae">数据库</h2>
+<div class="outline-text-2" id="text-org08bc0ae">
 <p>
 首先需要配置的一个自定义变量是 <code>ebdb-sources</code> ，它是数据库文件，你可以把它指定到想要的位置，默认是 <code>~/.emacs.d/ebdb</code> （它是一个文件，不是目录）。
 </p>
 </div>
 
-<div id="outline-container-orgfafe30f" class="outline-3">
-<h3 id="orgfafe30f">新建数据库</h3>
-<div class="outline-text-3" id="text-orgfafe30f">
+<div id="outline-container-orgc7e1b41" class="outline-3">
+<h3 id="orgc7e1b41">新建数据库</h3>
+<div class="outline-text-3" id="text-orgc7e1b41">
 <p>
-在导入了 <code>ebdb-com</code> 或其它集成库之后，通过 <code>M-x ebdb-open</code> 便创建了一个数据库，同时进入 <code>ebdb-mode</code> 。如果数据库已经存在，它会打开 <code>EBDB</code> buffer 但是不显示任何数据。需要通过<a href="#org6204876" target="_blank">查询</a>来显示。
+在导入了 <code>ebdb-com</code> 或其它集成库之后，通过 <code>M-x ebdb-open</code> 便创建了一个数据库，同时进入 <code>ebdb-mode</code> 。如果数据库已经存在，它会打开 <code>EBDB</code> buffer 但是不显示任何数据。需要通过<a href="#orgd9b8dc9" target="_blank">查询</a>来显示。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orge4a6b3c" class="outline-3">
-<h3 id="orge4a6b3c">从 BBDB 迁移</h3>
-<div class="outline-text-3" id="text-orge4a6b3c">
+<div id="outline-container-org5861477" class="outline-3">
+<h3 id="org5861477">从 BBDB 迁移</h3>
+<div class="outline-text-3" id="text-org5861477">
 <ul class="org-ul">
 <li>确保 <code>bbdb-file</code> 指向的是 BBDB 数据库的位置</li>
 <li>执行 Elisp 或者写到配置里边（迁移一次就行没必要写配置）： <code>(locate-user-emacs-file "bbdb" ".bbdb")</code></li>
@@ -165,9 +165,9 @@ EBDB 是一个联系人数据库，用于存储联系人的信息，如姓名、
 </div>
 </div>
 
-<div id="outline-container-org148f696" class="outline-3">
-<h3 id="org148f696">从 Org Contacts 迁移</h3>
-<div class="outline-text-3" id="text-org148f696">
+<div id="outline-container-orgd618356" class="outline-3">
+<h3 id="orgd618356">从 Org Contacts 迁移</h3>
+<div class="outline-text-3" id="text-orgd618356">
 <p>
 我没听过这个库，需要的去看手册。
 </p>
@@ -175,9 +175,9 @@ EBDB 是一个联系人数据库，用于存储联系人的信息，如姓名、
 </div>
 </div>
 
-<div id="outline-container-org1aaa34f" class="outline-2">
-<h2 id="org1aaa34f">EBEB Buffer</h2>
-<div class="outline-text-2" id="text-org1aaa34f">
+<div id="outline-container-org215eb49" class="outline-2">
+<h2 id="org215eb49">EBEB Buffer</h2>
+<div class="outline-text-2" id="text-org215eb49">
 <p>
 EBDB buffer 是一个接口界面，用于快速而方便查询和编辑通讯录数据。
 </p>
@@ -187,9 +187,9 @@ EBDB buffer 是一个接口界面，用于快速而方便查询和编辑通讯�
 </p>
 </div>
 
-<div id="outline-container-orgf9733e5" class="outline-3">
-<h3 id="orgf9733e5">数据库级操作</h3>
-<div class="outline-text-3" id="text-orgf9733e5">
+<div id="outline-container-org2f2b0a8" class="outline-3">
+<h3 id="org2f2b0a8">数据库级操作</h3>
+<div class="outline-text-3" id="text-org2f2b0a8">
 <ul class="org-ul">
 <li>d e 选择数据库并自定义数据库信息</li>
 <li>d m 移动数据到其他数据库</li>
@@ -203,9 +203,9 @@ EBDB buffer 是一个接口界面，用于快速而方便查询和编辑通讯�
 </div>
 </div>
 
-<div id="outline-container-orgfa4c7b5" class="outline-3">
-<h3 id="orgfa4c7b5">光标移动</h3>
-<div class="outline-text-3" id="text-orgfa4c7b5">
+<div id="outline-container-org1263633" class="outline-3">
+<h3 id="org1263633">光标移动</h3>
+<div class="outline-text-3" id="text-org1263633">
 <ul class="org-ul">
 <li>n 移动到下一条数据</li>
 <li>p 移动到上一条数据</li>
@@ -217,55 +217,55 @@ EBDB buffer 是一个接口界面，用于快速而方便查询和编辑通讯�
 </div>
 </div>
 
-<div id="outline-container-org1060a18" class="outline-3">
-<h3 id="org1060a18">展示</h3>
-<div class="outline-text-3" id="text-org1060a18">
+<div id="outline-container-orgcef0b8e" class="outline-3">
+<h3 id="orgcef0b8e">展示</h3>
+<div class="outline-text-3" id="text-orgcef0b8e">
 <ul class="org-ul">
-<li>t 切换 <b>当前数据</b> 的展示模式：多行显示、单行显示、全信息显示</li>
-<li>T 且或 <b>所有数据</b> 的展示模式</li>
+<li>t 切换<b>当前数据</b>的展示模式：多行显示、单行显示、全信息显示</li>
+<li>T 且或<b>所有数据</b>的展示模式</li>
 <li>r 刷新当前数据</li>
 <li>g 刷新所有数据</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org0539b8a" class="outline-3">
-<h3 id="org0539b8a">复制</h3>
-<div class="outline-text-3" id="text-org0539b8a">
+<div id="outline-container-org03b7f95" class="outline-3">
+<h3 id="org03b7f95">复制</h3>
+<div class="outline-text-3" id="text-org03b7f95">
 <ul class="org-ul">
-<li>w f 复制域对应的 <b>值</b> ，如果是名字复制名字</li>
+<li>w f 复制域对应的<b>值</b>，如果是名字复制名字</li>
 <li>w r 复制整个数据项</li>
 <li>w m 复制名字 + 邮箱</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org54decea" class="outline-3">
-<h3 id="org54decea">数据项操作</h3>
-<div class="outline-text-3" id="text-org54decea">
+<div id="outline-container-orgfa2b4a4" class="outline-3">
+<h3 id="orgfa2b4a4">数据项操作</h3>
+<div class="outline-text-3" id="text-orgfa2b4a4">
 </div>
-<div id="outline-container-org51e6c8e" class="outline-4">
-<h4 id="org51e6c8e">增</h4>
-<div class="outline-text-4" id="text-org51e6c8e">
+<div id="outline-container-org613d6a7" class="outline-4">
+<h4 id="org613d6a7">增</h4>
+<div class="outline-text-4" id="text-org613d6a7">
 <ul class="org-ul">
-<li><code>c</code> (ebdb-create-record) 添加一条新条目，在 minibuffer 录入 <b>基本信息</b></li>
-<li><code>C</code> (ebdb-create-record-extended) 添加一条新条目，在 minibuffer 录入 <b>扩展信息</b></li>
+<li><code>c</code> (ebdb-create-record) 添加一条新条目，在 minibuffer 录入<b>基本信息</b></li>
+<li><code>C</code> (ebdb-create-record-extended) 添加一条新条目，在 minibuffer 录入<b>扩展信息</b></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org7dfe7b5" class="outline-4">
-<h4 id="org7dfe7b5">删</h4>
-<div class="outline-text-4" id="text-org7dfe7b5">
+<div id="outline-container-orgfee3f3a" class="outline-4">
+<h4 id="orgfee3f3a">删</h4>
+<div class="outline-text-4" id="text-orgfee3f3a">
 <ul class="org-ul">
 <li><code>C-k</code> (ebdb-delete-records/ebdb-delete-field-or-record) 删除一条记录，会先询问。如果光标落在数据名上，询问删除整条数据；如果光标落在某个域上，询问删除域</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org19c0d25" class="outline-4">
-<h4 id="org19c0d25">改</h4>
-<div class="outline-text-4" id="text-org19c0d25">
+<div id="outline-container-org99f4d35" class="outline-4">
+<h4 id="org99f4d35">改</h4>
+<div class="outline-text-4" id="text-org99f4d35">
 <ul class="org-ul">
 <li><code>i</code> (ebdb-insert-field) 向条目中添加新的键</li>
 <li><code>e</code> (ebdb-edit-field) 编辑域</li>
@@ -274,9 +274,9 @@ EBDB buffer 是一个接口界面，用于快速而方便查询和编辑通讯�
 </div>
 </div>
 
-<div id="outline-container-org6204876" class="outline-4">
-<h4 id="org6204876">查</h4>
-<div class="outline-text-4" id="text-org6204876">
+<div id="outline-container-orgd9b8dc9" class="outline-4">
+<h4 id="orgd9b8dc9">查</h4>
+<div class="outline-text-4" id="text-orgd9b8dc9">
 <p>
 最基本的查询 <code>/ /</code> 按正则查询各个域，结果覆盖到 buffer 上
 </p>
@@ -285,8 +285,8 @@ EBDB buffer 是一个接口界面，用于快速而方便查询和编辑通讯�
 细化查询有三种模式，对应三个按键前缀键
 </p>
 <ul class="org-ul">
-<li><code>/</code> 查询整个数据库，并将结果 <b>刷新</b> 到 buffer</li>
-<li><code>+</code> 查询整个数据库，并将结果 <b>添加</b> 到 buffer</li>
+<li><code>/</code> 查询整个数据库，并将结果<b>刷新</b>到 buffer</li>
+<li><code>+</code> 查询整个数据库，并将结果<b>添加</b>到 buffer</li>
 <li><code>|</code> 只查询当前 buffer 的数据</li>
 </ul>
 
@@ -309,7 +309,7 @@ EBDB buffer 是一个接口界面，用于快速而方便查询和编辑通讯�
 全局查找：
 </p>
 <ul class="org-ul">
-<li><code>/ D</code>  展示数据库的 <b>所有</b> 数据（注意数据量）</li>
+<li><code>/ D</code>  展示数据库的<b>所有</b>数据（注意数据量）</li>
 <li><code>/ 1</code> 查询单个记录并展示，会在 minibuffer 选择名字</li>
 <li><code>/ d</code> 查询重复的记录</li>
 </ul>
@@ -326,16 +326,16 @@ EBDB buffer 是一个接口界面，用于快速而方便查询和编辑通讯�
 <li>查询数据库“名为 Bob”的所有数据，并覆盖当前 buffer: <code>/ n Bob</code></li>
 <li>查询数据库“组织为 Center”的所有数据，并添加到当前 buffer: <code>+ o Center</code></li>
 <li>在当前 buffer 中查询“邮箱包含 gmail”的数据： <code>| m gmail</code></li>
-<li>查询数据库“ <b>不</b> 住在火星的人”，并覆盖当前 buffer: <code>! / a Mars</code></li>
+<li>查询数据库“<b>不</b>住在火星的人”，并覆盖当前 buffer: <code>! / a Mars</code></li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org6fc7a21" class="outline-2">
-<h2 id="org6fc7a21">集成 GNUS</h2>
-<div class="outline-text-2" id="text-org6fc7a21">
+<div id="outline-container-org2d93dc1" class="outline-2">
+<h2 id="org2d93dc1">集成 GNUS</h2>
+<div class="outline-text-2" id="text-org2d93dc1">
 <p>
 首先需要明确的一点，收信和发信的机制是不一样的，需要自己小心。如果用的 GNUS, 默认收信是 gnus, 发信是 message. 因此配置：
 </p>
@@ -362,9 +362,9 @@ EBDB buffer 是一个接口界面，用于快速而方便查询和编辑通讯�
 </div>
 </div>
 
-<div id="outline-container-org8c01709" class="outline-3">
-<h3 id="org8c01709">保存收件人</h3>
-<div class="outline-text-3" id="text-org8c01709">
+<div id="outline-container-orgdc2e668" class="outline-3">
+<h3 id="orgdc2e668">保存收件人</h3>
+<div class="outline-text-3" id="text-orgdc2e668">
 <p>
 在对应的 Article 里， <code>;</code> (分号) 作为前缀定义了 EBDB 更新相关的函数。
 </p>
@@ -375,9 +375,9 @@ EBDB buffer 是一个接口界面，用于快速而方便查询和编辑通讯�
 </div>
 </div>
 
-<div id="outline-container-org14d4471" class="outline-3">
-<h3 id="org14d4471">补全发件人</h3>
-<div class="outline-text-3" id="text-org14d4471">
+<div id="outline-container-org2e25ff5" class="outline-3">
+<h3 id="org2e25ff5">补全发件人</h3>
+<div class="outline-text-3" id="text-org2e25ff5">
 <p>
 在编写邮件的时候，在 <code>To</code> 那一栏开启补全即可 &#x2013;&#x2014; 按 TAB, 或者使用 company/corfu 等补全工具。
 </p>
