@@ -8,11 +8,11 @@
     --one-light-gray: #A0A1A7;
     --one-light-purple: #A626A4;
 
-    --page-width: 800px;
-    --max-image-width: 700px;
-    --max-quote-width: 500px;
-    --min-table-width: 700px;
-    --max-table-width: 780px;
+    --page-width: 1000px;
+    --max-image-width: 900px;
+    --max-quote-width: 800px;
+    --min-table-width: 900px;
+    --max-table-width: 980px;
     
     --bg-culor: var(--one-light-bg);
     --text-culor: var(--one-light-fg);
