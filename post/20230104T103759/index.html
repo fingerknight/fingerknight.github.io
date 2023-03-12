@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="I choose to see the beauty.">
+<title>[Calculus] 1. Dedekind Cut</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noodp">
+<meta name="author" content=" Finger Knight ">
+<meta name="referrer" content="no-referrer"><link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<body>
+<div class="header">
+<div class="home-page">
+<a href="/">手指骑士的病房</a></div><div class="nav">
+<div class="nav item">
+<a href="/tags">标签</a>
+</div>
+<div class="nav item">
+<a href="/archive">归档</a>
+</div>
+<div class="nav item">
+<a href="/about">关于</a>
+</div>
+</div>
+</div>
+<div class="main">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/katex/katex.min.css"><div class="toc">
+
+</div>
+<h1 class="post-title"> [Calculus] 1. Dedekind Cut </h1>
+<div class="post-date">2023-01-04</div>
+<div class="taglist"><a href="/tag/calculus"> #calculus </a>
+<a href="/tag/math"> #math </a>
+</div>
+</div>
+<div id="content">
+<div class="mathblock definition" id="org8874516">
+<p>
+<span class="mathblock title">Definition 1.1. </span>
+
+Let \(S\sube\mathb{R}\) and \(r\in\mathb{R}\). We say that:
+</p>
+<ol class="org-ol">
+<li>\(r\) is an upper(lower) bound of \(S\) if $&forall; s&isin; S[r&ge;(&ne;)s]</li>
+<li>\(r\) is the greatest(least) element of \(S\) if:
+<ol class="org-ol">
+<li>\(r\) is an upper(lower) bound of \(s\)</li>
+<li>\(r\in S\)</li>
+</ol></li>
+<li>\(r\) is the least upper(greatest lower) bound of \(S\) if $r=min\{u&isin;\R|u\text{ is an upper(lower) bound of }S\}. In this case, \(r\) is also denoted as \(\sup S(\inf S)\).</li>
+</ol>
+
+</div>
+
+<div class="mathblock definition" id="orga0d32e3">
+<p>
+<span class="mathblock title">Definition 1.2<span class="mathblock name"> (Dedekind cut)</span>. </span>
+
+Let \(A,B\sube\R\). We say that \((A,B)\) is a Dedekind cut of $\R\ if:
+</p>
+<ol class="org-ol">
+<li>\(A\ne B\ne\varnothing\)</li>
+<li>\(A\cup B=\R\)</li>
+<li>\(\forall a\in A,b\in B[a<b]\)</li>
+</ol>
+
+</div>
+
+<div class="mathblock proposition" id="org39c70a3">
+<p>
+<span class="mathblock title">Proposition 1.3<span class="mathblock name"> (Dedekind's gapless property)</span>. </span>
+
+If \((A,B)\) is a Dedekind cut of \(\R\), then exactly one of the following happens:
+</p>
+<ul class="org-ul">
+<li>\(\max A\) exists, but \(\min B\) doesn't</li>
+<li>\(\min B\) exists, but \(\max A\) doesn't</li>
+</ul>
+
+</div>
+
+<div class="mathblock theorem" id="orgf2c06a8">
+<p>
+<span class="mathblock title">Theorem 1.4<span class="mathblock name"> (Weierstrass)</span>. </span>
+
+Let \(S(\ne\varnothing)\sube\R\). If S has an upper bound, then \(\sup S\) exists.
+</p>
+
+</div>
+<div class="mathblock proof" id="org410f3f0">
+<p>
+<span class="mathblock title">Proof. </span>
+
+Let \(B:=\{b\in\R|b\text{ is an upper(lower) bound of }S\}\), and \(A:=\R\backslash B\).
+<span class="QED">□</span>
+</p>
+
+<p>
+Since:
+<span class="QED">□</span>
+</p>
+<ol class="org-ol">
+<li>\(S\ne\varnothing\Rarr A\ne\varnothing\), and '\(S\) has an upper bound' \(\rArr B\ne\varnothing\).</li>
+<li>\(A\cup B\) by definition.</li>
+<li>\(\forall a\in A,b\in B[a<b]\). Were this false, $a&ge; b\Rarr a\text{ is an upper bound of }S\Rarr a&isin; B, a contradiction.</li>
+</ol>
+
+<p>
+Therefore, \((A,B)\) is a Dedekind cut.
+<span class="QED">□</span>
+</p>
+
+<p>
+Suppose \(max A\) exists, denoted as \(a_0\). Then \(a_0\in A\Rarr a_0\notin B\Rarr a_0\text{ is not an upper bound of }S \Rarr \exists s_0 \in S [a_0 < s_0] \Rarr s_0 \notin A \Rarr s_0 \in B \Rarr S_0 \text{ is an upper bound of } S\), a contradiction. i.e., \(\max A\) doesn't exists.
+<span class="QED">□</span>
+</p>
+
+<p>
+By Dedekind's gapless property, \(min B\) must exist, i.e., \(\sup S\) exists.
+<span class="QED">□</span>
+</p>
+
+</div>
+<div id="footnotes">
+<hr>
+<div class="text-footnotes" role="doc-endnotes">
+<ol>
+
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status"><script defer src="/static/katex/katex.min.js"></script>
+<script defer src="/static/katex/auto-render.min.js"></script>
+<script>
+let macros = {
+"\\C": "\\mathbb{C}",
+"\\N": "\\mathbb{N}",
+"\\Q": "\\mathbb{Q}",
+"\\R": "\\mathbb{R}",
+"\\Z": "\\mathbb{Z}",
+"’": "'"
+};
+document.addEventListener("DOMContentLoaded", function() {
+renderMathInElement(document.getElementById("content"), {
+strict: false,
+delimiters: [
+{"display": true,"left": "$$","right": "$$"},
+{"display": true,"left": "\\[","right": "\\]"},
+{"display": true,"left": "\\begin{equation}","right": "\\end{equation}"},
+{"display": true,"left": "\\begin{equation*}","right": "\\end{equation*}"},
+{"display": true,"left": "\\begin{align}","right": "\\end{align}"},
+{"display": true,"left": "\\begin{align*}","right": "\\end{align*}"},
+{"display": true,"left": "\\begin{alignat}","right": "\\end{alignat}"},
+{"display": true,"left": "\\begin{alignat*}","right": "\\end{alignat*}"},
+{"display": true,"left": "\\begin{gather}","right": "\\end{gather}"},
+{"display": true,"left": "\\begin{CD}","right": "\\end{CD}"},
+{"display": false,"left": "$","right": "$"},
+{"display": false,"left": "\\(","right": "\\)"}
+],
+macros});})
+</script></div>
+</div>
+<div class="footer">
+<center> The End </center></div>
+</body>
+</html>
