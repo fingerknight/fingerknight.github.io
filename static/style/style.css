@@ -314,8 +314,8 @@ body{
 
 /* List */
 #content .org-ul, .org-ol {
-    margin: 0 0 1rem 0;
-    /* margin: 0; */
+    /* margin: 0 0 1rem 0; */
+    margin: 0;
     padding-left: 1rem;
     list-style: none;
 }
