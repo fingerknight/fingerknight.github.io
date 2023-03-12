@@ -495,16 +495,18 @@ body{
 
 /* Math */
 .katex {
-    font-size: 1.125rem;
+    font-size: 1em !important; 
 }
 
 div .mathblock {
     margin-bottom: 1rem;
+    font-size: 1rem !important;
 }
 
 div .mathblock.title {
     font-weight: bold;
     font-family: serif;
+    font-size: 1rem !important;
 }
 
 div .mathblock.proof span.mathblock.title {
@@ -512,12 +514,12 @@ div .mathblock.proof span.mathblock.title {
     font-style: italic;
 }
 
-div .mathblock.proof span.mathblock.name {
+span.mathblock.name {
     font-weight: normal;
     font-style: normal;
 }
 
-span .QED {
+span.QED {
     float: right;
     font-size: 1.5rem;
 }
