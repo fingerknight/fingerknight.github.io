@@ -24,7 +24,7 @@
 </div>
 </div>
 <div class="main">
-<div id="preamble" class="status"><div class="toc">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/katex/katex.min.css"><div class="toc">
 
 </div>
 <h1 class="post-title"> [Calculus] 2. Sequences </h1>
@@ -34,13 +34,137 @@
 </div>
 </div>
 <div id="content">
+<div class="mathblock definition" id="org6adfcba">
 <p>
-Test for link: <a href="/post/20230104T103759--calculus-1-introduction__calculus_math">20230104T103759--calculus-1-introduction__calculus_math.html#MissingReference</a>
+<span class="mathblock title">Definition 2.1. </span>
+
+Let \(a_n(n\in\N)\) be a sequence in \(\R\) and \(L\in\R\). We say that \(a_n\) converges to \(L\) (as \(n\to\infty\)) if \(\forall \epsilon > 0 \exists n\in\N [n\ge N \Rarr |a_n - L| < \epsilon>]\). If such \(L\) exists, we call it the limit of \(a_n\) and call \(a_n(n\in\N)\) a convergent sequence, and denoted as \(\lim_{n\to\infty} a_n = L\). If such \(L\) doesn't, then this sequence \(a_n\) is divergent.
 </p>
 
 <p>
-throrem: <a href="/post/20230104T103759--calculus-1-introduction__calculus_math">Weierstrass' theorem</a>
+In some cases, we may write \(\lim_{n\to\infty} a_n = \infty(-\infty)\) if \(a_n\ge(\le) M\). We do not regard \(a_n\) as a convergent sequence in the case.
 </p>
+
+<p>
+Besides, there are some sequences, which neither converge to a number nor infinity, e.g., \(a_n=(-1)^n\).
+</p>
+
+</div>
+
+<div class="mathblock proposition" id="orga96db27">
+<p>
+<span class="mathblock title">Proposition 2.2. </span>
+ class="org-ol">
+<li>\(\lim_{n\to\infty} a_n = L \land \lim_{n\to\infty} b_n = M \Rarr L=M\)</li>
+<li>\(a_n\) is convergent \(\Rarr{a_n|n\in\N}\) is bounded.</li>
+<li>If \(a_n \le b_n\) for all \(n\in\N\), \(\lim_{n\to\infty} a_n = L\), and \(\lim_{n\to\infty} b_n = M\), then \(L \le M\). If \(\le\) is replaced by \(<\), then&#x2026;</li>
+</ol>
+
+</div>
+<div class="mathblock proof" id="org4780e53">
+<p>
+<span class="mathblock title">Proof. </span>
+
+<i>Proof 1.</i> Suppose that \(L\ne M\), and \(|L-M|=3\epsilon\) where \(\epsilon\) is a positive real number.
+</p>
+
+<p>
+By definition, there exist \(N_1,N_2\in\N\), such that \(|a_n - L| < \epsilon\) for all \(n\ge N_1\) and \(|a_m - M| < \epsilon\) for all \(m\ge N_2\). Let \(N = \max{N_1, N-2}\), then \(n\ge N \Rarr |a_n - L| < \epsilon \land |a_n - M| < \epsilon\), which implies \(|M-L| < 2\epsilon\), a contradiction.
+</p>
+
+<p>
+Therefore, \(L=M\).
+</p>
+
+<p>
+<i>Proof 2.</i> For any given \(\epsilon > 0\), there exists an \(N\in \N\) such that \(n\ge N \Rarr |a_n - L| < \epsilon\) with the hypothesis \(\lim_{n\to\infty} a_n = L\).
+</p>
+
+<p>
+We can find out the maximal and minimal of sequence \(a_1, a_2, \cdots, a_{N-1}\), since the sequence is finite, and write them as \(M_{max}, M_{min}\) respectively. And hence \(M_{min} \le a_n \le M_{max}\) for all \(n < N\).
+</p>
+
+<p>
+Similarly, let \(U = \max{M_{max}, L + \epsilon}, V = \min{M_{min}, L-\epsilon}\), then we have: \(V \le a_n \le U\) for all \(n\in\N\), i.e., \({a_n}\) is bounded.
+</p>
+
+<p>
+<i>Proof 3.</i> Like proof 2, \(\forall \epsilon >0 \exists N\in\N(n\ge N\Rarr |a_n - L| < \epsilon \land |b_n - M| < \epsilon)\).
+</p>
+
+<p>
+\(a_n - b_n \le 0 \Rarr L - M - 2\epsilon < 0\).
+</p>
+
+<p>
+Suppose that \(L > M\), and let \(\epsilon = \frac{L - M}{3} > 0\). Then \(L - M - \frac{2}{3}(L - M) < 0 \Rarr L - M < 0\), a contradiction.
+</p>
+
+<p>
+Therefore, \(L \le M\).
+</p>
+
+<p>
+If \(\le\) is replaced \(<\), the proposition is false. Here is the example. Let \(a_n = \frac{1}{n^2}, b_n = \frac{1}{n}\), it is easy to prove that these two sequences both converging to \(0\) as \(n\to\infty\).
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock remark" id="orgf36cece">
+<p>
+<span class="mathblock title">Remark 2.3. </span>
+
+Changing or removing finitely many terms in \(a_n\) does not effect \(a_n\)'s being convergent and its limit, or divergent.
+</p>
+
+</div>
+
+<div class="mathblock proposition" id="orgd75944d">
+<p>
+<span class="mathblock title">Proposition 2.4. </span>
+
+If \(\lim_{n\to\infty} a_n = L \land \lim_{n\to\infty} b_n = M\), then
+</p>
+<ol class="org-ol">
+<li>\(\lim_{n\to\infty}(a_n + b_n) = L \pm M\)</li>
+<li>\(\lim_{n\to\infty}(a_nb_n) = LM\)</li>
+<li>if \(M\ne0\), then \(b_n\ne0\) for all but finitely many \(n\), and \(\lim_{n\to\infty}\frac{a_n}{b_n} = \frac{L}{M}\)</li>
+</ol>
+
+</div>
+
+<div class="mathblock proof" id="org5e60e7a">
+<p>
+<span class="mathblock title">Proof. </span>
+
+<i>Proof 1.</i> \(|(a_n\pm b_n) - (L\pm M)| = |(a_n - L) \pm (b_n - M)| \le |a_n - L| + |b_n - M| < 2\epsilon\). (There are some skips)
+</p>
+
+<p>
+<i>Proof 2.</i> \(|a_nb_n - LM| = |a_nb_n - Lb_n + Lb_n -LM| \le |a_n - L||b_n| + |L||b_n - M|\)
+</p>
+
+<p>
+Choose a real number \(c>0\), such that \(|b_n| \le c \land |L| \le c\). It is guaranteed by 'convergent implies bounded'.
+</p>
+
+<p>
+Then, \(|a_nb_n - LM| = \le |a_n - L||b_n| + |L||b_n - M| \le C(|a_n - L| + |b_n - M|) \le 2C\epsilon\).
+</p>
+
+<p>
+<i>Proof 3.</i> \(\left|\frac{a_n}{b_n} - \frac{L}{M}\right| = \left|\frac{1}{b_n}\right|\left|a_n - L\right| + \left|\frac{1}{b_n}\right|\left|\frac{L}{M}\right|\left|b_n - M\right| \le \left|a_n - L\right| + \left|\frac{L}{M}\right|\left|b_n - M\right|\).
+</p>
+
+<p>
+Choose a real number \(d>0\), such that \(d > 1 \land d > \left|\frac{L}{M}\right|\).
+</p>
+
+<p>
+Then, \(\left|\frac{a_n}{b_n} - \frac{L}{M}\right| = \left|a_n - L\right| + \left|\frac{L}{M}\right|\left|b_n - M\right| \le 2d\epsilon\).
+<span class="QED">□</span>
+</p>
+</div>
 <div id="footnotes">
 <hr>
 <div class="text-footnotes" role="doc-endnotes">
@@ -50,7 +174,36 @@ throrem: <a href="/post/20230104T103759--calculus-1-introduction__calculus_math"
 </div>
 </div>
 </div>
-<div id="postamble" class="status"></div>
+<div id="postamble" class="status"><script defer src="/static/katex/katex.min.js"></script>
+<script defer src="/static/katex/auto-render.min.js"></script>
+<script>
+let macros = {
+"\\C": "\\mathbb{C}",
+"\\N": "\\mathbb{N}",
+"\\Q": "\\mathbb{Q}",
+"\\R": "\\mathbb{R}",
+"\\Z": "\\mathbb{Z}",
+"’": "'"
+};
+document.addEventListener("DOMContentLoaded", function() {
+renderMathInElement(document.getElementById("content"), {
+strict: false,
+delimiters: [
+{"display": true,"left": "$$","right": "$$"},
+{"display": true,"left": "\\[","right": "\\]"},
+{"display": true,"left": "\\begin{equation}","right": "\\end{equation}"},
+{"display": true,"left": "\\begin{equation*}","right": "\\end{equation*}"},
+{"display": true,"left": "\\begin{align}","right": "\\end{align}"},
+{"display": true,"left": "\\begin{align*}","right": "\\end{align*}"},
+{"display": true,"left": "\\begin{alignat}","right": "\\end{alignat}"},
+{"display": true,"left": "\\begin{alignat*}","right": "\\end{alignat*}"},
+{"display": true,"left": "\\begin{gather}","right": "\\end{gather}"},
+{"display": true,"left": "\\begin{CD}","right": "\\end{CD}"},
+{"display": false,"left": "$","right": "$"},
+{"display": false,"left": "\\(","right": "\\)"}
+],
+macros});})
+</script></div>
 </div>
 <div class="footer">
 <center> The End </center></div>
