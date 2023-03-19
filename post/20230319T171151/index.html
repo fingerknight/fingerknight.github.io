@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="I choose to see the beauty.">
+<title>[Calculus] 3. Series</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noodp">
+<meta name="author" content=" Finger Knight ">
+<meta name="referrer" content="no-referrer"><link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<body>
+<div class="header">
+<div class="home-page">
+<a href="/">手指骑士的病房</a></div><div class="nav">
+<div class="nav item">
+<a href="/tags">标签</a>
+</div>
+<div class="nav item">
+<a href="/archive">归档</a>
+</div>
+<div class="nav item">
+<a href="/about">关于</a>
+</div>
+</div>
+</div>
+<div class="main">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/katex/katex.min.css"><div class="toc">
+
+</div>
+<h1 class="post-title"> [Calculus] 3. Series </h1>
+<div class="post-date">2023-03-19</div>
+<div class="taglist"><a href="/tag/calculus"> #calculus </a>
+<a href="/tag/math"> #math </a>
+</div>
+</div>
+<div id="content">
+<div class="mathblock definition" id="orgf7c67a5">
+<p><span class="mathblock title">Definition 3.1. </span>
+
+Let \(a_n(n\in\N)\) be a sequence in \(\R\). We say that the series \(\sum_{n=1}^\infty a_n\) converges to a real number \(S\) if \(\lim_{n\to\infty} s_n = S\), where \(s_n := \sum_{j=1}^n a_j = a_1 + \cdots + a_n\) is the n-th partial sum of \(\sum_n a_n\).
+</p>
+
+<p>
+If such S exists (or does not exist), we say that the series \(\sum_n a_n\) is convergent (or divergent).
+</p>
+
+</div>
+
+<div class="mathblock proposition" id="org0647c46">
+<p><span class="mathblock title">Proposition 3.2. </span>
+
+If \(\sum_n a_n\) converges, then \(\lim_{n\to\infty} = 0\).
+</p>
+
+</div>
+<div class="mathblock proof" id="orgb29aa0c">
+<p><span class="mathblock title">Proof. </span>
+
+\(\sum_n a_n\) converges, then \(\lim_{n\to\infty} s_n = S\). By definition of limits, we have \(\lim_{n\to\infty} s_{n+1} = S\) too.
+</p>
+
+<p>
+Then \(\lim_{n\to\infty}a_n = \lim_{n\to\infty}(s_{n+1} - s_n) = \lim_{n\to\infty} s_{n+1} - \lim_{n\to\infty} s_n = 0\).
+<span class="QED">□</span>
+</p>
+</div>
+<div id="footnotes">
+<hr>
+<div class="text-footnotes" role="doc-endnotes">
+<ol>
+
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status"><script defer src="/static/katex/katex.min.js"></script>
+<script defer src="/static/katex/auto-render.min.js"></script>
+<script>
+let macros = {
+"\\C": "\\mathbb{C}",
+"\\N": "\\mathbb{N}",
+"\\Q": "\\mathbb{Q}",
+"\\R": "\\mathbb{R}",
+"\\Z": "\\mathbb{Z}",
+"’": "'"
+};
+document.addEventListener("DOMContentLoaded", function() {
+renderMathInElement(document.getElementById("content"), {
+strict: false,
+delimiters: [
+{"display": true,"left": "$$","right": "$$"},
+{"display": true,"left": "\\[","right": "\\]"},
+{"display": true,"left": "\\begin{equation}","right": "\\end{equation}"},
+{"display": true,"left": "\\begin{equation*}","right": "\\end{equation*}"},
+{"display": true,"left": "\\begin{align}","right": "\\end{align}"},
+{"display": true,"left": "\\begin{align*}","right": "\\end{align*}"},
+{"display": true,"left": "\\begin{alignat}","right": "\\end{alignat}"},
+{"display": true,"left": "\\begin{alignat*}","right": "\\end{alignat*}"},
+{"display": true,"left": "\\begin{gather}","right": "\\end{gather}"},
+{"display": true,"left": "\\begin{CD}","right": "\\end{CD}"},
+{"display": false,"left": "$","right": "$"},
+{"display": false,"left": "\\(","right": "\\)"}
+],
+macros});})
+</script></div>
+</div>
+<div class="footer">
+<center> The End </center></div>
+</body>
+</html>
