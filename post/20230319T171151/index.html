@@ -34,7 +34,7 @@
 </div>
 </div>
 <div id="content">
-<div class="mathblock definition" id="org584d817">
+<div class="mathblock definition" id="orgf947a7d">
 <p><span class="mathblock title">Definition 3.1. </span>
 
 Let \(a_n(n\in\N)\) be a sequence in \(\R\). We say that the series \(\sum_{n=1}^\infty a_n\) converges to a real number \(S\) if \(\lim_{n\to\infty} s_n = S\), where \(s_n := \sum_{j=1}^n a_j = a_1 + \cdots + a_n\) is the n-th partial sum of \(\sum_n a_n\).
@@ -46,14 +46,14 @@ If such S exists (or does not exist), we say that the series \(\sum_n a_n\) is c
 
 </div>
 
-<div class="mathblock proposition" id="org86b612e">
+<div class="mathblock proposition" id="org4eac7d4">
 <p><span class="mathblock title">Proposition 3.2. </span>
 
 If \(\sum_n a_n\) converges, then \(\lim_{n\to\infty} a_n = 0\).
 </p>
 
 </div>
-<div class="mathblock proof" id="org214cc3e">
+<div class="mathblock proof" id="org8277a3e">
 <p><span class="mathblock title">Proof. </span>
 
 \(\sum_n a_n\) converges, then \(\lim_{n\to\infty} s_n = S\). By definition of limits, we have \(\lim_{n\to\infty} s_{n+1} = S\) too.
@@ -65,7 +65,7 @@ Then \(\lim_{n\to\infty}a_n = \lim_{n\to\infty}(s_{n+1} - s_n) = \lim_{n\to\inft
 </p>
 </div>
 
-<div class="mathblock definition" id="org9155b52">
+<div class="mathblock definition" id="org6eee5d6">
 <p><span class="mathblock title">Definition 3.3. </span>
 
 Given a sequence \(a_n(n\in\N)\), we say that
@@ -77,14 +77,14 @@ Given a sequence \(a_n(n\in\N)\), we say that
 
 </div>
 
-<div class="mathblock proposition" id="org974e697">
+<div class="mathblock proposition" id="org72745b7">
 <p><span class="mathblock title">Proposition 3.4. </span>
 
 If \(\sum_n |a_n|\) converges, then \(\sum_n a_n\) converges.
 </p>
 
 </div>
-<div class="mathblock proof" id="orgc87f2c7">
+<div class="mathblock proof" id="org6e01216">
 <p><span class="mathblock title">Proof. </span>
 
 Let \(s_n = a_1 + \cdots + a_n\), \(\overline{s}_n = |a_1| + \cdots + |a_n|\).
@@ -100,9 +100,9 @@ Let \(s_n = a_1 + \cdots + a_n\), \(\overline{s}_n = |a_1| + \cdots + |a_n|\).
 & \Lrarr
 \forall \epsilon > 0 \exists N\in\N[n > m \ge N \Rarr |\overline{s}_n - \overline{s}_m| < \epsilon] \\
 & \Lrarr
-\forall \epsilon > 0 \exists N\in\N[n > m \ge N \Rarr ||a_{m+1}| + \cdots + |a_n|| < \epsilon] \\
+\forall \epsilon > 0 \exists N\in\N[n \ge N \Rarr ||a_{m+1}| + \cdots + |a_n|| < \epsilon] \\
 & \Rarr
-\forall \epsilon > 0 \exists N\in\N[n > m \ge N \Rarr ||a_{m+1} + \cdots + a_n|| < \epsilon] \text{ (By Triangle Inequality)} \\
+\forall \epsilon > 0 \exists N\in\N[n \ge N \Rarr |a_{m+1} + \cdots + a_n| < \epsilon] \text{ (By Triangle Inequality)} \\
 & \Lrarr 
 \forall \epsilon > 0 \exists N\in\N[n > m \ge N \Rarr |s_n - s_m| < \epsilon] \\
 & \Lrarr
@@ -112,6 +112,39 @@ s_n\text{ is Cauchy} \\
 & \Lrarr
 \sum_n a_n < \infty
 \end{align*}\]
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock proposition" id="org6329b0e">
+<p><span class="mathblock title">Proposition 3.5<span class="mathblock name"> (Comparison test)</span>. </span>
+
+Let \(a_n, b_n(n\in\N)\) be positive sequences. If \(\exists C > 0, N\in\N[n\ge N \Rarr a_n \le Cb_n]\), then \(\sum_n b_n < \infty \Rarr \sum_n a_n < \infty\).
+</p>
+
+</div>
+<div class="mathblock proof" id="org425fda7">
+<p><span class="mathblock title">Proof. </span>
+
+
+</p>
+
+<p>
+For all \(n\ge N\), consider \(a_1 + \cdots + a_n\).
+</p>
+
+<p>
+\[\begin{align*}
+a_1 + \cdots + a_N + a_{N+1} + \cdots + a_n
+& \ge
+a_1 + \cdots + a_N + C(b_{N+1} + \cdots + b_n)
+& \ge
+a_1 + \cdots + a_N + CM \text{for some }M>0\text{ since }\sum_n b_n\text{ converges}
+\end{align*}\]
+</p>
+
+<p>
+Partial sum of \(\sum_n a_n\) is bounded, i.e., \(\sum_n a_n\) converges.
 <span class="QED">□</span>
 </p>
 </div>
