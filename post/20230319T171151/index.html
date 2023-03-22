@@ -34,7 +34,7 @@
 </div>
 </div>
 <div id="content">
-<div class="mathblock definition" id="orgf7c67a5">
+<div class="mathblock definition" id="org584d817">
 <p><span class="mathblock title">Definition 3.1. </span>
 
 Let \(a_n(n\in\N)\) be a sequence in \(\R\). We say that the series \(\sum_{n=1}^\infty a_n\) converges to a real number \(S\) if \(\lim_{n\to\infty} s_n = S\), where \(s_n := \sum_{j=1}^n a_j = a_1 + \cdots + a_n\) is the n-th partial sum of \(\sum_n a_n\).
@@ -46,14 +46,14 @@ If such S exists (or does not exist), we say that the series \(\sum_n a_n\) is c
 
 </div>
 
-<div class="mathblock proposition" id="org0647c46">
+<div class="mathblock proposition" id="org86b612e">
 <p><span class="mathblock title">Proposition 3.2. </span>
 
-If \(\sum_n a_n\) converges, then \(\lim_{n\to\infty} = 0\).
+If \(\sum_n a_n\) converges, then \(\lim_{n\to\infty} a_n = 0\).
 </p>
 
 </div>
-<div class="mathblock proof" id="orgb29aa0c">
+<div class="mathblock proof" id="org214cc3e">
 <p><span class="mathblock title">Proof. </span>
 
 \(\sum_n a_n\) converges, then \(\lim_{n\to\infty} s_n = S\). By definition of limits, we have \(\lim_{n\to\infty} s_{n+1} = S\) too.
@@ -61,6 +61,57 @@ If \(\sum_n a_n\) converges, then \(\lim_{n\to\infty} = 0\).
 
 <p>
 Then \(\lim_{n\to\infty}a_n = \lim_{n\to\infty}(s_{n+1} - s_n) = \lim_{n\to\infty} s_{n+1} - \lim_{n\to\infty} s_n = 0\).
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock definition" id="org9155b52">
+<p><span class="mathblock title">Definition 3.3. </span>
+
+Given a sequence \(a_n(n\in\N)\), we say that
+</p>
+<ol class="org-ol">
+<li>\(\sum_n a_n\) converges absolutely if \(\sum_n|a_n|\) converges;</li>
+<li>\(\sum_n a_n\) converges conditionally if \(\sum_n|a_n|\) does not converge but \(\sum_{n=1}^\infty a_n\) converges.</li>
+</ol>
+
+</div>
+
+<div class="mathblock proposition" id="org974e697">
+<p><span class="mathblock title">Proposition 3.4. </span>
+
+If \(\sum_n |a_n|\) converges, then \(\sum_n a_n\) converges.
+</p>
+
+</div>
+<div class="mathblock proof" id="orgc87f2c7">
+<p><span class="mathblock title">Proof. </span>
+
+Let \(s_n = a_1 + \cdots + a_n\), \(\overline{s}_n = |a_1| + \cdots + |a_n|\).
+</p>
+
+<p>
+\[\begin{align*}
+\sum_n |a_n| < \infty
+& \Lrarr
+\lim_{n\to\infty}\overline{s}_n < \infty \\
+& \Lrarr
+\overline{s}_n\text{ is Cauchy} \\
+& \Lrarr
+\forall \epsilon > 0 \exists N\in\N[n > m \ge N \Rarr |\overline{s}_n - \overline{s}_m| < \epsilon] \\
+& \Lrarr
+\forall \epsilon > 0 \exists N\in\N[n > m \ge N \Rarr ||a_{m+1}| + \cdots + |a_n|| < \epsilon] \\
+& \Rarr
+\forall \epsilon > 0 \exists N\in\N[n > m \ge N \Rarr ||a_{m+1} + \cdots + a_n|| < \epsilon] \text{ (By Triangle Inequality)} \\
+& \Lrarr 
+\forall \epsilon > 0 \exists N\in\N[n > m \ge N \Rarr |s_n - s_m| < \epsilon] \\
+& \Lrarr
+s_n\text{ is Cauchy} \\
+& \Lrarr
+\lim_{n\to\infty} s_n < \infty \\
+& \Lrarr
+\sum_n a_n < \infty
+\end{align*}\]
 <span class="QED">□</span>
 </p>
 </div>
