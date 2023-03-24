@@ -34,7 +34,7 @@
 </div>
 </div>
 <div id="content">
-<div class="mathblock definition" id="orgf947a7d">
+<div class="mathblock definition" id="orgedb4ab5">
 <p><span class="mathblock title">Definition 3.1. </span>
 
 Let \(a_n(n\in\N)\) be a sequence in \(\R\). We say that the series \(\sum_{n=1}^\infty a_n\) converges to a real number \(S\) if \(\lim_{n\to\infty} s_n = S\), where \(s_n := \sum_{j=1}^n a_j = a_1 + \cdots + a_n\) is the n-th partial sum of \(\sum_n a_n\).
@@ -46,14 +46,14 @@ If such S exists (or does not exist), we say that the series \(\sum_n a_n\) is c
 
 </div>
 
-<div class="mathblock proposition" id="org4eac7d4">
+<div class="mathblock proposition" id="orgb3239a4">
 <p><span class="mathblock title">Proposition 3.2. </span>
 
 If \(\sum_n a_n\) converges, then \(\lim_{n\to\infty} a_n = 0\).
 </p>
 
 </div>
-<div class="mathblock proof" id="org8277a3e">
+<div class="mathblock proof" id="org88a3a87">
 <p><span class="mathblock title">Proof. </span>
 
 \(\sum_n a_n\) converges, then \(\lim_{n\to\infty} s_n = S\). By definition of limits, we have \(\lim_{n\to\infty} s_{n+1} = S\) too.
@@ -65,7 +65,7 @@ Then \(\lim_{n\to\infty}a_n = \lim_{n\to\infty}(s_{n+1} - s_n) = \lim_{n\to\inft
 </p>
 </div>
 
-<div class="mathblock definition" id="org6eee5d6">
+<div class="mathblock definition" id="org6ed1153">
 <p><span class="mathblock title">Definition 3.3. </span>
 
 Given a sequence \(a_n(n\in\N)\), we say that
@@ -77,14 +77,14 @@ Given a sequence \(a_n(n\in\N)\), we say that
 
 </div>
 
-<div class="mathblock proposition" id="org72745b7">
+<div class="mathblock proposition" id="orgb1935b7">
 <p><span class="mathblock title">Proposition 3.4. </span>
 
 If \(\sum_n |a_n|\) converges, then \(\sum_n a_n\) converges.
 </p>
 
 </div>
-<div class="mathblock proof" id="org6e01216">
+<div class="mathblock proof" id="orgc2337d6">
 <p><span class="mathblock title">Proof. </span>
 
 Let \(s_n = a_1 + \cdots + a_n\), \(\overline{s}_n = |a_1| + \cdots + |a_n|\).
@@ -116,17 +116,37 @@ s_n\text{ is Cauchy} \\
 </p>
 </div>
 
-<div class="mathblock proposition" id="org6329b0e">
+<div class="mathblock proposition" id="org4f6e6b1">
 <p><span class="mathblock title">Proposition 3.5<span class="mathblock name"> (Comparison test)</span>. </span>
 
-Let \(a_n, b_n(n\in\N)\) be positive sequences. If \(\exists C > 0, N\in\N[n\ge N \Rarr a_n \le Cb_n]\), then \(\sum_n b_n < \infty \Rarr \sum_n a_n < \infty\).
+Let \(a_n, b_n(n\in\N)\) be positive sequences. If \(\lim_{n\to\infty}\frac{a_n}{b_n}\) exists, then
 </p>
+<ol class="org-ol">
+<li>\(\exists C > 0, N\in\N[n\ge N \Rarr a_n \le Cb_n]\)</li>
+<li>And hence, \(\sum_n b_n < \infty \Rarr \sum_n a_n < \infty\).</li>
+</ol>
 
 </div>
-<div class="mathblock proof" id="org425fda7">
+<div class="mathblock proof" id="orgacf9f43">
 <p><span class="mathblock title">Proof. </span>
 
+<i>Proof 1.</i>
+</p>
 
+<p>
+Let \(L := \lim_{n\to\infty}\frac{a_n}{b_n}\). By definition, \(n\ge N\Rarr [|\frac{a_n}{b_n} - L| < \epsilon]\). In particular, \(\frac{a_n}{b_n} < L + \epsilon \Lrarr a_n < (L + \epsilon)b_n\).
+</p>
+
+<p>
+Let \(C := L + \epsilon\), then the proof is done.
+</p>
+
+<p>
+Equal sign does not matter. If in this case, just adjust the rate \(C\).
+</p>
+
+<p>
+<i>Proof 2.</i>
 </p>
 
 <p>
@@ -137,14 +157,246 @@ For all \(n\ge N\), consider \(a_1 + \cdots + a_n\).
 \[\begin{align*}
 a_1 + \cdots + a_N + a_{N+1} + \cdots + a_n
 & \ge
-a_1 + \cdots + a_N + C(b_{N+1} + \cdots + b_n)
+a_1 + \cdots + a_N + C(b_{N+1} + \cdots + b_n) \\
 & \ge
-a_1 + \cdots + a_N + CM \text{for some }M>0\text{ since }\sum_n b_n\text{ converges}
+a_1 + \cdots + a_N + CM \text{for some }M>0\text{ since }\sum_n b_n\text{ converges} 
 \end{align*}\]
 </p>
 
 <p>
 Partial sum of \(\sum_n a_n\) is bounded, i.e., \(\sum_n a_n\) converges.
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock proposition" id="org7d8fc22">
+<p><span class="mathblock title">Proposition 3.6<span class="mathblock name"> (The ratio test)</span>. </span>
+
+Let \(a_n(n\in\N) \ge 0\). If \(\lim_{n\to\infty}\frac{a_{n+1}}{a_n} < 1\), then
+</p>
+<ol class="org-ol">
+<li>\(\exists C > 0, N\in\N[n\ge N \Rarr a_{n+1} \le Ca_n]\)</li>
+<li>And hence, \(\sum_n a_n < \infty\).</li>
+</ol>
+
+</div>
+<div class="mathblock proof" id="orgcdbacad">
+<p><span class="mathblock title">Proof. </span>
+
+<i>Proof 1.</i>
+</p>
+
+<p>
+Let \(L := \lim_{n\to\infty}\frac{a_{n+1}}{a_n} < 1\). By definition, \(n\ge N\Rarr [|\frac{a_{n+1}}{a_n} - L| < \epsilon]\). In particular, \(\frac{a_{n+1}}{a_n} < L + \epsilon < 1 + \epsilon \Lrarr a_n < (1 + \epsilon)b_n\).
+</p>
+
+<p>
+Let \(C := 1 + \epsilon\), then the proof is done.
+</p>
+
+<p>
+<i>Proof 2.</i>
+</p>
+
+<p>
+Resemble the proof 2 of Comparison test.
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock proposition" id="orgbafd0e9">
+<p><span class="mathblock title">Proposition 3.7<span class="mathblock name"> (The root test)</span>. </span>
+
+Let \(a_n(n\in\N) \ge 0\). If \(\lim_{n\to\infty}(a)^{\frac{1}{n}} < 1\), then
+</p>
+<ol class="org-ol">
+<li>\(\exists C > 0, N\in\N[n\ge N \Rarr a_n \le C^n]\)</li>
+<li>And hence, \(\sum_n a_n < \infty\).</li>
+</ol>
+
+</div>
+<div class="mathblock proof" id="org7c07db8">
+<p><span class="mathblock title">Proof. </span>
+
+<i>Proof 1.</i>
+</p>
+
+<p>
+Let \(L := \lim_{n\to\infty}\frac{a_{n+1}}{a_n} < 1\). By definition, \(n\ge N\Rarr [|\frac{a_{n+1}}{a_n} - L| < \epsilon]\). In particular, \(\frac{a_{n+1}}{a_n} < L + \epsilon < 1 + \epsilon \Lrarr a_n < (1 + \epsilon)b_n\).
+</p>
+
+<p>
+Let \(C := 1 + \epsilon\), then the proof is done.
+</p>
+
+<p>
+<i>Proof 2.</i>
+</p>
+
+<p>
+Resemble the proof 2 of Comparison test.
+<span class="QED">□</span>
+</p>
+</div>
+
+
+<div class="mathblock definition" id="org0c9c7e9">
+<p><span class="mathblock title">Definition 3.8. </span>
+
+A series \(\sum_n a_n\) is an alternating series if \(\exists b_n > 0 (n\in\N)\) such that \(a_n = (-1)^{n-1}b_n\).
+</p>
+
+</div>
+
+<div class="mathblock proposition" id="org81803b6">
+<p><span class="mathblock title">Proposition 3.9<span class="mathblock name"> (Leibnitz's criterion)</span>. </span>
+
+If \(\sum_n a_n\) is an alternating series, and \(b_n = |a_n|\) decreases to 0 as \(n\to\infty\). Then \(\sum_n a_n\) converges.
+</p>
+
+</div>
+<div class="mathblock proof" id="org5853390">
+<p><span class="mathblock title">Proof. </span>
+
+Let \(b_n = (-1)^{n-1}a_n\).
+</p>
+
+<p>
+Consider a tail of \(a_n\). \(|a_k + \cdots + a_{k+l}| = |(-1)^k(b_k - b_{k+1} + \cdots + (-1)^lb_{k+l})| = b_k - b_{k+1} + \cdots + (-1)^lb_{k+l}\) (note that \(b_k - b_{k+1} + \cdots + (-1)^lb_{k+l}\) is always positive.)
+</p>
+
+<p>
+And
+\[b_k - b_{k+1} + \cdots + (-1)^lb_{k+l} =
+\begin{cases}
+b_k - (b_{k+1} - b_{k+2}) - \cdots - (b_{k+l-1} - b_{k+l}) &\text{if } l\text{ is even} \\
+b_k - (b_{k+1} - b_{k+2}) - \cdots - (b_{k+l-2} - b_{k+l-1}) - b{k+l} &\text{if } l\text{ is odd} \\
+\end{cases} < b_k
+\]
+since every terms after \(b_k\) is positive, and \(b_k\) is less than itself substracting finitely many positive terms.
+</p>
+
+
+<p>
+From \(\lim_{n\to\infty}b_n = 0\), then we have
+</p>
+
+<p>
+\[ \forall \epsilon > 0 \exists N\in\N
+[n\ge N \Rarr |b_n| < \epsilon \Rarr |a_n + \cdots + a_{n+l}| < \epsilon]
+\]
+</p>
+
+<p>
+By former proposition, \(\sum_n a_n\) converges.
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock definition" id="orgc7c33ed">
+<p><span class="mathblock title">Definition 3.10. </span>
+
+Given a sequence \(a_n(n\in\N)\), separate all terms into two sequences \(a_{n_1}, a_{n_2},\cdots\) and \(a_{n_1'}, a_{n_2'},\cdots\) with (1) \(n_1 < n_2 < \cdots\) and \(n_1' < n_2' < \cdots\); (2) \(\{n_1,n_2,\cdots\}\cup\{n_1',n_2',\cdots\}=\N\), such that \(a_{n_j}\ge 0(j\in\N)\) and \(a_{n_k'}\le 0(k\in\N)\). Define: \(p_j:=a_{n_j}(j\in\N)\) and \(q_k:=-a_{n_k'}(k\in\N)\).
+</p>
+
+</div>
+
+<div class="mathblock proposition" id="orgaae6b41">
+<p><span class="mathblock title">Proposition 3.11. </span>
+
+\(a_n\) converges absolutely iff \(\sum_j p_j < \infty\) and \(\sum_k q_k < \infty\). Moreover, if any side holds, then \(\sum_n |a_n| = \sum_j p_j + \sum_k q_k\) and \(\sum_n a_n = \sum_j p_j - \sum q_k\). 
+</p>
+
+</div>
+<div class="mathblock proof" id="org9975cd4">
+<p><span class="mathblock title">Proof. </span>
+
+(\(\Rarr\))
+Let \(L_1 = \sum_n |a_n|\), and \(L_2 = \sum_n a_n\).
+</p>
+
+<p>
+Consider \(p_1 + \cdots + p_j\) for all \(j\in\N\).
+</p>
+
+<p>
+Find an index \(n\in\N\) such that \(a_n = p_j\). We claim that \(a_1+\cdots+a_n \le p_1 + \cdots + p_j \le |a_1| + \cdots + |a_n|\).
+</p>
+
+<p>
+(Left inequality)
+</p>
+
+<p>
+By definition, \(\{p_1,\cdots,p_j\}\sube\{a_1,\cdots,a_n\}\). Besides, there may be some negative terms in \(\{a_1,\cdots,a_n}\), which means the sum \(a_1+\cdots+a_n \le p_1+\cdots+p_j\) where the equality holds when no negative terms.
+</p>
+
+<p>
+(Right inequality)
+</p>
+
+<p>
+Similarly, but all the negative terms turn into positive. Therefore the sum can not be less, i.e., \(p_1+\cdots+p_j \le |a_1| + \cdots + |a_n|\) where equality holds when no negative terms.
+</p>
+
+<p>
+For any \(\epsilon > 0\), there exists \(N\in\N\) such that when \(n\ge N\)
+</p>
+
+<p>
+\[L_2 - \epsilon < a_1+\cdots+a_n \le p_1 + \cdots + p_j \le |a_1| + \cdots + |a_n| < L_1 +\epsilon\]
+</p>
+
+<p>
+i.e., sequence \(Sp_j = p_1 + \cdots + p_j\) is bounded, thus \(\sum_j p_j\) is convergent.
+</p>
+
+<p>
+Consider \(q_1 + \cdots + q_k\) for all \(k\in\N\).
+</p>
+
+<p>
+Find an index \(n\in\N\) such that \(a_n = q_k\). With similar reasons, we claim that
+</p>
+
+<p>
+\[- L_1 - \epsilon < -(|a_1| + \cdots + |a_n|) \le q_1 + \cdots + q_k \le a_1+\cdots+a_n < L_2 + \epsilon\]
+</p>
+
+<p>
+Then \(Sq_k = q_1 +\cdots + q_k\) is also bounded, and hence \(\sum_k q_k\) is convergent.
+</p>
+
+<p>
+(\(\Larr\))
+Suppose \(P = \sum_j p_j, Q = \sum_k q_k\).
+</p>
+
+<p>
+For any \(\epsilon > 0\), there exists \(N\in\N\) such that
+</p>
+
+<p>
+\[\begin{gather*}
+P - \epsilon < p_1 + \cdots + p_j < P + \epsilon \text{ for all } j\ge N\\
+Q - \epsilon < q_1 + \cdots + q_k < Q + \epsilon \text{ for all } k\ge N
+\end{gather*}\]
+</p>
+
+<p>
+(1) Consider \(S_1 = (p_1 + \cdots + p_j) + (q_1 + \cdots + q_k)\). Then \(|S_1 - (P+Q)| < 2\epsilon\).
+</p>
+
+<p>
+By definition, we can find an index \(n\in\N\) such that \(|a_1| + \cdots + |a_n| = S_1\). Thus we have \(\sum_n |a_n|\) is convergent to \(P+Q\), which is \(\sum_j p_j + \sum_k q_k\).
+</p>
+
+<p>
+(2) Consider \(S_2 = (p_1 + \cdots + p_j) - (q_1 + \cdots + q_k)\). Then \(|S_2 - (P-Q)| < 2\epsilon\).
+</p>
+
+<p>
+Still by definition, we can find an index \(m\in\N\) such that \(a_1 + \cdots + a_m = S_2\), and hence \(\sum_n a_n\) is convergent to \(P-Q\), which is \(\sum_j p_j - \sum_k q_k\).
 <span class="QED">□</span>
 </p>
 </div>
