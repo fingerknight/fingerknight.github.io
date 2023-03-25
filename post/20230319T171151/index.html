@@ -34,7 +34,7 @@
 </div>
 </div>
 <div id="content">
-<div class="mathblock definition" id="orgedb4ab5">
+<div class="mathblock definition" id="org52cd2da">
 <p><span class="mathblock title">Definition 3.1. </span>
 
 Let \(a_n(n\in\N)\) be a sequence in \(\R\). We say that the series \(\sum_{n=1}^\infty a_n\) converges to a real number \(S\) if \(\lim_{n\to\infty} s_n = S\), where \(s_n := \sum_{j=1}^n a_j = a_1 + \cdots + a_n\) is the n-th partial sum of \(\sum_n a_n\).
@@ -46,14 +46,14 @@ If such S exists (or does not exist), we say that the series \(\sum_n a_n\) is c
 
 </div>
 
-<div class="mathblock proposition" id="orgb3239a4">
+<div class="mathblock proposition" id="org42ab368">
 <p><span class="mathblock title">Proposition 3.2. </span>
 
 If \(\sum_n a_n\) converges, then \(\lim_{n\to\infty} a_n = 0\).
 </p>
 
 </div>
-<div class="mathblock proof" id="org88a3a87">
+<div class="mathblock proof" id="orgef80e5e">
 <p><span class="mathblock title">Proof. </span>
 
 \(\sum_n a_n\) converges, then \(\lim_{n\to\infty} s_n = S\). By definition of limits, we have \(\lim_{n\to\infty} s_{n+1} = S\) too.
@@ -65,7 +65,7 @@ Then \(\lim_{n\to\infty}a_n = \lim_{n\to\infty}(s_{n+1} - s_n) = \lim_{n\to\inft
 </p>
 </div>
 
-<div class="mathblock definition" id="org6ed1153">
+<div class="mathblock definition" id="org62a6c94">
 <p><span class="mathblock title">Definition 3.3. </span>
 
 Given a sequence \(a_n(n\in\N)\), we say that
@@ -77,14 +77,14 @@ Given a sequence \(a_n(n\in\N)\), we say that
 
 </div>
 
-<div class="mathblock proposition" id="orgb1935b7">
+<div class="mathblock proposition" id="orgab88ff1">
 <p><span class="mathblock title">Proposition 3.4. </span>
 
 If \(\sum_n |a_n|\) converges, then \(\sum_n a_n\) converges.
 </p>
 
 </div>
-<div class="mathblock proof" id="orgc2337d6">
+<div class="mathblock proof" id="orge202ee8">
 <p><span class="mathblock title">Proof. </span>
 
 Let \(s_n = a_1 + \cdots + a_n\), \(\overline{s}_n = |a_1| + \cdots + |a_n|\).
@@ -116,7 +116,7 @@ s_n\text{ is Cauchy} \\
 </p>
 </div>
 
-<div class="mathblock proposition" id="org4f6e6b1">
+<div class="mathblock proposition" id="org1baf999">
 <p><span class="mathblock title">Proposition 3.5<span class="mathblock name"> (Comparison test)</span>. </span>
 
 Let \(a_n, b_n(n\in\N)\) be positive sequences. If \(\lim_{n\to\infty}\frac{a_n}{b_n}\) exists, then
@@ -127,7 +127,7 @@ Let \(a_n, b_n(n\in\N)\) be positive sequences. If \(\lim_{n\to\infty}\frac{a_n}
 </ol>
 
 </div>
-<div class="mathblock proof" id="orgacf9f43">
+<div class="mathblock proof" id="orgf54a243">
 <p><span class="mathblock title">Proof. </span>
 
 <i>Proof 1.</i>
@@ -169,7 +169,7 @@ Partial sum of \(\sum_n a_n\) is bounded, i.e., \(\sum_n a_n\) converges.
 </p>
 </div>
 
-<div class="mathblock proposition" id="org7d8fc22">
+<div class="mathblock proposition" id="org5caadb3">
 <p><span class="mathblock title">Proposition 3.6<span class="mathblock name"> (The ratio test)</span>. </span>
 
 Let \(a_n(n\in\N) \ge 0\). If \(\lim_{n\to\infty}\frac{a_{n+1}}{a_n} < 1\), then
@@ -180,7 +180,7 @@ Let \(a_n(n\in\N) \ge 0\). If \(\lim_{n\to\infty}\frac{a_{n+1}}{a_n} < 1\), then
 </ol>
 
 </div>
-<div class="mathblock proof" id="orgcdbacad">
+<div class="mathblock proof" id="orgc5d22c6">
 <p><span class="mathblock title">Proof. </span>
 
 <i>Proof 1.</i>
@@ -204,7 +204,7 @@ Resemble the proof 2 of Comparison test.
 </p>
 </div>
 
-<div class="mathblock proposition" id="orgbafd0e9">
+<div class="mathblock proposition" id="org6b78006">
 <p><span class="mathblock title">Proposition 3.7<span class="mathblock name"> (The root test)</span>. </span>
 
 Let \(a_n(n\in\N) \ge 0\). If \(\lim_{n\to\infty}(a)^{\frac{1}{n}} < 1\), then
@@ -215,7 +215,7 @@ Let \(a_n(n\in\N) \ge 0\). If \(\lim_{n\to\infty}(a)^{\frac{1}{n}} < 1\), then
 </ol>
 
 </div>
-<div class="mathblock proof" id="org7c07db8">
+<div class="mathblock proof" id="org6c8d12e">
 <p><span class="mathblock title">Proof. </span>
 
 <i>Proof 1.</i>
@@ -240,7 +240,7 @@ Resemble the proof 2 of Comparison test.
 </div>
 
 
-<div class="mathblock definition" id="org0c9c7e9">
+<div class="mathblock definition" id="orgc8af8b2">
 <p><span class="mathblock title">Definition 3.8. </span>
 
 A series \(\sum_n a_n\) is an alternating series if \(\exists b_n > 0 (n\in\N)\) such that \(a_n = (-1)^{n-1}b_n\).
@@ -248,14 +248,14 @@ A series \(\sum_n a_n\) is an alternating series if \(\exists b_n > 0 (n\in\N)\)
 
 </div>
 
-<div class="mathblock proposition" id="org81803b6">
+<div class="mathblock proposition" id="org1da0bdc">
 <p><span class="mathblock title">Proposition 3.9<span class="mathblock name"> (Leibnitz's criterion)</span>. </span>
 
 If \(\sum_n a_n\) is an alternating series, and \(b_n = |a_n|\) decreases to 0 as \(n\to\infty\). Then \(\sum_n a_n\) converges.
 </p>
 
 </div>
-<div class="mathblock proof" id="org5853390">
+<div class="mathblock proof" id="org8e3e44d">
 <p><span class="mathblock title">Proof. </span>
 
 Let \(b_n = (-1)^{n-1}a_n\).
@@ -293,7 +293,7 @@ By former proposition, \(\sum_n a_n\) converges.
 </p>
 </div>
 
-<div class="mathblock definition" id="orgc7c33ed">
+<div class="mathblock definition" id="orgd33e84a">
 <p><span class="mathblock title">Definition 3.10. </span>
 
 Given a sequence \(a_n(n\in\N)\), separate all terms into two sequences \(a_{n_1}, a_{n_2},\cdots\) and \(a_{n_1'}, a_{n_2'},\cdots\) with (1) \(n_1 < n_2 < \cdots\) and \(n_1' < n_2' < \cdots\); (2) \(\{n_1,n_2,\cdots\}\cup\{n_1',n_2',\cdots\}=\N\), such that \(a_{n_j}\ge 0(j\in\N)\) and \(a_{n_k'}\le 0(k\in\N)\). Define: \(p_j:=a_{n_j}(j\in\N)\) and \(q_k:=-a_{n_k'}(k\in\N)\).
@@ -301,14 +301,14 @@ Given a sequence \(a_n(n\in\N)\), separate all terms into two sequences \(a_{n_1
 
 </div>
 
-<div class="mathblock proposition" id="orgaae6b41">
+<div class="mathblock proposition" id="org1a96c4d">
 <p><span class="mathblock title">Proposition 3.11. </span>
 
 \(a_n\) converges absolutely iff \(\sum_j p_j < \infty\) and \(\sum_k q_k < \infty\). Moreover, if any side holds, then \(\sum_n |a_n| = \sum_j p_j + \sum_k q_k\) and \(\sum_n a_n = \sum_j p_j - \sum q_k\). 
 </p>
 
 </div>
-<div class="mathblock proof" id="org9975cd4">
+<div class="mathblock proof" id="orgb80e361">
 <p><span class="mathblock title">Proof. </span>
 
 (\(\Rarr\))
@@ -399,6 +399,86 @@ By definition, we can find an index \(n\in\N\) such that \(|a_1| + \cdots + |a_n
 Still by definition, we can find an index \(m\in\N\) such that \(a_1 + \cdots + a_m = S_2\), and hence \(\sum_n a_n\) is convergent to \(P-Q\), which is \(\sum_j p_j - \sum_k q_k\).
 <span class="QED">□</span>
 </p>
+</div>
+
+<div class="mathblock proposition" id="org6c1cfb0">
+<p><span class="mathblock title">Proposition 3.12. </span>
+
+Give two convergent series \(\sum_n a_n\) and \(\sum_n b_n\), then \(\sum_n (a_b\pm b_n) = \sum_n a_n \pm \sum_n b_n\).
+</p>
+
+</div>
+<div class="mathblock proof" id="org4c83a5a">
+<p><span class="mathblock title">Proof. </span>
+
+
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock proposition" id="org4ef8bb6">
+<p><span class="mathblock title">Proposition 3.13. </span>
+
+Inserting finitely many 0 into a series \(\sum_n a_n\) will not affect its convergence or divergence and its sum if the sun exists.
+</p>
+
+</div>
+<div class="mathblock proof" id="orge5bfbb4">
+<p><span class="mathblock title">Proof. </span>
+
+
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock definition" id="org8c2baa6">
+<p><span class="mathblock title">Definition 3.14<span class="mathblock name"> (Rearrangement)</span>. </span>
+
+Given a bijective mapping \(m:\N\to\N,n\mapsto m(n)\). We call \(a_{m(n)}\) a rearrangement of a series \(a_n\).
+</p>
+
+</div>
+
+<div class="mathblock theorem" id="org64a7665">
+<p><span class="mathblock title">Theorem 3.15<span class="mathblock name"> (Dirichlet's rearrangement theorem)</span>. </span>
+
+If \(\sum_n a_n\) converges absolutely, then for every rearrangement \(a_{n(m)}(m\in\N)\) of \(a_n(n\in\N)\), we have \(\sum_{m=1}^\infty a_{n(m)} = \sum_{n=1}^\infty a_n \big(=\sup\{a_{n_1}+\cdots+a_{n_k}|n_1 < \cdots < n_k \land k\in\N\}\big)\)
+</p>
+
+</div>
+<div class="mathblock proof" id="org153cae2">
+<p><span class="mathblock title">Proof. </span>
+
+
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock lemma" id="org899023a">
+<p><span class="mathblock title">Lemma 3.16. </span>
+
+Given a conditionally convergent series \(\sum_n a_n\), divide \(a_n(n\in\N)\) into positive subsequence \(p_j(j\in\N)\) and negative subsequence \(q_k(k\in\N)\), then:
+</p>
+<ol class="org-ol">
+<li>\(\sum_j p_j = \infty\) and \(\sum_k q_k=\infty\)</li>
+<li>\(\lim_{j\to\infty}p_j = \lim_{k\to\infty}q_k = 0\)</li>
+</ol>
+
+</div>
+<div class="mathblock proof" id="org0d53a72">
+<p><span class="mathblock title">Proof. </span>
+
+
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock theorem" id="org6b21e49">
+<p><span class="mathblock title">Theorem 3.17<span class="mathblock name"> (Riemann's rearrangement theorem)</span>. </span>
+
+If \(\sum_n a_n\) converges conditionally, then for every \(L\in\R\) there exists a rearrangement \(a_{n(m)}(m\in\N)\) of \(a_n(n\in\N)\) such that \(\sum_{m=1}^\infty a_{n(m)} = L\).
+</p>
+
 </div>
 <div id="footnotes">
 <hr>
