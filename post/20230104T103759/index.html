@@ -34,13 +34,13 @@
 </div>
 </div>
 <div id="content">
-<div class="mathblock definition" id="org240fae3">
+<div class="mathblock definition" id="org1ed807f">
 <p><span class="mathblock title">Definition 1.1. </span>
 
 Let \(S\sube\R\) and \(r\in\R\). We say that:
 </p>
 <ol class="org-ol">
-<li>\(r\) is an upper(lower) bound of \(S\) if \(\forall s\in S[r\ge(\ne)s]\)</li>
+<li>\(r\) is an upper(lower) bound of \(S\) if \(\forall s\in S[r\ge(\le)s]\)</li>
 <li>\(r\) is the greatest(least) element of \(S\) if:
 <ol class="org-ol">
 <li>\(r\) is an upper(lower) bound of \(s\)</li>
@@ -51,7 +51,7 @@ Let \(S\sube\R\) and \(r\in\R\). We say that:
 
 </div>
 
-<div class="mathblock definition" id="org59fd29d">
+<div class="mathblock definition" id="org02cb58f">
 <p><span class="mathblock title">Definition 1.2<span class="mathblock name"> (Dedekind cut)</span>. </span>
 
 Let \(A,B\sube\R\). We say that \((A,B)\) is a Dedekind cut of $\R\ if:
@@ -64,7 +64,7 @@ Let \(A,B\sube\R\). We say that \((A,B)\) is a Dedekind cut of $\R\ if:
 
 </div>
 
-<div class="mathblock proposition" id="org6b907b9">
+<div class="mathblock proposition" id="org7b5ec51">
 <p><span class="mathblock title">Proposition 1.3<span class="mathblock name"> (Dedekind's gapless property)</span>. </span>
 
 If \((A,B)\) is a Dedekind cut of \(\R\), then exactly one of the following happens:
@@ -75,7 +75,7 @@ If \((A,B)\) is a Dedekind cut of \(\R\), then exactly one of the following happ
 </ul>
 
 </div>
-<div class="mathblock proof" id="org3ce2f4e">
+<div class="mathblock proof" id="org1058222">
 <p><span class="mathblock title">Proof. </span>
 
 (齐神说要用区间套定理和阿基米德性质，但是我没用上。麻烦高人帮忙看看这个证明有没有问题)
@@ -121,14 +121,14 @@ If \(\sup A\in B\), since \(\min B\) doesn't exist, there always exists a \(b_0\
 </p>
 </div>
 
-<div class="mathblock theorem" id="org2285580">
+<div class="mathblock theorem" id="orgb9c3747">
 <p><span class="mathblock title">Theorem 1.4<span class="mathblock name"> (Weierstrass)</span>. </span>
 
 Let \(S(\ne\varnothing)\sube\R\). If S has an upper bound, then \(\sup S\) exists.
 </p>
 
 </div>
-<div class="mathblock proof" id="orgd9aa04e">
+<div class="mathblock proof" id="org2f52b07">
 <p><span class="mathblock title">Proof. </span>
 
 Let \(B:=\{b\in\R|b\text{ is an upper(lower) bound of }S\}\), and \(A:=\R\backslash B\).
@@ -157,21 +157,21 @@ By Dedekind's gapless property, \(\min B\) must exist, i.e., \(\sup S\) exists.
 </p>
 </div>
 
-<div class="mathblock proposition" id="org5ef0dff">
+<div class="mathblock proposition" id="orgc52ae5b">
 <p><span class="mathblock title">Proposition 1.5<span class="mathblock name"> (Archimedean property)</span>. </span>
 
-$&forall; r&isin;\R \left[r &gt; 0 \Rarr &exist; n&isin;\N\left[\frac{1}{n} &lt; r\right]\right]
+\(\forall r\in\R \left[r > 0 \Rarr \exists n\in\N\left[\frac{1}{n} < r\right]\right]\)
 </p>
 
 </div>
-<div class="mathblock proof" id="org2f895a7">
+<div class="mathblock proof" id="org5161590">
 <p><span class="mathblock title">Proof. </span>
 
 It is equvalent to prove that \(\N\) has no upper bound.
 </p>
 
 <p>
-Suppose \(\N\) has an upper bound. By Weierstrass's theorem, \(sup\N\) exists, denoted as \(s_0\).
+Suppose \(\N\) has an upper bound. By Weierstrass's theorem, \(\sup\N\) exists, denoted as \(s_0\).
 </p>
 
 <p>
