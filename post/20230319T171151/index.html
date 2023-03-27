@@ -34,7 +34,7 @@
 </div>
 </div>
 <div id="content">
-<div class="mathblock definition" id="orge79046d">
+<div class="mathblock definition" id="org066e3a9">
 <p><span class="mathblock title">Definition 3.1. </span>
 
 Let \(a_n(n\in\N)\) be a sequence in \(\R\). We say that the series \(\sum_{n=1}^\infty a_n\) converges to a real number \(S\) if \(\lim_{n\to\infty} s_n = S\), where \(s_n := \sum_{j=1}^n a_j = a_1 + \cdots + a_n\) is the n-th partial sum of \(\sum_n a_n\).
@@ -46,14 +46,14 @@ If such S exists (or does not exist), we say that the series \(\sum_n a_n\) is c
 
 </div>
 
-<div class="mathblock proposition" id="org3494ca8">
+<div class="mathblock proposition" id="org51ca538">
 <p><span class="mathblock title">Proposition 3.2. </span>
 
 If \(\sum_n a_n\) converges, then \(\lim_{n\to\infty} a_n = 0\).
 </p>
 
 </div>
-<div class="mathblock proof" id="org354e235">
+<div class="mathblock proof" id="orgf0a043b">
 <p><span class="mathblock title">Proof. </span>
 
 \(\sum_n a_n\) converges, then \(\lim_{n\to\infty} s_n = S\). By definition of limits, we have \(\lim_{n\to\infty} s_{n+1} = S\) too.
@@ -65,7 +65,7 @@ Then \(\lim_{n\to\infty}a_n = \lim_{n\to\infty}(s_{n+1} - s_n) = \lim_{n\to\inft
 </p>
 </div>
 
-<div class="mathblock definition" id="org9fcf8e0">
+<div class="mathblock definition" id="org92846fe">
 <p><span class="mathblock title">Definition 3.3. </span>
 
 Given a sequence \(a_n(n\in\N)\), we say that
@@ -77,14 +77,14 @@ Given a sequence \(a_n(n\in\N)\), we say that
 
 </div>
 
-<div class="mathblock proposition" id="org9d44272">
+<div class="mathblock proposition" id="org0d217f5">
 <p><span class="mathblock title">Proposition 3.4. </span>
 
 If \(\sum_n |a_n|\) converges, then \(\sum_n a_n\) converges.
 </p>
 
 </div>
-<div class="mathblock proof" id="org12f0366">
+<div class="mathblock proof" id="org822c2b6">
 <p><span class="mathblock title">Proof. </span>
 
 Let \(s_n = a_1 + \cdots + a_n\), \(\overline{s}_n = |a_1| + \cdots + |a_n|\).
@@ -116,7 +116,7 @@ s_n\text{ is Cauchy} \\
 </p>
 </div>
 
-<div class="mathblock proposition" id="orga49f7c0">
+<div class="mathblock proposition" id="orgcefce4e">
 <p><span class="mathblock title">Proposition 3.5<span class="mathblock name"> (Comparison test)</span>. </span>
 
 Let \(a_n, b_n(n\in\N)\) be positive sequences. If \(\lim_{n\to\infty}\frac{a_n}{b_n}\) exists, then
@@ -127,7 +127,7 @@ Let \(a_n, b_n(n\in\N)\) be positive sequences. If \(\lim_{n\to\infty}\frac{a_n}
 </ol>
 
 </div>
-<div class="mathblock proof" id="org08190da">
+<div class="mathblock proof" id="org72ee5d9">
 <p><span class="mathblock title">Proof. </span>
 
 <i>Proof 1.</i>
@@ -169,7 +169,7 @@ Partial sum of \(\sum_n a_n\) is bounded, i.e., \(\sum_n a_n\) converges.
 </p>
 </div>
 
-<div class="mathblock proposition" id="orgea69b4a">
+<div class="mathblock proposition" id="orge432b23">
 <p><span class="mathblock title">Proposition 3.6<span class="mathblock name"> (The ratio test)</span>. </span>
 
 Let \(a_n(n\in\N) \ge 0\). If \(\lim_{n\to\infty}\frac{a_{n+1}}{a_n} < 1\), then
@@ -180,7 +180,7 @@ Let \(a_n(n\in\N) \ge 0\). If \(\lim_{n\to\infty}\frac{a_{n+1}}{a_n} < 1\), then
 </ol>
 
 </div>
-<div class="mathblock proof" id="orgbbbe7c1">
+<div class="mathblock proof" id="org83f8702">
 <p><span class="mathblock title">Proof. </span>
 
 <i>Proof 1.</i>
@@ -204,7 +204,7 @@ Resemble the proof 2 of Comparison test.
 </p>
 </div>
 
-<div class="mathblock proposition" id="org55c9ed2">
+<div class="mathblock proposition" id="orgf8b41a8">
 <p><span class="mathblock title">Proposition 3.7<span class="mathblock name"> (The root test)</span>. </span>
 
 Let \(a_n(n\in\N) \ge 0\). If \(\lim_{n\to\infty}(a)^{\frac{1}{n}} < 1\), then
@@ -215,7 +215,7 @@ Let \(a_n(n\in\N) \ge 0\). If \(\lim_{n\to\infty}(a)^{\frac{1}{n}} < 1\), then
 </ol>
 
 </div>
-<div class="mathblock proof" id="orged7084e">
+<div class="mathblock proof" id="orgbb2dab0">
 <p><span class="mathblock title">Proof. </span>
 
 <i>Proof 1.</i>
@@ -240,7 +240,7 @@ Resemble the proof 2 of Comparison test.
 </div>
 
 
-<div class="mathblock definition" id="orge5ecb68">
+<div class="mathblock definition" id="orgff148aa">
 <p><span class="mathblock title">Definition 3.8. </span>
 
 A series \(\sum_n a_n\) is an alternating series if \(\exists b_n > 0 (n\in\N)\) such that \(a_n = (-1)^{n-1}b_n\).
@@ -248,14 +248,14 @@ A series \(\sum_n a_n\) is an alternating series if \(\exists b_n > 0 (n\in\N)\)
 
 </div>
 
-<div class="mathblock proposition" id="orgf51fc51">
+<div class="mathblock proposition" id="org138bd33">
 <p><span class="mathblock title">Proposition 3.9<span class="mathblock name"> (Leibnitz's criterion)</span>. </span>
 
 If \(\sum_n a_n\) is an alternating series, and \(b_n = |a_n|\) decreases to 0 as \(n\to\infty\). Then \(\sum_n a_n\) converges.
 </p>
 
 </div>
-<div class="mathblock proof" id="org9ea4419">
+<div class="mathblock proof" id="org79f23c3">
 <p><span class="mathblock title">Proof. </span>
 
 Let \(b_n = (-1)^{n-1}a_n\).
@@ -293,7 +293,7 @@ By former proposition, \(\sum_n a_n\) converges.
 </p>
 </div>
 
-<div class="mathblock definition" id="orgcd13c36">
+<div class="mathblock definition" id="org2db2c61">
 <p><span class="mathblock title">Definition 3.10. </span>
 
 Given a sequence \(a_n(n\in\N)\), separate all terms into two sequences \(a_{n_1}, a_{n_2},\cdots\) and \(a_{n_1'}, a_{n_2'},\cdots\) with (1) \(n_1 < n_2 < \cdots\) and \(n_1' < n_2' < \cdots\); (2) \(\{n_1,n_2,\cdots\}\cup\{n_1',n_2',\cdots\}=\N\), such that \(a_{n_j}\ge 0(j\in\N)\) and \(a_{n_k'}\le 0(k\in\N)\). Define: \(p_j:=a_{n_j}(j\in\N)\) and \(q_k:=-a_{n_k'}(k\in\N)\).
@@ -301,14 +301,14 @@ Given a sequence \(a_n(n\in\N)\), separate all terms into two sequences \(a_{n_1
 
 </div>
 
-<div class="mathblock proposition" id="orgcbfe79c">
+<div class="mathblock proposition" id="orgafe86c9">
 <p><span class="mathblock title">Proposition 3.11. </span>
 
 \(a_n\) converges absolutely iff \(\sum_j p_j < \infty\) and \(\sum_k q_k < \infty\). Moreover, if any side holds, then \(\sum_n |a_n| = \sum_j p_j + \sum_k q_k\) and \(\sum_n a_n = \sum_j p_j - \sum q_k\). 
 </p>
 
 </div>
-<div class="mathblock proof" id="orgfe62cff">
+<div class="mathblock proof" id="org96ddbbd">
 <p><span class="mathblock title">Proof. </span>
 
 (\(\Rarr\))
@@ -401,14 +401,14 @@ Still by definition, we can find an index \(m\in\N\) such that \(a_1 + \cdots + 
 </p>
 </div>
 
-<div class="mathblock proposition" id="org74ffa45">
+<div class="mathblock proposition" id="org0180258">
 <p><span class="mathblock title">Proposition 3.12. </span>
 
 Give two convergent series \(\sum_n a_n\) and \(\sum_n b_n\), then \(\sum_n (a_b\pm b_n) = \sum_n a_n \pm \sum_n b_n\).
 </p>
 
 </div>
-<div class="mathblock proof" id="org96b2598">
+<div class="mathblock proof" id="org6b25fc3">
 <p><span class="mathblock title">Proof. </span>
 
 Assume that \(\sum_n a_n = S_1, \sum_n b_n = S_2\), and let \(c_n := a_n \pm b_n\). Then \(\forall \epsilon > 0 \exists N\in\N[n \ge N \Rarr |a_1 + \cdots + a_n - S_1| < \epsilon \land |b_1 + \cdots + b_n - S_2| < \epsilon]\).
@@ -438,12 +438,12 @@ S_1 \pm S_2 - 2\epsilon < c_1 + \cdots \pm c_n < S_1 \pm S_2 + 2\epsilon
 </p>
 
 <p>
-i.e., \(\sum_n (a_n \pm b_n)\) exists, which equals to \(\sum_n a_n \pm \sum_b_n\).
+i.e., \(\sum_n (a_n \pm b_n)\) exists, which equals to \(\sum_n a_n \pm \sum_n b_n\).
 <span class="QED">□</span>
 </p>
 </div>
 
-<div class="mathblock definition" id="org744193f">
+<div class="mathblock definition" id="org77a0dd6">
 <p><span class="mathblock title">Definition 3.13<span class="mathblock name"> (Rearrangement)</span>. </span>
 
 Given a bijective mapping \(m:\N\to\N,n\mapsto m(n)\). We call \(a_{m(n)}\) a rearrangement of a series \(a_n\)
@@ -451,14 +451,14 @@ Given a bijective mapping \(m:\N\to\N,n\mapsto m(n)\). We call \(a_{m(n)}\) a re
 
 </div>
 
-<div class="mathblock lemma" id="orgc2a21c5">
+<div class="mathblock lemma" id="org314267c">
 <p><span class="mathblock title">Lemma 3.14. </span>
 
 If \(\sum_n a_n\) converges, and \(a_n \ge 0\) for all \(n\in\N\). Then \(s_n = a_1 + \cdots + a_n\) is bounded.
 </p>
 
 </div>
-<div class="mathblock proof" id="orgf408366">
+<div class="mathblock proof" id="org4210bca">
 <p><span class="mathblock title">Proof. </span>
 
 Since \(\sum_n a_n\) converges, to L say, we have \(\forall \epsilon > 0 \exists N\in\N[ n \ge N \Rarr |s_n - L| < \epsilon]\).
@@ -490,14 +490,14 @@ Therefore, \(s_n\) is bounded.
 </p>
 </div>
 
-<div class="mathblock lemma" id="org5547d8a">
+<div class="mathblock lemma" id="org0d7d7a7">
 <p><span class="mathblock title">Lemma 3.15. </span>
 
 If \(\sum_n a_n\) is convergent and for all \(n\in\N\), \(a_n \ge 0\), then \(\sum_m a_{n(m)} = \sum_n a_n\) where \(a_{n(m)}(m\in\N)\) is a rearrangement of \(a_n\).
 </p>
 
 </div>
-<div class="mathblock proof" id="orgd602dbc">
+<div class="mathblock proof" id="org33436b9">
 <p><span class="mathblock title">Proof. </span>
 
 Let \(A = \{a_{n_1} + \cdots + a_{n_k} | n_1 < \cdots < n_k \land k\in\N\}, B = \{a_1 + \cdots + a_n | n\in\N\}\), and \(s_n := a_1 + \cdots + a_n\).
@@ -529,14 +529,14 @@ Consider \(C=\{a_{n(1)} + \cdots + a_{n(m)} | m\in\N\}\), which is the set of al
 </p>
 </div>
 
-<div class="mathblock theorem" id="org6b97c15">
+<div class="mathblock theorem" id="org48e798b">
 <p><span class="mathblock title">Theorem 3.16<span class="mathblock name"> (Dirichlet's rearrangement theorem)</span>. </span>
 
 If \(\sum_n a_n\) converges absolutely, then for every rearrangement \(a_{n(m)}(m\in\N)\) of \(a_n(n\in\N)\), we have \(\sum_{m=1}^\infty a_{n(m)} = \sum_{n=1}^\infty a_n\).
 </p>
 
 </div>
-<div class="mathblock proof" id="org889576d">
+<div class="mathblock proof" id="orgd2349dc">
 <p><span class="mathblock title">Proof. </span>
 
 By Proposition 3.11, \(\sum_n a_n\) is absolutely convergent, the \(\sum_j p_j\) and \(\sum_k q_k\) exists too.
@@ -552,7 +552,7 @@ By Proposition 3.11, again, the series \(\sum_m a_n(m) = \sum p_{j(m)} - \sum q_
 </p>
 </div>
 
-<div class="mathblock lemma" id="org9269498">
+<div class="mathblock lemma" id="org40407ea">
 <p><span class="mathblock title">Lemma 3.17. </span>
 
 Given a conditionally convergent series \(\sum_n a_n\), divide \(a_n(n\in\N)\) into positive subsequence \(p_j(j\in\N)\) and negative subsequence \(q_k(k\in\N)\), then:
@@ -563,20 +563,286 @@ Given a conditionally convergent series \(\sum_n a_n\), divide \(a_n(n\in\N)\) i
 </ol>
 
 </div>
-<div class="mathblock proof" id="orgcd249e7">
+<div class="mathblock proof" id="org6a5cf86">
 <p><span class="mathblock title">Proof. </span>
 
+<i>Proof 1.</i>
+</p>
 
+<p>
+For contradiction, suppose that &sum;_j p_j &lt; &infin; &or; &sum;_k q_k$
+</p>
+
+<p>
+If \(\sum_j p_j\) and \(\sum_k q_k\) both exist, then by Proposition 3.11, \(\sum_n a_n\) converges absolutely. This is not mentioned.
+</p>
+
+<p>
+Thus we have to assume one of them converges exactly. Without loss of generality, suppose that \(\sum_j p_j < \infty \land \sum_k q_k = \infty\).
+</p>
+
+<p>
+Let \(\sum_n a_n = L, \sum_j p_j = P\). For any \(\epsilon > 0\), there exists a big enough \(N\in\N\), such that
+</p>
+
+<p>
+\[\big[n\ge N \Rarr |a_1 + \cdots + a_n - L| < \epsilon \land j\ge N \Rarr |p_1 + \cdots + p_j - P| < \epsilon\big]\]
+</p>
+
+<p>
+where \(a_1 + \cdots + a_n = p_1 + \cdots + p_j + q_1 + \cdots + q_k\).
+</p>
+
+<p>
+$$\begin{gather*}
+P - &epsilon; &lt; p_1 + &ctdot; + p_j &lt; P + &epsilon; <br>
+q_1 + &ctdot; + q_k +  P - &epsilon; &lt; p_1 + &ctdot; + p_j + q_1 + &ctdot; + q_k &lt; q_1 + &ctdot; + q_k + P + &epsilon; <br>
+</p>
+\begin{cases}
+P - \epsilon + q_1 + \cdots + q_k < L + \epsilon \\
+L - \epsilon < q_1 + \cdots + q_k + P + \epsilon
+\end{cases}
+<p>
+L - P - 2&epsilon; &lt; q_1 + &ctdot; + q_k &lt; L - P + 2&epsilon;
+\end{gather*}$$
+</p>
+
+<p>
+i.e., \(\sum_k q_k\) converges to \(L - P\), which contradicts to the assumption.
+</p>
+
+<p>
+Therefore, \(\sum_j p_j\) and \(\sum_k q_k\) are both divergent.
+</p>
+
+<p>
+<i>Proof 2.</i>
+</p>
+
+<p>
+By Proposition 3.2, for any \(\epsilon > 0\), there exists a \(N\in \N\), such that \(n\ge N \Rarr |a_n| < \epsilon\).
+</p>
+
+<p>
+Let \(a_1 + \cdots + a_N = p_1 + \cdots + p_J - (q_1 + \cdots + q_K)\), where \(J,K\in\N\). Then
+</p>
+
+<p>
+\[\begin{gather*}
+j \ge J \Rarr |p_J| < \epsilon \\
+k \ge K \Rarr |q_K| < \epsilon
+\end{gather*}\]
 <span class="QED">□</span>
 </p>
 </div>
 
-<div class="mathblock theorem" id="orgd03f5f6">
+<div class="mathblock theorem" id="org5181f0d">
 <p><span class="mathblock title">Theorem 3.18<span class="mathblock name"> (Riemann's rearrangement theorem)</span>. </span>
 
 If \(\sum_n a_n\) converges conditionally, then for every \(L\in\R\) there exists a rearrangement \(a_{n(m)}(m\in\N)\) of \(a_n(n\in\N)\) such that \(\sum_{m=1}^\infty a_{n(m)} = L\).
 </p>
 
+</div>
+<div class="mathblock proof" id="org3b1ef68">
+<span class="mathblock title">Proof. </span>
+
+<figure id="org230a7ab">
+<a href="/assets/2023-03-27_15-36-34.png" target="_blank"><img src="/assets/2023-03-27_15-36-34.png" alt="2023-03-27_15-36-34.png"></a>
+
+</figure>
+
+<p>
+Notation: \(sp_n = p_1 + \cdots + p_n, sq_n = q_1 + \cdots + q_n\), \(s_n\) is the partial sum of rearrangemnt.
+</p>
+
+<p>
+Firstly from positive terms of \(a_n\), choose a beginning, say \(p_1\) in the left-side of \(L\). By Lemma 3.17, \(sp_n\) is unbounded, therefore, we can find a index \(m_1\), such that \(s_{m_1} = sp_{m_1} > L\).
+</p>
+
+<p>
+Then from negative terms of \(a_n\), we choose \(q_1\), such that we can get close to \(L\). \(sq_n\) is also unbounded, then we can find a index \(m_1'\), such that \(s_{m_1 + m_1'} = sp_{m_1} - sq_{m_1'}\).
+</p>
+
+<p>
+Repeat above operations. Our goal is to show: \(\lim_{n\to\infty} s_n = L\).
+</p>
+
+<p>
+Drop the figure, we can use pure symbols to demonstrate that.
+</p>
+
+<p>
+There exist nutural numbers \(m_1 < m_2 < \cdots\) and \(m_1' < m_2' < \cdots\), where \(m_j\) is the j-th time when the partial sum \(s_n\) is greater than \(L\), and \(m_k'\) is the k-th time when partial sum \(s_n\) is less than \(L\).
+</p>
+
+<p>
+Note that:
+</p>
+<ol class="org-ol">
+<li>the index of \(m_j\) is exactly greater one than or equal to \(m_k'\), i.e., for \(l\in\N\), the indexes are like \(m_l, m_{l-1}'\) or \(m_l, m_l'\).</li>
+<li>\(m_0,m_0'\) means the jump has not begun yet.</li>
+</ol>
+
+<p>
+Consider the general case.
+</p>
+
+
+<figure id="org8337251">
+<a href="/assets/2023-03-27_16-05-05.png" target="_blank"><img src="/assets/2023-03-27_16-05-05.png" alt="2023-03-27_16-05-05.png"></a>
+
+</figure>
+
+<p>
+After jumping the next step $p_{m_l}, the beginning point $s_{m_{l-1}' + m_l -1} will over \(L\) to $s_{m_{l-1}' + m_l}, then start to jumping back. Suppose it has jumped back \(t\) times, but not back over \(L\). We have
+</p>
+
+<p>
+\[\left|s_{m_{l-1}' + m_l + y}\right| < q_{m_l}\]
+</p>
+
+<p>
+if \(0 \le y < m_l' - m_{l-1}'\). i.e., the total length of backward jumps will less than the last forward jump when the point is still on the right-side of \(L\). 
+</p>
+
+<p>
+Similarly, \(\left|s_{m_l' + m_l + x}\right| < q_{m_l'}\) if \(0 \le x < m_{l+1} - m_l\).
+</p>
+
+<p>
+By Lemma 3.17, \(\forall \epsilon > 0 \exists N_0 \in\N[l\ge N_0 \Rarr p_{m_l} < \epsilon \land q_{m_l'} < \epsilon]\).
+</p>
+
+<p>
+Let \(N = m_{N_0 -1}' + m_{N_0}\). Then \(n\ge N \Rarr |s_n - L| < \epsilon\).
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock proposition" id="org551f5c5">
+<p><span class="mathblock title">Proposition 3.19. </span>
+
+Let \(\sum_{n=0}^\infty a_n\) and \(\sum_{n=0}^\infty b_n\) both converge absolutely, and \(c_n := a_n b_0 + \cdots + a_0 b_n = \sum_{j+k = n\\j,k\ge 0} a_j b_k\). Then \(\sum_n |c_n| < \infty\) and \(\sum_{n=0}^\infty c_n = \left(\sum_{n=0}^\infty a_n\right)\left(\sum_{n=0}^\infty b_n\right)\).
+</p>
+
+</div>
+<div class="mathblock proof" id="orge412eae">
+<p><span class="mathblock title">Proof. </span>
+
+\[\begin{align*}|c_0| + |c_n| & = \sum_{i=0}^n \left|\sum_{j+k=i\\j,k\ge 0}a_jb_k\right|\\
+& \le \sum_{i=0}^n\sum_{j+k=i\\j,k\ge 0} |a_j||b_k| \text{ (By Triangle Inequality)} \\
+& \le \left(\sum_{j=0}^n |a_j|\right)\left(\sum_{k=0}^n |b_k|\right) \text{the area of triangle is less than the rectangle in the figure.} \\
+& \le M\cdot N \text{these two series are bounded}
+\end{align*}\]
+</p>
+
+
+<figure id="orge95714c">
+<a href="/assets/2023-03-27_17-23-21.png" target="_blank"><img src="/assets/2023-03-27_17-23-21.png" alt="2023-03-27_17-23-21.png"></a>
+
+</figure>
+
+<p>
+Thus \(\sum_n |c_n|\) converges.
+</p>
+
+<p>
+Let \(A_n := a_0 + \cdots + a_n, B_n := b_0 + \cdots + b_n, C_n := c_0 + \cdots + c_n\).
+</p>
+
+<p>
+We claim that \(\lim_{n\to\infty}(A_n B_n - C_n) = 0\).
+</p>
+
+<p>
+In above figure, \(A_n B_n - C_n\) is the rest area of the rectangle subtracting the triangle. Thus \(|A_n B_n - C_n| \le \sum_{j+k > n\\0\le j,k\le n}|a_jb_k|\).
+</p>
+
+<p>
+The rest triangle can be separated into two part, each part is controled by a rectangle as following fingure.
+</p>
+
+
+<figure id="org7b89b99">
+<a href="/assets/2023-03-27_17-51-22.png" target="_blank"><img src="/assets/2023-03-27_17-51-22.png" alt="2023-03-27_17-51-22.png"></a>
+
+</figure>
+
+<p>
+Therefore
+$$|A_n B_n - C_n| &le;
+\left(&sum;_{j=\floor{\frac{n}{2}}}^n |a_j|\right)
+\left(&sum;_{k=0}^n |b_k|\right)
+</p>
+<ul class="org-ul">
+<li></li>
+</ul>
+<p>
+\left(&sum;_{j=0}^n |a_j|\right)
+\left(&sum;_{k=\floor{\frac{n}{2}}}^n |b_k|\right)$$
+</p>
+
+<p>
+\(\sum_{j=0}^n |a_j|\) and \(\sum_{k=0}^n |b_k|\) are bounded. \(\left(\sum_{j=\floor{\frac{n}{2}}}^n |a_j|\right)\) and \(\left(\sum_{k=\floor{\frac{n}{2}}}^n |b_k|\right)\) trends to 0 as \(n\to\infty\) (since they are tail of the absolutely convergent series).
+</p>
+
+<p>
+i.e., \(0 \le |A_n B_n - C_n| \le 0\), and hence \(\sum_{n=0}^\infty c_n = \left(\sum_{n=0}^\infty a_n\right)\left(\sum_{n=0}^\infty b_n\right)\)
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock theorem" id="org1944af7">
+<p><span class="mathblock title">Theorem 3.20. </span>
+
+If \(\sum_{n=1}^\infty a_n\) and \(\sum_{n=1}^\infty b_n\) converges absolutely, \(\N\to\N\times\N: n\mapsto [j(n), k(n)]\) is bijection, and \(c_n := a_{j(n)} b_{k(n)} (n\in\N)\). Then \(\sum_n |c_n|\) exists and \(\sum_n |c_n| = \left(\sum_n a_n\right) \left(\sum_n b_n\right)\).
+</p>
+
+</div>
+<div class="mathblock proof" id="org88fdb4b">
+<p><span class="mathblock title">Proof. </span>
+
+For any \(n\in\N\), let \(l = \max\{j(1), \cdots, j(n), k(1), \cdots, k(n)\}\). Then
+</p>
+
+<p>
+\[\begin{align*}|c_1| + \cdots + |c_n|
+& = |a_{j(1)}b_{k(1)}| + \cdots |a_{j(n)}b_{k(n)}| \\
+\le \left(\sum_{j=1}^l |a_j|\right)\left(\sum_{k=1}^l |b_k|\right) \text{area of rectangle is greater than triangle} \\
+\le M\cdot N (bounded)
+\]
+</p>
+
+<p>
+for some \(M,N\). Thus \(\sum_n c_n\) is absolutely convergent.
+</p>
+
+<p>
+Let \(A_n = \sum_{i=1}^\n a_i,B_n = \sum_{i=1}^\n b_i,C_n = \sum_{i=1}^\n c_i\).
+</p>
+
+<p>
+\[A_n B_n = (a_1 + \cdots + a_n) (b_1 + \cdots + b_n) = \sum_{1\le j,k\le n} a_j b_k\]
+</p>
+
+<p>
+Replace the bijection by:
+</p>
+
+<p>
+\[\begin{matrix}
+\vdots & & & & \\
+16 & 15 & 14 & 13 & \\
+9 & 8 & 7 & 12 & \\
+4 & 3 & 6 & 11 & \\
+1 & 2 & 5 & 10 & \cdots 
+\end{matrix}\]
+</p>
+
+<p>
+Then we have \(A_n B_n = C_{n^2}\), and hence \(\lim_{n\to\infty} A_n B_n = \lim_{n\to\infty} C_{n^2} = \lim_{n\to\infty} C_{n}\).
+<span class="QED">□</span>
+</p>
 </div>
 <div id="footnotes">
 <hr>
