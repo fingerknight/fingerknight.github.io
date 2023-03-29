@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="I choose to see the beauty.">
+<title>Alist 多网盘管理的尝试</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noodp">
+<meta name="author" content=" Finger Knight ">
+<meta name="referrer" content="no-referrer"><link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<body>
+<div class="header">
+<div class="home-page">
+<a href="/">手指骑士的病房</a></div><div class="nav">
+<div class="nav item">
+<a href="/tags">标签</a>
+</div>
+<div class="nav item">
+<a href="/archive">归档</a>
+</div>
+<div class="nav item">
+<a href="/about">关于</a>
+</div>
+</div>
+</div>
+<div class="main">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/highlight/dracula.css"><div class="toc">
+<h2 class="toc-title"> TOC </h2>
+<nav id="TableOfContents">
+
+<ul>
+<li>
+<a href="#org14a47a1"> 简介 </a></li>
+<li>
+<a href="#org2215783"> alist 安装 </a>
+<ul>
+<li>
+<a href="#orgf1166c2"> 安装 </a></li>
+<li>
+<a href="#orgd5c7e16"> 配置 </a></li>
+<li>
+<a href="#orge77cc6b"> 启用 </a>
+<ul>
+<li>
+<a href="#orga92d147"> 获取管理员信息 </a></li>
+</ul>
+</li>
+<li>
+<a href="#org42f446a"> 登录后台 </a></li>
+<li>
+<a href="#orgb0f3c30"> 添加存储 </a></li>
+<li>
+<a href="#orgc19fe32"> 部署 </a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<h1 class="post-title"> Alist 多网盘管理的尝试 </h1>
+<div class="post-date">2022-12-24</div>
+<div class="taglist"><a href="/tag/alist"> #alist </a>
+<a href="/tag/archlinux"> #archlinux </a>
+<a href="/tag/netdisk"> #netdisk </a>
+</div>
+</div>
+<div id="content">
+
+<div id="outline-container-org14a47a1" class="outline-2">
+<h2 id="org14a47a1">简介</h2>
+<div class="outline-text-2" id="text-org14a47a1">
+<p>
+看到果核大佬发的一个多网盘的管理工具《<a href="https://www.ghxi.com/wx20221027.html" target="_blank">网盘太多不好管理？用上这个神器试试！ - 果核剥壳</a>》，目前用的网盘工具还是分开的 CLI ，便想在 Arch 上尝试一下。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2215783" class="outline-2">
+<h2 id="org2215783">alist 安装</h2>
+<div class="outline-text-2" id="text-org2215783">
+<p>
+项目地址在这里：<a href="https://github.com/alist-org/alist" target="_blank">https://github.com/alist-org/alist</a>
+</p>
+
+<p>
+文档地址：<a href="https://alist.nn.ci/" target="_blank">Home | AList Docs</a>
+</p>
+</div>
+
+<div id="outline-container-orgf1166c2" class="outline-3">
+<h3 id="orgf1166c2">安装</h3>
+<div class="outline-text-3" id="text-orgf1166c2">
+<p>
+下载安装脚本：
+</p>
+<div class="org-src-container">
+<pre><code class="language-bash">curl -fsSL "https://alist.nn.ci/v3.sh" >> v3.sh
+# or
+wget "https://alist.nn.ci/v3.sh"</code></pre>
+</div>
+
+<ul class="org-ul">
+<li>安装： <code>bash v3.sh install</code></li>
+<li>升级： <code>bash v3.sh update</code></li>
+<li>卸载： <code>bash v3.sh uninstall</code></li>
+</ul>
+
+<p>
+默认安装路径是 <code>/opt/alist</code> ，如果像安装/升级/卸载在其他路径把它加到后面：
+</p>
+<div class="org-src-container">
+<pre><code class="language-bash">bash v3.sh install/update/uninstall <path></code></pre>
+</div>
+
+<p>
+安装成功后会生成一个服务 <code>alist.service</code>, 通过 <code>systemctl</code> 来控制。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd5c7e16" class="outline-3">
+<h3 id="orgd5c7e16">配置</h3>
+<div class="outline-text-3" id="text-orgd5c7e16">
+<p>
+我是默认的安装路径，在 <code>/opt/alist</code> ，目录结构：
+</p>
+<div class="org-src-container">
+<pre><code class="language-plaintext">.
+├── alist
+├── data
+│   ├── config.json
+│   ├── data.db
+│   └── temp
+└── log
+    └── log.log</code></pre>
+</div>
+<ul class="org-ul">
+<li><code>alist</code> 是执行脚本</li>
+<li><code>data</code> 是数据目录， <code>config.json</code> 是配置文件，其他的是数据</li>
+<li><code>log</code> 日志目录，最开始应该是没有的。</li>
+</ul>
+
+<p>
+配置文件如下：
+</p>
+<div class="org-src-container">
+<pre><code class="language-js">{
+  "force": false,
+  "address": "0.0.0.0",
+  "port": 5244,
+  "site_url": "",
+  "cdn": "",
+  "jwt_secret": "random generated",
+  "token_expires_in": 48,
+  "database": {
+    "type": "sqlite3",
+    "host": "",
+    "port": 0,
+    "user": "",
+    "password": "",
+    "name": "",
+    "db_file": "data/data.db",
+    "table_prefix": "x_",
+    "ssl_mode": ""
+  },
+  "scheme": {
+    "https": false,
+    "cert_file": "",
+    "key_file": ""
+  },
+  "temp_dir": "data/temp",
+  "log": {
+    "enable": true,
+    "name": "log/log.log",
+    "max_size": 10,
+    "max_backups": 5,
+    "max_age": 28,
+    "compress": false
+  }
+}</code></pre>
+</div>
+
+<p>
+各配置项的用途参考官网：<a href="https://alist.nn.ci/zh/config/configuration.html" target="_blank">https://alist.nn.ci/zh/config/configuration.html</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge77cc6b" class="outline-3">
+<h3 id="orge77cc6b">启用</h3>
+<div class="outline-text-3" id="text-orge77cc6b">
+</div>
+<div id="outline-container-orga92d147" class="outline-4">
+<h4 id="orga92d147">获取管理员信息</h4>
+<div class="outline-text-4" id="text-orga92d147">
+<ol class="org-ol">
+<li>进入安装目录 <code>cd /opt/alist/</code> 。这步很重要， <code>alist</code> 是根据当前目录来做参考的，如果不在安装目录会得到不同信息 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>。</li>
+<li>获取账户信息 <code>sudo ./alist admin</code> ，然后会获得登录的账户和密码。</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org42f446a" class="outline-3">
+<h3 id="org42f446a">登录后台</h3>
+<div class="outline-text-3" id="text-org42f446a">
+<p>
+原谅我没在文档中找到进入后台的办法，最终是在 b 站一个 up 主的视频里面才看到的 <sup>[<a id="fnr:2.1" class="footref" href="#fn:2">2</a>]</sup>。
+</p>
+
+<p>
+访问： <code>http://localhost:5244/@login</code> ，输入管理员信息即可。
+</p>
+
+<p>
+这是它会跳转到 index 主页，但是因为还没添加网盘，所以会报错 <code>failed get storage: can't find storage with rawPath: /</code>  ，这个在文档里面提到了 <sup>[<a id="fnr:1.2" class="footref" href="#fn:1">1</a>]</sup> 。
+</p>
+
+<p>
+访问： <code>http://localhost:5244/@manage</code> ，登录到管理界面。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb0f3c30" class="outline-3">
+<h3 id="orgb0f3c30">添加存储</h3>
+<div class="outline-text-3" id="text-orgb0f3c30">
+<p>
+在列表左边 <code>存储</code> 那里添加，按照官网的文档添加就行。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc19fe32" class="outline-3">
+<h3 id="orgc19fe32">部署</h3>
+<div class="outline-text-3" id="text-orgc19fe32">
+<p>
+部署参照官网，我是把它当作客户端来用，不想用命令行了。
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="text-footnotes" role="doc-endnotes">
+<ol>
+<li id="fn:1">
+<p class="footpara">
+<a href="https://alist.nn.ci/zh/faq/why.html" target="_blank">Why | AList文档</a>
+<a href="#fnr:1.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+<a href="#fnr:1.2" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+<li id="fn:2">
+<p class="footpara">
+<a href="https://www.bilibili.com/video/BV1BP411G7q9/" target="_blank">【Alist】Alist V3 "全新版本" 使用 安装/启动 教程！ 保姆级/傻瓜式/手把手 教学！！_哔哩哔哩_bilibili</a>
+<a href="#fnr:2.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status"><script src="/static/highlight/highlight.min.js"></script>
+<script>
+Array.from(document.querySelectorAll('#content pre')).forEach(
+node => {
+let codeElement = node.querySelector("code"),
+    excludes = ["mermaid"];
+
+if (!codeElement){
+return
+}
+let language = codeElement.getAttribute("class").split("-")[1];
+if (excludes.includes(language)) {
+return
+}
+
+hljs.highlightElement(codeElement);
+});
+</script></div>
+</div>
+<div class="footer">
+<center> The End </center></div>
+</body>
+</html>
