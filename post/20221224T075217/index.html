@@ -30,27 +30,27 @@
 
 <ul>
 <li>
-<a href="#org14a47a1"> 简介 </a></li>
+<a href="#org5767918"> 简介 </a></li>
 <li>
-<a href="#org2215783"> alist 安装 </a>
+<a href="#org91fc328"> alist 安装 </a>
 <ul>
 <li>
-<a href="#orgf1166c2"> 安装 </a></li>
+<a href="#orgcc8a9d0"> 安装 </a></li>
 <li>
-<a href="#orgd5c7e16"> 配置 </a></li>
+<a href="#org8b8e810"> 配置 </a></li>
 <li>
-<a href="#orge77cc6b"> 启用 </a>
+<a href="#org4acd211"> 启用 </a>
 <ul>
 <li>
-<a href="#orga92d147"> 获取管理员信息 </a></li>
+<a href="#org0077cc7"> 获取管理员信息 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org42f446a"> 登录后台 </a></li>
+<a href="#org5923c0d"> 登录后台 </a></li>
 <li>
-<a href="#orgb0f3c30"> 添加存储 </a></li>
+<a href="#org23bd860"> 添加存储 </a></li>
 <li>
-<a href="#orgc19fe32"> 部署 </a></li>
+<a href="#org4c63a44"> 部署 </a></li>
 </ul>
 </li>
 </ul>
@@ -65,18 +65,18 @@
 </div>
 <div id="content">
 
-<div id="outline-container-org14a47a1" class="outline-2">
-<h2 id="org14a47a1">简介</h2>
-<div class="outline-text-2" id="text-org14a47a1">
+<div id="outline-container-org5767918" class="outline-2">
+<h2 id="org5767918">简介</h2>
+<div class="outline-text-2" id="text-org5767918">
 <p>
 看到果核大佬发的一个多网盘的管理工具《<a href="https://www.ghxi.com/wx20221027.html" target="_blank">网盘太多不好管理？用上这个神器试试！ - 果核剥壳</a>》，目前用的网盘工具还是分开的 CLI ，便想在 Arch 上尝试一下。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org2215783" class="outline-2">
-<h2 id="org2215783">alist 安装</h2>
-<div class="outline-text-2" id="text-org2215783">
+<div id="outline-container-org91fc328" class="outline-2">
+<h2 id="org91fc328">alist 安装</h2>
+<div class="outline-text-2" id="text-org91fc328">
 <p>
 项目地址在这里：<a href="https://github.com/alist-org/alist" target="_blank">https://github.com/alist-org/alist</a>
 </p>
@@ -86,9 +86,9 @@
 </p>
 </div>
 
-<div id="outline-container-orgf1166c2" class="outline-3">
-<h3 id="orgf1166c2">安装</h3>
-<div class="outline-text-3" id="text-orgf1166c2">
+<div id="outline-container-orgcc8a9d0" class="outline-3">
+<h3 id="orgcc8a9d0">安装</h3>
+<div class="outline-text-3" id="text-orgcc8a9d0">
 <p>
 下载安装脚本：
 </p>
@@ -117,9 +117,9 @@ wget "https://alist.nn.ci/v3.sh"</code></pre>
 </div>
 </div>
 
-<div id="outline-container-orgd5c7e16" class="outline-3">
-<h3 id="orgd5c7e16">配置</h3>
-<div class="outline-text-3" id="text-orgd5c7e16">
+<div id="outline-container-org8b8e810" class="outline-3">
+<h3 id="org8b8e810">配置</h3>
+<div class="outline-text-3" id="text-org8b8e810">
 <p>
 我是默认的安装路径，在 <code>/opt/alist</code> ，目录结构：
 </p>
@@ -185,26 +185,28 @@ wget "https://alist.nn.ci/v3.sh"</code></pre>
 </div>
 </div>
 
-<div id="outline-container-orge77cc6b" class="outline-3">
-<h3 id="orge77cc6b">启用</h3>
-<div class="outline-text-3" id="text-orge77cc6b">
+<div id="outline-container-org4acd211" class="outline-3">
+<h3 id="org4acd211">启用</h3>
+<div class="outline-text-3" id="text-org4acd211">
 </div>
-<div id="outline-container-orga92d147" class="outline-4">
-<h4 id="orga92d147">获取管理员信息</h4>
-<div class="outline-text-4" id="text-orga92d147">
-<ol class="org-ol">
-<li>进入安装目录 <code>cd /opt/alist/</code> 。这步很重要， <code>alist</code> 是根据当前目录来做参考的，如果不在安装目录会得到不同信息 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>。</li>
-<li>获取账户信息 <code>sudo ./alist admin</code> ，然后会获得登录的账户和密码。</li>
-</ol>
+<div id="outline-container-org0077cc7" class="outline-4">
+<h4 id="org0077cc7">获取管理员信息</h4>
+<div class="outline-text-4" id="text-org0077cc7">
+<p>
+<code>sudo ./alist admin --data alist-dir</code>
+</p>
+<ul class="org-ul">
+<li><code>alist-dir</code> 就是 Alist 的 data 的目录，如果不给这个参数，就会在当前目录下建一个 data.</li>
+</ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org42f446a" class="outline-3">
-<h3 id="org42f446a">登录后台</h3>
-<div class="outline-text-3" id="text-org42f446a">
+<div id="outline-container-org5923c0d" class="outline-3">
+<h3 id="org5923c0d">登录后台</h3>
+<div class="outline-text-3" id="text-org5923c0d">
 <p>
-原谅我没在文档中找到进入后台的办法，最终是在 b 站一个 up 主的视频里面才看到的 <sup>[<a id="fnr:2.1" class="footref" href="#fn:2">2</a>]</sup>。
+原谅我没在文档中找到进入后台的办法，最终是在 b 站一个 up 主的视频里面才看到的 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>。
 </p>
 
 <p>
@@ -212,7 +214,7 @@ wget "https://alist.nn.ci/v3.sh"</code></pre>
 </p>
 
 <p>
-这是它会跳转到 index 主页，但是因为还没添加网盘，所以会报错 <code>failed get storage: can't find storage with rawPath: /</code>  ，这个在文档里面提到了 <sup>[<a id="fnr:1.2" class="footref" href="#fn:1">1</a>]</sup> 。
+这是它会跳转到 index 主页，但是因为还没添加网盘，所以会报错 <code>failed get storage: can't find storage with rawPath: /</code>  ，这个在文档里面提到了 <sup>[<a id="fnr:2.1" class="footref" href="#fn:2">2</a>]</sup> 。
 </p>
 
 <p>
@@ -221,18 +223,18 @@ wget "https://alist.nn.ci/v3.sh"</code></pre>
 </div>
 </div>
 
-<div id="outline-container-orgb0f3c30" class="outline-3">
-<h3 id="orgb0f3c30">添加存储</h3>
-<div class="outline-text-3" id="text-orgb0f3c30">
+<div id="outline-container-org23bd860" class="outline-3">
+<h3 id="org23bd860">添加存储</h3>
+<div class="outline-text-3" id="text-org23bd860">
 <p>
 在列表左边 <code>存储</code> 那里添加，按照官网的文档添加就行。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgc19fe32" class="outline-3">
-<h3 id="orgc19fe32">部署</h3>
-<div class="outline-text-3" id="text-orgc19fe32">
+<div id="outline-container-org4c63a44" class="outline-3">
+<h3 id="org4c63a44">部署</h3>
+<div class="outline-text-3" id="text-org4c63a44">
 <p>
 部署参照官网，我是把它当作客户端来用，不想用命令行了。
 </p>
@@ -245,14 +247,13 @@ wget "https://alist.nn.ci/v3.sh"</code></pre>
 <ol>
 <li id="fn:1">
 <p class="footpara">
-<a href="https://alist.nn.ci/zh/faq/why.html" target="_blank">Why | AList文档</a>
+<a href="https://www.bilibili.com/video/BV1BP411G7q9/" target="_blank">【Alist】Alist V3 "全新版本" 使用 安装/启动 教程！ 保姆级/傻瓜式/手把手 教学！！_哔哩哔哩_bilibili</a>
 <a href="#fnr:1.1" class="footnote-backref" role="doc-backlink">↩︎</a>
-<a href="#fnr:1.2" class="footnote-backref" role="doc-backlink">↩︎</a>
 </p>
 </li>
 <li id="fn:2">
 <p class="footpara">
-<a href="https://www.bilibili.com/video/BV1BP411G7q9/" target="_blank">【Alist】Alist V3 "全新版本" 使用 安装/启动 教程！ 保姆级/傻瓜式/手把手 教学！！_哔哩哔哩_bilibili</a>
+<a href="https://alist.nn.ci/zh/faq/why.html" target="_blank">Why | AList文档</a>
 <a href="#fnr:2.1" class="footnote-backref" role="doc-backlink">↩︎</a>
 </p>
 </li>
