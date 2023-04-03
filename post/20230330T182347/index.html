@@ -34,7 +34,7 @@
 </div>
 </div>
 <div id="content">
-<div class="mathblock definition" id="orgd8294be">
+<div class="mathblock definition" id="orgb64d74d">
 <p><span class="mathblock title">Definition 4.1. </span>
 
 Let \(X\) be a set. A function \(d: X\times X\to\R\) is called a <b>distance/metric</b> function on \(X\) if:
@@ -47,26 +47,26 @@ Let \(X\) be a set. A function \(d: X\times X\to\R\) is called a <b>distance/met
 
 </div>
 
-<div class="mathblock proposition" id="org1122dc3">
+<div class="mathblock proposition" id="orga587b4a">
 <p><span class="mathblock title">Proposition 4.2. </span>
 
 \(\forall x,y,z \in X[ |d(x,y) - d(y,z)| \le d(x,z)]\)
 </p>
 
 </div>
-<div class="mathblock proof" id="org2ab7820">
+<div class="mathblock proof" id="orgacc6af7">
 <p><span class="mathblock title">Proof. </span>
 
 By definition:
-\[\begin{align}
+\[\begin{align*}
 d(x,y) & \le d(x,z) + d(y,z)\\
 d(z,y) & \le d(x,y) + d(x,z)
-\end{align}\\
-\Rarr
-\begin{align}
+\end{align*}\\
+\Darr
+\begin{align*}
 d(x,y) - d(y,z) & \le d(x,z) \\
 -d(x,z) & \le d(x,y) - d(y,z)
-\end{align}\\
+\end{align*}\\
 \]
 </p>
 
@@ -76,7 +76,7 @@ That is expected.
 </p>
 </div>
 
-<div class="mathblock definition" id="org4d9ed11">
+<div class="mathblock definition" id="org5728169">
 <p><span class="mathblock title">Definition 4.3. </span>
 
 Let \((X,d)\) be a metric space, and \(S\sube X\).
@@ -90,18 +90,18 @@ Let \((X,d)\) be a metric space, and \(S\sube X\).
 
 </div>
 
-<div class="mathblock proposition" id="org007ef52">
+<div class="mathblock proposition" id="org0994200">
 <p><span class="mathblock title">Proposition 4.4. </span>
 
 Let \((X,d)\) be a metric space, \(x_0\in X\), and \(r>0\).
 </p>
 <ol class="org-ol">
 <li>\(B_r(x_0)\) is open.</li>
-<li>\(X\backslash\overline{B_r(x_0) = \{x\in X | d(x,x_0) > r\}\) is open (i.e., \(\overline{B_r(x_0)\) is closed).</li>
+<li>\(X\backslash\overline{B_r(x_0)} = \{x\in X | d(x,x_0) > r\}\) is open (i.e., \(\overline{B_r(x_0)}\) is closed).</li>
 </ol>
 
 </div>
-<div class="mathblock proof" id="org8e14e9a">
+<div class="mathblock proof" id="org7e02cdd">
 <p><span class="mathblock title">Proof. </span>
 
 <i>Proof 1.</i>
@@ -128,7 +128,7 @@ Therefore, \(B_{r'}(x) \sube B_r(x_0)\).
 </p>
 
 <p>
-Let \(A := X\backslash\overline{B_r(x_0) = \{x\in X | d(x,x_0) > r\}\).
+Let \(A := X\backslash\overline{B_r(x_0)} = \{x\in X | d(x,x_0) > r\}\).
 </p>
 
 <p>
@@ -136,7 +136,7 @@ For any \(x\in A\), we have \(d(x,x_0) > r\). Let \(r' = \frac{d(x,x_0) - r}{2} 
 </p>
 
 <p>
-By triangle inequality (proposition)
+By triangle inequality (Proposition 4.2)
 </p>
 
 <p>
@@ -153,7 +153,7 @@ Therefore, \(B_{r'}(x) \sube A\).
 </p>
 </div>
 
-<div class="mathblock proposition" id="org870997c">
+<div class="mathblock proposition" id="org1bf7ab0">
 <p><span class="mathblock title">Proposition 4.5. </span>
 
 Let (X,d) be a metric space. Then
@@ -161,11 +161,11 @@ Let (X,d) be a metric space. Then
 <ol class="org-ol">
 <li>\(\varnothing\) is open</li>
 <li>\(O_1,O_2 \underset{\text{open}}{\sube} X \Rarr O_1\cap O_2 \underset{\text{open}}{\sube} X\).</li>
-<li>\(O_\alpha \underset{\text{open}}{\sube} X (\alpha \in A \text{ an index set}) \Rarr \bigcup_{\alpah\in A}O_\alpha \underset{\text{open}}{\sube} X\).</li>
+<li>\(O_\alpha \underset{\text{open}}{\sube} X (\alpha \in A \text{ an index set}) \Rarr \bigcup_{\alpha\in A}O_\alpha \underset{\text{open}}{\sube} X\).</li>
 </ol>
 
 </div>
-<div class="mathblock proof" id="org241f607">
+<div class="mathblock proof" id="org852a4fe">
 <p><span class="mathblock title">Proof. </span>
 
 <i>Proof 1.</i> Were this false, then we <b>can</b> find an \(x_0 \in \varnothing\)&#x2026; however, there is not any elements in \(\varnothing\). Thus \(\varnothing\) is open logically.
@@ -181,7 +181,7 @@ Let (X,d) be a metric space. Then
 </p>
 </div>
 
-<div class="mathblock proposition" id="org8bdd415">
+<div class="mathblock proposition" id="orge7686ab">
 <p><span class="mathblock title">Proposition 4.6. </span>
 
 The following two statements are equivalent:
@@ -192,7 +192,7 @@ The following two statements are equivalent:
 </ol>
 
 </div>
-<div class="mathblock proof" id="orgebb6b78">
+<div class="mathblock proof" id="org1ed8722">
 <p><span class="mathblock title">Proof. </span>
 
 (\(\Rarr\))
@@ -212,7 +212,7 @@ For any real number \(\epsilon > 0\), similarly choose an open set \(U := \{u\in
 </p>
 </div>
 
-<div class="mathblock definition" id="org218ea05">
+<div class="mathblock definition" id="orgc27c0ca">
 <p><span class="mathblock title">Definition 4.7. </span>
 
 We say a set \(S\sube X\) is <b>bounded</b> with respect to \(d\) if \(\exists r > 0, x_0\in X[S\sube B_r(x_0)]\).
@@ -220,14 +220,14 @@ We say a set \(S\sube X\) is <b>bounded</b> with respect to \(d\) if \(\exists r
 
 </div>
 
-<div class="mathblock theorem" id="orgd6c8a16">
+<div class="mathblock theorem" id="org401267c">
 <p><span class="mathblock title">Theorem 4.8<span class="mathblock name"> (Bolzano-Weierstrass theorem)</span>. </span>
 
 If \(a_n\in\R^m(n\in\N)\) is bounded. Then there exists a subsequence \(a_{n(n')}(n'\in\N)\) which is convergent.
 </p>
 
 </div>
-<div class="mathblock proof" id="org3bde515">
+<div class="mathblock proof" id="org2b086d6">
 <p><span class="mathblock title">Proof. </span>
 
 Choose \(M > 0\), let \(Q_0 := [-M,M]\times[-M,M]\), such that \(a_n\in Q_0\) for all \(n\in\N\). This is possible since \(a_n\) is bounded.
@@ -238,7 +238,7 @@ Divide \(Q_0\) into 4 squares with equal size. There must be <b>infinitely many 
 </p>
 
 <p>
-Choose that square, say \(Q_1\), such that \(|\{n|a_n\in Q_1\}| = \infty\). Select \(n_1\in\N\) such that \(a_{n_1}\in Q_1\).
+Choose that square, say \(Q_1\), such that \(\left|\{n|a_n\in Q_1\}\right| = \infty\). Select \(n_1\in\N\) such that \(a_{n_1}\in Q_1\).
 </p>
 
 <p>
@@ -263,49 +263,128 @@ At last, it can be seen that \(\lim_{k\to\infty}a_{n_k} = a\). Given a radius, t
 </p>
 </div>
 
-<div class="mathblock proposition" id="org9f76c37">
+<div class="mathblock proposition" id="org23fd550">
 <p><span class="mathblock title">Proposition 4.9. </span>
 
-Let \((X,d)\) be a metric space, and \(F\sube X\). \(F\) is a closed set of \(X\) iff \(\forall a_n\in F(n\in\N)[\lim_{n\to\infty} a_n = a\in X \Rarr F]\).
+Let \((X,d)\) be a metric space, \(F\sube X\). \(F\) is a closed set of \(X\) iff \(\forall a_n\in F(n\in\N)[\lim_{n\to\infty} a_n = a\in X \Rarr F]\).
 </p>
 
 </div>
-<div class="mathblock proof" id="org55e9d54">
+<div class="mathblock proof" id="orgcd64287">
 <p><span class="mathblock title">Proof. </span>
 
 (\(\Rarr\))
 </p>
 
+<p>
+For producing contradiction, assume that there is an sequence \(a_n(n\in\N)\) in \(F\), such that \(\lim_{n\to\infty} a_n = a\) but \(a\notin F\). i.e., \(a\in X\backslash F\).
+</p>
+
+<p>
+\(F\) is closed, then \(X\backslash F\) is open. There exists a radius \(r > 0\), such that \(B_r(a) \sube F\).
+</p>
+
+<p>
+Then for all \(n\in \N\),
+</p>
+
+<p>
+\[ a_n\in F \Rarr a_n \notin B_r(a) \Lrarr d(a_n, a) > r\]
+</p>
+
+<p>
+This contradicts with \(lim_{n\to\infty} a_n = a\).
+</p>
 
 <p>
 (\(\Larr\))
+</p>
+
+<p>
+For producing contradiction, suppose that \(F\) is not closed, and hence \(X\F\) is not open. Thus
+</p>
+
+<p>
+\[\exists a \in X\backslash F \forall r > 0 \exists b \in F[b\in B_r(a)]\]
+</p>
+
+<p>
+Assume that \(L\in X\backslash F\) is that point mentioned above as \(a\). Let \(r_n = \frac{1}{n}(n\in\N)\). Then there exists an element in \(F\), say \(a_1\), such that \(a_1 \in B_{r_1}(L)\), and other element, say \(a_2\), such that \(a_2 \in B_{r_2}(L)\).
+</p>
+
+<p>
+We collect them all, then obtain a sequence \(a_n(n\in\N)\) such that \(a_n\in B_{r_n}(L)\) for all \(n\in \N\).
+</p>
+
+<p>
+For any \(\epsilon > 0\), there exists an \(N\in\N\), such that \(r_N = \frac{1}{N} < \epsilon\), by Archimedean property. And for \(n\ge N\), we have \(d(a_n, L) < r_n < r_N < \epsilon\), i.e., \(\lim_{n\to\infty} a_n = L\).
+</p>
+
+<p>
+However, this leads a contradiction since all the element of \(a_n\) is in \(F\), while its limit is not.
 <span class="QED">□</span>
 </p>
 </div>
 
-<div class="mathblock definition" id="org61ff8fc">
+<div class="mathblock definition" id="org9a0a10c">
 <p><span class="mathblock title">Definition 4.10. </span>
 
 Let \((X,d)\) be a metric space, \(S\sube X\), and \(O_\alpha\) is a seires of open sets of \(X\) where \(\alpha\in A\).
 </p>
 <ol class="org-ol">
 <li>\(O_\alpha(\alpha\in A)\) is called an <b>open cover</b> of \(S\) if \(S\sube \bigcup_{\alpha\in A}O_\alpha\).</li>
-<li>\(S\) is called a <b>compact set</b> if $&forall; \text{open cover } O_&alpha;(&alpha;&isin; A)&exist; &alpha;_1,&ctdot;,&alpha;_m&isin; A[S&sube;\big&cup;_{j=1}^m O_{&alpha;_j}]</li>
+<li>\(S\) is called a <b>compact set</b> if \(\forall \text{open cover } O_\alpha(\alpha\in A)\exists \alpha_1,\cdots,\alpha_m\in A[S\sube\big\cup_{j=1}^m O_{\alpha_j}]\).</li>
 </ol>
 
 </div>
 
-<div class="mathblock theorem" id="orgaf5a303">
+<div class="mathblock theorem" id="orgdbfb546">
 <p><span class="mathblock title">Theorem 4.11<span class="mathblock name"> (Heine-Borel theorem)</span>. </span>
 
-Let \(S\sube\R^m\). \(S\) is compat iff \(S\) is bounded and closed.
+Let \(S\sube\R^m\). \(S\) is compact iff \(S\) is bounded and closed.
 </p>
 
 </div>
-<div class="mathblock proof" id="orge61441a">
+<div class="mathblock proof" id="org441692c">
 <p><span class="mathblock title">Proof. </span>
 
 (\(\Rarr\))
+</p>
+
+<p>
+\(S\) is compact, then \(S\sube \bigcup_{j=1}^n O_{\alpha_j}\), i.e., \(\bigcup_{j=1}^n O_{\alpha_j}\) is actually an bound of \(S\). Then \(S\) is bounded.
+</p>
+
+<p>
+For contradiction, assume that \(S\) is not closed.
+</p>
+
+<p>
+Since \(S\) is bounded, then we can find a <i>cube</i>: \(\overbrace{[-M,M] \times \cdots \times [-M,M]}^{m}\), denoted by \(O_0\), such that \(S\sube O_0\).
+</p>
+
+<p>
+Divide \(O_0\) into 4 equal-sized <i>cubes</i>. Select that one, say \(C_1\), whose intersection with \(S\) is not closed. (This case must happen, otherwise all <i>cubes'</i> intersection with \(S\) is closed, i.e., \(O_0\cap S = S\) is closed, contradicting with assumption.) And let \(O_1 = O_0 \backslash C1\).
+</p>
+
+<p>
+Repeating the operation, we obtain: \(C_1,C_2,\cdots\), and \(O_1,O_2,\cdots\).
+</p>
+
+<p>
+Select an sequence \(a_1,a_2\cdots\), where \(a_n\in C_n\) for all \(n\in\N\). By the theorem of nested intervals, \(\lim_{n\to\infty}a_n = a\) for some \(a\in\R^m\).
+</p>
+
+<p>
+And we claim that \(O_1,O_2,\cdots\) is an open cover of \(S\). Were this false, \(\exists s\in S\forall n\in\N[s\notin O_n]\), i.e., \(\forall n\in\N[s\in C_n]\). Therefore, \(s = \lim_{n\to\infty} a_n = a\).
+</p>
+
+<p>
+By Proposition 4.9, \(S\) is closed. This is a contradicion.
+</p>
+
+<p>
+Thus, \(S\) is closed.
 </p>
 
 <p>
@@ -321,7 +400,7 @@ Choose a cube \(Q_0\) containing \(S\).
 </p>
 
 <p>
-Divide \(Q_0\) into 4 euqal-sized cubes, and select one of them, say \(Q_1\), such that \(Q_1\bap S\) can not be covered by finitely many \(O_\alpha\). (This kind of cube must exist, otherwise all 4 cubes can be coverd by finitely many open sets,  also the whole cube, i.e., \(S\) is compat. This contradics with assumption.)
+Divide \(Q_0\) into 4 euqal-sized cubes, and select one of them, say \(Q_1\), such that \(Q_1\bap S\) <b>can not be covered by finitely many</b> \(O_\alpha\). (This kind of cube must exist, otherwise all 4 cubes can be coverd by finitely many open sets,  also the whole cube, i.e., \(S\) is compact. This contradics with assumption.)
 </p>
 
 <p>
@@ -330,6 +409,85 @@ Repeat above operation. Like proof of Bolzano-Weierstrass theorem, we obtain \(Q
 
 <p>
 Choose a seires of points \(s_1,s_2,\cdots\), where \(s_n\in Q_n\cap S\) for all \(n\in\N\). Then \(\lim_{n\to\infty}s_n = a\).
+</p>
+
+<p>
+By Proposition 4.9, \(S\) is closed, \(s_n\in S(n\in\N)\), then \(a\in S\).
+</p>
+
+<p>
+There exists an \(\alpha\in A\), such that \(a\in O_\alpha\). And we can find an open ball \(B\), such that \(a\in B\sube O_\alpha\).
+</p>
+
+<p>
+In above infinitely dividing operations, \(\exists n\in\N[Q_n \sube B\sube O_\alpha]\), i.e., there must be an cube small enough contained inside the open ball.
+</p>
+
+<p>
+However, all \(Q_n\) we choose can not be coverd by finitely many open sets, we now have \(Q_n\) is cover by an open set. This is a contradiction, therefore, \(S\) must be compact.
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock theorem" id="orgd17918b">
+<p><span class="mathblock title">Theorem 4.12<span class="mathblock name"> (the Lebesgue number of an open cover)</span>. </span>
+
+Let \((X,d)\) be a metric space and \(K(\sube X)\) a compact set.
+</p>
+
+<p>
+\[\forall O_\alpha \underset{\text{open}}{\sube} K \exists \delta > 0 \forall x \in K \exists \alpha \in A [ B_\delta(x) \sube O_\alpha]\]
+</p>
+
+</div>
+<div class="mathblock proof" id="orgae5ab3c">
+<p><span class="mathblock title">Proof. </span>
+
+For every \(p\in K\), there exists \(\alpha(p) \in A\) such that \(p\in O_{\alpha(p)}\). \(O_{\alpha(p)}\) is open, and hence \(\exists r(p) > 0 [B_{r(p)}(p) \sube O_{\alpha(p)}]\).
+</p>
+
+<p>
+Then \(B_{\frac{r(p)}{2}}(p)(p\in K)\) form an open cover of \(K\). Thus
+</p>
+
+<p>
+\[\exists $p_1,\cdots, p_k \in K[ K\sube \bigcup_{j=1}^k B_{\frac{r(p_j)}{2}}(P_j)]\]
+</p>
+
+<p>
+Let \(\delta = \min\{\frac{r(p_1)}{2}, \cdots, \frac{r(p_k)}{2}\} > 0\).
+</p>
+
+<p>
+For any \(x\in K\), there exists \(p_j(1 le j \le k)\) such that \(x\in B_{\frac{r(p_j)}{2}}(p_j)\).
+</p>
+
+<p>
+For all \(x'\in B_\delta(x))\), we have
+</p>
+
+<p>
+$$\begin{align*}
+</p>
+
+<p>
+d(x', p_j) &amp;&le; d(x',x) + d(x, p_j) <br>
+</p>
+
+<p>
+&amp;&lt; &delta; + \frac{r(p_j)}{2} <br>
+</p>
+
+<p>
+&amp;&le; \frac{r(p_j)}{2} + \frac{r(p_j)}{2} = r(p_j)
+</p>
+
+<p>
+\end{align*}$$
+</p>
+
+<p>
+Thus, \(x'\in B_{r(p_j)}(p_j)\sube O_{\alpha(p_j)}\), i.e., \(B_\delta(x) \sube O_{\alpha(p)}\).
 <span class="QED">□</span>
 </p>
 </div>
