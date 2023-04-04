@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="I choose to see the beauty.">
+<title>[Calculus] 5. Functions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noodp">
+<meta name="author" content=" Finger Knight ">
+<meta name="referrer" content="no-referrer"><link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<body>
+<div class="header">
+<div class="home-page">
+<a href="/">手指骑士的病房</a></div><div class="nav">
+<div class="nav item">
+<a href="/tags">标签</a>
+</div>
+<div class="nav item">
+<a href="/archive">归档</a>
+</div>
+<div class="nav item">
+<a href="/about">关于</a>
+</div>
+</div>
+</div>
+<div class="main">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/katex/katex.min.css"><div class="toc">
+
+</div>
+<h1 class="post-title"> [Calculus] 5. Functions </h1>
+<div class="post-date">2023-04-04</div>
+<div class="taglist"><a href="/tag/calculus"> #calculus </a>
+<a href="/tag/math"> #math </a>
+</div>
+</div>
+<div id="content">
+<div class="mathblock definition" id="org58d6c0f">
+<p><span class="mathblock title">Definition 5.1. </span>
+
+Let \(X,Y\), , and let \(P(x,y)\) be a property pertaining to two objects \(x\in X, y\in Y\), such that for every \(x\in X\), there is exactly one \(y\in Y\) for which \(P(x,y)\) is true. We define the <b>function</b> \(f: X\to Y\) defined by \(P\) on the domain \(X\) and range \(Y\) to be the object which, given any input \(x\in X\), assigns an output \(f(x)\in Y\), defined to be the unique object \(f(x)\) for which \(P(x,f(x))\) is true.<sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>
+</p>
+
+</div>
+
+<div class="mathblock definition" id="org6aae6df">
+<p><span class="mathblock title">Definition 5.2. </span>
+
+Let \(a\in X\) and \(b\in Y\). We say that \(\lim_{x\to a} f(x) = b\) if
+</p>
+
+<p>
+\[\forall \epsilon > 0 \exists \delta > 0 \forall x\in S[0 < d(x,a) < \delta \Rarr d(f(x),b) < \epsilon]\]
+</p>
+
+</div>
+
+<div class="mathblock remark" id="org2fdb25b">
+<p><span class="mathblock title">Remark 5.3. </span>
+
+If there exists \(r > 0\) such that \(B_r(a) \cap S = \varnothing\), then \(\lim_{x\to a}f(x) = b\) holds for every \(b\in Y\).
+</p>
+
+</div>
+
+<div class="mathblock proposition" id="org97ea724">
+<p><span class="mathblock title">Proposition 5.4. </span>
+
+If \(a\) is a limit point of \(S\), and \(\lim_{x\to a}f(x) = b, \lim_{x\to a} f(x) = b'\), then \(b=b'\).
+</p>
+
+</div>
+<div class="mathblock proof" id="orgab97950">
+<p><span class="mathblock title">Proof. </span>
+
+
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock proposition" id="org6be1d91">
+<p><span class="mathblock title">Proposition 5.5. </span>
+
+Let \((Y,d_y) = (\R^m, d_2)\) and \(f,g: S\to Y\), and let \(\lim_{x\to a} f(x) = b\) and \(\lim_{x\to a} g(x) = c\)
+</p>
+<ol class="org-ol">
+<li>\(\lim_{x\to a}\big(f(x)\pm g(x)\big) = b \pm c\);</li>
+<li>If \((Y,d_y) = (\R, d_2)\), then \(\lim_{x\to a}f(x)g(x) = \big(\lim_{x\to a}f(x)\big)\big(\lim_{x\to a} g(x)\big)\);</li>
+<li>If \(c\ne 0\), then there exists \(\delta > 0\) such that \(g(x)\ne 0\) for all \(x(\ne a) \in B_\delta(a) \cap S\), and \(\lim_{x\to a}\frac{f(x)}{g(x)} = \frac b c\).</li>
+</ol>
+
+</div>
+<div class="mathblock proof" id="org51b08d2">
+<p><span class="mathblock title">Proof. </span>
+
+
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock proposition" id="org6b47940">
+<p><span class="mathblock title">Proposition 5.6. </span>
+
+Let \(X,Y,Z\) be metric spaces, \(S \sube X, T \sube Y\), and \(f: S\to T, g: T\to Z\). If \(\lim_{x\to a} f(x) = a\), \(\lim_{y\to b} g(y) = c\) and \(b\notin f(S)\), then \(\lim_{x\to a} (g\circ f) (x) = c\).
+</p>
+
+</div>
+<div class="mathblock proof" id="org323b8ba">
+<p><span class="mathblock title">Proof. </span>
+
+
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock remark" id="org5f789e5">
+<p><span class="mathblock title">Remark 5.7. </span>
+
+If '\(b\notin f(S)\)' is not guaranteed, then the conclusion may be false.
+</p>
+
+</div>
+<div id="footnotes">
+<hr>
+<div class="text-footnotes" role="doc-endnotes">
+<ol>
+<li id="fn:1">
+<p class="footpara">
+Terence Tao: Analysis I (Third Edition)
+<a href="#fnr:1.1" class="footnote-backref" role="doc-backlink">↩︎</a>
+</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status"><script defer src="/static/katex/katex.min.js"></script>
+<script defer src="/static/katex/auto-render.min.js"></script>
+<script>
+let macros = {
+"\\C": "\\mathbb{C}",
+"\\N": "\\mathbb{N}",
+"\\Q": "\\mathbb{Q}",
+"\\R": "\\mathbb{R}",
+"\\Z": "\\mathbb{Z}",
+"’": "'"
+};
+document.addEventListener("DOMContentLoaded", function() {
+renderMathInElement(document.getElementById("content"), {
+strict: false,
+delimiters: [
+{"display": true,"left": "$$","right": "$$"},
+{"display": true,"left": "\\[","right": "\\]"},
+{"display": true,"left": "\\begin{equation}","right": "\\end{equation}"},
+{"display": true,"left": "\\begin{equation*}","right": "\\end{equation*}"},
+{"display": true,"left": "\\begin{align}","right": "\\end{align}"},
+{"display": true,"left": "\\begin{align*}","right": "\\end{align*}"},
+{"display": true,"left": "\\begin{alignat}","right": "\\end{alignat}"},
+{"display": true,"left": "\\begin{alignat*}","right": "\\end{alignat*}"},
+{"display": true,"left": "\\begin{gather}","right": "\\end{gather}"},
+{"display": true,"left": "\\begin{CD}","right": "\\end{CD}"},
+{"display": false,"left": "$","right": "$"},
+{"display": false,"left": "\\(","right": "\\)"}
+],
+macros});})
+</script></div>
+</div>
+<div class="footer">
+<center> The End </center></div>
+</body>
+</html>
