@@ -34,15 +34,15 @@
 </div>
 </div>
 <div id="content">
-<div class="mathblock definition" id="org58d6c0f">
+<div class="mathblock definition" id="org14947e3">
 <p><span class="mathblock title">Definition 5.1. </span>
 
-Let \(X,Y\), , and let \(P(x,y)\) be a property pertaining to two objects \(x\in X, y\in Y\), such that for every \(x\in X\), there is exactly one \(y\in Y\) for which \(P(x,y)\) is true. We define the <b>function</b> \(f: X\to Y\) defined by \(P\) on the domain \(X\) and range \(Y\) to be the object which, given any input \(x\in X\), assigns an output \(f(x)\in Y\), defined to be the unique object \(f(x)\) for which \(P(x,f(x))\) is true.<sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>
+Let \(X,Y\), and let \(P(x,y)\) be a property pertaining to two objects \(x\in X, y\in Y\), such that for every \(x\in X\), there is exactly one \(y\in Y\) for which \(P(x,y)\) is true. We define the <b>function</b> \(f: X\to Y\) defined by \(P\) on the domain \(X\) and range \(Y\) to be the object which, given any input \(x\in X\), assigns an output \(f(x)\in Y\), defined to be the unique object \(f(x)\) for which \(P(x,f(x))\) is true.<sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>
 </p>
 
 </div>
 
-<div class="mathblock definition" id="org6aae6df">
+<div class="mathblock definition" id="orgdc66b69">
 <p><span class="mathblock title">Definition 5.2. </span>
 
 Let \(a\in X\) and \(b\in Y\). We say that \(\lim_{x\to a} f(x) = b\) if
@@ -54,7 +54,7 @@ Let \(a\in X\) and \(b\in Y\). We say that \(\lim_{x\to a} f(x) = b\) if
 
 </div>
 
-<div class="mathblock remark" id="org2fdb25b">
+<div class="mathblock remark" id="orgf4fc0eb">
 <p><span class="mathblock title">Remark 5.3. </span>
 
 If there exists \(r > 0\) such that \(B_r(a) \cap S = \varnothing\), then \(\lim_{x\to a}f(x) = b\) holds for every \(b\in Y\).
@@ -62,49 +62,162 @@ If there exists \(r > 0\) such that \(B_r(a) \cap S = \varnothing\), then \(\lim
 
 </div>
 
-<div class="mathblock proposition" id="org97ea724">
+<div class="mathblock proposition" id="orgf3acf59">
 <p><span class="mathblock title">Proposition 5.4. </span>
 
 If \(a\) is a limit point of \(S\), and \(\lim_{x\to a}f(x) = b, \lim_{x\to a} f(x) = b'\), then \(b=b'\).
 </p>
 
 </div>
-<div class="mathblock proof" id="orgab97950">
+<div class="mathblock proof" id="org0ea04db">
 <p><span class="mathblock title">Proof. </span>
 
+Suppose \(b\ne b'\), and \(d(b,b') = 3\epsilon\) where \(\epsilon\) is a positive real.
+</p>
 
+<p>
+By definition, for that \(\epsilon\), there exists $&delta;_1,&delta;_2 &gt;0, such that
+</p>
+
+<p>
+\[ 0 < d(x, a) < \delta_1 \Rarr d(f(x), b) < \epsilon \\
+0 < d(x, a) < \delta_2 \Rarr d(f(x), b') < \epsilon\]
+</p>
+
+<p>
+Let \(\delta = \min\{delta_1,\delta_2\}\). Then \(0 < d(x,a) < \delta \Rarr d(b,b') \le d(f(x), b) + d(f(x), b') < 2\epsilon\). This is a contradiction.
 <span class="QED">□</span>
 </p>
 </div>
 
-<div class="mathblock proposition" id="org6be1d91">
-<p><span class="mathblock title">Proposition 5.5. </span>
+<div class="mathblock lemma" id="orgfd068d4">
+<p><span class="mathblock title">Lemma 5.5. </span>
+
+Let \(f:X\to\R\) be a function. If \(f\) is convergent at some point, then \(f\) is bounded.
+</p>
+
+</div>
+<div class="mathblock proof" id="org3f35adb">
+<p><span class="mathblock title">Proof. </span>
+
+Suppose that \(f\) is not bounded, i.e., \(\forall M > 0 \exists x\in X[|f(x)| > M]\).
+</p>
+
+<p>
+Let \(b:=\lim_{x\to a}f(x)\).
+</p>
+
+<p>
+By definition of limit, \(\forall \epsilon > 0 \exists \delta > 0[0 < d(x,a) < \delta \Rarr |f(x) - b| < \epsilon]\).
+</p>
+
+<p>
+Choose sufficiently big \(\epsilon\) such that \(b + \epsilon > 0\) (since \(b\) may be less than 0), and choose \(M = 2(b+\epsilon)\). Then we have
+</p>
+
+<p>
+\[ M = 2(b+\epsilon) < f(x) < b + \epsilon\]
+</p>
+
+<p>
+this is a contradiction. And hence \(f\) is bounded.
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock proposition" id="orgae96cd8">
+<p><span class="mathblock title">Proposition 5.6. </span>
 
 Let \((Y,d_y) = (\R^m, d_2)\) and \(f,g: S\to Y\), and let \(\lim_{x\to a} f(x) = b\) and \(\lim_{x\to a} g(x) = c\)
 </p>
 <ol class="org-ol">
 <li>\(\lim_{x\to a}\big(f(x)\pm g(x)\big) = b \pm c\);</li>
 <li>If \((Y,d_y) = (\R, d_2)\), then \(\lim_{x\to a}f(x)g(x) = \big(\lim_{x\to a}f(x)\big)\big(\lim_{x\to a} g(x)\big)\);</li>
-<li>If \(c\ne 0\), then there exists \(\delta > 0\) such that \(g(x)\ne 0\) for all \(x(\ne a) \in B_\delta(a) \cap S\), and \(\lim_{x\to a}\frac{f(x)}{g(x)} = \frac b c\).</li>
+<li>If \((Y,d_y) = (\R, d_2)\) and \(c\ne 0\), then there exists \(\delta > 0\) such that \(g(x)\ne 0\) for all \(x(\ne a) \in B_\delta(a) \cap S\), and \(\lim_{x\to a}\frac{f(x)}{g(x)} = \frac b c\).</li>
 </ol>
 
 </div>
-<div class="mathblock proof" id="org51b08d2">
+<div class="mathblock proof" id="org558cd27">
 <p><span class="mathblock title">Proof. </span>
 
+(for short)
+</p>
 
+<p>
+<i>Proof 1.</i>
+</p>
+
+<p>
+\[|(f(x) \pm g(x)) - (b \pm c)| = |(f(x) - b) \pm (g(x - c))| \le |f(x) - b) + |g(x) - c| < 2\epsilon\]
+</p>
+
+<p>
+<i>Proof 2.</i>
+</p>
+
+<p>
+\[\begin{align*}|f(x)g(x) - bc|
+&= |f(x)g(x) + f(x)c - f(x)c - bc| \\
+&= |f(x)(g(x) - c) + c(f(x) -b)| \\
+&le |f(x)|g(x) - c| + |c||f(x) - b| \\
+& < (M + |c|)\epsilon
+\end{align*}\]
+</p>
+
+<p>
+for some \(M > 0\) such that \(|f(x)| \le M\) for all \(x\in S\) since $f must be bounded (by Lemma 5.5).
+</p>
+
+<p>
+<i>Proof 3.</i>
+</p>
+
+<p>
+Suppose that \(\delta\) does not exist, i.e., \(\forall \delta > 0\exists x(\ne a)\in B_\delta(x)\cap S[g(x) = 0 \Rarr d(g(x), 0) = 0]\).
+</p>
+
+<p>
+Let \(d(c,0) = 2\epsilon\) where \(\epsilon > 0\).
+</p>
+
+<p>
+By definition, \(x(\ne a)\in B_\delta(x)\cap S \Rarr d(g(x), c) < \epsilon\). Then
+</p>
+
+<p>
+\[d(c,0) = 2\epsilon \le d(g(x),c) + d(g(x),0) < \epsilon\]
+</p>
+
+<p>
+Thus that \(\delta\) must exist, such that \(g(x) \ne 0\) for all \(x\) in the ball. And
+</p>
+
+<p>
+\[\begin{align*}|\frac{f(x)}{g(x)} - \frac{b}{c}|
+&= |\frac{f(x)c - g(x)b}{g(x)c}}| \\
+&= |\frac{f(x)c - g(x)b}{g(x)c}} + f(x)g(x) - f(x)g(x)| \\
+&= |\frac{f(x)(c - g(x)) + g(x)(f(x)-b)}{g(x)c}}| \\
+&\le \frac{|f(x)||c - g(x)| + |g(x)||f(x)-b|}{|g(x)c}|} \\
+&\le |f(x)||c - g(x)| + |g(x)||f(x)-b| \\
+& < (|f(x)| + |g(x)|)\epsilon
+& \le (M_1 + M_2|)\epsilon
+\end{align*}\]
+</p>
+
+<p>
+for some \(M_1,M_2 > 0\) since \(f,g\) are both bounded (by Lemma 5.5)
 <span class="QED">□</span>
 </p>
 </div>
 
-<div class="mathblock proposition" id="org6b47940">
-<p><span class="mathblock title">Proposition 5.6. </span>
+<div class="mathblock proposition" id="org6bcc997">
+<p><span class="mathblock title">Proposition 5.7. </span>
 
 Let \(X,Y,Z\) be metric spaces, \(S \sube X, T \sube Y\), and \(f: S\to T, g: T\to Z\). If \(\lim_{x\to a} f(x) = a\), \(\lim_{y\to b} g(y) = c\) and \(b\notin f(S)\), then \(\lim_{x\to a} (g\circ f) (x) = c\).
 </p>
 
 </div>
-<div class="mathblock proof" id="org323b8ba">
+<div class="mathblock proof" id="orgd88c25c">
 <p><span class="mathblock title">Proof. </span>
 
 
@@ -112,10 +225,39 @@ Let \(X,Y,Z\) be metric spaces, \(S \sube X, T \sube Y\), and \(f: S\to T, g: T\
 </p>
 </div>
 
-<div class="mathblock remark" id="org5f789e5">
-<p><span class="mathblock title">Remark 5.7. </span>
+<div class="mathblock remark" id="org34190cd">
+<p><span class="mathblock title">Remark 5.8. </span>
 
 If '\(b\notin f(S)\)' is not guaranteed, then the conclusion may be false.
+</p>
+
+</div>
+
+<div class="mathblock definition" id="orgb8ccc17">
+<p><span class="mathblock title">Definition 5.9<span class="mathblock name"> (continuous functions)</span>. </span>
+
+Give a function \(f: S \to Y\), and \(a\in S\). We say that \(f\) is continuous at \(a\) if \(\lim_{x\to a} f(x) = f(a)\). Furthermore, we say \(f\) is a continuous function if it is continuous at <b>every</b> \(a\in S\).
+</p>
+
+</div>
+
+<div class="mathblock proposition" id="org611f136">
+<p><span class="mathblock title">Proposition 5.10. </span>
+
+The following statements are equivalent:
+</p>
+<ol class="org-ol">
+<li>\(f\) is a continuous function</li>
+<li>\(\forall V\underset{\text{open}}{\sube} Y \exists U\underset{\text{open}}{\sube} X,a\in U, f(a)\in V[f(U\cap S) \sube V)]\).</li>
+<li>\(\forall V\underset{\text{open}}{\sube} Y [f^{-1}(V) \underset{\text{open}}{\sube}S]\).</li>
+</ol>
+
+</div>
+
+<div class="mathblock proposition" id="orgd59b96a">
+<p><span class="mathblock title">Proposition 5.11. </span>
+
+Let \(f: X\to Y, g: Y \to Z\) be functions. If \(f\) is continuous at \(a\) and \(g\) is continuous at \(f(a)\), then \(g\circ f\) si continuous at \(a\).
 </p>
 
 </div>
