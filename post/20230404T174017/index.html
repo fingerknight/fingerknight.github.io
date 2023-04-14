@@ -34,7 +34,7 @@
 </div>
 </div>
 <div id="content">
-<div class="mathblock definition" id="org8eb1b59">
+<div class="mathblock definition" id="org88257c7">
 <p><span class="mathblock title">Definition 5.1. </span>
 
 Let \(X,Y\), and let \(P(x,y)\) be a property pertaining to two objects \(x\in X, y\in Y\), such that for every \(x\in X\), there is exactly one \(y\in Y\) for which \(P(x,y)\) is true. We define the <b>function</b> \(f: X\to Y\) defined by \(P\) on the domain \(X\) and range \(Y\) to be the object which, given any input \(x\in X\), assigns an output \(f(x)\in Y\), defined to be the unique object \(f(x)\) for which \(P(x,f(x))\) is true.<sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>
@@ -42,7 +42,7 @@ Let \(X,Y\), and let \(P(x,y)\) be a property pertaining to two objects \(x\in X
 
 </div>
 
-<div class="mathblock definition" id="org9638059">
+<div class="mathblock definition" id="orgad55d12">
 <p><span class="mathblock title">Definition 5.2. </span>
 
 Let \(a\in X\) and \(b\in Y\). We say that \(\lim_{x\to a} f(x) = b\) if
@@ -54,7 +54,7 @@ Let \(a\in X\) and \(b\in Y\). We say that \(\lim_{x\to a} f(x) = b\) if
 
 </div>
 
-<div class="mathblock remark" id="orgd3ceaf5">
+<div class="mathblock remark" id="orgfa1d37e">
 <p><span class="mathblock title">Remark 5.3. </span>
 
 If there exists \(r > 0\) such that \(B_r(a) \cap S = \varnothing\), then \(\lim_{x\to a}f(x) = b\) holds for every \(b\in Y\).
@@ -62,14 +62,14 @@ If there exists \(r > 0\) such that \(B_r(a) \cap S = \varnothing\), then \(\lim
 
 </div>
 
-<div class="mathblock proposition" id="orgdb8326c">
+<div class="mathblock proposition" id="orgfc9be2c">
 <p><span class="mathblock title">Proposition 5.4. </span>
 
 If \(a\) is a limit point of \(S\), and \(\lim_{x\to a}f(x) = b, \lim_{x\to a} f(x) = b'\), then \(b=b'\).
 </p>
 
 </div>
-<div class="mathblock proof" id="org21a26d9">
+<div class="mathblock proof" id="orge28a944">
 <p><span class="mathblock title">Proof. </span>
 
 Suppose \(b\ne b'\), and \(d(b,b') = 3\epsilon\) where \(\epsilon\) is a positive real.
@@ -85,19 +85,19 @@ By definition, for that \(\epsilon\), there exists $&delta;_1,&delta;_2 &gt;0, s
 </p>
 
 <p>
-Let \(\delta = \min\{delta_1,\delta_2\}\). Then \(0 < d(x,a) < \delta \Rarr d(b,b') \le d(f(x), b) + d(f(x), b') < 2\epsilon\). This is a contradiction.
+Let \(\delta = \min\{\delta_1,\delta_2\}\). Then \(0 < d(x,a) < \delta \Rarr d(b,b') \le d(f(x), b) + d(f(x), b') < 2\epsilon\). This is a contradiction.
 <span class="QED">□</span>
 </p>
 </div>
 
-<div class="mathblock lemma" id="orgf54244a">
+<div class="mathblock lemma" id="org70cdbc8">
 <p><span class="mathblock title">Lemma 5.5. </span>
 
 Let \(f:X\to\R\) be a function. If \(f\) is convergent at some point, then \(f\) is bounded.
 </p>
 
 </div>
-<div class="mathblock proof" id="org9a0ccc2">
+<div class="mathblock proof" id="org3651918">
 <p><span class="mathblock title">Proof. </span>
 
 Suppose that \(f\) is not bounded, i.e., \(\forall M > 0 \exists x\in X[|f(x)| > M]\).
@@ -125,7 +125,7 @@ this is a contradiction. And hence \(f\) is bounded.
 </p>
 </div>
 
-<div class="mathblock proposition" id="orgb61661b">
+<div class="mathblock proposition" id="org32a7f8e">
 <p><span class="mathblock title">Proposition 5.6. </span>
 
 Let \((Y,d_y) = (\R^m, d_2)\) and \(f,g: S\to Y\), and let \(\lim_{x\to a} f(x) = b\) and \(\lim_{x\to a} g(x) = c\)
@@ -137,7 +137,7 @@ Let \((Y,d_y) = (\R^m, d_2)\) and \(f,g: S\to Y\), and let \(\lim_{x\to a} f(x) 
 </ol>
 
 </div>
-<div class="mathblock proof" id="org2b66739">
+<div class="mathblock proof" id="org3f78b90">
 <p><span class="mathblock title">Proof. </span>
 
 (for short)
@@ -197,7 +197,7 @@ Thus that \(\delta\) must exist, such that \(g(x) \ne 0\) for all \(x\) in the b
 &= |\frac{f(x)c - g(x)b}{g(x)c}| \\
 &= |\frac{f(x)c - g(x)b}{g(x)c} + f(x)g(x) - f(x)g(x)| \\
 &= |\frac{f(x)(c - g(x)) + g(x)(f(x)-b)}{g(x)c}| \\
-&\le \frac{|f(x)||c - g(x)| + |g(x)||f(x)-b|}{|g(x)c}|} \\
+&\le \frac{|f(x)||c - g(x)| + |g(x)||f(x)-b|}{|g(x)c|} \\
 &\le |f(x)||c - g(x)| + |g(x)||f(x)-b| \\
 & < (|f(x)| + |g(x)|)\epsilon
 & \le (M_1 + M_2|)\epsilon
@@ -210,30 +210,46 @@ for some \(M_1,M_2 > 0\) since \(f,g\) are both bounded (by Lemma 5.5)
 </p>
 </div>
 
-<div class="mathblock proposition" id="org025ae59">
+<div class="mathblock proposition" id="orgb5e30a5">
 <p><span class="mathblock title">Proposition 5.7. </span>
 
-Let \(X,Y,Z\) be metric spaces, \(S \sube X, T \sube Y\), and \(f: S\to T, g: T\to Z\). If \(\lim_{x\to a} f(x) = a\), \(\lim_{y\to b} g(y) = c\) and \(b\notin f(S)\), then \(\lim_{x\to a} (g\circ f) (x) = c\).
+Let \(X,Y,Z\) be metric spaces, \(S \sube X, T \sube Y\), and \(f: S\to T, g: T\to Z\). If \(\lim_{x\to a} f(x) = b\), \(\lim_{y\to b} g(y) = c\) and \(b\notin f(S)\), then \(\lim_{x\to a} (g\circ f) (x) = c\).
 </p>
 
 </div>
-<div class="mathblock proof" id="orgdcbe0b4">
+<div class="mathblock proof" id="org4584843">
 <p><span class="mathblock title">Proof. </span>
 
+\[\forall \epsilon > 0 \exists \delta' > 0 \forall y \in T[d(y,b) < \delta' \Rarr d(g(y), c) < \epsilon]\]
+</p>
 
+<p>
+For this \(\delta' >0\), there exists a \(\delta >0\), such that for all \(x\in S\), we have
+</p>
+
+<p>
+\[d(x,a) < \delta \Rarr d(f(x), b) < \delta' \Rarr d(g(f(x)), c) < \epsilon]\]
 <span class="QED">□</span>
 </p>
 </div>
 
-<div class="mathblock remark" id="orgc0c85b8">
+<div class="mathblock remark" id="orgdf7b6eb">
 <p><span class="mathblock title">Remark 5.8. </span>
 
-If '\(b\notin f(S)\)' is not guaranteed, then the conclusion may be false.
+If '\(b\notin f(S)\)' is not guaranteed, then the conclusion may be false. Here is an example.
+</p>
+
+<p>
+Let \(X = Y = \R, Z = [0, + \infty]\), \(S = \R, T = [0, +\infty]\), and let \(f(x) = x^2, g(y) = 3\sqrt{y}\), and consider \(a = -1\). Then we have \(b = \lim_{x\to -1}f(x) = 1, c = \lim_{y\to 1} g(y) = 3\).
+</p>
+
+<p>
+However, let \(h(x) = (g\circ f)(x) = 3x\) from \(\R\) to \([0, +\infty]\), then \(\lim{x\to -1}h(x) = -3\).
 </p>
 
 </div>
 
-<div class="mathblock definition" id="orgc056172">
+<div class="mathblock definition" id="org48e226b">
 <p><span class="mathblock title">Definition 5.9<span class="mathblock name"> (continuous functions)</span>. </span>
 
 Give a function \(f: S \to Y\), and \(a\in S\). We say that \(f\) is continuous at \(a\) if \(\lim_{x\to a} f(x) = f(a)\). Furthermore, we say \(f\) is a continuous function if it is continuous at <b>every</b> \(a\in S\).
@@ -241,20 +257,93 @@ Give a function \(f: S \to Y\), and \(a\in S\). We say that \(f\) is continuous 
 
 </div>
 
-<div class="mathblock proposition" id="org2d2b745">
+<div class="mathblock proposition" id="orgfb88487">
 <p><span class="mathblock title">Proposition 5.10. </span>
 
 The following statements are equivalent:
 </p>
 <ol class="org-ol">
-<li>\(f\) is a continuous function</li>
-<li>\(\forall V\underset{\text{open}}{\sube} Y \exists U\underset{\text{open}}{\sube} X,a\in U, f(a)\in V[f(U\cap S) \sube V)]\).</li>
+<li>\(f: S (\sube X) \to Y\) is a continuous function</li>
+<li>\(\forall V\underset{\text{open}}{\sube} Y \exists U\underset{\text{open}}{\sube} X[a\in U, f(a)\in V \Rarr f(U\cap S) \sube V)]\).</li>
 <li>\(\forall V\underset{\text{open}}{\sube} Y [f^{-1}(V) \underset{\text{open}}{\sube}S]\).</li>
 </ol>
 
 </div>
+<div class="mathblock proof" id="org8713d8d">
+<p><span class="mathblock title">Proof. </span>
 
-<div class="mathblock proposition" id="org8afb413">
+<b>Proof 1-2</b>
+</p>
+
+<p>
+For every point \(a \in S\), and \(f(a) \in Y\).
+</p>
+
+<p>
+(\(\Rarr\))
+</p>
+
+<p>
+For any open set \(V\sube Y\), there exists an \(\epsilon > 0\), such that \(B_\epsilon(f(a)) \sube V\) by definition.
+</p>
+
+<p>
+For this \(\epsilon\), \(\exists \delta > 0 \forall x\in S[d(x,a) < \delta \Rarr d(f(x), f(a)) < \epsilon \Rarr f(x) \in V]\).
+</p>
+
+<p>
+Let \(U\) be any other open set such that \(U\cap S \sube B_\delta(a)\). Then we have \(\forall x \in U\cap S\Rarr f(x) \in V\), i.e., \(f(U \cap S) \sube V\).
+</p>
+
+<p>
+(\(\Larr\))
+</p>
+
+<p>
+For every \(\epsilon > 0\), we can always find an open set \(V\) such that \(V \sube B_\epsilon(f(a))\).
+</p>
+
+<p>
+There exist \(\delta_1 > 0\) such that \(B_{\delta_1}(a) \sube U\). And by definition, \(\exists \delta_2 > 0 [B_{\delta_2}(a) \sube S]\). Let \(\delta = \min\{\delta_1,\delta_2\}\), then \(B_\delta(a) \sube B\cap S\).
+</p>
+
+<p>
+\[\forall x\in B_\delta(a) \sube U\cap S \Rarr f(x) \in V \sube B_\epsilon(f(a)) \Rarr d(f(x), f(a)) < \epsilon\]
+</p>
+
+<p>
+i.e., $lim{x&rarr; a} f(x) = f(a)
+</p>
+
+<p>
+<b>Proof 1-3</b>
+</p>
+
+<p>
+(\(\Rarr\))
+</p>
+
+<p>
+\(\forall x \in f^{-1}(V) (f(x) \in V) \exists \epsilon > 0 [B_\epsilon(f(x)) \sube V]\).
+</p>
+
+<p>
+Since \(f\) is continuous, \(exists \delta >0 [y\in B_\delta(x) \Rarr f(y) \in B_\epsilon(f(x)) \sube V]\), i.e., \(B_\delta(x) \sube f^{-1}(V)\).
+</p>
+
+<p>
+Thus, \(f^{-1}(V)\) is open in \(S\).
+</p>
+
+
+
+<p>
+(\(\Larr\))
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock proposition" id="org1813e64">
 <p><span class="mathblock title">Proposition 5.11. </span>
 
 Let \(f: X\to Y, g: Y \to Z\) be functions. If \(f\) is continuous at \(a\) and \(g\) is continuous at \(f(a)\), then \(g\circ f\) si continuous at \(a\).
