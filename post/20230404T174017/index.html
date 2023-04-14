@@ -34,7 +34,7 @@
 </div>
 </div>
 <div id="content">
-<div class="mathblock definition" id="org14947e3">
+<div class="mathblock definition" id="org8eb1b59">
 <p><span class="mathblock title">Definition 5.1. </span>
 
 Let \(X,Y\), and let \(P(x,y)\) be a property pertaining to two objects \(x\in X, y\in Y\), such that for every \(x\in X\), there is exactly one \(y\in Y\) for which \(P(x,y)\) is true. We define the <b>function</b> \(f: X\to Y\) defined by \(P\) on the domain \(X\) and range \(Y\) to be the object which, given any input \(x\in X\), assigns an output \(f(x)\in Y\), defined to be the unique object \(f(x)\) for which \(P(x,f(x))\) is true.<sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>
@@ -42,7 +42,7 @@ Let \(X,Y\), and let \(P(x,y)\) be a property pertaining to two objects \(x\in X
 
 </div>
 
-<div class="mathblock definition" id="orgdc66b69">
+<div class="mathblock definition" id="org9638059">
 <p><span class="mathblock title">Definition 5.2. </span>
 
 Let \(a\in X\) and \(b\in Y\). We say that \(\lim_{x\to a} f(x) = b\) if
@@ -54,7 +54,7 @@ Let \(a\in X\) and \(b\in Y\). We say that \(\lim_{x\to a} f(x) = b\) if
 
 </div>
 
-<div class="mathblock remark" id="orgf4fc0eb">
+<div class="mathblock remark" id="orgd3ceaf5">
 <p><span class="mathblock title">Remark 5.3. </span>
 
 If there exists \(r > 0\) such that \(B_r(a) \cap S = \varnothing\), then \(\lim_{x\to a}f(x) = b\) holds for every \(b\in Y\).
@@ -62,14 +62,14 @@ If there exists \(r > 0\) such that \(B_r(a) \cap S = \varnothing\), then \(\lim
 
 </div>
 
-<div class="mathblock proposition" id="orgf3acf59">
+<div class="mathblock proposition" id="orgdb8326c">
 <p><span class="mathblock title">Proposition 5.4. </span>
 
 If \(a\) is a limit point of \(S\), and \(\lim_{x\to a}f(x) = b, \lim_{x\to a} f(x) = b'\), then \(b=b'\).
 </p>
 
 </div>
-<div class="mathblock proof" id="org0ea04db">
+<div class="mathblock proof" id="org21a26d9">
 <p><span class="mathblock title">Proof. </span>
 
 Suppose \(b\ne b'\), and \(d(b,b') = 3\epsilon\) where \(\epsilon\) is a positive real.
@@ -90,14 +90,14 @@ Let \(\delta = \min\{delta_1,\delta_2\}\). Then \(0 < d(x,a) < \delta \Rarr d(b,
 </p>
 </div>
 
-<div class="mathblock lemma" id="orgfd068d4">
+<div class="mathblock lemma" id="orgf54244a">
 <p><span class="mathblock title">Lemma 5.5. </span>
 
 Let \(f:X\to\R\) be a function. If \(f\) is convergent at some point, then \(f\) is bounded.
 </p>
 
 </div>
-<div class="mathblock proof" id="org3f35adb">
+<div class="mathblock proof" id="org9a0ccc2">
 <p><span class="mathblock title">Proof. </span>
 
 Suppose that \(f\) is not bounded, i.e., \(\forall M > 0 \exists x\in X[|f(x)| > M]\).
@@ -125,7 +125,7 @@ this is a contradiction. And hence \(f\) is bounded.
 </p>
 </div>
 
-<div class="mathblock proposition" id="orgae96cd8">
+<div class="mathblock proposition" id="orgb61661b">
 <p><span class="mathblock title">Proposition 5.6. </span>
 
 Let \((Y,d_y) = (\R^m, d_2)\) and \(f,g: S\to Y\), and let \(\lim_{x\to a} f(x) = b\) and \(\lim_{x\to a} g(x) = c\)
@@ -137,7 +137,7 @@ Let \((Y,d_y) = (\R^m, d_2)\) and \(f,g: S\to Y\), and let \(\lim_{x\to a} f(x) 
 </ol>
 
 </div>
-<div class="mathblock proof" id="org558cd27">
+<div class="mathblock proof" id="org2b66739">
 <p><span class="mathblock title">Proof. </span>
 
 (for short)
@@ -194,9 +194,9 @@ Thus that \(\delta\) must exist, such that \(g(x) \ne 0\) for all \(x\) in the b
 
 <p>
 \[\begin{align*}|\frac{f(x)}{g(x)} - \frac{b}{c}|
-&= |\frac{f(x)c - g(x)b}{g(x)c}}| \\
-&= |\frac{f(x)c - g(x)b}{g(x)c}} + f(x)g(x) - f(x)g(x)| \\
-&= |\frac{f(x)(c - g(x)) + g(x)(f(x)-b)}{g(x)c}}| \\
+&= |\frac{f(x)c - g(x)b}{g(x)c}| \\
+&= |\frac{f(x)c - g(x)b}{g(x)c} + f(x)g(x) - f(x)g(x)| \\
+&= |\frac{f(x)(c - g(x)) + g(x)(f(x)-b)}{g(x)c}| \\
 &\le \frac{|f(x)||c - g(x)| + |g(x)||f(x)-b|}{|g(x)c}|} \\
 &\le |f(x)||c - g(x)| + |g(x)||f(x)-b| \\
 & < (|f(x)| + |g(x)|)\epsilon
@@ -210,14 +210,14 @@ for some \(M_1,M_2 > 0\) since \(f,g\) are both bounded (by Lemma 5.5)
 </p>
 </div>
 
-<div class="mathblock proposition" id="org6bcc997">
+<div class="mathblock proposition" id="org025ae59">
 <p><span class="mathblock title">Proposition 5.7. </span>
 
 Let \(X,Y,Z\) be metric spaces, \(S \sube X, T \sube Y\), and \(f: S\to T, g: T\to Z\). If \(\lim_{x\to a} f(x) = a\), \(\lim_{y\to b} g(y) = c\) and \(b\notin f(S)\), then \(\lim_{x\to a} (g\circ f) (x) = c\).
 </p>
 
 </div>
-<div class="mathblock proof" id="orgd88c25c">
+<div class="mathblock proof" id="orgdcbe0b4">
 <p><span class="mathblock title">Proof. </span>
 
 
@@ -225,7 +225,7 @@ Let \(X,Y,Z\) be metric spaces, \(S \sube X, T \sube Y\), and \(f: S\to T, g: T\
 </p>
 </div>
 
-<div class="mathblock remark" id="org34190cd">
+<div class="mathblock remark" id="orgc0c85b8">
 <p><span class="mathblock title">Remark 5.8. </span>
 
 If '\(b\notin f(S)\)' is not guaranteed, then the conclusion may be false.
@@ -233,7 +233,7 @@ If '\(b\notin f(S)\)' is not guaranteed, then the conclusion may be false.
 
 </div>
 
-<div class="mathblock definition" id="orgb8ccc17">
+<div class="mathblock definition" id="orgc056172">
 <p><span class="mathblock title">Definition 5.9<span class="mathblock name"> (continuous functions)</span>. </span>
 
 Give a function \(f: S \to Y\), and \(a\in S\). We say that \(f\) is continuous at \(a\) if \(\lim_{x\to a} f(x) = f(a)\). Furthermore, we say \(f\) is a continuous function if it is continuous at <b>every</b> \(a\in S\).
@@ -241,7 +241,7 @@ Give a function \(f: S \to Y\), and \(a\in S\). We say that \(f\) is continuous 
 
 </div>
 
-<div class="mathblock proposition" id="org611f136">
+<div class="mathblock proposition" id="org2d2b745">
 <p><span class="mathblock title">Proposition 5.10. </span>
 
 The following statements are equivalent:
@@ -254,7 +254,7 @@ The following statements are equivalent:
 
 </div>
 
-<div class="mathblock proposition" id="orgd59b96a">
+<div class="mathblock proposition" id="org8afb413">
 <p><span class="mathblock title">Proposition 5.11. </span>
 
 Let \(f: X\to Y, g: Y \to Z\) be functions. If \(f\) is continuous at \(a\) and \(g\) is continuous at \(f(a)\), then \(g\circ f\) si continuous at \(a\).
