@@ -34,7 +34,7 @@
 </div>
 </div>
 <div id="content">
-<div class="mathblock definition" id="org88257c7">
+<div class="mathblock definition" id="orgebd1f38">
 <p><span class="mathblock title">Definition 5.1. </span>
 
 Let \(X,Y\), and let \(P(x,y)\) be a property pertaining to two objects \(x\in X, y\in Y\), such that for every \(x\in X\), there is exactly one \(y\in Y\) for which \(P(x,y)\) is true. We define the <b>function</b> \(f: X\to Y\) defined by \(P\) on the domain \(X\) and range \(Y\) to be the object which, given any input \(x\in X\), assigns an output \(f(x)\in Y\), defined to be the unique object \(f(x)\) for which \(P(x,f(x))\) is true.<sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>
@@ -42,7 +42,7 @@ Let \(X,Y\), and let \(P(x,y)\) be a property pertaining to two objects \(x\in X
 
 </div>
 
-<div class="mathblock definition" id="orgad55d12">
+<div class="mathblock definition" id="orgf15202f">
 <p><span class="mathblock title">Definition 5.2. </span>
 
 Let \(a\in X\) and \(b\in Y\). We say that \(\lim_{x\to a} f(x) = b\) if
@@ -54,7 +54,7 @@ Let \(a\in X\) and \(b\in Y\). We say that \(\lim_{x\to a} f(x) = b\) if
 
 </div>
 
-<div class="mathblock remark" id="orgfa1d37e">
+<div class="mathblock remark" id="org2e15ea4">
 <p><span class="mathblock title">Remark 5.3. </span>
 
 If there exists \(r > 0\) such that \(B_r(a) \cap S = \varnothing\), then \(\lim_{x\to a}f(x) = b\) holds for every \(b\in Y\).
@@ -62,14 +62,14 @@ If there exists \(r > 0\) such that \(B_r(a) \cap S = \varnothing\), then \(\lim
 
 </div>
 
-<div class="mathblock proposition" id="orgfc9be2c">
+<div class="mathblock proposition" id="org465a07b">
 <p><span class="mathblock title">Proposition 5.4. </span>
 
 If \(a\) is a limit point of \(S\), and \(\lim_{x\to a}f(x) = b, \lim_{x\to a} f(x) = b'\), then \(b=b'\).
 </p>
 
 </div>
-<div class="mathblock proof" id="orge28a944">
+<div class="mathblock proof" id="orgd187751">
 <p><span class="mathblock title">Proof. </span>
 
 Suppose \(b\ne b'\), and \(d(b,b') = 3\epsilon\) where \(\epsilon\) is a positive real.
@@ -90,14 +90,14 @@ Let \(\delta = \min\{\delta_1,\delta_2\}\). Then \(0 < d(x,a) < \delta \Rarr d(b
 </p>
 </div>
 
-<div class="mathblock lemma" id="org70cdbc8">
+<div class="mathblock lemma" id="org5ba465a">
 <p><span class="mathblock title">Lemma 5.5. </span>
 
 Let \(f:X\to\R\) be a function. If \(f\) is convergent at some point, then \(f\) is bounded.
 </p>
 
 </div>
-<div class="mathblock proof" id="org3651918">
+<div class="mathblock proof" id="org90cf2fe">
 <p><span class="mathblock title">Proof. </span>
 
 Suppose that \(f\) is not bounded, i.e., \(\forall M > 0 \exists x\in X[|f(x)| > M]\).
@@ -125,7 +125,7 @@ this is a contradiction. And hence \(f\) is bounded.
 </p>
 </div>
 
-<div class="mathblock proposition" id="org32a7f8e">
+<div class="mathblock proposition" id="org21b225f">
 <p><span class="mathblock title">Proposition 5.6. </span>
 
 Let \((Y,d_y) = (\R^m, d_2)\) and \(f,g: S\to Y\), and let \(\lim_{x\to a} f(x) = b\) and \(\lim_{x\to a} g(x) = c\)
@@ -137,7 +137,7 @@ Let \((Y,d_y) = (\R^m, d_2)\) and \(f,g: S\to Y\), and let \(\lim_{x\to a} f(x) 
 </ol>
 
 </div>
-<div class="mathblock proof" id="org3f78b90">
+<div class="mathblock proof" id="org610a03c">
 <p><span class="mathblock title">Proof. </span>
 
 (for short)
@@ -210,14 +210,14 @@ for some \(M_1,M_2 > 0\) since \(f,g\) are both bounded (by Lemma 5.5)
 </p>
 </div>
 
-<div class="mathblock proposition" id="orgb5e30a5">
+<div class="mathblock proposition" id="org82c9f23">
 <p><span class="mathblock title">Proposition 5.7. </span>
 
 Let \(X,Y,Z\) be metric spaces, \(S \sube X, T \sube Y\), and \(f: S\to T, g: T\to Z\). If \(\lim_{x\to a} f(x) = b\), \(\lim_{y\to b} g(y) = c\) and \(b\notin f(S)\), then \(\lim_{x\to a} (g\circ f) (x) = c\).
 </p>
 
 </div>
-<div class="mathblock proof" id="org4584843">
+<div class="mathblock proof" id="org4543241">
 <p><span class="mathblock title">Proof. </span>
 
 \[\forall \epsilon > 0 \exists \delta' > 0 \forall y \in T[d(y,b) < \delta' \Rarr d(g(y), c) < \epsilon]\]
@@ -233,7 +233,7 @@ For this \(\delta' >0\), there exists a \(\delta >0\), such that for all \(x\in 
 </p>
 </div>
 
-<div class="mathblock remark" id="orgdf7b6eb">
+<div class="mathblock remark" id="orgf43684e">
 <p><span class="mathblock title">Remark 5.8. </span>
 
 If '\(b\notin f(S)\)' is not guaranteed, then the conclusion may be false. Here is an example.
@@ -249,7 +249,7 @@ However, let \(h(x) = (g\circ f)(x) = 3x\) from \(\R\) to \([0, +\infty]\), then
 
 </div>
 
-<div class="mathblock definition" id="org48e226b">
+<div class="mathblock definition" id="org5a6bbf6">
 <p><span class="mathblock title">Definition 5.9<span class="mathblock name"> (continuous functions)</span>. </span>
 
 Give a function \(f: S \to Y\), and \(a\in S\). We say that \(f\) is continuous at \(a\) if \(\lim_{x\to a} f(x) = f(a)\). Furthermore, we say \(f\) is a continuous function if it is continuous at <b>every</b> \(a\in S\).
@@ -257,7 +257,7 @@ Give a function \(f: S \to Y\), and \(a\in S\). We say that \(f\) is continuous 
 
 </div>
 
-<div class="mathblock proposition" id="orgfb88487">
+<div class="mathblock proposition" id="org01d1e30">
 <p><span class="mathblock title">Proposition 5.10. </span>
 
 The following statements are equivalent:
@@ -269,7 +269,7 @@ The following statements are equivalent:
 </ol>
 
 </div>
-<div class="mathblock proof" id="org8713d8d">
+<div class="mathblock proof" id="org0556d3c">
 <p><span class="mathblock title">Proof. </span>
 
 <b>Proof 1-2</b>
@@ -335,20 +335,45 @@ Since \(f\) is continuous, \(exists \delta >0 [y\in B_\delta(x) \Rarr f(y) \in B
 Thus, \(f^{-1}(V)\) is open in \(S\).
 </p>
 
-
-
 <p>
 (\(\Larr\))
+</p>
+
+<p>
+For contradiction, suppose that \(f\) is not continuous, i.e, \(\exists x_0 \exists \epsilon > 0 \forall \delta > 0 \exists x \in S[d(x,x_0) < \delta \Rarr d(f(x),f(x_0)) \ge \epsilon]\).
+</p>
+
+<p>
+Let \(V := B_\epsilon(f(x_0))(\sube Y)\). Then \(f^{-1}(V)\) is open too.
+</p>
+
+<p>
+For \(x_0  \in f^{-1}(V)\), there exists an \(r > 0\), such that \(B_r(x_0) \sube f^{-1}(V)\), i.e.,
+</p>
+
+<p>
+\(\forall x \in S[d(x, x_0) < r \Rarr f(x) \in V \Lrarr d(f(x),f(x_0)) < \epsilon]\). A contradiction against the supposition.
+</p>
+
+<p>
+Thus \(f\) is continuous
 <span class="QED">□</span>
 </p>
 </div>
 
-<div class="mathblock proposition" id="org1813e64">
+<div class="mathblock proposition" id="org91232a9">
 <p><span class="mathblock title">Proposition 5.11. </span>
 
-Let \(f: X\to Y, g: Y \to Z\) be functions. If \(f\) is continuous at \(a\) and \(g\) is continuous at \(f(a)\), then \(g\circ f\) si continuous at \(a\).
+Let \(f: X\to Y, g: Y \to Z\) be functions. If \(f\) is continuous at \(a\) and \(g\) is continuous at \(f(a)\), then \(g\circ f\) is continuous at \(a\).
 </p>
 
+</div>
+<div class="mathblock proof" id="orgfcd75e8">
+<p><span class="mathblock title">Proof. </span>
+
+Similar as Proposition 5.7
+<span class="QED">□</span>
+</p>
 </div>
 <div id="footnotes">
 <hr>
