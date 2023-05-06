@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="I choose to see the beauty.">
+<title>[Arch Linux] 蓝牙配置</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noodp">
+<meta name="author" content=" Finger Knight ">
+<meta name="referrer" content="no-referrer"><link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<body>
+<div class="header">
+<div class="home-page">
+<a href="/">手指骑士的病房</a></div><div class="nav">
+<div class="nav item">
+<a href="/tags">标签</a>
+</div>
+<div class="nav item">
+<a href="/archive">归档</a>
+</div>
+<div class="nav item">
+<a href="/about">关于</a>
+</div>
+</div>
+</div>
+<div class="main">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/highlight/dracula.css"><div class="toc">
+
+</div>
+<h1 class="post-title"> [Arch Linux] 蓝牙配置 </h1>
+<div class="post-date">2023-05-06</div>
+<div class="taglist"><a href="/tag/archlinux"> #archlinux </a>
+<a href="/tag/buletooth"> #buletooth </a>
+</div>
+</div>
+<div id="content">
+<div class="org-src-container">
+<pre><code class="language-bash">;; Necessary packages 
+sudo pacman -S bluez bluez-utils pulseaudio-bluetooth pavucontrol pulseaudio-alsa
+
+;; Bluetooth service
+sudo systemctl start bluetooth
+
+;; Pulseaudio sercice
+pulseaudio -k && pulseaudio --start</code></pre>
+</div>
+<div id="footnotes">
+<hr>
+<div class="text-footnotes" role="doc-endnotes">
+<ol>
+
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status"><script src="/static/highlight/highlight.min.js"></script>
+<script>
+Array.from(document.querySelectorAll('#content pre')).forEach(
+node => {
+let codeElement = node.querySelector("code"),
+    excludes = ["mermaid"];
+
+if (!codeElement){
+return
+}
+let language = codeElement.getAttribute("class").split("-")[1];
+if (excludes.includes(language)) {
+return
+}
+
+hljs.highlightElement(codeElement);
+});
+</script></div>
+</div>
+<div class="footer">
+<center> The End </center></div>
+</body>
+</html>
