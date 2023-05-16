@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="I choose to see the beauty.">
+<meta name="description" content="">
 <title>Alist 多网盘管理的尝试</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noodp">
@@ -30,34 +30,34 @@
 
 <ul>
 <li>
-<a href="#orga289159"> 简介 </a></li>
+<a href="#org6cca994"> 简介 </a></li>
 <li>
-<a href="#orge377b4b"> alist 安装 </a>
+<a href="#org78ffaad"> alist 安装 </a>
 <ul>
 <li>
-<a href="#orge065d97"> 安装 </a></li>
+<a href="#orgd559a45"> 安装 </a></li>
 <li>
-<a href="#org82f792b"> 配置 </a></li>
+<a href="#orge64ce1f"> 配置 </a></li>
 <li>
-<a href="#orga9a9013"> 启用 </a>
+<a href="#org269d564"> 启用 </a>
 <ul>
 <li>
-<a href="#orgeeae37d"> 获取管理员信息 </a></li>
+<a href="#org90442eb"> 获取管理员信息 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org774a9d8"> 登录后台 </a></li>
+<a href="#org09b926f"> 登录后台 </a></li>
 <li>
-<a href="#orgc473895"> 添加存储 </a></li>
+<a href="#orga47bfc5"> 添加存储 </a></li>
 <li>
-<a href="#org15e222f"> 部署 </a></li>
+<a href="#orge5938c8"> 部署 </a></li>
 </ul>
 </li>
 </ul>
 </nav>
 </div>
 <h1 class="post-title"> Alist 多网盘管理的尝试 </h1>
-<div class="post-date">2022-12-24</div>
+<div class="post-date">2023-05-17</div>
 <div class="taglist"><a href="/tag/alist"> #alist </a>
 <a href="/tag/archlinux"> #archlinux </a>
 <a href="/tag/netdisk"> #netdisk </a>
@@ -65,18 +65,18 @@
 </div>
 <div id="content">
 
-<div id="outline-container-orga289159" class="outline-2">
-<h2 id="orga289159">简介</h2>
-<div class="outline-text-2" id="text-orga289159">
+<div id="outline-container-org6cca994" class="outline-2">
+<h2 id="org6cca994">简介</h2>
+<div class="outline-text-2" id="text-org6cca994">
 <p>
 看到果核大佬发的一个多网盘的管理工具《<a href="https://www.ghxi.com/wx20221027.html" target="_blank">网盘太多不好管理？用上这个神器试试！ - 果核剥壳</a>》，目前用的网盘工具还是分开的 CLI ，便想在 Arch 上尝试一下。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orge377b4b" class="outline-2">
-<h2 id="orge377b4b">alist 安装</h2>
-<div class="outline-text-2" id="text-orge377b4b">
+<div id="outline-container-org78ffaad" class="outline-2">
+<h2 id="org78ffaad">alist 安装</h2>
+<div class="outline-text-2" id="text-org78ffaad">
 <p>
 项目地址在这里：<a href="https://github.com/alist-org/alist" target="_blank">https://github.com/alist-org/alist</a>
 </p>
@@ -86,9 +86,9 @@
 </p>
 </div>
 
-<div id="outline-container-orge065d97" class="outline-3">
-<h3 id="orge065d97">安装</h3>
-<div class="outline-text-3" id="text-orge065d97">
+<div id="outline-container-orgd559a45" class="outline-3">
+<h3 id="orgd559a45">安装</h3>
+<div class="outline-text-3" id="text-orgd559a45">
 <p>
 下载安装脚本：
 </p>
@@ -117,9 +117,9 @@ wget "https://alist.nn.ci/v3.sh"</code></pre>
 </div>
 </div>
 
-<div id="outline-container-org82f792b" class="outline-3">
-<h3 id="org82f792b">配置</h3>
-<div class="outline-text-3" id="text-org82f792b">
+<div id="outline-container-orge64ce1f" class="outline-3">
+<h3 id="orge64ce1f">配置</h3>
+<div class="outline-text-3" id="text-orge64ce1f">
 <p>
 我是默认的安装路径，在 <code>/opt/alist</code> ，目录结构：
 </p>
@@ -185,13 +185,13 @@ wget "https://alist.nn.ci/v3.sh"</code></pre>
 </div>
 </div>
 
-<div id="outline-container-orga9a9013" class="outline-3">
-<h3 id="orga9a9013">启用</h3>
-<div class="outline-text-3" id="text-orga9a9013">
+<div id="outline-container-org269d564" class="outline-3">
+<h3 id="org269d564">启用</h3>
+<div class="outline-text-3" id="text-org269d564">
 </div>
-<div id="outline-container-orgeeae37d" class="outline-4">
-<h4 id="orgeeae37d">获取管理员信息</h4>
-<div class="outline-text-4" id="text-orgeeae37d">
+<div id="outline-container-org90442eb" class="outline-4">
+<h4 id="org90442eb">获取管理员信息</h4>
+<div class="outline-text-4" id="text-org90442eb">
 <p>
 <code>sudo ./alist admin --data alist-dir</code>
 </p>
@@ -202,9 +202,9 @@ wget "https://alist.nn.ci/v3.sh"</code></pre>
 </div>
 </div>
 
-<div id="outline-container-org774a9d8" class="outline-3">
-<h3 id="org774a9d8">登录后台</h3>
-<div class="outline-text-3" id="text-org774a9d8">
+<div id="outline-container-org09b926f" class="outline-3">
+<h3 id="org09b926f">登录后台</h3>
+<div class="outline-text-3" id="text-org09b926f">
 <p>
 原谅我没在文档中找到进入后台的办法，最终是在 b 站一个 up 主的视频里面才看到的 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>。
 </p>
@@ -223,18 +223,18 @@ wget "https://alist.nn.ci/v3.sh"</code></pre>
 </div>
 </div>
 
-<div id="outline-container-orgc473895" class="outline-3">
-<h3 id="orgc473895">添加存储</h3>
-<div class="outline-text-3" id="text-orgc473895">
+<div id="outline-container-orga47bfc5" class="outline-3">
+<h3 id="orga47bfc5">添加存储</h3>
+<div class="outline-text-3" id="text-orga47bfc5">
 <p>
 在列表左边 <code>存储</code> 那里添加，按照官网的文档添加就行。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org15e222f" class="outline-3">
-<h3 id="org15e222f">部署</h3>
-<div class="outline-text-3" id="text-org15e222f">
+<div id="outline-container-orge5938c8" class="outline-3">
+<h3 id="orge5938c8">部署</h3>
+<div class="outline-text-3" id="text-orge5938c8">
 <p>
 部署参照官网，我是把它当作客户端来用，不想用命令行了。
 </p>

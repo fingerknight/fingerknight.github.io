@@ -2,8 +2,8 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="I choose to see the beauty.">
-<title>GiHub Page + Cloudflare + NameSilo 的域名配置</title>
+<meta name="description" content="">
+<title>Gihub page cloudflare namesilo 的域名配置</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noodp">
 <meta name="author" content=" Finger Knight ">
@@ -30,31 +30,31 @@
 
 <ul>
 <li>
-<a href="#org407d793"> 简介 </a></li>
+<a href="#org9158a3c"> 简介 </a></li>
 <li>
-<a href="#org76f58b0"> 域名购买 </a></li>
+<a href="#org1be0a93"> 域名购买 </a></li>
 <li>
-<a href="#org77a46c4"> 域名配置 </a></li>
+<a href="#org0ff0e55"> 域名配置 </a></li>
 <li>
-<a href="#orgdf46e77"> Cloudflare 接管 </a>
+<a href="#org3a5ecbc"> Cloudflare 接管 </a>
 <ul>
 <li>
-<a href="#org995ee82"> 注册站点 </a></li>
+<a href="#orgde596d5"> 注册站点 </a></li>
 <li>
-<a href="#org9747aab"> 托管域名服务器 </a></li>
+<a href="#org4d1aa4a"> 托管域名服务器 </a></li>
 <li>
-<a href="#orgedaa5c3"> Cloudflare 域名解析 </a></li>
+<a href="#orgaafdb65"> Cloudflare 域名解析 </a></li>
 <li>
-<a href="#orgbed4e68"> 配置 HTTPS </a></li>
+<a href="#org2b1a988"> 配置 HTTPS </a></li>
 <li>
-<a href="#org194c50a"> Github Page 自定义域名 </a></li>
+<a href="#orgdcb3fce"> Github Page 自定义域名 </a></li>
 <li>
-<a href="#org47d51a8"> 问题记录 </a>
+<a href="#org7bbb521"> 问题记录 </a>
 <ul>
 <li>
-<a href="#orgfeccbaa"> 301 无限循环 </a></li>
+<a href="#org37c0c30"> 301 无限循环 </a></li>
 <li>
-<a href="#org8bcf33e"> 无效 TSL ，状态码返回 526 </a></li>
+<a href="#orge7767a0"> 无效 TSL ，状态码返回 526 </a></li>
 </ul>
 </li>
 </ul>
@@ -62,8 +62,8 @@
 </ul>
 </nav>
 </div>
-<h1 class="post-title"> GiHub Page + Cloudflare + NameSilo 的域名配置 </h1>
-<div class="post-date">2022-09-28</div>
+<h1 class="post-title"> Gihub page cloudflare namesilo 的域名配置 </h1>
+<div class="post-date">2023-05-17</div>
 <div class="taglist"><a href="/tag/cloudflare"> #cloudflare </a>
 <a href="/tag/dns"> #dns </a>
 <a href="/tag/githubpage"> #githubpage </a>
@@ -73,9 +73,9 @@
 </div>
 <div id="content">
 
-<div id="outline-container-org407d793" class="outline-2">
-<h2 id="org407d793">简介</h2>
-<div class="outline-text-2" id="text-org407d793">
+<div id="outline-container-org9158a3c" class="outline-2">
+<h2 id="org9158a3c">简介</h2>
+<div class="outline-text-2" id="text-org9158a3c">
 <p>
 先是折腾了一下 GitHub Page 的子项目，目的是可以让博客和其他项目分开（比如我想做的一些教程），分别用不同的模板。详见：<a href="github-page-project.html" target="_blank">GitHub Page 多项目</a>。
 </p>
@@ -86,9 +86,9 @@
 </div>
 </div>
 
-<div id="outline-container-org76f58b0" class="outline-2">
-<h2 id="org76f58b0">域名购买</h2>
-<div class="outline-text-2" id="text-org76f58b0">
+<div id="outline-container-org1be0a93" class="outline-2">
+<h2 id="org1be0a93">域名购买</h2>
+<div class="outline-text-2" id="text-org1be0a93">
 <p>
 好友推荐了几个厂商，口碑都不错，如下：
 </p>
@@ -117,11 +117,11 @@
 </div>
 </div>
 
-<div id="outline-container-org77a46c4" class="outline-2">
-<h2 id="org77a46c4">域名配置</h2>
-<div class="outline-text-2" id="text-org77a46c4">
+<div id="outline-container-org0ff0e55" class="outline-2">
+<h2 id="org0ff0e55">域名配置</h2>
+<div class="outline-text-2" id="text-org0ff0e55">
 <p>
-配置也可以参照<a href="#org76f58b0">域名购买</a>那一章贴出的文章。
+配置也可以参照<a href="#org1be0a93">域名购买</a>那一章贴出的文章。
 </p>
 
 <p>
@@ -133,7 +133,7 @@
 </p>
 
 
-<figure id="orgcea4ee3">
+<figure id="orge0edee2">
 <a href="/assets/c8c0d75715d376f91190068dde89cab8.png" target="_blank"><img src="/assets/c8c0d75715d376f91190068dde89cab8.png" alt="2022-09-28_15-47-00.png"></a>
 
 </figure>
@@ -143,7 +143,7 @@
 </p>
 
 
-<figure id="org1bc2c7e">
+<figure id="org5c40d8d">
 <a href="/assets/cdeeea8d0f5ca16cab1c908c6f641cd0.png" target="_blank"><img src="/assets/cdeeea8d0f5ca16cab1c908c6f641cd0.png" alt="2022-09-28_15-50-59.png"></a>
 
 </figure>
@@ -157,7 +157,7 @@
 </p>
 
 
-<figure id="org3296c31">
+<figure id="orgfb1f5a6">
 <a href="/assets/9aa17c8f8c41011ec245843f6a6cb32c.png" target="_blank"><img src="/assets/9aa17c8f8c41011ec245843f6a6cb32c.png" alt="2022-12-07_22-40-16.png"></a>
 
 </figure>
@@ -168,13 +168,13 @@
 </p>
 
 
-<figure id="org51cf7eb">
+<figure id="org04a0e4a">
 <a href="/assets/4abebe736284c38dc258bcfb83a3bcb7.png" target="_blank"><img src="/assets/4abebe736284c38dc258bcfb83a3bcb7.png" alt="2022-09-28_16-02-48.png"></a>
 
 </figure>
 
 
-<figure id="org328b566">
+<figure id="orgecfea19">
 <a href="/assets/13a51a1ddf38e2a82eb64cf90b4630a4.png" target="_blank"><img src="/assets/13a51a1ddf38e2a82eb64cf90b4630a4.png" alt="2022-09-28_16-04-14.png"></a>
 
 </figure>
@@ -189,23 +189,23 @@
 </div>
 </div>
 
-<div id="outline-container-orgdf46e77" class="outline-2">
-<h2 id="orgdf46e77">Cloudflare 接管</h2>
-<div class="outline-text-2" id="text-orgdf46e77">
+<div id="outline-container-org3a5ecbc" class="outline-2">
+<h2 id="org3a5ecbc">Cloudflare 接管</h2>
+<div class="outline-text-2" id="text-org3a5ecbc">
 <p>
 虽然是在 NameSilo 注册的域名，但是我想把它托管到 <a href="https://www.cloudflare.com/" target="_blank">Cloudflare</a> 上 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>。
 </p>
 </div>
 
-<div id="outline-container-org995ee82" class="outline-3">
-<h3 id="org995ee82">注册站点</h3>
-<div class="outline-text-3" id="text-org995ee82">
+<div id="outline-container-orgde596d5" class="outline-3">
+<h3 id="orgde596d5">注册站点</h3>
+<div class="outline-text-3" id="text-orgde596d5">
 <p>
 新添加一个站点，把域名填进去，
 </p>
 
 
-<figure id="orge0415c9">
+<figure id="orgdab14cb">
 <a href="/assets/3f0aa95577cc3c7c4d08029b5cc33c98.png" target="_blank"><img src="/assets/3f0aa95577cc3c7c4d08029b5cc33c98.png" alt="2022-09-28_16-14-55.png"></a>
 
 </figure>
@@ -220,15 +220,15 @@
 </div>
 </div>
 
-<div id="outline-container-org9747aab" class="outline-3">
-<h3 id="org9747aab">托管域名服务器</h3>
-<div class="outline-text-3" id="text-org9747aab">
+<div id="outline-container-org4d1aa4a" class="outline-3">
+<h3 id="org4d1aa4a">托管域名服务器</h3>
+<div class="outline-text-3" id="text-org4d1aa4a">
 <p>
 回到 NameSilo ，勾域名前面的勾，然点上面的 <code>Change NameServer</code> （我真的觉得整个页面充斥着一股广告味儿）<sup>[<a id="fnr:2.1" class="footref" href="#fn:2">2</a>]</sup>。
 </p>
 
 
-<figure id="orgd6f9e30">
+<figure id="orgc4849a5">
 <a href="/assets/6c54da8b7631e8a1d6a6f385547fe2ca.png" target="_blank"><img src="/assets/6c54da8b7631e8a1d6a6f385547fe2ca.png" alt="2022-09-28_16-20-38.png"></a>
 
 </figure>
@@ -238,7 +238,7 @@
 </p>
 
 
-<figure id="org1ec9ab8">
+<figure id="orge525183">
 <a href="/assets/88bf55525984d3808aeaee570ec04a16.png" target="_blank"><img src="/assets/88bf55525984d3808aeaee570ec04a16.png" alt="2022-12-07_22-44-41.png"></a>
 
 </figure>
@@ -249,9 +249,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgedaa5c3" class="outline-3">
-<h3 id="orgedaa5c3">Cloudflare 域名解析</h3>
-<div class="outline-text-3" id="text-orgedaa5c3">
+<div id="outline-container-orgaafdb65" class="outline-3">
+<h3 id="orgaafdb65">Cloudflare 域名解析</h3>
+<div class="outline-text-3" id="text-orgaafdb65">
 <p>
 在 Cloudflare 的 DNS 配置中添加如下记录：
 </p>
@@ -265,9 +265,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgbed4e68" class="outline-3">
-<h3 id="orgbed4e68">配置 HTTPS</h3>
-<div class="outline-text-3" id="text-orgbed4e68">
+<div id="outline-container-org2b1a988" class="outline-3">
+<h3 id="org2b1a988">配置 HTTPS</h3>
+<div class="outline-text-3" id="text-org2b1a988">
 <p>
 在 SSl/TLS 里的 Edge Certification 里选上 <code>Always Use HTTPS</code>.
 </p>
@@ -275,22 +275,22 @@
 </div>
 
 
-<div id="outline-container-org194c50a" class="outline-3">
-<h3 id="org194c50a">Github Page 自定义域名</h3>
-<div class="outline-text-3" id="text-org194c50a">
+<div id="outline-container-orgdcb3fce" class="outline-3">
+<h3 id="orgdcb3fce">Github Page 自定义域名</h3>
+<div class="outline-text-3" id="text-orgdcb3fce">
 <p>
 最后在 Github Page 设置自定义域名即可。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org47d51a8" class="outline-3">
-<h3 id="org47d51a8">问题记录</h3>
-<div class="outline-text-3" id="text-org47d51a8">
+<div id="outline-container-org7bbb521" class="outline-3">
+<h3 id="org7bbb521">问题记录</h3>
+<div class="outline-text-3" id="text-org7bbb521">
 </div>
-<div id="outline-container-orgfeccbaa" class="outline-4">
-<h4 id="orgfeccbaa">301 无限循环</h4>
-<div class="outline-text-4" id="text-orgfeccbaa">
+<div id="outline-container-org37c0c30" class="outline-4">
+<h4 id="org37c0c30">301 无限循环</h4>
+<div class="outline-text-4" id="text-org37c0c30">
 <p>
 我刚配好 Cloudflare 的时候出现了这个问题，那就是请求域名的时候，放回的全是 HTTP 状态码 301 ，然后跳转的 location 还是当前的链接，最终导致无限重定向。
 </p>
@@ -304,22 +304,22 @@
 </p>
 
 
-<figure id="org6087097">
+<figure id="orgb07aeb7">
 <a href="/assets/2a437aee52b1deb6c80331da2fcea284.png" target="_blank"><img src="/assets/2a437aee52b1deb6c80331da2fcea284.png" alt="2022-09-28_20-12-53.png"></a>
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org8bcf33e" class="outline-4">
-<h4 id="org8bcf33e">无效 TSL ，状态码返回 526</h4>
-<div class="outline-text-4" id="text-org8bcf33e">
+<div id="outline-container-orge7767a0" class="outline-4">
+<h4 id="orge7767a0">无效 TSL ，状态码返回 526</h4>
+<div class="outline-text-4" id="text-orge7767a0">
 <p>
 问题情景我忘记截图了，去网上借了一张 <sup>[<a id="fnr:4.1" class="footref" href="#fn:4">4</a>]</sup>
 </p>
 
 
-<figure id="org220597e">
+<figure id="org4597fb6">
 <a href="/assets/09152539f0fecb54777a5aa9d2a3a1be.png" target="_blank"><img src="/assets/09152539f0fecb54777a5aa9d2a3a1be.png" alt="Cloudflare-error-526-844x.png"></a>
 
 </figure>
@@ -342,7 +342,7 @@ Unavailable for your site because your domain is not properly configured to supp
 </p>
 
 
-<figure id="org6f324f1">
+<figure id="orgf93782e">
 <a href="/assets/67fcc343bb0b1975a8208b5364c4a9f3.png" target="_blank"><img src="/assets/67fcc343bb0b1975a8208b5364c4a9f3.png" alt="2022-12-07_23-02-43.png"></a>
 
 </figure>
