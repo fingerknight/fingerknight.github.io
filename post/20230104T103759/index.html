@@ -1,13 +1,8 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="description" content="">
-<title>Calculus 1 dedekind cut</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noodp">
-<meta name="author" content=" Finger Knight ">
-<meta name="referrer" content="no-referrer"><link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<title>Calculus 1 dedekind cut - 手指骑士的病房</title>
+<link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
 <body>
 <div class="header">
 <div class="home-page">
@@ -32,9 +27,17 @@
 <div class="taglist"><a href="/tag/calculus"> #calculus </a>
 <a href="/tag/math"> #math </a>
 </div>
+<link rel="stylesheet" href="/static/katex/katex.min.css"><div class="toc">
+
+</div>
+<h1 class="post-title"> Calculus 1 dedekind cut </h1>
+<div class="post-date">2023-05-17</div>
+<div class="taglist"><a href="/tag/calculus"> #calculus </a>
+<a href="/tag/math"> #math </a>
+</div>
 </div>
 <div id="content">
-<div class="mathblock definition" id="orgcdc832a">
+<div class="mathblock definition" id="org5b7e5af">
 <p><span class="mathblock title">Definition 1 1. </span>
 
 Let \(S\sube\R\) and \(r\in\R\). We say that:
@@ -51,7 +54,7 @@ Let \(S\sube\R\) and \(r\in\R\). We say that:
 
 </div>
 
-<div class="mathblock definition" id="org44865ec">
+<div class="mathblock definition" id="org799cef0">
 <p><span class="mathblock title">Definition 1 2<span class="mathblock name"> (Dedekind cut)</span>. </span>
 
 Let \(A,B\sube\R\). We say that \((A,B)\) is a Dedekind cut of $\R\ if:
@@ -64,7 +67,7 @@ Let \(A,B\sube\R\). We say that \((A,B)\) is a Dedekind cut of $\R\ if:
 
 </div>
 
-<div class="mathblock proposition" id="org026a5c7">
+<div class="mathblock proposition" id="org8518573">
 <p><span class="mathblock title">Proposition 1 3<span class="mathblock name"> (Dedekind's gapless property)</span>. </span>
 
 If \((A,B)\) is a Dedekind cut of \(\R\), then exactly one of the following happens:
@@ -75,7 +78,7 @@ If \((A,B)\) is a Dedekind cut of \(\R\), then exactly one of the following happ
 </ul>
 
 </div>
-<div class="mathblock proof" id="orgd2c31c7">
+<div class="mathblock proof" id="orgdacad03">
 <p><span class="mathblock title">Proof. </span>
 
 (齐神说要用区间套定理和阿基米德性质，但是我没用上。麻烦高人帮忙看看这个证明有没有问题)
@@ -121,14 +124,14 @@ If \(\sup A\in B\), since \(\min B\) doesn't exist, there always exists a \(b_0\
 </p>
 </div>
 
-<div class="mathblock theorem" id="org76557fd">
+<div class="mathblock theorem" id="org4079c32">
 <p><span class="mathblock title">Theorem 1 4<span class="mathblock name"> (Weierstrass)</span>. </span>
 
 Let \(S(\ne\varnothing)\sube\R\). If S has an upper bound, then \(\sup S\) exists.
 </p>
 
 </div>
-<div class="mathblock proof" id="org77b4993">
+<div class="mathblock proof" id="org26a7ae7">
 <p><span class="mathblock title">Proof. </span>
 
 Let \(B:=\{b\in\R|b\text{ is an upper(lower) bound of }S\}\), and \(A:=\R\backslash B\).
@@ -157,14 +160,14 @@ By Dedekind's gapless property, \(\min B\) must exist, i.e., \(\sup S\) exists.
 </p>
 </div>
 
-<div class="mathblock proposition" id="org7be3dc6">
+<div class="mathblock proposition" id="orgc1c1b70">
 <p><span class="mathblock title">Proposition 1 5<span class="mathblock name"> (Archimedean property)</span>. </span>
 
 \(\forall r\in\R \left[r > 0 \Rarr \exists n\in\N\left[\frac{1}{n} < r\right]\right]\)
 </p>
 
 </div>
-<div class="mathblock proof" id="org8dc76e5">
+<div class="mathblock proof" id="orge6969ad">
 <p><span class="mathblock title">Proof. </span>
 
 It is equvalent to prove that \(\N\) has no upper bound.

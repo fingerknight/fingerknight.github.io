@@ -1,13 +1,8 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="description" content="">
-<title>Emacs 寄存器 registers</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noodp">
-<meta name="author" content=" Finger Knight ">
-<meta name="referrer" content="no-referrer"><link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<title>Emacs 寄存器 registers - 手指骑士的病房</title>
+<link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
 <body>
 <div class="header">
 <div class="home-page">
@@ -30,25 +25,57 @@
 
 <ul>
 <li>
-<a href="#org4fed9e6"> 简介 </a></li>
+<a href="#orgaa7d1b6"> 简介 </a></li>
 <li>
-<a href="#org9286a82"> 寄存器简介 </a></li>
+<a href="#orgba9abe1"> 寄存器简介 </a></li>
 <li>
-<a href="#org948f15a"> 位置寄存器 </a></li>
+<a href="#orgc64b772"> 位置寄存器 </a></li>
 <li>
-<a href="#org8d9077e"> 文本寄存器 </a></li>
+<a href="#orgac24681"> 文本寄存器 </a></li>
 <li>
-<a href="#org5396cac"> 矩形区域 Rectangles </a></li>
+<a href="#org7b2f87a"> 矩形区域 Rectangles </a></li>
 <li>
-<a href="#org4a0a67e"> 窗口配置寄存器 </a></li>
+<a href="#org464c073"> 窗口配置寄存器 </a></li>
 <li>
-<a href="#org2266742"> 数字寄存器 </a></li>
+<a href="#org7b66bb9"> 数字寄存器 </a></li>
 <li>
-<a href="#org94ea9ae"> 文件名寄存器 </a></li>
+<a href="#org947cc4d"> 文件名寄存器 </a></li>
 <li>
-<a href="#org01e21d2"> 键盘宏记录 </a></li>
+<a href="#org48abcfd"> 键盘宏记录 </a></li>
 <li>
-<a href="#org4ab9ce2"> 书签 </a></li>
+<a href="#org1e8cc25"> 书签 </a></li>
+</ul>
+</nav>
+</div>
+<h1 class="post-title"> Emacs 寄存器 registers </h1>
+<div class="post-date">2023-05-17</div>
+<div class="taglist"><a href="/tag/emacs"> #emacs </a>
+</div>
+<link rel="stylesheet" href="/static/highlight/dracula.css"><div class="toc">
+<h2 class="toc-title"> TOC </h2>
+<nav id="TableOfContents">
+
+<ul>
+<li>
+<a href="#orgaa7d1b6"> 简介 </a></li>
+<li>
+<a href="#orgba9abe1"> 寄存器简介 </a></li>
+<li>
+<a href="#orgc64b772"> 位置寄存器 </a></li>
+<li>
+<a href="#orgac24681"> 文本寄存器 </a></li>
+<li>
+<a href="#org7b2f87a"> 矩形区域 Rectangles </a></li>
+<li>
+<a href="#org464c073"> 窗口配置寄存器 </a></li>
+<li>
+<a href="#org7b66bb9"> 数字寄存器 </a></li>
+<li>
+<a href="#org947cc4d"> 文件名寄存器 </a></li>
+<li>
+<a href="#org48abcfd"> 键盘宏记录 </a></li>
+<li>
+<a href="#org1e8cc25"> 书签 </a></li>
 </ul>
 </nav>
 </div>
@@ -59,9 +86,9 @@
 </div>
 <div id="content">
 
-<div id="outline-container-org4fed9e6" class="outline-2">
-<h2 id="org4fed9e6">简介</h2>
-<div class="outline-text-2" id="text-org4fed9e6">
+<div id="outline-container-orgaa7d1b6" class="outline-2">
+<h2 id="orgaa7d1b6">简介</h2>
+<div class="outline-text-2" id="text-orgaa7d1b6">
 <p>
 顾名思义，寄存器就是用来存东西的地方，先把东西写到里边，需要的时候再拿出来，可以反复取。比如我正在写小说，我就可以把角色的名字、地名等存到寄存器里面，取的时候只需要几个命令就能拿出来。
 </p>
@@ -82,9 +109,9 @@ Emacs 的寄存器不止能存文本，其容许多种类型的数据：
 </div>
 </div>
 
-<div id="outline-container-org9286a82" class="outline-2">
-<h2 id="org9286a82">寄存器简介</h2>
-<div class="outline-text-2" id="text-org9286a82">
+<div id="outline-container-orgba9abe1" class="outline-2">
+<h2 id="orgba9abe1">寄存器简介</h2>
+<div class="outline-text-2" id="text-orgba9abe1">
 <p>
 每个寄存器要分配一个名字，可以是多种多样：
 </p>
@@ -113,9 +140,9 @@ Emacs 的寄存器不止能存文本，其容许多种类型的数据：
 </div>
 </div>
 
-<div id="outline-container-org948f15a" class="outline-2">
-<h2 id="org948f15a">位置寄存器</h2>
-<div class="outline-text-2" id="text-org948f15a">
+<div id="outline-container-orgc64b772" class="outline-2">
+<h2 id="orgc64b772">位置寄存器</h2>
+<div class="outline-text-2" id="text-orgc64b772">
 <ul class="org-ul">
 <li><code>C-x r SPC a</code> 把光标位置存到 a</li>
 <li><code>C-x r j a</code> 跳转到位置 a</li>
@@ -127,12 +154,12 @@ Emacs 的寄存器不止能存文本，其容许多种类型的数据：
 </div>
 </div>
 
-<div id="outline-container-org8d9077e" class="outline-2">
-<h2 id="org8d9077e">文本寄存器</h2>
-<div class="outline-text-2" id="text-org8d9077e">
+<div id="outline-container-orgac24681" class="outline-2">
+<h2 id="orgac24681">文本寄存器</h2>
+<div class="outline-text-2" id="text-orgac24681">
 <ul class="org-ul">
 <li><code>C-x r s a</code> 将一段文字存到 a 。<b>需要先选择(mark)一段文本</b>。</li>
-<li><code>M-x append-to-register RET a</code> 将选中的文本<b>插入</b>到 a 的文本<b>后面</b>，之前 a 的内容不会变。这个可以用命令 <code>C-x r + a</code> 来实现，但注意，如此的话之前的内容和要存的内容都必须是文本。（见<a href="#org2266742">数字寄存器</a>）</li>
+<li><code>M-x append-to-register RET a</code> 将选中的文本<b>插入</b>到 a 的文本<b>后面</b>，之前 a 的内容不会变。这个可以用命令 <code>C-x r + a</code> 来实现，但注意，如此的话之前的内容和要存的内容都必须是文本。（见<a href="#org7b66bb9">数字寄存器</a>）</li>
 <li><code>M-x prepend-to-register RET a</code> 将选中文本<b>插入到 a 的文本 *前面</b>，同样之前的内容不会变</li>
 </ul>
 <p>
@@ -153,16 +180,16 @@ Emacs 的寄存器不止能存文本，其容许多种类型的数据：
 </div>
 </div>
 
-<div id="outline-container-org5396cac" class="outline-2">
-<h2 id="org5396cac">矩形区域 Rectangles</h2>
-<div class="outline-text-2" id="text-org5396cac">
+<div id="outline-container-org7b2f87a" class="outline-2">
+<h2 id="org7b2f87a">矩形区域 Rectangles</h2>
+<div class="outline-text-2" id="text-org7b2f87a">
 <p>
 就是记录了一个矩形四个角的位置区域，比如像这种：
 </p>
 
 
-<figure id="orgd6fdeed">
-<a href="/assets/8043a34708314de5ad93ac49a1bdaf93.png" target="_blank"><img src="/assets/8043a34708314de5ad93ac49a1bdaf93.png" alt="2022-09-30_15-04-57.png"></a>
+<figure id="orgad87b1d">
+<a href="/assets/8043a34708314de5ad93ac49a1bdaf93.png" target="_blank" target="_blank"><img src="/assets/8043a34708314de5ad93ac49a1bdaf93.png" alt="8043a34708314de5ad93ac49a1bdaf93.png"></a>
 
 </figure>
 
@@ -177,9 +204,9 @@ Emacs 的寄存器不止能存文本，其容许多种类型的数据：
 </div>
 </div>
 
-<div id="outline-container-org4a0a67e" class="outline-2">
-<h2 id="org4a0a67e">窗口配置寄存器</h2>
-<div class="outline-text-2" id="text-org4a0a67e">
+<div id="outline-container-org464c073" class="outline-2">
+<h2 id="org464c073">窗口配置寄存器</h2>
+<div class="outline-text-2" id="text-org464c073">
 <ul class="org-ul">
 <li><code>C-x r w a</code> 将当前窗口的配置存到 a</li>
 <li><code>C-x r f a</code> 将所有窗口（包括其他 frame ）的配置存到 a</li>
@@ -191,20 +218,20 @@ Emacs 的寄存器不止能存文本，其容许多种类型的数据：
 </div>
 </div>
 
-<div id="outline-container-org2266742" class="outline-2">
-<h2 id="org2266742">数字寄存器</h2>
-<div class="outline-text-2" id="text-org2266742">
+<div id="outline-container-org7b66bb9" class="outline-2">
+<h2 id="org7b66bb9">数字寄存器</h2>
+<div class="outline-text-2" id="text-org7b66bb9">
 <ul class="org-ul">
 <li><code>C-u N C-x r n a</code> 前缀 N，表示将 数字 N 存入 a。如果没有前缀，即 <code>C-x r n a</code> 则会存入 0 。</li>
-<li><code>C-u N C-x r + a</code> 如果 a 存了数字，那么就给它加 N ，N 可以是负数，也就是减。如果 a 为文本或没东西，那么这个命令就等价于<a href="#org8d9077e">文本寄存器</a>里面的 <code>append-to-register</code> ，把上一次 mark 的文本存进 a 。</li>
+<li><code>C-u N C-x r + a</code> 如果 a 存了数字，那么就给它加 N ，N 可以是负数，也就是减。如果 a 为文本或没东西，那么这个命令就等价于<a href="#orgac24681">文本寄存器</a>里面的 <code>append-to-register</code> ，把上一次 mark 的文本存进 a 。</li>
 <li><code>C-x r i a</code> 从 a 中取数字，类似文本寄存器。</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org94ea9ae" class="outline-2">
-<h2 id="org94ea9ae">文件名寄存器</h2>
-<div class="outline-text-2" id="text-org94ea9ae">
+<div id="outline-container-org947cc4d" class="outline-2">
+<h2 id="org947cc4d">文件名寄存器</h2>
+<div class="outline-text-2" id="text-org947cc4d">
 <p>
 把文件名写到寄存器中，可以通过寄存器<b>快速打开</b>。这部分没有快捷命令，要手撸 elisp 代码。
 </p>
@@ -221,18 +248,18 @@ Emacs 的寄存器不止能存文本，其容许多种类型的数据：
 </div>
 </div>
 
-<div id="outline-container-org01e21d2" class="outline-2">
-<h2 id="org01e21d2">键盘宏记录</h2>
-<div class="outline-text-2" id="text-org01e21d2">
+<div id="outline-container-org48abcfd" class="outline-2">
+<h2 id="org48abcfd">键盘宏记录</h2>
+<div class="outline-text-2" id="text-org48abcfd">
 <p>
 这个专门留一篇文章讲，内容有点多。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org4ab9ce2" class="outline-2">
-<h2 id="org4ab9ce2">书签</h2>
-<div class="outline-text-2" id="text-org4ab9ce2">
+<div id="outline-container-org1e8cc25" class="outline-2">
+<h2 id="org1e8cc25">书签</h2>
+<div class="outline-text-2" id="text-org1e8cc25">
 <p>
 专门留一篇。
 </p>
