@@ -27,17 +27,9 @@
 <div class="taglist"><a href="/tag/calculus"> #calculus </a>
 <a href="/tag/math"> #math </a>
 </div>
-<link rel="stylesheet" href="/static/katex/katex.min.css"><div class="toc">
-
-</div>
-<h1 class="post-title"> Calculus 4 metric space </h1>
-<div class="post-date">2023-05-17</div>
-<div class="taglist"><a href="/tag/calculus"> #calculus </a>
-<a href="/tag/math"> #math </a>
-</div>
 </div>
 <div id="content">
-<div class="mathblock definition" id="orga1467e9">
+<div class="mathblock definition" id="org63a1e42">
 <p><span class="mathblock title">Definition 4 1. </span>
 
 Let \(X\) be a set. A function \(d: X\times X\to\R\) is called a <b>distance/metric</b> function on \(X\) if:
@@ -50,14 +42,14 @@ Let \(X\) be a set. A function \(d: X\times X\to\R\) is called a <b>distance/met
 
 </div>
 
-<div class="mathblock proposition" id="org4887454">
+<div class="mathblock proposition" id="org4fc04be">
 <p><span class="mathblock title">Proposition 4 2. </span>
 
 \(\forall x,y,z \in X[ |d(x,y) - d(y,z)| \le d(x,z)]\)
 </p>
 
 </div>
-<div class="mathblock proof" id="org31d0fe2">
+<div class="mathblock proof" id="orgb17844e">
 <p><span class="mathblock title">Proof. </span>
 
 By definition:
@@ -79,7 +71,7 @@ That is expected.
 </p>
 </div>
 
-<div class="mathblock definition" id="org0741aef">
+<div class="mathblock definition" id="org66d0f7e">
 <p><span class="mathblock title">Definition 4 3. </span>
 
 Let \((X,d)\) be a metric space, and \(S\sube X\).
@@ -93,7 +85,7 @@ Let \((X,d)\) be a metric space, and \(S\sube X\).
 
 </div>
 
-<div class="mathblock proposition" id="org2590b93">
+<div class="mathblock proposition" id="org162be09">
 <p><span class="mathblock title">Proposition 4 4. </span>
 
 Let \((X,d)\) be a metric space, \(x_0\in X\), and \(r>0\).
@@ -104,7 +96,7 @@ Let \((X,d)\) be a metric space, \(x_0\in X\), and \(r>0\).
 </ol>
 
 </div>
-<div class="mathblock proof" id="orgd76cf52">
+<div class="mathblock proof" id="org19512e5">
 <p><span class="mathblock title">Proof. </span>
 
 <i>Proof 1.</i>
@@ -156,7 +148,7 @@ Therefore, \(B_{r'}(x) \sube A\).
 </p>
 </div>
 
-<div class="mathblock proposition" id="orga0e5033">
+<div class="mathblock proposition" id="orge1f2e1b">
 <p><span class="mathblock title">Proposition 4 5. </span>
 
 Let (X,d) be a metric space. Then
@@ -168,7 +160,7 @@ Let (X,d) be a metric space. Then
 </ol>
 
 </div>
-<div class="mathblock proof" id="orgdaf77cf">
+<div class="mathblock proof" id="org8893754">
 <p><span class="mathblock title">Proof. </span>
 
 <i>Proof 1.</i> Were this false, then we <b>can</b> find an \(x_0 \in \varnothing\)&#x2026; however, there is not any elements in \(\varnothing\). Thus \(\varnothing\) is open logically.
@@ -184,7 +176,7 @@ Let (X,d) be a metric space. Then
 </p>
 </div>
 
-<div class="mathblock proposition" id="org4be70d7">
+<div class="mathblock proposition" id="org0607f6f">
 <p><span class="mathblock title">Proposition 4 6. </span>
 
 The following two statements are equivalent:
@@ -195,7 +187,7 @@ The following two statements are equivalent:
 </ol>
 
 </div>
-<div class="mathblock proof" id="orgd3d02e5">
+<div class="mathblock proof" id="orge74f452">
 <p><span class="mathblock title">Proof. </span>
 
 (\(\Rarr\))
@@ -215,7 +207,7 @@ For any real number \(\epsilon > 0\), similarly choose an open set \(U := \{u\in
 </p>
 </div>
 
-<div class="mathblock definition" id="orgfeba72d">
+<div class="mathblock definition" id="org635ee1a">
 <p><span class="mathblock title">Definition 4 7. </span>
 
 We say a set \(S\sube X\) is <b>bounded</b> with respect to \(d\) if \(\exists r > 0, x_0\in X[S\sube B_r(x_0)]\).
@@ -223,14 +215,14 @@ We say a set \(S\sube X\) is <b>bounded</b> with respect to \(d\) if \(\exists r
 
 </div>
 
-<div class="mathblock theorem" id="orgdd3ae0a">
+<div class="mathblock theorem" id="org9a9b514">
 <p><span class="mathblock title">Theorem 4 8<span class="mathblock name"> (Bolzano-Weierstrass theorem)</span>. </span>
 
 If \(a_n\in\R^m(n\in\N)\) is bounded. Then there exists a subsequence \(a_{n(n')}(n'\in\N)\) which is convergent.
 </p>
 
 </div>
-<div class="mathblock proof" id="org7dd22de">
+<div class="mathblock proof" id="org790db03">
 <p><span class="mathblock title">Proof. </span>
 
 Choose \(M > 0\), let \(Q_0 := [-M,M]\times[-M,M]\), such that \(a_n\in Q_0\) for all \(n\in\N\). This is possible since \(a_n\) is bounded.
@@ -266,14 +258,14 @@ At last, it can be seen that \(\lim_{k\to\infty}a_{n_k} = a\). Given a radius, t
 </p>
 </div>
 
-<div class="mathblock proposition" id="org38d7f33">
+<div class="mathblock proposition" id="orgb83d661">
 <p><span class="mathblock title">Proposition 4 9. </span>
 
 Let \((X,d)\) be a metric space, \(F\sube X\). \(F\) is a closed set of \(X\) iff \(\forall a_n\in F(n\in\N)[\lim_{n\to\infty} a_n = a(\in X) \Rarr a \in F]\).
 </p>
 
 </div>
-<div class="mathblock proof" id="org53566ff">
+<div class="mathblock proof" id="org751a9ab">
 <p><span class="mathblock title">Proof. </span>
 
 (\(\Rarr\))
@@ -329,7 +321,7 @@ However, this leads a contradiction since all the element of \(a_n\) is in \(F\)
 </p>
 </div>
 
-<div class="mathblock definition" id="orgcbf73b2">
+<div class="mathblock definition" id="org9c404f3">
 <p><span class="mathblock title">Definition 4 10. </span>
 
 Let \((X,d)\) be a metric space, \(S\sube X\), and \(O_\alpha\) is a seires of open sets of \(X\) where \(\alpha\in A\).
@@ -341,14 +333,14 @@ Let \((X,d)\) be a metric space, \(S\sube X\), and \(O_\alpha\) is a seires of o
 
 </div>
 
-<div class="mathblock theorem" id="orgd23362f">
+<div class="mathblock theorem" id="orgf22b225">
 <p><span class="mathblock title">Theorem 4 11<span class="mathblock name"> (Heine-Borel theorem)</span>. </span>
 
 Let \(S\sube\R^m\). \(S\) is compact iff \(S\) is bounded and closed.
 </p>
 
 </div>
-<div class="mathblock proof" id="orgc3e5817">
+<div class="mathblock proof" id="orgcb60bf9">
 <p><span class="mathblock title">Proof. </span>
 
 (\(\Rarr\))
@@ -432,7 +424,7 @@ However, all \(Q_n\) we choose can not be coverd by finitely many open sets, we 
 </p>
 </div>
 
-<div class="mathblock theorem" id="org93227e3">
+<div class="mathblock theorem" id="org24bb1f3">
 <p><span class="mathblock title">Theorem 4 12<span class="mathblock name"> (the Lebesgue number of an open cover)</span>. </span>
 
 Let \((X,d)\) be a metric space and \(K(\sube X)\) a compact set.
@@ -443,7 +435,7 @@ Let \((X,d)\) be a metric space and \(K(\sube X)\) a compact set.
 </p>
 
 </div>
-<div class="mathblock proof" id="orgf1b70d3">
+<div class="mathblock proof" id="org4c5d0a5">
 <p><span class="mathblock title">Proof. </span>
 
 For every \(p\in K\), there exists \(\alpha(p) \in A\) such that \(p\in O_{\alpha(p)}\). \(O_{\alpha(p)}\) is open, and hence \(\exists r(p) > 0 [B_{r(p)}(p) \sube O_{\alpha(p)}]\).
@@ -483,7 +475,7 @@ Thus, \(x'\in B_{r(p_j)}(p_j)\sube O_{\alpha(p_j)}\), i.e., \(B_\delta(x) \sube 
 </p>
 </div>
 
-<div class="mathblock remark" id="orgf8b97ef">
+<div class="mathblock remark" id="orgfd5dfe9">
 <p><span class="mathblock title">Remark 4 13. </span>
 
 Such a \(\delta > 0\) is called a <b>Lebesgue number</b> fo the given open cover \(O_\alpha(\alpha\in A)\).
@@ -491,7 +483,7 @@ Such a \(\delta > 0\) is called a <b>Lebesgue number</b> fo the given open cover
 
 </div>
 
-<div class="mathblock definition" id="orgc1d9b5b">
+<div class="mathblock definition" id="orgc894efb">
 <p><span class="mathblock title">Definition 4 14. </span>
 
 Let (X,d) be a metric space, and \(S\sube X\). A point \(x\in X\) is called
@@ -504,7 +496,7 @@ Let (X,d) be a metric space, and \(S\sube X\). A point \(x\in X\) is called
 
 </div>
 
-<div class="mathblock proposition" id="org1259200">
+<div class="mathblock proposition" id="org216f644">
 <p><span class="mathblock title">Proposition 4 15. </span>
 
 Let \((X,d)\) be a metric space, \(S\sube X\). Notation: \(A(x), I(x), L(x)\) means \(x\) is an accumulation/isolation/limit point of \(S\) respectively.
@@ -516,7 +508,7 @@ Let \((X,d)\) be a metric space, \(S\sube X\). Notation: \(A(x), I(x), L(x)\) me
 </ol>
 
 </div>
-<div class="mathblock proof" id="org4e672ae">
+<div class="mathblock proof" id="orgf2532f0">
 <p><span class="mathblock title">Proof. </span>
 
 For convenience, let \(A := \{x \in S| A(x)\}, I := \{x \in S | I(x)\}, L := \{x \in S | L(x)\}\).

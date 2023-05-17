@@ -25,79 +25,34 @@
 
 <ul>
 <li>
-<a href="#org642b335"> 起因 </a></li>
+<a href="#orgef66708"> 起因 </a></li>
 <li>
-<a href="#org5b59e89"> 安装 </a></li>
+<a href="#org5ac1603"> 安装 </a></li>
 <li>
-<a href="#org636ba29"> 基本配置 </a>
+<a href="#orgba4bb03"> 基本配置 </a>
 <ul>
 <li>
-<a href="#org8e2a762"> 快捷键 </a></li>
+<a href="#orgc338254"> 快捷键 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org8119a64"> 插件安装 </a>
+<a href="#orgf55d0c7"> 插件安装 </a>
 <ul>
 <li>
-<a href="#org7185cab"> 准备 </a></li>
+<a href="#orgf0f2ae6"> 准备 </a></li>
 <li>
-<a href="#orgfd81dd8"> 使用 </a></li>
+<a href="#orgc87638e"> 使用 </a></li>
 <li>
-<a href="#orgf6272ff"> 插件列表 </a></li>
+<a href="#orge1323b4"> 插件列表 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org12334ab"> Miscellaneous </a>
+<a href="#org653ad7c"> Miscellaneous </a>
 <ul>
 <li>
-<a href="#orgc7eeb11"> 修改 Alt + Tab 的行为 </a></li>
+<a href="#orgd907828"> 修改 Alt + Tab 的行为 </a></li>
 <li>
-<a href="#org018a14c"> 卸除 KDE </a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-<h1 class="post-title"> Arch linux 从 kde 转移到 gnome </h1>
-<div class="post-date">2023-05-17</div>
-<div class="taglist"><a href="/tag/archlinux"> #archlinux </a>
-<a href="/tag/kde"> #kde </a>
-<a href="/tag/gnome"> #gnome </a>
-</div>
-<link rel="stylesheet" href="/static/highlight/dracula.css"><div class="toc">
-<h2 class="toc-title"> TOC </h2>
-<nav id="TableOfContents">
-
-<ul>
-<li>
-<a href="#org642b335"> 起因 </a></li>
-<li>
-<a href="#org5b59e89"> 安装 </a></li>
-<li>
-<a href="#org636ba29"> 基本配置 </a>
-<ul>
-<li>
-<a href="#org8e2a762"> 快捷键 </a></li>
-</ul>
-</li>
-<li>
-<a href="#org8119a64"> 插件安装 </a>
-<ul>
-<li>
-<a href="#org7185cab"> 准备 </a></li>
-<li>
-<a href="#orgfd81dd8"> 使用 </a></li>
-<li>
-<a href="#orgf6272ff"> 插件列表 </a></li>
-</ul>
-</li>
-<li>
-<a href="#org12334ab"> Miscellaneous </a>
-<ul>
-<li>
-<a href="#orgc7eeb11"> 修改 Alt + Tab 的行为 </a></li>
-<li>
-<a href="#org018a14c"> 卸除 KDE </a></li>
+<a href="#org86582eb"> 卸除 KDE </a></li>
 </ul>
 </li>
 </ul>
@@ -112,9 +67,9 @@
 </div>
 <div id="content">
 
-<div id="outline-container-org642b335" class="outline-2">
-<h2 id="org642b335">起因</h2>
-<div class="outline-text-2" id="text-org642b335">
+<div id="outline-container-orgef66708" class="outline-2">
+<h2 id="orgef66708">起因</h2>
+<div class="outline-text-2" id="text-orgef66708">
 <p>
 最开始用的是 <a href="https://kde.org" target="_blank">KDE</a> 桌面，有一说一，它的 UI 真的很漂亮，自定义起来也很方便，很多东西都是可以直接用鼠标调的，不用真的去改配置文件。但是它最大的问题是<b>不稳定</b>，这也是我替换它的主要原因。时不时会遇到标题栏卡住、任务栏卡住的情况，鼠标键盘还能动，视频音乐也继续放着，但是鼠标关不掉窗口，只能重启解决。偶尔出现几次还能接受，但它最近频发让我有点难顶，因此打算换一个桌面 &#x2013; 等到后面如果 kde 6 优化起飞的话还是会换会 KDE, 用着真的爽。
 </p>
@@ -125,9 +80,9 @@
 </div>
 </div>
 
-<div id="outline-container-org5b59e89" class="outline-2">
-<h2 id="org5b59e89">安装</h2>
-<div class="outline-text-2" id="text-org5b59e89">
+<div id="outline-container-org5ac1603" class="outline-2">
+<h2 id="org5ac1603">安装</h2>
+<div class="outline-text-2" id="text-org5ac1603">
 <div class="org-src-container">
 <pre><code class="language-bash">sudo pacman -S gnome gdm gnome-tweaks gnome-browser-connector</code></pre>
 </div>
@@ -152,17 +107,17 @@ sudo systemctl disable gdm --now</code></pre>
 </div>
 </div>
 
-<div id="outline-container-org636ba29" class="outline-2">
-<h2 id="org636ba29">基本配置</h2>
-<div class="outline-text-2" id="text-org636ba29">
+<div id="outline-container-orgba4bb03" class="outline-2">
+<h2 id="orgba4bb03">基本配置</h2>
+<div class="outline-text-2" id="text-orgba4bb03">
 <p>
 这里不过多解释，通过 <code>系统设置</code> 和 <code>gnome-tweaks</code> 配置就行了。
 </p>
 </div>
 
-<div id="outline-container-org8e2a762" class="outline-3">
-<h3 id="org8e2a762">快捷键</h3>
-<div class="outline-text-3" id="text-org8e2a762">
+<div id="outline-container-orgc338254" class="outline-3">
+<h3 id="orgc338254">快捷键</h3>
+<div class="outline-text-3" id="text-orgc338254">
 <p>
 <code>系统设置</code> &gt; <code>键盘</code> 里面修改
 </p>
@@ -170,13 +125,13 @@ sudo systemctl disable gdm --now</code></pre>
 </div>
 </div>
 
-<div id="outline-container-org8119a64" class="outline-2">
-<h2 id="org8119a64">插件安装</h2>
-<div class="outline-text-2" id="text-org8119a64">
+<div id="outline-container-orgf55d0c7" class="outline-2">
+<h2 id="orgf55d0c7">插件安装</h2>
+<div class="outline-text-2" id="text-orgf55d0c7">
 </div>
-<div id="outline-container-org7185cab" class="outline-3">
-<h3 id="org7185cab">准备</h3>
-<div class="outline-text-3" id="text-org7185cab">
+<div id="outline-container-orgf0f2ae6" class="outline-3">
+<h3 id="orgf0f2ae6">准备</h3>
+<div class="outline-text-3" id="text-orgf0f2ae6">
 <p>
 过程可参见：<a href="https://wiki.gnome.org/action/show/Projects/GnomeShellIntegration/Installation" target="_blank">Projects/GnomeShellIntegration/Installation - GNOME Wiki!</a>
 </p>
@@ -188,18 +143,18 @@ sudo systemctl disable gdm --now</code></pre>
 </div>
 </div>
 
-<div id="outline-container-orgfd81dd8" class="outline-3">
-<h3 id="orgfd81dd8">使用</h3>
-<div class="outline-text-3" id="text-orgfd81dd8">
+<div id="outline-container-orgc87638e" class="outline-3">
+<h3 id="orgc87638e">使用</h3>
+<div class="outline-text-3" id="text-orgc87638e">
 <p>
 通过点击浏览器插件，或者直接访问 <a href="https://extensions.gnome.org" target="_blank">https://extensions.gnome.org</a> 进入插件管理界面。进入 <code>Installed entensions</code> 或者 <a href="https://extensions.gnome.org/local/" target="_blank">https://extensions.gnome.org/local/</a> 查看本地已安装的插件。注意要把 <code>Disable all extensions</code> 置为 <code>Off</code>
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgf6272ff" class="outline-3">
-<h3 id="orgf6272ff">插件列表</h3>
-<div class="outline-text-3" id="text-orgf6272ff">
+<div id="outline-container-orge1323b4" class="outline-3">
+<h3 id="orge1323b4">插件列表</h3>
+<div class="outline-text-3" id="text-orge1323b4">
 <ul class="org-ul">
 <li><a href="https://extensions.gnome.org/extension/779/clipboard-indicator/" target="_blank">Clipboard Indicator</a>: 任务栏添加剪切板托盘</li>
 <li><a href="https://extensions.gnome.org/extension/307/dash-to-dock/" target="_blank">Dash to Dock</a>: Dock 配置</li>
@@ -219,22 +174,22 @@ sudo systemctl disable gdm --now</code></pre>
 </div>
 </div>
 
-<div id="outline-container-org12334ab" class="outline-2">
-<h2 id="org12334ab">Miscellaneous</h2>
-<div class="outline-text-2" id="text-org12334ab">
+<div id="outline-container-org653ad7c" class="outline-2">
+<h2 id="org653ad7c">Miscellaneous</h2>
+<div class="outline-text-2" id="text-org653ad7c">
 </div>
-<div id="outline-container-orgc7eeb11" class="outline-3">
-<h3 id="orgc7eeb11">修改 Alt + Tab 的行为</h3>
-<div class="outline-text-3" id="text-orgc7eeb11">
+<div id="outline-container-orgd907828" class="outline-3">
+<h3 id="orgd907828">修改 Alt + Tab 的行为</h3>
+<div class="outline-text-3" id="text-orgd907828">
 <p>
 gnome 的 <code>Alt+Tab</code> 默认是切换应用，如果一个应用开了多个窗口，只能转到最近使用的一个，或者在使用方向键控制。在设置里将 <code>Alt+Tab</code> 绑定到 <code>交换窗口</code> 即可 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org018a14c" class="outline-3">
-<h3 id="org018a14c">卸除 KDE</h3>
-<div class="outline-text-3" id="text-org018a14c">
+<div id="outline-container-org86582eb" class="outline-3">
+<h3 id="org86582eb">卸除 KDE</h3>
+<div class="outline-text-3" id="text-org86582eb">
 <p>
 先把基本的东西卸除 <sup>[<a id="fnr:2.1" class="footref" href="#fn:2">2</a>]</sup>：
 </p>
