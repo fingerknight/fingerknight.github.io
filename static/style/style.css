@@ -19,7 +19,7 @@
     --min-table-width: 900px;
     --max-table-width: 980px;
     
-    --text-culor: var(--foreground);
+    --text-color: var(--foreground);
     --link-content: var(--red);
     --link-hover: var(--purple);
     --quote-bg-color: var(--selection);
@@ -79,6 +79,7 @@ body{
 
 .main{
     margin: 0 auto;
+    width: var(--page-width);
 }
 
 /* 页眉 */
@@ -88,7 +89,6 @@ body{
     padding: 1rem 0 1rem 0;
     margin-bottom: 1rem;
     border-bottom: 1px solid;
-    width: var(--page-width);
     display: flex;
     background-color: var(--background-darker);
 }
@@ -133,7 +133,6 @@ body{
 
 /* CONTENT */
 #content {
-    width: var(--page-width);
     padding: 1rem 1rem;
     min-height: 600px;
 }
@@ -365,10 +364,10 @@ body{
 /* hyperlink */
 /* TODO: use a.content-link */
 #content a:visited{
-    color: var(--pink);
+    color: var(--red);
 }
 #content a:link{
-    color:var(--pink);
+    color:var(--red);
 }
 #content a:hover{
     color: var(--link-hover);
@@ -540,4 +539,11 @@ span.mathblock.name {
 span.QED {
     float: right;
     font-size: 1.5rem;
+}
+
+pre {
+    background-color: var(--selection);
+    padding: 1em;
+    border-radius: 10px;
+}
 }
