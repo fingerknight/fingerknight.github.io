@@ -1,12 +1,17 @@
 /* 定义 */
 :root {
-    --one-light-fg: #494b53;
-    --one-light-bg: #f0f0f0;
-    --one-light-blue: #4078F2;
-    --one-light-orange: #c18401;
-    --one-light-pink: #CA1243;
-    --one-light-gray: #A0A1A7;
-    --one-light-purple: #A626A4;
+    --background-darker: rgba(30, 31, 41, 230);
+    --background: #282a36;
+    --selection: #44475a;
+    --foreground: #f8f8f2;
+    --comment: #6272a4;
+    --cyan: #8be9fd;
+    --green: #50fa7b;
+    --orange: #ffb86c;
+    --pink: #ff79c6;
+    --purple: #bd93f9;
+    --red: #ff5555;
+    --yellow: #f1fa8c;
 
     --page-width: 1000px;
     --max-image-width: 900px;
@@ -14,12 +19,11 @@
     --min-table-width: 900px;
     --max-table-width: 980px;
     
-    --bg-culor: var(--one-light-bg);
-    --text-culor: var(--one-light-fg);
-    --link-content: var(--one-light-purple);
-    --link-hover: var(--one-light-blue);
-    --quote-bg-color: var(--one-light-gray);
-    --inline-code-bg-color: #f5f5f5;
+    --text-culor: var(--foreground);
+    --link-content: var(--red);
+    --link-hover: var(--purple);
+    --quote-bg-color: var(--selection);
+    --inline-code-bg-color: var(--selection);
 }
 
 /* 全局设置 */
@@ -28,7 +32,7 @@ html {
 }
 body {
     color: var(--text-color);
-    background-color: var(--bg-color);
+    background-color: var(--background);
     margin: 0px;
 }
 body a {
@@ -52,6 +56,21 @@ body h1,h2,h3,h4,h5,h6 {
     font-family: sans-serif;
     margin: 1rem 0 0.5rem 0;
 }
+body h1 {
+    color: var(--cyan);
+}
+body h2 {
+    color: var(--pink);
+}
+body h3 {
+    color: var(--purple);
+}
+body h4 {
+    color: var(--green);
+}
+body h5 {
+    color: var(--yellow);
+}
 /* 页面设置 */
 
 body{
@@ -60,9 +79,7 @@ body{
 
 .main{
     margin: 0 auto;
-    width: var(--page-width);
 }
-
 
 /* 页眉 */
 .header {
@@ -73,7 +90,7 @@ body{
     border-bottom: 1px solid;
     width: var(--page-width);
     display: flex;
-    background-color: var(--bg-color);
+    background-color: var(--background-darker);
 }
 
 .header .home-page {
@@ -111,11 +128,12 @@ body{
 }
 
 .footer center {
-    color: var(--one-light-gray);
+    color: var(--comment);
 }
 
 /* CONTENT */
 #content {
+    width: var(--page-width);
     padding: 1rem 1rem;
     min-height: 600px;
 }
@@ -170,7 +188,7 @@ body{
 }
 
 #content .post-date {
-    color: var(--one-light-gray);
+    color: var(--comment);
 }
 
 #content .taglist {
@@ -190,7 +208,7 @@ body{
 }
 
 #content .tag-item sup {
-    color: var(--one-light-gray);
+    color: var(--comment);
     text-decoration: none;
 }
 
@@ -219,7 +237,7 @@ body{
 }
 
 #content .summary-date {
-    color: var(--one-light-gray);
+    color: var(--comment);
     margin-left: auto;
     margin-right: 2rem;
 }
@@ -244,7 +262,7 @@ body{
 }
 
 #preamble > .post-date {
-    color: var(--one-light-gray);
+    color: var(--comment);
     text-align: center;
 }
 
@@ -281,7 +299,7 @@ body{
 }
 
 #content figcaption {
-    color: var(--one-light-gray);
+    color: var(--comment);
     font-size: 0.9rem;
     padding: 0.3rem 0 0.15rem 0;
 }
@@ -295,11 +313,11 @@ body{
 #content blockquote {
     margin: 1rem auto;
     margin-top: 0;
-    background-color: var(--bg-color);
+    background-color: var(--background);
     border: solid 2px #757575;
     display: block;
     padding: 1rem 1.5rem;
-    color: var(--one-light-gray);
+    color: var(--comment);
     border-radius: 15px;
     font-size: 0.9rem;
     font-style: italic;
@@ -325,7 +343,7 @@ body{
 }
 
 #content .org-ul li::before,.org-ol li::before{
-    color: var(--one-light-blue);
+    color: var(--cyan);
     font-weight: bold;
     margin-right: 0.25rem;
 }
@@ -347,10 +365,10 @@ body{
 /* hyperlink */
 /* TODO: use a.content-link */
 #content a:visited{
-    color: var(--one-light-pink);
+    color: var(--pink);
 }
 #content a:link{
-    color:var(--one-light-pink);
+    color:var(--pink);
 }
 #content a:hover{
     color: var(--link-hover);
@@ -361,13 +379,13 @@ body{
 
 /* Code */
 #content p code {
-    color: var(--one-light-orange);
+    color: var(--orange);
     background-color: var(--inline-code-bg-color);
     padding: 0 0.3rem;
 }
 
 #content li code {
-    color: var(--one-light-orange);
+    color: var(--orange);
     background-color: var(--inline-code-bg-color);
     padding: 0 0.3rem;
 }
@@ -403,15 +421,15 @@ body{
 }
 
 #footnotes li {
-    color: var(--one-light-gray);
+    color: var(--comment);
 }
 
 
 /* Table */
 #content table {
     margin: 0 auto 1rem auto;
-    border-top: medium solid var(--one-light-fg);
-    border-bottom: medium solid var(--one-light-fg);
+    border-top: medium solid var(--foreground);
+    border-bottom: medium solid var(--foreground);
     min-width: var(--min-table-width);
     max-width: var(--max-table-width);
     text-align: center;
@@ -419,7 +437,7 @@ body{
 }
 
 #content table tr:first-child {
-    border-bottom: thin solid var(--one-light-fg);
+    border-bottom: thin solid var(--foreground);
     font-weight: bold;
 }
 
@@ -432,7 +450,7 @@ body{
 }
 
 #content caption {
-    color: var(--one-light-gray);
+    color: var(--comment);
     padding: 0.15rem 0 0.3rem;
     font-size: 0.9rem;
 }
@@ -481,15 +499,15 @@ body{
     content: "\2022";
 }
 #TableOfContents > ul > li:before {
-    color: var(--one-light-pink);
+    color: var(--pink);
 }
 
 #TableOfContents > ul > li > ul > li:before {
-    color: var(--one-light-blue);
+    color: var(--cyan);
 }
 
 #TableOfContents > ul > li > ul > li > ul > li:before {
-    color: var(--one-light-orange);    
+    color: var(--orange);    
 }
 
 
