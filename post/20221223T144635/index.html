@@ -16,68 +16,71 @@
 <div class="nav item">
 <a href="/about">关于</a>
 </div>
+<div class="nav item">
+<a href="/emacs">Emacs</a>
+</div>
 </div>
 </div>
 <div class="main">
-<div id="preamble" class="status"><link rel="stylesheet" href="/static/highlight/dracula.css"><div class="toc">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/pygments/dracula.css"><div class="toc">
 <h2 class="toc-title"> TOC </h2>
 <nav id="TableOfContents">
 
 <ul>
 <li>
-<a href="#orgfc483f0"> 简介 </a></li>
+<a href="#orgc19cb8a"> 简介 </a></li>
 <li>
-<a href="#orgf8aeb4f"> 工具 </a></li>
+<a href="#org4aa1b3f"> 工具 </a></li>
 <li>
-<a href="#orga9a1ddd"> 搭建流程 </a>
+<a href="#org3916f3f"> 搭建流程 </a>
 <ul>
 <li>
-<a href="#org2423f04"> 安装 Hugo </a></li>
+<a href="#orgd03dcef"> 安装 Hugo </a></li>
 <li>
-<a href="#orgcf1020d"> Github Page 配置 </a></li>
+<a href="#orga83fc48"> Github Page 配置 </a></li>
 <li>
-<a href="#org5a20cf6"> Hugo 使用 </a></li>
+<a href="#org9ee696a"> Hugo 使用 </a></li>
 <li>
-<a href="#orge792043"> 项目目录修改 </a></li>
+<a href="#orge14d70a"> 项目目录修改 </a></li>
 <li>
-<a href="#org1684656"> Hugo 主题 </a></li>
+<a href="#org7c249f9"> Hugo 主题 </a></li>
 <li>
-<a href="#org3e986b5"> 我的 Hugo 配置 </a>
+<a href="#orgf757767"> 我的 Hugo 配置 </a>
 <ul>
 <li>
-<a href="#org4a45caa"> 关于资源目录 </a></li>
+<a href="#org92eef9b"> 关于资源目录 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org031d297"> 安装 ox-hugo </a></li>
+<a href="#orgd7c2b91"> 安装 ox-hugo </a></li>
 <li>
-<a href="#orgf85ab5b"> ox-hugo 使用 </a></li>
+<a href="#org8f45bf6"> ox-hugo 使用 </a></li>
 <li>
-<a href="#org35ff09f"> 设置评论 </a>
+<a href="#orgd859a52"> 设置评论 </a>
 <ul>
 <li>
-<a href="#org021b8c0"> LoveIt 的 Bug </a></li>
+<a href="#org6c3dff6"> LoveIt 的 Bug </a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<a href="#org4da8fb0"> 工作流程 </a></li>
+<a href="#org00b8b36"> 工作流程 </a></li>
 <li>
-<a href="#org0649d8b"> 自动化 </a></li>
+<a href="#org8bdbf37"> 自动化 </a></li>
 <li>
-<a href="#org8575d8b"> 优化 </a>
+<a href="#orgdfbc7b5"> 优化 </a>
 <ul>
 <li>
-<a href="#org1c92eb3"> CDN 设置 </a></li>
+<a href="#org8052256"> CDN 设置 </a></li>
 <li>
-<a href="#orgee48042"> Cloudflare Page </a></li>
+<a href="#org6b88938"> Cloudflare Page </a></li>
 <li>
-<a href="#org7e83771"> Cloudflare + DNS </a></li>
+<a href="#org2b20049"> Cloudflare + DNS </a></li>
 </ul>
 </li>
 <li>
-<a href="#org1bbb2c6"> 后记 </a></li>
+<a href="#org431581e"> 后记 </a></li>
 </ul>
 </nav>
 </div>
@@ -92,18 +95,18 @@
 </div>
 <div id="content">
 
-<div id="outline-container-orgfc483f0" class="outline-2">
-<h2 id="orgfc483f0">简介</h2>
-<div class="outline-text-2" id="text-orgfc483f0">
+<div id="outline-container-orgc19cb8a" class="outline-2">
+<h2 id="orgc19cb8a">简介</h2>
+<div class="outline-text-2" id="text-orgc19cb8a">
 <p>
 现在已经全面转战 Emacs 和 Org Mode 了，想搭个人博客，折腾了很久。这里记录搭建思路和过程，供参考。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgf8aeb4f" class="outline-2">
-<h2 id="orgf8aeb4f">工具</h2>
-<div class="outline-text-2" id="text-orgf8aeb4f">
+<div id="outline-container-org4aa1b3f" class="outline-2">
+<h2 id="org4aa1b3f">工具</h2>
+<div class="outline-text-2" id="text-org4aa1b3f">
 <ul class="org-ul">
 <li>Emacs + Org Mode</li>
 <li>Hugo 静态站点生成制作</li>
@@ -114,36 +117,37 @@
 </div>
 </div>
 
-<div id="outline-container-orga9a1ddd" class="outline-2">
-<h2 id="orga9a1ddd">搭建流程</h2>
-<div class="outline-text-2" id="text-orga9a1ddd">
+<div id="outline-container-org3916f3f" class="outline-2">
+<h2 id="org3916f3f">搭建流程</h2>
+<div class="outline-text-2" id="text-org3916f3f">
 <p>
 假定已经安装了 <b>Emacs</b> 和 <b>Git</b> 。
 </p>
 </div>
 
-<div id="outline-container-org2423f04" class="outline-3">
-<h3 id="org2423f04">安装 Hugo</h3>
-<div class="outline-text-3" id="text-org2423f04">
+<div id="outline-container-orgd03dcef" class="outline-3">
+<h3 id="orgd03dcef">安装 Hugo</h3>
+<div class="outline-text-3" id="text-orgd03dcef">
 <p>
 官方的下载页面在这里 <a href="https://gohugo.io/getting-started/installing" target="_blank">https://gohugo.io/getting-started/installing</a> ，根据自己的系统去安装即可。
 </p>
 
 <div class="org-src-container">
-<pre><code class="language-bash">sudo pacman -S hugo</code></pre>
+<pre class="bash"> sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>hugo
+ </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgcf1020d" class="outline-3">
-<h3 id="orgcf1020d">Github Page 配置</h3>
-<div class="outline-text-3" id="text-orgcf1020d">
+<div id="outline-container-orga83fc48" class="outline-3">
+<h3 id="orga83fc48">Github Page 配置</h3>
+<div class="outline-text-3" id="text-orga83fc48">
 <p>
 首先，新建一个仓库，仓库名必须是 <code>&lt;Name&gt;.github.io</code> ， <code>&lt;Name&gt;</code> 是的 github 的昵称。
 </p>
 
 
-<figure id="orgca743dc">
+<figure id="orgcb70bd9">
 <a href="/assets/0ee8e396ec7b2bad1850f4e7eec4064d.png" target="_blank" target="_blank"><img src="/assets/0ee8e396ec7b2bad1850f4e7eec4064d.png" alt="0ee8e396ec7b2bad1850f4e7eec4064d.png"></a>
 
 </figure>
@@ -152,16 +156,17 @@
 如果新建时选了自动建 <code>README.md</code> ，就好了。如果没有执行（里面的 <code>Name</code> 是 github 昵称）：
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash"># 随便一个 REMAD.md
-echo "# Just a README" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-# 新基础分支
-git branch -M main
-git remote add origin git@github.com:Name/Name.github.io.git
-# 提交到基础分支
-git push -u origin main</code></pre>
+<pre class="bash"> #<span class="w"> </span>随便一个<span class="w"> </span>REMAD.md
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;# Just a README&quot;</span><span class="w"> </span><span class="p">&amp;</span>gt<span class="p">;&amp;</span>gt<span class="p">;</span><span class="w"> </span>README.md
+git<span class="w"> </span>init
+git<span class="w"> </span>add<span class="w"> </span>README.md
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;first commit&quot;</span>
+#<span class="w"> </span>新基础分支
+git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:Name/Name.github.io.git
+#<span class="w"> </span>提交到基础分支
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+ </pre>
 </div>
 
 <p>
@@ -169,7 +174,7 @@ git push -u origin main</code></pre>
 </p>
 
 
-<figure id="orgce87a66">
+<figure id="org11ea855">
 <a href="/assets/a8a20d8dfdd1a69a0ac4a00e4025f44d.png" target="_blank" target="_blank"><img src="/assets/a8a20d8dfdd1a69a0ac4a00e4025f44d.png" alt="a8a20d8dfdd1a69a0ac4a00e4025f44d.png"></a>
 
 </figure>
@@ -180,20 +185,21 @@ git push -u origin main</code></pre>
 </div>
 </div>
 
-<div id="outline-container-org5a20cf6" class="outline-3">
-<h3 id="org5a20cf6">Hugo 使用</h3>
-<div class="outline-text-3" id="text-org5a20cf6">
+<div id="outline-container-org9ee696a" class="outline-3">
+<h3 id="org9ee696a">Hugo 使用</h3>
+<div class="outline-text-3" id="text-org9ee696a">
 <p>
 新建项目， <code>blog</code> 是项目目录。
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash">hugo new site blog</code></pre>
+<pre class="bash"> hugo<span class="w"> </span>new<span class="w"> </span>site<span class="w"> </span>blog
+ </pre>
 </div>
 
 <p>
 然后会生成如下的项目：
 </p>
-<pre class="example" id="org448f1ec">
+<pre class="example" id="orgeb6c5b1">
 ├── blog
 │   ├── archetypes/
 │   ├── config.toml
@@ -209,7 +215,7 @@ git push -u origin main</code></pre>
 </p>
 <ul class="org-ul">
 <li><code>archetypes</code>, 内容模板，可以取参考里面看，暂时不用管。</li>
-<li><code>config.toml</code>, 配置文件，详见<a href="#org3e986b5">我的 Hugo 配置</a></li>
+<li><code>config.toml</code>, 配置文件，详见<a href="#orgf757767">我的 Hugo 配置</a></li>
 <li><code>content</code>, 内容目录，用于存放 md 源文件。</li>
 <li><code>data</code>, 数据模板目录，暂时不用管。</li>
 <li><code>layouts</code>, HTML 模板目录，md 生成 HTML 的模板，有一套单独的语言描述。暂时也不用配。</li>
@@ -221,7 +227,8 @@ git push -u origin main</code></pre>
 测试时，进入 <code>blog</code> 目录，使用：
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash">hugo server</code></pre>
+<pre class="bash"> hugo<span class="w"> </span>server
+ </pre>
 </div>
 <p>
 然后会开启默认端口，从输出信息中可以看到。从浏览器访问就能看到。
@@ -229,20 +236,21 @@ git push -u origin main</code></pre>
 </div>
 </div>
 
-<div id="outline-container-orge792043" class="outline-3">
-<h3 id="orge792043">项目目录修改</h3>
-<div class="outline-text-3" id="text-orge792043">
+<div id="outline-container-orge14d70a" class="outline-3">
+<h3 id="orge14d70a">项目目录修改</h3>
+<div class="outline-text-3" id="text-orge14d70a">
 <p>
 克隆仓库：
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash"># blog 下
-git clone git@github.com:<Name>/<Name>.github.io.git project</code></pre>
+<pre class="bash"> #<span class="w"> </span>blog<span class="w"> </span>下
+git<span class="w"> </span>clone<span class="w"> </span>git@github.com:<span class="p">&amp;</span>lt<span class="p">;</span>Name<span class="p">&amp;</span>gt<span class="p">;</span>/<span class="p">&amp;</span>lt<span class="p">;</span>Name<span class="p">&amp;</span>gt<span class="p">;</span>.github.io.git<span class="w"> </span>project
+ </pre>
 </div>
 <p>
 在 <code>blog/project</code> 目录下新目录存放 org 源码的目录（手动建）：
 </p>
-<pre class="example" id="org7bfece6">
+<pre class="example" id="orgf40f7c0">
 ├── project
 │   ├── assets/
 │   ├── posts/
@@ -252,14 +260,14 @@ org 文件就放在 <code>blog/project/posts</code> 下，静态资源就放在 
 </p>
 
 <p>
-因为 Github Page 只能选 <code>/</code> 根目录或者 <code>/docs</code> 目录作为站点目录，所以需要在配置中把站点输出目录修改一下。在<a href="#org3e986b5">我的 Hugo 配置</a>那里我会说的。
+因为 Github Page 只能选 <code>/</code> 根目录或者 <code>/docs</code> 目录作为站点目录，所以需要在配置中把站点输出目录修改一下。在<a href="#orgf757767">我的 Hugo 配置</a>那里我会说的。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org1684656" class="outline-3">
-<h3 id="org1684656">Hugo 主题</h3>
-<div class="outline-text-3" id="text-org1684656">
+<div id="outline-container-org7c249f9" class="outline-3">
+<h3 id="org7c249f9">Hugo 主题</h3>
+<div class="outline-text-3" id="text-org7c249f9">
 <p>
 主题可以去官网上找 <a href="https://themes.gohugo.io/" target="_blank">https://themes.gohugo.io/</a> ，我参考的是前辈用的 <a href="https://github.com/dillonzq/LoveIt" target="_blank">LoveIt</a> <sup>[<a id="fnr:2.1" class="footref" href="#fn:2">2</a>]</sup>，功能强大，界面美观，且不会太花哨。
 </p>
@@ -268,8 +276,9 @@ org 文件就放在 <code>blog/project/posts</code> 下，静态资源就放在 
 先找到主题的 github 仓库 <a href="https://github.com/dillonzq/LoveIt" target="_blank">https://github.com/dillonzq/LoveIt</a>，然后把它作为 hugo 项目的子模块
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash"># 在 blog 目录下操作
-git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt</code></pre>
+<pre class="bash"> #<span class="w"> </span>在<span class="w"> </span>blog<span class="w"> </span>目录下操作
+git<span class="w"> </span>submodule<span class="w"> </span>add<span class="w"> </span>https://github.com/dillonzq/LoveIt.git<span class="w"> </span>themes/LoveIt
+ </pre>
 </div>
 <p>
 或者直接克隆也可以。
@@ -285,9 +294,9 @@ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt</code></p
 </div>
 </div>
 
-<div id="outline-container-org3e986b5" class="outline-3">
-<h3 id="org3e986b5">我的 Hugo 配置</h3>
-<div class="outline-text-3" id="text-org3e986b5">
+<div id="outline-container-orgf757767" class="outline-3">
+<h3 id="orgf757767">我的 Hugo 配置</h3>
+<div class="outline-text-3" id="text-orgf757767">
 <p>
 配置文件可以说三种类型： <code>toml</code>, <code>yaml</code> 和 <code>json</code> ，我用的是 <code>yaml</code> ，简洁；把 LoveIt 官网给的完整配置转成 <code>yaml</code> ，然后手动调整，参考如下。
 </p>
@@ -296,7 +305,7 @@ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt</code></p
 因为配置里面可能会用到密钥什么的，因此不建议公开到 GitHub 上边，所以只上传 <b>Org 源码</b>, <b>静态文件</b>和<b>站点文件</b>。如下所示:
 </p>
 
-<pre class="example" id="orgabd0ae4">
+<pre class="example" id="org512a194">
 ├── project
 │   ├── assets/   # 存放静态文件
 │   ├── posts/    # 存放 org 
@@ -315,327 +324,298 @@ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt</code></p
 <code>config.yaml</code>
 </p>
 <div class="org-src-container">
-<pre><code class="language-yaml">publishDir: project/docs
-# 站点URL
-baseURL: https://fingerknight.github.io/
-# 默认语言
-defaultContentLanguage: zh-cn
-languageCode: zh-CN
-hasCJKLanguage: true
-# 主题
-theme: LoveIt
-# 网站标题
-title: 手指骑士的病房
-# 作者
-author:
-  name: Finger Knight
-  email: mrdust1880@outlook.com
-  link: https://fingerknight.github.io/about
-# 默认每页列表显示的文章数目
-paginate: 12
-# 谷歌分析代号 [UA-XXXXXXXX-X]
-googleAnalytics: ""
-# 版权描述，仅仅用于 SEO
-copyright: ""
-# 是否使用 robots.txt
-enableRobotsTXT: true
-# 是否使用 git 信息
-enableGitInfo: false
-# 是否使用 emoji 代码
-enableEmoji: true
-# 忽略一些构建错误
-ignoreErrors: ["error-remote-getjson", "error-missing-instagram-accesstoken"]
-
-# 标记语言设置
-markup:
-  highlight:
-    noClasses: false
-    codeFences: true
-    guessSyntax: true
-    lineNos: true
-    lineNumbersInTable: true
-  goldmark:
-    extensions:
-      definitionList: true
-      footnote: true
-      linkify: true
-      strikethrough: true
-      table: true
-      taskList: true
-      typographer: true
-    renderer:
-      # 是否在文档中直接使用 HTML 标签
-      unsafe: true
-  # 目录
-  tableOfContents:
-    startLevel: 2
-    endLevel: 6
-
-# 网站地图配置
-sitemap:
-  changefreq: weekly
-  filename: sitemap.xml
-  priority: 0.5
-
-# Permalinks 配置
-Permalinks:
-  posts: ':filename'
-
-# 输出设置
-
-outputs:
-  home:
-    - HTML
-    - JSON
-  page:
-    - HTML
-    - MarkDown
-  section:
-    - HTML
-  taxonomy:
-    - HTML
-  taxonomyTerm:
-    - HTML
-
-# 语言设置
-language:
-  zh-cn:
-    contentDir: content
-    languageName: 中文
-
-# 菜单设置
-menus:
-  main:
-    - identifier: main
-      pre: <i class="fa-solid fa-house"></i>
-      post: ''
-      name: 
-      url: /
-      title: 主页
-      weight: 1
-    - identifier: tags
-      pre: <i class="fa-solid fa-tags"></i>
-      post: ''
-      name: ''
-      url: /tags/
-      title: 标签
-      weight: 2
-    - identifier: posts
-      pre: <i class="fa-solid fa-layer-group"></i>
-      post: ''
-      name: ''
-      url: /posts/
-      title: 归档
-      weight: 3
-    - identifier: about
-      pre: <i class="fa-solid fa-bed-pulse"></i>
-      post: ''
-      name: ''
-      url: /about
-      title: 病历
-      weight: 4
-
-
-# 参数设置
-params:
-  # 网站默认主题样式 ["auto", "light", "dark"]
-  defaultTheme: "auto"
-  # 哪种哈希函数用来 SRI, 为空时表示不使用 SRI
-  # ["sha256", "sha384", "sha512", "md5"]
-  fingerprint: "sha256"
-  # 日期格式
-  dateFormat: "2006-01-02"
-
-  # 网站标题, 用于 Open Graph 和 Twitter Cards
-  title: "手指骑士的病房"
-  # 网站描述, 用于 RSS, SEO, Open Graph 和 Twitter Cards
-  description: "痴人说梦"
-  # 网站图片, 用于 Open Graph 和 Twitter Cards
-  # images:
-  #   - /logo.png
-
-  # 首部元素
-  header:
-    # 桌面端导航栏模式 ["fixed", "normal", "auto"]
-    desktopMode: fixed
-    # 移动端导航栏模式 ["fixed", "normal", "auto"]
-    mobileMode: auto
-    title:
-      # logo: /avatar.png
-      name: 手指骑士的病房
-      pre: ''
-      post: ''
-      typeit: false
-
-  # 尾部元素
-  footer:
-    enable: true
-    custom: ''
-    hugo: true
-    copyright: true
-    # 是否显示作者
-    author: true
-    # 网站创立年份
-    since: 2022
-    icp: ''
-    # 许可协议信息 (支持 HTML 格式)
-    license: <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-
-  # Section (所有文章) 页面配置
-  section:
-    # section 页面每页显示文章数量
-    paginate: 20
-    # 日期格式 (月和日)
-    dateFormat: 01-02
-    # RSS 文章数目
-    rss: 10
-
-  # List (目录或标签) 页面配置
-  list:
-    paginate: 20
-    dateFormat: 01-02
-    rss: 10
-
-  # 主页配置
-  home:
-    # RSS 文章数目
-    rss: 10
-    # 主页个人信息
-    profile:
-      enable: true
-      # gravatarEmail: ''
-      avatarURL: /img/YunRuAvatar.jpg
-      title: ''
-      subtitle: 痴人说梦
-      typeit: false
-      # 是否显示社交账号
-      social: false
-      # 免责声明
-      disclaimer: ''
-      # 主页文章列表
-    posts:
-      enable: true
-      paginate: 5
-      defaultHiddenFromHomePage: false
-
-  # 文章页面全局配置
-  page:
-    # 是否在主页隐藏一篇文章
-    hiddenFromHomePage: false
-    # 是否在搜索结果中隐藏一篇文章
-    hiddenFromSearch: false
-    # 是否使用 fontawesome 扩展语法
-    fontawesome: true
-    # 是否在 RSS 中显示全文内容
-    rssFullText: false
-
-    prev: false
-    next: false
-    linktomarkdown: false
-
-    # 开启上下篇
-    nav: false
-
-    # 目录
-    toc:
-      enable: true
-      #  是否保持使用文章前面的静态目录
-      keepStatic: false
-      # 是否侧边目录自动折叠展开
-      auto: false
-
-    # 代码
-    code:
-      # 是否显示代码块的复制按钮
-      copy: true
-      # 默认展开显示的代码行数
-      maxShownLines: 50
-
-    # KaTeX 数学公式
-    math:
-      enable: true
-      inlineLeftDelimiter: ''
-      inlineRightDelimiter: ''
-      blockLeftDelimiter: ''
-      blockRightDelimiter: ''
-      copyTex: true
-      mhchem: true
-
-    # 地图
-    mapbox:
-      accessToken: ''
-      lightStyle: 'mapbox://styles/mapbox/light-v10?optimize=true'
-      darkStyle: 'mapbox://styles/mapbox/dark-v10?optimize=true'
-      navigation: true
-      geolocate: true
-      scale: true
-      fullscreen: true
-
-    # 关闭分享
-    share:
-      enable: false
-
-    # 评论看后面
-    # comment:
-    #   enable: true
-    #   gitalk:
-
-    # 第三方静态资源
-    library:
-      css: {}
-      js: {}
-
-    # 页面 SEO 配置
-    seo:
-      images: []
-      publisher:
-        name: ''
-        logoUrl: ''
-
-  # TypeIt 配置
-  typeit:
-    speed: 100
-    cursorSpeed: 1000
-    cursorChar: '|'
-    duration: -1
-
-  # 网站 SEO 配置
-  seo:
-    image: ''
-    thumbnailUrl: ''
-
-  #  第三方库文件的 CDN 设置
-  # CDN 数据文件名称, 默认不启用
-  # ["jsdelivr.yml"]
-  # 位于 "themes/LoveIt/assets/data/cdn/" 目录
-  # 可以在你的项目下相同路径存放你自己的数据文件:
-  # "assets/data/cdn/"
-  # cdn:
-  #   data: ''
-
-  # 搜索设置
-  search:
-    enable: true
-    # 搜索引擎的类型 ["lunr", "algolia"]
-    type: lunr
-    # 文章内容最长索引长度
-    contentLength: 4000
-    # 搜索框的占位提示语
-    placeholder: ''
-    # 最大结果数目
-    maxResultLength: 10
-    # 结果内容片段长度
-    snippetLength: 50
-    # 搜索结果中高亮部分的 HTML 标签
-    highlightTag: em
-    # 是否在搜索索引中使用基于 baseURL 的绝对路径
-    absoluteURL: false</code></pre>
+<pre class="yaml"> <span class="nt">publishDir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">project/docs</span>
+<span class="c1"># 站点URL</span>
+<span class="nt">baseURL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://fingerknight.github.io/</span>
+<span class="c1"># 默认语言</span>
+<span class="nt">defaultContentLanguage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zh-cn</span>
+<span class="nt">languageCode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zh-CN</span>
+<span class="nt">hasCJKLanguage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="c1"># 主题</span>
+<span class="nt">theme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LoveIt</span>
+<span class="c1"># 网站标题</span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">手指骑士的病房</span>
+<span class="c1"># 作者</span>
+<span class="nt">author</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Finger Knight</span>
+<span class="w">  </span><span class="nt">email</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mrdust1880@outlook.com</span>
+<span class="w">  </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://fingerknight.github.io/about</span>
+<span class="c1"># 默认每页列表显示的文章数目</span>
+<span class="nt">paginate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12</span>
+<span class="c1"># 谷歌分析代号 [UA-XXXXXXXX-X]</span>
+<span class="nt">googleAnalytics</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<span class="c1"># 版权描述，仅仅用于 SEO</span>
+<span class="nt">copyright</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<span class="c1"># 是否使用 robots.txt</span>
+<span class="nt">enableRobotsTXT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="c1"># 是否使用 git 信息</span>
+<span class="nt">enableGitInfo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="c1"># 是否使用 emoji 代码</span>
+<span class="nt">enableEmoji</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="c1"># 忽略一些构建错误</span>
+<span class="nt">ignoreErrors</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;error-remote-getjson&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;error-missing-instagram-accesstoken&quot;</span><span class="p p-Indicator">]</span>
+<span class="c1"># 标记语言设置</span>
+<span class="nt">markup</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">highlight</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">noClasses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">codeFences</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">guessSyntax</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">lineNos</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">lineNumbersInTable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">goldmark</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">extensions</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">definitionList</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">footnote</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">linkify</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">strikethrough</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">table</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">taskList</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">typographer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">renderer</span><span class="p">:</span>
+<span class="w">      </span><span class="c1"># 是否在文档中直接使用 HTML 标签</span>
+<span class="w">      </span><span class="nt">unsafe</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="c1"># 目录</span>
+<span class="w">  </span><span class="nt">tableOfContents</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">startLevel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">    </span><span class="nt">endLevel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6</span>
+<span class="c1"># 网站地图配置</span>
+<span class="nt">sitemap</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">changefreq</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">weekly</span>
+<span class="w">  </span><span class="nt">filename</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sitemap.xml</span>
+<span class="w">  </span><span class="nt">priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
+<span class="c1"># Permalinks 配置</span>
+<span class="nt">Permalinks</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">posts</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;:filename&#39;</span>
+<span class="c1"># 输出设置</span>
+<span class="nt">outputs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">home</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTML</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JSON</span>
+<span class="w">  </span><span class="nt">page</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTML</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MarkDown</span>
+<span class="w">  </span><span class="nt">section</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTML</span>
+<span class="w">  </span><span class="nt">taxonomy</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTML</span>
+<span class="w">  </span><span class="nt">taxonomyTerm</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTML</span>
+<span class="c1"># 语言设置</span>
+<span class="nt">language</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">zh-cn</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">contentDir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content</span>
+<span class="w">    </span><span class="nt">languageName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">中文</span>
+<span class="c1"># 菜单设置</span>
+<span class="nt">menus</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">main</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+<span class="w">      </span><span class="nt">pre</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;lt</span><span class="l l-Scalar l-Scalar-Plain">;i class=&quot;fa-solid fa-house&quot;&amp;gt;&amp;lt;/i&amp;gt;</span>
+<span class="w">      </span><span class="nt">post</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/</span>
+<span class="w">      </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">主页</span>
+<span class="w">      </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tags</span>
+<span class="w">      </span><span class="nt">pre</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;lt</span><span class="l l-Scalar l-Scalar-Plain">;i class=&quot;fa-solid fa-tags&quot;&amp;gt;&amp;lt;/i&amp;gt;</span>
+<span class="w">      </span><span class="nt">post</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/tags/</span>
+<span class="w">      </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">标签</span>
+<span class="w">      </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">posts</span>
+<span class="w">      </span><span class="nt">pre</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;lt</span><span class="l l-Scalar l-Scalar-Plain">;i class=&quot;fa-solid fa-layer-group&quot;&amp;gt;&amp;lt;/i&amp;gt;</span>
+<span class="w">      </span><span class="nt">post</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/posts/</span>
+<span class="w">      </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">归档</span>
+<span class="w">      </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">about</span>
+<span class="w">      </span><span class="nt">pre</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;lt</span><span class="l l-Scalar l-Scalar-Plain">;i class=&quot;fa-solid fa-bed-pulse&quot;&amp;gt;&amp;lt;/i&amp;gt;</span>
+<span class="w">      </span><span class="nt">post</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/about</span>
+<span class="w">      </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">病历</span>
+<span class="w">      </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<span class="c1"># 参数设置</span>
+<span class="nt">params</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># 网站默认主题样式 [&quot;auto&quot;, &quot;light&quot;, &quot;dark&quot;]</span>
+<span class="w">  </span><span class="nt">defaultTheme</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;auto&quot;</span>
+<span class="w">  </span><span class="c1"># 哪种哈希函数用来 SRI, 为空时表示不使用 SRI</span>
+<span class="w">  </span><span class="c1"># [&quot;sha256&quot;, &quot;sha384&quot;, &quot;sha512&quot;, &quot;md5&quot;]</span>
+<span class="w">  </span><span class="nt">fingerprint</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;sha256&quot;</span>
+<span class="w">  </span><span class="c1"># 日期格式</span>
+<span class="w">  </span><span class="nt">dateFormat</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2006-01-02&quot;</span>
+<span class="w">  </span><span class="c1"># 网站标题, 用于 Open Graph 和 Twitter Cards</span>
+<span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;手指骑士的病房&quot;</span>
+<span class="w">  </span><span class="c1"># 网站描述, 用于 RSS, SEO, Open Graph 和 Twitter Cards</span>
+<span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;痴人说梦&quot;</span>
+<span class="w">  </span><span class="c1"># 网站图片, 用于 Open Graph 和 Twitter Cards</span>
+<span class="w">  </span><span class="c1"># images:</span>
+<span class="w">  </span><span class="c1">#   - /logo.png</span>
+<span class="w">  </span><span class="c1"># 首部元素</span>
+<span class="w">  </span><span class="nt">header</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># 桌面端导航栏模式 [&quot;fixed&quot;, &quot;normal&quot;, &quot;auto&quot;]</span>
+<span class="w">    </span><span class="nt">desktopMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fixed</span>
+<span class="w">    </span><span class="c1"># 移动端导航栏模式 [&quot;fixed&quot;, &quot;normal&quot;, &quot;auto&quot;]</span>
+<span class="w">    </span><span class="nt">mobileMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span>
+<span class="w">    </span><span class="nt">title</span><span class="p">:</span>
+<span class="w">      </span><span class="c1"># logo: /avatar.png</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">手指骑士的病房</span>
+<span class="w">      </span><span class="nt">pre</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">      </span><span class="nt">post</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">      </span><span class="nt">typeit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="c1"># 尾部元素</span>
+<span class="w">  </span><span class="nt">footer</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">custom</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">    </span><span class="nt">hugo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">copyright</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="c1"># 是否显示作者</span>
+<span class="w">    </span><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="c1"># 网站创立年份</span>
+<span class="w">    </span><span class="nt">since</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2022</span>
+<span class="w">    </span><span class="nt">icp</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">    </span><span class="c1"># 许可协议信息 (支持 HTML 格式)</span>
+<span class="w">    </span><span class="nt">license</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;lt</span><span class="l l-Scalar l-Scalar-Plain">;a rel=&quot;license external nofollow noopener noreffer&quot; href=&quot;https://creativecommons.org/licenses/by-nc/4.0/&quot; target=&quot;_blank&quot;&amp;gt;CC BY-NC 4.0&amp;lt;/a&amp;gt;</span>
+<span class="w">  </span><span class="c1"># Section (所有文章) 页面配置</span>
+<span class="w">  </span><span class="nt">section</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># section 页面每页显示文章数量</span>
+<span class="w">    </span><span class="nt">paginate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span>
+<span class="w">    </span><span class="c1"># 日期格式 (月和日)</span>
+<span class="w">    </span><span class="nt">dateFormat</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">01-02</span>
+<span class="w">    </span><span class="c1"># RSS 文章数目</span>
+<span class="w">    </span><span class="nt">rss</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<span class="w">  </span><span class="c1"># List (目录或标签) 页面配置</span>
+<span class="w">  </span><span class="nt">list</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">paginate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span>
+<span class="w">    </span><span class="nt">dateFormat</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">01-02</span>
+<span class="w">    </span><span class="nt">rss</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<span class="w">  </span><span class="c1"># 主页配置</span>
+<span class="w">  </span><span class="nt">home</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># RSS 文章数目</span>
+<span class="w">    </span><span class="nt">rss</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<span class="w">    </span><span class="c1"># 主页个人信息</span>
+<span class="w">    </span><span class="nt">profile</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="c1"># gravatarEmail: &#39;&#39;</span>
+<span class="w">      </span><span class="nt">avatarURL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/img/YunRuAvatar.jpg</span>
+<span class="w">      </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">      </span><span class="nt">subtitle</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">痴人说梦</span>
+<span class="w">      </span><span class="nt">typeit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">      </span><span class="c1"># 是否显示社交账号</span>
+<span class="w">      </span><span class="nt">social</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">      </span><span class="c1"># 免责声明</span>
+<span class="w">      </span><span class="nt">disclaimer</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">      </span><span class="c1"># 主页文章列表</span>
+<span class="w">    </span><span class="nt">posts</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">paginate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">      </span><span class="nt">defaultHiddenFromHomePage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="c1"># 文章页面全局配置</span>
+<span class="w">  </span><span class="nt">page</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># 是否在主页隐藏一篇文章</span>
+<span class="w">    </span><span class="nt">hiddenFromHomePage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="c1"># 是否在搜索结果中隐藏一篇文章</span>
+<span class="w">    </span><span class="nt">hiddenFromSearch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="c1"># 是否使用 fontawesome 扩展语法</span>
+<span class="w">    </span><span class="nt">fontawesome</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="c1"># 是否在 RSS 中显示全文内容</span>
+<span class="w">    </span><span class="nt">rssFullText</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">prev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">next</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">linktomarkdown</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="c1"># 开启上下篇</span>
+<span class="w">    </span><span class="nt">nav</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="c1"># 目录</span>
+<span class="w">    </span><span class="nt">toc</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="c1">#  是否保持使用文章前面的静态目录</span>
+<span class="w">      </span><span class="nt">keepStatic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">      </span><span class="c1"># 是否侧边目录自动折叠展开</span>
+<span class="w">      </span><span class="nt">auto</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="c1"># 代码</span>
+<span class="w">    </span><span class="nt">code</span><span class="p">:</span>
+<span class="w">      </span><span class="c1"># 是否显示代码块的复制按钮</span>
+<span class="w">      </span><span class="nt">copy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="c1"># 默认展开显示的代码行数</span>
+<span class="w">      </span><span class="nt">maxShownLines</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50</span>
+<span class="w">    </span><span class="c1"># KaTeX 数学公式</span>
+<span class="w">    </span><span class="nt">math</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">inlineLeftDelimiter</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">      </span><span class="nt">inlineRightDelimiter</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">      </span><span class="nt">blockLeftDelimiter</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">      </span><span class="nt">blockRightDelimiter</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">      </span><span class="nt">copyTex</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">mhchem</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="c1"># 地图</span>
+<span class="w">    </span><span class="nt">mapbox</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">accessToken</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">      </span><span class="nt">lightStyle</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;mapbox://styles/mapbox/light-v10?optimize=true&#39;</span>
+<span class="w">      </span><span class="nt">darkStyle</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;mapbox://styles/mapbox/dark-v10?optimize=true&#39;</span>
+<span class="w">      </span><span class="nt">navigation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">geolocate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">scale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">fullscreen</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="c1"># 关闭分享</span>
+<span class="w">    </span><span class="nt">share</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="c1"># 评论看后面</span>
+<span class="w">    </span><span class="c1"># comment:</span>
+<span class="w">    </span><span class="c1">#   enable: true</span>
+<span class="w">    </span><span class="c1">#   gitalk:</span>
+<span class="w">    </span><span class="c1"># 第三方静态资源</span>
+<span class="w">    </span><span class="nt">library</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">css</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<span class="w">      </span><span class="nt">js</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<span class="w">    </span><span class="c1"># 页面 SEO 配置</span>
+<span class="w">    </span><span class="nt">seo</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">images</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="w">      </span><span class="nt">publisher</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">        </span><span class="nt">logoUrl</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">  </span><span class="c1"># TypeIt 配置</span>
+<span class="w">  </span><span class="nt">typeit</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">speed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="w">    </span><span class="nt">cursorSpeed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">cursorChar</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;|&#39;</span>
+<span class="w">    </span><span class="nt">duration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span>
+<span class="w">  </span><span class="c1"># 网站 SEO 配置</span>
+<span class="w">  </span><span class="nt">seo</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">    </span><span class="nt">thumbnailUrl</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">  </span><span class="c1">#  第三方库文件的 CDN 设置</span>
+<span class="w">  </span><span class="c1"># CDN 数据文件名称, 默认不启用</span>
+<span class="w">  </span><span class="c1"># [&quot;jsdelivr.yml&quot;]</span>
+<span class="w">  </span><span class="c1"># 位于 &quot;themes/LoveIt/assets/data/cdn/&quot; 目录</span>
+<span class="w">  </span><span class="c1"># 可以在你的项目下相同路径存放你自己的数据文件:</span>
+<span class="w">  </span><span class="c1"># &quot;assets/data/cdn/&quot;</span>
+<span class="w">  </span><span class="c1"># cdn:</span>
+<span class="w">  </span><span class="c1">#   data: &#39;&#39;</span>
+<span class="w">  </span><span class="c1"># 搜索设置</span>
+<span class="w">  </span><span class="nt">search</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="c1"># 搜索引擎的类型 [&quot;lunr&quot;, &quot;algolia&quot;]</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lunr</span>
+<span class="w">    </span><span class="c1"># 文章内容最长索引长度</span>
+<span class="w">    </span><span class="nt">contentLength</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4000</span>
+<span class="w">    </span><span class="c1"># 搜索框的占位提示语</span>
+<span class="w">    </span><span class="nt">placeholder</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span>
+<span class="w">    </span><span class="c1"># 最大结果数目</span>
+<span class="w">    </span><span class="nt">maxResultLength</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<span class="w">    </span><span class="c1"># 结果内容片段长度</span>
+<span class="w">    </span><span class="nt">snippetLength</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50</span>
+<span class="w">    </span><span class="c1"># 搜索结果中高亮部分的 HTML 标签</span>
+<span class="w">    </span><span class="nt">highlightTag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">em</span>
+<span class="w">    </span><span class="c1"># 是否在搜索索引中使用基于 baseURL 的绝对路径</span>
+<span class="w">    </span><span class="nt">absoluteURL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+ </pre>
 </div>
 </div>
 
-<div id="outline-container-org4a45caa" class="outline-4">
-<h4 id="org4a45caa">关于资源目录</h4>
-<div class="outline-text-4" id="text-org4a45caa">
+<div id="outline-container-org92eef9b" class="outline-4">
+<h4 id="org92eef9b">关于资源目录</h4>
+<div class="outline-text-4" id="text-org92eef9b">
 <p>
 假设有个写好了的 md ,位置 <code>content/test.md</code> ，那么它会出现在<b>站点的根目录</b>，也就是需要访问 <code>https://yoursite.com/test.md</code> 。
 </p>
@@ -651,21 +631,22 @@ params:
 </div>
 </div>
 
-<div id="outline-container-org031d297" class="outline-3">
-<h3 id="org031d297">安装 ox-hugo</h3>
-<div class="outline-text-3" id="text-org031d297">
+<div id="outline-container-orgd7c2b91" class="outline-3">
+<h3 id="orgd7c2b91">安装 ox-hugo</h3>
+<div class="outline-text-3" id="text-orgd7c2b91">
 <p>
 官网的安装页面：<a href="https://ox-hugo.scripter.co/#installation" target="_blank">https://ox-hugo.scripter.co/#installation</a>。
 </p>
 
 <div class="org-src-container">
-<pre><code class="language-lisp">(with-eval-after-load 'ox
-  (require 'ox-hugo)
-  (setq org-hugo-base-dir ../blog/"
-    ;; org-hugo-section "posts"
-    org-hugo-default-static-subdirectory-for-externals "img"
-    org-hugo-auto-set-lastmod t
-    org-hugo-export-with-toc nil))</code></pre>
+<pre class="lisp"> <span class="p">(</span><span class="nv">with-eval-after-load</span><span class="w"> </span><span class="ss">&#39;ox</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;ox-hugo</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">org-hugo-base-dir</span><span class="w"> </span><span class="o">..</span><span class="nv">/blog/</span><span class="err">&quot;</span>
+<span class="w">    </span><span class="c1">;; org-hugo-section &quot;posts&quot;</span>
+<span class="w">    </span><span class="nv">org-hugo-default-static-subdirectory-for-externals</span><span class="w"> </span><span class="s">&quot;img&quot;</span>
+<span class="w">    </span><span class="nv">org-hugo-auto-set-lastmod</span><span class="w"> </span><span class="nc">t</span>
+<span class="w">    </span><span class="nv">org-hugo-export-with-toc</span><span class="w"> </span><span class="no">nil</span><span class="p">))</span>
+ </pre>
 </div>
 <ul class="org-ul">
 <li><code>org-hugo-base-dir</code>, 项目的根目录</li>
@@ -677,13 +658,13 @@ params:
 </div>
 </div>
 
-<div id="outline-container-orgf85ab5b" class="outline-3">
-<h3 id="orgf85ab5b">ox-hugo 使用</h3>
-<div class="outline-text-3" id="text-orgf85ab5b">
+<div id="outline-container-org8f45bf6" class="outline-3">
+<h3 id="org8f45bf6">ox-hugo 使用</h3>
+<div class="outline-text-3" id="text-org8f45bf6">
 <p>
 Org file 的基础配置
 </p>
-<pre class="example" id="orge422b2b">
+<pre class="example" id="org3365b8f">
 #+title: 文章标题
 #+date: [2022-09-10 Sat]
 #+hugo_tags: tags1 tags2
@@ -705,7 +686,7 @@ Org file 的基础配置
 <p>
 对于特定文件，可以在文件的头配置里面覆盖掉基础配置。比如“关于”页面 <code>about.org</code> 的内容：
 </p>
-<pre class="example" id="org6a54977">
+<pre class="example" id="orgea3593e">
 #+hugo_base_dir:../blog/
 #+hugo_section: ./
 #+hugo_auto_set_lastmod: t
@@ -721,9 +702,9 @@ Org file 的基础配置
 </div>
 </div>
 
-<div id="outline-container-org35ff09f" class="outline-3">
-<h3 id="org35ff09f">设置评论</h3>
-<div class="outline-text-3" id="text-org35ff09f">
+<div id="outline-container-orgd859a52" class="outline-3">
+<h3 id="orgd859a52">设置评论</h3>
+<div class="outline-text-3" id="text-orgd859a52">
 <p>
 <code>LoveIt</code> 主题给出了很多选择，我用的是 Gitalk<sup>[<a id="fnr:3.1" class="footref" href="#fn:3">3</a>]</sup> ，它是基于 Github 的 Issue 模块设计的。它十分太巧妙，用一个 Github 仓库做评论存储 —— 并不是作为 code 来存。对于每个仓库，都有一个 Issue 区域，用来记录问题和反馈。每条 issue 下面都可以评论 —— 本质上 Issue 就是一个评论区，它在 Github 的作用就是反馈问题，用来当博客评论简直舒服（当然，评论者必须登录 GitHub 之后才能评论）。
 </p>
@@ -733,7 +714,7 @@ Org file 的基础配置
 </p>
 
 
-<figure id="org11acc67">
+<figure id="org1e2287d">
 <a href="/assets/d34b1dfb262ae8296361aa62187c8c7d.png" target="_blank" target="_blank"><img src="/assets/d34b1dfb262ae8296361aa62187c8c7d.png" alt="d34b1dfb262ae8296361aa62187c8c7d.png"></a>
 
 </figure>
@@ -759,7 +740,7 @@ Org file 的基础配置
 </p>
 
 
-<figure id="org510de7c">
+<figure id="org115625e">
 <a href="/assets/855a13a6d739e9a2ede6a3a1c84360c4.png" target="_blank" target="_blank"><img src="/assets/855a13a6d739e9a2ede6a3a1c84360c4.png" alt="855a13a6d739e9a2ede6a3a1c84360c4.png"></a>
 
 </figure>
@@ -780,7 +761,7 @@ Org file 的基础配置
 </p>
 
 
-<figure id="org1b69d5e">
+<figure id="orgf7a46ad">
 <a href="/assets/bbb01de56c80b26da5bec455b1801c7e.png" target="_blank" target="_blank"><img src="/assets/bbb01de56c80b26da5bec455b1801c7e.png" alt="bbb01de56c80b26da5bec455b1801c7e.png"></a>
 
 </figure>
@@ -794,9 +775,9 @@ Org file 的基础配置
 </p>
 </div>
 
-<div id="outline-container-org021b8c0" class="outline-4">
-<h4 id="org021b8c0">LoveIt 的 Bug</h4>
-<div class="outline-text-4" id="text-org021b8c0">
+<div id="outline-container-org6c3dff6" class="outline-4">
+<h4 id="org6c3dff6">LoveIt 的 Bug</h4>
+<div class="outline-text-4" id="text-org6c3dff6">
 <p>
 如果你有好几篇文章同时生成和发布，那么就有可能出现这个 bug ，会导致评论共用，就是 A 文章下面的评论和 B 文章下面的评论一样， A 文章下面发的评论在 B 文章那里也可以看到。
 </p>
@@ -806,7 +787,7 @@ Org file 的基础配置
 </p>
 
 
-<figure id="org621c097">
+<figure id="org6c55161">
 <a href="/assets/d37a73ac664364bf59a6680634649d5a.png" target="_blank" target="_blank"><img src="/assets/d37a73ac664364bf59a6680634649d5a.png" alt="d37a73ac664364bf59a6680634649d5a.png"></a>
 
 </figure>
@@ -824,7 +805,7 @@ LoveIt 的默认 <code>id</code> 是写死的，就是 <code>Date</code> ，所�
 </p>
 
 
-<figure id="org59dfc95">
+<figure id="orgdd91387">
 <a href="/assets/209d9c3ab20e3c8b4a658e73050561e5.png" target="_blank" target="_blank"><img src="/assets/209d9c3ab20e3c8b4a658e73050561e5.png" alt="209d9c3ab20e3c8b4a658e73050561e5.png"></a>
 
 </figure>
@@ -837,9 +818,9 @@ LoveIt 的默认 <code>id</code> 是写死的，就是 <code>Date</code> ，所�
 </div>
 </div>
 
-<div id="outline-container-org4da8fb0" class="outline-2">
-<h2 id="org4da8fb0">工作流程</h2>
-<div class="outline-text-2" id="text-org4da8fb0">
+<div id="outline-container-org00b8b36" class="outline-2">
+<h2 id="org00b8b36">工作流程</h2>
+<div class="outline-text-2" id="text-org00b8b36">
 <p>
 至此<b>一个博客就搭建好了</b>，接下来说明它的工作流程。
 </p>
@@ -850,9 +831,10 @@ LoveIt 的默认 <code>id</code> 是写死的，就是 <code>Date</code> ，所�
 <li>最后提交到 Github</li>
 </ol>
 <div class="org-src-container">
-<pre><code class="language-bash">git add *
-git commit -m "注释"
-git push</code></pre>
+<pre class="bash"> git<span class="w"> </span>add<span class="w"> </span>*
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;注释&quot;</span>
+git<span class="w"> </span>push
+ </pre>
 </div>
 
 <p>
@@ -861,9 +843,9 @@ git push</code></pre>
 </div>
 </div>
 
-<div id="outline-container-org0649d8b" class="outline-2">
-<h2 id="org0649d8b">自动化</h2>
-<div class="outline-text-2" id="text-org0649d8b">
+<div id="outline-container-org8bdbf37" class="outline-2">
+<h2 id="org8bdbf37">自动化</h2>
+<div class="outline-text-2" id="text-org8bdbf37">
 <p>
 如果每次都那么搞就太麻烦了。因此我写了一些东西，使得整个流程直接一步到位，可以参考。
 </p>
@@ -874,31 +856,31 @@ git push</code></pre>
 </div>
 </div>
 
-<div id="outline-container-org8575d8b" class="outline-2">
-<h2 id="org8575d8b">优化</h2>
-<div class="outline-text-2" id="text-org8575d8b">
+<div id="outline-container-orgdfbc7b5" class="outline-2">
+<h2 id="orgdfbc7b5">优化</h2>
+<div class="outline-text-2" id="text-orgdfbc7b5">
 </div>
-<div id="outline-container-org1c92eb3" class="outline-3">
-<h3 id="org1c92eb3">CDN 设置</h3>
-<div class="outline-text-3" id="text-org1c92eb3">
+<div id="outline-container-org8052256" class="outline-3">
+<h3 id="org8052256">CDN 设置</h3>
+<div class="outline-text-3" id="text-org8052256">
 <p>
 复制 LoveIt 目录 <code>themes/LoveIt/assets/data/cdn/</code> 到../blog/assets/data/cdn/~ (<code>assets</code> 需要自己创)<sup>[<a id="fnr:4.1" class="footref" href="#fn:4">4</a>]</sup>。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgee48042" class="outline-3">
-<h3 id="orgee48042">Cloudflare Page</h3>
-<div class="outline-text-3" id="text-orgee48042">
+<div id="outline-container-org6b88938" class="outline-3">
+<h3 id="org6b88938">Cloudflare Page</h3>
+<div class="outline-text-3" id="text-org6b88938">
 <p>
 Cloudflare Page 也可以直接托管静态站点了，它是联动 GitHub ，把仓库的 HTML 等站点文件克隆到它的服务器然后部署。参考《<a href="https://zhuanlan.zhihu.com/p/416269228" target="_blank">几分钟、零基础搭建个人网页！- 高速直连，基于Cloudflare Page - 知乎</a>》。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org7e83771" class="outline-3">
-<h3 id="org7e83771">Cloudflare + DNS</h3>
-<div class="outline-text-3" id="text-org7e83771">
+<div id="outline-container-org2b20049" class="outline-3">
+<h3 id="org2b20049">Cloudflare + DNS</h3>
+<div class="outline-text-3" id="text-org2b20049">
 <p>
 我是自己注册了一个域名，然后用 Cloudflare 托管，具体可以参考我的另一篇博客《<a href="/post/20221223T150015" target="_blank">GiHub Page + Cloudflare + NameSilo 的域名配置</a>》
 </p>
@@ -906,9 +888,9 @@ Cloudflare Page 也可以直接托管静态站点了，它是联动 GitHub ，�
 </div>
 </div>
 
-<div id="outline-container-org1bbb2c6" class="outline-2">
-<h2 id="org1bbb2c6">后记</h2>
-<div class="outline-text-2" id="text-org1bbb2c6">
+<div id="outline-container-org431581e" class="outline-2">
+<h2 id="org431581e">后记</h2>
+<div class="outline-text-2" id="text-org431581e">
 <p>
 搞了好几天终于算可以了，留一些尾巴后面处理。
 </p>
@@ -956,24 +938,8 @@ Gitalk: <a href="https://github.com/gitalk/gitalk/" target="_blank">https://gith
 </div>
 </div>
 </div>
-<div id="postamble" class="status"><script src="/static/highlight/highlight.min.js"></script>
-<script>
-Array.from(document.querySelectorAll('#content pre')).forEach(
-node => {
-let codeElement = node.querySelector("code"),
-    excludes = ["mermaid"];
-
-if (!codeElement){
-return
-}
-let language = codeElement.getAttribute("class").split("-")[1];
-if (excludes.includes(language)) {
-return
-}
-
-hljs.highlightElement(codeElement);
-});
-</script></div>
+<div id="postamble" class="status">
+</div>
 </div>
 <div class="footer">
 <center> The End </center></div>

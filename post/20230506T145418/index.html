@@ -16,10 +16,13 @@
 <div class="nav item">
 <a href="/about">关于</a>
 </div>
+<div class="nav item">
+<a href="/emacs">Emacs</a>
+</div>
 </div>
 </div>
 <div class="main">
-<div id="preamble" class="status"><link rel="stylesheet" href="/static/highlight/dracula.css"><div class="toc">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/pygments/dracula.css"><div class="toc">
 
 </div>
 <h1 class="post-title"> Arch linux 蓝牙配置 </h1>
@@ -30,14 +33,13 @@
 </div>
 <div id="content">
 <div class="org-src-container">
-<pre><code class="language-bash">;; Necessary packages 
-sudo pacman -S bluez bluez-utils pulseaudio-bluetooth pavucontrol pulseaudio-alsa
-
-;; Bluetooth service
-sudo systemctl start bluetooth
-
-;; Pulseaudio sercice
-pulseaudio -k && pulseaudio --start</code></pre>
+<pre class="bash"> <span class="p">;;</span><span class="w"> </span>Necessary<span class="w"> </span>packages<span class="w"> </span>
+sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>bluez<span class="w"> </span>bluez-utils<span class="w"> </span>pulseaudio-bluetooth<span class="w"> </span>pavucontrol<span class="w"> </span>pulseaudio-alsa
+<span class="p">;;</span><span class="w"> </span>Bluetooth<span class="w"> </span>service
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>bluetooth
+<span class="p">;;</span><span class="w"> </span>Pulseaudio<span class="w"> </span>sercice
+pulseaudio<span class="w"> </span>-k<span class="w"> </span><span class="p">&amp;</span>amp<span class="p">;&amp;</span>amp<span class="p">;</span><span class="w"> </span>pulseaudio<span class="w"> </span>--start
+ </pre>
 </div>
 <div id="footnotes">
 <hr>
@@ -48,24 +50,8 @@ pulseaudio -k && pulseaudio --start</code></pre>
 </div>
 </div>
 </div>
-<div id="postamble" class="status"><script src="/static/highlight/highlight.min.js"></script>
-<script>
-Array.from(document.querySelectorAll('#content pre')).forEach(
-node => {
-let codeElement = node.querySelector("code"),
-    excludes = ["mermaid"];
-
-if (!codeElement){
-return
-}
-let language = codeElement.getAttribute("class").split("-")[1];
-if (excludes.includes(language)) {
-return
-}
-
-hljs.highlightElement(codeElement);
-});
-</script></div>
+<div id="postamble" class="status">
+</div>
 </div>
 <div class="footer">
 <center> The End </center></div>

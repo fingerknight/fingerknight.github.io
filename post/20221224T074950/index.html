@@ -16,86 +16,89 @@
 <div class="nav item">
 <a href="/about">关于</a>
 </div>
+<div class="nav item">
+<a href="/emacs">Emacs</a>
+</div>
 </div>
 </div>
 <div class="main">
 <div id="preamble" class="status">
-<link rel="stylesheet" href="/static/highlight/dracula.css"><div class="toc">
+<link rel="stylesheet" href="/static/pygments/dracula.css"><div class="toc">
 <h2 class="toc-title"> TOC </h2>
 <nav id="TableOfContents">
 
 <ul>
 <li>
-<a href="#org9178456"> RIME 简介 </a></li>
+<a href="#orgceb5f50"> RIME 简介 </a></li>
 <li>
-<a href="#org7d40eea"> RIME 安装 </a></li>
+<a href="#org85bf091"> RIME 安装 </a></li>
 <li>
-<a href="#orga02323b"> 安装双拼方案 </a>
+<a href="#orgee15c2f"> 安装双拼方案 </a>
 <ul>
 <li>
-<a href="#org1c9c92d"> 东风破 </a></li>
+<a href="#org843222a"> 东风破 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org6774277"> RIME 配置 </a>
+<a href="#org2e068a4"> RIME 配置 </a>
 <ul>
 <li>
-<a href="#orgd4aaec7"> 自定义配置 </a></li>
+<a href="#org9a7bc88"> 自定义配置 </a></li>
 <li>
-<a href="#orge7cba1c"> 工作流 </a></li>
+<a href="#org60bead0"> 工作流 </a></li>
 <li>
-<a href="#org09ae89f"> 全局配置 </a>
+<a href="#org6a51f47"> 全局配置 </a>
 <ul>
 <li>
-<a href="#org9ea01f7"> patch </a></li>
+<a href="#org1cf829c"> patch </a></li>
 <li>
-<a href="#org0ab22b8"> schema_list </a></li>
+<a href="#org3fe23ef"> schema_list </a></li>
 <li>
-<a href="#org3b6aa81"> switcher </a></li>
+<a href="#org4b3d9b7"> switcher </a></li>
 <li>
-<a href="#org664d66b"> menu/page_size </a></li>
+<a href="#org8fc33ec"> menu/page_size </a></li>
 <li>
-<a href="#org5e030e4"> ascii_composer </a></li>
+<a href="#org4c97f68"> ascii_composer </a></li>
 <li>
-<a href="#orgff9a64d"> key_binder/bindings </a></li>
+<a href="#orgd42deba"> key_binder/bindings </a></li>
 </ul>
 </li>
 <li>
-<a href="#orgdfdba2f"> 输入方案配置 </a>
+<a href="#orgddf353b"> 输入方案配置 </a>
 <ul>
 <li>
-<a href="#org75db41a"> switchers </a></li>
+<a href="#org7023435"> switchers </a></li>
 <li>
-<a href="#org26278b7"> translator/dictionary </a></li>
+<a href="#org6d896fa"> translator/dictionary </a></li>
 <li>
-<a href="#orgbfbc61d"> punctuator/half_shape </a></li>
+<a href="#org1ad9db5"> punctuator/half_shape </a></li>
 <li>
-<a href="#org5d04632"> custom_phrase </a></li>
+<a href="#org333a19f"> custom_phrase </a></li>
 </ul>
 </li>
 <li>
-<a href="#orgcbe0d8b"> 外观定制 </a></li>
+<a href="#orgbc1b0cb"> 外观定制 </a></li>
 <li>
-<a href="#org9a5e99a"> 词典配置 </a>
+<a href="#org3ae427d"> 词典配置 </a>
 <ul>
 <li>
-<a href="#org7387293"> 词典格式 </a></li>
+<a href="#org8df5888"> 词典格式 </a></li>
 <li>
-<a href="#org9bbc5d1"> 外部词典 </a></li>
+<a href="#org80f701f"> 外部词典 </a></li>
 <li>
-<a href="#orgb6d9e13"> 自定义词典 </a></li>
+<a href="#org18cdf7f"> 自定义词典 </a></li>
 <li>
-<a href="#orgefcaafc"> 词典导入导出同步 </a></li>
+<a href="#org392b76c"> 词典导入导出同步 </a></li>
 <li>
-<a href="#org44a302a"> 词典同步 </a></li>
+<a href="#org3420889"> 词典同步 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org2711d0e"> 部署 </a></li>
+<a href="#org90ea548"> 部署 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org6b54573"> 后记 </a></li>
+<a href="#orgaea488f"> 后记 </a></li>
 </ul>
 </nav>
 </div>
@@ -107,9 +110,9 @@
 </div>
 <div id="content">
 
-<div id="outline-container-org9178456" class="outline-2">
-<h2 id="org9178456">RIME 简介</h2>
-<div class="outline-text-2" id="text-org9178456">
+<div id="outline-container-orgceb5f50" class="outline-2">
+<h2 id="orgceb5f50">RIME 简介</h2>
+<div class="outline-text-2" id="text-orgceb5f50">
 <p>
 RIME, RIME Input Method Engine ，一个开源<b>输入法</b>项目，全平台，高度自定义。官网：<a href="https://rime.im" target="_blank">RIME | 中州韻輸入法引擎</a>。
 </p>
@@ -171,14 +174,15 @@ RIME, RIME Input Method Engine ，一个开源<b>输入法</b>项目，全平台
 </div>
 </div>
 
-<div id="outline-container-org7d40eea" class="outline-2">
-<h2 id="org7d40eea">RIME 安装</h2>
-<div class="outline-text-2" id="text-org7d40eea">
+<div id="outline-container-org85bf091" class="outline-2">
+<h2 id="org85bf091">RIME 安装</h2>
+<div class="outline-text-2" id="text-org85bf091">
 <p>
 在 Arch Linux 下直接用包管理工具安装即可<sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>：
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash">sudo pacman fcitx5-im librime fcitx5-rime</code></pre>
+<pre class="bash"> sudo<span class="w"> </span>pacman<span class="w"> </span>fcitx5-im<span class="w"> </span>librime<span class="w"> </span>fcitx5-rime
+ </pre>
 </div>
 
 <p>
@@ -191,35 +195,37 @@ RIME, RIME Input Method Engine ，一个开源<b>输入法</b>项目，全平台
 </div>
 </div>
 
-<div id="outline-container-orga02323b" class="outline-2">
-<h2 id="orga02323b">安装双拼方案</h2>
-<div class="outline-text-2" id="text-orga02323b">
+<div id="outline-container-orgee15c2f" class="outline-2">
+<h2 id="orgee15c2f">安装双拼方案</h2>
+<div class="outline-text-2" id="text-orgee15c2f">
 <p>
 rime 的输入方案是独立维护的，一些发行版可能以 librime 或者类似的包提供输入方案的下载<sup>[<a id="fnr:2.1" class="footref" href="#fn:2">2</a>]</sup>。默认下 rime 并没有提供双拼的输入法，需要自己安装。
 </p>
 </div>
 
-<div id="outline-container-org1c9c92d" class="outline-3">
-<h3 id="org1c9c92d">东风破</h3>
-<div class="outline-text-3" id="text-org1c9c92d">
+<div id="outline-container-org843222a" class="outline-3">
+<h3 id="org843222a">东风破</h3>
+<div class="outline-text-3" id="text-org843222a">
 <p>
 又一个花哨的名字，<a href="https://github.com/rime/plum" target="_blank">东风破</a>（plum）是 rime 的配置管理工具，用以安装输入方案。使用方法是在一个目录下安装东风破，不要求在 rime 配置目录下。
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash">git clone --depth 1 https://github.com/rime/plum.git
-cd plum
-/bin/bash rime-install rime-double-pinyin</code></pre>
+<pre class="bash"> git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span><span class="w"> </span>https://github.com/rime/plum.git
+<span class="nb">cd</span><span class="w"> </span>plum
+/bin/bash<span class="w"> </span>rime-install<span class="w"> </span>rime-double-pinyin
+ </pre>
 </div>
 
 <p>
 然后它会把双拼方案克隆到 <code>plum/package/rime/double_pinyin</code> 下：
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash">├── double_pinyin_abc.schema.yaml   # 智能 ABC 双拼
-├── double_pinyin_flypy.schema.yaml # 小鹤双拼
-├── double_pinyin_mspy.schema.yaml  # MSPY 双拼
-├── double_pinyin_pyjj.schema.yaml  # 拼音加加双拼
-└── double_pinyin.schema.yaml       # 自然码双拼</code></pre>
+<pre class="bash"> ├──<span class="w"> </span>double_pinyin_abc.schema.yaml<span class="w">   </span>#<span class="w"> </span>智能<span class="w"> </span>ABC<span class="w"> </span>双拼
+├──<span class="w"> </span>double_pinyin_flypy.schema.yaml<span class="w"> </span>#<span class="w"> </span>小鹤双拼
+├──<span class="w"> </span>double_pinyin_mspy.schema.yaml<span class="w">  </span>#<span class="w"> </span>MSPY<span class="w"> </span>双拼
+├──<span class="w"> </span>double_pinyin_pyjj.schema.yaml<span class="w">  </span>#<span class="w"> </span>拼音加加双拼
+└──<span class="w"> </span>double_pinyin.schema.yaml<span class="w">       </span>#<span class="w"> </span>自然码双拼
+ </pre>
 </div>
 
 <p>
@@ -230,9 +236,10 @@ cd plum
 在配置文件目录下新建一个 <code>default.custom.yaml</code> ：
 </p>
 <div class="org-src-container">
-<pre><code class="language-yaml">patch:
-  schema_list:
-    - schema: double_pinyin_flypy</code></pre>
+<pre class="yaml"> <span class="nt">patch</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">schema_list</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">double_pinyin_flypy</span>
+ </pre>
 </div>
 
 <p>
@@ -242,34 +249,35 @@ cd plum
 </div>
 </div>
 
-<div id="outline-container-org6774277" class="outline-2">
-<h2 id="org6774277">RIME 配置</h2>
-<div class="outline-text-2" id="text-org6774277">
+<div id="outline-container-org2e068a4" class="outline-2">
+<h2 id="org2e068a4">RIME 配置</h2>
+<div class="outline-text-2" id="text-org2e068a4">
 <p>
 先来看一下目前为止我们的配置文件目录结构<sup>[<a id="fnr:3.1" class="footref" href="#fn:3">3</a>]</sup>：
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash">rime
-├── build/
-├── default.custom.yaml
-├── double_pinyin_flypy.schema.yaml
-├── installation.yaml
-├── luna_pinyin.userdb/
-└── user.yaml</code></pre>
+<pre class="bash"> rime
+├──<span class="w"> </span>build/
+├──<span class="w"> </span>default.custom.yaml
+├──<span class="w"> </span>double_pinyin_flypy.schema.yaml
+├──<span class="w"> </span>installation.yaml
+├──<span class="w"> </span>luna_pinyin.userdb/
+└──<span class="w"> </span>user.yaml
+ </pre>
 </div>
 <ul class="org-ul">
 <li><code>build/</code> 一个目录， rime 部署之后就会在里面生成配置和 bin 文件，你可以看到里面的文件都是成队出现的，一个 <code>prism.bin</code> 配一个 <code>schema.yaml</code> 。在上一节中我们是把小鹤双拼的方案放在配置目录 <code>rime</code> 下，在部署之后也可以在 <code>rime/build</code> 下面看到它。 这个目录<b>不用动</b>。</li>
 <li><code>default.custom.yaml</code> 全局配置，比如前面用的配置哪些方案</li>
 <li><code>double_pinyin_flypy.schema.yaml</code> 小鹤双拼方案，里面记录的就是对应的输入法信息。这个文件<b>建议不动</b>，后面我们会写新的配置文件来补充它。</li>
-<li><code>isntallation.yaml</code> 安装信息，<b>不用动</b>，后面同步的时候才会修改（详见<a href="#org44a302a">词典同步</a>）。</li>
+<li><code>isntallation.yaml</code> 安装信息，<b>不用动</b>，后面同步的时候才会修改（详见<a href="#org3420889">词典同步</a>）。</li>
 <li><code>luna_pinyin.userdb/</code> 输入法的数据库，简单说就是词库了。这个<b>不用动</b>。</li>
 <li><code>user.yaml</code> 用户状态信息。包括在方案选项选取的输入方案、输入法选项状态如「中／西」「簡／繁」等。<b>不用动</b>。</li>
 </ul>
 </div>
 
-<div id="outline-container-orgd4aaec7" class="outline-3">
-<h3 id="orgd4aaec7">自定义配置</h3>
-<div class="outline-text-3" id="text-orgd4aaec7">
+<div id="outline-container-org9a7bc88" class="outline-3">
+<h3 id="org9a7bc88">自定义配置</h3>
+<div class="outline-text-3" id="text-org9a7bc88">
 <p>
 <code>&lt;输入法&gt;.schema.yaml</code> 是默认的输入方案，它是最原始的，且不应该配修改。如果我们要对其进行配置，新建一个配置文件，名字 <code>&lt;输入法&gt;.custom.yaml</code> ，这就是对原配置的补充。当然也可以直接改 <code>schema.yaml</code> ，但建议是把补充写到 <code>custom.yaml</code> 下，所有的输入方案都是如此。
 </p>
@@ -280,16 +288,16 @@ cd plum
 </div>
 </div>
 
-<div id="outline-container-orge7cba1c" class="outline-3">
-<h3 id="orge7cba1c">工作流</h3>
-<div class="outline-text-3" id="text-orge7cba1c">
+<div id="outline-container-org60bead0" class="outline-3">
+<h3 id="org60bead0">工作流</h3>
+<div class="outline-text-3" id="text-org60bead0">
 <p>
 来简单看一下 rime 的配置信息传输流程
 </p>
 <div class="org-src-container">
 <pre class="mermaid">graph LR;
-A(default.custom.yaml) --> |全局配置| B(.schema.yaml)
-B --> |输入法补充配置| C(.custom.yaml)</pre>
+A(default.custom.yaml) --&gt; |全局配置| B(.schema.yaml)
+B --&gt; |输入法补充配置| C(.custom.yaml)</pre>
 </div>
 
 <p>
@@ -298,58 +306,55 @@ B --> |输入法补充配置| C(.custom.yaml)</pre>
 </div>
 </div>
 
-<div id="outline-container-org09ae89f" class="outline-3">
-<h3 id="org09ae89f">全局配置</h3>
-<div class="outline-text-3" id="text-org09ae89f">
+<div id="outline-container-org6a51f47" class="outline-3">
+<h3 id="org6a51f47">全局配置</h3>
+<div class="outline-text-3" id="text-org6a51f47">
 <p>
 来看一下我的全局配置 <code>default.custom.yaml</code> ，我将介绍这些配置的作用，至于更多、更详细的配置，需要移步到官网《<a href="https://github.com/rime/home/wiki/CustomizationGuide" target="_blank">Rime 定製指南</a>》。
 </p>
 <div class="org-src-container">
-<pre><code class="language-yaml">patch:
-  schema_list:
-    - schema: double_pinyin_flypy
-  switcher:
-    hotkeys:
-      - Control+grave
-    save_options:
-      - full_shape
-      - ascii_punct
-      - simplification
-
-    # 用半角斜线而不是奇丑无比的全角斜线做分隔符。
-    option_list_separator: "/"
-
-  menu/page_size:: 5
-
-  ascii_composer: # 设置caps、shift、control等键的作用
-    good_old_caps_lock: true # 若为true，caps只切换大小写
-    switch_key:
-      Shift_L: commit_code
-      Shift_R: noop
-      Control_L: noop
-      Control_R: noop
-      Caps_Lock: commit_code
-      Eisu_toggle: clear
-
-  key_binder/bindings:
-    - {accept: minus, send: Page_Up, when: has_menu}
-    - {accept: equal, send: Page_Down, when: has_menu}
-    - {accept: "Control+g", send: Escape, when: composing}</code></pre>
+<pre class="yaml"> <span class="nt">patch</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">schema_list</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">double_pinyin_flypy</span>
+<span class="w">  </span><span class="nt">switcher</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">hotkeys</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Control+grave</span>
+<span class="w">    </span><span class="nt">save_options</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">full_shape</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ascii_punct</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">simplification</span>
+<span class="w">    </span><span class="c1"># 用半角斜线而不是奇丑无比的全角斜线做分隔符。</span>
+<span class="w">    </span><span class="nt">option_list_separator</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/&quot;</span>
+<span class="w">  </span><span class="nt">menu/page_size:</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">  </span><span class="nt">ascii_composer</span><span class="p">:</span><span class="w"> </span><span class="c1"># 设置caps、shift、control等键的作用</span>
+<span class="w">    </span><span class="nt">good_old_caps_lock</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># 若为true，caps只切换大小写</span>
+<span class="w">    </span><span class="nt">switch_key</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Shift_L</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">commit_code</span>
+<span class="w">      </span><span class="nt">Shift_R</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">noop</span>
+<span class="w">      </span><span class="nt">Control_L</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">noop</span>
+<span class="w">      </span><span class="nt">Control_R</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">noop</span>
+<span class="w">      </span><span class="nt">Caps_Lock</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">commit_code</span>
+<span class="w">      </span><span class="nt">Eisu_toggle</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">clear</span>
+<span class="w">  </span><span class="nt">key_binder/bindings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">accept</span><span class="p">:</span><span class="w"> </span><span class="nv">minus</span><span class="p p-Indicator">,</span><span class="nt"> send</span><span class="p">:</span><span class="w"> </span><span class="nv">Page_Up</span><span class="p p-Indicator">,</span><span class="nt"> when</span><span class="p">:</span><span class="w"> </span><span class="nv">has_menu</span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">accept</span><span class="p">:</span><span class="w"> </span><span class="nv">equal</span><span class="p p-Indicator">,</span><span class="nt"> send</span><span class="p">:</span><span class="w"> </span><span class="nv">Page_Down</span><span class="p p-Indicator">,</span><span class="nt"> when</span><span class="p">:</span><span class="w"> </span><span class="nv">has_menu</span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">accept</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Control+g&quot;</span><span class="p p-Indicator">,</span><span class="nt"> send</span><span class="p">:</span><span class="w"> </span><span class="nv">Escape</span><span class="p p-Indicator">,</span><span class="nt"> when</span><span class="p">:</span><span class="w"> </span><span class="nv">composing</span><span class="p p-Indicator">}</span>
+ </pre>
 </div>
 </div>
 
-<div id="outline-container-org9ea01f7" class="outline-4">
-<h4 id="org9ea01f7">patch</h4>
-<div class="outline-text-4" id="text-org9ea01f7">
+<div id="outline-container-org1cf829c" class="outline-4">
+<h4 id="org1cf829c">patch</h4>
+<div class="outline-text-4" id="text-org1cf829c">
 <p>
 整个 <code>custom.yaml</code> 只有这一个根项 <code>patch</code> ，同样，输入法的 <code>custom.yaml</code> 也是由这个 <code>patch</code> 组成。可见它是作为补丁打到原方案上的，这是一种更优雅的方式。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org0ab22b8" class="outline-4">
-<h4 id="org0ab22b8">schema_list</h4>
-<div class="outline-text-4" id="text-org0ab22b8">
+<div id="outline-container-org3fe23ef" class="outline-4">
+<h4 id="org3fe23ef">schema_list</h4>
+<div class="outline-text-4" id="text-org3fe23ef">
 <p>
 输入方案列表，它会以配置文件作为根目录，向下去寻找方案。
 </p>
@@ -364,9 +369,9 @@ B --> |输入法补充配置| C(.custom.yaml)</pre>
 </div>
 </div>
 
-<div id="outline-container-org3b6aa81" class="outline-4">
-<h4 id="org3b6aa81">switcher</h4>
-<div class="outline-text-4" id="text-org3b6aa81">
+<div id="outline-container-org4b3d9b7" class="outline-4">
+<h4 id="org4b3d9b7">switcher</h4>
+<div class="outline-text-4" id="text-org4b3d9b7">
 <p>
 切换器，定义输入法的切换行为。
 </p>
@@ -385,18 +390,18 @@ B --> |输入法补充配置| C(.custom.yaml)</pre>
 </div>
 </div>
 
-<div id="outline-container-org664d66b" class="outline-4">
-<h4 id="org664d66b">menu/page_size</h4>
-<div class="outline-text-4" id="text-org664d66b">
+<div id="outline-container-org8fc33ec" class="outline-4">
+<h4 id="org8fc33ec">menu/page_size</h4>
+<div class="outline-text-4" id="text-org8fc33ec">
 <p>
 指定候选词个数
 </p>
 </div>
 </div>
 
-<div id="outline-container-org5e030e4" class="outline-4">
-<h4 id="org5e030e4">ascii_composer</h4>
-<div class="outline-text-4" id="text-org5e030e4">
+<div id="outline-container-org4c97f68" class="outline-4">
+<h4 id="org4c97f68">ascii_composer</h4>
+<div class="outline-text-4" id="text-org4c97f68">
 <p>
 指定特殊键的作用，参考的前辈的配置<sup>[<a id="fnr:4.1" class="footref" href="#fn:4">4</a>]</sup>。
 </p>
@@ -406,7 +411,7 @@ B --> |输入法补充配置| C(.custom.yaml)</pre>
 </p>
 
 
-<figure id="org3f580e4">
+<figure id="orgd811dfb">
 <a href="/assets/178bd9fa3eabd186376bb8d19a4936ce.gif" target="_blank" target="_blank"><img src="/assets/178bd9fa3eabd186376bb8d19a4936ce.gif" alt="178bd9fa3eabd186376bb8d19a4936ce.gif"></a>
 
 </figure>
@@ -417,9 +422,9 @@ B --> |输入法补充配置| C(.custom.yaml)</pre>
 </div>
 </div>
 
-<div id="outline-container-orgff9a64d" class="outline-4">
-<h4 id="orgff9a64d">key_binder/bindings</h4>
-<div class="outline-text-4" id="text-orgff9a64d">
+<div id="outline-container-orgd42deba" class="outline-4">
+<h4 id="orgd42deba">key_binder/bindings</h4>
+<div class="outline-text-4" id="text-orgd42deba">
 <p>
 热键绑定，这里绑定的是 <code>-</code> <code>=</code> 用来翻页，也就是平时用的模式。然后加一个 <code>Ctrl+g</code> 不上屏直接退出，也就是 <code>clear</code> 。
 </p>
@@ -431,70 +436,68 @@ B --> |输入法补充配置| C(.custom.yaml)</pre>
 </div>
 </div>
 
-<div id="outline-container-orgdfdba2f" class="outline-3">
-<h3 id="orgdfdba2f">输入方案配置</h3>
-<div class="outline-text-3" id="text-orgdfdba2f">
+<div id="outline-container-orgddf353b" class="outline-3">
+<h3 id="orgddf353b">输入方案配置</h3>
+<div class="outline-text-3" id="text-orgddf353b">
 <p>
 接下来看具体的输入方案 <code>double_pinyin_flypy.custom.yaml</code> 的配置。
 </p>
 <div class="org-src-container">
-<pre><code class="language-yaml">patch:
-  switches:
-    - name: ascii_mode
-      reset: 1
-      states: [ 中文, 西文 ]
-    - name: simplification
-      reset: 1
-      states: [ 漢字, 汉字 ]
-
-  translator/dictionary: luna_pinyin.extended
-
-  punctuator/half_shape:
-    "!": "！"
-    "\"":
-      pair:
-        - "“"
-        - "”"
-    "#": "#"
-    "$": "$"
-    "%": "%"
-    "*": "*"
-    "'":
-      pair:
-        - "‘"
-        - "’"
-    ",": "，"
-    "-": "-"
-    ".": "。"
-    "/": "/"
-    "\\": "、"
-    "[": "【"
-    "]": "】"
-    "{": "「"
-    "}": "」"
-    "<": "《"
-    ">": "》"
-    "^": "……"
-    "_": "——"
-    "`": "`"
-    "|": "·"
-    "~": "~"
-
-  # 双拼使用自定义词典 custom_phrase.txt
-  custom_phrase:
-    dictionary: ""
-    user_dict: custom_phrase
-    db_class: stabledb
-    enable_completion: false
-    enable_sentence: false
-    initial_quality: 1
-  "engine/translators/@5": table_translator@custom_phrase</code></pre>
+<pre class="yaml"> <span class="nt">patch</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">switches</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ascii_mode</span>
+<span class="w">      </span><span class="nt">reset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">      </span><span class="nt">states</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">中文</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">西文</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">simplification</span>
+<span class="w">      </span><span class="nt">reset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">      </span><span class="nt">states</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">漢字</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">汉字</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">translator/dictionary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">luna_pinyin.extended</span>
+<span class="w">  </span><span class="nt">punctuator/half_shape</span><span class="p">:</span>
+<span class="w">    </span><span class="s">&quot;!&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;！&quot;</span>
+<span class="w">    </span><span class="s">&quot;\&quot;&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">      </span><span class="nt">pair</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;“&quot;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;”&quot;</span>
+<span class="w">    </span><span class="s">&quot;#&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;#&quot;</span>
+<span class="w">    </span><span class="s">&quot;$&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;$&quot;</span>
+<span class="w">    </span><span class="s">&quot;%&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;%&quot;</span>
+<span class="w">    </span><span class="s">&quot;*&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;*&quot;</span>
+<span class="w">    </span><span class="s">&quot;&#39;&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">      </span><span class="nt">pair</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;‘&quot;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;’&quot;</span>
+<span class="w">    </span><span class="s">&quot;,&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;，&quot;</span>
+<span class="w">    </span><span class="s">&quot;-&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;-&quot;</span>
+<span class="w">    </span><span class="s">&quot;.&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;。&quot;</span>
+<span class="w">    </span><span class="s">&quot;/&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;/&quot;</span>
+<span class="w">    </span><span class="s">&quot;\\&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;、&quot;</span>
+<span class="w">    </span><span class="s">&quot;[&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;【&quot;</span>
+<span class="w">    </span><span class="s">&quot;]&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;】&quot;</span>
+<span class="w">    </span><span class="s">&quot;{&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;「&quot;</span>
+<span class="w">    </span><span class="s">&quot;}&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;」&quot;</span>
+<span class="w">    </span><span class="s">&quot;&amp;lt;&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;《&quot;</span>
+<span class="w">    </span><span class="s">&quot;&amp;gt;&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;》&quot;</span>
+<span class="w">    </span><span class="s">&quot;^&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;……&quot;</span>
+<span class="w">    </span><span class="s">&quot;_&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;——&quot;</span>
+<span class="w">    </span><span class="s">&quot;`&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;`&quot;</span>
+<span class="w">    </span><span class="s">&quot;|&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;·&quot;</span>
+<span class="w">    </span><span class="s">&quot;~&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;~&quot;</span>
+<span class="w">  </span><span class="c1"># 双拼使用自定义词典 custom_phrase.txt</span>
+<span class="w">  </span><span class="nt">custom_phrase</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">dictionary</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<span class="w">    </span><span class="nt">user_dict</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom_phrase</span>
+<span class="w">    </span><span class="nt">db_class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stabledb</span>
+<span class="w">    </span><span class="nt">enable_completion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">enable_sentence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">initial_quality</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="s">&quot;engine/translators/@5&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">table_translator@custom_phrase</span>
+ </pre>
 </div>
 </div>
 
-<div id="outline-container-org75db41a" class="outline-4">
-<h4 id="org75db41a">switchers</h4>
-<div class="outline-text-4" id="text-org75db41a">
+<div id="outline-container-org7023435" class="outline-4">
+<h4 id="org7023435">switchers</h4>
+<div class="outline-text-4" id="text-org7023435">
 <p>
 这个对应的是初始化方案。
 </p>
@@ -509,18 +512,18 @@ B --> |输入法补充配置| C(.custom.yaml)</pre>
 </div>
 </div>
 
-<div id="outline-container-org26278b7" class="outline-4">
-<h4 id="org26278b7">translator/dictionary</h4>
-<div class="outline-text-4" id="text-org26278b7">
+<div id="outline-container-org6d896fa" class="outline-4">
+<h4 id="org6d896fa">translator/dictionary</h4>
+<div class="outline-text-4" id="text-org6d896fa">
 <p>
-这个表示要添加的词典，后面会介绍（详见<a href="#org9a5e99a">词典配置</a>）。
+这个表示要添加的词典，后面会介绍（详见<a href="#org3ae427d">词典配置</a>）。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgbfbc61d" class="outline-4">
-<h4 id="orgbfbc61d">punctuator/half_shape</h4>
-<div class="outline-text-4" id="text-orgbfbc61d">
+<div id="outline-container-org1ad9db5" class="outline-4">
+<h4 id="org1ad9db5">punctuator/half_shape</h4>
+<div class="outline-text-4" id="text-org1ad9db5">
 <p>
 定义了“全角状态”（即中文输入状态）下的特殊符号的行为。
 </p>
@@ -533,10 +536,11 @@ B --> |输入法补充配置| C(.custom.yaml)</pre>
 如
 </p>
 <div class="org-src-container">
-<pre><code class="language-yaml">"\"":
-  pair:
-    - "“"
-    - "”"</code></pre>
+<pre class="yaml"> <span class="s">&quot;\&quot;&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">  </span><span class="nt">pair</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;“&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;”&quot;</span>
+ </pre>
 </div>
 <p>
 在中文输入状态下，输入 <code>"</code> ，全角的 <code>“</code>, <code>”</code> 会依次上屏，第一次是前者，再按一次出后者。
@@ -552,9 +556,9 @@ B --> |输入法补充配置| C(.custom.yaml)</pre>
 </div>
 </div>
 
-<div id="outline-container-org5d04632" class="outline-4">
-<h4 id="org5d04632">custom_phrase</h4>
-<div class="outline-text-4" id="text-org5d04632">
+<div id="outline-container-org333a19f" class="outline-4">
+<h4 id="org333a19f">custom_phrase</h4>
+<div class="outline-text-4" id="text-org333a19f">
 <p>
 这个才是真正意义上的自定义词典， 前面的 <code>translator/dictionary</code> 指的是外部的、人家写好的词典，而 <code>custom_phrase</code> 是我们自己去修订的词典。同样在后续介绍（详见）。
 </p>
@@ -566,9 +570,9 @@ B --> |输入法补充配置| C(.custom.yaml)</pre>
 </div>
 </div>
 
-<div id="outline-container-orgcbe0d8b" class="outline-3">
-<h3 id="orgcbe0d8b">外观定制</h3>
-<div class="outline-text-3" id="text-orgcbe0d8b">
+<div id="outline-container-orgbc1b0cb" class="outline-3">
+<h3 id="orgbc1b0cb">外观定制</h3>
+<div class="outline-text-3" id="text-orgbc1b0cb">
 <p>
 在 windows 和 macOS 下可以很好配置， ibus 也稍微能配置。这里指路：<a href="https://github.com/rime/home/wiki/CustomizationGuide#%E5%B0%8F%E7%8B%BC%E6%AF%AB%E5%A4%96%E8%A7%80%E8%A8%AD%E5%AE%9A" target="_blank">CustomizationGuide · rime/home Wiki · GitHub</a> 。
 </p>
@@ -588,63 +592,63 @@ B --> |输入法补充配置| C(.custom.yaml)</pre>
 </div>
 </div>
 
-<div id="outline-container-org9a5e99a" class="outline-3">
-<h3 id="org9a5e99a">词典配置</h3>
-<div class="outline-text-3" id="text-org9a5e99a">
+<div id="outline-container-org3ae427d" class="outline-3">
+<h3 id="org3ae427d">词典配置</h3>
+<div class="outline-text-3" id="text-org3ae427d">
 <p>
 我会把词典分为<b>外部词典</b>和<b>自定义词典</b>来讲，虽然说二者几乎是等价的 —— 虽然我的确说不出个一二三四，但分开的好处前面也提到了，就是后续管理方便。
 </p>
 </div>
 
-<div id="outline-container-org7387293" class="outline-4">
-<h4 id="org7387293">词典格式</h4>
-<div class="outline-text-4" id="text-org7387293">
+<div id="outline-container-org8df5888" class="outline-4">
+<h4 id="org8df5888">词典格式</h4>
+<div class="outline-text-4" id="text-org8df5888">
 <p>
 词典格式如下所示<sup>[<a id="fnr:5.1" class="footref" href="#fn:5">5</a>]</sup>，字典总共有三列，分别是<b>字词</b>，<b>编码</b>（可选），<b>读音权重</b>（可选）：
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash"># 一个字。
-你	ni
-我	wo
-的	de	99%
-的	di	1%
-地	de	10%
-地	di	90%
-目	mu
-好	hao
-
-# 词组
+<pre class="bash"> #<span class="w"> </span>一个字。
+你<span class="w">	</span>ni
+我<span class="w">	</span>wo
+的<span class="w">	</span>de<span class="w">	</span><span class="m">99</span>%
+的<span class="w">	</span>di<span class="w">	</span><span class="m">1</span>%
+地<span class="w">	</span>de<span class="w">	</span><span class="m">10</span>%
+地<span class="w">	</span>di<span class="w">	</span><span class="m">90</span>%
+目<span class="w">	</span>mu
+好<span class="w">	</span>hao
+#<span class="w"> </span>词组
 你我
 你的
 我的
 我的天
-天地	tian di
+天地<span class="w">	</span>tian<span class="w"> </span>di
 好天
 好好地
-目的	mu di
-目的地	mu di di</code></pre>
+目的<span class="w">	</span>mu<span class="w"> </span>di
+目的地<span class="w">	</span>mu<span class="w"> </span>di<span class="w"> </span>di
+ </pre>
 </div>
 </div>
 
 <ul class="org-ul">
-<li><a id="orgcb629dd"></a>字词<br>
-<div class="outline-text-5" id="text-orgcb629dd">
+<li><a id="org3a6cfce"></a>字词<br>
+<div class="outline-text-5" id="text-org3a6cfce">
 <p>
 字面意思，就是要输入的字（单字）或词组（多字）
 </p>
 </div>
 </li>
 
-<li><a id="org9361497"></a>读音权重<br>
-<div class="outline-text-5" id="text-org9361497">
+<li><a id="org67267db"></a>读音权重<br>
+<div class="outline-text-5" id="text-org67267db">
 <p>
 可以是非负整数，也可是是浮点数的百分比，用于纠正多音字的词组。
 </p>
 </div>
 </li>
 
-<li><a id="orgd4aa157"></a>编码<br>
-<div class="outline-text-5" id="text-orgd4aa157">
+<li><a id="org432b4fb"></a>编码<br>
+<div class="outline-text-5" id="text-org432b4fb">
 <p>
 就是键盘按那些键会出现对应的字词，多个字用<b>空格</b>隔开。
 </p>
@@ -673,21 +677,22 @@ B --> |输入法补充配置| C(.custom.yaml)</pre>
 </ul>
 </div>
 
-<div id="outline-container-org9bbc5d1" class="outline-4">
-<h4 id="org9bbc5d1">外部词典</h4>
-<div class="outline-text-4" id="text-org9bbc5d1">
+<div id="outline-container-org80f701f" class="outline-4">
+<h4 id="org80f701f">外部词典</h4>
+<div class="outline-text-4" id="text-org80f701f">
 <p>
 形如 <code>&lt;Name&gt;.dict.yaml</code> 的配置文件，需要加入头配置<sup>[<a id="fnr:5.2" class="footref" href="#fn:5">5</a>]</sup>：
 </p>
 <div class="org-src-container">
-<pre><code class="language-yaml"># 注意這裏以 --- ... 分別標記出 YAML 文檔的起始與結束位置
-# 在 ... 標記之後的部份就不會作 YAML 文檔來解讀
----
-name: luna_pinyin
-version: "0.9"
-sort: by_weight
-use_preset_vocabulary: true
-...</code></pre>
+<pre class="yaml"> <span class="c1"># 注意這裏以 --- ... 分別標記出 YAML 文檔的起始與結束位置</span>
+<span class="c1"># 在 ... 標記之後的部份就不會作 YAML 文檔來解讀</span>
+<span class="nn">---</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">luna_pinyin</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.9&quot;</span>
+<span class="nt">sort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">by_weight</span>
+<span class="nt">use_preset_vocabulary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nn">...</span>
+ </pre>
 </div>
 <ul class="org-ul">
 <li><code>name</code>: 词典名，内部使用，可以与对应的输入方案一致，也可以不同</li>
@@ -705,36 +710,36 @@ use_preset_vocabulary: true
 </p>
 
 <ol class="org-ol">
-<li>将里面的 <code>luna_pinyin.extended.dict.yaml</code> 复制到配置目录下作为词库的入口。前面在配置方案输入法的时候，配置里面已经写了把 <code>luna_pinyin.extended</code> 词库导入（详见<a href="#org26278b7">translator/dictionary</a>），如果之前注释了就取消注释。</li>
+<li>将里面的 <code>luna_pinyin.extended.dict.yaml</code> 复制到配置目录下作为词库的入口。前面在配置方案输入法的时候，配置里面已经写了把 <code>luna_pinyin.extended</code> 词库导入（详见<a href="#org6d896fa">translator/dictionary</a>），如果之前注释了就取消注释。</li>
 <li>把其字典目录 <code>dicts</code> 复制到配置目录下</li>
-<li>把 <code>custom_phrase.txt</code> 复制到配置目录下，这是下一节要讲的<a href="#orgb6d9e13">自定义词典</a>。</li>
+<li>把 <code>custom_phrase.txt</code> 复制到配置目录下，这是下一节要讲的<a href="#org18cdf7f">自定义词典</a>。</li>
 </ol>
 
 <p>
 看一下词典入口 <code>luna_pinyin.extended.dict.yaml</code> ：
 </p>
 <div class="org-src-container">
-<pre><code class="language-yaml">---
-name: luna_pinyin.extended
-version: "2016.06.26"
-sort: by_weight  #字典初始排序，可選original或by_weight
-use_preset_vocabulary: true
-#此處爲明月拼音擴充詞庫（基本）默認鏈接載入的詞庫，有朙月拼音官方詞庫、明月拼音擴充詞庫（漢語大詞典）、明月拼音擴充詞庫（詩詞）、明月拼音擴充詞庫（含西文的詞彙）。如果不需要加載某个詞庫請將其用「#」註釋掉。
-#雙拼不支持 luna_pinyin.cn_en 詞庫，請用戶手動禁用。
-
-import_tables:
-  - luna_pinyin # 基础词库，一定要加，不然会少很多字
-  - dicts/luna_pinyin.sougou.basic
-  - dicts/luna_pinyin.popular
-  - dicts/luna_pinyin.xiandaihanyu
-  - dicts/luna_pinyin.chengyusuyu
-  - dicts/luna_pinyin.computer
-  - dicts/luna_pinyin.kaifa
-  - dicts/luna_pinyin.poetry
-  - dicts/luna_pinyin.chat
-  - dicts/luna_pinyin.place
-  - dicts/luna_pinyin.shopping
-  - dicts/luna_pinyin.website</code></pre>
+<pre class="yaml"> <span class="nn">---</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">luna_pinyin.extended</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2016.06.26&quot;</span>
+<span class="nt">sort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">by_weight</span><span class="w">  </span><span class="c1">#字典初始排序，可選original或by_weight</span>
+<span class="nt">use_preset_vocabulary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="c1">#此處爲明月拼音擴充詞庫（基本）默認鏈接載入的詞庫，有朙月拼音官方詞庫、明月拼音擴充詞庫（漢語大詞典）、明月拼音擴充詞庫（詩詞）、明月拼音擴充詞庫（含西文的詞彙）。如果不需要加載某个詞庫請將其用「#」註釋掉。</span>
+<span class="c1">#雙拼不支持 luna_pinyin.cn_en 詞庫，請用戶手動禁用。</span>
+<span class="nt">import_tables</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">luna_pinyin</span><span class="w"> </span><span class="c1"># 基础词库，一定要加，不然会少很多字</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dicts/luna_pinyin.sougou.basic</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dicts/luna_pinyin.popular</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dicts/luna_pinyin.xiandaihanyu</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dicts/luna_pinyin.chengyusuyu</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dicts/luna_pinyin.computer</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dicts/luna_pinyin.kaifa</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dicts/luna_pinyin.poetry</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dicts/luna_pinyin.chat</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dicts/luna_pinyin.place</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dicts/luna_pinyin.shopping</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dicts/luna_pinyin.website</span>
+ </pre>
 </div>
 
 <p>
@@ -750,14 +755,16 @@ import_tables:
 </ul>
 
 <div class="org-src-container">
-<pre><code class="language-bash">yay -S  fcitx5-pinyin-moegirl-rime fcitx5-pinyin-zhwiki-rime</code></pre>
+<pre class="bash"> yay<span class="w"> </span>-S<span class="w">  </span>fcitx5-pinyin-moegirl-rime<span class="w"> </span>fcitx5-pinyin-zhwiki-rime
+ </pre>
 </div>
 <p>
 它们会被存在 <code>/usr/share/rime-data/</code> ，这个目录是 rime 的一个内部目录，所以可以直接使用相对路径，即名字：
 </p>
 <div class="org-src-container">
-<pre><code class="language-yaml">- moegirl
-- zhwiki</code></pre>
+<pre class="yaml"> <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">moegirl</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zhwiki</span>
+ </pre>
 </div>
 
 <p>
@@ -766,23 +773,23 @@ import_tables:
 </div>
 </div>
 
-<div id="outline-container-orgb6d9e13" class="outline-4">
-<h4 id="orgb6d9e13">自定义词典</h4>
-<div class="outline-text-4" id="text-orgb6d9e13">
+<div id="outline-container-org18cdf7f" class="outline-4">
+<h4 id="org18cdf7f">自定义词典</h4>
+<div class="outline-text-4" id="text-org18cdf7f">
 <p>
 自定义词典是配置目录下的 <code>custom_phrase.txt</code> ，它不用写头信息，定义个编码即可（也算头信息把）：
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash"># Rime table
-# coding: utf-8
-
-中州韻輸入法引擎	rime	2
-又双叒叕	yyy
-http://rime.im/	rime	1</code></pre>
+<pre class="bash"> #<span class="w"> </span>Rime<span class="w"> </span>table
+#<span class="w"> </span>coding:<span class="w"> </span>utf-8
+中州韻輸入法引擎<span class="w">	</span>rime<span class="w">	</span><span class="m">2</span>
+又双叒叕<span class="w">	</span>yyy
+http://rime.im/<span class="w">	</span>rime<span class="w">	</span><span class="m">1</span>
+ </pre>
 </div>
 
 <p>
-这里就是我们平时手动积累词汇的地方，不需多言，注意各列之间是 tab 制表符（ <code>\t</code> ）而不是空格即可。前面输入法配置的时候也写了，如果注释了取消一下（详见：<a href="#org5d04632">custom_phrase</a>）。
+这里就是我们平时手动积累词汇的地方，不需多言，注意各列之间是 tab 制表符（ <code>\t</code> ）而不是空格即可。前面输入法配置的时候也写了，如果注释了取消一下（详见：<a href="#org333a19f">custom_phrase</a>）。
 </p>
 
 <p>
@@ -791,21 +798,22 @@ http://rime.im/	rime	1</code></pre>
 </div>
 </div>
 
-<div id="outline-container-orgefcaafc" class="outline-4">
-<h4 id="orgefcaafc">词典导入导出同步</h4>
-<div class="outline-text-4" id="text-orgefcaafc">
+<div id="outline-container-org392b76c" class="outline-4">
+<h4 id="org392b76c">词典导入导出同步</h4>
+<div class="outline-text-4" id="text-org392b76c">
 <p>
 用 <code>librime</code> 编译出的工具 <code>rime_dict_manager</code> 来实现<sup>[<a id="fnr:3.2" class="footref" href="#fn:3">3</a>]</sup>：
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash">$ rime_dict_manager
+<pre class="bash"> $<span class="w"> </span>rime_dict_manager
 options:
-    -l|--list
-    -s|--sync
-    -b|--backup dict_name
-    -r|--restore xxx.userdb.txt
-    -e|--export dict_name export.txt
-    -i|--import dict_name import.txt</code></pre>
+<span class="w">    </span>-l<span class="p">|</span>--list
+<span class="w">    </span>-s<span class="p">|</span>--sync
+<span class="w">    </span>-b<span class="p">|</span>--backup<span class="w"> </span>dict_name
+<span class="w">    </span>-r<span class="p">|</span>--restore<span class="w"> </span>xxx.userdb.txt
+<span class="w">    </span>-e<span class="p">|</span>--export<span class="w"> </span>dict_name<span class="w"> </span>export.txt
+<span class="w">    </span>-i<span class="p">|</span>--import<span class="w"> </span>dict_name<span class="w"> </span>import.txt
+ </pre>
 </div>
 
 <p>
@@ -814,14 +822,15 @@ options:
 </div>
 </div>
 
-<div id="outline-container-org44a302a" class="outline-4">
-<h4 id="org44a302a">词典同步</h4>
-<div class="outline-text-4" id="text-org44a302a">
+<div id="outline-container-org3420889" class="outline-4">
+<h4 id="org3420889">词典同步</h4>
+<div class="outline-text-4" id="text-org3420889">
 <p>
 设置 <code>installation.yaml</code> 里的 <code>sync_dir</code> 比如
 </p>
 <div class="org-src-container">
-<pre><code class="language-yaml">sync_dir: /tmp/rime-sync</code></pre>
+<pre class="yaml"> <span class="nt">sync_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/tmp/rime-sync</span>
+ </pre>
 </div>
 <p>
 重新部署后，会根据 <code>installation.yaml</code> 里面的 <code>installation_id</code> (假定是 <code>id-a</code>) ，那么就会在同步目录下创建一个与其相同的目录 <code>/tmp/rime-sync/id-a/</code> ，里面会同步 <code>userdb.txt</code> 词典和 <code>default.custom.yaml + &lt;others&gt;.custom.yaml</code> 自定义的输入方案。
@@ -834,9 +843,9 @@ options:
 </div>
 </div>
 
-<div id="outline-container-org2711d0e" class="outline-3">
-<h3 id="org2711d0e">部署</h3>
-<div class="outline-text-3" id="text-org2711d0e">
+<div id="outline-container-org90ea548" class="outline-3">
+<h3 id="org90ea548">部署</h3>
+<div class="outline-text-3" id="text-org90ea548">
 <p>
 别忘了重新部署。因为添加了字典，部署时会花一点儿时间。
 </p>
@@ -844,9 +853,9 @@ options:
 </div>
 </div>
 
-<div id="outline-container-org6b54573" class="outline-2">
-<h2 id="org6b54573">后记</h2>
-<div class="outline-text-2" id="text-org6b54573">
+<div id="outline-container-orgaea488f" class="outline-2">
+<h2 id="orgaea488f">后记</h2>
+<div class="outline-text-2" id="text-orgaea488f">
 <p>
 呼，这也是给我折腾麻了。虽然用了 rime 一段时间了，但是一直没集中活力弄它，抄得官网和前辈大佬的配置得过且过。为了写这篇博客去学习了很多，输出倒逼输入真的可以。
 </p>
@@ -905,28 +914,12 @@ rime 折腾完了就去搞 Emacs 去了， 于是开始捣鼓 emacs-rime ，如�
 </div>
 </div>
 </div>
-<div id="postamble" class="status"><script src="/static/mermaid/mermaid.min.js"></script>
+<div id="postamble" class="status">
+<script src="/static/mermaid/mermaid.min.js"></script>
 <script>
 mermaid.initialize({theme: 'neutral', securityLevel: 'loose'});
 </script>
-<script src="/static/highlight/highlight.min.js"></script>
-<script>
-Array.from(document.querySelectorAll('#content pre')).forEach(
-node => {
-let codeElement = node.querySelector("code"),
-    excludes = ["mermaid"];
-
-if (!codeElement){
-return
-}
-let language = codeElement.getAttribute("class").split("-")[1];
-if (excludes.includes(language)) {
-return
-}
-
-hljs.highlightElement(codeElement);
-});
-</script></div>
+</div>
 </div>
 <div class="footer">
 <center> The End </center></div>

@@ -16,42 +16,45 @@
 <div class="nav item">
 <a href="/about">关于</a>
 </div>
+<div class="nav item">
+<a href="/emacs">Emacs</a>
+</div>
 </div>
 </div>
 <div class="main">
-<div id="preamble" class="status"><link rel="stylesheet" href="/static/highlight/dracula.css"><div class="toc">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/pygments/dracula.css"><div class="toc">
 <h2 class="toc-title"> TOC </h2>
 <nav id="TableOfContents">
 
 <ul>
 <li>
-<a href="#orgcb2edc6"> 简介 </a></li>
+<a href="#org0a3abd6"> 简介 </a></li>
 <li>
-<a href="#org31aa003"> 安装配置 </a></li>
+<a href="#org6b3eb81"> 安装配置 </a></li>
 <li>
-<a href="#org2090a9d"> 使用 </a>
+<a href="#org64efb70"> 使用 </a>
 <ul>
 <li>
-<a href="#org8af0485"> 卡片内容 </a></li>
+<a href="#org873e59e"> 卡片内容 </a></li>
 <li>
-<a href="#orgb6d9920"> 如何开始 </a></li>
+<a href="#org097ddcd"> 如何开始 </a></li>
 <li>
-<a href="#orgdb04e7b"> 读入卡片 </a></li>
+<a href="#org85cd5df"> 读入卡片 </a></li>
 <li>
-<a href="#org6623cd9"> 任务量 </a></li>
+<a href="#org8575aed"> 任务量 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org21d76e0"> 个人单词库制作 </a>
+<a href="#org6e150d8"> 个人单词库制作 </a>
 <ul>
 <li>
-<a href="#org743b03b"> 单词库 </a></li>
+<a href="#org9e9cc26"> 单词库 </a></li>
 <li>
-<a href="#orgcb1aba1"> 大文件 </a></li>
+<a href="#org22524b2"> 大文件 </a></li>
 </ul>
 </li>
 <li>
-<a href="#orgfa3cdce"> 后记 </a></li>
+<a href="#orgde5243a"> 后记 </a></li>
 </ul>
 </nav>
 </div>
@@ -65,9 +68,9 @@
 </div>
 <div id="content">
 
-<div id="outline-container-orgcb2edc6" class="outline-2">
-<h2 id="orgcb2edc6">简介</h2>
-<div class="outline-text-2" id="text-orgcb2edc6">
+<div id="outline-container-org0a3abd6" class="outline-2">
+<h2 id="org0a3abd6">简介</h2>
+<div class="outline-text-2" id="text-org0a3abd6">
 <p>
 最近开始准备英语的终身学习，开始物色背单词软件，第一个想到的是 <a href="https://ankisrs.net/" target="_blank">Anki</a> 。虽然安装了，但是在 Arch Linux 官网中关于 Anki 的 wiki 提到了另一个同类项目 org-drill<sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>, 我马上点开，很快啊。秉持着“ALL IN ONE”的理念，马上在 Emacs 上配置来试用，感觉还不错。
 </p>
@@ -90,9 +93,9 @@ Fork 到 GitHub 的仓库地址：<a href="https://github.com/louietan/org-drill
 </div>
 </div>
 
-<div id="outline-container-org31aa003" class="outline-2">
-<h2 id="org31aa003">安装配置</h2>
-<div class="outline-text-2" id="text-org31aa003">
+<div id="outline-container-org6b3eb81" class="outline-2">
+<h2 id="org6b3eb81">安装配置</h2>
+<div class="outline-text-2" id="text-org6b3eb81">
 <p>
 可以通过 MELPA 安装，直接 <code>M-x package-install RET org-drill RET</code>, 或者克隆仓库到本地。
 </p>
@@ -102,16 +105,15 @@ Fork 到 GitHub 的仓库地址：<a href="https://github.com/louietan/org-drill
 </p>
 
 <div class="org-src-container">
-<pre><code class="language-lisp">(require 'org-drill)
-(require 'org-drill-anki)
-
-  ;;; config
-(setq org-drill-maximum-items-per-session 40
-      org-drill-maximum-duration 30    ; 30 minutes
-      ;; org-drill-scope 'directory
-      )
-
-(defalias 'destructuring-bind 'cl-destructuring-bind)</code></pre>
+<pre class="lisp"> <span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;org-drill</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;org-drill-anki</span><span class="p">)</span>
+<span class="w">  </span><span class="c1">;;; config</span>
+<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">org-drill-maximum-items-per-session</span><span class="w"> </span><span class="nv">40</span>
+<span class="w">      </span><span class="nv">org-drill-maximum-duration</span><span class="w"> </span><span class="mi">30</span><span class="w">    </span><span class="c1">; 30 minutes</span>
+<span class="w">      </span><span class="c1">;; org-drill-scope &#39;directory</span>
+<span class="w">      </span><span class="p">)</span>
+<span class="p">(</span><span class="nv">defalias</span><span class="w"> </span><span class="ss">&#39;destructuring-bind</span><span class="w"> </span><span class="ss">&#39;cl-destructuring-bind</span><span class="p">)</span>
+ </pre>
 </div>
 
 <p>
@@ -120,23 +122,23 @@ Fork 到 GitHub 的仓库地址：<a href="https://github.com/louietan/org-drill
 </div>
 </div>
 
-<div id="outline-container-org2090a9d" class="outline-2">
-<h2 id="org2090a9d">使用</h2>
-<div class="outline-text-2" id="text-org2090a9d">
+<div id="outline-container-org64efb70" class="outline-2">
+<h2 id="org64efb70">使用</h2>
+<div class="outline-text-2" id="text-org64efb70">
 <p>
 它提供了多种卡片的类型，有普通型、填空型、双面型等，当然也支持自定义。因为是我用来背单词的，只需要用普通型的就好，有需要的可以参考文档的配置。
 </p>
 </div>
 
-<div id="outline-container-org8af0485" class="outline-3">
-<h3 id="org8af0485">卡片内容</h3>
-<div class="outline-text-3" id="text-org8af0485">
+<div id="outline-container-org873e59e" class="outline-3">
+<h3 id="org873e59e">卡片内容</h3>
+<div class="outline-text-3" id="text-org873e59e">
 <p>
 卡片是写在一个 <code>.org</code> 文件内：
 </p>
 
 
-<figure id="org8a27de6">
+<figure id="org431e944">
 <a href="/assets/a978ed296753b7a6e32dc2143532aa3c.png" target="_blank" target="_blank"><img src="/assets/a978ed296753b7a6e32dc2143532aa3c.png" alt="a978ed296753b7a6e32dc2143532aa3c.png"></a>
 
 </figure>
@@ -147,9 +149,9 @@ Fork 到 GitHub 的仓库地址：<a href="https://github.com/louietan/org-drill
 </div>
 </div>
 
-<div id="outline-container-orgb6d9920" class="outline-3">
-<h3 id="orgb6d9920">如何开始</h3>
-<div class="outline-text-3" id="text-orgb6d9920">
+<div id="outline-container-org097ddcd" class="outline-3">
+<h3 id="org097ddcd">如何开始</h3>
+<div class="outline-text-3" id="text-org097ddcd">
 <p>
 在当前 buffer 下，执行 <code>org-drill</code> (<code>M-x org-drill RET</code>) 。它首先会读取数据，然后进入到 <code>drill session</code>.
 </p>
@@ -159,7 +161,7 @@ Fork 到 GitHub 的仓库地址：<a href="https://github.com/louietan/org-drill
 </p>
 
 
-<figure id="org8a90dcf">
+<figure id="org7ef33c3">
 <a href="/assets/dc85c2e3d3bdf528aec1c6c343bcaecf.png" target="_blank" target="_blank"><img src="/assets/dc85c2e3d3bdf528aec1c6c343bcaecf.png" alt="dc85c2e3d3bdf528aec1c6c343bcaecf.png"></a>
 
 </figure>
@@ -169,7 +171,7 @@ Fork 到 GitHub 的仓库地址：<a href="https://github.com/louietan/org-drill
 </p>
 
 
-<figure id="orgfa3237b">
+<figure id="orgfe25235">
 <a href="/assets/767ad25513b5b6686674dd56b5d274d1.png" target="_blank" target="_blank"><img src="/assets/767ad25513b5b6686674dd56b5d274d1.png" alt="767ad25513b5b6686674dd56b5d274d1.png"></a>
 
 </figure>
@@ -202,9 +204,9 @@ Fork 到 GitHub 的仓库地址：<a href="https://github.com/louietan/org-drill
 </div>
 </div>
 
-<div id="outline-container-orgdb04e7b" class="outline-3">
-<h3 id="orgdb04e7b">读入卡片</h3>
-<div class="outline-text-3" id="text-orgdb04e7b">
+<div id="outline-container-org85cd5df" class="outline-3">
+<h3 id="org85cd5df">读入卡片</h3>
+<div class="outline-text-3" id="text-org85cd5df">
 <p>
 org-drill 通过一个变量 <code>org-drill-scope</code> 用来指定哪些文件里的内容使用，它的值都是符号（可以是列表），根据文档它有以下类型：
 </p>
@@ -221,12 +223,13 @@ org-drill 通过一个变量 <code>org-drill-scope</code> 用来指定哪些文�
 </div>
 </div>
 
-<div id="outline-container-org6623cd9" class="outline-3">
-<h3 id="org6623cd9">任务量</h3>
-<div class="outline-text-3" id="text-org6623cd9">
+<div id="outline-container-org8575aed" class="outline-3">
+<h3 id="org8575aed">任务量</h3>
+<div class="outline-text-3" id="text-org8575aed">
 <div class="org-src-container">
-<pre><code class="language-lisp">(setq org-drill-maximum-items-per-session 40
-        org-drill-maximum-duration 30)</code></pre>
+<pre class="lisp"> <span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">org-drill-maximum-items-per-session</span><span class="w"> </span><span class="nv">40</span>
+<span class="w">        </span><span class="nv">org-drill-maximum-duration</span><span class="w"> </span><span class="mi">30</span><span class="p">)</span>
+ </pre>
 </div>
 
 <p>
@@ -236,13 +239,13 @@ org-drill 通过一个变量 <code>org-drill-scope</code> 用来指定哪些文�
 </div>
 </div>
 
-<div id="outline-container-org21d76e0" class="outline-2">
-<h2 id="org21d76e0">个人单词库制作</h2>
-<div class="outline-text-2" id="text-org21d76e0">
+<div id="outline-container-org6e150d8" class="outline-2">
+<h2 id="org6e150d8">个人单词库制作</h2>
+<div class="outline-text-2" id="text-org6e150d8">
 </div>
-<div id="outline-container-org743b03b" class="outline-3">
-<h3 id="org743b03b">单词库</h3>
-<div class="outline-text-3" id="text-org743b03b">
+<div id="outline-container-org9e9cc26" class="outline-3">
+<h3 id="org9e9cc26">单词库</h3>
+<div class="outline-text-3" id="text-org9e9cc26">
 <p>
 我在网上找了一堆，最后找到了一个词汇列表的项目： <a href="https://github.com/jnoodle/English-Vocabulary-Word-List" target="_blank">GitHub - jnoodle/English-Vocabulary-Word-List: Common English Vocabulary Word List</a>, 它里面提供了单词列表，就是纯单词，没有音标也没有翻译。
 </p>
@@ -260,7 +263,8 @@ org-drill 通过一个变量 <code>org-drill-scope</code> 用来指定哪些文�
 </p>
 
 <div class="org-src-container">
-<pre><code class="language-bash">cat 'Oxford 3000.txt' 'Oxford 5000.txt' > Oxfort.txt</code></pre>
+<pre class="bash"> cat<span class="w"> </span><span class="s1">&#39;Oxford 3000.txt&#39;</span><span class="w"> </span><span class="s1">&#39;Oxford 5000.txt&#39;</span><span class="w"> </span><span class="p">&amp;</span>gt<span class="p">;</span><span class="w"> </span>Oxfort.txt
+ </pre>
 </div>
 
 <p>
@@ -268,40 +272,32 @@ org-drill 通过一个变量 <code>org-drill-scope</code> 用来指定哪些文�
 </p>
 
 <div class="org-src-container">
-<pre><code class="language-python">from stardict import DictCsv
-import os
-
-dict_file = os.path.expanduser("~/pyfile/ecdict.csv")
-sdict = DictCsv(dict_file)
-
-with open(os.path.expanduser("~/pyfile/Oxford.txt")) as f:
-    lst = f.readlines()
-
-lst = [each.replace("\n", "") for each in lst]
-
-
-# 将文件分成 26 个，a.org, b.org, ...
-for n in range(97,123):
-    char = chr(n)
-
-    filename = os.path.expanduser("~/drill/%s.org" % char)
-    with open(filename, "w") as f:
-        f.write("#+startup: overview\n* English Words: %s\n\n" % char.capitalize())
-        for word in filter(lambda w: w[0] == char, lst):
-            data = sdict.query(word)
-            if not data:
-                continue
-
-            content = "** English :drill:\n" + word +"\n"
-            if data["phonetic"]:
-                content += "/%s/" % data["phonetic"] + "\n"
-                content += "\n"
-
-            content += "*** Chinese\n"
-            content += data["translation"]
-            content += "\n\n"
-
-             f.write(content)</code></pre>
+<pre class="python"> <span class="kn">from</span> <span class="nn">stardict</span> <span class="kn">import</span> <span class="n">DictCsv</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">dict_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">&quot;~/pyfile/ecdict.csv&quot;</span><span class="p">)</span>
+<span class="n">sdict</span> <span class="o">=</span> <span class="n">DictCsv</span><span class="p">(</span><span class="n">dict_file</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">&quot;~/pyfile/Oxford.txt&quot;</span><span class="p">))</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">lst</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="n">each</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">]</span>
+<span class="c1"># 将文件分成 26 个，a.org, b.org, ...</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">97</span><span class="p">,</span><span class="mi">123</span><span class="p">):</span>
+    <span class="n">char</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">&quot;~/drill/</span><span class="si">%s</span><span class="s2">.org&quot;</span> <span class="o">%</span> <span class="n">char</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;#+startup: overview</span><span class="se">\n</span><span class="s2">* English Words: </span><span class="si">%s</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">char</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>
+        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">char</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">sdict</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="s2">&quot;** English :drill:</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">word</span> <span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;phonetic&quot;</span><span class="p">]:</span>
+                <span class="n">content</span> <span class="o">+=</span> <span class="s2">&quot;/</span><span class="si">%s</span><span class="s2">/&quot;</span> <span class="o">%</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;phonetic&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="n">content</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="n">content</span> <span class="o">+=</span> <span class="s2">&quot;*** Chinese</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="n">content</span> <span class="o">+=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;translation&quot;</span><span class="p">]</span>
+            <span class="n">content</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+             <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+ </pre>
 </div>
 
 <p>
@@ -313,15 +309,16 @@ for n in range(97,123):
 </p>
 
 <div class="org-src-container">
-<pre><code class="language-lisp">(setq org-drill-scope
-      (directory-files "~/drill/english-words/" t "[^.]"))</code></pre>
+<pre class="lisp"> <span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">org-drill-scope</span>
+<span class="w">      </span><span class="p">(</span><span class="nv">directory-files</span><span class="w"> </span><span class="s">&quot;~/drill/english-words/&quot;</span><span class="w"> </span><span class="no">t</span><span class="w"> </span><span class="s">&quot;[^.]&quot;</span><span class="p">))</span>
+ </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgcb1aba1" class="outline-3">
-<h3 id="orgcb1aba1">大文件</h3>
-<div class="outline-text-3" id="text-orgcb1aba1">
+<div id="outline-container-org22524b2" class="outline-3">
+<h3 id="org22524b2">大文件</h3>
+<div class="outline-text-3" id="text-org22524b2">
 <p>
 如果把所有单词都放到一个 <code>.org</code> 文件的话，学习时会非常卡，加载下一张卡片需要很长时间。根据文档建议，把大文件化小，放到一个目录下。这样时间花销就只有初始化的数据加载。
 </p>
@@ -329,9 +326,9 @@ for n in range(97,123):
 </div>
 </div>
 
-<div id="outline-container-orgfa3cdce" class="outline-2">
-<h2 id="orgfa3cdce">后记</h2>
-<div class="outline-text-2" id="text-orgfa3cdce">
+<div id="outline-container-orgde5243a" class="outline-2">
+<h2 id="orgde5243a">后记</h2>
+<div class="outline-text-2" id="text-orgde5243a">
 <p>
 目前暂时不考虑诸如记忆效率参数的调整，也仅用于背单词，如果后续用上了再更新。
 </p>
@@ -351,24 +348,8 @@ for n in range(97,123):
 </div>
 </div>
 </div>
-<div id="postamble" class="status"><script src="/static/highlight/highlight.min.js"></script>
-<script>
-Array.from(document.querySelectorAll('#content pre')).forEach(
-node => {
-let codeElement = node.querySelector("code"),
-    excludes = ["mermaid"];
-
-if (!codeElement){
-return
-}
-let language = codeElement.getAttribute("class").split("-")[1];
-if (excludes.includes(language)) {
-return
-}
-
-hljs.highlightElement(codeElement);
-});
-</script></div>
+<div id="postamble" class="status">
+</div>
 </div>
 <div class="footer">
 <center> The End </center></div>

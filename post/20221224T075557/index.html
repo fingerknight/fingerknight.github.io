@@ -16,43 +16,46 @@
 <div class="nav item">
 <a href="/about">关于</a>
 </div>
+<div class="nav item">
+<a href="/emacs">Emacs</a>
+</div>
 </div>
 </div>
 <div class="main">
-<div id="preamble" class="status"><link rel="stylesheet" href="/static/highlight/dracula.css"><div class="toc">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/pygments/dracula.css"><div class="toc">
 <h2 class="toc-title"> TOC </h2>
 <nav id="TableOfContents">
 
 <ul>
 <li>
-<a href="#orgef66708"> 起因 </a></li>
+<a href="#org0adf7ba"> 起因 </a></li>
 <li>
-<a href="#org5ac1603"> 安装 </a></li>
+<a href="#orgb271db1"> 安装 </a></li>
 <li>
-<a href="#orgba4bb03"> 基本配置 </a>
+<a href="#orgc67c8ec"> 基本配置 </a>
 <ul>
 <li>
-<a href="#orgc338254"> 快捷键 </a></li>
+<a href="#org282c9e1"> 快捷键 </a></li>
 </ul>
 </li>
 <li>
-<a href="#orgf55d0c7"> 插件安装 </a>
+<a href="#orgb5bd6f4"> 插件安装 </a>
 <ul>
 <li>
-<a href="#orgf0f2ae6"> 准备 </a></li>
+<a href="#orgbcc5931"> 准备 </a></li>
 <li>
-<a href="#orgc87638e"> 使用 </a></li>
+<a href="#orgf36924f"> 使用 </a></li>
 <li>
-<a href="#orge1323b4"> 插件列表 </a></li>
+<a href="#orgc490ca8"> 插件列表 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org653ad7c"> Miscellaneous </a>
+<a href="#orga12fdd4"> Miscellaneous </a>
 <ul>
 <li>
-<a href="#orgd907828"> 修改 Alt + Tab 的行为 </a></li>
+<a href="#org504966a"> 修改 Alt + Tab 的行为 </a></li>
 <li>
-<a href="#org86582eb"> 卸除 KDE </a></li>
+<a href="#org079e199"> 卸除 KDE </a></li>
 </ul>
 </li>
 </ul>
@@ -67,9 +70,9 @@
 </div>
 <div id="content">
 
-<div id="outline-container-orgef66708" class="outline-2">
-<h2 id="orgef66708">起因</h2>
-<div class="outline-text-2" id="text-orgef66708">
+<div id="outline-container-org0adf7ba" class="outline-2">
+<h2 id="org0adf7ba">起因</h2>
+<div class="outline-text-2" id="text-org0adf7ba">
 <p>
 最开始用的是 <a href="https://kde.org" target="_blank">KDE</a> 桌面，有一说一，它的 UI 真的很漂亮，自定义起来也很方便，很多东西都是可以直接用鼠标调的，不用真的去改配置文件。但是它最大的问题是<b>不稳定</b>，这也是我替换它的主要原因。时不时会遇到标题栏卡住、任务栏卡住的情况，鼠标键盘还能动，视频音乐也继续放着，但是鼠标关不掉窗口，只能重启解决。偶尔出现几次还能接受，但它最近频发让我有点难顶，因此打算换一个桌面 &#x2013; 等到后面如果 kde 6 优化起飞的话还是会换会 KDE, 用着真的爽。
 </p>
@@ -80,11 +83,12 @@
 </div>
 </div>
 
-<div id="outline-container-org5ac1603" class="outline-2">
-<h2 id="org5ac1603">安装</h2>
-<div class="outline-text-2" id="text-org5ac1603">
+<div id="outline-container-orgb271db1" class="outline-2">
+<h2 id="orgb271db1">安装</h2>
+<div class="outline-text-2" id="text-orgb271db1">
 <div class="org-src-container">
-<pre><code class="language-bash">sudo pacman -S gnome gdm gnome-tweaks gnome-browser-connector</code></pre>
+<pre class="bash"> sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>gnome<span class="w"> </span>gdm<span class="w"> </span>gnome-tweaks<span class="w"> </span>gnome-browser-connector
+ </pre>
 </div>
 <ul class="org-ul">
 <li><code>gnome</code>: 整个 Gnome 组包括基本组件和基本应用比如内置浏览器、终端、文件管理器都会安装</li>
@@ -97,8 +101,9 @@
 将登录管理器从 SDDM 替换成 GDM:
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash">sudo systemctl disable sddm --now
-sudo systemctl disable gdm --now</code></pre>
+<pre class="bash"> sudo<span class="w"> </span>systemctl<span class="w"> </span>disable<span class="w"> </span>sddm<span class="w"> </span>--now
+sudo<span class="w"> </span>systemctl<span class="w"> </span>disable<span class="w"> </span>gdm<span class="w"> </span>--now
+ </pre>
 </div>
 
 <p>
@@ -107,17 +112,17 @@ sudo systemctl disable gdm --now</code></pre>
 </div>
 </div>
 
-<div id="outline-container-orgba4bb03" class="outline-2">
-<h2 id="orgba4bb03">基本配置</h2>
-<div class="outline-text-2" id="text-orgba4bb03">
+<div id="outline-container-orgc67c8ec" class="outline-2">
+<h2 id="orgc67c8ec">基本配置</h2>
+<div class="outline-text-2" id="text-orgc67c8ec">
 <p>
 这里不过多解释，通过 <code>系统设置</code> 和 <code>gnome-tweaks</code> 配置就行了。
 </p>
 </div>
 
-<div id="outline-container-orgc338254" class="outline-3">
-<h3 id="orgc338254">快捷键</h3>
-<div class="outline-text-3" id="text-orgc338254">
+<div id="outline-container-org282c9e1" class="outline-3">
+<h3 id="org282c9e1">快捷键</h3>
+<div class="outline-text-3" id="text-org282c9e1">
 <p>
 <code>系统设置</code> &gt; <code>键盘</code> 里面修改
 </p>
@@ -125,13 +130,13 @@ sudo systemctl disable gdm --now</code></pre>
 </div>
 </div>
 
-<div id="outline-container-orgf55d0c7" class="outline-2">
-<h2 id="orgf55d0c7">插件安装</h2>
-<div class="outline-text-2" id="text-orgf55d0c7">
+<div id="outline-container-orgb5bd6f4" class="outline-2">
+<h2 id="orgb5bd6f4">插件安装</h2>
+<div class="outline-text-2" id="text-orgb5bd6f4">
 </div>
-<div id="outline-container-orgf0f2ae6" class="outline-3">
-<h3 id="orgf0f2ae6">准备</h3>
-<div class="outline-text-3" id="text-orgf0f2ae6">
+<div id="outline-container-orgbcc5931" class="outline-3">
+<h3 id="orgbcc5931">准备</h3>
+<div class="outline-text-3" id="text-orgbcc5931">
 <p>
 过程可参见：<a href="https://wiki.gnome.org/action/show/Projects/GnomeShellIntegration/Installation" target="_blank">Projects/GnomeShellIntegration/Installation - GNOME Wiki!</a>
 </p>
@@ -143,18 +148,18 @@ sudo systemctl disable gdm --now</code></pre>
 </div>
 </div>
 
-<div id="outline-container-orgc87638e" class="outline-3">
-<h3 id="orgc87638e">使用</h3>
-<div class="outline-text-3" id="text-orgc87638e">
+<div id="outline-container-orgf36924f" class="outline-3">
+<h3 id="orgf36924f">使用</h3>
+<div class="outline-text-3" id="text-orgf36924f">
 <p>
 通过点击浏览器插件，或者直接访问 <a href="https://extensions.gnome.org" target="_blank">https://extensions.gnome.org</a> 进入插件管理界面。进入 <code>Installed entensions</code> 或者 <a href="https://extensions.gnome.org/local/" target="_blank">https://extensions.gnome.org/local/</a> 查看本地已安装的插件。注意要把 <code>Disable all extensions</code> 置为 <code>Off</code>
 </p>
 </div>
 </div>
 
-<div id="outline-container-orge1323b4" class="outline-3">
-<h3 id="orge1323b4">插件列表</h3>
-<div class="outline-text-3" id="text-orge1323b4">
+<div id="outline-container-orgc490ca8" class="outline-3">
+<h3 id="orgc490ca8">插件列表</h3>
+<div class="outline-text-3" id="text-orgc490ca8">
 <ul class="org-ul">
 <li><a href="https://extensions.gnome.org/extension/779/clipboard-indicator/" target="_blank">Clipboard Indicator</a>: 任务栏添加剪切板托盘</li>
 <li><a href="https://extensions.gnome.org/extension/307/dash-to-dock/" target="_blank">Dash to Dock</a>: Dock 配置</li>
@@ -174,27 +179,28 @@ sudo systemctl disable gdm --now</code></pre>
 </div>
 </div>
 
-<div id="outline-container-org653ad7c" class="outline-2">
-<h2 id="org653ad7c">Miscellaneous</h2>
-<div class="outline-text-2" id="text-org653ad7c">
+<div id="outline-container-orga12fdd4" class="outline-2">
+<h2 id="orga12fdd4">Miscellaneous</h2>
+<div class="outline-text-2" id="text-orga12fdd4">
 </div>
-<div id="outline-container-orgd907828" class="outline-3">
-<h3 id="orgd907828">修改 Alt + Tab 的行为</h3>
-<div class="outline-text-3" id="text-orgd907828">
+<div id="outline-container-org504966a" class="outline-3">
+<h3 id="org504966a">修改 Alt + Tab 的行为</h3>
+<div class="outline-text-3" id="text-org504966a">
 <p>
 gnome 的 <code>Alt+Tab</code> 默认是切换应用，如果一个应用开了多个窗口，只能转到最近使用的一个，或者在使用方向键控制。在设置里将 <code>Alt+Tab</code> 绑定到 <code>交换窗口</code> 即可 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org86582eb" class="outline-3">
-<h3 id="org86582eb">卸除 KDE</h3>
-<div class="outline-text-3" id="text-org86582eb">
+<div id="outline-container-org079e199" class="outline-3">
+<h3 id="org079e199">卸除 KDE</h3>
+<div class="outline-text-3" id="text-org079e199">
 <p>
 先把基本的东西卸除 <sup>[<a id="fnr:2.1" class="footref" href="#fn:2">2</a>]</sup>：
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash">sudo pacman -Rns plasma-meta kde-applications</code></pre>
+<pre class="bash"> sudo<span class="w"> </span>pacman<span class="w"> </span>-Rns<span class="w"> </span>plasma-meta<span class="w"> </span>kde-applications
+ </pre>
 </div>
 <ul class="org-ul">
 <li>我安装的是 <code>plasma-meta</code>, 如果不同自行切换</li>
@@ -227,24 +233,8 @@ gnome 的 <code>Alt+Tab</code> 默认是切换应用，如果一个应用开了�
 </div>
 </div>
 </div>
-<div id="postamble" class="status"><script src="/static/highlight/highlight.min.js"></script>
-<script>
-Array.from(document.querySelectorAll('#content pre')).forEach(
-node => {
-let codeElement = node.querySelector("code"),
-    excludes = ["mermaid"];
-
-if (!codeElement){
-return
-}
-let language = codeElement.getAttribute("class").split("-")[1];
-if (excludes.includes(language)) {
-return
-}
-
-hljs.highlightElement(codeElement);
-});
-</script></div>
+<div id="postamble" class="status">
+</div>
 </div>
 <div class="footer">
 <center> The End </center></div>

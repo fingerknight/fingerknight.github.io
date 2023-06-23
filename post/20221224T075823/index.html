@@ -16,32 +16,35 @@
 <div class="nav item">
 <a href="/about">关于</a>
 </div>
+<div class="nav item">
+<a href="/emacs">Emacs</a>
+</div>
 </div>
 </div>
 <div class="main">
-<div id="preamble" class="status"><link rel="stylesheet" href="/static/highlight/dracula.css"><div class="toc">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/pygments/dracula.css"><div class="toc">
 <h2 class="toc-title"> TOC </h2>
 <nav id="TableOfContents">
 
 <ul>
 <li>
-<a href="#orgf468515"> 网盘 </a></li>
+<a href="#orgdd5d260"> 网盘 </a></li>
 <li>
-<a href="#orgeb3e92c"> MPV 播放器 </a></li>
+<a href="#org0b7c4b4"> MPV 播放器 </a></li>
 <li>
-<a href="#org4d381ba"> 清理不用的软件包 </a></li>
+<a href="#org6911a28"> 清理不用的软件包 </a></li>
 <li>
-<a href="#org194674e"> GIF 录制 Peek + Screen Key </a></li>
+<a href="#org947182d"> GIF 录制 Peek + Screen Key </a></li>
 <li>
-<a href="#orga4c5682"> 安装之前版本的包 </a></li>
+<a href="#org69154f4"> 安装之前版本的包 </a></li>
 <li>
-<a href="#org62b9c50"> GitHub 升级子模块 </a></li>
+<a href="#org7c0fcf4"> GitHub 升级子模块 </a></li>
 <li>
-<a href="#org9c806be"> usbutils </a></li>
+<a href="#orgc10df78"> usbutils </a></li>
 <li>
-<a href="#orgb81e6ef"> Arch Linux CN 仓库 </a></li>
+<a href="#org97ad62c"> Arch Linux CN 仓库 </a></li>
 <li>
-<a href="#org46a8993"> ThinkPad x270 指纹 </a></li>
+<a href="#orgb97c9f2"> ThinkPad x270 指纹 </a></li>
 </ul>
 </nav>
 </div>
@@ -52,9 +55,9 @@
 </div>
 <div id="content">
 
-<div id="outline-container-orgf468515" class="outline-2">
-<h2 id="orgf468515">网盘</h2>
-<div class="outline-text-2" id="text-orgf468515">
+<div id="outline-container-orgdd5d260" class="outline-2">
+<h2 id="orgdd5d260">网盘</h2>
+<div class="outline-text-2" id="text-orgdd5d260">
 <ul class="org-ul">
 <li>百度网盘： <a href="https://github.com/foyoux/aligo" target="_blank">GitHub - foyoux/aligo: 🔥简单、易用、可扩展的阿里云盘 API 接口库🚀</a></li>
 <li>阿里网盘： <a href="https://github.com/foyoux/aligo" target="_blank">GitHub - foyoux/aligo: 🔥简单、易用、可扩展的阿里云盘 API 接口库🚀</a></li>
@@ -62,9 +65,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgeb3e92c" class="outline-2">
-<h2 id="orgeb3e92c">MPV 播放器</h2>
-<div class="outline-text-2" id="text-orgeb3e92c">
+<div id="outline-container-org0b7c4b4" class="outline-2">
+<h2 id="org0b7c4b4">MPV 播放器</h2>
+<div class="outline-text-2" id="text-org0b7c4b4">
 <p>
 简单无比的播放器，它的功能也少。目前需要的是播放列表，不然每次只能播放完一个视频就要手动点开下一个。
 </p>
@@ -81,47 +84,52 @@
 指定加载的文件后缀，不够后面再补充
 </p>
 <div class="org-src-container">
-<pre><code class="language-plaintext">loadfiles_filetypes=["mp4","m4a","mkv","avi","flv","m4v","wmv"]</code></pre>
+<pre class="nil"> loadfiles_filetypes=[&quot;mp4&quot;,&quot;m4a&quot;,&quot;mkv&quot;,&quot;avi&quot;,&quot;flv&quot;,&quot;m4v&quot;,&quot;wmv&quot;]
+ </pre>
 </div>
 
 <p>
 加载同一目录下的所以文件
 </p>
 <div class="org-src-container">
-<pre><code class="language-plaintext">loadfiles_on_start=yes
-loadfiles_on_idle_start=yes</code></pre>
+<pre class="nil"> loadfiles_on_start=yes
+loadfiles_on_idle_start=yes
+ </pre>
 </div>
 
 <p>
 列表字体大小，根据配置文件里面的说明调整，我只需要改大小就可以。
 </p>
 <div class="org-src-container">
-<pre><code class="language-plaintext">style_ass_tags={\fs10}</code></pre>
+<pre class="nil"> style_ass_tags={\fs10}
+ </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org4d381ba" class="outline-2">
-<h2 id="org4d381ba">清理不用的软件包</h2>
-<div class="outline-text-2" id="text-org4d381ba">
+<div id="outline-container-org6911a28" class="outline-2">
+<h2 id="org6911a28">清理不用的软件包</h2>
+<div class="outline-text-2" id="text-org6911a28">
 <div class="org-src-container">
-<pre><code class="language-bash">sudo pacman -Qqdt | sudo pacman -Rs -</code></pre>
+<pre class="bash"> sudo<span class="w"> </span>pacman<span class="w"> </span>-Qqdt<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-Rs<span class="w"> </span>-
+ </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org194674e" class="outline-2">
-<h2 id="org194674e">GIF 录制 Peek + Screen Key</h2>
-<div class="outline-text-2" id="text-org194674e">
+<div id="outline-container-org947182d" class="outline-2">
+<h2 id="org947182d">GIF 录制 Peek + Screen Key</h2>
+<div class="outline-text-2" id="text-org947182d">
 <div class="org-src-container">
-<pre><code class="language-bash">sudo pacman -S peek screenkey</code></pre>
+<pre class="bash"> sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>peek<span class="w"> </span>screenkey
+ </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orga4c5682" class="outline-2">
-<h2 id="orga4c5682">安装之前版本的包</h2>
-<div class="outline-text-2" id="text-orga4c5682">
+<div id="outline-container-org69154f4" class="outline-2">
+<h2 id="org69154f4">安装之前版本的包</h2>
+<div class="outline-text-2" id="text-org69154f4">
 <p>
 缓存地址： <code>/var/cache/pacman/pkg</code>
 </p>
@@ -132,18 +140,19 @@ loadfiles_on_idle_start=yes</code></pre>
 </div>
 </div>
 
-<div id="outline-container-org62b9c50" class="outline-2">
-<h2 id="org62b9c50">GitHub 升级子模块</h2>
-<div class="outline-text-2" id="text-org62b9c50">
+<div id="outline-container-org7c0fcf4" class="outline-2">
+<h2 id="org7c0fcf4">GitHub 升级子模块</h2>
+<div class="outline-text-2" id="text-org7c0fcf4">
 <div class="org-src-container">
-<pre><code class="language-bash">git submodule update --remote</code></pre>
+<pre class="bash"> git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--remote
+ </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org9c806be" class="outline-2">
-<h2 id="org9c806be">usbutils</h2>
-<div class="outline-text-2" id="text-org9c806be">
+<div id="outline-container-orgc10df78" class="outline-2">
+<h2 id="orgc10df78">usbutils</h2>
+<div class="outline-text-2" id="text-orgc10df78">
 <p>
 问题：
 </p>
@@ -157,25 +166,26 @@ loadfiles_on_idle_start=yes</code></pre>
 </div>
 </div>
 
-<div id="outline-container-orgb81e6ef" class="outline-2">
-<h2 id="orgb81e6ef">Arch Linux CN 仓库</h2>
-<div class="outline-text-2" id="text-orgb81e6ef">
+<div id="outline-container-org97ad62c" class="outline-2">
+<h2 id="org97ad62c">Arch Linux CN 仓库</h2>
+<div class="outline-text-2" id="text-org97ad62c">
 <ul class="org-ul">
 <li><p>
 向 <code>/etc/pacman.conf</code> 添加：
 </p>
 <div class="org-src-container">
-<pre><code class="language-plaintext">[archlinuxcn]
-Server = https://repo.archlinuxcn.org/$arch</code></pre>
+<pre class="nil"> [archlinuxcn]
+Server = https://repo.archlinuxcn.org/$arch
+ </pre>
 </div></li>
 <li><code>sudo pacman -Sy &amp;&amp; sudo pacman -S archlinuxcn-keyring</code></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org46a8993" class="outline-2">
-<h2 id="org46a8993">ThinkPad x270 指纹</h2>
-<div class="outline-text-2" id="text-org46a8993">
+<div id="outline-container-orgb97c9f2" class="outline-2">
+<h2 id="orgb97c9f2">ThinkPad x270 指纹</h2>
+<div class="outline-text-2" id="text-orgb97c9f2">
 <p>
 到 arch 官网上才看到的： <a href="https://wiki.archlinux.org/title/Lenovo_ThinkPad_X270" target="_blank">https://wiki.archlinux.org/title/Lenovo_ThinkPad_X270</a>
 </p>
@@ -185,7 +195,8 @@ Server = https://repo.archlinuxcn.org/$arch</code></pre>
 安装 <code>python-validity</code>:
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash">yay -S python-validity</code></pre>
+<pre class="bash"> yay<span class="w"> </span>-S<span class="w"> </span>python-validity
+ </pre>
 </div></li>
 <li>启动服务 <code>sudo systemctl start systemctl status python3-validity</code></li>
 <li>录入指纹 <code>fprintd-enroll -f 手指</code>, 手指类型：
@@ -213,24 +224,8 @@ Server = https://repo.archlinuxcn.org/$arch</code></pre>
 </div>
 </div>
 </div>
-<div id="postamble" class="status"><script src="/static/highlight/highlight.min.js"></script>
-<script>
-Array.from(document.querySelectorAll('#content pre')).forEach(
-node => {
-let codeElement = node.querySelector("code"),
-    excludes = ["mermaid"];
-
-if (!codeElement){
-return
-}
-let language = codeElement.getAttribute("class").split("-")[1];
-if (excludes.includes(language)) {
-return
-}
-
-hljs.highlightElement(codeElement);
-});
-</script></div>
+<div id="postamble" class="status">
+</div>
 </div>
 <div class="footer">
 <center> The End </center></div>

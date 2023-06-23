@@ -16,36 +16,39 @@
 <div class="nav item">
 <a href="/about">关于</a>
 </div>
+<div class="nav item">
+<a href="/emacs">Emacs</a>
+</div>
 </div>
 </div>
 <div class="main">
-<div id="preamble" class="status"><link rel="stylesheet" href="/static/highlight/dracula.css"><div class="toc">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/pygments/dracula.css"><div class="toc">
 <h2 class="toc-title"> TOC </h2>
 <nav id="TableOfContents">
 
 <ul>
 <li>
-<a href="#org479d185"> 简介 </a></li>
+<a href="#org742c33a"> 简介 </a></li>
 <li>
-<a href="#org532bcc4"> alist 安装 </a>
+<a href="#org78aaf17"> alist 安装 </a>
 <ul>
 <li>
-<a href="#org8497b8a"> 安装 </a></li>
+<a href="#org82fb558"> 安装 </a></li>
 <li>
-<a href="#orge925b01"> 配置 </a></li>
+<a href="#orgbef1b74"> 配置 </a></li>
 <li>
-<a href="#org622dae2"> 启用 </a>
+<a href="#org59eddb5"> 启用 </a>
 <ul>
 <li>
-<a href="#org6223517"> 获取管理员信息 </a></li>
+<a href="#org032cfa2"> 获取管理员信息 </a></li>
 </ul>
 </li>
 <li>
-<a href="#orgce47b46"> 登录后台 </a></li>
+<a href="#org9aa4b63"> 登录后台 </a></li>
 <li>
-<a href="#org90cefcc"> 添加存储 </a></li>
+<a href="#org786500f"> 添加存储 </a></li>
 <li>
-<a href="#orgd41db5e"> 部署 </a></li>
+<a href="#org4b81627"> 部署 </a></li>
 </ul>
 </li>
 </ul>
@@ -60,18 +63,18 @@
 </div>
 <div id="content">
 
-<div id="outline-container-org479d185" class="outline-2">
-<h2 id="org479d185">简介</h2>
-<div class="outline-text-2" id="text-org479d185">
+<div id="outline-container-org742c33a" class="outline-2">
+<h2 id="org742c33a">简介</h2>
+<div class="outline-text-2" id="text-org742c33a">
 <p>
 看到果核大佬发的一个多网盘的管理工具《<a href="https://www.ghxi.com/wx20221027.html" target="_blank">网盘太多不好管理？用上这个神器试试！ - 果核剥壳</a>》，目前用的网盘工具还是分开的 CLI ，便想在 Arch 上尝试一下。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org532bcc4" class="outline-2">
-<h2 id="org532bcc4">alist 安装</h2>
-<div class="outline-text-2" id="text-org532bcc4">
+<div id="outline-container-org78aaf17" class="outline-2">
+<h2 id="org78aaf17">alist 安装</h2>
+<div class="outline-text-2" id="text-org78aaf17">
 <p>
 项目地址在这里：<a href="https://github.com/alist-org/alist" target="_blank">https://github.com/alist-org/alist</a>
 </p>
@@ -81,16 +84,17 @@
 </p>
 </div>
 
-<div id="outline-container-org8497b8a" class="outline-3">
-<h3 id="org8497b8a">安装</h3>
-<div class="outline-text-3" id="text-org8497b8a">
+<div id="outline-container-org82fb558" class="outline-3">
+<h3 id="org82fb558">安装</h3>
+<div class="outline-text-3" id="text-org82fb558">
 <p>
 下载安装脚本：
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash">curl -fsSL "https://alist.nn.ci/v3.sh" >> v3.sh
-# or
-wget "https://alist.nn.ci/v3.sh"</code></pre>
+<pre class="bash"> curl<span class="w"> </span>-fsSL<span class="w"> </span><span class="s2">&quot;https://alist.nn.ci/v3.sh&quot;</span><span class="w"> </span><span class="p">&amp;</span>gt<span class="p">;&amp;</span>gt<span class="p">;</span><span class="w"> </span>v3.sh
+#<span class="w"> </span>or
+wget<span class="w"> </span><span class="s2">&quot;https://alist.nn.ci/v3.sh&quot;</span>
+ </pre>
 </div>
 
 <ul class="org-ul">
@@ -103,7 +107,8 @@ wget "https://alist.nn.ci/v3.sh"</code></pre>
 默认安装路径是 <code>/opt/alist</code> ，如果像安装/升级/卸载在其他路径把它加到后面：
 </p>
 <div class="org-src-container">
-<pre><code class="language-bash">bash v3.sh install/update/uninstall <path></code></pre>
+<pre class="bash"> bash<span class="w"> </span>v3.sh<span class="w"> </span>install/update/uninstall<span class="w"> </span><span class="p">&amp;</span>lt<span class="p">;</span>path<span class="p">&amp;</span>gt<span class="p">;</span>
+ </pre>
 </div>
 
 <p>
@@ -112,21 +117,22 @@ wget "https://alist.nn.ci/v3.sh"</code></pre>
 </div>
 </div>
 
-<div id="outline-container-orge925b01" class="outline-3">
-<h3 id="orge925b01">配置</h3>
-<div class="outline-text-3" id="text-orge925b01">
+<div id="outline-container-orgbef1b74" class="outline-3">
+<h3 id="orgbef1b74">配置</h3>
+<div class="outline-text-3" id="text-orgbef1b74">
 <p>
 我是默认的安装路径，在 <code>/opt/alist</code> ，目录结构：
 </p>
 <div class="org-src-container">
-<pre><code class="language-plaintext">.
+<pre class="nil"> .
 ├── alist
 ├── data
 │   ├── config.json
 │   ├── data.db
 │   └── temp
 └── log
-    └── log.log</code></pre>
+    └── log.log
+ </pre>
 </div>
 <ul class="org-ul">
 <li><code>alist</code> 是执行脚本</li>
@@ -138,40 +144,41 @@ wget "https://alist.nn.ci/v3.sh"</code></pre>
 配置文件如下：
 </p>
 <div class="org-src-container">
-<pre><code class="language-js">{
-  "force": false,
-  "address": "0.0.0.0",
-  "port": 5244,
-  "site_url": "",
-  "cdn": "",
-  "jwt_secret": "random generated",
-  "token_expires_in": 48,
-  "database": {
-    "type": "sqlite3",
-    "host": "",
-    "port": 0,
-    "user": "",
-    "password": "",
-    "name": "",
-    "db_file": "data/data.db",
-    "table_prefix": "x_",
-    "ssl_mode": ""
-  },
-  "scheme": {
-    "https": false,
-    "cert_file": "",
-    "key_file": ""
-  },
-  "temp_dir": "data/temp",
-  "log": {
-    "enable": true,
-    "name": "log/log.log",
-    "max_size": 10,
-    "max_backups": 5,
-    "max_age": 28,
-    "compress": false
-  }
-}</code></pre>
+<pre class="js"> <span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;force&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;address&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;port&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">5244</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;site_url&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;cdn&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;jwt_secret&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;random generated&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;token_expires_in&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">48</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;database&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;sqlite3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;host&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;port&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;user&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;password&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;db_file&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;data/data.db&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;table_prefix&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;x_&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;ssl_mode&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="s2">&quot;scheme&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;https&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;cert_file&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;key_file&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="s2">&quot;temp_dir&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;data/temp&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;log&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;enable&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;log/log.log&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;max_size&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;max_backups&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;max_age&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">28</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;compress&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+ </pre>
 </div>
 
 <p>
@@ -180,13 +187,13 @@ wget "https://alist.nn.ci/v3.sh"</code></pre>
 </div>
 </div>
 
-<div id="outline-container-org622dae2" class="outline-3">
-<h3 id="org622dae2">启用</h3>
-<div class="outline-text-3" id="text-org622dae2">
+<div id="outline-container-org59eddb5" class="outline-3">
+<h3 id="org59eddb5">启用</h3>
+<div class="outline-text-3" id="text-org59eddb5">
 </div>
-<div id="outline-container-org6223517" class="outline-4">
-<h4 id="org6223517">获取管理员信息</h4>
-<div class="outline-text-4" id="text-org6223517">
+<div id="outline-container-org032cfa2" class="outline-4">
+<h4 id="org032cfa2">获取管理员信息</h4>
+<div class="outline-text-4" id="text-org032cfa2">
 <p>
 <code>sudo ./alist admin --data alist-dir</code>
 </p>
@@ -197,9 +204,9 @@ wget "https://alist.nn.ci/v3.sh"</code></pre>
 </div>
 </div>
 
-<div id="outline-container-orgce47b46" class="outline-3">
-<h3 id="orgce47b46">登录后台</h3>
-<div class="outline-text-3" id="text-orgce47b46">
+<div id="outline-container-org9aa4b63" class="outline-3">
+<h3 id="org9aa4b63">登录后台</h3>
+<div class="outline-text-3" id="text-org9aa4b63">
 <p>
 原谅我没在文档中找到进入后台的办法，最终是在 b 站一个 up 主的视频里面才看到的 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>。
 </p>
@@ -218,18 +225,18 @@ wget "https://alist.nn.ci/v3.sh"</code></pre>
 </div>
 </div>
 
-<div id="outline-container-org90cefcc" class="outline-3">
-<h3 id="org90cefcc">添加存储</h3>
-<div class="outline-text-3" id="text-org90cefcc">
+<div id="outline-container-org786500f" class="outline-3">
+<h3 id="org786500f">添加存储</h3>
+<div class="outline-text-3" id="text-org786500f">
 <p>
 在列表左边 <code>存储</code> 那里添加，按照官网的文档添加就行。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgd41db5e" class="outline-3">
-<h3 id="orgd41db5e">部署</h3>
-<div class="outline-text-3" id="text-orgd41db5e">
+<div id="outline-container-org4b81627" class="outline-3">
+<h3 id="org4b81627">部署</h3>
+<div class="outline-text-3" id="text-org4b81627">
 <p>
 部署参照官网，我是把它当作客户端来用，不想用命令行了。
 </p>
@@ -256,24 +263,8 @@ wget "https://alist.nn.ci/v3.sh"</code></pre>
 </div>
 </div>
 </div>
-<div id="postamble" class="status"><script src="/static/highlight/highlight.min.js"></script>
-<script>
-Array.from(document.querySelectorAll('#content pre')).forEach(
-node => {
-let codeElement = node.querySelector("code"),
-    excludes = ["mermaid"];
-
-if (!codeElement){
-return
-}
-let language = codeElement.getAttribute("class").split("-")[1];
-if (excludes.includes(language)) {
-return
-}
-
-hljs.highlightElement(codeElement);
-});
-</script></div>
+<div id="postamble" class="status">
+</div>
 </div>
 <div class="footer">
 <center> The End </center></div>
