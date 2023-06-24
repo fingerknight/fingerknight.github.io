@@ -4,7 +4,7 @@
 <title>Alist 多网盘管理的尝试 - 手指骑士的病房</title>
 <link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
 <body>
-<div class="header">
+<div id="header">
 <div class="home-page">
 <a href="/">手指骑士的病房</a></div><div class="nav">
 <div class="nav item">
@@ -21,40 +21,41 @@
 </div>
 </div>
 </div>
-<div class="main">
-<div id="preamble" class="status"><link rel="stylesheet" href="/static/pygments/dracula.css"><div class="toc">
+<div id="main">
+<div id="toc">
 <h2 class="toc-title"> TOC </h2>
 <nav id="TableOfContents">
 
 <ul>
 <li>
-<a href="#org742c33a"> 简介 </a></li>
+<a href="#orgf7c024a"> 简介 </a></li>
 <li>
-<a href="#org78aaf17"> alist 安装 </a>
+<a href="#orge94b52c"> alist 安装 </a>
 <ul>
 <li>
-<a href="#org82fb558"> 安装 </a></li>
+<a href="#org841a86c"> 安装 </a></li>
 <li>
-<a href="#orgbef1b74"> 配置 </a></li>
+<a href="#org63308d5"> 配置 </a></li>
 <li>
-<a href="#org59eddb5"> 启用 </a>
+<a href="#org04fedc8"> 启用 </a>
 <ul>
 <li>
-<a href="#org032cfa2"> 获取管理员信息 </a></li>
+<a href="#orgc75c43b"> 获取管理员信息 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org9aa4b63"> 登录后台 </a></li>
+<a href="#org72e1f88"> 登录后台 </a></li>
 <li>
-<a href="#org786500f"> 添加存储 </a></li>
+<a href="#orgc817b43"> 添加存储 </a></li>
 <li>
-<a href="#org4b81627"> 部署 </a></li>
+<a href="#orgdb610dd"> 部署 </a></li>
 </ul>
 </li>
 </ul>
 </nav>
 </div>
-<h1 class="post-title"> Alist 多网盘管理的尝试 </h1>
+<div id="page">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/pygments/dracula.css"><h1 class="post-title"> Alist 多网盘管理的尝试 </h1>
 <div class="post-date">2023-05-17</div>
 <div class="taglist"><a href="/tag/alist"> #alist </a>
 <a href="/tag/archlinux"> #archlinux </a>
@@ -63,18 +64,18 @@
 </div>
 <div id="content">
 
-<div id="outline-container-org742c33a" class="outline-2">
-<h2 id="org742c33a">简介</h2>
-<div class="outline-text-2" id="text-org742c33a">
+<div id="outline-container-orgf7c024a" class="outline-2">
+<h2 id="orgf7c024a">简介</h2>
+<div class="outline-text-2" id="text-orgf7c024a">
 <p>
 看到果核大佬发的一个多网盘的管理工具《<a href="https://www.ghxi.com/wx20221027.html" target="_blank">网盘太多不好管理？用上这个神器试试！ - 果核剥壳</a>》，目前用的网盘工具还是分开的 CLI ，便想在 Arch 上尝试一下。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org78aaf17" class="outline-2">
-<h2 id="org78aaf17">alist 安装</h2>
-<div class="outline-text-2" id="text-org78aaf17">
+<div id="outline-container-orge94b52c" class="outline-2">
+<h2 id="orge94b52c">alist 安装</h2>
+<div class="outline-text-2" id="text-orge94b52c">
 <p>
 项目地址在这里：<a href="https://github.com/alist-org/alist" target="_blank">https://github.com/alist-org/alist</a>
 </p>
@@ -84,9 +85,9 @@
 </p>
 </div>
 
-<div id="outline-container-org82fb558" class="outline-3">
-<h3 id="org82fb558">安装</h3>
-<div class="outline-text-3" id="text-org82fb558">
+<div id="outline-container-org841a86c" class="outline-3">
+<h3 id="org841a86c">安装</h3>
+<div class="outline-text-3" id="text-org841a86c">
 <p>
 下载安装脚本：
 </p>
@@ -117,9 +118,9 @@ wget<span class="w"> </span><span class="s2">&quot;https://alist.nn.ci/v3.sh&quo
 </div>
 </div>
 
-<div id="outline-container-orgbef1b74" class="outline-3">
-<h3 id="orgbef1b74">配置</h3>
-<div class="outline-text-3" id="text-orgbef1b74">
+<div id="outline-container-org63308d5" class="outline-3">
+<h3 id="org63308d5">配置</h3>
+<div class="outline-text-3" id="text-org63308d5">
 <p>
 我是默认的安装路径，在 <code>/opt/alist</code> ，目录结构：
 </p>
@@ -187,13 +188,13 @@ wget<span class="w"> </span><span class="s2">&quot;https://alist.nn.ci/v3.sh&quo
 </div>
 </div>
 
-<div id="outline-container-org59eddb5" class="outline-3">
-<h3 id="org59eddb5">启用</h3>
-<div class="outline-text-3" id="text-org59eddb5">
+<div id="outline-container-org04fedc8" class="outline-3">
+<h3 id="org04fedc8">启用</h3>
+<div class="outline-text-3" id="text-org04fedc8">
 </div>
-<div id="outline-container-org032cfa2" class="outline-4">
-<h4 id="org032cfa2">获取管理员信息</h4>
-<div class="outline-text-4" id="text-org032cfa2">
+<div id="outline-container-orgc75c43b" class="outline-4">
+<h4 id="orgc75c43b">获取管理员信息</h4>
+<div class="outline-text-4" id="text-orgc75c43b">
 <p>
 <code>sudo ./alist admin --data alist-dir</code>
 </p>
@@ -204,9 +205,9 @@ wget<span class="w"> </span><span class="s2">&quot;https://alist.nn.ci/v3.sh&quo
 </div>
 </div>
 
-<div id="outline-container-org9aa4b63" class="outline-3">
-<h3 id="org9aa4b63">登录后台</h3>
-<div class="outline-text-3" id="text-org9aa4b63">
+<div id="outline-container-org72e1f88" class="outline-3">
+<h3 id="org72e1f88">登录后台</h3>
+<div class="outline-text-3" id="text-org72e1f88">
 <p>
 原谅我没在文档中找到进入后台的办法，最终是在 b 站一个 up 主的视频里面才看到的 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>。
 </p>
@@ -225,18 +226,18 @@ wget<span class="w"> </span><span class="s2">&quot;https://alist.nn.ci/v3.sh&quo
 </div>
 </div>
 
-<div id="outline-container-org786500f" class="outline-3">
-<h3 id="org786500f">添加存储</h3>
-<div class="outline-text-3" id="text-org786500f">
+<div id="outline-container-orgc817b43" class="outline-3">
+<h3 id="orgc817b43">添加存储</h3>
+<div class="outline-text-3" id="text-orgc817b43">
 <p>
 在列表左边 <code>存储</code> 那里添加，按照官网的文档添加就行。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org4b81627" class="outline-3">
-<h3 id="org4b81627">部署</h3>
-<div class="outline-text-3" id="text-org4b81627">
+<div id="outline-container-orgdb610dd" class="outline-3">
+<h3 id="orgdb610dd">部署</h3>
+<div class="outline-text-3" id="text-orgdb610dd">
 <p>
 部署参照官网，我是把它当作客户端来用，不想用命令行了。
 </p>
@@ -266,7 +267,8 @@ wget<span class="w"> </span><span class="s2">&quot;https://alist.nn.ci/v3.sh&quo
 <div id="postamble" class="status">
 </div>
 </div>
-<div class="footer">
+</div>
+<div id="footer">
 <center> The End </center></div>
 </body>
 </html>

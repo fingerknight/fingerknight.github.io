@@ -4,7 +4,7 @@
 <title>Arch linux 各种软件的折腾 - 手指骑士的病房</title>
 <link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
 <body>
-<div class="header">
+<div id="header">
 <div class="home-page">
 <a href="/">手指骑士的病房</a></div><div class="nav">
 <div class="nav item">
@@ -21,43 +21,44 @@
 </div>
 </div>
 </div>
-<div class="main">
-<div id="preamble" class="status"><link rel="stylesheet" href="/static/pygments/dracula.css"><div class="toc">
+<div id="main">
+<div id="toc">
 <h2 class="toc-title"> TOC </h2>
 <nav id="TableOfContents">
 
 <ul>
 <li>
-<a href="#orgdd5d260"> 网盘 </a></li>
+<a href="#orgb237982"> 网盘 </a></li>
 <li>
-<a href="#org0b7c4b4"> MPV 播放器 </a></li>
+<a href="#orge1d94e6"> MPV 播放器 </a></li>
 <li>
-<a href="#org6911a28"> 清理不用的软件包 </a></li>
+<a href="#orgab721c6"> 清理不用的软件包 </a></li>
 <li>
-<a href="#org947182d"> GIF 录制 Peek + Screen Key </a></li>
+<a href="#org8a52bd9"> GIF 录制 Peek + Screen Key </a></li>
 <li>
-<a href="#org69154f4"> 安装之前版本的包 </a></li>
+<a href="#orgf3cadfc"> 安装之前版本的包 </a></li>
 <li>
-<a href="#org7c0fcf4"> GitHub 升级子模块 </a></li>
+<a href="#org2af75c2"> GitHub 升级子模块 </a></li>
 <li>
-<a href="#orgc10df78"> usbutils </a></li>
+<a href="#orgd4f2f95"> usbutils </a></li>
 <li>
-<a href="#org97ad62c"> Arch Linux CN 仓库 </a></li>
+<a href="#org7f94ac1"> Arch Linux CN 仓库 </a></li>
 <li>
-<a href="#orgb97c9f2"> ThinkPad x270 指纹 </a></li>
+<a href="#org0441216"> ThinkPad x270 指纹 </a></li>
 </ul>
 </nav>
 </div>
-<h1 class="post-title"> Arch linux 各种软件的折腾 </h1>
+<div id="page">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/pygments/dracula.css"><h1 class="post-title"> Arch linux 各种软件的折腾 </h1>
 <div class="post-date">2023-05-17</div>
 <div class="taglist"><a href="/tag/archlinux"> #archlinux </a>
 </div>
 </div>
 <div id="content">
 
-<div id="outline-container-orgdd5d260" class="outline-2">
-<h2 id="orgdd5d260">网盘</h2>
-<div class="outline-text-2" id="text-orgdd5d260">
+<div id="outline-container-orgb237982" class="outline-2">
+<h2 id="orgb237982">网盘</h2>
+<div class="outline-text-2" id="text-orgb237982">
 <ul class="org-ul">
 <li>百度网盘： <a href="https://github.com/foyoux/aligo" target="_blank">GitHub - foyoux/aligo: 🔥简单、易用、可扩展的阿里云盘 API 接口库🚀</a></li>
 <li>阿里网盘： <a href="https://github.com/foyoux/aligo" target="_blank">GitHub - foyoux/aligo: 🔥简单、易用、可扩展的阿里云盘 API 接口库🚀</a></li>
@@ -65,9 +66,9 @@
 </div>
 </div>
 
-<div id="outline-container-org0b7c4b4" class="outline-2">
-<h2 id="org0b7c4b4">MPV 播放器</h2>
-<div class="outline-text-2" id="text-org0b7c4b4">
+<div id="outline-container-orge1d94e6" class="outline-2">
+<h2 id="orge1d94e6">MPV 播放器</h2>
+<div class="outline-text-2" id="text-orge1d94e6">
 <p>
 简单无比的播放器，它的功能也少。目前需要的是播放列表，不然每次只能播放完一个视频就要手动点开下一个。
 </p>
@@ -107,9 +108,9 @@ loadfiles_on_idle_start=yes
 </div>
 </div>
 
-<div id="outline-container-org6911a28" class="outline-2">
-<h2 id="org6911a28">清理不用的软件包</h2>
-<div class="outline-text-2" id="text-org6911a28">
+<div id="outline-container-orgab721c6" class="outline-2">
+<h2 id="orgab721c6">清理不用的软件包</h2>
+<div class="outline-text-2" id="text-orgab721c6">
 <div class="org-src-container">
 <pre class="bash"> sudo<span class="w"> </span>pacman<span class="w"> </span>-Qqdt<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-Rs<span class="w"> </span>-
  </pre>
@@ -117,9 +118,9 @@ loadfiles_on_idle_start=yes
 </div>
 </div>
 
-<div id="outline-container-org947182d" class="outline-2">
-<h2 id="org947182d">GIF 录制 Peek + Screen Key</h2>
-<div class="outline-text-2" id="text-org947182d">
+<div id="outline-container-org8a52bd9" class="outline-2">
+<h2 id="org8a52bd9">GIF 录制 Peek + Screen Key</h2>
+<div class="outline-text-2" id="text-org8a52bd9">
 <div class="org-src-container">
 <pre class="bash"> sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>peek<span class="w"> </span>screenkey
  </pre>
@@ -127,9 +128,9 @@ loadfiles_on_idle_start=yes
 </div>
 </div>
 
-<div id="outline-container-org69154f4" class="outline-2">
-<h2 id="org69154f4">安装之前版本的包</h2>
-<div class="outline-text-2" id="text-org69154f4">
+<div id="outline-container-orgf3cadfc" class="outline-2">
+<h2 id="orgf3cadfc">安装之前版本的包</h2>
+<div class="outline-text-2" id="text-orgf3cadfc">
 <p>
 缓存地址： <code>/var/cache/pacman/pkg</code>
 </p>
@@ -140,9 +141,9 @@ loadfiles_on_idle_start=yes
 </div>
 </div>
 
-<div id="outline-container-org7c0fcf4" class="outline-2">
-<h2 id="org7c0fcf4">GitHub 升级子模块</h2>
-<div class="outline-text-2" id="text-org7c0fcf4">
+<div id="outline-container-org2af75c2" class="outline-2">
+<h2 id="org2af75c2">GitHub 升级子模块</h2>
+<div class="outline-text-2" id="text-org2af75c2">
 <div class="org-src-container">
 <pre class="bash"> git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--remote
  </pre>
@@ -150,9 +151,9 @@ loadfiles_on_idle_start=yes
 </div>
 </div>
 
-<div id="outline-container-orgc10df78" class="outline-2">
-<h2 id="orgc10df78">usbutils</h2>
-<div class="outline-text-2" id="text-orgc10df78">
+<div id="outline-container-orgd4f2f95" class="outline-2">
+<h2 id="orgd4f2f95">usbutils</h2>
+<div class="outline-text-2" id="text-orgd4f2f95">
 <p>
 问题：
 </p>
@@ -166,9 +167,9 @@ loadfiles_on_idle_start=yes
 </div>
 </div>
 
-<div id="outline-container-org97ad62c" class="outline-2">
-<h2 id="org97ad62c">Arch Linux CN 仓库</h2>
-<div class="outline-text-2" id="text-org97ad62c">
+<div id="outline-container-org7f94ac1" class="outline-2">
+<h2 id="org7f94ac1">Arch Linux CN 仓库</h2>
+<div class="outline-text-2" id="text-org7f94ac1">
 <ul class="org-ul">
 <li><p>
 向 <code>/etc/pacman.conf</code> 添加：
@@ -183,9 +184,9 @@ Server = https://repo.archlinuxcn.org/$arch
 </div>
 </div>
 
-<div id="outline-container-orgb97c9f2" class="outline-2">
-<h2 id="orgb97c9f2">ThinkPad x270 指纹</h2>
-<div class="outline-text-2" id="text-orgb97c9f2">
+<div id="outline-container-org0441216" class="outline-2">
+<h2 id="org0441216">ThinkPad x270 指纹</h2>
+<div class="outline-text-2" id="text-org0441216">
 <p>
 到 arch 官网上才看到的： <a href="https://wiki.archlinux.org/title/Lenovo_ThinkPad_X270" target="_blank">https://wiki.archlinux.org/title/Lenovo_ThinkPad_X270</a>
 </p>
@@ -227,7 +228,8 @@ Server = https://repo.archlinuxcn.org/$arch
 <div id="postamble" class="status">
 </div>
 </div>
-<div class="footer">
+</div>
+<div id="footer">
 <center> The End </center></div>
 </body>
 </html>

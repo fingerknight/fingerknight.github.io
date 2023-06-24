@@ -4,7 +4,7 @@
 <title>Goldendict 词典客户端 - 手指骑士的病房</title>
 <link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
 <body>
-<div class="header">
+<div id="header">
 <div class="home-page">
 <a href="/">手指骑士的病房</a></div><div class="nav">
 <div class="nav item">
@@ -21,38 +21,39 @@
 </div>
 </div>
 </div>
-<div class="main">
-<div id="preamble" class="status"><link rel="stylesheet" href="/static/pygments/dracula.css"><div class="toc">
+<div id="main">
+<div id="toc">
 <h2 class="toc-title"> TOC </h2>
 <nav id="TableOfContents">
 
 <ul>
 <li>
-<a href="#org78c5e18"> 简介 </a></li>
+<a href="#org69d4a5d"> 简介 </a></li>
 <li>
-<a href="#org79951e6"> 安装 </a></li>
+<a href="#org43a08c9"> 安装 </a></li>
 <li>
-<a href="#orgfb558cb"> 词典管理 </a></li>
+<a href="#org44409c6"> 词典管理 </a></li>
 <li>
-<a href="#org7cb848f"> 离线词典 </a></li>
+<a href="#org7e863e2"> 离线词典 </a></li>
 <li>
-<a href="#orga28c7f8"> 在线词典 </a></li>
+<a href="#orgf54d7cd"> 在线词典 </a></li>
 <li>
-<a href="#org3b3e92e"> 构词法 </a></li>
+<a href="#orgd6c9263"> 构词法 </a></li>
 <li>
-<a href="#org7168896"> 取词 </a></li>
+<a href="#org00e3228"> 取词 </a></li>
 <li>
-<a href="#org1daaba8"> 翻译 </a></li>
+<a href="#orgaa39527"> 翻译 </a></li>
 <li>
-<a href="#org3921205"> 程序 </a></li>
+<a href="#orgb75f7c7"> 程序 </a></li>
 <li>
-<a href="#orgdc5f49c"> 发音 </a></li>
+<a href="#org0c95152"> 发音 </a></li>
 <li>
-<a href="#org6a56d73"> 遇到的问题 </a></li>
+<a href="#org587efb6"> 遇到的问题 </a></li>
 </ul>
 </nav>
 </div>
-<h1 class="post-title"> Goldendict 词典客户端 </h1>
+<div id="page">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/pygments/dracula.css"><h1 class="post-title"> Goldendict 词典客户端 </h1>
 <div class="post-date">2023-05-17</div>
 <div class="taglist"><a href="/tag/archlinux"> #archlinux </a>
 <a href="/tag/dictionary"> #dictionary </a>
@@ -62,9 +63,9 @@
 </div>
 <div id="content">
 
-<div id="outline-container-org78c5e18" class="outline-2">
-<h2 id="org78c5e18">简介</h2>
-<div class="outline-text-2" id="text-org78c5e18">
+<div id="outline-container-org69d4a5d" class="outline-2">
+<h2 id="org69d4a5d">简介</h2>
+<div class="outline-text-2" id="text-org69d4a5d">
 <p>
 Goldendict 一个开源的、可定制的词典，跨平台，支持一个词典所必需的功能：取词翻译、整句翻译、自定义词典等等。“可定制”也意味着不是开箱即用，需要配置。刚安装之后几乎只是一个空盒子，需要自己去添加配置各种功能。
 </p>
@@ -75,9 +76,9 @@ Goldendict 项目地址：<a href="https://github.com/goldendict/goldendict" tar
 </div>
 </div>
 
-<div id="outline-container-org79951e6" class="outline-2">
-<h2 id="org79951e6">安装</h2>
-<div class="outline-text-2" id="text-org79951e6">
+<div id="outline-container-org43a08c9" class="outline-2">
+<h2 id="org43a08c9">安装</h2>
+<div class="outline-text-2" id="text-org43a08c9">
 <p>
 在 Arch Linux 中通过包管理器安装：
 </p>
@@ -91,27 +92,27 @@ Goldendict 项目地址：<a href="https://github.com/goldendict/goldendict" tar
 </p>
 
 
-<figure id="org7d13691">
+<figure id="org3af1699">
 <a href="/assets/3f987b4904ed8e802ebdae33c1ab6c31.png" target="_blank" target="_blank"><img src="/assets/3f987b4904ed8e802ebdae33c1ab6c31.png" alt="3f987b4904ed8e802ebdae33c1ab6c31.png"></a>
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-orgfb558cb" class="outline-2">
-<h2 id="orgfb558cb">词典管理</h2>
-<div class="outline-text-2" id="text-orgfb558cb">
+<div id="outline-container-org44409c6" class="outline-2">
+<h2 id="org44409c6">词典管理</h2>
+<div class="outline-text-2" id="text-org44409c6">
 <p>
 在 <code>编辑</code> - <code>词典</code> 里面的 ~词典来源可以管理词典。它有如下选项：
 </p>
 <ul class="org-ul">
 <li><b>文件</b>，即离线词典的位置。</li>
-<li><b>音频文件目录</b>，用于播放读音，后面的<a href="#orgdc5f49c">发音</a>章节中会用到</li>
-<li><b>构词法规则库</b>，用于识别词法变换，如搜索“looked”会定位到“look”，后面<a href="#org3b3e92e">构词法</a>章节中会用到</li>
+<li><b>音频文件目录</b>，用于播放读音，后面的<a href="#org0c95152">发音</a>章节中会用到</li>
+<li><b>构词法规则库</b>，用于识别词法变换，如搜索“looked”会定位到“look”，后面<a href="#orgd6c9263">构词法</a>章节中会用到</li>
 <li><b>维基百科</b>，字面意义上，就是在维基百科上查词。需要魔法</li>
 <li><b>网站</b>，通过 Web API 去查词</li>
 <li><b>词典服务器</b>，词典服务器，我不用这个</li>
-<li><b>程序</b>，通过本地的程序去查询，后面<a href="#org1daaba8">翻译</a>章节会用到</li>
+<li><b>程序</b>，通过本地的程序去查询，后面<a href="#orgaa39527">翻译</a>章节会用到</li>
 </ul>
 
 <p>
@@ -120,9 +121,9 @@ Goldendict 项目地址：<a href="https://github.com/goldendict/goldendict" tar
 </div>
 </div>
 
-<div id="outline-container-org7cb848f" class="outline-2">
-<h2 id="org7cb848f">离线词典</h2>
-<div class="outline-text-2" id="text-org7cb848f">
+<div id="outline-container-org7e863e2" class="outline-2">
+<h2 id="org7e863e2">离线词典</h2>
+<div class="outline-text-2" id="text-org7e863e2">
 <p>
 在词典管理里面的 <code>文件</code> 添加。它添加的条目是一个<b>目录</b>，提供的递归搜索，因此只需要把所有词典放到一个目录下边就能全部添加。
 </p>
@@ -174,9 +175,9 @@ Goldendict 支持的词典类型很多，手册上给出如下 <sup>[<a id="fnr:
 </div>
 </div>
 
-<div id="outline-container-orga28c7f8" class="outline-2">
-<h2 id="orga28c7f8">在线词典</h2>
-<div class="outline-text-2" id="text-orga28c7f8">
+<div id="outline-container-orgf54d7cd" class="outline-2">
+<h2 id="orgf54d7cd">在线词典</h2>
+<div class="outline-text-2" id="text-orgf54d7cd">
 <p>
 在词典管理里面的 <code>网站</code> 添加。下面给出一些常用的 API <sup>[<a id="fnr:1.2" class="footref" href="#fn:1">1</a>]</sup> <sup>, </sup><sup>[<a id="fnr:4.1" class="footref" href="#fn:4">4</a>]</sup>:
 </p>
@@ -200,9 +201,9 @@ http://www.iciba.com/word?w=%GDWORD%
 </div>
 </div>
 
-<div id="outline-container-org3b3e92e" class="outline-2">
-<h2 id="org3b3e92e">构词法</h2>
-<div class="outline-text-2" id="text-org3b3e92e">
+<div id="outline-container-orgd6c9263" class="outline-2">
+<h2 id="orgd6c9263">构词法</h2>
+<div class="outline-text-2" id="text-orgd6c9263">
 <p>
 默认情况下，如果搜索“testing”， Goldendict 会去找词典中<b>完全匹配</b>的单词，如果词典没有收录自然找不到。而我们希望一个词典能够识别出单词的词性，让它给我们定位到“test”，这就需要构词法来完成。
 </p>
@@ -217,18 +218,18 @@ http://www.iciba.com/word?w=%GDWORD%
 </div>
 </div>
 
-<div id="outline-container-org7168896" class="outline-2">
-<h2 id="org7168896">取词</h2>
-<div class="outline-text-2" id="text-org7168896">
+<div id="outline-container-org00e3228" class="outline-2">
+<h2 id="org00e3228">取词</h2>
+<div class="outline-text-2" id="text-org00e3228">
 <p>
 在 <code>编辑</code> - <code>首选项</code> 里面的 <code>屏幕取词</code> 可以对其做一些配置。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org1daaba8" class="outline-2">
-<h2 id="org1daaba8">翻译</h2>
-<div class="outline-text-2" id="text-org1daaba8">
+<div id="outline-container-orgaa39527" class="outline-2">
+<h2 id="orgaa39527">翻译</h2>
+<div class="outline-text-2" id="text-orgaa39527">
 <p>
 可以通过 Web API 的方式来获取平台的翻译接口，比如 Google 翻译：
 </p>
@@ -247,9 +248,9 @@ http://www.iciba.com/word?w=%GDWORD%
 </div>
 </div>
 
-<div id="outline-container-org3921205" class="outline-2">
-<h2 id="org3921205">程序</h2>
-<div class="outline-text-2" id="text-org3921205">
+<div id="outline-container-orgb75f7c7" class="outline-2">
+<h2 id="orgb75f7c7">程序</h2>
+<div class="outline-text-2" id="text-orgb75f7c7">
 <p>
 程序就是通过执行本地程序，来获得其标准输出（也就出 print/echo 的内容）。给两个例子。
 </p>
@@ -272,9 +273,9 @@ http://www.iciba.com/word?w=%GDWORD%
 </div>
 </div>
 
-<div id="outline-container-orgdc5f49c" class="outline-2">
-<h2 id="orgdc5f49c">发音</h2>
-<div class="outline-text-2" id="text-orgdc5f49c">
+<div id="outline-container-org0c95152" class="outline-2">
+<h2 id="org0c95152">发音</h2>
+<div class="outline-text-2" id="text-org0c95152">
 <p>
 在词库管理 <code>音频</code> 中可以添加音频文件的目录，一般它是与词典绑定的。比如你下了前面提到的牛津高阶词典(英英)第8版，那么把解压后的目录添加即可。
 </p>
@@ -285,9 +286,9 @@ http://www.iciba.com/word?w=%GDWORD%
 </div>
 </div>
 
-<div id="outline-container-org6a56d73" class="outline-2">
-<h2 id="org6a56d73">遇到的问题</h2>
-<div class="outline-text-2" id="text-org6a56d73">
+<div id="outline-container-org587efb6" class="outline-2">
+<h2 id="org587efb6">遇到的问题</h2>
+<div class="outline-text-2" id="text-org587efb6">
 <p>
 Goldendict 用到 qt5-webkit ，直接用 yay 安装会死活编译不了，一直报错；而且还贼慢。
 </p>
@@ -347,7 +348,8 @@ Goldendict 用到 qt5-webkit ，直接用 yay 安装会死活编译不了，一�
 <div id="postamble" class="status">
 </div>
 </div>
-<div class="footer">
+</div>
+<div id="footer">
 <center> The End </center></div>
 </body>
 </html>
