@@ -28,72 +28,72 @@
 
 <ul>
 <li>
-<a href="#org07377cc"> 前言 </a></li>
+<a href="#org0831eda"> 前言 </a></li>
 <li>
-<a href="#orgfbcf0e7"> 配置 bspwm </a>
+<a href="#orgb119c3c"> 配置 bspwm </a>
 <ul>
 <li>
-<a href="#org26725b8"> bspwm 的几个概念 </a></li>
+<a href="#org82e5fa4"> bspwm 的几个概念 </a></li>
 <li>
-<a href="#org9c9e38a"> bspc config </a></li>
+<a href="#org9254ff0"> bspc config </a></li>
 <li>
-<a href="#org51add5e"> bspc rule </a>
+<a href="#orgc515edd"> bspc rule </a>
 <ul>
 <li>
-<a href="#orga692cf7"> bspc rule: cmd </a></li>
+<a href="#orgfa4ad26"> bspc rule: cmd </a></li>
 <li>
-<a href="#orgc8f9f90"> bspc rule: obj </a></li>
+<a href="#orgdf2bf13"> bspc rule: obj </a></li>
 <li>
-<a href="#orgcbecffa"> bspc rule: arg </a></li>
+<a href="#org2e349be"> bspc rule: arg </a></li>
 <li>
-<a href="#org0f58204"> bspc 例子 </a></li>
+<a href="#org72a8726"> bspc 例子 </a></li>
 </ul>
 </li>
 <li>
-<a href="#orgf260142"> 程序启动 </a></li>
+<a href="#org55766b7"> 程序启动 </a></li>
 </ul>
 </li>
 <li>
-<a href="#orgae9acb6"> bspc 的查询与控制 </a>
+<a href="#org95ee48f"> bspc 的查询与控制 </a>
 <ul>
 <li>
-<a href="#org42d5c2b"> bspc query </a></li>
+<a href="#org7c0bec9"> bspc query </a></li>
 <li>
-<a href="#orgb375cb6"> bspc 的控制 </a>
+<a href="#org389d801"> bspc 的控制 </a>
 <ul>
 <li>
-<a href="#orgd8b6e41"> bspc node [node-selector] </a></li>
+<a href="#orgfae46e8"> bspc node [node-selector] </a></li>
 <li>
-<a href="#org843619e"> bspc desktop [node-selector] </a></li>
+<a href="#org8749c4e"> bspc desktop [node-selector] </a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<a href="#org33398d7"> sxhkd 配置 </a></li>
+<a href="#orgd255cc6"> sxhkd 配置 </a></li>
 <li>
-<a href="#org2ff5218"> 基础功能 </a>
+<a href="#org1e6a496"> 基础功能 </a>
 <ul>
 <li>
-<a href="#org9f18e57"> 登录界面 </a></li>
+<a href="#org0accdb8"> 登录界面 </a></li>
 <li>
-<a href="#org1512035"> 锁屏界面 </a></li>
+<a href="#orge8b8366"> 锁屏界面 </a></li>
 <li>
-<a href="#org51ed3f2"> picom 混成器 </a></li>
+<a href="#org821c28b"> picom 混成器 </a></li>
 <li>
-<a href="#orgbd9aa38"> 通知 </a></li>
+<a href="#org32d2084"> 通知 </a></li>
 <li>
-<a href="#orgfa879e8"> 程序启动器 </a></li>
+<a href="#org083cbad"> 程序启动器 </a></li>
 <li>
-<a href="#orgd90f06f"> GUI 认证 </a></li>
+<a href="#org83bf940"> GUI 认证 </a></li>
 <li>
-<a href="#org2001f58"> 状态栏 </a></li>
+<a href="#org27b4b7a"> 状态栏 </a></li>
 <li>
-<a href="#org8e52ee1"> 壁纸 </a></li>
+<a href="#orge45845e"> 壁纸 </a></li>
 </ul>
 </li>
 <li>
-<a href="#orga7b4772"> 后记 </a></li>
+<a href="#org2d10aeb"> 后记 </a></li>
 </ul>
 </nav>
 </div>
@@ -107,9 +107,9 @@
 </div>
 <div id="content">
 
-<div id="outline-container-org07377cc" class="outline-2">
-<h2 id="org07377cc">前言</h2>
-<div class="outline-text-2" id="text-org07377cc">
+<div id="outline-container-org0831eda" class="outline-2">
+<h2 id="org0831eda">前言</h2>
+<div class="outline-text-2" id="text-org0831eda">
 <p>
 五月中旬的时候处处看到 <a href="https://hyprland.org" target="_blank">Hyprland</a> 的消息，看到人家的桌面各种动画各种丝滑，于是自己整了个来玩玩。折腾了一段时间，最后选择放弃，最主要的原因是 Wayland 在我的电脑上并不稳定，体现在各种软件经常莫名其妙的崩溃，报一些 protocol 的错；且目前比较多的软件对 Wayland 不友好，甚至不支持。我用的浏览器是 Vivaldi, Chromium 系，在 Wayland 下用不了 fcitx5 打字。再者就是分辨率的问题不太好调。目前再观望一段时间（一两年？），等 Wayland 再成熟和普及一些，让子弹飞一会儿。
 </p>
@@ -120,9 +120,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgf7c47b7" class="outline-2">
-<h2 id="orgf7c47b7">安装 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup></h2>
-<div class="outline-text-2" id="text-orgf7c47b7">
+<div id="outline-container-org9039582" class="outline-2">
+<h2 id="org9039582">安装 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup></h2>
+<div class="outline-text-2" id="text-org9039582">
 <p>
 x11 桌面协议是必须的。bspwm 就是一个桌面，简单得不能再简单，因此需要额外两个工具：
 </p>
@@ -132,15 +132,14 @@ x11 桌面协议是必须的。bspwm 就是一个桌面，简单得不能再简�
 </ol>
 
 <div class="org-src-container">
-<pre class="shell"> pacmcan<span class="w"> </span>-S<span class="w"> </span>xorg<span class="w"> </span>bspwm<span class="w"> </span>xshbd<span class="w"> </span>picom
- </pre>
+<pre class="shell"> pacmcan<span class="w"> </span>-S<span class="w"> </span>xorg<span class="w"> </span>bspwm<span class="w"> </span>xshbd<span class="w"> </span>picom </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgfbcf0e7" class="outline-2">
-<h2 id="orgfbcf0e7">配置 bspwm</h2>
-<div class="outline-text-2" id="text-orgfbcf0e7">
+<div id="outline-container-orgb119c3c" class="outline-2">
+<h2 id="orgb119c3c">配置 bspwm</h2>
+<div class="outline-text-2" id="text-orgb119c3c">
 <p>
 配置文件在 <code>~/.config/bspwm/bspwmrc</code>. 样板配置在 <code>/usr/share/doc/bspwm/examples/bspwmrc</code>, 复制过来即可。它给了几个函数的使用方法。
 </p>
@@ -214,14 +213,13 @@ picom<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w
 <span class="c1"># python ~/DustDict/server.py &amp;</span>
 goldendict<span class="w"> </span><span class="p">&amp;</span>
 
-eww<span class="w"> </span>open<span class="w"> </span>bar
- </pre>
+eww<span class="w"> </span>open<span class="w"> </span>bar </pre>
 </div>
 </div>
 
-<div id="outline-container-org26725b8" class="outline-3">
-<h3 id="org26725b8">bspwm 的几个概念</h3>
-<div class="outline-text-3" id="text-org26725b8">
+<div id="outline-container-org82e5fa4" class="outline-3">
+<h3 id="org82e5fa4">bspwm 的几个概念</h3>
+<div class="outline-text-3" id="text-org82e5fa4">
 <ul class="org-ul">
 <li>wm 桌面，指的整个 bspwm 桌面对象</li>
 <li>monitor 显示器，索引从 0 开始</li>
@@ -235,18 +233,18 @@ eww<span class="w"> </span>open<span class="w"> </span>bar
 </div>
 </div>
 
-<div id="outline-container-org9c9e38a" class="outline-3">
-<h3 id="org9c9e38a">bspc config</h3>
-<div class="outline-text-3" id="text-org9c9e38a">
+<div id="outline-container-org9254ff0" class="outline-3">
+<h3 id="org9254ff0">bspc config</h3>
+<div class="outline-text-3" id="text-org9254ff0">
 <p>
 bspc config 用于设置一些变量，所有配置看 man 的 SETTINGS 章节，我只用到了一些基本的，在配置中给了注释。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org51add5e" class="outline-3">
-<h3 id="org51add5e">bspc rule</h3>
-<div class="outline-text-3" id="text-org51add5e">
+<div id="outline-container-orgc515edd" class="outline-3">
+<h3 id="orgc515edd">bspc rule</h3>
+<div class="outline-text-3" id="text-orgc515edd">
 <p>
 用来设置窗口规则，主要是特例，比如字典我希望它是浮动在其他窗口之上，不参与平铺。
 </p>
@@ -256,9 +254,9 @@ bspc config 用于设置一些变量，所有配置看 man 的 SETTINGS 章节�
 </p>
 </div>
 
-<div id="outline-container-orga692cf7" class="outline-4">
-<h4 id="orga692cf7">bspc rule: cmd</h4>
-<div class="outline-text-4" id="text-orga692cf7">
+<div id="outline-container-orgfa4ad26" class="outline-4">
+<h4 id="orgfa4ad26">bspc rule: cmd</h4>
+<div class="outline-text-4" id="text-orgfa4ad26">
 <p>
 cmd 主要有三个:
 </p>
@@ -270,9 +268,9 @@ cmd 主要有三个:
 </div>
 </div>
 
-<div id="outline-container-orgc8f9f90" class="outline-4">
-<h4 id="orgc8f9f90">bspc rule: obj</h4>
-<div class="outline-text-4" id="text-orgc8f9f90">
+<div id="outline-container-orgdf2bf13" class="outline-4">
+<h4 id="orgdf2bf13">bspc rule: obj</h4>
+<div class="outline-text-4" id="text-orgdf2bf13">
 <p>
 规则作用的对象，一个字符串，格式是 <code>class:instance:name</code>. 如果没有冒号则是类。它就是对应到应用的窗口。比如我配置里面的。
 </p>
@@ -291,9 +289,9 @@ cmd 主要有三个:
 </div>
 </div>
 
-<div id="outline-container-orgcbecffa" class="outline-4">
-<h4 id="orgcbecffa">bspc rule: arg</h4>
-<div class="outline-text-4" id="text-orgcbecffa">
+<div id="outline-container-org2e349be" class="outline-4">
+<h4 id="org2e349be">bspc rule: arg</h4>
+<div class="outline-text-4" id="text-org2e349be">
 <p>
 对象的参数。主要用到的参数：
 </p>
@@ -304,16 +302,15 @@ cmd 主要有三个:
 </div>
 </div>
 
-<div id="outline-container-org0f58204" class="outline-4">
-<h4 id="org0f58204">bspc 例子</h4>
-<div class="outline-text-4" id="text-org0f58204">
+<div id="outline-container-org72a8726" class="outline-4">
+<h4 id="org72a8726">bspc 例子</h4>
+<div class="outline-text-4" id="text-org72a8726">
 <p>
 首先是 Emacs, 它居然默认不是平铺的，所以需要给它弄一下。
 </p>
 
 <div class="org-src-container">
-<pre class="shell"> bspc<span class="w"> </span>rule<span class="w"> </span>-a<span class="w"> </span>Emacs<span class="w"> </span><span class="nv">state</span><span class="o">=</span>tiled
- </pre>
+<pre class="shell"> bspc<span class="w"> </span>rule<span class="w"> </span>-a<span class="w"> </span>Emacs<span class="w"> </span><span class="nv">state</span><span class="o">=</span>tiled </pre>
 </div>
 
 <p>
@@ -321,8 +318,7 @@ cmd 主要有三个:
 </p>
 
 <div class="org-src-container">
-<pre class="shell"> bspc<span class="w"> </span>rule<span class="w"> </span>-a<span class="w"> </span>Vivaldi-stable<span class="w"> </span><span class="nv">desktop</span><span class="o">=</span><span class="m">1</span>
- </pre>
+<pre class="shell"> bspc<span class="w"> </span>rule<span class="w"> </span>-a<span class="w"> </span>Vivaldi-stable<span class="w"> </span><span class="nv">desktop</span><span class="o">=</span><span class="m">1</span> </pre>
 </div>
 
 <p>
@@ -330,16 +326,15 @@ cmd 主要有三个:
 </p>
 
 <div class="org-src-container">
-<pre class="shell"> bspc<span class="w"> </span>rule<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;Emacs:IDMANAGER&quot;</span><span class="w"> </span><span class="nv">state</span><span class="o">=</span>floating<span class="w"> </span><span class="nv">center</span><span class="o">=</span>on<span class="w"> </span><span class="nv">rectangle</span><span class="o">=</span><span class="s2">&quot;1080x720+0+0&quot;</span>
- </pre>
+<pre class="shell"> bspc<span class="w"> </span>rule<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;Emacs:IDMANAGER&quot;</span><span class="w"> </span><span class="nv">state</span><span class="o">=</span>floating<span class="w"> </span><span class="nv">center</span><span class="o">=</span>on<span class="w"> </span><span class="nv">rectangle</span><span class="o">=</span><span class="s2">&quot;1080x720+0+0&quot;</span> </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgf260142" class="outline-3">
-<h3 id="orgf260142">程序启动</h3>
-<div class="outline-text-3" id="text-orgf260142">
+<div id="outline-container-org55766b7" class="outline-3">
+<h3 id="org55766b7">程序启动</h3>
+<div class="outline-text-3" id="text-org55766b7">
 <p>
 因为 bspwmrc 本身就是一个 shell 脚本，需要启动什么程序直接往里面加就行了。
 </p>
@@ -347,13 +342,13 @@ cmd 主要有三个:
 </div>
 </div>
 
-<div id="outline-container-orgae9acb6" class="outline-2">
-<h2 id="orgae9acb6">bspc 的查询与控制</h2>
-<div class="outline-text-2" id="text-orgae9acb6">
+<div id="outline-container-org95ee48f" class="outline-2">
+<h2 id="org95ee48f">bspc 的查询与控制</h2>
+<div class="outline-text-2" id="text-org95ee48f">
 </div>
-<div id="outline-container-org42d5c2b" class="outline-3">
-<h3 id="org42d5c2b">bspc query</h3>
-<div class="outline-text-3" id="text-org42d5c2b">
+<div id="outline-container-org7c0bec9" class="outline-3">
+<h3 id="org7c0bec9">bspc query</h3>
+<div class="outline-text-3" id="text-org7c0bec9">
 <p>
 查询命令可以看 <a href="https://github.com/baskerville/bspwm/wiki/Command-Syntax-Rewrite#query-command" target="_blank">官网文档</a>，给的非常详细。事实上， <code>query</code> 并非如我所想能够查到比如窗口当前的 GUI 信息，它是用于查询<b>存在</b>状态，比如当前桌面有哪些窗口，列出 ID; 或者当前显示器有多少桌面等等。
 </p>
@@ -364,9 +359,9 @@ cmd 主要有三个:
 </div>
 </div>
 
-<div id="outline-container-orgb375cb6" class="outline-3">
-<h3 id="orgb375cb6">bspc 的控制</h3>
-<div class="outline-text-3" id="text-orgb375cb6">
+<div id="outline-container-org389d801" class="outline-3">
+<h3 id="org389d801">bspc 的控制</h3>
+<div class="outline-text-3" id="text-org389d801">
 <p>
 控制很好理解，比如窗口移动、调整大小、设置参数等。
 </p>
@@ -384,9 +379,9 @@ selector 除非特殊需求，不然一般用 name 或 ID 即可。
 </p>
 </div>
 
-<div id="outline-container-orgd8b6e41" class="outline-4">
-<h4 id="orgd8b6e41">bspc node [node-selector]</h4>
-<div class="outline-text-4" id="text-orgd8b6e41">
+<div id="outline-container-orgfae46e8" class="outline-4">
+<h4 id="orgfae46e8">bspc node [node-selector]</h4>
+<div class="outline-text-4" id="text-orgfae46e8">
 <ul class="org-ul">
 <li><code>-f</code> 焦距到窗口</li>
 <li><code>-d desktop</code> 移动窗口到指定桌面</li>
@@ -401,9 +396,9 @@ selector 除非特殊需求，不然一般用 name 或 ID 即可。
 </div>
 </div>
 
-<div id="outline-container-org843619e" class="outline-4">
-<h4 id="org843619e">bspc desktop [node-selector]</h4>
-<div class="outline-text-4" id="text-org843619e">
+<div id="outline-container-org8749c4e" class="outline-4">
+<h4 id="org8749c4e">bspc desktop [node-selector]</h4>
+<div class="outline-text-4" id="text-org8749c4e">
 <ul class="org-ul">
 <li><code>-f</code> 焦距到桌面</li>
 <li><code>-m monirotr</code> 移动窗口到指定显示器</li>
@@ -418,9 +413,9 @@ bspc monitor 我没用到。
 </div>
 </div>
 
-<div id="outline-container-org33398d7" class="outline-2">
-<h2 id="org33398d7">sxhkd 配置</h2>
-<div class="outline-text-2" id="text-org33398d7">
+<div id="outline-container-orgd255cc6" class="outline-2">
+<h2 id="orgd255cc6">sxhkd 配置</h2>
+<div class="outline-text-2" id="text-orgd255cc6">
 <p>
 sxhkd 的配置文件是 <code>~/.config/sxhkd/sxhkdrc</code>, 样板在 <code>/usr/share/doc/bspwm/examples/sxkdrc</code>. 它配置的方式比较灵活，一行表示按键序列，下一行表示执行的操作。同样也是 shell 脚本，需要启动什么直接输入就行。
 </p>
@@ -448,13 +443,43 @@ super<span class="w"> </span>+<span class="w"> </span>Tab
 
 <span class="c1"># send to the given desktop</span>
 super<span class="w"> </span>+<span class="w"> </span><span class="nb">shift</span><span class="w"> </span>+<span class="w"> </span><span class="o">{</span><span class="m">1</span>-9,0<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-d<span class="w"> </span>^1-9<span class="w"> </span>-f
+<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;^{1-9,10}&#39;</span><span class="w"> </span>-f
 
 <span class="c1"># focus to given desktop</span>
 super<span class="w"> </span>+<span class="w"> </span><span class="m">1</span>
-<span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="k">$(</span>pgrep<span class="w"> </span>vivaldi<span class="k">)</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>vivaldi-stable
+<span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="m">805615</span>
+<span class="m">805628</span>
+<span class="m">805629</span>
+<span class="m">805635</span>
+<span class="m">805657</span>
+<span class="m">805658</span>
+<span class="m">805667</span>
+<span class="m">805693</span>
+<span class="m">805718</span>
+<span class="m">805738</span>
+<span class="m">805747</span>
+<span class="m">805757</span>
+<span class="m">805765</span>
+<span class="m">805837</span>
+<span class="m">810560</span>
+<span class="m">815480</span>
+<span class="m">816742</span>
+<span class="m">823381</span>
+<span class="m">841439</span>
+<span class="m">841705</span>
+<span class="m">842785</span>
+<span class="m">842927</span>
+<span class="m">855002</span>
+<span class="m">862639</span>
+<span class="m">871438</span>
+<span class="m">871587</span>
+<span class="m">871588</span>
+<span class="m">873122</span>
+<span class="m">873220</span>
+<span class="m">873359</span>
+<span class="m">873373</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>vivaldi-stable
 super<span class="w"> </span>+<span class="w"> </span><span class="o">{</span><span class="m">1</span>-9,0<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span>^1-9
+<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;^{1-9,10}&#39;</span>
 
 <span class="c1"># expand a window by moving one of its side outward</span>
 super<span class="w"> </span>+<span class="w"> </span>alt<span class="w"> </span>+<span class="w"> </span><span class="o">{</span>h,j,k,l<span class="o">}</span>
@@ -509,13 +534,13 @@ super<span class="w"> </span>+<span class="w"> </span>d
 <span class="w"> </span>bspc-open<span class="w"> </span>class<span class="w"> </span><span class="s2">&quot;GoldenDict&quot;</span><span class="w"> </span>goldendict
 
 super<span class="w"> </span>+<span class="w"> </span>f
-<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span><span class="m">8</span><span class="p">;</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="k">$(</span>bspc<span class="w"> </span>query<span class="w"> </span>-N<span class="w"> </span>--desktop<span class="w"> </span><span class="m">8</span><span class="k">)</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>setup-lazy-dirvish<span class="w"> </span>--name<span class="w"> </span>DIRVISH
+<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span><span class="m">8</span><span class="p">;</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span>0x02C000B0<span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>setup-lazy-dirvish<span class="w"> </span>--name<span class="w"> </span>DIRVISH
 
 super<span class="w"> </span>+<span class="w"> </span>r
-<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span><span class="m">9</span><span class="p">;</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="k">$(</span>bspc<span class="w"> </span>query<span class="w"> </span>-N<span class="w"> </span>--desktop<span class="w"> </span><span class="m">9</span><span class="k">)</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>mu4e
+<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span><span class="m">9</span><span class="p">;</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span>0x058000B0<span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>mu4e
 
 super<span class="w"> </span>+<span class="w"> </span>o
-<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span><span class="m">10</span><span class="p">;</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="k">$(</span>bspc<span class="w"> </span>query<span class="w"> </span>-N<span class="w"> </span>--desktop<span class="w"> </span><span class="m">10</span><span class="k">)</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>dust/org-journal-new-journal
+<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span><span class="m">10</span><span class="p">;</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w">  </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;dust/org-journal-new-journal&#39;</span>
 
 <span class="c1"># sound</span>
 XF86Audio<span class="o">{</span>Lower,Raise<span class="o">}</span>Volume
@@ -539,323 +564,7 @@ super<span class="w"> </span>+<span class="w"> </span><span class="o">{</span>br
 
 <span class="c1"># backlight</span>
 XF86MonBrightness<span class="o">{</span>Down,Up<span class="o">}</span>
-<span class="w"> </span>brightnessctl<span class="w"> </span>s<span class="w"> </span><span class="m">5</span>%<span class="o">{</span>-,+<span class="o">}</span><span class="w"> </span><span class="c1"># make sxhkd reload its configuration files:</span>
-super<span class="w"> </span>+<span class="w"> </span>Escape
-<span class="w"> </span>pkill<span class="w"> </span>-USR1<span class="w"> </span>-x<span class="w"> </span>sxhkd
-
-<span class="c1"># quit/restart bspwm</span>
-super<span class="w"> </span>+<span class="w"> </span>alt<span class="w"> </span>+<span class="w"> </span><span class="o">{</span>q,r<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span><span class="o">{</span>quit,wm<span class="w"> </span>-r<span class="o">}</span>
-
-<span class="c1"># focus the last desktop</span>
-super<span class="w"> </span>+<span class="w"> </span>Tab
-<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span>last
-
-<span class="c1"># send to the given desktop</span>
-super<span class="w"> </span>+<span class="w"> </span><span class="nb">shift</span><span class="w"> </span>+<span class="w"> </span><span class="o">{</span><span class="m">1</span>-9,0<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-d<span class="w"> </span>^1-9<span class="w"> </span>-f
-
-<span class="c1"># focus to given desktop</span>
-super<span class="w"> </span>+<span class="w"> </span><span class="m">1</span>
-<span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="k">$(</span>pgrep<span class="w"> </span>vivaldi<span class="k">)</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>vivaldi-stable
-super<span class="w"> </span>+<span class="w"> </span><span class="o">{</span><span class="m">1</span>-9,0<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span>^10
-
-<span class="c1"># expand a window by moving one of its side outward</span>
-super<span class="w"> </span>+<span class="w"> </span>alt<span class="w"> </span>+<span class="w"> </span><span class="o">{</span>h,j,k,l<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-z<span class="w"> </span><span class="o">{</span>left<span class="w"> </span>-20<span class="w"> </span><span class="m">0</span>,bottom<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">20</span>,top<span class="w"> </span><span class="m">0</span><span class="w"> </span>-20,right<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">0</span><span class="o">}</span>
-
-<span class="c1"># contract a window by moving one of its side inward</span>
-super<span class="w"> </span>+<span class="w"> </span>alt<span class="w"> </span>+<span class="w"> </span><span class="nb">shift</span><span class="w"> </span>+<span class="w"> </span><span class="o">{</span>h,j,k,l<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-z<span class="w"> </span><span class="o">{</span>right<span class="w"> </span>-20<span class="w"> </span><span class="m">0</span>,top<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">20</span>,bottom<span class="w"> </span><span class="m">0</span><span class="w"> </span>-20,left<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">0</span><span class="o">}</span>
-
-<span class="c1"># move a floating window</span>
-super<span class="w"> </span>+<span class="w"> </span><span class="o">{</span>Left,Down,Up,Right<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-v<span class="w"> </span><span class="o">{</span>-20<span class="w"> </span><span class="m">0</span>,0<span class="w"> </span><span class="m">20</span>,0<span class="w"> </span>-20,20<span class="w"> </span><span class="m">0</span><span class="o">}</span>
-
-<span class="c1"># kill</span>
-super<span class="w"> </span>+<span class="w"> </span>q
-<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-c
-
-<span class="c1"># focus the node in the given direction</span>
-super<span class="w"> </span>+<span class="w"> </span><span class="o">{</span>h,j,k,l<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-f<span class="w"> </span><span class="o">{</span>west,south,north,east<span class="o">}</span>
-
-<span class="c1"># move the node in the given direction</span>
-super<span class="w"> </span>+<span class="w"> </span><span class="nb">shift</span><span class="w"> </span>+<span class="w"> </span><span class="o">{</span>h,j,k,l<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-s<span class="w"> </span><span class="o">{</span>west,south,north,east<span class="o">}</span>
-
-<span class="c1">## APPLICATIONS</span>
-
-<span class="c1"># super + t</span>
-<span class="c1">#  kitty</span>
-super<span class="w"> </span>+<span class="w"> </span>t
-<span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>eshell
-
-super<span class="w"> </span>+<span class="w"> </span>e
-<span class="w"> </span>emacs
-
-super<span class="w"> </span>+<span class="w"> </span>w
-<span class="w"> </span>bspc-open<span class="w"> </span>instance<span class="w"> </span><span class="s2">&quot;SIMPLEMPC&quot;</span><span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>simple-mpc<span class="w"> </span>--name<span class="w"> </span>SIMPLEMPC
-
-super<span class="w"> </span>+<span class="w"> </span>a
-<span class="w"> </span>rofi<span class="w"> </span>-show<span class="w"> </span>drun
-
-super<span class="w"> </span>+<span class="w"> </span>p
-<span class="w"> </span>flameshot<span class="w"> </span>gui
-
-super<span class="w"> </span>+<span class="w"> </span>z
-<span class="w"> </span>light-locker-command<span class="w"> </span>-l
-
-super<span class="w"> </span>+<span class="w"> </span>x
-<span class="w"> </span>bspc-open<span class="w"> </span>instance<span class="w"> </span><span class="s2">&quot;IDMANAGER&quot;</span><span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>id-manager-startup<span class="w"> </span>--name<span class="w"> </span>IDMANAGER<span class="w"> </span>
-
-super<span class="w"> </span>+<span class="w"> </span>d
-<span class="w"> </span>bspc-open<span class="w"> </span>class<span class="w"> </span><span class="s2">&quot;GoldenDict&quot;</span><span class="w"> </span>goldendict
-
-super<span class="w"> </span>+<span class="w"> </span>f
-<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span><span class="m">8</span><span class="p">;</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="k">$(</span>bspc<span class="w"> </span>query<span class="w"> </span>-N<span class="w"> </span>--desktop<span class="w"> </span><span class="m">8</span><span class="k">)</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>setup-lazy-dirvish<span class="w"> </span>--name<span class="w"> </span>DIRVISH
-
-super<span class="w"> </span>+<span class="w"> </span>r
-<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span><span class="m">9</span><span class="p">;</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="k">$(</span>bspc<span class="w"> </span>query<span class="w"> </span>-N<span class="w"> </span>--desktop<span class="w"> </span><span class="m">9</span><span class="k">)</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>mu4e
-
-super<span class="w"> </span>+<span class="w"> </span>o
-<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span><span class="m">10</span><span class="p">;</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="k">$(</span>bspc<span class="w"> </span>query<span class="w"> </span>-N<span class="w"> </span>--desktop<span class="w"> </span><span class="m">10</span><span class="k">)</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>dust/org-journal-new-journal
-
-<span class="c1"># sound</span>
-XF86Audio<span class="o">{</span>Lower,Raise<span class="o">}</span>Volume
-<span class="w"> </span>pactl<span class="w"> </span>set-sink-volume<span class="w"> </span>@DEFAULT_SINK@<span class="w"> </span><span class="o">{</span>-,+<span class="o">}</span><span class="m">5</span>%
-
-super<span class="w"> </span>+<span class="w"> </span><span class="o">{</span>comma,<span class="w"> </span>period<span class="o">}</span>
-<span class="w"> </span>pactl<span class="w"> </span>set-sink-volume<span class="w"> </span>@DEFAULT_SINK@<span class="w"> </span><span class="o">{</span>-,<span class="w"> </span>+<span class="o">}</span><span class="m">5</span>%
-
-XF86AudioMute
-<span class="w"> </span>pactl<span class="w"> </span>set-sink-mute<span class="w"> </span>@DEFAULT_SINK@<span class="w"> </span>toggle
-
-super<span class="w"> </span>+<span class="w"> </span>slash
-<span class="w"> </span>pactl<span class="w"> </span>set-sink-mute<span class="w"> </span>@DEFAULT_SINK@<span class="w"> </span>toggle
-
-<span class="c1"># microphone</span>
-XF86AudioMicMute
-<span class="w"> </span>pactl<span class="w"> </span>set-source-mute<span class="w"> </span>@DEFAULT_SOURCE@<span class="w"> </span>toggle
-
-super<span class="w"> </span>+<span class="w"> </span><span class="o">{</span>bracketleft,bracketright<span class="o">}</span>
-<span class="w"> </span>brightnessctl<span class="w"> </span>s<span class="w"> </span><span class="m">5</span>%<span class="o">{</span>-,+<span class="o">}</span>
-
-<span class="c1"># backlight</span>
-XF86MonBrightness<span class="o">{</span>Down,Up<span class="o">}</span>
-<span class="w"> </span>brightnessctl<span class="w"> </span>s<span class="w"> </span><span class="m">5</span>%<span class="o">{</span>-,+<span class="o">}</span><span class="w"> </span><span class="c1"># make sxhkd reload its configuration files:</span>
-super<span class="w"> </span>+<span class="w"> </span>Escape
-<span class="w"> </span>pkill<span class="w"> </span>-USR1<span class="w"> </span>-x<span class="w"> </span>sxhkd
-
-<span class="c1"># quit/restart bspwm</span>
-super<span class="w"> </span>+<span class="w"> </span>alt<span class="w"> </span>+<span class="w"> </span><span class="o">{</span>q,r<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span><span class="o">{</span>quit,wm<span class="w"> </span>-r<span class="o">}</span>
-
-<span class="c1"># focus the last desktop</span>
-super<span class="w"> </span>+<span class="w"> </span>Tab
-<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span>last
-
-<span class="c1"># send to the given desktop</span>
-super<span class="w"> </span>+<span class="w"> </span><span class="nb">shift</span><span class="w"> </span>+<span class="w"> </span><span class="o">{</span><span class="m">1</span>-9,0<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-d<span class="w"> </span>^10<span class="w"> </span>-f
-
-<span class="c1"># focus to given desktop</span>
-super<span class="w"> </span>+<span class="w"> </span><span class="m">1</span>
-<span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="k">$(</span>pgrep<span class="w"> </span>vivaldi<span class="k">)</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>vivaldi-stable
-super<span class="w"> </span>+<span class="w"> </span><span class="o">{</span><span class="m">1</span>-9,0<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span>^1-9
-
-<span class="c1"># expand a window by moving one of its side outward</span>
-super<span class="w"> </span>+<span class="w"> </span>alt<span class="w"> </span>+<span class="w"> </span><span class="o">{</span>h,j,k,l<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-z<span class="w"> </span><span class="o">{</span>left<span class="w"> </span>-20<span class="w"> </span><span class="m">0</span>,bottom<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">20</span>,top<span class="w"> </span><span class="m">0</span><span class="w"> </span>-20,right<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">0</span><span class="o">}</span>
-
-<span class="c1"># contract a window by moving one of its side inward</span>
-super<span class="w"> </span>+<span class="w"> </span>alt<span class="w"> </span>+<span class="w"> </span><span class="nb">shift</span><span class="w"> </span>+<span class="w"> </span><span class="o">{</span>h,j,k,l<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-z<span class="w"> </span><span class="o">{</span>right<span class="w"> </span>-20<span class="w"> </span><span class="m">0</span>,top<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">20</span>,bottom<span class="w"> </span><span class="m">0</span><span class="w"> </span>-20,left<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">0</span><span class="o">}</span>
-
-<span class="c1"># move a floating window</span>
-super<span class="w"> </span>+<span class="w"> </span><span class="o">{</span>Left,Down,Up,Right<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-v<span class="w"> </span><span class="o">{</span>-20<span class="w"> </span><span class="m">0</span>,0<span class="w"> </span><span class="m">20</span>,0<span class="w"> </span>-20,20<span class="w"> </span><span class="m">0</span><span class="o">}</span>
-
-<span class="c1"># kill</span>
-super<span class="w"> </span>+<span class="w"> </span>q
-<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-c
-
-<span class="c1"># focus the node in the given direction</span>
-super<span class="w"> </span>+<span class="w"> </span><span class="o">{</span>h,j,k,l<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-f<span class="w"> </span><span class="o">{</span>west,south,north,east<span class="o">}</span>
-
-<span class="c1"># move the node in the given direction</span>
-super<span class="w"> </span>+<span class="w"> </span><span class="nb">shift</span><span class="w"> </span>+<span class="w"> </span><span class="o">{</span>h,j,k,l<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-s<span class="w"> </span><span class="o">{</span>west,south,north,east<span class="o">}</span>
-
-<span class="c1">## APPLICATIONS</span>
-
-<span class="c1"># super + t</span>
-<span class="c1">#  kitty</span>
-super<span class="w"> </span>+<span class="w"> </span>t
-<span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>eshell
-
-super<span class="w"> </span>+<span class="w"> </span>e
-<span class="w"> </span>emacs
-
-super<span class="w"> </span>+<span class="w"> </span>w
-<span class="w"> </span>bspc-open<span class="w"> </span>instance<span class="w"> </span><span class="s2">&quot;SIMPLEMPC&quot;</span><span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>simple-mpc<span class="w"> </span>--name<span class="w"> </span>SIMPLEMPC
-
-super<span class="w"> </span>+<span class="w"> </span>a
-<span class="w"> </span>rofi<span class="w"> </span>-show<span class="w"> </span>drun
-
-super<span class="w"> </span>+<span class="w"> </span>p
-<span class="w"> </span>flameshot<span class="w"> </span>gui
-
-super<span class="w"> </span>+<span class="w"> </span>z
-<span class="w"> </span>light-locker-command<span class="w"> </span>-l
-
-super<span class="w"> </span>+<span class="w"> </span>x
-<span class="w"> </span>bspc-open<span class="w"> </span>instance<span class="w"> </span><span class="s2">&quot;IDMANAGER&quot;</span><span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>id-manager-startup<span class="w"> </span>--name<span class="w"> </span>IDMANAGER<span class="w"> </span>
-
-super<span class="w"> </span>+<span class="w"> </span>d
-<span class="w"> </span>bspc-open<span class="w"> </span>class<span class="w"> </span><span class="s2">&quot;GoldenDict&quot;</span><span class="w"> </span>goldendict
-
-super<span class="w"> </span>+<span class="w"> </span>f
-<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span><span class="m">8</span><span class="p">;</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="k">$(</span>bspc<span class="w"> </span>query<span class="w"> </span>-N<span class="w"> </span>--desktop<span class="w"> </span><span class="m">8</span><span class="k">)</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>setup-lazy-dirvish<span class="w"> </span>--name<span class="w"> </span>DIRVISH
-
-super<span class="w"> </span>+<span class="w"> </span>r
-<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span><span class="m">9</span><span class="p">;</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="k">$(</span>bspc<span class="w"> </span>query<span class="w"> </span>-N<span class="w"> </span>--desktop<span class="w"> </span><span class="m">9</span><span class="k">)</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>mu4e
-
-super<span class="w"> </span>+<span class="w"> </span>o
-<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span><span class="m">10</span><span class="p">;</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="k">$(</span>bspc<span class="w"> </span>query<span class="w"> </span>-N<span class="w"> </span>--desktop<span class="w"> </span><span class="m">10</span><span class="k">)</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>dust/org-journal-new-journal
-
-<span class="c1"># sound</span>
-XF86Audio<span class="o">{</span>Lower,Raise<span class="o">}</span>Volume
-<span class="w"> </span>pactl<span class="w"> </span>set-sink-volume<span class="w"> </span>@DEFAULT_SINK@<span class="w"> </span><span class="o">{</span>-,+<span class="o">}</span><span class="m">5</span>%
-
-super<span class="w"> </span>+<span class="w"> </span><span class="o">{</span>comma,<span class="w"> </span>period<span class="o">}</span>
-<span class="w"> </span>pactl<span class="w"> </span>set-sink-volume<span class="w"> </span>@DEFAULT_SINK@<span class="w"> </span><span class="o">{</span>-,<span class="w"> </span>+<span class="o">}</span><span class="m">5</span>%
-
-XF86AudioMute
-<span class="w"> </span>pactl<span class="w"> </span>set-sink-mute<span class="w"> </span>@DEFAULT_SINK@<span class="w"> </span>toggle
-
-super<span class="w"> </span>+<span class="w"> </span>slash
-<span class="w"> </span>pactl<span class="w"> </span>set-sink-mute<span class="w"> </span>@DEFAULT_SINK@<span class="w"> </span>toggle
-
-<span class="c1"># microphone</span>
-XF86AudioMicMute
-<span class="w"> </span>pactl<span class="w"> </span>set-source-mute<span class="w"> </span>@DEFAULT_SOURCE@<span class="w"> </span>toggle
-
-super<span class="w"> </span>+<span class="w"> </span><span class="o">{</span>bracketleft,bracketright<span class="o">}</span>
-<span class="w"> </span>brightnessctl<span class="w"> </span>s<span class="w"> </span><span class="m">5</span>%<span class="o">{</span>-,+<span class="o">}</span>
-
-<span class="c1"># backlight</span>
-XF86MonBrightness<span class="o">{</span>Down,Up<span class="o">}</span>
-<span class="w"> </span>brightnessctl<span class="w"> </span>s<span class="w"> </span><span class="m">5</span>%<span class="o">{</span>-,+<span class="o">}</span><span class="w"> </span><span class="c1"># make sxhkd reload its configuration files:</span>
-super<span class="w"> </span>+<span class="w"> </span>Escape
-<span class="w"> </span>pkill<span class="w"> </span>-USR1<span class="w"> </span>-x<span class="w"> </span>sxhkd
-
-<span class="c1"># quit/restart bspwm</span>
-super<span class="w"> </span>+<span class="w"> </span>alt<span class="w"> </span>+<span class="w"> </span><span class="o">{</span>q,r<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span><span class="o">{</span>quit,wm<span class="w"> </span>-r<span class="o">}</span>
-
-<span class="c1"># focus the last desktop</span>
-super<span class="w"> </span>+<span class="w"> </span>Tab
-<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span>last
-
-<span class="c1"># send to the given desktop</span>
-super<span class="w"> </span>+<span class="w"> </span><span class="nb">shift</span><span class="w"> </span>+<span class="w"> </span><span class="o">{</span><span class="m">1</span>-9,0<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-d<span class="w"> </span>^10<span class="w"> </span>-f
-
-<span class="c1"># focus to given desktop</span>
-super<span class="w"> </span>+<span class="w"> </span><span class="m">1</span>
-<span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="k">$(</span>pgrep<span class="w"> </span>vivaldi<span class="k">)</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>vivaldi-stable
-super<span class="w"> </span>+<span class="w"> </span><span class="o">{</span><span class="m">1</span>-9,0<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span>^10
-
-<span class="c1"># expand a window by moving one of its side outward</span>
-super<span class="w"> </span>+<span class="w"> </span>alt<span class="w"> </span>+<span class="w"> </span><span class="o">{</span>h,j,k,l<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-z<span class="w"> </span><span class="o">{</span>left<span class="w"> </span>-20<span class="w"> </span><span class="m">0</span>,bottom<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">20</span>,top<span class="w"> </span><span class="m">0</span><span class="w"> </span>-20,right<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">0</span><span class="o">}</span>
-
-<span class="c1"># contract a window by moving one of its side inward</span>
-super<span class="w"> </span>+<span class="w"> </span>alt<span class="w"> </span>+<span class="w"> </span><span class="nb">shift</span><span class="w"> </span>+<span class="w"> </span><span class="o">{</span>h,j,k,l<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-z<span class="w"> </span><span class="o">{</span>right<span class="w"> </span>-20<span class="w"> </span><span class="m">0</span>,top<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">20</span>,bottom<span class="w"> </span><span class="m">0</span><span class="w"> </span>-20,left<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">0</span><span class="o">}</span>
-
-<span class="c1"># move a floating window</span>
-super<span class="w"> </span>+<span class="w"> </span><span class="o">{</span>Left,Down,Up,Right<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-v<span class="w"> </span><span class="o">{</span>-20<span class="w"> </span><span class="m">0</span>,0<span class="w"> </span><span class="m">20</span>,0<span class="w"> </span>-20,20<span class="w"> </span><span class="m">0</span><span class="o">}</span>
-
-<span class="c1"># kill</span>
-super<span class="w"> </span>+<span class="w"> </span>q
-<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-c
-
-<span class="c1"># focus the node in the given direction</span>
-super<span class="w"> </span>+<span class="w"> </span><span class="o">{</span>h,j,k,l<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-f<span class="w"> </span><span class="o">{</span>west,south,north,east<span class="o">}</span>
-
-<span class="c1"># move the node in the given direction</span>
-super<span class="w"> </span>+<span class="w"> </span><span class="nb">shift</span><span class="w"> </span>+<span class="w"> </span><span class="o">{</span>h,j,k,l<span class="o">}</span>
-<span class="w"> </span>bspc<span class="w"> </span>node<span class="w"> </span>-s<span class="w"> </span><span class="o">{</span>west,south,north,east<span class="o">}</span>
-
-<span class="c1">## APPLICATIONS</span>
-
-<span class="c1"># super + t</span>
-<span class="c1">#  kitty</span>
-super<span class="w"> </span>+<span class="w"> </span>t
-<span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>eshell
-
-super<span class="w"> </span>+<span class="w"> </span>e
-<span class="w"> </span>emacs
-
-super<span class="w"> </span>+<span class="w"> </span>w
-<span class="w"> </span>bspc-open<span class="w"> </span>instance<span class="w"> </span><span class="s2">&quot;SIMPLEMPC&quot;</span><span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>simple-mpc<span class="w"> </span>--name<span class="w"> </span>SIMPLEMPC
-
-super<span class="w"> </span>+<span class="w"> </span>a
-<span class="w"> </span>rofi<span class="w"> </span>-show<span class="w"> </span>drun
-
-super<span class="w"> </span>+<span class="w"> </span>p
-<span class="w"> </span>flameshot<span class="w"> </span>gui
-
-super<span class="w"> </span>+<span class="w"> </span>z
-<span class="w"> </span>light-locker-command<span class="w"> </span>-l
-
-super<span class="w"> </span>+<span class="w"> </span>x
-<span class="w"> </span>bspc-open<span class="w"> </span>instance<span class="w"> </span><span class="s2">&quot;IDMANAGER&quot;</span><span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>id-manager-startup<span class="w"> </span>--name<span class="w"> </span>IDMANAGER<span class="w"> </span>
-
-super<span class="w"> </span>+<span class="w"> </span>d
-<span class="w"> </span>bspc-open<span class="w"> </span>class<span class="w"> </span><span class="s2">&quot;GoldenDict&quot;</span><span class="w"> </span>goldendict
-
-super<span class="w"> </span>+<span class="w"> </span>f
-<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span><span class="m">8</span><span class="p">;</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="k">$(</span>bspc<span class="w"> </span>query<span class="w"> </span>-N<span class="w"> </span>--desktop<span class="w"> </span><span class="m">8</span><span class="k">)</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>setup-lazy-dirvish<span class="w"> </span>--name<span class="w"> </span>DIRVISH
-
-super<span class="w"> </span>+<span class="w"> </span>r
-<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span><span class="m">9</span><span class="p">;</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="k">$(</span>bspc<span class="w"> </span>query<span class="w"> </span>-N<span class="w"> </span>--desktop<span class="w"> </span><span class="m">9</span><span class="k">)</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>mu4e
-
-super<span class="w"> </span>+<span class="w"> </span>o
-<span class="w"> </span>bspc<span class="w"> </span>desktop<span class="w"> </span>-f<span class="w"> </span><span class="m">10</span><span class="p">;</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="k">$(</span>bspc<span class="w"> </span>query<span class="w"> </span>-N<span class="w"> </span>--desktop<span class="w"> </span><span class="m">10</span><span class="k">)</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>dust/org-journal-new-journal
-
-<span class="c1"># sound</span>
-XF86Audio<span class="o">{</span>Lower,Raise<span class="o">}</span>Volume
-<span class="w"> </span>pactl<span class="w"> </span>set-sink-volume<span class="w"> </span>@DEFAULT_SINK@<span class="w"> </span><span class="o">{</span>-,+<span class="o">}</span><span class="m">5</span>%
-
-super<span class="w"> </span>+<span class="w"> </span><span class="o">{</span>comma,<span class="w"> </span>period<span class="o">}</span>
-<span class="w"> </span>pactl<span class="w"> </span>set-sink-volume<span class="w"> </span>@DEFAULT_SINK@<span class="w"> </span><span class="o">{</span>-,<span class="w"> </span>+<span class="o">}</span><span class="m">5</span>%
-
-XF86AudioMute
-<span class="w"> </span>pactl<span class="w"> </span>set-sink-mute<span class="w"> </span>@DEFAULT_SINK@<span class="w"> </span>toggle
-
-super<span class="w"> </span>+<span class="w"> </span>slash
-<span class="w"> </span>pactl<span class="w"> </span>set-sink-mute<span class="w"> </span>@DEFAULT_SINK@<span class="w"> </span>toggle
-
-<span class="c1"># microphone</span>
-XF86AudioMicMute
-<span class="w"> </span>pactl<span class="w"> </span>set-source-mute<span class="w"> </span>@DEFAULT_SOURCE@<span class="w"> </span>toggle
-
-super<span class="w"> </span>+<span class="w"> </span><span class="o">{</span>bracketleft,bracketright<span class="o">}</span>
-<span class="w"> </span>brightnessctl<span class="w"> </span>s<span class="w"> </span><span class="m">5</span>%<span class="o">{</span>-,+<span class="o">}</span>
-
-<span class="c1"># backlight</span>
-XF86MonBrightness<span class="o">{</span>Down,Up<span class="o">}</span>
-<span class="w"> </span>brightnessctl<span class="w"> </span>s<span class="w"> </span><span class="m">5</span>%<span class="o">{</span>-,+<span class="o">}</span>
- </pre>
+<span class="w"> </span>brightnessctl<span class="w"> </span>s<span class="w"> </span><span class="m">5</span>%<span class="o">{</span>-,+<span class="o">}</span> </pre>
 </div>
 
 <p>
@@ -863,7 +572,7 @@ XF86MonBrightness<span class="o">{</span>Down,Up<span class="o">}</span>
 </p>
 
 
-<figure id="org00db4c7">
+<figure id="org737b461">
 <a href="/assets/4cfb1549b5c0b84bd890ea394d7e8a8e.png" target="_blank" target="_blank"><img src="/assets/4cfb1549b5c0b84bd890ea394d7e8a8e.png" alt="4cfb1549b5c0b84bd890ea394d7e8a8e.png"></a>
 
 </figure>
@@ -878,20 +587,19 @@ And, <code>{}</code> 中的逗号后一定不要加空格（我在设背光灯�
 </div>
 </div>
 
-<div id="outline-container-org2ff5218" class="outline-2">
-<h2 id="org2ff5218">基础功能</h2>
-<div class="outline-text-2" id="text-org2ff5218">
+<div id="outline-container-org1e6a496" class="outline-2">
+<h2 id="org1e6a496">基础功能</h2>
+<div class="outline-text-2" id="text-org1e6a496">
 </div>
-<div id="outline-container-org9f18e57" class="outline-3">
-<h3 id="org9f18e57">登录界面</h3>
-<div class="outline-text-3" id="text-org9f18e57">
+<div id="outline-container-org0accdb8" class="outline-3">
+<h3 id="org0accdb8">登录界面</h3>
+<div class="outline-text-3" id="text-org0accdb8">
 <p>
 登录界面用的 lightdm. lightdm 是一个桌面管理器，它在 tty 后启动，显示登录的 GUI. 认证后再启动 bspwm. 所以单单中一个 lightdm 是不行的，还要装一个 greeter. 我用的是 lightdm-gtk-greeter.
 </p>
 
 <div class="org-src-container">
-<pre class="shell"> pacman<span class="w"> </span>-S<span class="w"> </span>lightdm<span class="w"> </span>lightdm-slick-greeter
- </pre>
+<pre class="shell"> pacman<span class="w"> </span>-S<span class="w"> </span>lightdm<span class="w"> </span>lightdm-slick-greeter </pre>
 </div>
 
 <p>
@@ -902,8 +610,7 @@ lightdm 默认的 greeter 是 gtk-gretter, 修改配置 <code>/etc/lightdm/light
 <pre class="conf"> [Seat:*]
 # ...
 greeter-session=lightdm-slick-greeter
-# ...
- </pre>
+# ... </pre>
 </div>
 
 <p>
@@ -918,11 +625,10 @@ show-power=true
 show-keyboard=false
 clock-format=%Y-%m-%d,%a %H:%M
 # 路径要写绝对路径，因为登录界面的用户是 root
-background=/home/$USER/Pictures/arch1920.png
+background=/home/mrdust/Pictures/arch1920.png
 theme-name=Dracula
 icon-theme-name=Dracula
-cursor-theme-name=Dracula-cursors
- </pre>
+cursor-theme-name=Dracula-cursors </pre>
 </div>
 
 <p>
@@ -934,32 +640,29 @@ cursor-theme-name=Dracula-cursors
 </p>
 
 <div class="org-src-container">
-<pre class="shell"> systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>lightdm
- </pre>
+<pre class="shell"> systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>lightdm </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org1512035" class="outline-3">
-<h3 id="org1512035">锁屏界面</h3>
-<div class="outline-text-3" id="text-org1512035">
+<div id="outline-container-orge8b8366" class="outline-3">
+<h3 id="orge8b8366">锁屏界面</h3>
+<div class="outline-text-3" id="text-orge8b8366">
 <p>
 使用 lightdm, 就可以很自然地使用 light-locker 作为锁屏。无需额外配置，直接把它开机自启动即可。 light-locker 的启动在写 bspwm 的配置中。
 </p>
 
 <div class="org-src-container">
-<pre class="shell"> light-locker<span class="w"> </span>--no-late-locking<span class="w"> </span>--lock-on-suspend<span class="w"> </span>--lock-on-lid<span class="w"> </span><span class="p">&amp;</span>
- </pre>
+<pre class="shell"> light-locker<span class="w"> </span>--no-late-locking<span class="w"> </span>--lock-on-suspend<span class="w"> </span>--lock-on-lid<span class="w"> </span><span class="p">&amp;</span> </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org51ed3f2" class="outline-3">
-<h3 id="org51ed3f2">picom 混成器</h3>
-<div class="outline-text-3" id="text-org51ed3f2">
+<div id="outline-container-org821c28b" class="outline-3">
+<h3 id="org821c28b">picom 混成器</h3>
+<div class="outline-text-3" id="text-org821c28b">
 <div class="org-src-container">
-<pre class="shell"> pacman<span class="w"> </span>-S<span class="w"> </span>picom
- </pre>
+<pre class="shell"> pacman<span class="w"> </span>-S<span class="w"> </span>picom </pre>
 </div>
 
 <p>
@@ -970,22 +673,20 @@ cursor-theme-name=Dracula-cursors
 在 bspwmrc 中添加启动：
 </p>
 <div class="org-src-container">
-<pre class="shell"> picom<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="p">&amp;</span>
- </pre>
+<pre class="shell"> picom<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="p">&amp;</span> </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgbd9aa38" class="outline-3">
-<h3 id="orgbd9aa38">通知</h3>
-<div class="outline-text-3" id="text-orgbd9aa38">
+<div id="outline-container-org32d2084" class="outline-3">
+<h3 id="org32d2084">通知</h3>
+<div class="outline-text-3" id="text-org32d2084">
 <p>
 通知用的 dunst.
 </p>
 
 <div class="org-src-container">
-<pre class="shell"> pacman<span class="w"> </span>-S<span class="w"> </span>dunst
- </pre>
+<pre class="shell"> pacman<span class="w"> </span>-S<span class="w"> </span>dunst </pre>
 </div>
 
 <p>
@@ -996,22 +697,20 @@ cursor-theme-name=Dracula-cursors
 在 bspwmrc 中添加启动：
 </p>
 <div class="org-src-container">
-<pre class="shell"> dunst<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="p">&amp;</span>
- </pre>
+<pre class="shell"> dunst<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="p">&amp;</span> </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgfa879e8" class="outline-3">
-<h3 id="orgfa879e8">程序启动器</h3>
-<div class="outline-text-3" id="text-orgfa879e8">
+<div id="outline-container-org083cbad" class="outline-3">
+<h3 id="org083cbad">程序启动器</h3>
+<div class="outline-text-3" id="text-org083cbad">
 <p>
 程序启动器用的 rofi, 开箱即用，无需配置。
 </p>
 
 <div class="org-src-container">
-<pre class="shell"> pacman<span class="w"> </span>-S<span class="w"> </span>rofi
- </pre>
+<pre class="shell"> pacman<span class="w"> </span>-S<span class="w"> </span>rofi </pre>
 </div>
 
 <p>
@@ -1019,52 +718,48 @@ cursor-theme-name=Dracula-cursors
 </p>
 <div class="org-src-container">
 <pre class="shell"> super<span class="w"> </span>+<span class="w"> </span>a
-<span class="w"> </span>rofi<span class="w"> </span>-show<span class="w"> </span>drun
- </pre>
+<span class="w"> </span>rofi<span class="w"> </span>-show<span class="w"> </span>drun </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgd90f06f" class="outline-3">
-<h3 id="orgd90f06f">GUI 认证</h3>
-<div class="outline-text-3" id="text-orgd90f06f">
+<div id="outline-container-org83bf940" class="outline-3">
+<h3 id="org83bf940">GUI 认证</h3>
+<div class="outline-text-3" id="text-org83bf940">
 <p>
 在图形应用中，有些操作需要提权，这是就需要 GUI 认证，叫 polkit. 安装一个轻量级的 lxqt-policykit-agent.
 </p>
 
 <div class="org-src-container">
-<pre class="shell"> pacman<span class="w"> </span>-S<span class="w"> </span>lxqt-policykit-agent
- </pre>
+<pre class="shell"> pacman<span class="w"> </span>-S<span class="w"> </span>lxqt-policykit-agent </pre>
 </div>
 
 <p>
 在 bspwmrc 中添加启动：
 </p>
 <div class="org-src-container">
-<pre class="shell"> /usr/bin/lxqt-policykit-agent<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="p">&amp;</span>
- </pre>
+<pre class="shell"> /usr/bin/lxqt-policykit-agent<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="p">&amp;</span> </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org2001f58" class="outline-3">
-<h3 id="org2001f58">状态栏</h3>
-<div class="outline-text-3" id="text-org2001f58">
+<div id="outline-container-org27b4b7a" class="outline-3">
+<h3 id="org27b4b7a">状态栏</h3>
+<div class="outline-text-3" id="text-org27b4b7a">
 <p>
 状态栏用的 <a href="https://elkowar.github.io/eww/" target="_blank">EWW</a>, 后面再写一篇文章介绍一下。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org8e52ee1" class="outline-3">
-<h3 id="org8e52ee1">壁纸</h3>
-<div class="outline-text-3" id="text-org8e52ee1">
+<div id="outline-container-orge45845e" class="outline-3">
+<h3 id="orge45845e">壁纸</h3>
+<div class="outline-text-3" id="text-orge45845e">
 <p>
 壁纸用 feh.
 </p>
 
 <div class="org-src-container">
-<pre class="shell"> pacman<span class="w"> </span>-S<span class="w"> </span>feh
- </pre>
+<pre class="shell"> pacman<span class="w"> </span>-S<span class="w"> </span>feh </pre>
 </div>
 
 <p>
@@ -1074,16 +769,15 @@ cursor-theme-name=Dracula-cursors
 <div class="org-src-container">
 <pre class="shell"> crontab<span class="w"> </span>-e
 
-*<span class="w"> </span><span class="m">0</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="nv">DISPLAY</span><span class="o">=</span>:0<span class="w"> </span>feh<span class="w"> </span>--bg-fill<span class="w"> </span>--no-fehbg<span class="w"> </span><span class="s2">&quot;/home/</span><span class="nv">$USER</span><span class="s2">/Pictures/wallpaper/</span><span class="k">$(</span>date<span class="w"> </span>+%j<span class="k">)</span><span class="s2">&quot;</span>
- </pre>
+*<span class="w"> </span><span class="m">0</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="nv">DISPLAY</span><span class="o">=</span>:0<span class="w"> </span>feh<span class="w"> </span>--bg-fill<span class="w"> </span>--no-fehbg<span class="w"> </span><span class="s2">&quot;/home/mrdust/Pictures/wallpaper/183&quot;</span> </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orga7b4772" class="outline-2">
-<h2 id="orga7b4772">后记</h2>
-<div class="outline-text-2" id="text-orga7b4772">
+<div id="outline-container-org2d10aeb" class="outline-2">
+<h2 id="org2d10aeb">后记</h2>
+<div class="outline-text-2" id="text-org2d10aeb">
 <p>
 至此，bspwm 桌面就搭建好了。没有冗余的东西，清清爽爽。目前状态栏的功能主要就是看时间，或许以后纯键盘习惯之后直接就丢掉了，想看时间按一个按键弹出一个 widget （或者 Emacs ？), 过几秒自动消失，届时算是走火入魔了罢。
 </p>
