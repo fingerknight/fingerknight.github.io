@@ -27,22 +27,22 @@
 </div>
 <div id="content">
 
-<div id="outline-container-org5b6b7c3" class="outline-2">
-<h2 id="org5b6b7c3">前言</h2>
-<div class="outline-text-2" id="text-org5b6b7c3">
+<div id="outline-container-org0826e33" class="outline-2">
+<h2 id="org0826e33">前言</h2>
+<div class="outline-text-2" id="text-org0826e33">
 <p>
 Emacs 配置分享，下载路径在 GitHub 上：<a href="https://github.com/fingerknight/.emacs.d" target="_blank">https://github.com/fingerknight/.emacs.d</a>.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org5c2802b" class="outline-2">
-<h2 id="org5c2802b">前配置 early-init</h2>
-<div class="outline-text-2" id="text-org5c2802b">
+<div id="outline-container-org71cf01a" class="outline-2">
+<h2 id="org71cf01a">前配置 early-init</h2>
+<div class="outline-text-2" id="text-org71cf01a">
 </div>
-<div id="outline-container-orgaa2ea48" class="outline-3">
-<h3 id="orgaa2ea48">定义基本变量</h3>
-<div class="outline-text-3" id="text-orgaa2ea48">
+<div id="outline-container-org2d8bfe8" class="outline-3">
+<h3 id="org2d8bfe8">定义基本变量</h3>
+<div class="outline-text-3" id="text-org2d8bfe8">
 <p>
 定义家目录以及四个目录分类：
 </p>
@@ -95,9 +95,9 @@ Emacs 配置分享，下载路径在 GitHub 上：<a href="https://github.com/fi
 </div>
 </div>
 
-<div id="outline-container-orgb988df0" class="outline-3">
-<h3 id="orgb988df0">启动加速 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup> <sup>, </sup><sup>[<a id="fnr:2.1" class="footref" href="#fn:2">2</a>]</sup></h3>
-<div class="outline-text-3" id="text-orgb988df0">
+<div id="outline-container-org1e1b2bc" class="outline-3">
+<h3 id="org1e1b2bc">启动加速 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup> <sup>, </sup><sup>[<a id="fnr:2.1" class="footref" href="#fn:2">2</a>]</sup></h3>
+<div class="outline-text-3" id="text-org1e1b2bc">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="c1">;;; Basic settings</span>
 <span class="c1">;; Speed up starting</span>
@@ -124,9 +124,9 @@ Emacs 配置分享，下载路径在 GitHub 上：<a href="https://github.com/fi
 </div>
 </div>
 
-<div id="outline-container-org9066ab0" class="outline-3">
-<h3 id="org9066ab0">编码设置 <sup>[<a id="fnr:3.1" class="footref" href="#fn:3">3</a>]</sup></h3>
-<div class="outline-text-3" id="text-org9066ab0">
+<div id="outline-container-org6b882f0" class="outline-3">
+<h3 id="org6b882f0">编码设置 <sup>[<a id="fnr:3.1" class="footref" href="#fn:3">3</a>]</sup></h3>
+<div class="outline-text-3" id="text-org6b882f0">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="c1">;; Coding System</span>
 <span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">locale-coding-system</span><span class="w"> </span><span class="ss">&#39;utf-8</span><span class="p">)</span>
@@ -144,9 +144,9 @@ Emacs 配置分享，下载路径在 GitHub 上：<a href="https://github.com/fi
 </div>
 </div>
 
-<div id="outline-container-orgab50ce9" class="outline-3">
-<h3 id="orgab50ce9">GUI 设置</h3>
-<div class="outline-text-3" id="text-orgab50ce9">
+<div id="outline-container-org0aa6021" class="outline-3">
+<h3 id="org0aa6021">GUI 设置</h3>
+<div class="outline-text-3" id="text-org0aa6021">
 <p>
 窗口最大化，关闭各种栏栏框框。
 </p>
@@ -158,14 +158,14 @@ Emacs 配置分享，下载路径在 GitHub 上：<a href="https://github.com/fi
 <span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;default-frame-alist</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">horizontal-scroll-bars</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="no">nil</span><span class="p">))</span>
 <span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;default-frame-alist</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">tool-bar-lines</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span>
 <span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;default-frame-alist</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">menu-bar-lines</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span>
-<span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;default-frame-alist</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">alpha-background</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="mi">90</span><span class="p">))</span> </pre>
+<span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;default-frame-alist</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">alpha-background</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="mi">85</span><span class="p">))</span> </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org89b2f96" class="outline-3">
-<h3 id="org89b2f96">杂七杂八的设置</h3>
-<div class="outline-text-3" id="text-org89b2f96">
+<div id="outline-container-org185d325" class="outline-3">
+<h3 id="org185d325">杂七杂八的设置</h3>
+<div class="outline-text-3" id="text-org185d325">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="c1">;; Misc</span>
 <span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">url-proxy-services</span><span class="w"> </span><span class="o">&#39;</span><span class="p">((</span><span class="s">&quot;http&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;127.0.0.1:7890&quot;</span><span class="p">)</span>
@@ -189,9 +189,9 @@ Emacs 配置分享，下载路径在 GitHub 上：<a href="https://github.com/fi
 </div>
 </div>
 
-<div id="outline-container-orgef89153" class="outline-3">
-<h3 id="orgef89153">结束 early-init</h3>
-<div class="outline-text-3" id="text-orgef89153">
+<div id="outline-container-org41a48fe" class="outline-3">
+<h3 id="org41a48fe">结束 early-init</h3>
+<div class="outline-text-3" id="text-org41a48fe">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nb">provide</span><span class="w"> </span><span class="ss">&#39;early-init</span><span class="p">)</span> </pre>
 </div>
@@ -199,9 +199,9 @@ Emacs 配置分享，下载路径在 GitHub 上：<a href="https://github.com/fi
 </div>
 </div>
 
-<div id="outline-container-orgd70541d" class="outline-2">
-<h2 id="orgd70541d">插件安装</h2>
-<div class="outline-text-2" id="text-orgd70541d">
+<div id="outline-container-org546dc31" class="outline-2">
+<h2 id="org546dc31">插件安装</h2>
+<div class="outline-text-2" id="text-org546dc31">
 <p>
 我的插件安装基于 git, 把插件仓库 git 到本地，然后编译。用的是自己写的一个包，基于群友的 <a href="https://bitbucket.org/zbelial/pie" target="_blank">pie.el</a> 来写，不用它的包是因为，它是预先收集所有包，然后执行 install. 而我的想法是只要提到一个包就安装。
 </p>
@@ -213,9 +213,9 @@ Emacs 配置分享，下载路径在 GitHub 上：<a href="https://github.com/fi
 </div>
 </div>
 
-<div id="outline-container-org16ae842" class="outline-2">
-<h2 id="org16ae842">环境变量</h2>
-<div class="outline-text-2" id="text-org16ae842">
+<div id="outline-container-org7fd817f" class="outline-2">
+<h2 id="org7fd817f">环境变量</h2>
+<div class="outline-text-2" id="text-org7fd817f">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nb">dolist</span><span class="w"> </span><span class="p">(</span><span class="nv">path</span><span class="w"> </span><span class="p">(</span><span class="nf">directory-files</span><span class="w"> </span><span class="nv">user-package-directory</span>
 <span class="w">                               </span><span class="no">t</span><span class="w"> </span><span class="s">&quot;[^.]&quot;</span><span class="p">))</span>
@@ -228,13 +228,13 @@ Emacs 配置分享，下载路径在 GitHub 上：<a href="https://github.com/fi
 </div>
 </div>
 
-<div id="outline-container-orga11ab4d" class="outline-2">
-<h2 id="orga11ab4d">SetupEl</h2>
-<div class="outline-text-2" id="text-orga11ab4d">
+<div id="outline-container-org5affb52" class="outline-2">
+<h2 id="org5affb52">SetupEl</h2>
+<div class="outline-text-2" id="text-org5affb52">
 </div>
-<div id="outline-container-org4055ac4" class="outline-3">
-<h3 id="org4055ac4">简介</h3>
-<div class="outline-text-3" id="text-org4055ac4">
+<div id="outline-container-org361e3d5" class="outline-3">
+<h3 id="org361e3d5">简介</h3>
+<div class="outline-text-3" id="text-org361e3d5">
 <p>
 <a href="https://git.sr.ht/~pkal/setup" target="_blank">setup.el</a> 是一套宏，可以用于做包和模块的管理。与各种包管理器类似，在 <code>(setup feature ...)</code> 中通过各种关键字来实现各种各样的功能。它提供了一套基础的关键字，很基础。但是自定义关键字非常简单。
 </p>
@@ -272,9 +272,9 @@ setup.el 内置关键字有：
 </div>
 </div>
 
-<div id="outline-container-orgd81126c" class="outline-3">
-<h3 id="orgd81126c">安装</h3>
-<div class="outline-text-3" id="text-orgd81126c">
+<div id="outline-container-orga35c1ca" class="outline-3">
+<h3 id="orga35c1ca">安装</h3>
+<div class="outline-text-3" id="text-orga35c1ca">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="c1">;;; SetupEl</span>
 <span class="p">(</span><span class="nb">unless</span><span class="w"> </span><span class="p">(</span><span class="nv">spi-installed-p</span><span class="w"> </span><span class="ss">&#39;setup</span><span class="p">)</span>
@@ -285,9 +285,9 @@ setup.el 内置关键字有：
 </div>
 </div>
 
-<div id="outline-container-org1190dff" class="outline-3">
-<h3 id="org1190dff">子系统与上下文</h3>
-<div class="outline-text-3" id="text-org1190dff">
+<div id="outline-container-org815af78" class="outline-3">
+<h3 id="org815af78">子系统与上下文</h3>
+<div class="outline-text-3" id="text-org815af78">
 <p>
 <code>(setup feature)</code> 表明配置一个名为 <code>feature</code> 的子系统。这个名字可以任意，可以是已存在的包名。如果是后者，后续可以方便的传入一些参数。
 </p>
@@ -347,15 +347,15 @@ setup 子系统的过程中，会保持几个变量： <code>feature</code>, <co
 </div>
 </div>
 
-<div id="outline-container-orgc63e016" class="outline-3">
-<h3 id="orgc63e016">绑定</h3>
-<div class="outline-text-3" id="text-orgc63e016">
+<div id="outline-container-org9eb23dd" class="outline-3">
+<h3 id="org9eb23dd">绑定</h3>
+<div class="outline-text-3" id="text-org9eb23dd">
 <p>
 <code>:global</code> 用于全局绑定，无关 feature. 如 <code>(:global "RET" newline-and-indent)</code>
 </p>
 
 <p>
-<code>:bind</code> 绑定到当前系统的 map. 如 <code>(:with-feature org (:bind "C-c s" org-schedule))</code>  就会在 <code>org-mode-map</code> 下绑定按键。它是 <code>after-loaded</code> 的（详见<a href="#org6e46c28">自定义关键字</a>），也就是它会等当前系统加载之后才绑定（防止对应的变量还没有定义），所以展开之后其实是：
+<code>:bind</code> 绑定到当前系统的 map. 如 <code>(:with-feature org (:bind "C-c s" org-schedule))</code>  就会在 <code>org-mode-map</code> 下绑定按键。它是 <code>after-loaded</code> 的（详见<a href="#org3f88dad">自定义关键字</a>），也就是它会等当前系统加载之后才绑定（防止对应的变量还没有定义），所以展开之后其实是：
 </p>
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nb">with-eval-after-load</span><span class="w"> </span><span class="ss">&#39;org</span>
@@ -388,11 +388,11 @@ setup 子系统的过程中，会保持几个变量： <code>feature</code>, <co
 </div>
 </div>
 
-<div id="outline-container-org8efcd65" class="outline-3">
-<h3 id="org8efcd65">包调用</h3>
-<div class="outline-text-3" id="text-org8efcd65">
+<div id="outline-container-org16febef" class="outline-3">
+<h3 id="org16febef">包调用</h3>
+<div class="outline-text-3" id="text-org16febef">
 <p>
-前面提到过 <code>:package</code> 是用来安装包的，它指定了 shorthand （详见<a href="#org6e46c28">自定义关键字</a>），所以可以用来做 feature. 如下面这个系统的 feature 是 <code>simple</code>.
+前面提到过 <code>:package</code> 是用来安装包的，它指定了 shorthand （详见<a href="#org3f88dad">自定义关键字</a>），所以可以用来做 feature. 如下面这个系统的 feature 是 <code>simple</code>.
 </p>
 
 <div class="org-src-container">
@@ -427,9 +427,9 @@ setup 子系统的过程中，会保持几个变量： <code>feature</code>, <co
 </div>
 </div>
 
-<div id="outline-container-org2ace3b5" class="outline-3">
-<h3 id="org2ace3b5">赋值</h3>
-<div class="outline-text-3" id="text-org2ace3b5">
+<div id="outline-container-org6cb3534" class="outline-3">
+<h3 id="org6cb3534">赋值</h3>
+<div class="outline-text-3" id="text-org6cb3534">
 <p>
 <code>:option</code> 是一个集大成的赋值方法，它是 repeatable, 因此使用方法和 <code>setq</code> 类似。如
 </p>
@@ -467,9 +467,9 @@ setup 子系统的过程中，会保持几个变量： <code>feature</code>, <co
 </div>
 </div>
 
-<div id="outline-container-orged1d377" class="outline-3">
-<h3 id="orged1d377">钩子</h3>
-<div class="outline-text-3" id="text-orged1d377">
+<div id="outline-container-org8947301" class="outline-3">
+<h3 id="org8947301">钩子</h3>
+<div class="outline-text-3" id="text-org8947301">
 <p>
 <code>:hook</code>, repeatable, 输入的是函数，把这些函数都钩到当前系统的 hook 中。如：
 </p>
@@ -498,9 +498,9 @@ setup 子系统的过程中，会保持几个变量： <code>feature</code>, <co
 </div>
 </div>
 
-<div id="outline-container-org6a23949" class="outline-3">
-<h3 id="org6a23949">条件</h3>
-<div class="outline-text-3" id="text-org6a23949">
+<div id="outline-container-org29457bb" class="outline-3">
+<h3 id="org29457bb">条件</h3>
+<div class="outline-text-3" id="text-org29457bb">
 <p>
 <code>:only-if</code> 判断条件，条件为假时整个 setup 退出。
 </p>
@@ -527,9 +527,9 @@ setup 子系统的过程中，会保持几个变量： <code>feature</code>, <co
 </div>
 </div>
 
-<div id="outline-container-org6e46c28" class="outline-3">
-<h3 id="org6e46c28">自定义关键字</h3>
-<div class="outline-text-3" id="text-org6e46c28">
+<div id="outline-container-org3f88dad" class="outline-3">
+<h3 id="org3f88dad">自定义关键字</h3>
+<div class="outline-text-3" id="text-org3f88dad">
 <p>
 <a href="https://www.emacswiki.org/emacs/SetupEl" target="_blank">Emacs Wiki</a> 上给出了许多有用的自定义关键字，我使用了其中一些。自定义关键字的框架是：
 </p>
@@ -548,9 +548,9 @@ setup 的执行过程就是把 body 当作宏来执行，因此关键字函数�
 </p>
 </div>
 
-<div id="outline-container-orgbb7f50a" class="outline-4">
-<h4 id="orgbb7f50a">:doc</h4>
-<div class="outline-text-4" id="text-orgbb7f50a">
+<div id="outline-container-orgc632e59" class="outline-4">
+<h4 id="orgc632e59">:doc</h4>
+<div class="outline-text-4" id="text-orgc632e59">
 <p>
 先定义一个简单的 <code>:doc</code>, 用来记录当前系统的文档信息 <sup>[<a id="fnr:1.2" class="footref" href="#fn:1">1</a>]</sup>。
 </p>
@@ -579,9 +579,9 @@ macro 返回的是 nil, 也就是这个关键词并不会真正参与到 setup �
 </div>
 </div>
 
-<div id="outline-container-org9bec674" class="outline-4">
-<h4 id="org9bec674">:spi</h4>
-<div class="outline-text-4" id="text-org9bec674">
+<div id="outline-container-orga962bb0" class="outline-4">
+<h4 id="orga962bb0">:spi</h4>
+<div class="outline-text-4" id="text-orga962bb0">
 <p>
 写一个 <code>:spi</code> 作为 <code>:package</code> 的替代：
 </p>
@@ -611,9 +611,9 @@ macro 返回的是 nil, 也就是这个关键词并不会真正参与到 setup �
 </div>
 </div>
 
-<div id="outline-container-org4758b9f" class="outline-4">
-<h4 id="org4758b9f">:load-path</h4>
-<div class="outline-text-4" id="text-org4758b9f">
+<div id="outline-container-orgb615dab" class="outline-4">
+<h4 id="orgb615dab">:load-path</h4>
+<div class="outline-text-4" id="text-orgb615dab">
 <p>
 定义环境变量关键字，它可以传入一个 sexp, 把它的返回值加入环境变量，也可以是绝对路径，还可以是相对路径，相对于当前 feature 所在的路径（就是 <code>guess-path</code> ），最后返回一个 <code>add-to-list</code> 的宏。
 </p>
@@ -624,9 +624,9 @@ macro 返回的是 nil, 也就是这个关键词并不会真正参与到 setup �
 </div>
 </div>
 
-<div id="outline-container-orgd7a682c" class="outline-4">
-<h4 id="orgd7a682c">:autoload</h4>
-<div class="outline-text-4" id="text-orgd7a682c">
+<div id="outline-container-org894ceec" class="outline-4">
+<h4 id="org894ceec">:autoload</h4>
+<div class="outline-text-4" id="text-org894ceec">
 <p>
 <code>:autoload</code> 是基于当前系统的 feature 去查找，必要时用 <code>:with-feature</code> 切换上下文 <sup>[<a id="fnr:4.1" class="footref" href="#fn:4">4</a>]</sup>。
 </p>
@@ -640,9 +640,9 @@ macro 返回的是 nil, 也就是这个关键词并不会真正参与到 setup �
 </div>
 </div>
 
-<div id="outline-container-org0b40b62" class="outline-4">
-<h4 id="org0b40b62">:after</h4>
-<div class="outline-text-4" id="text-org0b40b62">
+<div id="outline-container-org9071da0" class="outline-4">
+<h4 id="org9071da0">:after</h4>
+<div class="outline-text-4" id="text-org9071da0">
 <p>
 改良版的 <code>:when-loaded</code>, 它明确指定一个 feature 来使用 <code>with-eval-after-load</code>.
 </p>
@@ -673,11 +673,11 @@ macro 返回的是 nil, 也就是这个关键词并不会真正参与到 setup �
 </div>
 </div>
 
-<div id="outline-container-org49fd973" class="outline-4">
-<h4 id="org49fd973">:modalka</h4>
-<div class="outline-text-4" id="text-org49fd973">
+<div id="outline-container-orge8242e8" class="outline-4">
+<h4 id="orge8242e8">:modalka</h4>
+<div class="outline-text-4" id="text-orge8242e8">
 <p>
-用来绑定 modalka-mode 下的按键。关于 modalka, 详见<a href="#org7d493af">全局按键绑定</a>.
+用来绑定 modalka-mode 下的按键。关于 modalka, 详见<a href="#org30afc96">全局按键绑定</a>.
 </p>
 
 <div class="org-src-container">
@@ -686,9 +686,9 @@ macro 返回的是 nil, 也就是这个关键词并不会真正参与到 setup �
 </div>
 </div>
 
-<div id="outline-container-org743a4dc" class="outline-4">
-<h4 id="org743a4dc">:diminish</h4>
-<div class="outline-text-4" id="text-org743a4dc">
+<div id="outline-container-org477a3a4" class="outline-4">
+<h4 id="org477a3a4">:diminish</h4>
+<div class="outline-text-4" id="text-org477a3a4">
 <p>
 名字取自 <a href="https://github.com/myrjola/diminish.el" target="_blank">diminish.el</a> 包，用来移除当前 minor-mode 在 mode-line 上的显示 <sup>[<a id="fnr:4.2" class="footref" href="#fn:4">4</a>]</sup>。
 </p>
@@ -698,9 +698,9 @@ macro 返回的是 nil, 也就是这个关键词并不会真正参与到 setup �
 </div>
 </div>
 
-<div id="outline-container-orgc917500" class="outline-4">
-<h4 id="orgc917500">:advice</h4>
-<div class="outline-text-4" id="text-orgc917500">
+<div id="outline-container-org7f75f41" class="outline-4">
+<h4 id="org7f75f41">:advice</h4>
+<div class="outline-text-4" id="text-org7f75f41">
 <p>
 添加 advice, 采用的是类似 <code>define-advice</code> 的形式 <sup>[<a id="fnr:4.3" class="footref" href="#fn:4">4</a>]</sup>。
 </p>
@@ -729,9 +729,9 @@ zsh:1: parse error in command substitution </pre>
 </div>
 </div>
 
-<div id="outline-container-org52f361e" class="outline-4">
-<h4 id="org52f361e">:face</h4>
-<div class="outline-text-4" id="text-org52f361e">
+<div id="outline-container-orge73f120" class="outline-4">
+<h4 id="orge73f120">:face</h4>
+<div class="outline-text-4" id="text-orge73f120">
 <p>
 这个关键字和 <code>:advice</code> 一样有点无聊，但是还是把它包装起来了。通过调用 <code>set-face-attribute</code> 方法来设置字体样式。
 </p>
@@ -778,9 +778,9 @@ t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，�
 </div>
 </div>
 
-<div id="outline-container-org8264508" class="outline-4">
-<h4 id="org8264508">:lazy</h4>
-<div class="outline-text-4" id="text-org8264508">
+<div id="outline-container-org2b07541" class="outline-4">
+<h4 id="org2b07541">:lazy</h4>
+<div class="outline-text-4" id="text-org2b07541">
 <p>
 懒加载，把要执行的 body 封装到一个函数里面，执行这个函数才会释放里面的内容。比如有一些比较大的插件就可以用 lazy 封装，把封装得到的函数绑定到快捷键上，当快捷键触发时才 requrie 。
 </p>
@@ -804,9 +804,9 @@ t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，�
 </div>
 </div>
 
-<div id="outline-container-org0bc5073" class="outline-4">
-<h4 id="org0bc5073">:disabled</h4>
-<div class="outline-text-4" id="text-org0bc5073">
+<div id="outline-container-org382e2c0" class="outline-4">
+<h4 id="org382e2c0">:disabled</h4>
+<div class="outline-text-4" id="text-org382e2c0">
 <p>
 停止后续setup, 用来调试或者弃用某个 feature.
 </p>
@@ -824,13 +824,13 @@ t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，�
 </div>
 </div>
 
-<div id="outline-container-orgf9535b9" class="outline-2">
-<h2 id="orgf9535b9">基础设置</h2>
-<div class="outline-text-2" id="text-orgf9535b9">
+<div id="outline-container-orgb2eddea" class="outline-2">
+<h2 id="orgb2eddea">基础设置</h2>
+<div class="outline-text-2" id="text-orgb2eddea">
 </div>
-<div id="outline-container-orge492f2f" class="outline-3">
-<h3 id="orge492f2f">Emacs 函数库</h3>
-<div class="outline-text-3" id="text-orge492f2f">
+<div id="outline-container-orgda5e9d0" class="outline-3">
+<h3 id="orgda5e9d0">Emacs 函数库</h3>
+<div class="outline-text-3" id="text-orgda5e9d0">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:spi</span><span class="w"> </span><span class="nv">dash</span><span class="w"> </span><span class="s">&quot;https://github.com/magnars/dash.el&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;A modern list API for Emacs.&quot;</span><span class="p">))</span>
@@ -850,9 +850,9 @@ t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，�
 </div>
 </div>
 
-<div id="outline-container-org5ce5dc7" class="outline-3">
-<h3 id="org5ce5dc7">清理配置目录</h3>
-<div class="outline-text-3" id="text-org5ce5dc7">
+<div id="outline-container-org403a17e" class="outline-3">
+<h3 id="org403a17e">清理配置目录</h3>
+<div class="outline-text-3" id="text-org403a17e">
 <p>
 正常使用的话，配置目录下面会有一大堆乱七八糟的东西，看着很求不爽。幸好有 no-littering, 它内置了各种规则，把奇奇怪怪的东西分类好，这就是 <code>etc</code> 和 <code>var</code> 目录的由来。
 </p>
@@ -864,9 +864,9 @@ zsh:1: parse error in command substitution </pre>
 </div>
 </div>
 
-<div id="outline-container-org7d493af" class="outline-3">
-<h3 id="org7d493af">全局按键绑定</h3>
-<div class="outline-text-3" id="text-org7d493af">
+<div id="outline-container-org30afc96" class="outline-3">
+<h3 id="org30afc96">全局按键绑定</h3>
+<div class="outline-text-3" id="text-org30afc96">
 <p>
 如果使用 <code>:global</code> 或者 <code>global-set-key</code> 用这个来绑定全局键的话，它的优先级比较低，会被其他的 minor mode 覆盖。这里使用 modalka 来做全局按键绑定。它本质上想做的是模态编辑，它只有两种状态，就是开启和关闭的状态。因为它是一个 minor mode, 只要开了全局就几乎不会被覆盖。此外再给 minibuffer 加个 hook, 就可以实现 minibuffer 也享用这份键盘映射。
 </p>
@@ -885,9 +885,9 @@ zsh:1: parse error in command substitution </pre>
 </div>
 </div>
 
-<div id="outline-container-org06f64c0" class="outline-3">
-<h3 id="org06f64c0">帮助按键绑定</h3>
-<div class="outline-text-3" id="text-org06f64c0">
+<div id="outline-container-org4f555ec" class="outline-3">
+<h3 id="org4f555ec">帮助按键绑定</h3>
+<div class="outline-text-3" id="text-org4f555ec">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="nv">help-fns</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Help commands.&quot;</span><span class="p">)</span>
@@ -902,13 +902,13 @@ zsh:1: parse error in command substitution </pre>
 </div>
 </div>
 
-<div id="outline-container-orgc5dc5e6" class="outline-2">
-<h2 id="orgc5dc5e6">外观设置</h2>
-<div class="outline-text-2" id="text-orgc5dc5e6">
+<div id="outline-container-org9836dfa" class="outline-2">
+<h2 id="org9836dfa">外观设置</h2>
+<div class="outline-text-2" id="text-org9836dfa">
 </div>
-<div id="outline-container-orgd64c1ee" class="outline-3">
-<h3 id="orgd64c1ee">字体设置</h3>
-<div class="outline-text-3" id="text-orgd64c1ee">
+<div id="outline-container-orgeae90f5" class="outline-3">
+<h3 id="orgeae90f5">字体设置</h3>
+<div class="outline-text-3" id="text-orgeae90f5">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="nv">faces</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Faces setting&quot;</span><span class="p">)</span>
@@ -929,9 +929,9 @@ zsh:1: parse error in command substitution </pre>
 </div>
 </div>
 
-<div id="outline-container-orge20cc18" class="outline-3">
-<h3 id="orge20cc18">主题设置</h3>
-<div class="outline-text-3" id="text-orge20cc18">
+<div id="outline-container-org10f820a" class="outline-3">
+<h3 id="org10f820a">主题设置</h3>
+<div class="outline-text-3" id="text-org10f820a">
 <p>
 <a href="https://draculatheme.com/" target="_blank">Dracule Theme</a> 的忠实粉丝就是我了，恨不得整个操作系统都用上。
 </p>
@@ -945,9 +945,9 @@ zsh:1: parse error in command substitution </pre>
 </div>
 </div>
 
-<div id="outline-container-org5488e6b" class="outline-3">
-<h3 id="org5488e6b">图标</h3>
-<div class="outline-text-3" id="text-org5488e6b">
+<div id="outline-container-orgbb06d3b" class="outline-3">
+<h3 id="orgbb06d3b">图标</h3>
+<div class="outline-text-3" id="text-orgbb06d3b">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:spi</span><span class="w"> </span><span class="nv">all-the-icons</span><span class="w"> </span><span class="s">&quot;https://github.com/domtronn/all-the-icons.el&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;A collection of various Icon Fonts within Emacs&quot;</span><span class="p">))</span> </pre>
@@ -956,13 +956,13 @@ zsh:1: parse error in command substitution </pre>
 </div>
 </div>
 
-<div id="outline-container-org65dc9b6" class="outline-2">
-<h2 id="org65dc9b6">编辑设置</h2>
-<div class="outline-text-2" id="text-org65dc9b6">
+<div id="outline-container-org1ad876b" class="outline-2">
+<h2 id="org1ad876b">编辑设置</h2>
+<div class="outline-text-2" id="text-org1ad876b">
 </div>
-<div id="outline-container-org8e54651" class="outline-3">
-<h3 id="org8e54651">基本编辑操作</h3>
-<div class="outline-text-3" id="text-org8e54651">
+<div id="outline-container-org18345e9" class="outline-3">
+<h3 id="org18345e9">基本编辑操作</h3>
+<div class="outline-text-3" id="text-org18345e9">
 <p>
 定义了包括光标移动、复制粘贴、选择删除等一系列相关操作，以及快捷键定义。
 </p>
@@ -1124,9 +1124,9 @@ zsh:1: parse error in command substitution </pre>
 </div>
 </div>
 
-<div id="outline-container-org1f5111a" class="outline-3">
-<h3 id="org1f5111a">文件自动刷新</h3>
-<div class="outline-text-3" id="text-org1f5111a">
+<div id="outline-container-org764e5f5" class="outline-3">
+<h3 id="org764e5f5">文件自动刷新</h3>
+<div class="outline-text-3" id="text-org764e5f5">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="nv">autorevert</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Revert buffers when files on disk change&quot;</span><span class="p">)</span>
@@ -1136,9 +1136,9 @@ zsh:1: parse error in command substitution </pre>
 </div>
 </div>
 
-<div id="outline-container-org3695357" class="outline-3">
-<h3 id="org3695357">保存历史记录和光标位置</h3>
-<div class="outline-text-3" id="text-org3695357">
+<div id="outline-container-orgaa4e6b5" class="outline-3">
+<h3 id="orgaa4e6b5">保存历史记录和光标位置</h3>
+<div class="outline-text-3" id="text-orgaa4e6b5">
 <p>
 我确实没想到还能在这种地方 hook, 看了前辈的配置直接震惊一整晚 <sup>[<a id="fnr:2.2" class="footref" href="#fn:2">2</a>]</sup>。
 </p>
@@ -1166,13 +1166,13 @@ zsh:1: parse error in command substitution </pre>
 </div>
 </div>
 
-<div id="outline-container-org7560659" class="outline-3">
-<h3 id="org7560659">窗口设置</h3>
-<div class="outline-text-3" id="text-org7560659">
+<div id="outline-container-org929f4fa" class="outline-3">
+<h3 id="org929f4fa">窗口设置</h3>
+<div class="outline-text-3" id="text-org929f4fa">
 </div>
-<div id="outline-container-org316b9f1" class="outline-4">
-<h4 id="org316b9f1">窗口分割</h4>
-<div class="outline-text-4" id="text-org316b9f1">
+<div id="outline-container-org11148bf" class="outline-4">
+<h4 id="org11148bf">窗口分割</h4>
+<div class="outline-text-4" id="text-org11148bf">
 <p>
 选择 buffer, 水平或垂直分隔。
 </p>
@@ -1193,9 +1193,9 @@ zsh:1: parse error in command substitution </pre>
 </div>
 </div>
 
-<div id="outline-container-orgf7e512e" class="outline-4">
-<h4 id="orgf7e512e">窗口间移动</h4>
-<div class="outline-text-4" id="text-orgf7e512e">
+<div id="outline-container-org4ddb8dc" class="outline-4">
+<h4 id="org4ddb8dc">窗口间移动</h4>
+<div class="outline-text-4" id="text-org4ddb8dc">
 <p>
 使用数字编号在窗口间快速移动。原包好久不维护了，define-minor-mode 没有用关键字参数导致一直报 warning. 于是用了 pr 列表里面的一个 fork.
 </p>
@@ -1222,13 +1222,13 @@ zsh:1: parse error in command substitution </pre>
 </div>
 </div>
 
-<div id="outline-container-orgccf1fd4" class="outline-3">
-<h3 id="orgccf1fd4">括号增强</h3>
-<div class="outline-text-3" id="text-orgccf1fd4">
+<div id="outline-container-orgefdbe74" class="outline-3">
+<h3 id="orgefdbe74">括号增强</h3>
+<div class="outline-text-3" id="text-orgefdbe74">
 </div>
-<div id="outline-container-org882b8ef" class="outline-4">
-<h4 id="org882b8ef">高亮括号</h4>
-<div class="outline-text-4" id="text-org882b8ef">
+<div id="outline-container-org8cf77a7" class="outline-4">
+<h4 id="org8cf77a7">高亮括号</h4>
+<div class="outline-text-4" id="text-org8cf77a7">
 <p>
 高亮包围当前光标位置的括号，并用方框标识。
 </p>
@@ -1239,9 +1239,9 @@ zsh:1: parse error in command substitution </pre>
 </div>
 </div>
 
-<div id="outline-container-org56569c2" class="outline-4">
-<h4 id="org56569c2">Smart Parens</h4>
-<div class="outline-text-4" id="text-org56569c2">
+<div id="outline-container-org66e6582" class="outline-4">
+<h4 id="org66e6582">Smart Parens</h4>
+<div class="outline-text-4" id="text-org66e6582">
 <p>
 增强版的 electric-pair-mode, 同时提供了一些基于括号的操作，参见<a href="https://ebzzry.com/en/emacs-pairs/" target="_blank">Emacs and Pairs</a>.
 </p>
@@ -1283,13 +1283,13 @@ zsh:1: parse error in command substitution </pre>
 </div>
 </div>
 
-<div id="outline-container-orge635a12" class="outline-3">
-<h3 id="orge635a12">补全增强</h3>
-<div class="outline-text-3" id="text-orge635a12">
+<div id="outline-container-org2879252" class="outline-3">
+<h3 id="org2879252">补全增强</h3>
+<div class="outline-text-3" id="text-org2879252">
 </div>
-<div id="outline-container-org979680d" class="outline-4">
-<h4 id="org979680d">补全前端</h4>
-<div class="outline-text-4" id="text-org979680d">
+<div id="outline-container-org0fde344" class="outline-4">
+<h4 id="org0fde344">补全前端</h4>
+<div class="outline-text-4" id="text-org0fde344">
 <p>
 弹框补全 corfu. 图标用的是 kind-all-the-icons, 源自论坛大佬：<a href="https://emacs-china.org/t/corfu-all-the-icons-icon/20907" target="_blank">糊了一个 corfu 适用的 all-the-icons 的 icon 效果 - Emacs-general - Emacs China</a>。
 </p>
@@ -1322,9 +1322,9 @@ zsh:1: parse error in command substitution </pre>
 </div>
 </div>
 
-<div id="outline-container-orgceec3ad" class="outline-4">
-<h4 id="orgceec3ad">补全后端</h4>
-<div class="outline-text-4" id="text-orgceec3ad">
+<div id="outline-container-org7dbac05" class="outline-4">
+<h4 id="org7dbac05">补全后端</h4>
+<div class="outline-text-4" id="text-org7dbac05">
 <p>
 cape 提供了多种补全后端，目前用得并不多。
 </p>
@@ -1340,9 +1340,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 
-<div id="outline-container-orgc912f6d" class="outline-4">
-<h4 id="orgc912f6d">补全模版</h4>
-<div class="outline-text-4" id="text-orgc912f6d">
+<div id="outline-container-org8b8cf37" class="outline-4">
+<h4 id="org8b8cf37">补全模版</h4>
+<div class="outline-text-4" id="text-org8b8cf37">
 <p>
 暂时用这个，目前还没开始填自己的模版。用着感觉没 Yasnippet 方便。
 </p>
@@ -1363,9 +1363,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 
-<div id="outline-container-orgc4c40f2" class="outline-3">
-<h3 id="orgc4c40f2">Minibuffer 增强</h3>
-<div class="outline-text-3" id="text-orgc4c40f2">
+<div id="outline-container-orgfdd12e9" class="outline-3">
+<h3 id="orgfdd12e9">Minibuffer 增强</h3>
+<div class="outline-text-3" id="text-orgfdd12e9">
 <p>
 新三件套 (vertico, orderless, consult)
 </p>
@@ -1390,9 +1390,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 
-<div id="outline-container-org7983944" class="outline-3">
-<h3 id="org7983944">Isearch 增强</h3>
-<div class="outline-text-3" id="text-org7983944">
+<div id="outline-container-org1b42143" class="outline-3">
+<h3 id="org1b42143">Isearch 增强</h3>
+<div class="outline-text-3" id="text-org1b42143">
 <p>
 使用 phi-search,
 </p>
@@ -1434,17 +1434,17 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 
-<div id="outline-container-org72ab088" class="outline-2">
-<h2 id="org72ab088">编程</h2>
-<div class="outline-text-2" id="text-org72ab088">
+<div id="outline-container-org08655bf" class="outline-2">
+<h2 id="org08655bf">编程</h2>
+<div class="outline-text-2" id="text-org08655bf">
 </div>
-<div id="outline-container-org9dc62b5" class="outline-3">
-<h3 id="org9dc62b5">显示</h3>
-<div class="outline-text-3" id="text-org9dc62b5">
+<div id="outline-container-org5fdba12" class="outline-3">
+<h3 id="org5fdba12">显示</h3>
+<div class="outline-text-3" id="text-org5fdba12">
 </div>
-<div id="outline-container-orge601766" class="outline-4">
-<h4 id="orge601766">行号</h4>
-<div class="outline-text-4" id="text-orge601766">
+<div id="outline-container-orgabb066f" class="outline-4">
+<h4 id="orgabb066f">行号</h4>
+<div class="outline-text-4" id="text-orgabb066f">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="nv">display-line-numbers</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Interface for display-line-numbers&quot;</span><span class="p">)</span>
@@ -1461,9 +1461,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 
-<div id="outline-container-org49d7d44" class="outline-4">
-<h4 id="org49d7d44">高亮当前行</h4>
-<div class="outline-text-4" id="text-org49d7d44">
+<div id="outline-container-orge5648f1" class="outline-4">
+<h4 id="orge5648f1">高亮当前行</h4>
+<div class="outline-text-4" id="text-orge5648f1">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="nv">hl-line</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Highlight the current line&quot;</span><span class="p">)</span>
@@ -1472,9 +1472,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 
-<div id="outline-container-orge981b2f" class="outline-4">
-<h4 id="orge981b2f">彩色括号</h4>
-<div class="outline-text-4" id="text-orge981b2f">
+<div id="outline-container-org0745192" class="outline-4">
+<h4 id="org0745192">彩色括号</h4>
+<div class="outline-text-4" id="text-org0745192">
 <p>
 对不同层次的括号使用不同颜色，对 Lisp 这种多重括号尤其有效。
 </p>
@@ -1487,9 +1487,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 
-<div id="outline-container-org1b10249" class="outline-4">
-<h4 id="org1b10249">不显示 eldoc</h4>
-<div class="outline-text-4" id="text-org1b10249">
+<div id="outline-container-org33365fa" class="outline-4">
+<h4 id="org33365fa">不显示 eldoc</h4>
+<div class="outline-text-4" id="text-org33365fa">
 <p>
 还要单独为这个写一个 setup, 多捞哦。
 </p>
@@ -1500,9 +1500,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 </div>
-<div id="outline-container-orgbc0d944" class="outline-4">
-<h4 id="orgbc0d944">缩进提示</h4>
-<div class="outline-text-4" id="text-orgbc0d944">
+<div id="outline-container-org087c0af" class="outline-4">
+<h4 id="org087c0af">缩进提示</h4>
+<div class="outline-text-4" id="text-org087c0af">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:spi</span><span class="w"> </span><span class="nv">highlight-indent-guides</span><span class="w"> </span><span class="s">&quot;https://github.com/DarthFennec/highlight-indent-guides&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;This minor mode highlights indentation levels via font-lock.&quot;</span><span class="p">)</span>
@@ -1521,9 +1521,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 </div>
-<div id="outline-container-org4957be9" class="outline-3">
-<h3 id="org4957be9">移动到缩进行首</h3>
-<div class="outline-text-3" id="text-org4957be9">
+<div id="outline-container-org3085cb3" class="outline-3">
+<h3 id="org3085cb3">移动到缩进行首</h3>
+<div class="outline-text-3" id="text-org3085cb3">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:spi</span><span class="w"> </span><span class="nv">mwim</span><span class="w"> </span><span class="s">&quot;https://github.com/alezost/mwim.el&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Operations of Cursor moving&quot;</span><span class="p">)</span>
@@ -1535,9 +1535,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 
-<div id="outline-container-orgcedb7da" class="outline-3">
-<h3 id="orgcedb7da">代码折叠</h3>
-<div class="outline-text-3" id="text-orgcedb7da">
+<div id="outline-container-orgb52382b" class="outline-3">
+<h3 id="orgb52382b">代码折叠</h3>
+<div class="outline-text-3" id="text-orgb52382b">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="nv">hideshow</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Minor mode cmds to selectively display code/comment blocks&quot;</span><span class="p">)</span>
@@ -1553,9 +1553,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 </div>
-<div id="outline-container-org3947a2c" class="outline-3">
-<h3 id="org3947a2c">LSP</h3>
-<div class="outline-text-3" id="text-org3947a2c">
+<div id="outline-container-orgaa15489" class="outline-3">
+<h3 id="orgaa15489">LSP</h3>
+<div class="outline-text-3" id="text-orgaa15489">
 <p>
 不搞开发，能用就行。不 hook <code>prog-mode</code> 的原因是写比如 elisp 就没必要启动用它。
 </p>
@@ -1579,9 +1579,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 </div>
-<div id="outline-container-orgcc7a74d" class="outline-3">
-<h3 id="orgcc7a74d">YAML</h3>
-<div class="outline-text-3" id="text-orgcc7a74d">
+<div id="outline-container-org3e2585c" class="outline-3">
+<h3 id="org3e2585c">YAML</h3>
+<div class="outline-text-3" id="text-org3e2585c">
 <p>
 偶尔会用到。
 </p>
@@ -1594,13 +1594,13 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 
-<div id="outline-container-org539349b" class="outline-3">
-<h3 id="org539349b">Emacs Lisp</h3>
-<div class="outline-text-3" id="text-org539349b">
+<div id="outline-container-orgeb01932" class="outline-3">
+<h3 id="orgeb01932">Emacs Lisp</h3>
+<div class="outline-text-3" id="text-orgeb01932">
 </div>
-<div id="outline-container-org6e547f2" class="outline-4">
-<h4 id="org6e547f2">elisp-def</h4>
-<div class="outline-text-4" id="text-org6e547f2">
+<div id="outline-container-orgd2039d5" class="outline-4">
+<h4 id="orgd2039d5">elisp-def</h4>
+<div class="outline-text-4" id="text-orgd2039d5">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:spi</span><span class="w"> </span><span class="nv">elisp-def</span><span class="w"> </span><span class="s">&quot;https://github.com/Wilfred/elisp-def&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Go to the definition of the symbol at point.&quot;</span><span class="p">)</span>
@@ -1612,9 +1612,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 
-<div id="outline-container-org4240a16" class="outline-3">
-<h3 id="org4240a16">Yuck</h3>
-<div class="outline-text-3" id="text-org4240a16">
+<div id="outline-container-org3cf2fed" class="outline-3">
+<h3 id="org3cf2fed">Yuck</h3>
+<div class="outline-text-3" id="text-org3cf2fed">
 <p>
 Yuck 是窗口图形模块套件 <a href="https://elkowar.github.io/eww/" target="_blank">EWW</a> 的语言，基于 Lisp.
 </p>
@@ -1628,9 +1628,9 @@ Yuck 是窗口图形模块套件 <a href="https://elkowar.github.io/eww/" target
 </div>
 </div>
 
-<div id="outline-container-orgbbef64e" class="outline-3">
-<h3 id="orgbbef64e">Sxhkd</h3>
-<div class="outline-text-3" id="text-orgbbef64e">
+<div id="outline-container-orgde6ac53" class="outline-3">
+<h3 id="orgde6ac53">Sxhkd</h3>
+<div class="outline-text-3" id="text-orgde6ac53">
 <p>
 bspwm 下的键盘映射配置。
 </p>
@@ -1644,9 +1644,9 @@ bspwm 下的键盘映射配置。
 </div>
 </div>
 
-<div id="outline-container-org1f661ff" class="outline-3">
-<h3 id="org1f661ff">Jinja2</h3>
-<div class="outline-text-3" id="text-org1f661ff">
+<div id="outline-container-org0e510f7" class="outline-3">
+<h3 id="org0e510f7">Jinja2</h3>
+<div class="outline-text-3" id="text-org0e510f7">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:spi</span><span class="w"> </span><span class="nv">jinja2-mode</span><span class="w"> </span><span class="s">&quot;https://github.com/paradoxxxzero/jinja2-mode&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Jinja2 mode for emacs&quot;</span><span class="p">)</span>
@@ -1656,9 +1656,9 @@ bspwm 下的键盘映射配置。
 </div>
 </div>
 
-<div id="outline-container-org699a68b" class="outline-3">
-<h3 id="org699a68b">Markdown</h3>
-<div class="outline-text-3" id="text-org699a68b">
+<div id="outline-container-orgf8618d9" class="outline-3">
+<h3 id="orgf8618d9">Markdown</h3>
+<div class="outline-text-3" id="text-orgf8618d9">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:spi</span><span class="w"> </span><span class="nv">markdown-mode</span><span class="w"> </span><span class="s">&quot;https://github.com/jrblevin/markdown-mode&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Support for Markdown&quot;</span><span class="p">)</span>
@@ -1670,9 +1670,9 @@ bspwm 下的键盘映射配置。
 </div>
 </div>
 
-<div id="outline-container-orgb78556d" class="outline-2">
-<h2 id="orgb78556d">Org mode</h2>
-<div class="outline-text-2" id="text-orgb78556d">
+<div id="outline-container-orgec2ebb1" class="outline-2">
+<h2 id="orgec2ebb1">Org mode</h2>
+<div class="outline-text-2" id="text-orgec2ebb1">
 <p>
 Org mode 原本是一个基于 outline 的任务管理，但是因为提供了丰富的语言标记，以及结合 emacs 提供导出、发布等各种操作，它已然成为一个强大的笔记、管理、收集等集一体的系统。
 </p>
@@ -1705,9 +1705,9 @@ Org mode 原本是一个基于 outline 的任务管理，但是因为提供了�
 </div>
 </div>
 
-<div id="outline-container-org5fc3654" class="outline-3">
-<h3 id="org5fc3654">快速改变 heading</h3>
-<div class="outline-text-3" id="text-org5fc3654">
+<div id="outline-container-org65123d5" class="outline-3">
+<h3 id="org65123d5">快速改变 heading</h3>
+<div class="outline-text-3" id="text-org65123d5">
 <p>
 通过快捷键来快速调整 headline 等级。
 </p>
@@ -1751,9 +1751,9 @@ Org mode 原本是一个基于 outline 的任务管理，但是因为提供了�
 </div>
 </div>
 
-<div id="outline-container-orgb6e8669" class="outline-3">
-<h3 id="orgb6e8669">快速插入</h3>
-<div class="outline-text-3" id="text-orgb6e8669">
+<div id="outline-container-org98fb7cd" class="outline-3">
+<h3 id="org98fb7cd">快速插入</h3>
+<div class="outline-text-3" id="text-org98fb7cd">
 <ol class="org-ol">
 <li>输入一个 URL, 尝试自动获取返回的 HTML 的 <code>&lt;title&gt;</code>, 如果有就把它作为 org-link 的 description.</li>
 <li>给定一个存放图片的目录，按最近修改时间排序</li>
@@ -1765,9 +1765,9 @@ Org mode 原本是一个基于 outline 的任务管理，但是因为提供了�
 </div>
 </div>
 
-<div id="outline-container-orgfb829b6" class="outline-3">
-<h3 id="orgfb829b6">Org Agenda</h3>
-<div class="outline-text-3" id="text-orgfb829b6">
+<div id="outline-container-org5f367c8" class="outline-3">
+<h3 id="org5f367c8">Org Agenda</h3>
+<div class="outline-text-3" id="text-org5f367c8">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="nv">org-agenda</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Org Agenda settings&quot;</span><span class="p">)</span>
@@ -1785,18 +1785,18 @@ Org mode 原本是一个基于 outline 的任务管理，但是因为提供了�
 </div>
 </div>
 
-<div id="outline-container-org86fe55f" class="outline-3">
-<h3 id="org86fe55f">样式美化</h3>
-<div class="outline-text-3" id="text-org86fe55f">
+<div id="outline-container-org554ce56" class="outline-3">
+<h3 id="org554ce56">样式美化</h3>
+<div class="outline-text-3" id="text-org554ce56">
 <div class="org-src-container">
 <pre class="emacs-lisp"> zsh:19: unmatched " </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org0083299" class="outline-3">
-<h3 id="org0083299">排版</h3>
-<div class="outline-text-3" id="text-org0083299">
+<div id="outline-container-org627ac7c" class="outline-3">
+<h3 id="org627ac7c">排版</h3>
+<div class="outline-text-3" id="text-org627ac7c">
 <p>
 采用左右两侧留白，页面集中到中部的排版。
 </p>
@@ -1812,9 +1812,9 @@ Org mode 原本是一个基于 outline 的任务管理，但是因为提供了�
 </div>
 </div>
 
-<div id="outline-container-orge50e795" class="outline-3">
-<h3 id="orge50e795">Latex 导出</h3>
-<div class="outline-text-3" id="text-orge50e795">
+<div id="outline-container-org11b05c7" class="outline-3">
+<h3 id="org11b05c7">Latex 导出</h3>
+<div class="outline-text-3" id="text-org11b05c7">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="nv">org-latex</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Org Latex Environment&quot;</span><span class="p">)</span>
@@ -1832,9 +1832,9 @@ Org mode 原本是一个基于 outline 的任务管理，但是因为提供了�
 </div>
 </div>
 </div>
-<div id="outline-container-orgaf0172e" class="outline-3">
-<h3 id="orgaf0172e">快速查询</h3>
-<div class="outline-text-3" id="text-orgaf0172e">
+<div id="outline-container-org21f067a" class="outline-3">
+<h3 id="org21f067a">快速查询</h3>
+<div class="outline-text-3" id="text-org21f067a">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:spi</span><span class="w"> </span><span class="nv">org-super-agenda</span><span class="w"> </span><span class="s">&quot;https://github.com/alphapapa/org-super-agenda&quot;</span>
 <span class="w">             </span><span class="nv">peg</span><span class="w"> </span><span class="s">&quot;https://github.com/emacsmirror/peg&quot;</span>
@@ -1852,13 +1852,13 @@ Org mode 原本是一个基于 outline 的任务管理，但是因为提供了�
 </div>
 </div>
 
-<div id="outline-container-org2302e2c" class="outline-2">
-<h2 id="org2302e2c">工具</h2>
-<div class="outline-text-2" id="text-org2302e2c">
+<div id="outline-container-org2d54ea7" class="outline-2">
+<h2 id="org2d54ea7">工具</h2>
+<div class="outline-text-2" id="text-org2d54ea7">
 </div>
-<div id="outline-container-orge5ecbd5" class="outline-3">
-<h3 id="orge5ecbd5">输入法</h3>
-<div class="outline-text-3" id="text-orge5ecbd5">
+<div id="outline-container-org3c52795" class="outline-3">
+<h3 id="org3c52795">输入法</h3>
+<div class="outline-text-3" id="text-org3c52795">
 <p>
 Emacs 的 RIME 输入法，只要断言做得好，就可以丝滑地在中英文输入法之间切换，且不会影响快捷键的使用。
 </p>
@@ -1898,9 +1898,9 @@ Emacs 的 RIME 输入法，只要断言做得好，就可以丝滑地在中英�
 </div>
 </div>
 </div>
-<div id="outline-container-org9db6999" class="outline-3">
-<h3 id="org9db6999">文件管理</h3>
-<div class="outline-text-3" id="text-org9db6999">
+<div id="outline-container-orgdd5a77a" class="outline-3">
+<h3 id="orgdd5a77a">文件管理</h3>
+<div class="outline-text-3" id="text-orgdd5a77a">
 <p>
 Dirvish 是一个非常优秀的文件管理器，优美的前端，集成 Dired, 它完全能够作为一个独立的基于命令行的文件管理器使用（我确实也是把它作为系统默认的文件管理器使用）
 </p>
@@ -1911,9 +1911,9 @@ zsh:1: parse error in command substitution </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org0bec2e0" class="outline-3">
-<h3 id="org0bec2e0">中文分词</h3>
-<div class="outline-text-3" id="text-org0bec2e0">
+<div id="outline-container-orgf4e0315" class="outline-3">
+<h3 id="orgf4e0315">中文分词</h3>
+<div class="outline-text-3" id="text-orgf4e0315">
 <p>
 基于中文分词的词语移动。Emacs 内置的 forward-word/backward-word 遇上中文会直接跑到句子结束。用了 jieba 分词就可以实现中文词语的 forward/backward.
 </p>
@@ -1943,9 +1943,9 @@ jieba.el 在每个 Emacs 应用打开都会启动一个 node-js 的服务器，�
 </div>
 </div>
 
-<div id="outline-container-org55e675c" class="outline-3">
-<h3 id="org55e675c">大纲展示</h3>
-<div class="outline-text-3" id="text-org55e675c">
+<div id="outline-container-orga787173" class="outline-3">
+<h3 id="orga787173">大纲展示</h3>
+<div class="outline-text-3" id="text-orga787173">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:spi</span><span class="w"> </span><span class="nv">imenu-list</span><span class="w"> </span><span class="s">&quot;https://github.com/bmag/imenu-list&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;A automatically updated buffer with imenu entries.&quot;</span><span class="p">)</span><span class="w">  </span>
@@ -1966,9 +1966,9 @@ jieba.el 在每个 Emacs 应用打开都会启动一个 node-js 的服务器，�
 </div>
 </div>
 
-<div id="outline-container-orgdc955fc" class="outline-3">
-<h3 id="orgdc955fc">摘抄库</h3>
-<div class="outline-text-3" id="text-orgdc955fc">
+<div id="outline-container-org06915e3" class="outline-3">
+<h3 id="org06915e3">摘抄库</h3>
+<div class="outline-text-3" id="text-org06915e3">
 <p>
 自己写的一个摘抄管理，用 sqlite3 数据库。
 </p>
@@ -1983,9 +1983,9 @@ jieba.el 在每个 Emacs 应用打开都会启动一个 node-js 的服务器，�
 </div>
 </div>
 
-<div id="outline-container-org9a1568d" class="outline-3">
-<h3 id="org9a1568d">记忆工具</h3>
-<div class="outline-text-3" id="text-org9a1568d">
+<div id="outline-container-orgf65b49f" class="outline-3">
+<h3 id="orgf65b49f">记忆工具</h3>
+<div class="outline-text-3" id="text-orgf65b49f">
 <p>
 卡片记忆方法，虽然并不是很卡片。
 </p>
@@ -2014,9 +2014,9 @@ jieba.el 在每个 Emacs 应用打开都会启动一个 node-js 的服务器，�
 </div>
 </div>
 
-<div id="outline-container-org8c359df" class="outline-3">
-<h3 id="org8c359df">音乐播放器</h3>
-<div class="outline-text-3" id="text-org8c359df">
+<div id="outline-container-org2bd0ffb" class="outline-3">
+<h3 id="org2bd0ffb">音乐播放器</h3>
+<div class="outline-text-3" id="text-org2bd0ffb">
 <p>
 MPD 的前端，其实还是用的 MPC, 所以它是 MPD 前端的前端。简单但够用。
 </p>
@@ -2049,9 +2049,9 @@ MPD 的前端，其实还是用的 MPC, 所以它是 MPD 前端的前端。简�
 </div>
 </div>
 
-<div id="outline-container-orgc5699f7" class="outline-3">
-<h3 id="orgc5699f7">邮件和订阅</h3>
-<div class="outline-text-3" id="text-orgc5699f7">
+<div id="outline-container-orge72d1cf" class="outline-3">
+<h3 id="orge72d1cf">邮件和订阅</h3>
+<div class="outline-text-3" id="text-orge72d1cf">
 <p>
 详见
 </p>
@@ -2086,9 +2086,9 @@ zsh:6: command not found: :vars
 </div>
 </div>
 
-<div id="outline-container-orgd22e473" class="outline-3">
-<h3 id="orgd22e473">日志</h3>
-<div class="outline-text-3" id="text-orgd22e473">
+<div id="outline-container-org9e4210d" class="outline-3">
+<h3 id="org9e4210d">日志</h3>
+<div class="outline-text-3" id="text-org9e4210d">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:spi</span><span class="w"> </span><span class="nv">org-journal</span><span class="w"> </span><span class="s">&quot;https://github.com/bastibe/org-journal&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;A simple personal diary / journal using in Emacs.&quot;</span><span class="p">)</span>
@@ -2131,9 +2131,9 @@ zsh:6: command not found: :vars
 </div>
 </div>
 
-<div id="outline-container-org0da82a4" class="outline-3">
-<h3 id="org0da82a4">番茄闹钟</h3>
-<div class="outline-text-3" id="text-org0da82a4">
+<div id="outline-container-org41db16a" class="outline-3">
+<h3 id="org41db16a">番茄闹钟</h3>
+<div class="outline-text-3" id="text-org41db16a">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:spi</span><span class="w"> </span><span class="nv">alert</span><span class="w"> </span><span class="s">&quot;https://github.com/jwiegley/alert&quot;</span>
 <span class="w">             </span><span class="nv">org-pomodoro</span><span class="w"> </span><span class="s">&quot;https://github.com/marcinkoziej/org-pomodoro&quot;</span><span class="p">)</span>
@@ -2150,9 +2150,9 @@ zsh:6: command not found: :vars
 </div>
 </div>
 
-<div id="outline-container-org24b4959" class="outline-3">
-<h3 id="org24b4959">笔记管理</h3>
-<div class="outline-text-3" id="text-org24b4959">
+<div id="outline-container-org9c13771" class="outline-3">
+<h3 id="org9c13771">笔记管理</h3>
+<div class="outline-text-3" id="text-org9c13771">
 <div class="org-src-container">
 <pre class="emacs-lisp"> zsh:3: unmatched '
 zsh:1: parse error in command substitution </pre>
@@ -2160,9 +2160,9 @@ zsh:1: parse error in command substitution </pre>
 </div>
 </div>
 
-<div id="outline-container-org339d473" class="outline-3">
-<h3 id="org339d473">博客生成</h3>
-<div class="outline-text-3" id="text-org339d473">
+<div id="outline-container-org0b0ecbd" class="outline-3">
+<h3 id="org0b0ecbd">博客生成</h3>
+<div class="outline-text-3" id="text-org0b0ecbd">
 <p>
 基于 <a href="https://github.com/bastibe/org-static-blog" target="_blank">org-static-blog</a> 写的自用的 publish 系统。
 </p>
@@ -2240,7 +2240,7 @@ zsh:1: parse error in command substitution </pre>
 <span class="s">renderMathInElement(document.getElementById(\&quot;content\&quot;), {</span>
 <span class="s">strict: false,</span>
 <span class="s">delimiters: [</span>
-<span class="s">{\&quot;display\&quot;: true,\&quot;left\&quot;: \&quot;44566\&quot;,\&quot;right\&quot;: \&quot;44566\&quot;},</span>
+<span class="s">{\&quot;display\&quot;: true,\&quot;left\&quot;: \&quot;205304\&quot;,\&quot;right\&quot;: \&quot;205304\&quot;},</span>
 <span class="s">{\&quot;display\&quot;: true,\&quot;left\&quot;: \&quot;\\\\[\&quot;,\&quot;right\&quot;: \&quot;\\\\]\&quot;},</span>
 <span class="s">{\&quot;display\&quot;: true,\&quot;left\&quot;: \&quot;\\\\begin{equation}\&quot;,\&quot;right\&quot;: \&quot;\\\\end{equation}\&quot;},</span>
 <span class="s">{\&quot;display\&quot;: true,\&quot;left\&quot;: \&quot;\\\\begin{equation*}\&quot;,\&quot;right\&quot;: \&quot;\\\\end{equation*}\&quot;},</span>
@@ -2297,13 +2297,13 @@ zsh:1: parse error in command substitution </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgdd99e5a" class="outline-3">
-<h3 id="orgdd99e5a">密码管理</h3>
-<div class="outline-text-3" id="text-orgdd99e5a">
+<div id="outline-container-orgc806762" class="outline-3">
+<h3 id="orgc806762">密码管理</h3>
+<div class="outline-text-3" id="text-orgc806762">
 </div>
-<div id="outline-container-org8d3eb1b" class="outline-4">
-<h4 id="org8d3eb1b">EasyPG</h4>
-<div class="outline-text-4" id="text-org8d3eb1b">
+<div id="outline-container-orgda8a4fd" class="outline-4">
+<h4 id="orgda8a4fd">EasyPG</h4>
+<div class="outline-text-4" id="text-orgda8a4fd">
 <p>
 配置 EasyPG, 使用 minibuffer 输入密码。默认给的 GUI 打字有时候会打不上，需要按几下才反应。
 </p>
@@ -2327,9 +2327,9 @@ allow-loopback-pinentry </pre>
 </div>
 </div>
 
-<div id="outline-container-org835807f" class="outline-4">
-<h4 id="org835807f">emacs-id-manager</h4>
-<div class="outline-text-4" id="text-org835807f">
+<div id="outline-container-org2ee149a" class="outline-4">
+<h4 id="org2ee149a">emacs-id-manager</h4>
+<div class="outline-text-4" id="text-org2ee149a">
 <p>
 <code>password-generator.el</code> 这个包的名字有点坑的，URL 里面是 gen <b>a</b> rator, 而包名字却是 gen <b>e</b> rator.
 </p>
@@ -2419,9 +2419,9 @@ id-manager 的文档并不太详细，这里给出它定义的按键映射
 </div>
 </div>
 
-<div id="outline-container-org2281845" class="outline-3">
-<h3 id="org2281845">终端 ESH</h3>
-<div class="outline-text-3" id="text-org2281845">
+<div id="outline-container-orgbf388ad" class="outline-3">
+<h3 id="orgbf388ad">终端 ESH</h3>
+<div class="outline-text-3" id="text-orgbf388ad">
 <p>
 Eshell 是用 Elisp 实现的 Shell, 并非终端模拟器。在 Emacs 中终端模拟器并没有把我最希望集成的功能<b>快捷键</b>集成进来，它还是会依赖模拟的 shell 的快捷键。而 esh 则完全兼容 Emacs, 可以直接在当前 Emacs 打开文件。
 </p>
@@ -2432,9 +2432,9 @@ zsh:1: parse error in command substitution </pre>
 </div>
 </div>
 
-<div id="outline-container-org274a503" class="outline-4">
-<h4 id="org274a503">Prompt</h4>
-<div class="outline-text-4" id="text-org274a503">
+<div id="outline-container-org473d94b" class="outline-4">
+<h4 id="org473d94b">Prompt</h4>
+<div class="outline-text-4" id="text-org473d94b">
 <p>
 Prompt 就是命令输入前的那串提示字符。换个主题，改个样式。
 </p>
@@ -2490,9 +2490,9 @@ Prompt 就是命令输入前的那串提示字符。换个主题，改个样式�
 </div>
 </div>
 
-<div id="outline-container-org62829db" class="outline-4">
-<h4 id="org62829db">补全</h4>
-<div class="outline-text-4" id="text-org62829db">
+<div id="outline-container-org2098dc1" class="outline-4">
+<h4 id="org2098dc1">补全</h4>
+<div class="outline-text-4" id="text-org2098dc1">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:spi</span><span class="w"> </span><span class="nv">pcmpl-args</span><span class="w"> </span><span class="s">&quot;https://github.com/JonWaltman/pcmpl-args.el&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:after</span><span class="w"> </span><span class="nv">eshell</span>
@@ -2505,9 +2505,9 @@ Prompt 就是命令输入前的那串提示字符。换个主题，改个样式�
 </div>
 </div>
 </div>
-<div id="outline-container-org0e00454" class="outline-4">
-<h4 id="org0e00454">帮助增强</h4>
-<div class="outline-text-4" id="text-org0e00454">
+<div id="outline-container-orgfc920e6" class="outline-4">
+<h4 id="orgfc920e6">帮助增强</h4>
+<div class="outline-text-4" id="text-orgfc920e6">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:spi</span><span class="w"> </span><span class="nv">esh-help</span><span class="w"> </span><span class="s">&quot;https://github.com/tom-tan/esh-help&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Help functions and support for Eshell:&quot;</span><span class="p">)</span>
@@ -2517,17 +2517,17 @@ Prompt 就是命令输入前的那串提示字符。换个主题，改个样式�
 </div>
 </div>
 </div>
-<div id="outline-container-orgeeb441b" class="outline-4">
-<h4 id="orgeeb441b">自定义函数</h4>
-<div class="outline-text-4" id="text-orgeeb441b">
+<div id="outline-container-orge1f4b11" class="outline-4">
+<h4 id="orge1f4b11">自定义函数</h4>
+<div class="outline-text-4" id="text-orge1f4b11">
 <div class="org-src-container">
 <pre class="emacs-lisp">  </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org02c0647" class="outline-4">
-<h4 id="org02c0647">别名</h4>
-<div class="outline-text-4" id="text-org02c0647">
+<div id="outline-container-orgfe73743" class="outline-4">
+<h4 id="orgfe73743">别名</h4>
+<div class="outline-text-4" id="text-orgfe73743">
 <div class="org-src-container">
 <pre class="bash"> <span class="nb">alias</span><span class="w"> </span>ll<span class="w"> </span>ls<span class="w"> </span>-lh<span class="w"> </span>
 <span class="nb">alias</span><span class="w"> </span>cheatsheet<span class="w"> </span>cat<span class="w"> </span>~/.cheatsheet.org
@@ -2575,9 +2575,9 @@ Prompt 就是命令输入前的那串提示字符。换个主题，改个样式�
 </div>
 </div>
 
-<div id="outline-container-org1379503" class="outline-3">
-<h3 id="org1379503">书籍管理</h3>
-<div class="outline-text-3" id="text-org1379503">
+<div id="outline-container-org50bb064" class="outline-3">
+<h3 id="org50bb064">书籍管理</h3>
+<div class="outline-text-3" id="text-org50bb064">
 <p>
 用 org mode 的 Attachment 来做书籍管理。 <code>:PROPERTIES:</code> 里填上各种信息，然后对应的文件名字归一化。加一个 advice, 使得文档打开使用当前窗口，而不是默认的 find-file-other-window.
 </p>
@@ -2633,13 +2633,13 @@ Prompt 就是命令输入前的那串提示字符。换个主题，改个样式�
 </div>
 </div>
 
-<div id="outline-container-org9ac7573" class="outline-3">
-<h3 id="org9ac7573">文档阅读</h3>
-<div class="outline-text-3" id="text-org9ac7573">
+<div id="outline-container-org0ec1bcf" class="outline-3">
+<h3 id="org0ec1bcf">文档阅读</h3>
+<div class="outline-text-3" id="text-org0ec1bcf">
 </div>
-<div id="outline-container-orga12626e" class="outline-4">
-<h4 id="orga12626e">EPUB</h4>
-<div class="outline-text-4" id="text-orga12626e">
+<div id="outline-container-org85d7e9d" class="outline-4">
+<h4 id="org85d7e9d">EPUB</h4>
+<div class="outline-text-4" id="text-org85d7e9d">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:spi</span><span class="w"> </span><span class="nv">esxml</span><span class="w"> </span><span class="s">&quot;https://github.com/tali713/esxml&quot;</span>
 <span class="w">             </span><span class="nv">nov</span><span class="w"> </span><span class="s">&quot;https://depp.brause.cc/nov.el.git&quot;</span><span class="p">)</span>
@@ -2650,9 +2650,9 @@ Prompt 就是命令输入前的那串提示字符。换个主题，改个样式�
 </div>
 </div>
 
-<div id="outline-container-orge4802b1" class="outline-4">
-<h4 id="orge4802b1">PDF</h4>
-<div class="outline-text-4" id="text-orge4802b1">
+<div id="outline-container-orgb41eecf" class="outline-4">
+<h4 id="orgb41eecf">PDF</h4>
+<div class="outline-text-4" id="text-orgb41eecf">
 <p>
 要执行一遍 <code>/pdf-tools/server/autobuild</code>, 它自动安装 epdfinfo 到指定位置。
 </p>
@@ -2683,10 +2683,20 @@ Prompt 就是命令输入前的那串提示字符。换个主题，改个样式�
 </div>
 </div>
 </div>
+
+<div id="outline-container-org19d907b" class="outline-3">
+<h3 id="org19d907b">终端模拟题</h3>
+<div class="outline-text-3" id="text-org19d907b">
+<div class="org-src-container">
+<pre class="emacs-lisp"> <span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:spi</span><span class="w"> </span><span class="nv">vterm</span><span class="w"> </span><span class="s">&quot;https://github.com/akermu/emacs-libvterm&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">:autoload</span><span class="w"> </span><span class="nv">vterm</span><span class="p">))</span> </pre>
 </div>
-<div id="outline-container-org75d0d2e" class="outline-2">
-<h2 id="org75d0d2e">配置结束</h2>
-<div class="outline-text-2" id="text-org75d0d2e">
+</div>
+</div>
+</div>
+<div id="outline-container-orgf5381b2" class="outline-2">
+<h2 id="orgf5381b2">配置结束</h2>
+<div class="outline-text-2" id="text-orgf5381b2">
 <div class="org-src-container">
 <pre class="emacs-lisp"> <span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">startup-echo-area-message</span><span class="w"> </span><span class="p">()</span>
 <span class="w">  </span><span class="p">(</span><span class="nv">emacs-init-time</span><span class="w"> </span><span class="s">&quot;Emacs starts in %.2f sec. Enjoy hacking :)&quot;</span><span class="p">))</span>
