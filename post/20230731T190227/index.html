@@ -28,43 +28,43 @@
 
 <ul>
 <li>
-<a href="#orge8c0c71"> 前言 </a></li>
+<a href="#org8454c2f"> 前言 </a></li>
 <li>
-<a href="#org4880993"> 安装 </a></li>
+<a href="#orge3d5665"> 安装 </a></li>
 <li>
-<a href="#orga1ec414"> 配置 </a>
+<a href="#org0cde3b6"> 配置 </a>
 <ul>
 <li>
-<a href="#org4678e22"> 基本概念 </a></li>
+<a href="#org1d1e32a"> 基本概念 </a></li>
 <li>
-<a href="#org4f0678f"> 键盘映射 Key </a>
+<a href="#org64b3227"> 键盘映射 Key </a>
 <ul>
 <li>
-<a href="#orgea8384c"> 键盘启动程序 </a></li>
+<a href="#org9630257"> 键盘启动程序 </a></li>
 <li>
-<a href="#org6c4eea6"> 键盘启动自定义程序 </a></li>
+<a href="#org27a7e5c"> 键盘启动自定义程序 </a></li>
 </ul>
 </li>
 <li>
-<a href="#orgd18f893"> 工作区 Group </a></li>
+<a href="#org5001268"> 工作区 Group </a></li>
 <li>
-<a href="#orgc4f598b"> 布局排版 Layout </a></li>
+<a href="#orgad7c49c"> 布局排版 Layout </a></li>
 <li>
-<a href="#org6796ed5"> 屏幕 Screen </a></li>
+<a href="#orgd0f8954"> 屏幕 Screen </a></li>
 <li>
-<a href="#orgea754c5"> 窗口间距 </a></li>
+<a href="#orgad93adb"> 窗口间距 </a></li>
 <li>
-<a href="#orgfa2d7d6"> 窗口浮动 </a></li>
+<a href="#org2bc6121"> 窗口浮动 </a></li>
 <li>
-<a href="#org0f9b63b"> 钩子 Hook </a></li>
+<a href="#orgf2d35fc"> 钩子 Hook </a></li>
 <li>
-<a href="#org3666abf"> 命令行工具 </a></li>
+<a href="#org0adb337"> 命令行工具 </a></li>
 <li>
-<a href="#org94da8a4"> Debug </a></li>
+<a href="#orgec14f6c"> Debug </a></li>
 </ul>
 </li>
 <li>
-<a href="#orga0050f5"> 后记 </a></li>
+<a href="#orgd430ac5"> 后记 </a></li>
 </ul>
 </nav>
 </div>
@@ -78,11 +78,11 @@
 </div>
 <div id="content">
 
-<div id="outline-container-orge8c0c71" class="outline-2">
-<h2 id="orge8c0c71">前言</h2>
-<div class="outline-text-2" id="text-orge8c0c71">
+<div id="outline-container-org8454c2f" class="outline-2">
+<h2 id="org8454c2f">前言</h2>
+<div class="outline-text-2" id="text-org8454c2f">
 <p>
-才折腾完 bspwm 不久（参见<a href="/post/20230628T212213" target="_blank">denote:20230628T212213</a> ），因为心心念念的 eaf-brower, 最后还是想换桌面。 <a href="https://github.com/emacs-eaf/emacs-application-framework" target="_blank">EAF</a> 是一个框架，允许在用户在 Emacs 中运行其他程序，比如浏览器等。我超级喜欢这个理念，所以老早就想迁移到 eaf. 但是因为浏览器需要自己调教，要花时间，就一直拖着（虽然时间花在折腾其他东西上）。终于把桌面调好后，发现 bspwm 用不了，这可难受坏了。
+才折腾完 bspwm 不久（参见<a href="/post/20230628T212213" target="_blank">Bspwm 桌面</a> ），因为心心念念的 eaf-brower, 最后还是想换桌面。 <a href="https://github.com/emacs-eaf/emacs-application-framework" target="_blank">EAF</a> 是一个框架，允许在用户在 Emacs 中运行其他程序，比如浏览器等。我超级喜欢这个理念，所以老早就想迁移到 eaf. 但是因为浏览器需要自己调教，要花时间，就一直拖着（虽然时间花在折腾其他东西上）。终于把桌面调好后，发现 bspwm 用不了，这可难受坏了。
 </p>
 
 <p>
@@ -91,18 +91,18 @@
 </div>
 </div>
 
-<div id="outline-container-org4880993" class="outline-2">
-<h2 id="org4880993">安装</h2>
-<div class="outline-text-2" id="text-org4880993">
+<div id="outline-container-orge3d5665" class="outline-2">
+<h2 id="orge3d5665">安装</h2>
+<div class="outline-text-2" id="text-orge3d5665">
 <p>
 对于这种轻量级的桌面非常赞，只需要： <code>yay -S qtile</code>, 又因为有 lightdm, 甚至启动项都不用配，直接就能用了。有一些额外包，如果用它提供的 widget 组件时需要。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orga1ec414" class="outline-2">
-<h2 id="orga1ec414">配置</h2>
-<div class="outline-text-2" id="text-orga1ec414">
+<div id="outline-container-org0cde3b6" class="outline-2">
+<h2 id="org0cde3b6">配置</h2>
+<div class="outline-text-2" id="text-org0cde3b6">
 <p>
 相对而言， qtile 的<a href="https://docs.qtile.org/en/latest/" target="_blank">文档</a>写得比较简陋，没有 bspwm 那么详细。
 </p>
@@ -112,18 +112,18 @@
 </p>
 </div>
 
-<div id="outline-container-org4678e22" class="outline-3">
-<h3 id="org4678e22">基本概念</h3>
-<div class="outline-text-3" id="text-org4678e22">
+<div id="outline-container-org1d1e32a" class="outline-3">
+<h3 id="org1d1e32a">基本概念</h3>
+<div class="outline-text-3" id="text-org1d1e32a">
 <p>
 在 qtile 中，显示器是 screen, 工作区是 group, 窗口是 window, 布局是 layout.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org4f0678f" class="outline-3">
-<h3 id="org4f0678f">键盘映射 Key</h3>
-<div class="outline-text-3" id="text-org4f0678f">
+<div id="outline-container-org64b3227" class="outline-3">
+<h3 id="org64b3227">键盘映射 Key</h3>
+<div class="outline-text-3" id="text-org64b3227">
 <p>
 在配置文件中，变量 <code>keys</code> 记录了所有的键盘映射，它是一个列表，元素是键盘对象。样板配置里面给出了例子：
 </p>
@@ -192,9 +192,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgea8384c" class="outline-4">
-<h4 id="orgea8384c">键盘启动程序</h4>
-<div class="outline-text-4" id="text-orgea8384c">
+<div id="outline-container-org9630257" class="outline-4">
+<h4 id="org9630257">键盘启动程序</h4>
+<div class="outline-text-4" id="text-org9630257">
 <p>
 用 <code>lazy.spawn("cmd")</code> 来启动程序。比如把 Win + t 映射到启动 kitty 终端模拟器：
 </p>
@@ -209,9 +209,9 @@ spawn 里面是命令行的命令，可以加参数。
 </div>
 </div>
 
-<div id="outline-container-org6c4eea6" class="outline-4">
-<h4 id="org6c4eea6">键盘启动自定义程序</h4>
-<div class="outline-text-4" id="text-org6c4eea6">
+<div id="outline-container-org27a7e5c" class="outline-4">
+<h4 id="org27a7e5c">键盘启动自定义程序</h4>
+<div class="outline-text-4" id="text-org27a7e5c">
 <p>
 所有的程序都应该是 LazyCall, 所以不能直接把用户自定义的函数映射到键盘上，需要加一个修饰器：
 </p>
@@ -229,15 +229,15 @@ spawn 里面是命令行的命令，可以加参数。
 </p>
 
 <p>
-具体有哪些函数可用，官方并没给，我是手动试出来的。在 <a href="#org94da8a4">Debug</a> 那一节我会给出我自己的笨蛋方法。
+具体有哪些函数可用，官方并没给，我是手动试出来的。在 <a href="#orgec14f6c">Debug</a> 那一节我会给出我自己的笨蛋方法。
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgd18f893" class="outline-3">
-<h3 id="orgd18f893">工作区 Group</h3>
-<div class="outline-text-3" id="text-orgd18f893">
+<div id="outline-container-org5001268" class="outline-3">
+<h3 id="org5001268">工作区 Group</h3>
+<div class="outline-text-3" id="text-org5001268">
 <p>
 定义工作区：
 </p>
@@ -267,15 +267,15 @@ spawn 里面是命令行的命令，可以加参数。
 </div>
 </div>
 
-<div id="outline-container-orgc4f598b" class="outline-3">
-<h3 id="orgc4f598b">布局排版 Layout</h3>
-<div class="outline-text-3" id="text-orgc4f598b">
+<div id="outline-container-orgad7c49c" class="outline-3">
+<h3 id="orgad7c49c">布局排版 Layout</h3>
+<div class="outline-text-3" id="text-orgad7c49c">
 <p>
 Qtile 支持多种布局，可以在文档的 build-in layout 那一节看到相关介绍。我采用的是 Bsp, 即 bspwm 的布局，它根据当前窗口的尺寸长边分割，也就是 bspwm 文档中的 <a href="https://github.com/baskerville/bspwm#longest-side-scheme" target="_blank">longest-side-scheme</a>:
 </p>
 
 
-<figure id="orgd65d8ff">
+<figure id="org53ae1fd">
 <a href="/assets/a996197475f9055c6672052dee7e9c2d.png" target="_blank" target="_blank"><img src="/assets/a996197475f9055c6672052dee7e9c2d.png" alt="a996197475f9055c6672052dee7e9c2d.png"></a>
 
 </figure>
@@ -305,9 +305,9 @@ Qtile 支持多种布局，可以在文档的 build-in layout 那一节看到相
 </div>
 </div>
 
-<div id="outline-container-org6796ed5" class="outline-3">
-<h3 id="org6796ed5">屏幕 Screen</h3>
-<div class="outline-text-3" id="text-org6796ed5">
+<div id="outline-container-orgd0f8954" class="outline-3">
+<h3 id="orgd0f8954">屏幕 Screen</h3>
+<div class="outline-text-3" id="text-orgd0f8954">
 <p>
 屏幕同样可以设置多个屏幕对应多种不同的展示内容，目前我是单屏，所以实例化一个 <code>Screen</code> 即可。可以在实例化时传入 <code>wallpaper</code> 参数来设置壁纸，也可以用 wallpaper 的 widget. 我这里直接用 Screen 设置，后续可以调用类方法 <code>set_wallpaper</code> 来方便的切换壁纸。
 </p>
@@ -327,15 +327,15 @@ Qtile 支持多种布局，可以在文档的 build-in layout 那一节看到相
 </div>
 </div>
 
-<div id="outline-container-orgea754c5" class="outline-3">
-<h3 id="orgea754c5">窗口间距</h3>
-<div class="outline-text-3" id="text-orgea754c5">
+<div id="outline-container-orgad93adb" class="outline-3">
+<h3 id="orgad93adb">窗口间距</h3>
+<div class="outline-text-3" id="text-orgad93adb">
 <p>
-在<a href="#orgc4f598b">布局设置</a>时，传入了 <code>margin</code> 参数，它表示窗口的外边距。如此一来，分割的两个窗口之间的距离其实是两倍的 margin, 因为每个窗口都有一个。以水平分割的两个窗口为例，我更希望的是窗口到屏幕边缘与窗口之间的距离相等，如：
+在<a href="#orgad7c49c">布局设置</a>时，传入了 <code>margin</code> 参数，它表示窗口的外边距。如此一来，分割的两个窗口之间的距离其实是两倍的 margin, 因为每个窗口都有一个。以水平分割的两个窗口为例，我更希望的是窗口到屏幕边缘与窗口之间的距离相等，如：
 </p>
 
 
-<figure id="org8660ad3">
+<figure id="orgb35356e">
 <a href="/assets/08cbaae799b245d1e8abe945325898a4.png" target="_blank" target="_blank"><img src="/assets/08cbaae799b245d1e8abe945325898a4.png" alt="08cbaae799b245d1e8abe945325898a4.png"></a>
 
 </figure>
@@ -346,9 +346,9 @@ Qtile 支持多种布局，可以在文档的 build-in layout 那一节看到相
 </div>
 </div>
 
-<div id="outline-container-orgfa2d7d6" class="outline-3">
-<h3 id="orgfa2d7d6">窗口浮动</h3>
-<div class="outline-text-3" id="text-orgfa2d7d6">
+<div id="outline-container-org2bc6121" class="outline-3">
+<h3 id="org2bc6121">窗口浮动</h3>
+<div class="outline-text-3" id="text-org2bc6121">
 <p>
 如样本配置中的
 </p>
@@ -356,90 +356,7 @@ Qtile 支持多种布局，可以在文档的 build-in layout 那一节看到相
 <div class="org-src-container">
 <pre class="python"> <span class="n">floating_layout</span> <span class="o">=</span> <span class="n">layout</span><span class="o">.</span><span class="n">Floating</span><span class="p">(</span>
     <span class="n">float_rules</span><span class="o">=</span><span class="p">[</span>
-        <span class="c1"># Run the utility of _NET_WM_USER_TIME(CARDINAL) = 10910127</span>
-<span class="n">_MOTIF_DRAG_RECEIVER_INFO</span><span class="p">(</span><span class="n">_MOTIF_DRAG_RECEIVER_INFO</span><span class="p">)</span> <span class="o">=</span> <span class="mh">0x6c</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x5</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x0</span>
-<span class="n">_NET_WM_STATE</span><span class="p">(</span><span class="n">ATOM</span><span class="p">)</span> <span class="o">=</span> <span class="n">_NET_WM_STATE_MAXIMIZED_VERT</span><span class="p">,</span> <span class="n">_NET_WM_STATE_MAXIMIZED_HORZ</span><span class="p">,</span> <span class="n">_NET_WM_STATE_FOCUSED</span>
-<span class="n">_NET_FRAME_EXTENTS</span><span class="p">(</span><span class="n">CARDINAL</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
-<span class="n">_NET_WM_DESKTOP</span><span class="p">(</span><span class="n">CARDINAL</span><span class="p">)</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">WM_STATE</span><span class="p">(</span><span class="n">WM_STATE</span><span class="p">):</span>
-		<span class="n">window</span> <span class="n">state</span><span class="p">:</span> <span class="n">Normal</span>
-		<span class="n">icon</span> <span class="n">window</span><span class="p">:</span> <span class="mh">0x0</span>
-<span class="n">WM_HINTS</span><span class="p">(</span><span class="n">WM_HINTS</span><span class="p">):</span>
-		<span class="n">Client</span> <span class="n">accepts</span> <span class="nb">input</span> <span class="ow">or</span> <span class="nb">input</span> <span class="n">focus</span><span class="p">:</span> <span class="kc">True</span>
-		<span class="n">Initial</span> <span class="n">state</span> <span class="ow">is</span> <span class="n">Normal</span> <span class="n">State</span><span class="o">.</span>
-		<span class="n">bitmap</span> <span class="nb">id</span> <span class="c1"># to use for icon: 0x180a0a1</span>
-		<span class="n">bitmap</span> <span class="nb">id</span> <span class="c1"># of mask for icon: 0x180a0a7</span>
-		<span class="n">window</span> <span class="nb">id</span> <span class="c1"># of group leader: 0x1800001</span>
-<span class="n">_GTK_THEME_VARIANT</span><span class="p">(</span><span class="n">UTF8_STRING</span><span class="p">)</span> <span class="o">=</span> <span class="s2">&quot;dark&quot;</span>
-<span class="n">_NET_WM_ICON</span><span class="p">(</span><span class="n">CARDINAL</span><span class="p">)</span> <span class="o">=</span> 	<span class="n">Icon</span> <span class="p">(</span><span class="mi">48</span> <span class="n">x</span> <span class="mi">48</span><span class="p">):</span>
-	                                                                                                
-	                                        <span class="err">░░░░░░▒▒▒▒░░░░░░</span>                                        
-	                                <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒</span>                                  
-	                            <span class="err">░░▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒░░</span>                            
-	                        <span class="err">░░▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒░░</span>                        
-	                      <span class="err">▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒</span>                      
-	                  <span class="err">░░▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒</span>                    
-	                <span class="err">░░▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░</span>                
-	              <span class="err">░░▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░</span>              <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▓▓</span>                
-	            <span class="err">░░▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░</span>                      <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒</span>              
-	            <span class="err">▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░</span>        <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒</span>            
-	          <span class="err">▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░</span>            <span class="err">▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒</span>          
-	        <span class="err">░░▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░</span>                        <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓</span>          
-	        <span class="err">▒▒▒▒░░░░░░░░░░░░░░░░░░</span>                                    <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒</span>        
-	      <span class="err">░░▒▒░░░░░░░░░░░░░░░░░░</span>                                  <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓</span>        
-	      <span class="err">▒▒▒▒░░░░░░░░░░░░░░░░</span>                  <span class="err">░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒</span>      
-	      <span class="err">▒▒░░░░░░░░░░░░░░░░░░░░</span>            <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓</span>      
-	    <span class="err">▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░</span>          <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓░░</span>    
-	    <span class="err">▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░</span>          <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒</span>    
-	    <span class="err">▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░</span>            <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓</span>    
-	    <span class="err">▒▒░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒░░</span>            <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓</span>    
-	  <span class="err">░░▒▒░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░</span>            <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓</span>    
-	  <span class="err">░░▒▒░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░</span>            <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓░░</span>  
-	  <span class="err">░░▒▒░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒░░░░</span>                          <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓░░</span>  
-	  <span class="err">░░▒▒░░░░░░░░░░░░▒▒▒▒▒▒▒▒░░</span>                          <span class="err">░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓░░</span>  
-	  <span class="err">░░▒▒░░░░░░░░░░▒▒▒▒▒▒░░</span>                      <span class="err">░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓░░</span>  
-	  <span class="err">░░▒▒░░░░░░▒▒▒▒▒▒▒▒░░</span>                    <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓</span>    
-	  <span class="err">░░▒▒░░░░▒▒▒▒▒▒▒▒░░</span>                  <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓</span>    
-	    <span class="err">▓▓▒▒▒▒▒▒▒▒▒▒▒▒░░</span>                <span class="err">▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓</span>    
-	    <span class="err">▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░</span>              <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒</span>    
-	    <span class="err">▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░</span>              <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓░░</span>    
-	    <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒</span>                <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓</span>      
-	      <span class="err">▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░</span>                  <span class="err">░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒</span>      
-	      <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░</span>                                          <span class="err">░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓░░</span>      
-	        <span class="err">▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░</span>                                        <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒</span>        
-	        <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░</span>                                <span class="err">▒▒▒▒▒▒▒▒▒▒▒▒▓▓░░</span>        
-	          <span class="err">▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░</span>          <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▓▓▒▒</span>          
-	            <span class="err">▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░</span>            <span class="err">░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓</span>            
-	            <span class="err">░░▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░</span>            <span class="err">░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓</span>              
-	              <span class="err">░░▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓░░</span>              
-	                <span class="err">▒▒▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓░░</span>                
-	                  <span class="err">░░▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓░░</span>                  
-	                    <span class="err">░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▒▒</span>                      
-	                        <span class="err">▒▒▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓░░</span>                        
-	                            <span class="err">▒▒▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▒▒</span>                            
-	                                <span class="err">░░▒▒▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▒▒░░</span>                                
-	                                      <span class="err">░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░░░</span>                                      
-	                                                                                                
-
-
-<span class="n">XdndAware</span><span class="p">(</span><span class="n">ATOM</span><span class="p">)</span> <span class="o">=</span> <span class="n">BITMAP</span>
-<span class="n">_NET_WM_WINDOW_TYPE</span><span class="p">(</span><span class="n">ATOM</span><span class="p">)</span> <span class="o">=</span> <span class="n">_NET_WM_WINDOW_TYPE_NORMAL</span>
-<span class="n">_NET_WM_SYNC_REQUEST_COUNTER</span><span class="p">(</span><span class="n">CARDINAL</span><span class="p">)</span> <span class="o">=</span> <span class="mi">25166002</span><span class="p">,</span> <span class="mi">25166003</span>
-<span class="n">_NET_WM_USER_TIME_WINDOW</span><span class="p">(</span><span class="n">WINDOW</span><span class="p">):</span> <span class="n">window</span> <span class="nb">id</span> <span class="c1"># 0x18000b1</span>
-<span class="n">WM_CLIENT_LEADER</span><span class="p">(</span><span class="n">WINDOW</span><span class="p">):</span> <span class="n">window</span> <span class="nb">id</span> <span class="c1"># 0x1800001</span>
-<span class="n">_NET_WM_PID</span><span class="p">(</span><span class="n">CARDINAL</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1155</span>
-<span class="n">WM_LOCALE_NAME</span><span class="p">(</span><span class="n">STRING</span><span class="p">)</span> <span class="o">=</span> <span class="s2">&quot;en_US.UTF-8&quot;</span>
-<span class="n">WM_CLIENT_MACHINE</span><span class="p">(</span><span class="n">STRING</span><span class="p">)</span> <span class="o">=</span> <span class="s2">&quot;mrdust&quot;</span>
-<span class="n">WM_NORMAL_HINTS</span><span class="p">(</span><span class="n">WM_SIZE_HINTS</span><span class="p">):</span>
-		<span class="n">program</span> <span class="n">specified</span> <span class="n">minimum</span> <span class="n">size</span><span class="p">:</span> <span class="mi">0</span> <span class="n">by</span> <span class="mi">0</span>
-		<span class="n">program</span> <span class="n">specified</span> <span class="n">base</span> <span class="n">size</span><span class="p">:</span> <span class="mi">0</span> <span class="n">by</span> <span class="mi">0</span>
-		<span class="n">window</span> <span class="n">gravity</span><span class="p">:</span> <span class="n">NorthWest</span>
-<span class="n">WM_PROTOCOLS</span><span class="p">(</span><span class="n">ATOM</span><span class="p">):</span> <span class="n">protocols</span>  <span class="n">WM_DELETE_WINDOW</span><span class="p">,</span> <span class="n">WM_TAKE_FOCUS</span><span class="p">,</span> <span class="n">_NET_WM_PING</span><span class="p">,</span> <span class="n">_NET_WM_SYNC_REQUEST</span>
-<span class="n">WM_CLASS</span><span class="p">(</span><span class="n">STRING</span><span class="p">)</span> <span class="o">=</span> <span class="s2">&quot;emacs&quot;</span><span class="p">,</span> <span class="s2">&quot;Emacs&quot;</span>
-<span class="n">WM_ICON_NAME</span><span class="p">(</span><span class="n">STRING</span><span class="p">)</span> <span class="o">=</span> <span class="s2">&quot;*Messages* - GNU Emacs at mrdust&quot;</span>
-<span class="n">_NET_WM_ICON_NAME</span><span class="p">(</span><span class="n">UTF8_STRING</span><span class="p">)</span> <span class="o">=</span> <span class="s2">&quot;*Messages* - GNU Emacs at mrdust&quot;</span>
-<span class="n">WM_NAME</span><span class="p">(</span><span class="n">STRING</span><span class="p">)</span> <span class="o">=</span> <span class="s2">&quot;*Messages* - GNU Emacs at mrdust&quot;</span>
-<span class="n">_NET_WM_NAME</span><span class="p">(</span><span class="n">UTF8_STRING</span><span class="p">)</span> <span class="o">=</span> <span class="s2">&quot;*Messages* - GNU Emacs at mrdust&quot;</span> <span class="n">to</span> <span class="n">see</span> <span class="n">the</span> <span class="n">wm</span> <span class="k">class</span> <span class="nc">and</span> <span class="n">name</span> <span class="n">of</span> <span class="n">an</span> <span class="n">X</span> <span class="n">client</span><span class="o">.</span>
+        <span class="c1"># Run the utility of &#39;xprop&#39; to see the wm class and name of an X client.</span>
         <span class="o">*</span><span class="n">layout</span><span class="o">.</span><span class="n">Floating</span><span class="o">.</span><span class="n">default_float_rules</span><span class="p">,</span>
         <span class="n">Match</span><span class="p">(</span><span class="n">wm_class</span><span class="o">=</span><span class="s2">&quot;confirmreset&quot;</span><span class="p">),</span>  <span class="c1"># gitk</span>
         <span class="n">Match</span><span class="p">(</span><span class="n">wm_class</span><span class="o">=</span><span class="s2">&quot;makebranch&quot;</span><span class="p">),</span>  <span class="c1"># gitk</span>
@@ -457,9 +374,9 @@ Qtile 支持多种布局，可以在文档的 build-in layout 那一节看到相
 </div>
 </div>
 
-<div id="outline-container-org0f9b63b" class="outline-3">
-<h3 id="org0f9b63b">钩子 Hook</h3>
-<div class="outline-text-3" id="text-org0f9b63b">
+<div id="outline-container-orgf2d35fc" class="outline-3">
+<h3 id="orgf2d35fc">钩子 Hook</h3>
+<div class="outline-text-3" id="text-orgf2d35fc">
 <p>
 Qtile 用 hook 来加入定制。比如一个简单开机自启动的例子：
 </p>
@@ -522,9 +439,9 @@ Qtile 用 hook 来加入定制。比如一个简单开机自启动的例子：
 </div>
 </div>
 
-<div id="outline-container-org3666abf" class="outline-3">
-<h3 id="org3666abf">命令行工具</h3>
-<div class="outline-text-3" id="text-org3666abf">
+<div id="outline-container-org0adb337" class="outline-3">
+<h3 id="org0adb337">命令行工具</h3>
+<div class="outline-text-3" id="text-org0adb337">
 <p>
 命令行可以用 <code>qtile cmd-obj</code> 来执行操作，完整命令 <code>qtile cmd-obj -o obj -f func</code>.
 </p>
@@ -547,9 +464,9 @@ Qtile 用 hook 来加入定制。比如一个简单开机自启动的例子：
 </div>
 </div>
 
-<div id="outline-container-org94da8a4" class="outline-3">
-<h3 id="org94da8a4">Debug</h3>
-<div class="outline-text-3" id="text-org94da8a4">
+<div id="outline-container-orgec14f6c" class="outline-3">
+<h3 id="orgec14f6c">Debug</h3>
+<div class="outline-text-3" id="text-orgec14f6c">
 <p>
 首先，qtile 会生成一个日志，路径是 <code>~/.local/share/qtile/qtile.log</code>. 路径可以调，但我忘了在那个地方看到的，现在找不到了。
 </p>
@@ -561,9 +478,9 @@ Qtile 用 hook 来加入定制。比如一个简单开机自启动的例子：
 </div>
 </div>
 
-<div id="outline-container-orga0050f5" class="outline-2">
-<h2 id="orga0050f5">后记</h2>
-<div class="outline-text-2" id="text-orga0050f5">
+<div id="outline-container-orgd430ac5" class="outline-2">
+<h2 id="orgd430ac5">后记</h2>
+<div class="outline-text-2" id="text-orgd430ac5">
 <p>
 没太感觉 qtile 用 Python 来写会占用多大资源或者响应多慢，用起来其实还挺 OK, 配置用我最熟悉的 Python 就写一些比较 hack 的方法去和其他比如 eww 模组联动。
 </p>
