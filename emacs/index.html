@@ -27,22 +27,22 @@
 </div>
 <div id="content">
 
-<div id="outline-container-org7b25548" class="outline-2">
-<h2 id="org7b25548">前言</h2>
-<div class="outline-text-2" id="text-org7b25548">
+<div id="outline-container-orgd645bdb" class="outline-2">
+<h2 id="orgd645bdb">前言</h2>
+<div class="outline-text-2" id="text-orgd645bdb">
 <p>
 Emacs 配置分享，下载路径在 GitHub 上：<a href="https://github.com/fingerknight/.emacs.d" target="_blank">https://github.com/fingerknight/.emacs.d</a>.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org5b37138" class="outline-2">
-<h2 id="org5b37138">前配置 early-init</h2>
-<div class="outline-text-2" id="text-org5b37138">
+<div id="outline-container-org2ab22fa" class="outline-2">
+<h2 id="org2ab22fa">前配置 early-init</h2>
+<div class="outline-text-2" id="text-org2ab22fa">
 </div>
-<div id="outline-container-orgd581171" class="outline-3">
-<h3 id="orgd581171">定义基本变量</h3>
-<div class="outline-text-3" id="text-orgd581171">
+<div id="outline-container-org06714cb" class="outline-3">
+<h3 id="org06714cb">定义基本变量</h3>
+<div class="outline-text-3" id="text-org06714cb">
 <p>
 定义家目录以及四个目录分类：
 </p>
@@ -91,9 +91,9 @@ Emacs 配置分享，下载路径在 GitHub 上：<a href="https://github.com/fi
 </div>
 </div>
 
-<div id="outline-container-org82a8163" class="outline-3">
-<h3 id="org82a8163">启动加速 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup> <sup>, </sup><sup>[<a id="fnr:2.1" class="footref" href="#fn:2">2</a>]</sup></h3>
-<div class="outline-text-3" id="text-org82a8163">
+<div id="outline-container-org4baa2d1" class="outline-3">
+<h3 id="org4baa2d1">启动加速 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup> <sup>, </sup><sup>[<a id="fnr:2.1" class="footref" href="#fn:2">2</a>]</sup></h3>
+<div class="outline-text-3" id="text-org4baa2d1">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="c1">;;; Basic settings</span>
 <span class="c1">;; Speed up starting</span>
@@ -120,9 +120,9 @@ Emacs 配置分享，下载路径在 GitHub 上：<a href="https://github.com/fi
 </div>
 </div>
 
-<div id="outline-container-orgff95e04" class="outline-3">
-<h3 id="orgff95e04">编码设置 <sup>[<a id="fnr:3.1" class="footref" href="#fn:3">3</a>]</sup></h3>
-<div class="outline-text-3" id="text-orgff95e04">
+<div id="outline-container-org6c1ca66" class="outline-3">
+<h3 id="org6c1ca66">编码设置 <sup>[<a id="fnr:3.1" class="footref" href="#fn:3">3</a>]</sup></h3>
+<div class="outline-text-3" id="text-org6c1ca66">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="c1">;; Coding System</span>
 <span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">locale-coding-system</span><span class="w"> </span><span class="ss">&#39;utf-8</span><span class="p">)</span>
@@ -140,9 +140,9 @@ Emacs 配置分享，下载路径在 GitHub 上：<a href="https://github.com/fi
 </div>
 </div>
 
-<div id="outline-container-orgf8ce6e3" class="outline-3">
-<h3 id="orgf8ce6e3">GUI 设置</h3>
-<div class="outline-text-3" id="text-orgf8ce6e3">
+<div id="outline-container-org60435b3" class="outline-3">
+<h3 id="org60435b3">GUI 设置</h3>
+<div class="outline-text-3" id="text-org60435b3">
 <p>
 窗口最大化，关闭各种栏栏框框。
 </p>
@@ -159,9 +159,9 @@ Emacs 配置分享，下载路径在 GitHub 上：<a href="https://github.com/fi
 </div>
 </div>
 
-<div id="outline-container-orgf05feb4" class="outline-3">
-<h3 id="orgf05feb4">杂七杂八的设置</h3>
-<div class="outline-text-3" id="text-orgf05feb4">
+<div id="outline-container-org148e9f7" class="outline-3">
+<h3 id="org148e9f7">杂七杂八的设置</h3>
+<div class="outline-text-3" id="text-org148e9f7">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="c1">;; Misc</span>
 <span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">url-proxy-services</span><span class="w"> </span><span class="o">&#39;</span><span class="p">((</span><span class="s">&quot;http&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;127.0.0.1:7890&quot;</span><span class="p">)</span>
@@ -185,9 +185,9 @@ Emacs 配置分享，下载路径在 GitHub 上：<a href="https://github.com/fi
 </div>
 </div>
 
-<div id="outline-container-org96272b6" class="outline-3">
-<h3 id="org96272b6">结束 early-init</h3>
-<div class="outline-text-3" id="text-org96272b6">
+<div id="outline-container-org716a8a9" class="outline-3">
+<h3 id="org716a8a9">结束 early-init</h3>
+<div class="outline-text-3" id="text-org716a8a9">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nb">provide</span><span class="w"> </span><span class="ss">&#39;early-init</span><span class="p">)</span></pre>
 </div>
@@ -195,9 +195,9 @@ Emacs 配置分享，下载路径在 GitHub 上：<a href="https://github.com/fi
 </div>
 </div>
 
-<div id="outline-container-org4df91f5" class="outline-2">
-<h2 id="org4df91f5">插件安装</h2>
-<div class="outline-text-2" id="text-org4df91f5">
+<div id="outline-container-org2b1d183" class="outline-2">
+<h2 id="org2b1d183">插件安装</h2>
+<div class="outline-text-2" id="text-org2b1d183">
 <p>
 折腾来折腾去，还是直接 git 插件到本地，直接 load 就行，不考虑编译，比如猫大的 eaf 和 lsp-bridge 就不用编译。
 </p>
@@ -228,9 +228,9 @@ Emacs 配置分享，下载路径在 GitHub 上：<a href="https://github.com/fi
 </div>
 </div>
 
-<div id="outline-container-orgc646231" class="outline-2">
-<h2 id="orgc646231">环境变量</h2>
-<div class="outline-text-2" id="text-orgc646231">
+<div id="outline-container-org8b4495b" class="outline-2">
+<h2 id="org8b4495b">环境变量</h2>
+<div class="outline-text-2" id="text-org8b4495b">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nb">dolist</span><span class="w"> </span><span class="p">(</span><span class="nv">path</span><span class="w"> </span><span class="p">(</span><span class="nf">directory-files</span><span class="w"> </span><span class="nv">user-module-directory</span>
 <span class="w">                               </span><span class="no">t</span><span class="w"> </span><span class="s">&quot;[^.]&quot;</span><span class="p">))</span>
@@ -243,13 +243,13 @@ Emacs 配置分享，下载路径在 GitHub 上：<a href="https://github.com/fi
 </div>
 </div>
 
-<div id="outline-container-org34379cb" class="outline-2">
-<h2 id="org34379cb">SetupEl</h2>
-<div class="outline-text-2" id="text-org34379cb">
+<div id="outline-container-org140df5f" class="outline-2">
+<h2 id="org140df5f">SetupEl</h2>
+<div class="outline-text-2" id="text-org140df5f">
 </div>
-<div id="outline-container-org340c52f" class="outline-3">
-<h3 id="org340c52f">简介</h3>
-<div class="outline-text-3" id="text-org340c52f">
+<div id="outline-container-org10fdc53" class="outline-3">
+<h3 id="org10fdc53">简介</h3>
+<div class="outline-text-3" id="text-org10fdc53">
 <p>
 <a href="https://git.sr.ht/~pkal/setup" target="_blank">setup.el</a> 是一套宏，可以用于做包和模块的管理。与各种包管理器类似，在 <code>(setup feature ...)</code> 中通过各种关键字来实现各种各样的功能。它提供了一套基础的关键字，很基础。但是自定义关键字非常简单。
 </p>
@@ -287,9 +287,9 @@ setup.el 内置关键字有：
 </div>
 </div>
 
-<div id="outline-container-orgf530a94" class="outline-3">
-<h3 id="orgf530a94">安装</h3>
-<div class="outline-text-3" id="text-orgf530a94">
+<div id="outline-container-orgf71f113" class="outline-3">
+<h3 id="orgf71f113">安装</h3>
+<div class="outline-text-3" id="text-orgf71f113">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="c1">;;; SetupEl</span>
 <span class="p">(</span><span class="nv">git-install</span><span class="w"> </span><span class="ss">&#39;setup</span><span class="w"> </span><span class="s">&quot;https://git.sr.ht/~pkal/setup&quot;</span><span class="p">)</span>
@@ -299,9 +299,9 @@ setup.el 内置关键字有：
 </div>
 </div>
 
-<div id="outline-container-org50b26ef" class="outline-3">
-<h3 id="org50b26ef">子系统与上下文</h3>
-<div class="outline-text-3" id="text-org50b26ef">
+<div id="outline-container-orgbea0964" class="outline-3">
+<h3 id="orgbea0964">子系统与上下文</h3>
+<div class="outline-text-3" id="text-orgbea0964">
 <p>
 <code>(setup feature)</code> 表明配置一个名为 <code>feature</code> 的子系统。这个名字可以任意，可以是已存在的包名。如果是后者，后续可以方便的传入一些参数。
 </p>
@@ -366,15 +366,15 @@ setup 子系统的过程中，会保持几个变量： <code>feature</code>, <co
 </div>
 </div>
 
-<div id="outline-container-orgb17ab4b" class="outline-3">
-<h3 id="orgb17ab4b">绑定</h3>
-<div class="outline-text-3" id="text-orgb17ab4b">
+<div id="outline-container-orga1b66d8" class="outline-3">
+<h3 id="orga1b66d8">绑定</h3>
+<div class="outline-text-3" id="text-orga1b66d8">
 <p>
 <code>:global</code> 用于全局绑定，无关 feature. 如 <code>(:global "RET" newline-and-indent)</code>
 </p>
 
 <p>
-<code>:bind</code> 绑定到当前系统的 map. 如 <code>(:with-feature org (:bind "C-c s" org-schedule))</code>  就会在 <code>org-mode-map</code> 下绑定按键。它是 <code>after-loaded</code> 的（详见<a href="#org940e38e">自定义关键字</a>），也就是它会等当前系统加载之后才绑定（防止对应的变量还没有定义），所以展开之后其实是：
+<code>:bind</code> 绑定到当前系统的 map. 如 <code>(:with-feature org (:bind "C-c s" org-schedule))</code>  就会在 <code>org-mode-map</code> 下绑定按键。它是 <code>after-loaded</code> 的（详见<a href="#org061bab7">自定义关键字</a>），也就是它会等当前系统加载之后才绑定（防止对应的变量还没有定义），所以展开之后其实是：
 </p>
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nb">with-eval-after-load</span><span class="w"> </span><span class="ss">&#39;org</span>
@@ -407,11 +407,11 @@ setup 子系统的过程中，会保持几个变量： <code>feature</code>, <co
 </div>
 </div>
 
-<div id="outline-container-org9e31185" class="outline-3">
-<h3 id="org9e31185">包调用</h3>
-<div class="outline-text-3" id="text-org9e31185">
+<div id="outline-container-org879da85" class="outline-3">
+<h3 id="org879da85">包调用</h3>
+<div class="outline-text-3" id="text-org879da85">
 <p>
-前面提到过 <code>:package</code> 是用来安装包的，它指定了 shorthand （详见<a href="#org940e38e">自定义关键字</a>），所以可以用来做 feature. 如下面这个系统的 feature 是 <code>simple</code>.
+前面提到过 <code>:package</code> 是用来安装包的，它指定了 shorthand （详见<a href="#org061bab7">自定义关键字</a>），所以可以用来做 feature. 如下面这个系统的 feature 是 <code>simple</code>.
 </p>
 
 <div class="org-src-container">
@@ -446,9 +446,9 @@ setup 子系统的过程中，会保持几个变量： <code>feature</code>, <co
 </div>
 </div>
 
-<div id="outline-container-orgf3a0af9" class="outline-3">
-<h3 id="orgf3a0af9">赋值</h3>
-<div class="outline-text-3" id="text-orgf3a0af9">
+<div id="outline-container-org76bd7b6" class="outline-3">
+<h3 id="org76bd7b6">赋值</h3>
+<div class="outline-text-3" id="text-org76bd7b6">
 <p>
 <code>:option</code> 是一个集大成的赋值方法，它是 repeatable, 因此使用方法和 <code>setq</code> 类似。如
 </p>
@@ -486,9 +486,9 @@ setup 子系统的过程中，会保持几个变量： <code>feature</code>, <co
 </div>
 </div>
 
-<div id="outline-container-org43db4c7" class="outline-3">
-<h3 id="org43db4c7">钩子</h3>
-<div class="outline-text-3" id="text-org43db4c7">
+<div id="outline-container-orgf5551d1" class="outline-3">
+<h3 id="orgf5551d1">钩子</h3>
+<div class="outline-text-3" id="text-orgf5551d1">
 <p>
 <code>:hook</code>, repeatable, 输入的是函数，把这些函数都钩到当前系统的 hook 中。如：
 </p>
@@ -517,9 +517,9 @@ setup 子系统的过程中，会保持几个变量： <code>feature</code>, <co
 </div>
 </div>
 
-<div id="outline-container-orgb65553e" class="outline-3">
-<h3 id="orgb65553e">条件</h3>
-<div class="outline-text-3" id="text-orgb65553e">
+<div id="outline-container-orge85bfa2" class="outline-3">
+<h3 id="orge85bfa2">条件</h3>
+<div class="outline-text-3" id="text-orge85bfa2">
 <p>
 <code>:only-if</code> 判断条件，条件为假时整个 setup 退出。
 </p>
@@ -546,9 +546,9 @@ setup 子系统的过程中，会保持几个变量： <code>feature</code>, <co
 </div>
 </div>
 
-<div id="outline-container-org940e38e" class="outline-3">
-<h3 id="org940e38e">自定义关键字</h3>
-<div class="outline-text-3" id="text-org940e38e">
+<div id="outline-container-org061bab7" class="outline-3">
+<h3 id="org061bab7">自定义关键字</h3>
+<div class="outline-text-3" id="text-org061bab7">
 <p>
 <a href="https://www.emacswiki.org/emacs/SetupEl" target="_blank">Emacs Wiki</a> 上给出了许多有用的自定义关键字，我使用了其中一些。自定义关键字的框架是：
 </p>
@@ -567,9 +567,9 @@ setup 的执行过程就是把 body 当作宏来执行，因此关键字函数�
 </p>
 </div>
 
-<div id="outline-container-org482a875" class="outline-4">
-<h4 id="org482a875">:doc</h4>
-<div class="outline-text-4" id="text-org482a875">
+<div id="outline-container-org2581069" class="outline-4">
+<h4 id="org2581069">:doc</h4>
+<div class="outline-text-4" id="text-org2581069">
 <p>
 先定义一个简单的 <code>:doc</code>, 用来记录当前系统的文档信息 <sup>[<a id="fnr:1.2" class="footref" href="#fn:1">1</a>]</sup>。
 </p>
@@ -598,9 +598,9 @@ macro 返回的是 nil, 也就是这个关键词并不会真正参与到 setup �
 </div>
 </div>
 
-<div id="outline-container-orgce82499" class="outline-4">
-<h4 id="orgce82499">:git</h4>
-<div class="outline-text-4" id="text-orgce82499">
+<div id="outline-container-org29d726f" class="outline-4">
+<h4 id="org29d726f">:git</h4>
+<div class="outline-text-4" id="text-org29d726f">
 <p>
 写一个 <code>:git</code> 作为 <code>:package</code> 的替代：
 </p>
@@ -637,9 +637,9 @@ macro 返回的是 nil, 也就是这个关键词并不会真正参与到 setup �
 </div>
 </div>
 
-<div id="outline-container-org27e12fb" class="outline-4">
-<h4 id="org27e12fb">:load-path</h4>
-<div class="outline-text-4" id="text-org27e12fb">
+<div id="outline-container-org1321a32" class="outline-4">
+<h4 id="org1321a32">:load-path</h4>
+<div class="outline-text-4" id="text-org1321a32">
 <p>
 定义环境变量关键字，它可以传入一个 sexp, 把它的返回值加入环境变量，也可以是绝对路径，还可以是相对路径，相对于当前 feature 所在的路径（就是 <code>guess-path</code> ），最后返回一个 <code>add-to-list</code> 的宏。
 </p>
@@ -662,9 +662,9 @@ macro 返回的是 nil, 也就是这个关键词并不会真正参与到 setup �
 </div>
 </div>
 
-<div id="outline-container-orgb3de809" class="outline-4">
-<h4 id="orgb3de809">:autoload</h4>
-<div class="outline-text-4" id="text-orgb3de809">
+<div id="outline-container-org0d367b4" class="outline-4">
+<h4 id="org0d367b4">:autoload</h4>
+<div class="outline-text-4" id="text-org0d367b4">
 <p>
 <code>:autoload</code> 是基于当前系统的 feature 去查找，必要时用 <code>:with-feature</code> 切换上下文 <sup>[<a id="fnr:4.1" class="footref" href="#fn:4">4</a>]</sup>。
 </p>
@@ -688,9 +688,9 @@ macro 返回的是 nil, 也就是这个关键词并不会真正参与到 setup �
 </div>
 </div>
 
-<div id="outline-container-orga61776e" class="outline-4">
-<h4 id="orga61776e">:after</h4>
-<div class="outline-text-4" id="text-orga61776e">
+<div id="outline-container-org652dce5" class="outline-4">
+<h4 id="org652dce5">:after</h4>
+<div class="outline-text-4" id="text-org652dce5">
 <p>
 改良版的 <code>:when-loaded</code>, 它明确指定一个 feature 来使用 <code>with-eval-after-load</code>.
 </p>
@@ -732,11 +732,11 @@ macro 返回的是 nil, 也就是这个关键词并不会真正参与到 setup �
 </div>
 </div>
 
-<div id="outline-container-org1fc3a0e" class="outline-4">
-<h4 id="org1fc3a0e">:modalka</h4>
-<div class="outline-text-4" id="text-org1fc3a0e">
+<div id="outline-container-org773ff1e" class="outline-4">
+<h4 id="org773ff1e">:modalka</h4>
+<div class="outline-text-4" id="text-org773ff1e">
 <p>
-用来绑定 modalka-mode 下的按键。关于 modalka, 详见<a href="#orgb0d228d">全局按键绑定</a>.
+用来绑定 modalka-mode 下的按键。关于 modalka, 详见<a href="#orgac4b341">全局按键绑定</a>.
 </p>
 
 <div class="org-src-container">
@@ -750,9 +750,9 @@ macro 返回的是 nil, 也就是这个关键词并不会真正参与到 setup �
 </div>
 </div>
 
-<div id="outline-container-org1760713" class="outline-4">
-<h4 id="org1760713">:diminish</h4>
-<div class="outline-text-4" id="text-org1760713">
+<div id="outline-container-org216b1e6" class="outline-4">
+<h4 id="org216b1e6">:diminish</h4>
+<div class="outline-text-4" id="text-org216b1e6">
 <p>
 名字取自 <a href="https://github.com/myrjola/diminish.el" target="_blank">diminish.el</a> 包，用来移除当前 minor-mode 在 mode-line 上的显示 <sup>[<a id="fnr:4.2" class="footref" href="#fn:4">4</a>]</sup>。
 </p>
@@ -769,9 +769,9 @@ macro 返回的是 nil, 也就是这个关键词并不会真正参与到 setup �
 </div>
 </div>
 
-<div id="outline-container-org0b62f19" class="outline-4">
-<h4 id="org0b62f19">:advice</h4>
-<div class="outline-text-4" id="text-org0b62f19">
+<div id="outline-container-org87f2e11" class="outline-4">
+<h4 id="org87f2e11">:advice</h4>
+<div class="outline-text-4" id="text-org87f2e11">
 <p>
 添加 advice, 采用的是类似 <code>define-advice</code> 的形式 <sup>[<a id="fnr:4.3" class="footref" href="#fn:4">4</a>]</sup>。
 </p>
@@ -809,9 +809,9 @@ macro 返回的是 nil, 也就是这个关键词并不会真正参与到 setup �
 </div>
 </div>
 
-<div id="outline-container-orgd8b3d80" class="outline-4">
-<h4 id="orgd8b3d80">:face</h4>
-<div class="outline-text-4" id="text-orgd8b3d80">
+<div id="outline-container-org9e1979a" class="outline-4">
+<h4 id="org9e1979a">:face</h4>
+<div class="outline-text-4" id="text-org9e1979a">
 <p>
 这个关键字和 <code>:advice</code> 一样有点无聊，但是还是把它包装起来了。通过调用 <code>set-face-attribute</code> 方法来设置字体样式。
 </p>
@@ -864,9 +864,9 @@ t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，�
 </div>
 </div>
 
-<div id="outline-container-orgb08ede2" class="outline-4">
-<h4 id="orgb08ede2">:lazy</h4>
-<div class="outline-text-4" id="text-orgb08ede2">
+<div id="outline-container-org8a506b2" class="outline-4">
+<h4 id="org8a506b2">:lazy</h4>
+<div class="outline-text-4" id="text-org8a506b2">
 <p>
 懒加载，把要执行的 body 封装到一个函数里面，执行这个函数才会释放里面的内容。比如有一些比较大的插件就可以用 lazy 封装，把封装得到的函数绑定到快捷键上，当快捷键触发时才 requrie 。
 </p>
@@ -905,9 +905,9 @@ t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，�
 </div>
 </div>
 
-<div id="outline-container-orgc88eb2f" class="outline-4">
-<h4 id="orgc88eb2f">:disabled</h4>
-<div class="outline-text-4" id="text-orgc88eb2f">
+<div id="outline-container-orgdadfa14" class="outline-4">
+<h4 id="orgdadfa14">:disabled</h4>
+<div class="outline-text-4" id="text-orgdadfa14">
 <p>
 停止后续setup, 用来调试或者弃用某个 feature.
 </p>
@@ -925,13 +925,13 @@ t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，�
 </div>
 </div>
 
-<div id="outline-container-org5a869d9" class="outline-2">
-<h2 id="org5a869d9">基础设置</h2>
-<div class="outline-text-2" id="text-org5a869d9">
+<div id="outline-container-orgbabfbcd" class="outline-2">
+<h2 id="orgbabfbcd">基础设置</h2>
+<div class="outline-text-2" id="text-orgbabfbcd">
 </div>
-<div id="outline-container-orged378bb" class="outline-3">
-<h3 id="orged378bb">Emacs 函数库</h3>
-<div class="outline-text-3" id="text-orged378bb">
+<div id="outline-container-org041cf9b" class="outline-3">
+<h3 id="org041cf9b">Emacs 函数库</h3>
+<div class="outline-text-3" id="text-org041cf9b">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:git</span><span class="w"> </span><span class="nv">dash</span><span class="w"> </span><span class="s">&quot;https://github.com/magnars/dash.el&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;A modern list API for Emacs.&quot;</span><span class="p">))</span>
@@ -951,9 +951,9 @@ t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，�
 </div>
 </div>
 
-<div id="outline-container-org260b789" class="outline-3">
-<h3 id="org260b789">清理配置目录</h3>
-<div class="outline-text-3" id="text-org260b789">
+<div id="outline-container-orgad05b7c" class="outline-3">
+<h3 id="orgad05b7c">清理配置目录</h3>
+<div class="outline-text-3" id="text-orgad05b7c">
 <p>
 正常使用的话，配置目录下面会有一大堆乱七八糟的东西，看着很求不爽。幸好有 no-littering, 它内置了各种规则，把奇奇怪怪的东西分类好，这就是 <code>etc</code> 和 <code>var</code> 目录的由来。
 </p>
@@ -973,9 +973,9 @@ t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，�
 </div>
 </div>
 
-<div id="outline-container-orgb0d228d" class="outline-3">
-<h3 id="orgb0d228d">全局按键绑定</h3>
-<div class="outline-text-3" id="text-orgb0d228d">
+<div id="outline-container-orgac4b341" class="outline-3">
+<h3 id="orgac4b341">全局按键绑定</h3>
+<div class="outline-text-3" id="text-orgac4b341">
 <p>
 如果使用 <code>:global</code> 或者 <code>global-set-key</code> 用这个来绑定全局键的话，它的优先级比较低，会被其他的 minor mode 覆盖。这里使用 modalka 来做全局按键绑定。它本质上想做的是模态编辑，它只有两种状态，就是开启和关闭的状态。因为它是一个 minor mode, 只要开了全局就几乎不会被覆盖。此外再给 minibuffer 加个 hook, 就可以实现 minibuffer 也享用这份键盘映射。
 </p>
@@ -994,9 +994,9 @@ t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，�
 </div>
 </div>
 
-<div id="outline-container-org1750d12" class="outline-3">
-<h3 id="org1750d12">帮助按键绑定</h3>
-<div class="outline-text-3" id="text-org1750d12">
+<div id="outline-container-org6d86143" class="outline-3">
+<h3 id="org6d86143">帮助按键绑定</h3>
+<div class="outline-text-3" id="text-org6d86143">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="nv">help-fns</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Help commands.&quot;</span><span class="p">)</span>
@@ -1011,13 +1011,13 @@ t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，�
 </div>
 </div>
 
-<div id="outline-container-orgdd70625" class="outline-2">
-<h2 id="orgdd70625">外观设置</h2>
-<div class="outline-text-2" id="text-orgdd70625">
+<div id="outline-container-org064c613" class="outline-2">
+<h2 id="org064c613">外观设置</h2>
+<div class="outline-text-2" id="text-org064c613">
 </div>
-<div id="outline-container-org3549fb3" class="outline-3">
-<h3 id="org3549fb3">字体设置</h3>
-<div class="outline-text-3" id="text-org3549fb3">
+<div id="outline-container-orgc83e378" class="outline-3">
+<h3 id="orgc83e378">字体设置</h3>
+<div class="outline-text-3" id="text-orgc83e378">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="nv">faces</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Faces setting&quot;</span><span class="p">)</span>
@@ -1038,9 +1038,9 @@ t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，�
 </div>
 </div>
 
-<div id="outline-container-org7a32d30" class="outline-3">
-<h3 id="org7a32d30">主题设置</h3>
-<div class="outline-text-3" id="text-org7a32d30">
+<div id="outline-container-org7b0ef79" class="outline-3">
+<h3 id="org7b0ef79">主题设置</h3>
+<div class="outline-text-3" id="text-org7b0ef79">
 <p>
 <a href="https://draculatheme.com/" target="_blank">Dracule Theme</a> 的忠实粉丝就是我了，恨不得整个操作系统都用上。
 </p>
@@ -1054,9 +1054,9 @@ t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，�
 </div>
 </div>
 
-<div id="outline-container-orga0ca65c" class="outline-3">
-<h3 id="orga0ca65c">图标</h3>
-<div class="outline-text-3" id="text-orga0ca65c">
+<div id="outline-container-org81ba268" class="outline-3">
+<h3 id="org81ba268">图标</h3>
+<div class="outline-text-3" id="text-org81ba268">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:git</span><span class="w"> </span><span class="nv">all-the-icons</span><span class="w"> </span><span class="s">&quot;https://github.com/domtronn/all-the-icons.el&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;A collection of various Icon Fonts within Emacs&quot;</span><span class="p">))</span></pre>
@@ -1065,13 +1065,13 @@ t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，�
 </div>
 </div>
 
-<div id="outline-container-org93eea1a" class="outline-2">
-<h2 id="org93eea1a">编辑设置</h2>
-<div class="outline-text-2" id="text-org93eea1a">
+<div id="outline-container-org9b96c6b" class="outline-2">
+<h2 id="org9b96c6b">编辑设置</h2>
+<div class="outline-text-2" id="text-org9b96c6b">
 </div>
-<div id="outline-container-org93d457e" class="outline-3">
-<h3 id="org93d457e">基本编辑操作</h3>
-<div class="outline-text-3" id="text-org93d457e">
+<div id="outline-container-org0a4621f" class="outline-3">
+<h3 id="org0a4621f">基本编辑操作</h3>
+<div class="outline-text-3" id="text-org0a4621f">
 <p>
 定义了包括光标移动、复制粘贴、选择删除等一系列相关操作，以及快捷键定义。
 </p>
@@ -1230,9 +1230,9 @@ t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，�
 </div>
 </div>
 
-<div id="outline-container-orgf8bcb50" class="outline-3">
-<h3 id="orgf8bcb50">文件自动刷新</h3>
-<div class="outline-text-3" id="text-orgf8bcb50">
+<div id="outline-container-org05d7a19" class="outline-3">
+<h3 id="org05d7a19">文件自动刷新</h3>
+<div class="outline-text-3" id="text-org05d7a19">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="nv">autorevert</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Revert buffers when files on disk change&quot;</span><span class="p">)</span>
@@ -1242,9 +1242,9 @@ t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，�
 </div>
 </div>
 
-<div id="outline-container-org4bbb1cb" class="outline-3">
-<h3 id="org4bbb1cb">保存历史记录和光标位置</h3>
-<div class="outline-text-3" id="text-org4bbb1cb">
+<div id="outline-container-orgd3d0f85" class="outline-3">
+<h3 id="orgd3d0f85">保存历史记录和光标位置</h3>
+<div class="outline-text-3" id="text-orgd3d0f85">
 <p>
 我确实没想到还能在这种地方 hook, 看了前辈的配置直接震惊一整晚 <sup>[<a id="fnr:2.2" class="footref" href="#fn:2">2</a>]</sup>。
 </p>
@@ -1272,13 +1272,13 @@ t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，�
 </div>
 </div>
 
-<div id="outline-container-org7057920" class="outline-3">
-<h3 id="org7057920">窗口设置</h3>
-<div class="outline-text-3" id="text-org7057920">
+<div id="outline-container-org19455d1" class="outline-3">
+<h3 id="org19455d1">窗口设置</h3>
+<div class="outline-text-3" id="text-org19455d1">
 </div>
-<div id="outline-container-org495b7c9" class="outline-4">
-<h4 id="org495b7c9">窗口分割</h4>
-<div class="outline-text-4" id="text-org495b7c9">
+<div id="outline-container-org5aae4c3" class="outline-4">
+<h4 id="org5aae4c3">窗口分割</h4>
+<div class="outline-text-4" id="text-org5aae4c3">
 <p>
 选择 buffer, 水平或垂直分隔。
 </p>
@@ -1299,9 +1299,9 @@ t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，�
 </div>
 </div>
 
-<div id="outline-container-org7751370" class="outline-4">
-<h4 id="org7751370">窗口间移动</h4>
-<div class="outline-text-4" id="text-org7751370">
+<div id="outline-container-orga003e5e" class="outline-4">
+<h4 id="orga003e5e">窗口间移动</h4>
+<div class="outline-text-4" id="text-orga003e5e">
 <p>
 使用数字编号在窗口间快速移动。原包好久不维护了，define-minor-mode 没有用关键字参数导致一直报 warning. 于是用了 pr 列表里面的一个 fork.
 </p>
@@ -1328,13 +1328,13 @@ t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，�
 </div>
 </div>
 
-<div id="outline-container-org33f7bd4" class="outline-3">
-<h3 id="org33f7bd4">括号增强</h3>
-<div class="outline-text-3" id="text-org33f7bd4">
+<div id="outline-container-orgc5178db" class="outline-3">
+<h3 id="orgc5178db">括号增强</h3>
+<div class="outline-text-3" id="text-orgc5178db">
 </div>
-<div id="outline-container-org62d25aa" class="outline-4">
-<h4 id="org62d25aa">高亮括号</h4>
-<div class="outline-text-4" id="text-org62d25aa">
+<div id="outline-container-orgb84e768" class="outline-4">
+<h4 id="orgb84e768">高亮括号</h4>
+<div class="outline-text-4" id="text-orgb84e768">
 <p>
 高亮包围当前光标位置的括号，并用方框标识。
 </p>
@@ -1358,9 +1358,9 @@ t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，�
 </div>
 </div>
 
-<div id="outline-container-org81c3b8f" class="outline-4">
-<h4 id="org81c3b8f">Smart Parens</h4>
-<div class="outline-text-4" id="text-org81c3b8f">
+<div id="outline-container-org80cf598" class="outline-4">
+<h4 id="org80cf598">Smart Parens</h4>
+<div class="outline-text-4" id="text-org80cf598">
 <p>
 增强版的 electric-pair-mode, 同时提供了一些基于括号的操作，参见<a href="https://ebzzry.com/en/emacs-pairs/" target="_blank">Emacs and Pairs</a>.
 </p>
@@ -1402,13 +1402,13 @@ t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，�
 </div>
 </div>
 
-<div id="outline-container-orgf19bd82" class="outline-3">
-<h3 id="orgf19bd82">补全增强</h3>
-<div class="outline-text-3" id="text-orgf19bd82">
+<div id="outline-container-orge41c96a" class="outline-3">
+<h3 id="orge41c96a">补全增强</h3>
+<div class="outline-text-3" id="text-orge41c96a">
 </div>
-<div id="outline-container-org94f375c" class="outline-4">
-<h4 id="org94f375c">补全前端</h4>
-<div class="outline-text-4" id="text-org94f375c">
+<div id="outline-container-orge8829d9" class="outline-4">
+<h4 id="orge8829d9">补全前端</h4>
+<div class="outline-text-4" id="text-orge8829d9">
 <p>
 弹框补全 corfu. 图标用的是 kind-all-the-icons, 源自论坛大佬：<a href="https://emacs-china.org/t/corfu-all-the-icons-icon/20907" target="_blank">糊了一个 corfu 适用的 all-the-icons 的 icon 效果 - Emacs-general - Emacs China</a>。
 </p>
@@ -1441,9 +1441,9 @@ t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，�
 </div>
 </div>
 
-<div id="outline-container-orge6b4565" class="outline-4">
-<h4 id="orge6b4565">补全后端</h4>
-<div class="outline-text-4" id="text-orge6b4565">
+<div id="outline-container-org606870c" class="outline-4">
+<h4 id="org606870c">补全后端</h4>
+<div class="outline-text-4" id="text-org606870c">
 <p>
 cape 提供了多种补全后端，目前用得并不多。
 </p>
@@ -1459,9 +1459,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 
-<div id="outline-container-org8d53531" class="outline-4">
-<h4 id="org8d53531">补全模版</h4>
-<div class="outline-text-4" id="text-org8d53531">
+<div id="outline-container-orgf203419" class="outline-4">
+<h4 id="orgf203419">补全模版</h4>
+<div class="outline-text-4" id="text-orgf203419">
 <p>
 暂时用这个，目前还没开始填自己的模版。用着感觉没 Yasnippet 方便。
 </p>
@@ -1502,9 +1502,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 
-<div id="outline-container-org4e99b51" class="outline-3">
-<h3 id="org4e99b51">Minibuffer 增强</h3>
-<div class="outline-text-3" id="text-org4e99b51">
+<div id="outline-container-org594ca16" class="outline-3">
+<h3 id="org594ca16">Minibuffer 增强</h3>
+<div class="outline-text-3" id="text-org594ca16">
 <p>
 新三件套 (vertico, orderless, consult)
 </p>
@@ -1592,9 +1592,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 
-<div id="outline-container-org9325ef8" class="outline-3">
-<h3 id="org9325ef8">Isearch 增强</h3>
-<div class="outline-text-3" id="text-org9325ef8">
+<div id="outline-container-orge119c74" class="outline-3">
+<h3 id="orge119c74">Isearch 增强</h3>
+<div class="outline-text-3" id="text-orge119c74">
 <p>
 使用 phi-search,
 </p>
@@ -1636,17 +1636,17 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 
-<div id="outline-container-org391c9d6" class="outline-2">
-<h2 id="org391c9d6">编程</h2>
-<div class="outline-text-2" id="text-org391c9d6">
+<div id="outline-container-org70e7f39" class="outline-2">
+<h2 id="org70e7f39">编程</h2>
+<div class="outline-text-2" id="text-org70e7f39">
 </div>
-<div id="outline-container-org59c3b86" class="outline-3">
-<h3 id="org59c3b86">显示</h3>
-<div class="outline-text-3" id="text-org59c3b86">
+<div id="outline-container-org49cdd62" class="outline-3">
+<h3 id="org49cdd62">显示</h3>
+<div class="outline-text-3" id="text-org49cdd62">
 </div>
-<div id="outline-container-org687a1bf" class="outline-4">
-<h4 id="org687a1bf">行号</h4>
-<div class="outline-text-4" id="text-org687a1bf">
+<div id="outline-container-org59afa6b" class="outline-4">
+<h4 id="org59afa6b">行号</h4>
+<div class="outline-text-4" id="text-org59afa6b">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="nv">display-line-numbers</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Interface for display-line-numbers&quot;</span><span class="p">)</span>
@@ -1663,9 +1663,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 
-<div id="outline-container-org774979b" class="outline-4">
-<h4 id="org774979b">高亮当前行</h4>
-<div class="outline-text-4" id="text-org774979b">
+<div id="outline-container-orgdd7df90" class="outline-4">
+<h4 id="orgdd7df90">高亮当前行</h4>
+<div class="outline-text-4" id="text-orgdd7df90">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="nv">hl-line</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Highlight the current line&quot;</span><span class="p">)</span>
@@ -1674,9 +1674,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 
-<div id="outline-container-org5b6c90c" class="outline-4">
-<h4 id="org5b6c90c">彩色括号</h4>
-<div class="outline-text-4" id="text-org5b6c90c">
+<div id="outline-container-orgff6c2ed" class="outline-4">
+<h4 id="orgff6c2ed">彩色括号</h4>
+<div class="outline-text-4" id="text-orgff6c2ed">
 <p>
 对不同层次的括号使用不同颜色，对 Lisp 这种多重括号尤其有效。
 </p>
@@ -1689,9 +1689,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 
-<div id="outline-container-org43dacaa" class="outline-4">
-<h4 id="org43dacaa">不显示 eldoc</h4>
-<div class="outline-text-4" id="text-org43dacaa">
+<div id="outline-container-org5677e51" class="outline-4">
+<h4 id="org5677e51">不显示 eldoc</h4>
+<div class="outline-text-4" id="text-org5677e51">
 <p>
 还要单独为这个写一个 setup, 多捞哦。
 </p>
@@ -1702,9 +1702,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 </div>
-<div id="outline-container-orgec0f447" class="outline-4">
-<h4 id="orgec0f447">缩进提示</h4>
-<div class="outline-text-4" id="text-orgec0f447">
+<div id="outline-container-orgea5b1ab" class="outline-4">
+<h4 id="orgea5b1ab">缩进提示</h4>
+<div class="outline-text-4" id="text-orgea5b1ab">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:git</span><span class="w"> </span><span class="nv">highlight-indent-guides</span><span class="w"> </span><span class="s">&quot;https://github.com/DarthFennec/highlight-indent-guides&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;This minor mode highlights indentation levels via font-lock.&quot;</span><span class="p">)</span>
@@ -1723,9 +1723,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 </div>
-<div id="outline-container-org530a7bd" class="outline-3">
-<h3 id="org530a7bd">移动到缩进行首</h3>
-<div class="outline-text-3" id="text-org530a7bd">
+<div id="outline-container-org9759afc" class="outline-3">
+<h3 id="org9759afc">移动到缩进行首</h3>
+<div class="outline-text-3" id="text-org9759afc">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:git</span><span class="w"> </span><span class="nv">mwim</span><span class="w"> </span><span class="s">&quot;https://github.com/alezost/mwim.el&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Operations of Cursor moving&quot;</span><span class="p">)</span>
@@ -1737,9 +1737,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 
-<div id="outline-container-org72469a3" class="outline-3">
-<h3 id="org72469a3">代码折叠</h3>
-<div class="outline-text-3" id="text-org72469a3">
+<div id="outline-container-orgde73d5f" class="outline-3">
+<h3 id="orgde73d5f">代码折叠</h3>
+<div class="outline-text-3" id="text-orgde73d5f">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="nv">hideshow</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Minor mode cmds to selectively display code/comment blocks&quot;</span><span class="p">)</span>
@@ -1755,9 +1755,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 </div>
-<div id="outline-container-org03b15f4" class="outline-3">
-<h3 id="org03b15f4">LSP</h3>
-<div class="outline-text-3" id="text-org03b15f4">
+<div id="outline-container-org3c8817a" class="outline-3">
+<h3 id="org3c8817a">LSP</h3>
+<div class="outline-text-3" id="text-org3c8817a">
 <p>
 不搞开发，能用就行。不 hook <code>prog-mode</code> 的原因是写比如 elisp 就没必要启动用它。
 </p>
@@ -1778,9 +1778,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 
-<div id="outline-container-org2a14373" class="outline-3">
-<h3 id="org2a14373">Tree-sitter</h3>
-<div class="outline-text-3" id="text-org2a14373">
+<div id="outline-container-org98823b2" class="outline-3">
+<h3 id="org98823b2">Tree-sitter</h3>
+<div class="outline-text-3" id="text-org98823b2">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="nv">treesit</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;A parser generator tool and an incremental parsing library.&quot;</span><span class="p">)</span>
@@ -1793,9 +1793,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 
-<div id="outline-container-org349c48d" class="outline-3">
-<h3 id="org349c48d">YAML</h3>
-<div class="outline-text-3" id="text-org349c48d">
+<div id="outline-container-org743f415" class="outline-3">
+<h3 id="org743f415">YAML</h3>
+<div class="outline-text-3" id="text-org743f415">
 <p>
 偶尔会用到。
 </p>
@@ -1808,13 +1808,13 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 
-<div id="outline-container-org3589c46" class="outline-3">
-<h3 id="org3589c46">Emacs Lisp</h3>
-<div class="outline-text-3" id="text-org3589c46">
+<div id="outline-container-org1c36448" class="outline-3">
+<h3 id="org1c36448">Emacs Lisp</h3>
+<div class="outline-text-3" id="text-org1c36448">
 </div>
-<div id="outline-container-orgd20c86f" class="outline-4">
-<h4 id="orgd20c86f">elisp-def</h4>
-<div class="outline-text-4" id="text-orgd20c86f">
+<div id="outline-container-orgd9b1df9" class="outline-4">
+<h4 id="orgd9b1df9">elisp-def</h4>
+<div class="outline-text-4" id="text-orgd9b1df9">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:git</span><span class="w"> </span><span class="nv">elisp-def</span><span class="w"> </span><span class="s">&quot;https://github.com/Wilfred/elisp-def&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Go to the definition of the symbol at point.&quot;</span><span class="p">)</span>
@@ -1826,9 +1826,9 @@ cape 提供了多种补全后端，目前用得并不多。
 </div>
 </div>
 
-<div id="outline-container-org9dfea4b" class="outline-3">
-<h3 id="org9dfea4b">Yuck</h3>
-<div class="outline-text-3" id="text-org9dfea4b">
+<div id="outline-container-org4cef47b" class="outline-3">
+<h3 id="org4cef47b">Yuck</h3>
+<div class="outline-text-3" id="text-org4cef47b">
 <p>
 Yuck 是窗口图形模块套件 <a href="https://elkowar.github.io/eww/" target="_blank">EWW</a> 的语言，基于 Lisp.
 </p>
@@ -1842,9 +1842,9 @@ Yuck 是窗口图形模块套件 <a href="https://elkowar.github.io/eww/" target
 </div>
 </div>
 
-<div id="outline-container-org37b1a4f" class="outline-3">
-<h3 id="org37b1a4f">Sxhkd</h3>
-<div class="outline-text-3" id="text-org37b1a4f">
+<div id="outline-container-org9127a26" class="outline-3">
+<h3 id="org9127a26">Sxhkd</h3>
+<div class="outline-text-3" id="text-org9127a26">
 <p>
 bspwm 下的键盘映射配置。
 </p>
@@ -1858,9 +1858,9 @@ bspwm 下的键盘映射配置。
 </div>
 </div>
 
-<div id="outline-container-orgbc040c5" class="outline-3">
-<h3 id="orgbc040c5">Jinja2</h3>
-<div class="outline-text-3" id="text-orgbc040c5">
+<div id="outline-container-org21570f4" class="outline-3">
+<h3 id="org21570f4">Jinja2</h3>
+<div class="outline-text-3" id="text-org21570f4">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:git</span><span class="w"> </span><span class="nv">jinja2-mode</span><span class="w"> </span><span class="s">&quot;https://github.com/paradoxxxzero/jinja2-mode&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Jinja2 mode for emacs&quot;</span><span class="p">)</span>
@@ -1870,9 +1870,9 @@ bspwm 下的键盘映射配置。
 </div>
 </div>
 
-<div id="outline-container-org6c7cba4" class="outline-3">
-<h3 id="org6c7cba4">Markdown</h3>
-<div class="outline-text-3" id="text-org6c7cba4">
+<div id="outline-container-org8182d1c" class="outline-3">
+<h3 id="org8182d1c">Markdown</h3>
+<div class="outline-text-3" id="text-org8182d1c">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:git</span><span class="w"> </span><span class="nv">markdown-mode</span><span class="w"> </span><span class="s">&quot;https://github.com/jrblevin/markdown-mode&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Support for Markdown&quot;</span><span class="p">)</span>
@@ -1884,9 +1884,9 @@ bspwm 下的键盘映射配置。
 </div>
 </div>
 
-<div id="outline-container-org7d178f3" class="outline-2">
-<h2 id="org7d178f3">Org mode</h2>
-<div class="outline-text-2" id="text-org7d178f3">
+<div id="outline-container-org3ff5617" class="outline-2">
+<h2 id="org3ff5617">Org mode</h2>
+<div class="outline-text-2" id="text-org3ff5617">
 <p>
 Org mode 原本是一个基于 outline 的任务管理，但是因为提供了丰富的语言标记，以及结合 emacs 提供导出、发布等各种操作，它已然成为一个强大的笔记、管理、收集等集一体的系统。
 </p>
@@ -1903,8 +1903,8 @@ Org mode 原本是一个基于 outline 的任务管理，但是因为提供了�
 <span class="w">                                           </span><span class="s">&quot;DONE(d!)&quot;</span>
 <span class="w">                                           </span><span class="s">&quot;CANCELED(c@)&quot;</span><span class="p">)))</span>
 <span class="w">    </span><span class="p">(</span><span class="nb">:option</span><span class="w"> </span><span class="nv">org-edit-src-content-indentation</span><span class="w"> </span><span class="mi">0</span>
-<span class="w">             </span><span class="nv">org-auto-align-tags</span><span class="w"> </span><span class="no">nil</span>
-<span class="w">             </span><span class="nv">org-tags-column</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">             </span><span class="c1">;; org-auto-align-tags nil</span>
+<span class="w">             </span><span class="c1">;; org-tags-column 0</span>
 <span class="w">             </span><span class="nv">org-use-sub-superscripts</span><span class="w"> </span><span class="no">nil</span>
 <span class="w">             </span><span class="nv">org-link-file-path-type</span><span class="w"> </span><span class="ss">&#39;relative</span>
 <span class="w">             </span><span class="nv">org-startup-truncated</span><span class="w"> </span><span class="no">t</span><span class="p">)</span>
@@ -1919,9 +1919,9 @@ Org mode 原本是一个基于 outline 的任务管理，但是因为提供了�
 </div>
 </div>
 
-<div id="outline-container-org704dba2" class="outline-3">
-<h3 id="org704dba2">快速改变 heading</h3>
-<div class="outline-text-3" id="text-org704dba2">
+<div id="outline-container-orgf4ebaa7" class="outline-3">
+<h3 id="orgf4ebaa7">快速改变 heading</h3>
+<div class="outline-text-3" id="text-orgf4ebaa7">
 <p>
 通过快捷键来快速调整 headline 等级。
 </p>
@@ -1965,9 +1965,9 @@ Org mode 原本是一个基于 outline 的任务管理，但是因为提供了�
 </div>
 </div>
 
-<div id="outline-container-orgec73595" class="outline-3">
-<h3 id="orgec73595">快速插入</h3>
-<div class="outline-text-3" id="text-orgec73595">
+<div id="outline-container-orgb8613d0" class="outline-3">
+<h3 id="orgb8613d0">快速插入</h3>
+<div class="outline-text-3" id="text-orgb8613d0">
 <ol class="org-ol">
 <li>输入一个 URL, 尝试自动获取返回的 HTML 的 <code>&lt;title&gt;</code>, 如果有就把它作为 org-link 的 description.</li>
 <li>给定一个存放图片的目录，按最近修改时间排序</li>
@@ -2036,9 +2036,9 @@ Org mode 原本是一个基于 outline 的任务管理，但是因为提供了�
 </div>
 </div>
 
-<div id="outline-container-orgeb85fca" class="outline-3">
-<h3 id="orgeb85fca">Org Agenda</h3>
-<div class="outline-text-3" id="text-orgeb85fca">
+<div id="outline-container-orge1dbb6d" class="outline-3">
+<h3 id="orge1dbb6d">Org Agenda</h3>
+<div class="outline-text-3" id="text-orge1dbb6d">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="nv">org-agenda</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Org Agenda settings&quot;</span><span class="p">)</span>
@@ -2056,9 +2056,9 @@ Org mode 原本是一个基于 outline 的任务管理，但是因为提供了�
 </div>
 </div>
 
-<div id="outline-container-org5b29195" class="outline-3">
-<h3 id="org5b29195">样式美化</h3>
-<div class="outline-text-3" id="text-org5b29195">
+<div id="outline-container-orga0501c5" class="outline-3">
+<h3 id="orga0501c5">样式美化</h3>
+<div class="outline-text-3" id="text-orga0501c5">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:git</span><span class="w"> </span><span class="nv">org-modern</span><span class="w"> </span><span class="s">&quot;https://github.com/minad/org-modern&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;A modern style for Org buffers&quot;</span><span class="p">)</span>
@@ -2083,9 +2083,9 @@ Org mode 原本是一个基于 outline 的任务管理，但是因为提供了�
 </div>
 </div>
 
-<div id="outline-container-org456803d" class="outline-3">
-<h3 id="org456803d">排版</h3>
-<div class="outline-text-3" id="text-org456803d">
+<div id="outline-container-org7ce04a4" class="outline-3">
+<h3 id="org7ce04a4">排版</h3>
+<div class="outline-text-3" id="text-org7ce04a4">
 <p>
 采用左右两侧留白，页面集中到中部的排版。
 </p>
@@ -2101,9 +2101,9 @@ Org mode 原本是一个基于 outline 的任务管理，但是因为提供了�
 </div>
 </div>
 
-<div id="outline-container-orgbb7cefa" class="outline-3">
-<h3 id="orgbb7cefa">Latex 导出</h3>
-<div class="outline-text-3" id="text-orgbb7cefa">
+<div id="outline-container-org5a61641" class="outline-3">
+<h3 id="org5a61641">Latex 导出</h3>
+<div class="outline-text-3" id="text-org5a61641">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="nv">org-latex</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;Org Latex Environment&quot;</span><span class="p">)</span>
@@ -2121,9 +2121,9 @@ Org mode 原本是一个基于 outline 的任务管理，但是因为提供了�
 </div>
 </div>
 </div>
-<div id="outline-container-org7ae52ca" class="outline-3">
-<h3 id="org7ae52ca">快速查询</h3>
-<div class="outline-text-3" id="text-org7ae52ca">
+<div id="outline-container-org26f0769" class="outline-3">
+<h3 id="org26f0769">快速查询</h3>
+<div class="outline-text-3" id="text-org26f0769">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:git</span><span class="w"> </span><span class="nv">org-ql</span><span class="w"> </span><span class="s">&quot;https://github.com/alphapapa/org-ql&quot;</span>
 <span class="w">             </span><span class="nv">org-super-agenda</span><span class="w"> </span><span class="s">&quot;https://github.com/alphapapa/org-super-agenda&quot;</span>
@@ -2141,158 +2141,13 @@ Org mode 原本是一个基于 outline 的任务管理，但是因为提供了�
 </div>
 </div>
 
-<div id="outline-container-org2eecb9e" class="outline-2">
-<h2 id="org2eecb9e">工具</h2>
-<div class="outline-text-2" id="text-org2eecb9e">
+<div id="outline-container-orgd811d86" class="outline-2">
+<h2 id="orgd811d86">工具</h2>
+<div class="outline-text-2" id="text-orgd811d86">
 </div>
-<div id="outline-container-org16bf97f" class="outline-3">
-<h3 id="org16bf97f">EAF</h3>
-<div class="outline-text-3" id="text-org16bf97f">
-<p>
-EAF 全称 Emacs Application Framework, 它号称可以在 Emacs 里面运行任何想要的程序。我也算是它的忠实粉丝？为了能跑上 eaf 我甚至连窗口管理器都换了。
-</p>
-
-<div class="org-src-container">
-<pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="nv">eaf</span>
-<span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;A free/libre and open-source extensible framework&quot;</span>
-<span class="w">        </span><span class="s">&quot;that revolutionizes the graphical capabilities of Emacs.&quot;</span><span class="p">)</span>
-<span class="w">  </span><span class="p">(</span><span class="nb">:git</span><span class="w"> </span><span class="nv">emacs-application-framework</span><span class="w"> </span><span class="s">&quot;https://github.com/emacs-eaf/emacs-application-framework&quot;</span>
-<span class="w">        </span><span class="c1">;; sort-tab &quot;https://github.com/manateelazycat/sort-tab&quot;</span>
-<span class="w">        </span><span class="nv">awesome-tab</span><span class="w"> </span><span class="s">&quot;https://github.com/manateelazycat/awesome-tab&quot;</span><span class="p">)</span>
-<span class="w">  </span><span class="p">(</span><span class="nb">:lazy</span><span class="w"> </span><span class="nv">eaf</span><span class="w"> </span><span class="no">nil</span>
-<span class="w">    </span><span class="p">(</span><span class="nb">:require</span><span class="w"> </span><span class="nv">eaf</span><span class="p">))</span>
-<span class="w">  </span><span class="p">(</span><span class="nb">:when-loaded</span>
-<span class="w">    </span><span class="p">(</span><span class="nb">:option</span><span class="w"> </span><span class="nv">eaf-browser-keybinding</span>
-<span class="w">             </span><span class="o">&#39;</span><span class="p">((</span><span class="s">&quot;C--&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;zoom_out&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-=&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;zoom_in&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-0&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;zoom_reset&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-.&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;search_text_forward&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-,&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;search_text_backward&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-n&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;scroll_up&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-p&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;scroll_down&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-f&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;scroll_right&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-b&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;scroll_left&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-y&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;yank_text&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;M-w&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;kill_text&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-w&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;copy_text&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;M-z&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;switch_to_input_mode&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-c C-e&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;atomic_edit&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;M-c&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;caret_toggle_browsing&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-v&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;select_text&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;M-s&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;open_link&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;M-S&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;open_link_new_buffer&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;M-B&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;open_link_background_buffer&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-z&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;undo_action&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;M-z&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;redo_action&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;M-f&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;history_forward&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;M-b&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;history_backward&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-t&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;toggle_password_autofill&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-d&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;save_page_password&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;M-&lt;&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;scroll_to_begin&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;M-&gt;&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;scroll_to_bottom&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;M-p&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;duplicate_page&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;M-t&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;new_blank_page&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;M-d&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;toggle_dark_mode&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;M-l&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;toggle_dark_mode_light_theme&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;M-i&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;immersive_translation&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-M-c&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;copy_code&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-M-l&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;copy_link&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-a&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;select_all_or_input_text&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;M-u&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;clear_focus&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-j&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;open_downloads_setting&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;M-o&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;eval_js&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;M-O&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;eval_js_file&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;&lt;escape&gt;&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;eaf-browser-send-esc-or-exit-fullscreen&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;M-,&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;eaf-send-down-key&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;M-.&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;eaf-send-up-key&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;M-m&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;eaf-send-return-key&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;&lt;f5&gt;&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;refresh_page&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;&lt;f12&gt;&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;open_devtools&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;&lt;C-return&gt;&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;eaf-send-ctrl-return-sequence&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-&lt;left&gt;&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;eaf-send-ctrl-left-sequence&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-&lt;right&gt;&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;eaf-send-ctrl-right-sequence&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-&lt;delete&gt;&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;eaf-send-ctrl-delete-sequence&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;C-&lt;backspace&gt;&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;eaf-send-ctrl-backspace-sequence&quot;</span><span class="p">)</span>
-
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;SPC&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_scroll_up_page&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;J&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_select_left_tab&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;K&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_select_right_tab&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;j&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_scroll_up&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;k&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_scroll_down&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;h&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_scroll_left&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;l&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_scroll_right&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;f&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_open_link&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;F&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_open_link_new_buffer&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;O&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_open_link_new_buffer_other_window&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_open_link_background_buffer&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_caret_at_line&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="c1">;; (&quot;u&quot; . &quot;insert_or_scroll_down_page&quot;)</span>
-<span class="w">               </span><span class="c1">;; (&quot;d&quot; . &quot;insert_or_scroll_up_page&quot;)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;H&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_history_backward&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;L&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_history_forward&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;t&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_new_blank_page&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;T&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_recover_prev_close_page&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;i&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_focus_input&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;I&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_open_downloads_setting&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;r&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_refresh_page&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;g&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_scroll_to_begin&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_close_buffer&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;G&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_scroll_to_bottom&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_zoom_out&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;=&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_zoom_in&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_zoom_reset&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;d&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_save_as_bookmark&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;o&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_open_browser&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_download_youtube_video&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;Y&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_download_youtube_audio&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;p&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_toggle_device&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;P&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_duplicate_page&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_save_as_pdf&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_save_as_single_file&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_save_as_screenshot&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;v&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_view_source&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;e&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_edit_url&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;n&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_export_text&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;N&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_render_by_eww&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_switch_to_reader_mode&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_translate_text&quot;</span><span class="p">)</span>
-<span class="w">               </span><span class="p">(</span><span class="s">&quot;;&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;insert_or_translate_page&quot;</span><span class="p">)</span>
-
-<span class="w">               </span><span class="p">))</span>
-
-<span class="w">    </span><span class="p">(</span><span class="nb">:also-load</span><span class="w"> </span><span class="nv">eaf-browser</span>
-<span class="w">                </span><span class="nv">eaf-pdf-viewer</span>
-<span class="w">                </span><span class="nv">awesome-tab</span><span class="p">)</span>
-
-<span class="w">    </span><span class="p">(</span><span class="nb">:hook</span><span class="w"> </span><span class="p">(</span><span class="nb">lambda</span><span class="w"> </span><span class="p">()</span>
-<span class="w">             </span><span class="p">(</span><span class="nv">modalka-mode</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
-<span class="w">             </span><span class="c1">;; (awesome-tab-mode 1)</span>
-<span class="w">             </span><span class="p">))</span>
-
-<span class="w">    </span><span class="p">(</span><span class="nb">:option</span><span class="w"> </span><span class="nv">awesome-tab-mode</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
-<span class="w">    </span><span class="p">(</span><span class="nb">:option</span><span class="w"> </span><span class="nv">eaf-proxy-host</span><span class="w"> </span><span class="s">&quot;127.0.0.1&quot;</span>
-<span class="w">             </span><span class="nv">eaf-proxy-port</span><span class="w"> </span><span class="mi">7891</span>
-<span class="w">             </span><span class="nv">eaf-proxy-type</span><span class="w"> </span><span class="s">&quot;socks5&quot;</span>
-<span class="w">             </span><span class="nv">eaf-webengine-default-zoom</span><span class="w"> </span><span class="mf">1.25</span>
-<span class="w">             </span><span class="nv">eaf-config-location</span><span class="w"> </span><span class="p">(</span><span class="nv">no-littering-expand-etc-file-name</span><span class="w"> </span><span class="s">&quot;eaf&quot;</span><span class="p">)</span>
-<span class="w">             </span><span class="nv">eaf-browser-default-search-engine</span><span class="w"> </span><span class="s">&quot;duckduckgo&quot;</span>
-<span class="w">             </span><span class="nv">eaf-browser-dark-mode</span><span class="w"> </span><span class="no">nil</span><span class="p">)</span>
-
-
-<span class="w">    </span><span class="p">(</span><span class="nb">:with-map</span><span class="w"> </span><span class="nv">eaf-mode-map*</span>
-<span class="w">      </span><span class="p">(</span><span class="nb">:bind</span><span class="w"> </span>
-<span class="w">       </span><span class="s">&quot;C-q&quot;</span><span class="w"> </span><span class="nv">kill-this-buffer</span>
-<span class="w">       </span><span class="s">&quot;M-r&quot;</span><span class="w"> </span><span class="nv">awesome-tab-forward-tab</span>
-<span class="w">       </span><span class="s">&quot;M-e&quot;</span><span class="w"> </span><span class="nv">awesome-tab-backward-tab</span><span class="p">))</span>
-<span class="w">    </span><span class="p">)</span>
-<span class="w">  </span><span class="p">)</span></pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org80cc158" class="outline-3">
-<h3 id="org80cc158">输入法</h3>
-<div class="outline-text-3" id="text-org80cc158">
+<div id="outline-container-org8af7c7b" class="outline-3">
+<h3 id="org8af7c7b">输入法</h3>
+<div class="outline-text-3" id="text-org8af7c7b">
 <p>
 Emacs 的 RIME 输入法，只要断言做得好，就可以丝滑地在中英文输入法之间切换，且不会影响快捷键的使用。
 </p>
@@ -2332,9 +2187,9 @@ Emacs 的 RIME 输入法，只要断言做得好，就可以丝滑地在中英�
 </div>
 </div>
 </div>
-<div id="outline-container-org128a844" class="outline-3">
-<h3 id="org128a844">文件管理</h3>
-<div class="outline-text-3" id="text-org128a844">
+<div id="outline-container-orgb8f425c" class="outline-3">
+<h3 id="orgb8f425c">文件管理</h3>
+<div class="outline-text-3" id="text-orgb8f425c">
 <p>
 Dirvish 是一个非常优秀的文件管理器，优美的前端，集成 Dired, 它完全能够作为一个独立的基于命令行的文件管理器使用（我确实也是把它作为系统默认的文件管理器使用）
 </p>
@@ -2417,9 +2272,9 @@ Dirvish 是一个非常优秀的文件管理器，优美的前端，集成 Dired
 </div>
 </div>
 </div>
-<div id="outline-container-org6db9ed3" class="outline-3">
-<h3 id="org6db9ed3">中文分词</h3>
-<div class="outline-text-3" id="text-org6db9ed3">
+<div id="outline-container-orgc13f8d5" class="outline-3">
+<h3 id="orgc13f8d5">中文分词</h3>
+<div class="outline-text-3" id="text-orgc13f8d5">
 <p>
 基于中文分词的词语移动。Emacs 内置的 forward-word/backward-word 遇上中文会直接跑到句子结束。用了 jieba 分词就可以实现中文词语的 forward/backward.
 </p>
@@ -2449,9 +2304,9 @@ jieba.el 在每个 Emacs 应用打开都会启动一个 node-js 的服务器，�
 </div>
 </div>
 
-<div id="outline-container-orgb050a0a" class="outline-3">
-<h3 id="orgb050a0a">大纲展示</h3>
-<div class="outline-text-3" id="text-orgb050a0a">
+<div id="outline-container-org10feddd" class="outline-3">
+<h3 id="org10feddd">大纲展示</h3>
+<div class="outline-text-3" id="text-org10feddd">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:git</span><span class="w"> </span><span class="nv">imenu-list</span><span class="w"> </span><span class="s">&quot;https://github.com/bmag/imenu-list&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;A automatically updated buffer with imenu entries.&quot;</span><span class="p">)</span><span class="w">  </span>
@@ -2472,9 +2327,9 @@ jieba.el 在每个 Emacs 应用打开都会启动一个 node-js 的服务器，�
 </div>
 </div>
 
-<div id="outline-container-org794ee75" class="outline-3">
-<h3 id="org794ee75">摘抄库</h3>
-<div class="outline-text-3" id="text-org794ee75">
+<div id="outline-container-org929ac90" class="outline-3">
+<h3 id="org929ac90">摘抄库</h3>
+<div class="outline-text-3" id="text-org929ac90">
 <p>
 自己写的一个摘抄管理，用 sqlite3 数据库。
 </p>
@@ -2489,9 +2344,9 @@ jieba.el 在每个 Emacs 应用打开都会启动一个 node-js 的服务器，�
 </div>
 </div>
 
-<div id="outline-container-org6d7e1a5" class="outline-3">
-<h3 id="org6d7e1a5">记忆工具</h3>
-<div class="outline-text-3" id="text-org6d7e1a5">
+<div id="outline-container-org89fee65" class="outline-3">
+<h3 id="org89fee65">记忆工具</h3>
+<div class="outline-text-3" id="text-org89fee65">
 <p>
 卡片记忆方法，虽然并不是很卡片。
 </p>
@@ -2520,9 +2375,9 @@ jieba.el 在每个 Emacs 应用打开都会启动一个 node-js 的服务器，�
 </div>
 </div>
 
-<div id="outline-container-org258f0ca" class="outline-3">
-<h3 id="org258f0ca">音乐播放器</h3>
-<div class="outline-text-3" id="text-org258f0ca">
+<div id="outline-container-org3054aaf" class="outline-3">
+<h3 id="org3054aaf">音乐播放器</h3>
+<div class="outline-text-3" id="text-org3054aaf">
 <p>
 MPD 的前端，其实还是用的 MPC, 所以它是 MPD 前端的前端。简单但够用。
 </p>
@@ -2554,13 +2409,9 @@ MPD 的前端，其实还是用的 MPC, 所以它是 MPD 前端的前端。简�
 </div>
 </div>
 
-<div id="outline-container-org438741f" class="outline-3">
-<h3 id="org438741f">邮件和订阅</h3>
-<div class="outline-text-3" id="text-org438741f">
-<p>
-详见
-</p>
-
+<div id="outline-container-org72e3475" class="outline-3">
+<h3 id="org72e3475">邮件</h3>
+<div class="outline-text-3" id="text-org72e3475">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="nv">mu4e</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;a tool for dealing with e-mail messages stored in the Maildir-format&quot;</span><span class="p">)</span>
@@ -2587,14 +2438,45 @@ MPD 的前端，其实还是用的 MPC, 所以它是 MPD 前端的前端。简�
 <span class="w">                  </span><span class="p">(</span><span class="nv">mu4e-refile-folder</span><span class="w">   </span><span class="o">.</span><span class="w"> </span><span class="o">,</span><span class="p">(</span><span class="nf">concat</span><span class="w"> </span><span class="nv">dir-name</span><span class="w"> </span><span class="s">&quot;/存档&quot;</span><span class="p">))</span>
 <span class="w">                  </span><span class="p">(</span><span class="nv">mu4e-compose-signature</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;Dare to know.&quot;</span><span class="p">))))</span>
 <span class="w">             </span><span class="nv">mu4e-change-filenames-when-moving</span><span class="w"> </span><span class="no">t</span>
-<span class="w">             </span><span class="nv">mu4e-get-mail-command</span><span class="w"> </span><span class="s">&quot;update-mail&quot;</span><span class="p">)))</span></pre>
+<span class="w">             </span><span class="nv">mu4e-get-mail-command</span><span class="w"> </span><span class="s">&quot;offlineimap&quot;</span>
+<span class="w">             </span><span class="p">)))</span></pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org417f541" class="outline-3">
-<h3 id="org417f541">日志</h3>
-<div class="outline-text-3" id="text-org417f541">
+<div id="outline-container-org70618a4" class="outline-3">
+<h3 id="org70618a4">订阅</h3>
+<div class="outline-text-3" id="text-org70618a4">
+<p>
+订阅使用的是 Elfeed. 
+</p>
+<div class="org-src-container">
+<pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:git</span><span class="w"> </span><span class="nv">elfeed</span><span class="w"> </span><span class="s">&quot;https://github.com/skeeto/elfeed&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;An extensible web feed reader for Emacs&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">:autoload</span><span class="w"> </span><span class="nv">elfeed</span><span class="w"> </span><span class="nv">elfeed-update</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">:option</span><span class="w"> </span><span class="nv">elfeed-feeds</span>
+<span class="w">           </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;https://rsshub.app/sspai/index&quot;</span>
+<span class="w">             </span><span class="s">&quot;https://rsshub.app/nytimes/dual&quot;</span>
+<span class="w">             </span><span class="s">&quot;https://rsshub.app/one&quot;</span>
+<span class="w">             </span><span class="s">&quot;https://rsshub.app/ximalaya/album/51101122&quot;</span>
+<span class="w">             </span><span class="s">&quot;https://rsshub.app/jike/user/8AB7B096-291C-4915-BA52-ECD3C0284F90&quot;</span>
+<span class="w">             </span><span class="s">&quot;https://emacs-china.org/latest.rss&quot;</span>
+<span class="w">             </span><span class="s">&quot;https://rsshub.app/idaily/today&quot;</span>
+<span class="w">             </span><span class="s">&quot;https://rsshub.app/lifetimes&quot;</span>
+<span class="w">             </span><span class="s">&quot;https://rsshub.app/quantamagazine/archive&quot;</span>
+<span class="w">             </span><span class="s">&quot;https://rsshub.app/liulinblog/kuaixun&quot;</span>
+<span class="w">             </span><span class="s">&quot;https://linux.cn/rss.xml&quot;</span>
+<span class="w">             </span><span class="s">&quot;https://xenodium.com/rss.xml&quot;</span>
+<span class="w">             </span><span class="s">&quot;https://planet.emacslife.com/atom.xml&quot;</span><span class="p">))</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">:option</span><span class="w"> </span><span class="nv">elfeed-curl-extra-arguments</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;-x&quot;</span><span class="w"> </span><span class="s">&quot;http://127.0.0.1:7890&quot;</span><span class="p">))</span>
+<span class="w">  </span><span class="p">)</span></pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf46451c" class="outline-3">
+<h3 id="orgf46451c">日志</h3>
+<div class="outline-text-3" id="text-orgf46451c">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:git</span><span class="w"> </span><span class="nv">org-journal</span><span class="w"> </span><span class="s">&quot;https://github.com/bastibe/org-journal&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;A simple personal diary / journal using in Emacs.&quot;</span><span class="p">)</span>
@@ -2637,9 +2519,9 @@ MPD 的前端，其实还是用的 MPC, 所以它是 MPD 前端的前端。简�
 </div>
 </div>
 
-<div id="outline-container-org38eab22" class="outline-3">
-<h3 id="org38eab22">番茄闹钟</h3>
-<div class="outline-text-3" id="text-org38eab22">
+<div id="outline-container-org6b872c9" class="outline-3">
+<h3 id="org6b872c9">番茄闹钟</h3>
+<div class="outline-text-3" id="text-org6b872c9">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:git</span><span class="w"> </span><span class="nv">org-pomodoro</span><span class="w"> </span><span class="s">&quot;https://github.com/marcinkoziej/org-pomodoro&quot;</span>
 <span class="w">             </span><span class="nv">alert</span><span class="w"> </span><span class="s">&quot;https://github.com/jwiegley/alert&quot;</span><span class="p">)</span>
@@ -2656,9 +2538,9 @@ MPD 的前端，其实还是用的 MPC, 所以它是 MPD 前端的前端。简�
 </div>
 </div>
 
-<div id="outline-container-org20c9718" class="outline-3">
-<h3 id="org20c9718">笔记管理</h3>
-<div class="outline-text-3" id="text-org20c9718">
+<div id="outline-container-orgaa2d364" class="outline-3">
+<h3 id="orgaa2d364">笔记管理</h3>
+<div class="outline-text-3" id="text-orgaa2d364">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:git</span><span class="w"> </span><span class="nv">denote</span><span class="w"> </span><span class="s">&quot;https://github.com/protesilaos/denote&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;A simple note-taking tool for Emacs&quot;</span><span class="p">)</span>
@@ -2729,9 +2611,9 @@ MPD 的前端，其实还是用的 MPC, 所以它是 MPD 前端的前端。简�
 </div>
 </div>
 
-<div id="outline-container-orgc82e0a1" class="outline-3">
-<h3 id="orgc82e0a1">博客生成</h3>
-<div class="outline-text-3" id="text-orgc82e0a1">
+<div id="outline-container-orgc2d2a60" class="outline-3">
+<h3 id="orgc2d2a60">博客生成</h3>
+<div class="outline-text-3" id="text-orgc2d2a60">
 <p>
 基于 <a href="https://github.com/bastibe/org-static-blog" target="_blank">org-static-blog</a> 写的自用的 publish 系统。
 </p>
@@ -2866,13 +2748,13 @@ MPD 的前端，其实还是用的 MPC, 所以它是 MPD 前端的前端。简�
 </div>
 </div>
 </div>
-<div id="outline-container-org8918e11" class="outline-3">
-<h3 id="org8918e11">密码管理</h3>
-<div class="outline-text-3" id="text-org8918e11">
+<div id="outline-container-orgff06760" class="outline-3">
+<h3 id="orgff06760">密码管理</h3>
+<div class="outline-text-3" id="text-orgff06760">
 </div>
-<div id="outline-container-org0b022e4" class="outline-4">
-<h4 id="org0b022e4">EasyPG</h4>
-<div class="outline-text-4" id="text-org0b022e4">
+<div id="outline-container-orgad966f7" class="outline-4">
+<h4 id="orgad966f7">EasyPG</h4>
+<div class="outline-text-4" id="text-orgad966f7">
 <p>
 配置 EasyPG, 使用 minibuffer 输入密码。默认给的 GUI 打字有时候会打不上，需要按几下才反应。
 </p>
@@ -2896,9 +2778,9 @@ allow-loopback-pinentry</pre>
 </div>
 </div>
 
-<div id="outline-container-orgc5bda64" class="outline-4">
-<h4 id="orgc5bda64">emacs-id-manager</h4>
-<div class="outline-text-4" id="text-orgc5bda64">
+<div id="outline-container-orgdca6c18" class="outline-4">
+<h4 id="orgdca6c18">emacs-id-manager</h4>
+<div class="outline-text-4" id="text-orgdca6c18">
 <p>
 <code>password-generator.el</code> 这个包的名字有点坑的，URL 里面是 gen <b>a</b> rator, 而包名字却是 gen <b>e</b> rator.
 </p>
@@ -2988,9 +2870,9 @@ id-manager 的文档并不太详细，这里给出它定义的按键映射
 </div>
 </div>
 
-<div id="outline-container-org423b5c7" class="outline-3">
-<h3 id="org423b5c7">书籍管理</h3>
-<div class="outline-text-3" id="text-org423b5c7">
+<div id="outline-container-org5b5150f" class="outline-3">
+<h3 id="org5b5150f">书籍管理</h3>
+<div class="outline-text-3" id="text-org5b5150f">
 <p>
 用 org mode 的 Attachment 来做书籍管理。 <code>:PROPERTIES:</code> 里填上各种信息，然后对应的文件名字归一化。加一个 advice, 使得文档打开使用当前窗口，而不是默认的 find-file-other-window.
 </p>
@@ -3046,13 +2928,13 @@ id-manager 的文档并不太详细，这里给出它定义的按键映射
 </div>
 </div>
 
-<div id="outline-container-org31e570d" class="outline-3">
-<h3 id="org31e570d">文档阅读</h3>
-<div class="outline-text-3" id="text-org31e570d">
+<div id="outline-container-orgc048d63" class="outline-3">
+<h3 id="orgc048d63">文档阅读</h3>
+<div class="outline-text-3" id="text-orgc048d63">
 </div>
-<div id="outline-container-org36eade1" class="outline-4">
-<h4 id="org36eade1">EPUB</h4>
-<div class="outline-text-4" id="text-org36eade1">
+<div id="outline-container-org150252e" class="outline-4">
+<h4 id="org150252e">EPUB</h4>
+<div class="outline-text-4" id="text-org150252e">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:git</span><span class="w"> </span><span class="nv">nov</span><span class="w"> </span><span class="s">&quot;https://depp.brause.cc/nov.el.git&quot;</span>
 <span class="w">             </span><span class="nv">esxml</span><span class="w"> </span><span class="s">&quot;https://github.com/tali713/esxml&quot;</span><span class="p">)</span>
@@ -3063,16 +2945,17 @@ id-manager 的文档并不太详细，这里给出它定义的按键映射
 </div>
 </div>
 
-<div id="outline-container-orgf1af428" class="outline-4">
-<h4 id="orgf1af428">PDF</h4>
-<div class="outline-text-4" id="text-orgf1af428">
+<div id="outline-container-orgd831b86" class="outline-4">
+<h4 id="orgd831b86">PDF</h4>
+<div class="outline-text-4" id="text-orgd831b86">
 <p>
-要执行一遍 <code>/pdf-tools/server/autobuild</code>, 它自动安装 epdfinfo 到指定位置。
+要执行一遍 <code>/pdf-tools/server/autobuild</code>, 它自动安装 epdfinfo 到指定位置。 <code>pdf-view-restore</code> 用来保存文档阅读到的位置，下次打开后自动跳转过去。
 </p>
 
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:git</span><span class="w"> </span><span class="nv">pdf-tools</span><span class="w"> </span><span class="s">&quot;https://github.com/vedang/pdf-tools&quot;</span>
-<span class="w">             </span><span class="nv">tablist</span><span class="w"> </span><span class="s">&quot;https://github.com/politza/tablist&quot;</span><span class="p">)</span>
+<span class="w">             </span><span class="nv">tablist</span><span class="w"> </span><span class="s">&quot;https://github.com/politza/tablist&quot;</span>
+<span class="w">             </span><span class="nv">pdf-view-restore</span><span class="w"> </span><span class="s">&quot;https://github.com/007kevin/pdf-view-restore&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;A replacement of DocView for PDF files.&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:load-path</span><span class="w"> </span><span class="s">&quot;lisp&quot;</span><span class="w"> </span><span class="s">&quot;server&quot;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">:option</span><span class="w"> </span><span class="nv">pdf-info-epdfinfo-program</span><span class="w"> </span><span class="p">(</span><span class="nf">expand-file-name</span>
@@ -3087,7 +2970,10 @@ id-manager 的文档并不太详细，这里给出它定义的按键映射
 
 <span class="w">  </span><span class="p">(</span><span class="nb">:when-loaded</span>
 <span class="w">    </span><span class="p">(</span><span class="nb">:also-load</span><span class="w"> </span><span class="nv">pdf-history</span><span class="w"> </span><span class="nv">pdf-annot</span><span class="w"> </span><span class="nv">pdf-links</span><span class="w"> </span><span class="nv">pdf-outline</span>
-<span class="w">                </span><span class="nv">pdf-misc</span><span class="w"> </span><span class="nv">pdf-isearch</span><span class="w"> </span><span class="nv">pdf-cache</span><span class="p">)</span>
+<span class="w">                </span><span class="nv">pdf-misc</span><span class="w"> </span><span class="nv">pdf-isearch</span><span class="w"> </span><span class="nv">pdf-cache</span>
+<span class="w">                </span><span class="nv">pdf-view-restore</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="nb">:with-hook</span><span class="w"> </span><span class="nv">pdf-view-mode-hook</span>
+<span class="w">      </span><span class="p">(</span><span class="nb">:hook</span><span class="w"> </span><span class="nv">pdf-view-restore-mode</span><span class="p">))</span>
 <span class="w">    </span><span class="p">(</span><span class="nb">:option</span><span class="w"> </span><span class="p">(</span><span class="nv">remove*</span><span class="w"> </span><span class="nv">pdf-tools-enabled-modes</span><span class="p">)</span>
 <span class="w">             </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">pdf-sync-minor-mode</span>
 <span class="w">               </span><span class="nv">pdf-occur-global-minor-mode</span>
@@ -3098,9 +2984,9 @@ id-manager 的文档并不太详细，这里给出它定义的按键映射
 </div>
 </div>
 
-<div id="outline-container-org19f2c1b" class="outline-2">
-<h2 id="org19f2c1b">配置结束</h2>
-<div class="outline-text-2" id="text-org19f2c1b">
+<div id="outline-container-org7c065bc" class="outline-2">
+<h2 id="org7c065bc">配置结束</h2>
+<div class="outline-text-2" id="text-org7c065bc">
 <div class="org-src-container">
 <pre class="emacs-lisp"><span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">startup-echo-area-message</span><span class="w"> </span><span class="p">()</span>
 <span class="w">  </span><span class="p">(</span><span class="nv">emacs-init-time</span><span class="w"> </span><span class="s">&quot;Emacs starts in %.2f sec. Enjoy hacking :)&quot;</span><span class="p">))</span>

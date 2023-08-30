@@ -28,78 +28,78 @@
 
 <ul>
 <li>
-<a href="#orgbc29cde"> 前言 </a></li>
+<a href="#orgbe39641"> 前言 </a></li>
 <li>
-<a href="#org0c7e016"> 配置 bspwm </a>
+<a href="#orge565541"> 配置 bspwm </a>
 <ul>
 <li>
-<a href="#orgcbd8760"> bspwm 的几个概念 </a></li>
+<a href="#org0e70a77"> bspwm 的几个概念 </a></li>
 <li>
-<a href="#org1df8278"> bspc config </a></li>
+<a href="#orgb29c762"> bspc config </a></li>
 <li>
-<a href="#orgfc609cc"> bspc rule </a>
+<a href="#org885b1f3"> bspc rule </a>
 <ul>
 <li>
-<a href="#orgbe00a23"> bspc rule: cmd </a></li>
+<a href="#org208e6df"> bspc rule: cmd </a></li>
 <li>
-<a href="#org764c767"> bspc rule: obj </a></li>
+<a href="#org97f6c89"> bspc rule: obj </a></li>
 <li>
-<a href="#org02fc38d"> bspc rule: arg </a></li>
+<a href="#orgd7cd0fd"> bspc rule: arg </a></li>
 <li>
-<a href="#org34d3d22"> bspc 例子 </a></li>
+<a href="#org11b0d40"> bspc 例子 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org6d4be83"> 程序启动 </a></li>
+<a href="#org72fd836"> 程序启动 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org445a45c"> bspc 的查询与控制 </a>
+<a href="#orgc29d0a1"> bspc 的查询与控制 </a>
 <ul>
 <li>
-<a href="#org7d58f53"> bspc query </a></li>
+<a href="#org682bc1e"> bspc query </a></li>
 <li>
-<a href="#orgc2c0660"> bspc 的控制 </a>
+<a href="#org5e800b0"> bspc 的控制 </a>
 <ul>
 <li>
-<a href="#org3344e44"> bspc node [node-selector] </a></li>
+<a href="#org69f6900"> bspc node [node-selector] </a></li>
 <li>
-<a href="#orgc5151c7"> bspc desktop [node-selector] </a></li>
+<a href="#orgba495af"> bspc desktop [node-selector] </a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<a href="#orgdf0aae7"> sxhkd 配置 </a></li>
+<a href="#orgf0b92ed"> sxhkd 配置 </a></li>
 <li>
-<a href="#orgf8af2bd"> 基础功能 </a>
+<a href="#org06170af"> 基础功能 </a>
 <ul>
 <li>
-<a href="#orgb99f0e9"> 登录界面 </a></li>
+<a href="#org157196d"> 登录界面 </a></li>
 <li>
-<a href="#org1184dc5"> 锁屏界面 </a></li>
+<a href="#org83b12f8"> 锁屏界面 </a></li>
 <li>
-<a href="#org74cc667"> picom 混成器 </a></li>
+<a href="#orge2dbb8f"> picom 混成器 </a></li>
 <li>
-<a href="#org59d9204"> 通知 </a></li>
+<a href="#org808be97"> 通知 </a></li>
 <li>
-<a href="#org4900828"> 程序启动器 </a></li>
+<a href="#org0694fee"> 程序启动器 </a></li>
 <li>
-<a href="#orgf065689"> GUI 认证 </a></li>
+<a href="#org3633718"> GUI 认证 </a></li>
 <li>
-<a href="#org201f8ee"> 状态栏 </a></li>
+<a href="#org1283a03"> 状态栏 </a></li>
 <li>
-<a href="#orgf651134"> 壁纸 </a></li>
+<a href="#orga890eff"> 壁纸 </a></li>
 </ul>
 </li>
 <li>
-<a href="#orgada71cd"> 后记 </a></li>
+<a href="#org2419a99"> 后记 </a></li>
 </ul>
 </nav>
 </div>
 <div id="page">
 <div id="preamble" class="status"><link rel="stylesheet" href="/static/pygments/dracula.css"><h1 class="post-title"> Bspwm 桌面 </h1>
-<div class="post-date">2023-08-26</div>
+<div class="post-date">2023-08-30</div>
 <div class="taglist"><a href="/tag/archlinux"> #archlinux </a>
 <a href="/tag/bspwm"> #bspwm </a>
 <a href="/tag/wm"> #wm </a>
@@ -107,9 +107,9 @@
 </div>
 <div id="content">
 
-<div id="outline-container-orgbc29cde" class="outline-2">
-<h2 id="orgbc29cde">前言</h2>
-<div class="outline-text-2" id="text-orgbc29cde">
+<div id="outline-container-orgbe39641" class="outline-2">
+<h2 id="orgbe39641">前言</h2>
+<div class="outline-text-2" id="text-orgbe39641">
 <p>
 五月中旬的时候处处看到 <a href="https://hyprland.org" target="_blank">Hyprland</a> 的消息，看到人家的桌面各种动画各种丝滑，于是自己整了个来玩玩。折腾了一段时间，最后选择放弃，最主要的原因是 Wayland 在我的电脑上并不稳定，体现在各种软件经常莫名其妙的崩溃，报一些 protocol 的错；且目前比较多的软件对 Wayland 不友好，甚至不支持。我用的浏览器是 Vivaldi, Chromium 系，在 Wayland 下用不了 fcitx5 打字。再者就是分辨率的问题不太好调。目前再观望一段时间（一两年？），等 Wayland 再成熟和普及一些，让子弹飞一会儿。
 </p>
@@ -120,9 +120,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgf930ba2" class="outline-2">
-<h2 id="orgf930ba2">安装 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup></h2>
-<div class="outline-text-2" id="text-orgf930ba2">
+<div id="outline-container-org5e04677" class="outline-2">
+<h2 id="org5e04677">安装 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup></h2>
+<div class="outline-text-2" id="text-org5e04677">
 <p>
 x11 桌面协议是必须的。bspwm 就是一个桌面，简单得不能再简单，因此需要额外两个工具：
 </p>
@@ -132,14 +132,14 @@ x11 桌面协议是必须的。bspwm 就是一个桌面，简单得不能再简�
 </ol>
 
 <div class="org-src-container">
-<pre class="shell">pacmcan<span class="w"> </span>-S<span class="w"> </span>xorg<span class="w"> </span>bspwm<span class="w"> </span>xshbd<span class="w"> </span>picom</pre>
+<pre class="shell">pacmcan<span class="w"> </span>-S<span class="w"> </span>xorg<span class="w"> </span>bspwm<span class="w"> </span>sxhkd<span class="w"> </span>picom</pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org0c7e016" class="outline-2">
-<h2 id="org0c7e016">配置 bspwm</h2>
-<div class="outline-text-2" id="text-org0c7e016">
+<div id="outline-container-orge565541" class="outline-2">
+<h2 id="orge565541">配置 bspwm</h2>
+<div class="outline-text-2" id="text-orge565541">
 <p>
 配置文件在 <code>~/.config/bspwm/bspwmrc</code>. 样板配置在 <code>/usr/share/doc/bspwm/examples/bspwmrc</code>, 复制过来即可。它给了几个函数的使用方法。
 </p>
@@ -174,7 +174,7 @@ bspc<span class="w"> </span>monitor<span class="w"> </span>-d<span class="w"> </
 <span class="c1"># 边框宽度</span>
 bspc<span class="w"> </span>config<span class="w"> </span>border_width<span class="w"> </span><span class="m">3</span>
 <span class="c1"># 窗口到屏幕顶部的填充，给状态栏腾出位置</span>
-bspc<span class="w"> </span>config<span class="w"> </span>top_padding<span class="w"> </span><span class="m">45</span>
+bspc<span class="w"> </span>config<span class="w"> </span>top_padding<span class="w"> </span><span class="m">40</span>
 <span class="c1"># 窗口之间的间距</span>
 bspc<span class="w"> </span>config<span class="w"> </span>window_gap<span class="w"> </span><span class="m">15</span>
 <span class="c1"># 屏幕分割比例</span>
@@ -188,7 +188,7 @@ bspc<span class="w"> </span>config<span class="w"> </span>focused_border_color<s
 bspc<span class="w"> </span>rule<span class="w"> </span>-a<span class="w"> </span>Emacs<span class="w"> </span><span class="nv">state</span><span class="o">=</span>tiled
 bspc<span class="w"> </span>rule<span class="w"> </span>-a<span class="w"> </span>Vivaldi-stable<span class="w"> </span><span class="nv">desktop</span><span class="o">=</span><span class="m">1</span>
 bspc<span class="w"> </span>rule<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;Image Lounge&quot;</span><span class="w"> </span><span class="nv">state</span><span class="o">=</span>floating
-bspc<span class="w"> </span>rule<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;gui.py&quot;</span><span class="w"> </span><span class="nv">state</span><span class="o">=</span>floating
+<span class="c1"># bspc rule -a &quot;gui.py&quot; state=floating</span>
 bspc<span class="w"> </span>rule<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;Emacs:SIMPLEMPC&quot;</span><span class="w"> </span><span class="nv">state</span><span class="o">=</span>floating<span class="w"> </span><span class="nv">center</span><span class="o">=</span>on<span class="w"> </span><span class="nv">rectangle</span><span class="o">=</span><span class="s2">&quot;1080x720+0+0&quot;</span>
 bspc<span class="w"> </span>rule<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;Emacs:IDMANAGER&quot;</span><span class="w"> </span><span class="nv">state</span><span class="o">=</span>floating<span class="w"> </span><span class="nv">center</span><span class="o">=</span>on<span class="w"> </span><span class="nv">rectangle</span><span class="o">=</span><span class="s2">&quot;1080x720+0+0&quot;</span>
 bspc<span class="w"> </span>rule<span class="w"> </span>-a<span class="w"> </span>GoldenDict<span class="w"> </span><span class="nv">state</span><span class="o">=</span>floating<span class="w"> </span><span class="nv">center</span><span class="o">=</span>on<span class="w"> </span><span class="nv">rectangle</span><span class="o">=</span><span class="s2">&quot;600x500+0+0&quot;</span>
@@ -196,7 +196,7 @@ bspc<span class="w"> </span>rule<span class="w"> </span>-a<span class="w"> </spa
 <span class="c1">## Exec Once</span>
 eww<span class="w"> </span>daemon
 
-feh<span class="w"> </span>--bg-fill<span class="w"> </span>--no-fehbg<span class="w"> </span><span class="s2">&quot;/home/</span><span class="nv">$USER</span><span class="s2">/Pictures/output/13.png&quot;</span>
+feh<span class="w"> </span>--bg-fill<span class="w"> </span>--no-fehbg<span class="w"> </span><span class="s2">&quot;/home/</span><span class="nv">$USER</span><span class="s2">/Pictures/output/94.png&quot;</span>
 
 light-locker<span class="w"> </span>--no-late-locking<span class="w"> </span>--lock-on-suspend<span class="w"> </span>--lock-on-lid<span class="w"> </span><span class="p">&amp;</span>
 
@@ -212,16 +212,15 @@ fcitx5<span class="w"> </span>--replace<span class="w"> </span>-d<span class="w"
 
 picom<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="p">&amp;</span>
 
-<span class="c1"># python ~/DustDict/server.py &amp;</span>
-<span class="c1"># goldendict &amp;</span>
+~/.config/bspwm/fullscreen<span class="w"> </span><span class="p">&amp;</span>
 
 eww<span class="w"> </span>open<span class="w"> </span>bar</pre>
 </div>
 </div>
 
-<div id="outline-container-orgcbd8760" class="outline-3">
-<h3 id="orgcbd8760">bspwm 的几个概念</h3>
-<div class="outline-text-3" id="text-orgcbd8760">
+<div id="outline-container-org0e70a77" class="outline-3">
+<h3 id="org0e70a77">bspwm 的几个概念</h3>
+<div class="outline-text-3" id="text-org0e70a77">
 <ul class="org-ul">
 <li>wm 桌面，指的整个 bspwm 桌面对象</li>
 <li>monitor 显示器，索引从 0 开始</li>
@@ -235,18 +234,18 @@ eww<span class="w"> </span>open<span class="w"> </span>bar</pre>
 </div>
 </div>
 
-<div id="outline-container-org1df8278" class="outline-3">
-<h3 id="org1df8278">bspc config</h3>
-<div class="outline-text-3" id="text-org1df8278">
+<div id="outline-container-orgb29c762" class="outline-3">
+<h3 id="orgb29c762">bspc config</h3>
+<div class="outline-text-3" id="text-orgb29c762">
 <p>
 bspc config 用于设置一些变量，所有配置看 man 的 SETTINGS 章节，我只用到了一些基本的，在配置中给了注释。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgfc609cc" class="outline-3">
-<h3 id="orgfc609cc">bspc rule</h3>
-<div class="outline-text-3" id="text-orgfc609cc">
+<div id="outline-container-org885b1f3" class="outline-3">
+<h3 id="org885b1f3">bspc rule</h3>
+<div class="outline-text-3" id="text-org885b1f3">
 <p>
 用来设置窗口规则，主要是特例，比如字典我希望它是浮动在其他窗口之上，不参与平铺。
 </p>
@@ -256,9 +255,9 @@ bspc config 用于设置一些变量，所有配置看 man 的 SETTINGS 章节�
 </p>
 </div>
 
-<div id="outline-container-orgbe00a23" class="outline-4">
-<h4 id="orgbe00a23">bspc rule: cmd</h4>
-<div class="outline-text-4" id="text-orgbe00a23">
+<div id="outline-container-org208e6df" class="outline-4">
+<h4 id="org208e6df">bspc rule: cmd</h4>
+<div class="outline-text-4" id="text-org208e6df">
 <p>
 cmd 主要有三个:
 </p>
@@ -270,9 +269,9 @@ cmd 主要有三个:
 </div>
 </div>
 
-<div id="outline-container-org764c767" class="outline-4">
-<h4 id="org764c767">bspc rule: obj</h4>
-<div class="outline-text-4" id="text-org764c767">
+<div id="outline-container-org97f6c89" class="outline-4">
+<h4 id="org97f6c89">bspc rule: obj</h4>
+<div class="outline-text-4" id="text-org97f6c89">
 <p>
 规则作用的对象，一个字符串，格式是 <code>class:instance:name</code>. 如果没有冒号则是类。它就是对应到应用的窗口。比如我配置里面的。
 </p>
@@ -291,9 +290,9 @@ cmd 主要有三个:
 </div>
 </div>
 
-<div id="outline-container-org02fc38d" class="outline-4">
-<h4 id="org02fc38d">bspc rule: arg</h4>
-<div class="outline-text-4" id="text-org02fc38d">
+<div id="outline-container-orgd7cd0fd" class="outline-4">
+<h4 id="orgd7cd0fd">bspc rule: arg</h4>
+<div class="outline-text-4" id="text-orgd7cd0fd">
 <p>
 对象的参数。主要用到的参数：
 </p>
@@ -304,9 +303,9 @@ cmd 主要有三个:
 </div>
 </div>
 
-<div id="outline-container-org34d3d22" class="outline-4">
-<h4 id="org34d3d22">bspc 例子</h4>
-<div class="outline-text-4" id="text-org34d3d22">
+<div id="outline-container-org11b0d40" class="outline-4">
+<h4 id="org11b0d40">bspc 例子</h4>
+<div class="outline-text-4" id="text-org11b0d40">
 <p>
 首先是 Emacs, 它居然默认不是平铺的，所以需要给它弄一下。
 </p>
@@ -334,9 +333,9 @@ cmd 主要有三个:
 </div>
 </div>
 
-<div id="outline-container-org6d4be83" class="outline-3">
-<h3 id="org6d4be83">程序启动</h3>
-<div class="outline-text-3" id="text-org6d4be83">
+<div id="outline-container-org72fd836" class="outline-3">
+<h3 id="org72fd836">程序启动</h3>
+<div class="outline-text-3" id="text-org72fd836">
 <p>
 因为 bspwmrc 本身就是一个 shell 脚本，需要启动什么程序直接往里面加就行了。
 </p>
@@ -344,13 +343,13 @@ cmd 主要有三个:
 </div>
 </div>
 
-<div id="outline-container-org445a45c" class="outline-2">
-<h2 id="org445a45c">bspc 的查询与控制</h2>
-<div class="outline-text-2" id="text-org445a45c">
+<div id="outline-container-orgc29d0a1" class="outline-2">
+<h2 id="orgc29d0a1">bspc 的查询与控制</h2>
+<div class="outline-text-2" id="text-orgc29d0a1">
 </div>
-<div id="outline-container-org7d58f53" class="outline-3">
-<h3 id="org7d58f53">bspc query</h3>
-<div class="outline-text-3" id="text-org7d58f53">
+<div id="outline-container-org682bc1e" class="outline-3">
+<h3 id="org682bc1e">bspc query</h3>
+<div class="outline-text-3" id="text-org682bc1e">
 <p>
 查询命令可以看 <a href="https://github.com/baskerville/bspwm/wiki/Command-Syntax-Rewrite#query-command" target="_blank">官网文档</a>，给的非常详细。事实上， <code>query</code> 并非如我所想能够查到比如窗口当前的 GUI 信息，它是用于查询<b>存在</b>状态，比如当前桌面有哪些窗口，列出 ID; 或者当前显示器有多少桌面等等。
 </p>
@@ -361,9 +360,9 @@ cmd 主要有三个:
 </div>
 </div>
 
-<div id="outline-container-orgc2c0660" class="outline-3">
-<h3 id="orgc2c0660">bspc 的控制</h3>
-<div class="outline-text-3" id="text-orgc2c0660">
+<div id="outline-container-org5e800b0" class="outline-3">
+<h3 id="org5e800b0">bspc 的控制</h3>
+<div class="outline-text-3" id="text-org5e800b0">
 <p>
 控制很好理解，比如窗口移动、调整大小、设置参数等。
 </p>
@@ -381,9 +380,9 @@ selector 除非特殊需求，不然一般用 name 或 ID 即可。
 </p>
 </div>
 
-<div id="outline-container-org3344e44" class="outline-4">
-<h4 id="org3344e44">bspc node [node-selector]</h4>
-<div class="outline-text-4" id="text-org3344e44">
+<div id="outline-container-org69f6900" class="outline-4">
+<h4 id="org69f6900">bspc node [node-selector]</h4>
+<div class="outline-text-4" id="text-org69f6900">
 <ul class="org-ul">
 <li><code>-f</code> 焦距到窗口</li>
 <li><code>-d desktop</code> 移动窗口到指定桌面</li>
@@ -398,9 +397,9 @@ selector 除非特殊需求，不然一般用 name 或 ID 即可。
 </div>
 </div>
 
-<div id="outline-container-orgc5151c7" class="outline-4">
-<h4 id="orgc5151c7">bspc desktop [node-selector]</h4>
-<div class="outline-text-4" id="text-orgc5151c7">
+<div id="outline-container-orgba495af" class="outline-4">
+<h4 id="orgba495af">bspc desktop [node-selector]</h4>
+<div class="outline-text-4" id="text-orgba495af">
 <ul class="org-ul">
 <li><code>-f</code> 焦距到桌面</li>
 <li><code>-m monirotr</code> 移动窗口到指定显示器</li>
@@ -415,9 +414,9 @@ bspc monitor 我没用到。
 </div>
 </div>
 
-<div id="outline-container-orgdf0aae7" class="outline-2">
-<h2 id="orgdf0aae7">sxhkd 配置</h2>
-<div class="outline-text-2" id="text-orgdf0aae7">
+<div id="outline-container-orgf0b92ed" class="outline-2">
+<h2 id="orgf0b92ed">sxhkd 配置</h2>
+<div class="outline-text-2" id="text-orgf0b92ed">
 <p>
 sxhkd 的配置文件是 <code>~/.config/sxhkd/sxhkdrc</code>, 样板在 <code>/usr/share/doc/bspwm/examples/sxkdrc</code>. 它配置的方式比较灵活，一行表示按键序列，下一行表示执行的操作。同样也是 shell 脚本，需要启动什么直接输入就行。
 </p>
@@ -436,7 +435,7 @@ super<span class="w"> </span>+<span class="w"> </span>Escape
 <span class="w"> </span>pkill<span class="w"> </span>-USR1<span class="w"> </span>-x<span class="w"> </span>sxhkd
 
 <span class="c1"># quit/restart bspwm</span>
-super<span class="w"> </span>+<span class="w"> </span>alt<span class="w"> </span>+<span class="w"> </span><span class="o">{</span>q,r<span class="o">}</span>
+super<span class="w"> </span>+<span class="w"> </span>control<span class="w"> </span>+<span class="w"> </span><span class="o">{</span>q,r<span class="o">}</span>
 <span class="w"> </span>bspc<span class="w"> </span><span class="o">{</span>quit,wm<span class="w"> </span>-r<span class="o">}</span>
 
 <span class="c1"># focus the last desktop</span>
@@ -481,11 +480,6 @@ super<span class="w"> </span>+<span class="w"> </span><span class="nb">shift</sp
 
 super<span class="w"> </span>+<span class="w"> </span>t
 <span class="w"> </span>kitty
-<span class="c1"># super + t</span>
-<span class="w"> </span><span class="c1"># emacs -f eshell</span>
-
-super<span class="w"> </span>+<span class="w"> </span>alt<span class="w"> </span>+<span class="w"> </span>t
-<span class="w"> </span>kitty
 
 super<span class="w"> </span>+<span class="w"> </span>e
 <span class="w"> </span>emacs
@@ -503,7 +497,7 @@ super<span class="w"> </span>+<span class="w"> </span>z
 <span class="w"> </span>light-locker-command<span class="w"> </span>-l
 
 super<span class="w"> </span>+<span class="w"> </span>x
-<span class="w"> </span>bspc-open<span class="w"> </span>instance<span class="w"> </span><span class="s2">&quot;IDMANAGER&quot;</span><span class="w"> </span>emacs<span class="w"> </span>-f<span class="w"> </span>id-manager-startup<span class="w"> </span>--name<span class="w"> </span>IDMANAGER<span class="w"> </span>
+<span class="w"> </span>keepassxc
 
 super<span class="w"> </span>+<span class="w"> </span>d
 <span class="w"> </span>bspc-open<span class="w"> </span>class<span class="w"> </span><span class="s2">&quot;GoldenDict&quot;</span><span class="w"> </span>goldendict
@@ -547,7 +541,7 @@ XF86MonBrightness<span class="o">{</span>Down,Up<span class="o">}</span>
 </p>
 
 
-<figure id="org06d7376">
+<figure id="org8210b10">
 <a href="/assets/4cfb1549b5c0b84bd890ea394d7e8a8e.png" target="_blank" target="_blank"><img src="/assets/4cfb1549b5c0b84bd890ea394d7e8a8e.png" alt="4cfb1549b5c0b84bd890ea394d7e8a8e.png"></a>
 
 </figure>
@@ -562,13 +556,13 @@ And, <code>{}</code> 中的逗号后一定不要加空格（我在设背光灯�
 </div>
 </div>
 
-<div id="outline-container-orgf8af2bd" class="outline-2">
-<h2 id="orgf8af2bd">基础功能</h2>
-<div class="outline-text-2" id="text-orgf8af2bd">
+<div id="outline-container-org06170af" class="outline-2">
+<h2 id="org06170af">基础功能</h2>
+<div class="outline-text-2" id="text-org06170af">
 </div>
-<div id="outline-container-orgb99f0e9" class="outline-3">
-<h3 id="orgb99f0e9">登录界面</h3>
-<div class="outline-text-3" id="text-orgb99f0e9">
+<div id="outline-container-org157196d" class="outline-3">
+<h3 id="org157196d">登录界面</h3>
+<div class="outline-text-3" id="text-org157196d">
 <p>
 登录界面用的 lightdm. lightdm 是一个桌面管理器，它在 tty 后启动，显示登录的 GUI. 认证后再启动 bspwm. 所以单单中一个 lightdm 是不行的，还要装一个 greeter. 我用的是 lightdm-gtk-greeter.
 </p>
@@ -620,9 +614,9 @@ cursor-theme-name=Dracula-cursors</pre>
 </div>
 </div>
 
-<div id="outline-container-org1184dc5" class="outline-3">
-<h3 id="org1184dc5">锁屏界面</h3>
-<div class="outline-text-3" id="text-org1184dc5">
+<div id="outline-container-org83b12f8" class="outline-3">
+<h3 id="org83b12f8">锁屏界面</h3>
+<div class="outline-text-3" id="text-org83b12f8">
 <p>
 使用 lightdm, 就可以很自然地使用 light-locker 作为锁屏。无需额外配置，直接把它开机自启动即可。 light-locker 的启动在写 bspwm 的配置中。
 </p>
@@ -633,9 +627,9 @@ cursor-theme-name=Dracula-cursors</pre>
 </div>
 </div>
 
-<div id="outline-container-org74cc667" class="outline-3">
-<h3 id="org74cc667">picom 混成器</h3>
-<div class="outline-text-3" id="text-org74cc667">
+<div id="outline-container-orge2dbb8f" class="outline-3">
+<h3 id="orge2dbb8f">picom 混成器</h3>
+<div class="outline-text-3" id="text-orge2dbb8f">
 <div class="org-src-container">
 <pre class="shell">pacman<span class="w"> </span>-S<span class="w"> </span>picom</pre>
 </div>
@@ -653,9 +647,9 @@ cursor-theme-name=Dracula-cursors</pre>
 </div>
 </div>
 
-<div id="outline-container-org59d9204" class="outline-3">
-<h3 id="org59d9204">通知</h3>
-<div class="outline-text-3" id="text-org59d9204">
+<div id="outline-container-org808be97" class="outline-3">
+<h3 id="org808be97">通知</h3>
+<div class="outline-text-3" id="text-org808be97">
 <p>
 通知用的 dunst.
 </p>
@@ -677,9 +671,9 @@ cursor-theme-name=Dracula-cursors</pre>
 </div>
 </div>
 
-<div id="outline-container-org4900828" class="outline-3">
-<h3 id="org4900828">程序启动器</h3>
-<div class="outline-text-3" id="text-org4900828">
+<div id="outline-container-org0694fee" class="outline-3">
+<h3 id="org0694fee">程序启动器</h3>
+<div class="outline-text-3" id="text-org0694fee">
 <p>
 程序启动器用的 rofi, 开箱即用，无需配置。
 </p>
@@ -698,9 +692,9 @@ cursor-theme-name=Dracula-cursors</pre>
 </div>
 </div>
 
-<div id="outline-container-orgf065689" class="outline-3">
-<h3 id="orgf065689">GUI 认证</h3>
-<div class="outline-text-3" id="text-orgf065689">
+<div id="outline-container-org3633718" class="outline-3">
+<h3 id="org3633718">GUI 认证</h3>
+<div class="outline-text-3" id="text-org3633718">
 <p>
 在图形应用中，有些操作需要提权，这是就需要 GUI 认证，叫 polkit. 安装一个轻量级的 lxqt-policykit-agent.
 </p>
@@ -717,18 +711,18 @@ cursor-theme-name=Dracula-cursors</pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org201f8ee" class="outline-3">
-<h3 id="org201f8ee">状态栏</h3>
-<div class="outline-text-3" id="text-org201f8ee">
+<div id="outline-container-org1283a03" class="outline-3">
+<h3 id="org1283a03">状态栏</h3>
+<div class="outline-text-3" id="text-org1283a03">
 <p>
 状态栏用的 <a href="https://elkowar.github.io/eww/" target="_blank">EWW</a>, 后面再写一篇文章介绍一下。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgf651134" class="outline-3">
-<h3 id="orgf651134">壁纸</h3>
-<div class="outline-text-3" id="text-orgf651134">
+<div id="outline-container-orga890eff" class="outline-3">
+<h3 id="orga890eff">壁纸</h3>
+<div class="outline-text-3" id="text-orga890eff">
 <p>
 壁纸用 feh.
 </p>
@@ -750,9 +744,9 @@ cursor-theme-name=Dracula-cursors</pre>
 </div>
 </div>
 
-<div id="outline-container-orgada71cd" class="outline-2">
-<h2 id="orgada71cd">后记</h2>
-<div class="outline-text-2" id="text-orgada71cd">
+<div id="outline-container-org2419a99" class="outline-2">
+<h2 id="org2419a99">后记</h2>
+<div class="outline-text-2" id="text-org2419a99">
 <p>
 至此，bspwm 桌面就搭建好了。没有冗余的东西，清清爽爽。目前状态栏的功能主要就是看时间，或许以后纯键盘习惯之后直接就丢掉了，想看时间按一个按键弹出一个 widget （或者 Emacs ？), 过几秒自动消失，届时算是走火入魔了罢。
 </p>
