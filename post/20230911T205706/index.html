@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rime 的终极方案 - 手指骑士的病房</title>
+<link rel="icon" href="/static/favicon.ico"><meta content="text/html;charset=utf-8" http-equiv="Content-Type"><meta content="utf-8" http-equiv="encoding"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<body>
+<div id="header">
+<div class="home-page">
+<a href="/">手指骑士的病房</a></div><div class="nav">
+<div class="nav item">
+<a href="/tags">标签</a>
+</div>
+<div class="nav item">
+<a href="/archive">归档</a>
+</div>
+<div class="nav item">
+<a href="/about">关于</a>
+</div>
+<div class="nav item">
+<a href="/emacs">Emacs</a>
+</div>
+</div>
+</div>
+<div id="main">
+<div id="toc">
+<h2 class="toc-title"> TOC </h2>
+<nav id="TableOfContents">
+
+<ul>
+<li>
+<a href="#org174ac36"> 前言 </a></li>
+<li>
+<a href="#org88a0ada"> 安装 </a></li>
+<li>
+<a href="#orgad75859"> 双拼配置 </a></li>
+<li>
+<a href="#org18765c8"> Emacs Rime </a></li>
+</ul>
+</nav>
+</div>
+<div id="page">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/pygments/dracula.css"><h1 class="post-title"> Rime 的终极方案 </h1>
+<div class="post-date">2023-09-12</div>
+<div class="taglist"><a href="/tag/archlinux"> #archlinux </a>
+<a href="/tag/emacs"> #emacs </a>
+<a href="/tag/rime"> #rime </a>
+</div>
+</div>
+<div id="content">
+
+<div id="outline-container-org174ac36" class="outline-2">
+<h2 id="org174ac36">前言</h2>
+<div class="outline-text-2" id="text-org174ac36">
+<p>
+在独到猫大的新博文《<a href="https://manateelazycat.github.io/2023/04/05/emacs-rime-ice/" target="_blank">Emacs 里用雾凇拼音实现流畅中文输入</a>》后，重新摆弄了一下自己 Rime 输入法，重新优化了配置文件，改源使得所有额外的东西都可以通过 AUR 安装，整合了 Emacs 的 rime 和系统的 rime. 之前 Rime 的配置可以参考《<a href="/post/20221224T074950" target="_blank">Arch Linux 下 RIME 配置小鹤双拼</a>》，过多的内容这里不赘述。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org88a0ada" class="outline-2">
+<h2 id="org88a0ada">安装</h2>
+<div class="outline-text-2" id="text-org88a0ada">
+<div class="org-src-container">
+<pre class="bash">yay<span class="w"> </span>-S<span class="w"> </span>fcitx5-im<span class="w"> </span>librime<span class="w"> </span>fcitx5-rime<span class="w"> </span>rime-ice<span class="w"> </span>fcitx5-pinyin-moegirl-rime<span class="w"> </span>rime-pinyin-zhwiki</pre>
+</div>
+
+<ul class="org-ul">
+<li>前三个是核心部件， <code>fcitx5-im</code> 输入法框架， <code>librime</code> rime 的 core, <code>fcitx5-rime</code> fcitx5 下 rime 的接口，它会安装一些基础的输入法方案</li>
+<li><a href="https://github.com/iDvel/rime-ice" target="_blank">rime-ice</a>, 一套完整的 rime 拼音输入法方案，包括双拼、英语等等。它包含了包括基础词库在内的一系列大词库，比如腾讯</li>
+<li><code>fcitx5-pinyin-moegirl-rime</code> 萌娘百科词库， <code>rime-pinyin-zhwiki</code> 中文维基词库</li>
+</ul>
+
+<p>
+所有这些东西都会安装在 <code>/usr/share/rime-data/</code> 目录下。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgad75859" class="outline-2">
+<h2 id="orgad75859">双拼配置</h2>
+<div class="outline-text-2" id="text-orgad75859">
+<p>
+Rime-ice 它包含了包括双拼在内的一系列方案，且它的方案 ID 和 RIME 官方的双拼 ID 重合了。它内置了许多功能，比如英语输入，我不知道 custom 配置的 patch 对应的键值设为空行不行，拿官方那个简单的版本来改个 ID 就行了。
+</p>
+
+<p>
+命名就叫 <code>dust_flypy.schema.yaml</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="yaml"><span class="c1"># Rime schema</span>
+<span class="c1"># encoding: utf-8</span>
+
+<span class="nt">schema</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">schema_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dust_flypy</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">小鹤双拼</span>
+<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.1&quot;</span>
+<span class="w">  </span><span class="nt">author</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fork by Mr Dust</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">double pinyin layout by 鶴</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rime schema by 佛振 &lt;chen.sst@gmail.com&gt;</span>
+<span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">    </span><span class="no">为了避免于 rime-ice 的小鹤双拼冲突而 fork 的方案</span>
+
+<span class="nt">switches</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ascii_mode</span>
+<span class="w">    </span><span class="nt">reset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">    </span><span class="nt">states</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">中文</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">西文</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">full_shape</span>
+<span class="w">    </span><span class="nt">states</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">半角</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">全角</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">simplification</span>
+<span class="w">    </span><span class="nt">reset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">    </span><span class="nt">states</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">漢字</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">汉字</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ascii_punct</span>
+<span class="w">    </span><span class="nt">states</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">。，</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">．，</span><span class="w"> </span><span class="p p-Indicator">]</span>
+
+<span class="nt">engine</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">processors</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ascii_composer</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">recognizer</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">key_binder</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">speller</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">punctuator</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">selector</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigator</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">express_editor</span>
+<span class="w">  </span><span class="nt">segmentors</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ascii_segmentor</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matcher</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc_segmentor</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">punct_segmentor</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fallback_segmentor</span>
+<span class="w">  </span><span class="nt">translators</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">punct_translator</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reverse_lookup_translator</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">script_translator</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">table_translator@custom_phrase</span>
+<span class="w">  </span><span class="nt">filters</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">simplifier</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uniquifier</span>
+
+<span class="nt">speller</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">alphabet</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zyxwvutsrqponmlkjihgfedcba</span>
+<span class="w">  </span><span class="nt">delimiter</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="nv"> </span><span class="s">&#39;&quot;</span>
+<span class="w">  </span><span class="nt">algebra</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">erase/^xx$/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">derive/^([jqxy])u$/$1v/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">derive/^([aoe])([ioun])$/$1$1$2/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/^([aoe])(ng)?$/$1$1$2/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/iu$/Q/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(.)ei$/$1W/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/uan$/R/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/[uv]e$/T/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/un$/Y/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/^sh/U/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/^ch/I/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/^zh/V/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/uo$/O/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/ie$/P/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/i?ong$/S/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/ing$|uai$/K/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(.)ai$/$1D/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(.)en$/$1F/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(.)eng$/$1G/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/[iu]ang$/L/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(.)ang$/$1H/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/ian$/M/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(.)an$/$1J/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(.)ou$/$1Z/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/[iu]a$/X/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/iao$/N/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(.)ao$/$1C/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/ui$/V/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/in$/B/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xlit/QWRTYUIOPSDFGHJKLZXCVBNM/qwrtyuiopsdfghjklzxcvbnm/</span>
+
+<span class="nt">translator</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">dictionary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dust_flypy</span>
+<span class="w">  </span><span class="nt">prism</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">double_pinyin_flypy</span>
+<span class="w">  </span><span class="nt">preedit_format</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/([bpmfdtnljqx])n/$1iao/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(\w)g/$1eng/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(\w)q/$1iu/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(\w)w/$1ei/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/([dtnlgkhjqxyvuirzcs])r/$1uan/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(\w)t/$1ve/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(\w)y/$1un/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/([dtnlgkhvuirzcs])o/$1uo/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(\w)p/$1ie/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/([jqx])s/$1iong/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(\w)s/$1ong/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(\w)d/$1ai/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(\w)f/$1en/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(\w)h/$1ang/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(\w)j/$1an/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/([gkhvuirzcs])k/$1uai/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(\w)k/$1ing/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/([jqxnl])l/$1iang/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(\w)l/$1uang/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(\w)z/$1ou/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/([gkhvuirzcs])x/$1ua/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(\w)x/$1ia/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(\w)c/$1ao/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/([dtgkhvuirzcs])v/$1ui/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(\w)b/$1in/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/(\w)m/$1ian/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/([aoe])\1(\w)/$1$2/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;xform/(^|[</span><span class="nv"> </span><span class="s">&#39;])v/$1zh/&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;xform/(^|[</span><span class="nv"> </span><span class="s">&#39;])i/$1ch/&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;xform/(^|[</span><span class="nv"> </span><span class="s">&#39;])u/$1sh/&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/([jqxy])v/$1u/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/([nl])v/$1ü/</span>
+
+<span class="nt">reverse_lookup</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">dictionary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stroke</span>
+<span class="w">  </span><span class="nt">enable_completion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">prefix</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;`&quot;</span>
+<span class="w">  </span><span class="nt">suffix</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&#39;&quot;</span>
+<span class="w">  </span><span class="nt">tips</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">〔筆畫〕</span>
+<span class="w">  </span><span class="nt">preedit_format</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xlit/hspnz/一丨丿丶乙/</span>
+<span class="w">  </span><span class="nt">comment_format</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xform/([nl])v/$1ü/</span>
+
+<span class="nt">punctuator</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">import_preset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">  </span><span class="nt">half_shape</span><span class="p">:</span>
+<span class="w">    </span><span class="s">&quot;!&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;！&quot;</span>
+<span class="w">    </span><span class="s">&quot;\&quot;&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">      </span><span class="nt">pair</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;“&quot;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;”&quot;</span>
+<span class="w">    </span><span class="s">&quot;#&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;#&quot;</span>
+<span class="w">    </span><span class="s">&quot;$&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;$&quot;</span>
+<span class="w">    </span><span class="s">&quot;%&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;%&quot;</span>
+<span class="w">    </span><span class="s">&quot;*&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;*&quot;</span>
+<span class="w">    </span><span class="s">&quot;&#39;&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">      </span><span class="nt">pair</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;‘&quot;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;’&quot;</span>
+<span class="w">    </span><span class="s">&quot;,&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;，&quot;</span>
+<span class="w">    </span><span class="s">&quot;-&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;-&quot;</span>
+<span class="w">    </span><span class="s">&quot;.&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;。&quot;</span>
+<span class="w">    </span><span class="s">&quot;/&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;/&quot;</span>
+<span class="w">    </span><span class="s">&quot;\\&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;、&quot;</span>
+<span class="w">    </span><span class="s">&quot;[&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;【&quot;</span>
+<span class="w">    </span><span class="s">&quot;]&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;】&quot;</span>
+<span class="w">    </span><span class="s">&quot;{&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;「&quot;</span>
+<span class="w">    </span><span class="s">&quot;}&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;」&quot;</span>
+<span class="w">    </span><span class="s">&quot;&lt;&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;《&quot;</span>
+<span class="w">    </span><span class="s">&quot;&gt;&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;》&quot;</span>
+<span class="w">    </span><span class="s">&quot;^&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;……&quot;</span>
+<span class="w">    </span><span class="s">&quot;_&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;——&quot;</span>
+<span class="w">    </span><span class="s">&quot;`&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;`&quot;</span>
+<span class="w">    </span><span class="s">&quot;|&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;·&quot;</span>
+<span class="w">    </span><span class="s">&quot;~&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;~&quot;</span>
+
+<span class="nt">key_binder</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">import_preset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+
+<span class="nt">recognizer</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">import_preset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">  </span><span class="nt">patterns</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reverse_lookup</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;`[a-z]*&#39;?$&quot;</span>
+
+<span class="nt">custom_phrase</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">dictionary</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<span class="w">    </span><span class="nt">user_dict</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom_phrase</span>
+<span class="w">    </span><span class="nt">db_class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stabledb</span>
+<span class="w">    </span><span class="nt">enable_completion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">enable_sentence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">initial_quality</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span></pre>
+</div>
+
+<p>
+参照 rime-ice 把默认词库改为 <code>dust_flypy</code>, 对应文件为 <code>dust_flypy.dict.yaml</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="yaml"><span class="c1"># Rime dictionary</span>
+<span class="c1"># encoding: utf-8</span>
+<span class="c1">#</span>
+<span class="c1"># Dependencies:</span>
+<span class="c1"># - fcitx5-pinyin-moegirl-rime</span>
+<span class="c1"># - rime-pinyin-zhwiki</span>
+<span class="c1"># - rime-ice</span>
+
+<span class="nn">---</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dust_flypy</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2023.09.11&quot;</span>
+<span class="nt">sort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">by_weight</span>
+
+<span class="nt">import_tables</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cn_dicts/8105</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cn_dicts/base</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cn_dicts/ext</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cn_dicts/tencent</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cn_dicts/others</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">moegirl</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zhwiki</span>
+<span class="nn">...</span></pre>
+</div>
+
+<p>
+把词典添加进入。我前面提一嘴 rime 词库的安装位置，是因为 rime-ice 的词库是在 <code>/usr/share/rime-data/cn_dicts</code> 下的。
+</p>
+
+<p>
+虽然没什么用，为了完整性，还是单独写一个 <code>dust_flypy.custom.yaml</code>, 把默认模式设为英文：
+</p>
+
+<div class="org-src-container">
+<pre class="yaml"><span class="nt">patch</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">switches</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ascii_mode</span>
+<span class="w">      </span><span class="nt">reset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">      </span><span class="nt">states</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">中文</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">西文</span><span class="w"> </span><span class="p p-Indicator">]</span></pre>
+</div>
+
+<p>
+最后是写 <code>default.custom.yaml</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="yaml"><span class="nt">patch</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">schema_list</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dust_flypy</span>
+<span class="w">  </span><span class="nt">switcher</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">hotkeys</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Control+grave</span>
+<span class="w">    </span><span class="nt">save_options</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">full_shape</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ascii_punct</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">simplification</span>
+
+<span class="w">    </span><span class="c1"># 用半角斜线而不是奇丑无比的全角斜线做分隔符。</span>
+<span class="w">    </span><span class="nt">option_list_separator</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/&quot;</span>
+
+<span class="w">  </span><span class="nt">menu/page_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9</span>
+
+<span class="w">  </span><span class="nt">ascii_composer</span><span class="p">:</span><span class="w"> </span><span class="c1"># 设置caps、shift、control等键的作用</span>
+<span class="w">    </span><span class="nt">good_old_caps_lock</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># 若为true，caps只切换大小写</span>
+<span class="w">    </span><span class="nt">switch_key</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Shift_L</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">commit_code</span>
+<span class="w">      </span><span class="nt">Shift_R</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">noop</span>
+<span class="w">      </span><span class="nt">Control_L</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">noop</span>
+<span class="w">      </span><span class="nt">Control_R</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">noop</span>
+<span class="w">      </span><span class="nt">Caps_Lock</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">commit_code</span>
+<span class="w">      </span><span class="nt">Eisu_toggle</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">clear</span>
+
+<span class="w">  </span><span class="nt">key_binder/bindings</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">accept</span><span class="p">:</span><span class="w"> </span><span class="nv">minus</span><span class="p p-Indicator">,</span><span class="nt"> send</span><span class="p">:</span><span class="w"> </span><span class="nv">Page_Up</span><span class="p p-Indicator">,</span><span class="nt"> when</span><span class="p">:</span><span class="w"> </span><span class="nv">has_menu</span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">accept</span><span class="p">:</span><span class="w"> </span><span class="nv">equal</span><span class="p p-Indicator">,</span><span class="nt"> send</span><span class="p">:</span><span class="w"> </span><span class="nv">Page_Down</span><span class="p p-Indicator">,</span><span class="nt"> when</span><span class="p">:</span><span class="w"> </span><span class="nv">has_menu</span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">accept</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Control+g&quot;</span><span class="p p-Indicator">,</span><span class="nt"> send</span><span class="p">:</span><span class="w"> </span><span class="nv">Escape</span><span class="p p-Indicator">,</span><span class="nt"> when</span><span class="p">:</span><span class="w"> </span><span class="nv">composing</span><span class="p p-Indicator">}</span></pre>
+</div>
+
+<p>
+把 <code>schema_list</code> 改一下即可。
+</p>
+
+<p>
+看猫大把候选词数量设为 9 个，才发现候选词多了更好，毕竟两个手操作，减少翻页概率。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org18765c8" class="outline-2">
+<h2 id="org18765c8">Emacs Rime</h2>
+<div class="outline-text-2" id="text-org18765c8">
+<p>
+Emacs 配置如下：
+</p>
+
+<div class="org-src-container">
+<pre class="emacs-lisp"><span class="p">(</span><span class="nv">setup</span><span class="w"> </span><span class="p">(</span><span class="nb">:git</span><span class="w"> </span><span class="nv">rime</span><span class="w"> </span><span class="s">&quot;https://github.com/DogLooksGood/emacs-rime&quot;</span>
+<span class="w">             </span><span class="nv">posframe</span><span class="w"> </span><span class="s">&quot;https://github.com/tumashu/posframe&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">:doc</span><span class="w"> </span><span class="s">&quot;RIME input method in Emacs&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">:lazy</span><span class="w"> </span><span class="nv">rime</span><span class="w"> </span><span class="p">(</span><span class="nv">toggle-input-method</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="nb">:require</span><span class="w"> </span><span class="nv">rime</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="nb">:option</span><span class="w"> </span><span class="nv">default-input-method</span><span class="w"> </span><span class="s">&quot;rime&quot;</span>
+<span class="w">             </span><span class="nv">rime-user-data-dir</span><span class="w"> </span><span class="s">&quot;~/.local/share/fcitx5/rime/&quot;</span><span class="p">)</span>
+
+<span class="w">    </span><span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">my-predicate-punctuation-after-space-cc-p</span><span class="w"> </span><span class="p">()</span>
+<span class="w">      </span><span class="p">(</span><span class="k">let*</span><span class="w"> </span><span class="p">((</span><span class="nv">start</span><span class="w"> </span><span class="p">(</span><span class="k">save-excursion</span>
+<span class="w">                      </span><span class="p">(</span><span class="nf">re-search-backward</span>
+<span class="w">                       </span><span class="s">&quot;[^\s]&quot;</span>
+<span class="w">                       </span><span class="no">nil</span>
+<span class="w">                       </span><span class="no">t</span><span class="p">)))</span>
+<span class="w">             </span><span class="p">(</span><span class="nf">string</span><span class="w"> </span><span class="p">(</span><span class="nf">buffer-substring</span>
+<span class="w">                      </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="nv">start</span><span class="w"> </span><span class="nv">start</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">                      </span><span class="p">(</span><span class="nf">point</span><span class="p">))))</span>
+<span class="w">        </span><span class="p">(</span><span class="nf">string-match</span><span class="w"> </span><span class="s">&quot;\\cc +&quot;</span><span class="w"> </span><span class="nf">string</span><span class="p">)))</span>
+
+<span class="w">    </span><span class="p">(</span><span class="nb">:option</span><span class="w"> </span><span class="nv">rime-inline-ascii-trigger</span><span class="w"> </span><span class="ss">&#39;shift-l</span>
+<span class="w">             </span><span class="nv">rime-show-preedit</span><span class="w"> </span><span class="ss">&#39;inline</span>
+<span class="w">             </span><span class="nv">rime-show-candidate</span><span class="w"> </span><span class="ss">&#39;posframe</span>
+<span class="w">             </span><span class="nv">rime-deactivate-when-exit-minibuffer</span><span class="w"> </span><span class="no">nil</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="nb">:option</span><span class="w"> </span><span class="nv">rime-disable-predicates</span>
+<span class="w">             </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">rime-predicate-prog-in-code-p</span>
+<span class="w">               </span><span class="nv">my-predicate-punctuation-after-space-cc-p</span>
+<span class="w">               </span><span class="nv">rime-predicate-after-alphabet-char-p</span>
+<span class="w">               </span><span class="nv">rime-predicate-org-in-src-block-p</span><span class="p">))</span>
+
+<span class="w">    </span><span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">dust/rime-finalize</span><span class="w"> </span><span class="p">()</span>
+<span class="w">      </span><span class="p">(</span><span class="nv">add-hook</span><span class="w"> </span><span class="ss">&#39;kill-emacs-hook</span><span class="w"> </span><span class="nf">#&#39;</span><span class="nv">rime-lib-finalize</span><span class="p">)</span>
+<span class="w">      </span><span class="p">(</span><span class="nv">remove-hook</span><span class="w"> </span><span class="ss">&#39;input-method-activate-hook</span><span class="w"> </span><span class="nf">#&#39;</span><span class="nv">dust/rime-finalize</span><span class="p">))</span>
+<span class="w">    </span><span class="p">(</span><span class="nb">:with-hook</span><span class="w"> </span><span class="nv">input-method-activate-hook</span>
+<span class="w">      </span><span class="p">(</span><span class="nb">:hook</span><span class="w"> </span><span class="nv">dust/rime-finalize</span><span class="p">))</span>
+
+<span class="w">    </span><span class="p">(</span><span class="nb">:hook</span><span class="w"> </span><span class="p">(</span><span class="nb">lambda</span><span class="w"> </span><span class="p">()</span>
+<span class="w">             </span><span class="p">(</span><span class="nb">when</span><span class="w"> </span><span class="p">(</span><span class="nv">rime--ascii-mode-p</span><span class="p">)</span>
+<span class="w">               </span><span class="p">(</span><span class="nv">rime--inline-ascii</span><span class="p">)))))</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">:modalka</span><span class="w"> </span><span class="s">&quot;C-&lt;SPC&gt;&quot;</span><span class="w"> </span><span class="nv">setup-lazy-rime</span><span class="p">))</span></pre>
+</div>
+
+<p>
+设置默认输入法，设置 rime 配置路径，调一些断言，使得 emacs-rime 可以在特定场合自动切换中英文，以及在 Emacs 退出的时候关闭 librime.
+</p>
+
+<p>
+这里加了一个 hook, 意思是 emacs-rime 激活的时候，toggle 一下输入法。在系统的配置中，默认的输入法是英文，真正使用时要按一下 <code>shift</code>. emacs-rime 读取配置后自然也是英文状态，也需要切换，为了省事就 hook 一下，激活的时候自动却换。
+</p>
+
+<p>
+之前因为这个，我还以为是 emacs-rime 的 bug, 一直都维护两套 rime 配置，而我用 emacs-rime 更多些。我一直不明白 rime 的同步原理，于是现在相当于把之前养了好久的词库丢掉重新开始。只能说很麻。
+</p>
+
+<p>
+至于 <code>setup</code> 和那些关键字的作用，详见《<a href="/post/20230617T173209" target="_blank">Emacs 配置</a>》，它们就是方便管理配置。
+</p>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="text-footnotes" role="doc-endnotes">
+<ol>
+
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+</div>
+</div>
+</div>
+<div id="footer">
+<center> The End </center></div>
+</body>
+</html>

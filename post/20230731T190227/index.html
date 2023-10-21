@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Arch linux 下 qtile 桌面管理器 - 手指骑士的病房</title>
-<link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<link rel="icon" href="/static/favicon.ico"><meta content="text/html;charset=utf-8" http-equiv="Content-Type"><meta content="utf-8" http-equiv="encoding"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
 <body>
 <div id="header">
 <div class="home-page">
@@ -28,43 +28,43 @@
 
 <ul>
 <li>
-<a href="#org8454c2f"> 前言 </a></li>
+<a href="#orga25b919"> 前言 </a></li>
 <li>
-<a href="#orge3d5665"> 安装 </a></li>
+<a href="#org1eb0ae3"> 安装 </a></li>
 <li>
-<a href="#org0cde3b6"> 配置 </a>
+<a href="#orgfa3d0d4"> 配置 </a>
 <ul>
 <li>
-<a href="#org1d1e32a"> 基本概念 </a></li>
+<a href="#org4ef6692"> 基本概念 </a></li>
 <li>
-<a href="#org64b3227"> 键盘映射 Key </a>
+<a href="#org6f505cb"> 键盘映射 Key </a>
 <ul>
 <li>
-<a href="#org9630257"> 键盘启动程序 </a></li>
+<a href="#org8c61756"> 键盘启动程序 </a></li>
 <li>
-<a href="#org27a7e5c"> 键盘启动自定义程序 </a></li>
+<a href="#org6504465"> 键盘启动自定义程序 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org5001268"> 工作区 Group </a></li>
+<a href="#org87d0bfe"> 工作区 Group </a></li>
 <li>
-<a href="#orgad7c49c"> 布局排版 Layout </a></li>
+<a href="#org4b13eff"> 布局排版 Layout </a></li>
 <li>
-<a href="#orgd0f8954"> 屏幕 Screen </a></li>
+<a href="#orgf539e90"> 屏幕 Screen </a></li>
 <li>
-<a href="#orgad93adb"> 窗口间距 </a></li>
+<a href="#org1ada366"> 窗口间距 </a></li>
 <li>
-<a href="#org2bc6121"> 窗口浮动 </a></li>
+<a href="#orgc056577"> 窗口浮动 </a></li>
 <li>
-<a href="#orgf2d35fc"> 钩子 Hook </a></li>
+<a href="#orgaf3988b"> 钩子 Hook </a></li>
 <li>
-<a href="#org0adb337"> 命令行工具 </a></li>
+<a href="#orgb32f70e"> 命令行工具 </a></li>
 <li>
-<a href="#orgec14f6c"> Debug </a></li>
+<a href="#orgfd896d6"> Debug </a></li>
 </ul>
 </li>
 <li>
-<a href="#orgd430ac5"> 后记 </a></li>
+<a href="#org3e9e96d"> 后记 </a></li>
 </ul>
 </nav>
 </div>
@@ -78,9 +78,9 @@
 </div>
 <div id="content">
 
-<div id="outline-container-org8454c2f" class="outline-2">
-<h2 id="org8454c2f">前言</h2>
-<div class="outline-text-2" id="text-org8454c2f">
+<div id="outline-container-orga25b919" class="outline-2">
+<h2 id="orga25b919">前言</h2>
+<div class="outline-text-2" id="text-orga25b919">
 <p>
 才折腾完 bspwm 不久（参见<a href="/post/20230628T212213" target="_blank">Bspwm 桌面</a> ），因为心心念念的 eaf-brower, 最后还是想换桌面。 <a href="https://github.com/emacs-eaf/emacs-application-framework" target="_blank">EAF</a> 是一个框架，允许在用户在 Emacs 中运行其他程序，比如浏览器等。我超级喜欢这个理念，所以老早就想迁移到 eaf. 但是因为浏览器需要自己调教，要花时间，就一直拖着（虽然时间花在折腾其他东西上）。终于把桌面调好后，发现 bspwm 用不了，这可难受坏了。
 </p>
@@ -91,18 +91,18 @@
 </div>
 </div>
 
-<div id="outline-container-orge3d5665" class="outline-2">
-<h2 id="orge3d5665">安装</h2>
-<div class="outline-text-2" id="text-orge3d5665">
+<div id="outline-container-org1eb0ae3" class="outline-2">
+<h2 id="org1eb0ae3">安装</h2>
+<div class="outline-text-2" id="text-org1eb0ae3">
 <p>
 对于这种轻量级的桌面非常赞，只需要： <code>yay -S qtile</code>, 又因为有 lightdm, 甚至启动项都不用配，直接就能用了。有一些额外包，如果用它提供的 widget 组件时需要。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org0cde3b6" class="outline-2">
-<h2 id="org0cde3b6">配置</h2>
-<div class="outline-text-2" id="text-org0cde3b6">
+<div id="outline-container-orgfa3d0d4" class="outline-2">
+<h2 id="orgfa3d0d4">配置</h2>
+<div class="outline-text-2" id="text-orgfa3d0d4">
 <p>
 相对而言， qtile 的<a href="https://docs.qtile.org/en/latest/" target="_blank">文档</a>写得比较简陋，没有 bspwm 那么详细。
 </p>
@@ -112,24 +112,24 @@
 </p>
 </div>
 
-<div id="outline-container-org1d1e32a" class="outline-3">
-<h3 id="org1d1e32a">基本概念</h3>
-<div class="outline-text-3" id="text-org1d1e32a">
+<div id="outline-container-org4ef6692" class="outline-3">
+<h3 id="org4ef6692">基本概念</h3>
+<div class="outline-text-3" id="text-org4ef6692">
 <p>
 在 qtile 中，显示器是 screen, 工作区是 group, 窗口是 window, 布局是 layout.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org64b3227" class="outline-3">
-<h3 id="org64b3227">键盘映射 Key</h3>
-<div class="outline-text-3" id="text-org64b3227">
+<div id="outline-container-org6f505cb" class="outline-3">
+<h3 id="org6f505cb">键盘映射 Key</h3>
+<div class="outline-text-3" id="text-org6f505cb">
 <p>
 在配置文件中，变量 <code>keys</code> 记录了所有的键盘映射，它是一个列表，元素是键盘对象。样板配置里面给出了例子：
 </p>
 
 <div class="org-src-container">
-<pre class="python"> <span class="n">mod</span> <span class="o">=</span> <span class="s2">&quot;mod4&quot;</span>
+<pre class="python"><span class="n">mod</span> <span class="o">=</span> <span class="s2">&quot;mod4&quot;</span>
 <span class="n">keys</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">Key</span><span class="p">([</span><span class="n">mod</span><span class="p">],</span> <span class="s2">&quot;h&quot;</span><span class="p">,</span> <span class="n">lazy</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">left</span><span class="p">(),</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Move focus to left&quot;</span><span class="p">),</span>
     <span class="n">Key</span><span class="p">([</span><span class="n">mod</span><span class="p">],</span> <span class="s2">&quot;l&quot;</span><span class="p">,</span> <span class="n">lazy</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">right</span><span class="p">(),</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Move focus to right&quot;</span><span class="p">),</span>
@@ -140,7 +140,7 @@
     <span class="n">Key</span><span class="p">([</span><span class="n">mod</span><span class="p">,</span> <span class="s2">&quot;shift&quot;</span><span class="p">],</span> <span class="s2">&quot;l&quot;</span><span class="p">,</span> <span class="n">lazy</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">shuffle_right</span><span class="p">(),</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Move window to the right&quot;</span><span class="p">),</span>
     <span class="n">Key</span><span class="p">([</span><span class="n">mod</span><span class="p">,</span> <span class="s2">&quot;shift&quot;</span><span class="p">],</span> <span class="s2">&quot;j&quot;</span><span class="p">,</span> <span class="n">lazy</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">shuffle_down</span><span class="p">(),</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Move window down&quot;</span><span class="p">),</span>
     <span class="n">Key</span><span class="p">([</span><span class="n">mod</span><span class="p">,</span> <span class="s2">&quot;shift&quot;</span><span class="p">],</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">lazy</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">shuffle_up</span><span class="p">(),</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Move window up&quot;</span><span class="p">),</span>
-<span class="p">]</span> </pre>
+<span class="p">]</span></pre>
 </div>
 
 <p>
@@ -165,14 +165,14 @@
 </p>
 
 <div class="org-src-container">
-<pre class="python"> <span class="kn">from</span> <span class="nn">libqtile.config</span> <span class="kn">import</span> <span class="n">EzKey</span>
+<pre class="python"><span class="kn">from</span> <span class="nn">libqtile.config</span> <span class="kn">import</span> <span class="n">EzKey</span>
 
 <span class="n">EzKey</span><span class="o">.</span><span class="n">modifier_keys</span> <span class="o">=</span> <span class="p">{</span>
    <span class="s1">&#39;W&#39;</span><span class="p">:</span> <span class="s1">&#39;mod4&#39;</span><span class="p">,</span>
    <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="s1">&#39;mod1&#39;</span><span class="p">,</span>
    <span class="s1">&#39;S&#39;</span><span class="p">:</span> <span class="s1">&#39;shift&#39;</span><span class="p">,</span>
    <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="s1">&#39;control&#39;</span><span class="p">,</span>
-<span class="p">}</span> </pre>
+<span class="p">}</span></pre>
 </div>
 
 <p>
@@ -183,24 +183,24 @@
 随后的映射就是：
 </p>
 <div class="org-src-container">
-<pre class="python"> <span class="c1"># Win + Ctrl + h =&gt; Grow window to the left</span>
+<pre class="python"><span class="c1"># Win + Ctrl + h =&gt; Grow window to the left</span>
 
 <span class="n">Key</span><span class="p">([</span><span class="n">mod</span><span class="p">,</span> <span class="s2">&quot;control&quot;</span><span class="p">],</span> <span class="s2">&quot;h&quot;</span><span class="p">,</span> <span class="n">lazy</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">grow_left</span><span class="p">())</span>
 
 <span class="c1"># Emacs-like</span>
-<span class="n">EzKey</span><span class="p">(</span><span class="s2">&quot;W-C-h&quot;</span><span class="p">,</span> <span class="n">lazy</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">grow_left</span><span class="p">())</span> </pre>
+<span class="n">EzKey</span><span class="p">(</span><span class="s2">&quot;W-C-h&quot;</span><span class="p">,</span> <span class="n">lazy</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">grow_left</span><span class="p">())</span></pre>
 </div>
 </div>
 
-<div id="outline-container-org9630257" class="outline-4">
-<h4 id="org9630257">键盘启动程序</h4>
-<div class="outline-text-4" id="text-org9630257">
+<div id="outline-container-org8c61756" class="outline-4">
+<h4 id="org8c61756">键盘启动程序</h4>
+<div class="outline-text-4" id="text-org8c61756">
 <p>
 用 <code>lazy.spawn("cmd")</code> 来启动程序。比如把 Win + t 映射到启动 kitty 终端模拟器：
 </p>
 
 <div class="org-src-container">
-<pre class="python"> <span class="n">EzKey</span><span class="p">(</span><span class="s2">&quot;W-t&quot;</span><span class="p">,</span> <span class="n">lazy</span><span class="o">.</span><span class="n">spawn</span><span class="p">(</span><span class="s2">&quot;kitty&quot;</span><span class="p">))</span> </pre>
+<pre class="python"><span class="n">EzKey</span><span class="p">(</span><span class="s2">&quot;W-t&quot;</span><span class="p">,</span> <span class="n">lazy</span><span class="o">.</span><span class="n">spawn</span><span class="p">(</span><span class="s2">&quot;kitty&quot;</span><span class="p">))</span></pre>
 </div>
 
 <p>
@@ -209,19 +209,19 @@ spawn 里面是命令行的命令，可以加参数。
 </div>
 </div>
 
-<div id="outline-container-org27a7e5c" class="outline-4">
-<h4 id="org27a7e5c">键盘启动自定义程序</h4>
-<div class="outline-text-4" id="text-org27a7e5c">
+<div id="outline-container-org6504465" class="outline-4">
+<h4 id="org6504465">键盘启动自定义程序</h4>
+<div class="outline-text-4" id="text-org6504465">
 <p>
 所有的程序都应该是 LazyCall, 所以不能直接把用户自定义的函数映射到键盘上，需要加一个修饰器：
 </p>
 
 <div class="org-src-container">
-<pre class="python"> <span class="nd">@lazy</span><span class="o">.</span><span class="n">function</span>
+<pre class="python"><span class="nd">@lazy</span><span class="o">.</span><span class="n">function</span>
 <span class="k">def</span> <span class="nf">my_function</span><span class="p">(</span><span class="n">qtile</span><span class="p">):</span>
     <span class="k">pass</span>
 
-<span class="n">Key</span><span class="p">([],</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">my_function</span><span class="p">())</span> </pre>
+<span class="n">Key</span><span class="p">([],</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">my_function</span><span class="p">())</span></pre>
 </div>
 
 <p>
@@ -229,21 +229,21 @@ spawn 里面是命令行的命令，可以加参数。
 </p>
 
 <p>
-具体有哪些函数可用，官方并没给，我是手动试出来的。在 <a href="#orgec14f6c">Debug</a> 那一节我会给出我自己的笨蛋方法。
+具体有哪些函数可用，官方并没给，我是手动试出来的。在 <a href="#orgfd896d6">Debug</a> 那一节我会给出我自己的笨蛋方法。
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org5001268" class="outline-3">
-<h3 id="org5001268">工作区 Group</h3>
-<div class="outline-text-3" id="text-org5001268">
+<div id="outline-container-org87d0bfe" class="outline-3">
+<h3 id="org87d0bfe">工作区 Group</h3>
+<div class="outline-text-3" id="text-org87d0bfe">
 <p>
 定义工作区：
 </p>
 
 <div class="org-src-container">
-<pre class="python"> <span class="n">groups</span> <span class="o">=</span> <span class="p">[</span><span class="n">Group</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)]</span>
+<pre class="python"><span class="n">groups</span> <span class="o">=</span> <span class="p">[</span><span class="n">Group</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">:</span>
     <span class="n">keys</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
         <span class="p">[</span>
@@ -258,7 +258,7 @@ spawn 里面是命令行的命令，可以加参数。
         <span class="n">EzKey</span><span class="p">(</span><span class="s2">&quot;W-0&quot;</span><span class="p">,</span> <span class="n">lazy</span><span class="o">.</span><span class="n">group</span><span class="p">[</span><span class="s2">&quot;10&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">toscreen</span><span class="p">()),</span>
         <span class="n">EzKey</span><span class="p">(</span><span class="s2">&quot;W-S-0&quot;</span><span class="p">,</span> <span class="n">lazy</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">togroup</span><span class="p">(</span><span class="s2">&quot;10&quot;</span><span class="p">,</span> <span class="n">switch_group</span><span class="o">=</span><span class="kc">True</span><span class="p">)),</span>
     <span class="p">]</span>
-<span class="p">)</span> </pre>
+<span class="p">)</span></pre>
 </div>
 
 <p>
@@ -267,15 +267,15 @@ spawn 里面是命令行的命令，可以加参数。
 </div>
 </div>
 
-<div id="outline-container-orgad7c49c" class="outline-3">
-<h3 id="orgad7c49c">布局排版 Layout</h3>
-<div class="outline-text-3" id="text-orgad7c49c">
+<div id="outline-container-org4b13eff" class="outline-3">
+<h3 id="org4b13eff">布局排版 Layout</h3>
+<div class="outline-text-3" id="text-org4b13eff">
 <p>
 Qtile 支持多种布局，可以在文档的 build-in layout 那一节看到相关介绍。我采用的是 Bsp, 即 bspwm 的布局，它根据当前窗口的尺寸长边分割，也就是 bspwm 文档中的 <a href="https://github.com/baskerville/bspwm#longest-side-scheme" target="_blank">longest-side-scheme</a>:
 </p>
 
 
-<figure id="org53ae1fd">
+<figure id="org9c00905">
 <a href="/assets/a996197475f9055c6672052dee7e9c2d.png" target="_blank" target="_blank"><img src="/assets/a996197475f9055c6672052dee7e9c2d.png" alt="a996197475f9055c6672052dee7e9c2d.png"></a>
 
 </figure>
@@ -285,14 +285,14 @@ Qtile 支持多种布局，可以在文档的 build-in layout 那一节看到相
 </p>
 
 <div class="org-src-container">
-<pre class="python"> <span class="n">layouts</span> <span class="o">=</span> <span class="p">[</span>
+<pre class="python"><span class="n">layouts</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">layout</span><span class="o">.</span><span class="n">Bsp</span><span class="p">(</span>
         <span class="n">border_focus</span><span class="o">=</span><span class="n">dracula_purple</span><span class="p">,</span>
         <span class="n">border_width</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
         <span class="n">margin</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
         <span class="n">fair</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="p">),</span>
-<span class="p">]</span> </pre>
+<span class="p">]</span></pre>
 </div>
 
 <p>
@@ -305,15 +305,15 @@ Qtile 支持多种布局，可以在文档的 build-in layout 那一节看到相
 </div>
 </div>
 
-<div id="outline-container-orgd0f8954" class="outline-3">
-<h3 id="orgd0f8954">屏幕 Screen</h3>
-<div class="outline-text-3" id="text-orgd0f8954">
+<div id="outline-container-orgf539e90" class="outline-3">
+<h3 id="orgf539e90">屏幕 Screen</h3>
+<div class="outline-text-3" id="text-orgf539e90">
 <p>
 屏幕同样可以设置多个屏幕对应多种不同的展示内容，目前我是单屏，所以实例化一个 <code>Screen</code> 即可。可以在实例化时传入 <code>wallpaper</code> 参数来设置壁纸，也可以用 wallpaper 的 widget. 我这里直接用 Screen 设置，后续可以调用类方法 <code>set_wallpaper</code> 来方便的切换壁纸。
 </p>
 
 <div class="org-src-container">
-<pre class="python"> <span class="n">screens</span> <span class="o">=</span> <span class="p">[</span>
+<pre class="python"><span class="n">screens</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">Screen</span><span class="p">(</span>
         <span class="n">top</span><span class="o">=</span><span class="n">bar</span><span class="o">.</span><span class="n">Gap</span><span class="p">(</span><span class="mi">45</span><span class="p">),</span>
         <span class="n">bottom</span><span class="o">=</span><span class="n">bar</span><span class="o">.</span><span class="n">Gap</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
@@ -322,20 +322,20 @@ Qtile 支持多种布局，可以在文档的 build-in layout 那一节看到相
         <span class="n">wallpaper</span><span class="o">=</span><span class="s2">&quot;~/Pictures/output/15.png&quot;</span><span class="p">,</span>
         <span class="n">wallpaper_mode</span><span class="o">=</span><span class="s1">&#39;fill&#39;</span>
     <span class="p">)</span>
-<span class="p">]</span> </pre>
+<span class="p">]</span></pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgad93adb" class="outline-3">
-<h3 id="orgad93adb">窗口间距</h3>
-<div class="outline-text-3" id="text-orgad93adb">
+<div id="outline-container-org1ada366" class="outline-3">
+<h3 id="org1ada366">窗口间距</h3>
+<div class="outline-text-3" id="text-org1ada366">
 <p>
-在<a href="#orgad7c49c">布局设置</a>时，传入了 <code>margin</code> 参数，它表示窗口的外边距。如此一来，分割的两个窗口之间的距离其实是两倍的 margin, 因为每个窗口都有一个。以水平分割的两个窗口为例，我更希望的是窗口到屏幕边缘与窗口之间的距离相等，如：
+在<a href="#org4b13eff">布局设置</a>时，传入了 <code>margin</code> 参数，它表示窗口的外边距。如此一来，分割的两个窗口之间的距离其实是两倍的 margin, 因为每个窗口都有一个。以水平分割的两个窗口为例，我更希望的是窗口到屏幕边缘与窗口之间的距离相等，如：
 </p>
 
 
-<figure id="orgb35356e">
+<figure id="orgeabcf10">
 <a href="/assets/08cbaae799b245d1e8abe945325898a4.png" target="_blank" target="_blank"><img src="/assets/08cbaae799b245d1e8abe945325898a4.png" alt="08cbaae799b245d1e8abe945325898a4.png"></a>
 
 </figure>
@@ -346,15 +346,15 @@ Qtile 支持多种布局，可以在文档的 build-in layout 那一节看到相
 </div>
 </div>
 
-<div id="outline-container-org2bc6121" class="outline-3">
-<h3 id="org2bc6121">窗口浮动</h3>
-<div class="outline-text-3" id="text-org2bc6121">
+<div id="outline-container-orgc056577" class="outline-3">
+<h3 id="orgc056577">窗口浮动</h3>
+<div class="outline-text-3" id="text-orgc056577">
 <p>
 如样本配置中的
 </p>
 
 <div class="org-src-container">
-<pre class="python"> <span class="n">floating_layout</span> <span class="o">=</span> <span class="n">layout</span><span class="o">.</span><span class="n">Floating</span><span class="p">(</span>
+<pre class="python"><span class="n">floating_layout</span> <span class="o">=</span> <span class="n">layout</span><span class="o">.</span><span class="n">Floating</span><span class="p">(</span>
     <span class="n">float_rules</span><span class="o">=</span><span class="p">[</span>
         <span class="c1"># Run the utility of &#39;xprop&#39; to see the wm class and name of an X client.</span>
         <span class="o">*</span><span class="n">layout</span><span class="o">.</span><span class="n">Floating</span><span class="o">.</span><span class="n">default_float_rules</span><span class="p">,</span>
@@ -365,7 +365,7 @@ Qtile 支持多种布局，可以在文档的 build-in layout 那一节看到相
         <span class="n">Match</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;branchdialog&quot;</span><span class="p">),</span>  <span class="c1"># gitk</span>
         <span class="n">Match</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;pinentry&quot;</span><span class="p">),</span>  <span class="c1"># GPG key password entry</span>
     <span class="p">]</span>
-<span class="p">)</span> </pre>
+<span class="p">)</span></pre>
 </div>
 
 <p>
@@ -374,20 +374,20 @@ Qtile 支持多种布局，可以在文档的 build-in layout 那一节看到相
 </div>
 </div>
 
-<div id="outline-container-orgf2d35fc" class="outline-3">
-<h3 id="orgf2d35fc">钩子 Hook</h3>
-<div class="outline-text-3" id="text-orgf2d35fc">
+<div id="outline-container-orgaf3988b" class="outline-3">
+<h3 id="orgaf3988b">钩子 Hook</h3>
+<div class="outline-text-3" id="text-orgaf3988b">
 <p>
 Qtile 用 hook 来加入定制。比如一个简单开机自启动的例子：
 </p>
 
 <div class="org-src-container">
-<pre class="python"> <span class="nd">@hook</span><span class="o">.</span><span class="n">subscribe</span><span class="o">.</span><span class="n">startup_once</span>
+<pre class="python"><span class="nd">@hook</span><span class="o">.</span><span class="n">subscribe</span><span class="o">.</span><span class="n">startup_once</span>
 <span class="k">def</span> <span class="nf">auto_start</span><span class="p">():</span>
     <span class="kn">import</span> <span class="nn">subprocess</span>
     <span class="kn">import</span> <span class="nn">os</span>
     <span class="n">script</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s2">&quot;autostart.sh&quot;</span><span class="p">)</span>
-    <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">script</span><span class="p">)</span> </pre>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">script</span><span class="p">)</span></pre>
 </div>
 
 <p>
@@ -399,12 +399,12 @@ Qtile 用 hook 来加入定制。比如一个简单开机自启动的例子：
 </p>
 
 <div class="org-src-container">
-<pre class="python"> <span class="nd">@hook</span><span class="o">.</span><span class="n">subscribe</span><span class="o">.</span><span class="n">client_new</span>
+<pre class="python"><span class="nd">@hook</span><span class="o">.</span><span class="n">subscribe</span><span class="o">.</span><span class="n">client_new</span>
 <span class="k">def</span> <span class="nf">goldendict_rule</span><span class="p">(</span><span class="n">window</span><span class="p">):</span>
     <span class="n">ins</span><span class="p">,</span> <span class="bp">cls</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">get_wm_class</span><span class="p">()</span>
     <span class="k">if</span> <span class="bp">cls</span> <span class="o">==</span> <span class="s2">&quot;GoldenDict&quot;</span><span class="p">:</span>
         <span class="n">window</span><span class="o">.</span><span class="n">floating</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">window</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="mi">660</span><span class="p">,</span> <span class="mi">290</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">0</span> <span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> </pre>
+        <span class="n">window</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="mi">660</span><span class="p">,</span> <span class="mi">290</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">0</span> <span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span></pre>
 </div>
 
 <p>
@@ -415,7 +415,7 @@ Qtile 用 hook 来加入定制。比如一个简单开机自启动的例子：
 再比如，我想给一个工作区就显示一个应用：
 </p>
 <div class="org-src-container">
-<pre class="python"> <span class="nd">@lazy</span><span class="o">.</span><span class="n">function</span>
+<pre class="python"><span class="nd">@lazy</span><span class="o">.</span><span class="n">function</span>
 <span class="k">def</span> <span class="nf">dust_mu4e</span><span class="p">(</span><span class="n">qtile</span><span class="p">):</span>
     <span class="n">g</span> <span class="o">=</span> <span class="n">qtile</span><span class="o">.</span><span class="n">groups</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span>
     <span class="n">g</span><span class="o">.</span><span class="n">cmd_toscreen</span><span class="p">()</span>
@@ -426,7 +426,7 @@ Qtile 用 hook 来加入定制。比如一个简单开机自启动的例子：
     <span class="p">[</span>
         <span class="n">EzKey</span><span class="p">(</span><span class="s2">&quot;W-r&quot;</span><span class="p">,</span> <span class="n">dust_mu4e</span><span class="p">()),</span>
     <span class="p">]</span>
-<span class="p">)</span> </pre>
+<span class="p">)</span></pre>
 </div>
 
 <p>
@@ -439,9 +439,9 @@ Qtile 用 hook 来加入定制。比如一个简单开机自启动的例子：
 </div>
 </div>
 
-<div id="outline-container-org0adb337" class="outline-3">
-<h3 id="org0adb337">命令行工具</h3>
-<div class="outline-text-3" id="text-org0adb337">
+<div id="outline-container-orgb32f70e" class="outline-3">
+<h3 id="orgb32f70e">命令行工具</h3>
+<div class="outline-text-3" id="text-orgb32f70e">
 <p>
 命令行可以用 <code>qtile cmd-obj</code> 来执行操作，完整命令 <code>qtile cmd-obj -o obj -f func</code>.
 </p>
@@ -464,9 +464,9 @@ Qtile 用 hook 来加入定制。比如一个简单开机自启动的例子：
 </div>
 </div>
 
-<div id="outline-container-orgec14f6c" class="outline-3">
-<h3 id="orgec14f6c">Debug</h3>
-<div class="outline-text-3" id="text-orgec14f6c">
+<div id="outline-container-orgfd896d6" class="outline-3">
+<h3 id="orgfd896d6">Debug</h3>
+<div class="outline-text-3" id="text-orgfd896d6">
 <p>
 首先，qtile 会生成一个日志，路径是 <code>~/.local/share/qtile/qtile.log</code>. 路径可以调，但我忘了在那个地方看到的，现在找不到了。
 </p>
@@ -478,9 +478,9 @@ Qtile 用 hook 来加入定制。比如一个简单开机自启动的例子：
 </div>
 </div>
 
-<div id="outline-container-orgd430ac5" class="outline-2">
-<h2 id="orgd430ac5">后记</h2>
-<div class="outline-text-2" id="text-orgd430ac5">
+<div id="outline-container-org3e9e96d" class="outline-2">
+<h2 id="org3e9e96d">后记</h2>
+<div class="outline-text-2" id="text-org3e9e96d">
 <p>
 没太感觉 qtile 用 Python 来写会占用多大资源或者响应多慢，用起来其实还挺 OK, 配置用我最熟悉的 Python 就写一些比较 hack 的方法去和其他比如 eww 模组联动。
 </p>

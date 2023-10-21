@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Arch linux 各种软件的折腾 - 手指骑士的病房</title>
-<link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<link rel="icon" href="/static/favicon.ico"><meta content="text/html;charset=utf-8" http-equiv="Content-Type"><meta content="utf-8" http-equiv="encoding"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
 <body>
 <div id="header">
 <div class="home-page">
@@ -28,23 +28,23 @@
 
 <ul>
 <li>
-<a href="#orgb237982"> 网盘 </a></li>
+<a href="#org0d8d9d4"> 网盘 </a></li>
 <li>
-<a href="#orge1d94e6"> MPV 播放器 </a></li>
+<a href="#org7f1d85a"> MPV 播放器 </a></li>
 <li>
-<a href="#orgab721c6"> 清理不用的软件包 </a></li>
+<a href="#orgb2d5e72"> 清理不用的软件包 </a></li>
 <li>
-<a href="#org8a52bd9"> GIF 录制 Peek + Screen Key </a></li>
+<a href="#org00735ed"> GIF 录制 Peek + Screen Key </a></li>
 <li>
-<a href="#orgf3cadfc"> 安装之前版本的包 </a></li>
+<a href="#orgac6e032"> 安装之前版本的包 </a></li>
 <li>
-<a href="#org2af75c2"> GitHub 升级子模块 </a></li>
+<a href="#org99ab9d9"> GitHub 升级子模块 </a></li>
 <li>
-<a href="#orgd4f2f95"> usbutils </a></li>
+<a href="#org63d44b4"> usbutils </a></li>
 <li>
-<a href="#org7f94ac1"> Arch Linux CN 仓库 </a></li>
+<a href="#org5518aeb"> Arch Linux CN 仓库 </a></li>
 <li>
-<a href="#org0441216"> ThinkPad x270 指纹 </a></li>
+<a href="#org4f57e4d"> ThinkPad x270 指纹 </a></li>
 </ul>
 </nav>
 </div>
@@ -56,9 +56,9 @@
 </div>
 <div id="content">
 
-<div id="outline-container-orgb237982" class="outline-2">
-<h2 id="orgb237982">网盘</h2>
-<div class="outline-text-2" id="text-orgb237982">
+<div id="outline-container-org0d8d9d4" class="outline-2">
+<h2 id="org0d8d9d4">网盘</h2>
+<div class="outline-text-2" id="text-org0d8d9d4">
 <ul class="org-ul">
 <li>百度网盘： <a href="https://github.com/foyoux/aligo" target="_blank">GitHub - foyoux/aligo: 🔥简单、易用、可扩展的阿里云盘 API 接口库🚀</a></li>
 <li>阿里网盘： <a href="https://github.com/foyoux/aligo" target="_blank">GitHub - foyoux/aligo: 🔥简单、易用、可扩展的阿里云盘 API 接口库🚀</a></li>
@@ -66,9 +66,9 @@
 </div>
 </div>
 
-<div id="outline-container-orge1d94e6" class="outline-2">
-<h2 id="orge1d94e6">MPV 播放器</h2>
-<div class="outline-text-2" id="text-orge1d94e6">
+<div id="outline-container-org7f1d85a" class="outline-2">
+<h2 id="org7f1d85a">MPV 播放器</h2>
+<div class="outline-text-2" id="text-org7f1d85a">
 <p>
 简单无比的播放器，它的功能也少。目前需要的是播放列表，不然每次只能播放完一个视频就要手动点开下一个。
 </p>
@@ -85,52 +85,47 @@
 指定加载的文件后缀，不够后面再补充
 </p>
 <div class="org-src-container">
-<pre class="nil"> loadfiles_filetypes=[&quot;mp4&quot;,&quot;m4a&quot;,&quot;mkv&quot;,&quot;avi&quot;,&quot;flv&quot;,&quot;m4v&quot;,&quot;wmv&quot;]
- </pre>
+<pre class="nil">loadfiles_filetypes=[&quot;mp4&quot;,&quot;m4a&quot;,&quot;mkv&quot;,&quot;avi&quot;,&quot;flv&quot;,&quot;m4v&quot;,&quot;wmv&quot;]</pre>
 </div>
 
 <p>
 加载同一目录下的所以文件
 </p>
 <div class="org-src-container">
-<pre class="nil"> loadfiles_on_start=yes
-loadfiles_on_idle_start=yes
- </pre>
+<pre class="nil">loadfiles_on_start=yes
+loadfiles_on_idle_start=yes</pre>
 </div>
 
 <p>
 列表字体大小，根据配置文件里面的说明调整，我只需要改大小就可以。
 </p>
 <div class="org-src-container">
-<pre class="nil"> style_ass_tags={\fs10}
- </pre>
+<pre class="nil">style_ass_tags={\fs10}</pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgab721c6" class="outline-2">
-<h2 id="orgab721c6">清理不用的软件包</h2>
-<div class="outline-text-2" id="text-orgab721c6">
+<div id="outline-container-orgb2d5e72" class="outline-2">
+<h2 id="orgb2d5e72">清理不用的软件包</h2>
+<div class="outline-text-2" id="text-orgb2d5e72">
 <div class="org-src-container">
-<pre class="bash"> sudo<span class="w"> </span>pacman<span class="w"> </span>-Qqdt<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-Rs<span class="w"> </span>-
- </pre>
+<pre class="bash">sudo<span class="w"> </span>pacman<span class="w"> </span>-Qqdt<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>pacman<span class="w"> </span>-Rs<span class="w"> </span>-</pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org8a52bd9" class="outline-2">
-<h2 id="org8a52bd9">GIF 录制 Peek + Screen Key</h2>
-<div class="outline-text-2" id="text-org8a52bd9">
+<div id="outline-container-org00735ed" class="outline-2">
+<h2 id="org00735ed">GIF 录制 Peek + Screen Key</h2>
+<div class="outline-text-2" id="text-org00735ed">
 <div class="org-src-container">
-<pre class="bash"> sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>peek<span class="w"> </span>screenkey
- </pre>
+<pre class="bash">sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>peek<span class="w"> </span>screenkey</pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgf3cadfc" class="outline-2">
-<h2 id="orgf3cadfc">安装之前版本的包</h2>
-<div class="outline-text-2" id="text-orgf3cadfc">
+<div id="outline-container-orgac6e032" class="outline-2">
+<h2 id="orgac6e032">安装之前版本的包</h2>
+<div class="outline-text-2" id="text-orgac6e032">
 <p>
 缓存地址： <code>/var/cache/pacman/pkg</code>
 </p>
@@ -141,19 +136,18 @@ loadfiles_on_idle_start=yes
 </div>
 </div>
 
-<div id="outline-container-org2af75c2" class="outline-2">
-<h2 id="org2af75c2">GitHub 升级子模块</h2>
-<div class="outline-text-2" id="text-org2af75c2">
+<div id="outline-container-org99ab9d9" class="outline-2">
+<h2 id="org99ab9d9">GitHub 升级子模块</h2>
+<div class="outline-text-2" id="text-org99ab9d9">
 <div class="org-src-container">
-<pre class="bash"> git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--remote
- </pre>
+<pre class="bash">git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--remote</pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgd4f2f95" class="outline-2">
-<h2 id="orgd4f2f95">usbutils</h2>
-<div class="outline-text-2" id="text-orgd4f2f95">
+<div id="outline-container-org63d44b4" class="outline-2">
+<h2 id="org63d44b4">usbutils</h2>
+<div class="outline-text-2" id="text-org63d44b4">
 <p>
 问题：
 </p>
@@ -167,26 +161,25 @@ loadfiles_on_idle_start=yes
 </div>
 </div>
 
-<div id="outline-container-org7f94ac1" class="outline-2">
-<h2 id="org7f94ac1">Arch Linux CN 仓库</h2>
-<div class="outline-text-2" id="text-org7f94ac1">
+<div id="outline-container-org5518aeb" class="outline-2">
+<h2 id="org5518aeb">Arch Linux CN 仓库</h2>
+<div class="outline-text-2" id="text-org5518aeb">
 <ul class="org-ul">
 <li><p>
 向 <code>/etc/pacman.conf</code> 添加：
 </p>
 <div class="org-src-container">
-<pre class="nil"> [archlinuxcn]
-Server = https://repo.archlinuxcn.org/$arch
- </pre>
+<pre class="nil">[archlinuxcn]
+Server = https://repo.archlinuxcn.org/$arch</pre>
 </div></li>
 <li><code>sudo pacman -Sy &amp;&amp; sudo pacman -S archlinuxcn-keyring</code></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org0441216" class="outline-2">
-<h2 id="org0441216">ThinkPad x270 指纹</h2>
-<div class="outline-text-2" id="text-org0441216">
+<div id="outline-container-org4f57e4d" class="outline-2">
+<h2 id="org4f57e4d">ThinkPad x270 指纹</h2>
+<div class="outline-text-2" id="text-org4f57e4d">
 <p>
 到 arch 官网上才看到的： <a href="https://wiki.archlinux.org/title/Lenovo_ThinkPad_X270" target="_blank">https://wiki.archlinux.org/title/Lenovo_ThinkPad_X270</a>
 </p>
@@ -196,8 +189,7 @@ Server = https://repo.archlinuxcn.org/$arch
 安装 <code>python-validity</code>:
 </p>
 <div class="org-src-container">
-<pre class="bash"> yay<span class="w"> </span>-S<span class="w"> </span>python-validity
- </pre>
+<pre class="bash">yay<span class="w"> </span>-S<span class="w"> </span>python-validity</pre>
 </div></li>
 <li>启动服务 <code>sudo systemctl start systemctl status python3-validity</code></li>
 <li>录入指纹 <code>fprintd-enroll -f 手指</code>, 手指类型：

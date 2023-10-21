@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Github page 多项目 - 手指骑士的病房</title>
-<link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<link rel="icon" href="/static/favicon.ico"><meta content="text/html;charset=utf-8" http-equiv="Content-Type"><meta content="utf-8" http-equiv="encoding"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
 <body>
 <div id="header">
 <div class="home-page">
@@ -28,25 +28,25 @@
 
 <ul>
 <li>
-<a href="#org32c85c9"> 简介 </a></li>
+<a href="#org77724cd"> 简介 </a></li>
 <li>
-<a href="#org252057b"> 多项目 </a></li>
+<a href="#org96c4ece"> 多项目 </a></li>
 <li>
-<a href="#org322a589"> Hugo 配置 </a>
+<a href="#orgcd90114"> Hugo 配置 </a>
 <ul>
 <li>
-<a href="#org60793a8"> 配置文件里的路径 </a></li>
+<a href="#org620a4e2"> 配置文件里的路径 </a></li>
 <li>
-<a href="#org1696dd3"> 静态资源的路径 </a></li>
+<a href="#org0320321"> 静态资源的路径 </a></li>
 </ul>
 </li>
 <li>
-<a href="#orgb4224ca"> 子域名 </a>
+<a href="#org3433749"> 子域名 </a>
 <ul>
 <li>
-<a href="#orga75d22f"> 子域名中 Hugo 配置文件里的路径 </a></li>
+<a href="#orge55622a"> 子域名中 Hugo 配置文件里的路径 </a></li>
 <li>
-<a href="#org0b3beaa"> 子域名下静态资源的路径 </a></li>
+<a href="#orgeab1b65"> 子域名下静态资源的路径 </a></li>
 </ul>
 </li>
 </ul>
@@ -63,9 +63,9 @@
 </div>
 <div id="content">
 
-<div id="outline-container-org32c85c9" class="outline-2">
-<h2 id="org32c85c9">简介</h2>
-<div class="outline-text-2" id="text-org32c85c9">
+<div id="outline-container-org77724cd" class="outline-2">
+<h2 id="org77724cd">简介</h2>
+<div class="outline-text-2" id="text-org77724cd">
 <p>
 目前博客已经搭建好了，下一步是要搭一个教程的站点。但是一个 GitHub 帐号只能有一个 Page 站点，而博客用到站点模板和教程用的模板是不一样的。博客是文集，因此文章的目录是随机杂乱的，即使是同一个标签，文章之间也不一定会有关联；教程是一系列文章的集合，顺序是固定的，前后具有很强的因果关系，不能打乱。
 </p>
@@ -76,9 +76,9 @@
 </div>
 </div>
 
-<div id="outline-container-org252057b" class="outline-2">
-<h2 id="org252057b">多项目</h2>
-<div class="outline-text-2" id="text-org252057b">
+<div id="outline-container-org96c4ece" class="outline-2">
+<h2 id="org96c4ece">多项目</h2>
+<div class="outline-text-2" id="text-org96c4ece">
 <p>
 以我为例，我的 GitHub 账户名是 <code>fingerknight</code> ，且我已经建了一个 GitHub Page （如果不会建，可以参考我写的《<a href="/post/20221223T144635" target="_blank">基于 Hugo + Org Mode + Github Page 的静态站点搭建</a>》），仓库名是 <code>fingerknight.github.io</code> 。
 </p>
@@ -89,37 +89,35 @@
 </div>
 </div>
 
-<div id="outline-container-org322a589" class="outline-2">
-<h2 id="org322a589">Hugo 配置</h2>
-<div class="outline-text-2" id="text-org322a589">
+<div id="outline-container-orgcd90114" class="outline-2">
+<h2 id="orgcd90114">Hugo 配置</h2>
+<div class="outline-text-2" id="text-orgcd90114">
 <p>
 首先就是把配置文件里面的 <code>baseURL</code> 改成对应的 url ，比如前面说的 <code>https://fingerknight.github.io/math</code> 。<b>要注意的点来了</b>。
 </p>
 </div>
 
-<div id="outline-container-org60793a8" class="outline-3">
-<h3 id="org60793a8">配置文件里的路径</h3>
-<div class="outline-text-3" id="text-org60793a8">
+<div id="outline-container-org620a4e2" class="outline-3">
+<h3 id="org620a4e2">配置文件里的路径</h3>
+<div class="outline-text-3" id="text-org620a4e2">
 <p>
 这个要具体实测，跟主题的制作有关。比如我用的 <a href="https://github.com/dillonzq/LoveIt" target="_blank">LoveIt</a> 主题，在设置站点顶部目录的时候：
 </p>
 <div class="org-src-container">
-<pre class="yaml"> <span class="nt">menus</span><span class="p">:</span>
+<pre class="yaml"><span class="nt">menus</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">main</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">主页</span>
 <span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">标签</span>
-<span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/tags/</span>
- </pre>
+<span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/tags/</span></pre>
 </div>
 <p>
 这里可以直接使用 <code>/</code> 和 <code>/tags</code> ，生成的 HTML 会定位到 <code>https://fingerknight.github.io/math/</code> 和 <code>https://fingerknight.github.io/math/tags</code> 。而主页的头像 logo 就不行，
 </p>
 <div class="org-src-container">
-<pre class="yaml"> <span class="nt">profile</span><span class="p">:</span>
+<pre class="yaml"><span class="nt">profile</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">enable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">avatarURL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/math/img/Logo.jpg</span>
- </pre>
+<span class="w">  </span><span class="nt">avatarURL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/math/img/Logo.jpg</span></pre>
 </div>
 <p>
 必须要加 <code>math</code> 才找得到。
@@ -127,9 +125,9 @@
 </div>
 </div>
 
-<div id="outline-container-org1696dd3" class="outline-3">
-<h3 id="org1696dd3">静态资源的路径</h3>
-<div class="outline-text-3" id="text-org1696dd3">
+<div id="outline-container-org0320321" class="outline-3">
+<h3 id="org0320321">静态资源的路径</h3>
+<div class="outline-text-3" id="text-org0320321">
 <p>
 这个一定要加。原本所有静态资源都放在 <code>static</code> 目录下即可，现在多了一个子目录，因此要把静态资源移动到 <code>static/math</code> 目录下才正常能找到。而 <code>assets</code> 目录下又不用，里面的东西还是放到 <code>assets</code> 就可以。
 </p>
@@ -141,9 +139,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgb4224ca" class="outline-2">
-<h2 id="orgb4224ca">子域名</h2>
-<div class="outline-text-2" id="text-orgb4224ca">
+<div id="outline-container-org3433749" class="outline-2">
+<h2 id="org3433749">子域名</h2>
+<div class="outline-text-2" id="text-org3433749">
 <p>
 子域名的话使用起来其实更简单，不过各个项目之前是子域名的关系，因此没办法在<b>当前子域名内通过简单的相对路径来跳转，只能写全 url</b> ，带来的问题就是不好维护，后续要改的话不简单。
 </p>
@@ -158,18 +156,16 @@
 <li>到域名管理平台去添加记录。比如我想把前面的 <code>math</code> 放到子域名，变成 <code>math.fingerknight.icu</code> 。假设之前的记录是</li>
 </ol>
 <div class="org-src-container">
-<pre class="nil"> # A 记录
+<pre class="nil"># A 记录
 A    @(www)    1.1.1.1(GitHub IP)
 # or CNAME
-CNAME    @(www)    fingerknight.github.io
- </pre>
+CNAME    @(www)    fingerknight.github.io</pre>
 </div>
 <p>
 那么新增一条 <code>CNAME</code> 记录，把他们指向 GitHub Page：
 </p>
 <div class="org-src-container">
-<pre class="nil"> CNAME    math    fingerknight.github.io
- </pre>
+<pre class="nil">CNAME    math    fingerknight.github.io</pre>
 </div>
 
 <ol class="org-ol">
@@ -177,18 +173,18 @@ CNAME    @(www)    fingerknight.github.io
 </ol>
 </div>
 
-<div id="outline-container-orga75d22f" class="outline-3">
-<h3 id="orga75d22f">子域名中 Hugo 配置文件里的路径</h3>
-<div class="outline-text-3" id="text-orga75d22f">
+<div id="outline-container-orge55622a" class="outline-3">
+<h3 id="orge55622a">子域名中 Hugo 配置文件里的路径</h3>
+<div class="outline-text-3" id="text-orge55622a">
 <p>
 配置文件里面的 <code>baseURL</code> 改成对应的 url ， <code>https://math.fingerknight.icu/</code> 。其余的则都是<b>以根目录开始</b>。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org0b3beaa" class="outline-3">
-<h3 id="org0b3beaa">子域名下静态资源的路径</h3>
-<div class="outline-text-3" id="text-org0b3beaa">
+<div id="outline-container-orgeab1b65" class="outline-3">
+<h3 id="orgeab1b65">子域名下静态资源的路径</h3>
+<div class="outline-text-3" id="text-orgeab1b65">
 <p>
 <b>所有静态资源都以根目录出发</b>，因为已经是不同的域名、不同的地址了。
 </p>

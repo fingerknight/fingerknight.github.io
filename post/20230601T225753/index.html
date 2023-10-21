@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Eww 的配置 - 手指骑士的病房</title>
-<link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<link rel="icon" href="/static/favicon.ico"><meta content="text/html;charset=utf-8" http-equiv="Content-Type"><meta content="utf-8" http-equiv="encoding"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
 <body>
 <div id="header">
 <div class="home-page">
@@ -28,56 +28,56 @@
 
 <ul>
 <li>
-<a href="#orgdbf53c7"> 前言 </a></li>
+<a href="#orgcc16f42"> 前言 </a></li>
 <li>
-<a href="#org3454293"> 基础 </a></li>
+<a href="#org3e93f75"> 基础 </a></li>
 <li>
-<a href="#orgf5ca569"> 语法 </a>
+<a href="#org47ea318"> 语法 </a>
 <ul>
 <li>
-<a href="#orgfdc1a04"> 变量定义 </a>
+<a href="#org6251b62"> 变量定义 </a>
 <ul>
 <li>
-<a href="#org45fd4a8"> defvar </a></li>
+<a href="#orge4a9a1e"> defvar </a></li>
 <li>
-<a href="#org2293baa"> deflisten </a></li>
+<a href="#org9f50d35"> deflisten </a></li>
 <li>
-<a href="#org5afd3b3"> defpoll </a></li>
+<a href="#org8b9c057"> defpoll </a></li>
 </ul>
 </li>
 <li>
-<a href="#orgadd128c"> 变量使用 </a></li>
+<a href="#org0133666"> 变量使用 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org8f1213f"> 窗口 </a></li>
+<a href="#org0e5bb58"> 窗口 </a></li>
 <li>
-<a href="#orgc04d26b"> 状态栏窗口框架 </a></li>
+<a href="#orgc43f0ef"> 状态栏窗口框架 </a></li>
 <li>
-<a href="#org7e082e0"> 功能模块 </a>
+<a href="#org99ae775"> 功能模块 </a>
 <ul>
 <li>
-<a href="#org7408f52"> 工作区展示 </a></li>
+<a href="#org1535f35"> 工作区展示 </a></li>
 <li>
-<a href="#org1282275"> 日期时间 </a></li>
+<a href="#org6b8633c"> 日期时间 </a></li>
 <li>
-<a href="#org33b1234"> 系统状态 </a></li>
+<a href="#org7fadc2d"> 系统状态 </a></li>
 <li>
-<a href="#orgfeead77"> 后台音乐 MPD </a></li>
+<a href="#org51abfbc"> 后台音乐 MPD </a></li>
 <li>
-<a href="#org6c13d0b"> 电池状态 </a></li>
+<a href="#org81050e5"> 电池状态 </a></li>
 <li>
-<a href="#org7f3c1ac"> 灯光 </a></li>
+<a href="#orgb8ea0ee"> 灯光 </a></li>
 <li>
-<a href="#org5065faa"> 音量模块 </a></li>
+<a href="#org0422efc"> 音量模块 </a></li>
 <li>
-<a href="#org3838d28"> 用户模块 </a></li>
+<a href="#org89e533e"> 用户模块 </a></li>
 </ul>
 </li>
 <li>
-<a href="#orgdca5873"> 样式 </a></li>
+<a href="#org3636e8f"> 样式 </a></li>
 <li>
-<a href="#org05f8688"> 后记 </a></li>
+<a href="#org23b9382"> 后记 </a></li>
 </ul>
 </nav>
 </div>
@@ -92,9 +92,9 @@
 </div>
 <div id="content">
 
-<div id="outline-container-orgdbf53c7" class="outline-2">
-<h2 id="orgdbf53c7">前言</h2>
-<div class="outline-text-2" id="text-orgdbf53c7">
+<div id="outline-container-orgcc16f42" class="outline-2">
+<h2 id="orgcc16f42">前言</h2>
+<div class="outline-text-2" id="text-orgcc16f42">
 <p>
 <a href="https://elkowar.github.io/eww/eww.html" target="_blank">EWW</a> 是一个窗口模块工具，可以用于生成各式各样的 widget. 不单单是状态栏，就是可以当作一个类 gtk 等的工具使用，自己做一些窗口样式。
 </p>
@@ -117,35 +117,35 @@
 </div>
 </div>
 
-<div id="outline-container-org3454293" class="outline-2">
-<h2 id="org3454293">基础</h2>
-<div class="outline-text-2" id="text-org3454293">
+<div id="outline-container-org3e93f75" class="outline-2">
+<h2 id="org3e93f75">基础</h2>
+<div class="outline-text-2" id="text-org3e93f75">
 <p>
 配置目录在 <code>~/.config/eww</code>, 配置文件是 <code>/.config/eww/eww.yuck</code>, 样式文件是 <code>/.config/eww/eww.scss</code>.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgf5ca569" class="outline-2">
-<h2 id="orgf5ca569">语法</h2>
-<div class="outline-text-2" id="text-orgf5ca569">
+<div id="outline-container-org47ea318" class="outline-2">
+<h2 id="org47ea318">语法</h2>
+<div class="outline-text-2" id="text-org47ea318">
 <p>
 eww 用的是是一套自己的语言 yuck. 本质上就是一种 lisp 的方言，写 Emacs Lisp 写多了就没什么压力。
 </p>
 </div>
 
 
-<div id="outline-container-orgfdc1a04" class="outline-3">
-<h3 id="orgfdc1a04">变量定义</h3>
-<div class="outline-text-3" id="text-orgfdc1a04">
+<div id="outline-container-org6251b62" class="outline-3">
+<h3 id="org6251b62">变量定义</h3>
+<div class="outline-text-3" id="text-org6251b62">
 <p>
 Yuck 中有三种变量定义： <code>defvar</code>, <code>deflisten</code> 和 <code>defpoll</code>.
 </p>
 </div>
 
-<div id="outline-container-org45fd4a8" class="outline-4">
-<h4 id="org45fd4a8">defvar</h4>
-<div class="outline-text-4" id="text-org45fd4a8">
+<div id="outline-container-orge4a9a1e" class="outline-4">
+<h4 id="orge4a9a1e">defvar</h4>
+<div class="outline-text-4" id="text-orge4a9a1e">
 <p>
 语法： <code>(defvar name "string")</code>
 </p>
@@ -156,9 +156,9 @@ Yuck 中有三种变量定义： <code>defvar</code>, <code>deflisten</code> 和
 </div>
 </div>
 
-<div id="outline-container-org2293baa" class="outline-4">
-<h4 id="org2293baa">deflisten</h4>
-<div class="outline-text-4" id="text-org2293baa">
+<div id="outline-container-org9f50d35" class="outline-4">
+<h4 id="org9f50d35">deflisten</h4>
+<div class="outline-text-4" id="text-org9f50d35">
 <p>
 语法： <code>(deflisten name [:initial "string"] "cmd")</code>
 </p>
@@ -181,9 +181,9 @@ Yuck 中有三种变量定义： <code>defvar</code>, <code>deflisten</code> 和
 </div>
 </div>
 
-<div id="outline-container-org5afd3b3" class="outline-4">
-<h4 id="org5afd3b3">defpoll</h4>
-<div class="outline-text-4" id="text-org5afd3b3">
+<div id="outline-container-org8b9c057" class="outline-4">
+<h4 id="org8b9c057">defpoll</h4>
+<div class="outline-text-4" id="text-org8b9c057">
 <p>
 语法： <code>(defpoll name :interval "5s" [:initial "string" :run-while var] "cmd")</code>
 </p>
@@ -203,9 +203,9 @@ Yuck 中有三种变量定义： <code>defvar</code>, <code>deflisten</code> 和
 </div>
 </div>
 
-<div id="outline-container-orgadd128c" class="outline-3">
-<h3 id="orgadd128c">变量使用</h3>
-<div class="outline-text-3" id="text-orgadd128c">
+<div id="outline-container-org0133666" class="outline-3">
+<h3 id="org0133666">变量使用</h3>
+<div class="outline-text-3" id="text-org0133666">
 <p>
 eww 的变量使用是定义在一对花括号 <code>{}</code> 中.
 </p>
@@ -230,9 +230,9 @@ eww 的变量使用是定义在一对花括号 <code>{}</code> 中.
 </div>
 </div>
 
-<div id="outline-container-org8f1213f" class="outline-2">
-<h2 id="org8f1213f">窗口</h2>
-<div class="outline-text-2" id="text-org8f1213f">
+<div id="outline-container-org0e5bb58" class="outline-2">
+<h2 id="org0e5bb58">窗口</h2>
+<div class="outline-text-2" id="text-org0e5bb58">
 <p>
 ewww 的最大的定义是定义一个窗口 (window), 然后往下一层是模块 (widget). 一个窗口可以容纳多个模块，而一个模块同样可以嵌套和包含多个子模块。
 </p>
@@ -243,9 +243,9 @@ ewww 的最大的定义是定义一个窗口 (window), 然后往下一层是模�
 </div>
 </div>
 
-<div id="outline-container-orgc04d26b" class="outline-2">
-<h2 id="orgc04d26b">状态栏窗口框架</h2>
-<div class="outline-text-2" id="text-orgc04d26b">
+<div id="outline-container-orgc43f0ef" class="outline-2">
+<h2 id="orgc43f0ef">状态栏窗口框架</h2>
+<div class="outline-text-2" id="text-orgc43f0ef">
 <p>
 整个框架的编写参考了大佬的配置：<a href="https://github.com/end-4/dots-hyprland" target="_blank">GitHub - end-4/dots-hyprland: unleashing the power of eww!</a>。它是 Wall of Fame 的编号一，一上来就看到他的作品<sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup> 。
 </p>
@@ -264,6 +264,7 @@ ewww 的最大的定义是定义一个窗口 (window), 然后往下一层是模�
 <span class="p">(</span><span class="nv">include</span><span class="w"> </span><span class="s">&quot;./modules/user.yuck&quot;</span><span class="p">)</span>
 <span class="p">(</span><span class="nv">include</span><span class="w"> </span><span class="s">&quot;./modules/datetime.yuck&quot;</span><span class="p">)</span>
 <span class="p">(</span><span class="nv">include</span><span class="w"> </span><span class="s">&quot;./modules/pomodoro.yuck&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">include</span><span class="w"> </span><span class="s">&quot;./modules/net.yuck&quot;</span><span class="p">)</span>
 
 <span class="p">(</span><span class="nv">defwidget</span><span class="w"> </span><span class="nv">left</span><span class="w"> </span><span class="nv">[]</span>
 <span class="w">  </span><span class="p">(</span><span class="nv">box</span>
@@ -284,9 +285,9 @@ ewww 的最大的定义是定义一个窗口 (window), 然后往下一层是模�
 <span class="w">    </span><span class="ss">:onscroll</span><span class="w"> </span><span class="s">&quot;scripts/mid {}&quot;</span>
 
 <span class="w">    </span><span class="p">(</span><span class="nv">overlay</span>
-<span class="w">     </span><span class="ss">:width</span><span class="w"> </span><span class="mi">150</span>
+<span class="w">     </span><span class="ss">:width</span><span class="w"> </span><span class="mi">200</span>
 <span class="w">     </span><span class="p">(</span><span class="nv">datetime</span><span class="p">)</span>
-<span class="w">     </span><span class="c1">;; (pomodoro)</span>
+<span class="w">     </span><span class="p">(</span><span class="nv">pomodoro</span><span class="p">)</span>
 <span class="w">     </span><span class="p">))))</span>
 
 <span class="p">(</span><span class="nv">defwidget</span><span class="w"> </span><span class="nv">right</span><span class="w"> </span><span class="nv">[]</span>
@@ -295,6 +296,7 @@ ewww 的最大的定义是定义一个窗口 (window), 然后往下一层是模�
 <span class="w">   </span><span class="ss">:halign</span><span class="w"> </span><span class="s">&quot;end&quot;</span>
 <span class="w">   </span><span class="ss">:spacing</span><span class="w"> </span><span class="mi">10</span>
 <span class="w">   </span><span class="ss">:class</span><span class="w"> </span><span class="s">&quot;container&quot;</span>
+<span class="w">   </span><span class="p">(</span><span class="nv">net-icon</span><span class="p">)</span>
 <span class="w">   </span><span class="p">(</span><span class="nv">system</span><span class="p">)</span>
 <span class="w">   </span><span class="p">(</span><span class="nv">music</span><span class="p">)</span>
 <span class="w">   </span><span class="c1">;; (weather)</span>
@@ -345,37 +347,45 @@ ewww 的最大的定义是定义一个窗口 (window), 然后往下一层是模�
 </div>
 </div>
 
-<div id="outline-container-org7e082e0" class="outline-2">
-<h2 id="org7e082e0">功能模块</h2>
-<div class="outline-text-2" id="text-org7e082e0">
+<div id="outline-container-org99ae775" class="outline-2">
+<h2 id="org99ae775">功能模块</h2>
+<div class="outline-text-2" id="text-org99ae775">
 </div>
-<div id="outline-container-org7408f52" class="outline-3">
-<h3 id="org7408f52">工作区展示</h3>
-<div class="outline-text-3" id="text-org7408f52">
+<div id="outline-container-org1535f35" class="outline-3">
+<h3 id="org1535f35">工作区展示</h3>
+<div class="outline-text-3" id="text-org1535f35">
 <p>
 配置工作区 <code>modules/workspace.yuck</code>
 </p>
 <div class="org-src-container">
-<pre class="lisp"><span class="p">(</span><span class="nb">defvar</span><span class="w"> </span><span class="nv">workspace-numbers</span><span class="w"> </span><span class="s">&quot;[1,2,3,4,5,6,7,8,9,10]&quot;</span><span class="p">)</span>
-<span class="p">(</span><span class="nb">defvar</span><span class="w"> </span><span class="nv">workspace-numbers-icons</span><span class="w"> </span><span class="ss">&#39;[</span><span class="s">&quot; &quot;</span><span class="o">,</span><span class="s">&quot; &quot;</span><span class="o">,</span><span class="s">&quot; &quot;</span><span class="o">,</span><span class="s">&quot; &quot;</span><span class="o">,</span><span class="s">&quot; &quot;</span><span class="o">,</span><span class="s">&quot; &quot;</span><span class="o">,</span><span class="s">&quot; &quot;</span><span class="o">,</span><span class="s">&quot; &quot;</span><span class="o">,</span><span class="s">&quot; &quot;</span><span class="o">,</span><span class="s">&quot; &quot;</span><span class="nv">]</span><span class="o">&#39;</span><span class="p">)</span>
-<span class="p">(</span><span class="nb">defvar</span><span class="w"> </span><span class="nv">actived-workspace</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">)</span>
-<span class="p">(</span><span class="nb">defvar</span><span class="w"> </span><span class="nv">non-empty-workspaces</span><span class="w"> </span><span class="s">&quot;[false, false, false, false, false, false, false, false ,false, false]&quot;</span><span class="p">)</span>
+<pre class="lisp"><span class="p">(</span><span class="nv">include</span><span class="w"> </span><span class="s">&quot;./modules/mail.yuck&quot;</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nb">defvar</span><span class="w"> </span><span class="nv">workspace-numbers</span><span class="w"> </span><span class="s">&quot;[1,2,3,4,5,6,7,8,9]&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">defvar</span><span class="w"> </span><span class="nv">workspace-numbers-icons</span><span class="w"> </span><span class="ss">&#39;[</span><span class="s">&quot; &quot;</span><span class="o">,</span><span class="s">&quot; &quot;</span><span class="o">,</span><span class="s">&quot; &quot;</span><span class="o">,</span><span class="s">&quot; &quot;</span><span class="o">,</span><span class="s">&quot; &quot;</span><span class="o">,</span><span class="s">&quot; &quot;</span><span class="o">,</span><span class="s">&quot; &quot;</span><span class="o">,</span><span class="s">&quot; &quot;</span><span class="o">,</span><span class="s">&quot; &quot;</span><span class="nv">]</span><span class="o">&#39;</span><span class="p">)</span>
+<span class="c1">;; (defvar actived-workspace &quot;1&quot;)󰾱 󱥂 󰍥 </span>
+<span class="p">(</span><span class="nv">deflisten</span><span class="w"> </span><span class="nv">actived-workspace</span>
+<span class="w">  </span><span class="ss">:initial</span><span class="w"> </span><span class="s">&quot;1&quot;</span>
+<span class="w">  </span><span class="s">&quot;scripts/workspace&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">deflisten</span><span class="w"> </span><span class="nv">non-empty-workspaces</span>
+<span class="w">  </span><span class="ss">:initial</span><span class="w"> </span><span class="s">&quot;[false, false, false, false, false, false, false, false ,false, false]&quot;</span>
+<span class="w">  </span><span class="s">&quot;scripts/workspace ne&quot;</span><span class="p">)</span>
 
 <span class="p">(</span><span class="nv">defwidget</span><span class="w"> </span><span class="nv">workspace</span><span class="w"> </span><span class="nv">[]</span>
 <span class="w">  </span><span class="p">(</span><span class="nv">box</span>
 <span class="w">   </span><span class="ss">:spacing</span><span class="w"> </span><span class="mi">4</span>
 <span class="w">   </span><span class="ss">:class</span><span class="w"> </span><span class="s">&quot;workspace&quot;</span>
-<span class="w">   </span><span class="p">(</span><span class="nv">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">workspace-numbers</span>
+<span class="w">   </span><span class="p">(</span><span class="nv">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">workspace-numbers</span><span class="w">        </span>
 <span class="w">     </span><span class="p">(</span><span class="nv">eventbox</span>
-<span class="w">      </span><span class="ss">:class</span><span class="w"> </span><span class="s">&quot;item${actived-workspace == i ? &#39;-active&#39; : non-empty-workspaces[i - 1] ? &#39;-window&#39; : &#39;&#39;}&quot;</span>
+<span class="w">      </span><span class="ss">:class</span><span class="w"> </span><span class="s">&quot;item${actived-workspace == i ? &#39; active&#39; : non-empty-workspaces[i - 1] ? &#39; window&#39; : &#39;&#39;}&quot;</span>
 <span class="w">      </span><span class="ss">:cursor</span><span class="w"> </span><span class="nv">{actived-workspace</span><span class="w"> </span><span class="nv">==</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">?</span><span class="w"> </span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="s">&quot;pointer&quot;</span><span class="nv">}</span>
-<span class="w">      </span><span class="ss">:onclick</span><span class="w"> </span><span class="nv">{actived-workspace</span><span class="w"> </span><span class="nv">==</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">?</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="s">&quot;qtile cmd-obj -o group ${i} -f toscreen &amp;&quot;</span><span class="nv">}</span>
+<span class="w">      </span><span class="ss">:onclick</span><span class="w"> </span><span class="s">&quot;scripts/workspace mt ${i}&quot;</span>
 <span class="w">      </span><span class="ss">:width</span><span class="w"> </span><span class="mi">28</span>
 <span class="w">      </span><span class="ss">:height</span><span class="w"> </span><span class="mi">24</span>
 <span class="w">      </span><span class="ss">:style</span><span class="w"> </span><span class="s">&quot;border-radius: 5px&quot;</span>
 <span class="w">      </span><span class="nv">{workspace-numbers-icons[i</span><span class="w"> </span><span class="nb">-</span><span class="w"> </span><span class="nv">1]}</span>
 <span class="w">      </span><span class="p">)</span>
 <span class="w">     </span><span class="p">)</span>
+<span class="w">   </span><span class="p">(</span><span class="nv">mail</span><span class="p">)</span>
 <span class="w">   </span><span class="p">)</span>
 <span class="w">  </span><span class="p">)</span></pre>
 </div>
@@ -423,15 +433,15 @@ ewww 的最大的定义是定义一个窗口 (window), 然后往下一层是模�
 </p>
 
 
-<figure id="org37eb7dc">
+<figure id="orgca02468">
 <a href="/assets/849da2197cf9c6363dd521e44da23908.png" target="_blank" target="_blank"><img src="/assets/849da2197cf9c6363dd521e44da23908.png" alt="849da2197cf9c6363dd521e44da23908.png"></a>
 
 </figure>
 </div>
 </div>
-<div id="outline-container-org1282275" class="outline-3">
-<h3 id="org1282275">日期时间</h3>
-<div class="outline-text-3" id="text-org1282275">
+<div id="outline-container-org6b8633c" class="outline-3">
+<h3 id="org6b8633c">日期时间</h3>
+<div class="outline-text-3" id="text-org6b8633c">
 <p>
 日期时间配置 <code>~/.config/eww/modules/datetime.yuck</code>
 </p>
@@ -499,16 +509,16 @@ ewww 的最大的定义是定义一个窗口 (window), 然后往下一层是模�
 </p>
 
 
-<figure id="org85f0ae1">
+<figure id="orged2ce90">
 <a href="/assets/5421b66258c807c011f35d7739bbad2b.gif" target="_blank" target="_blank"><img src="/assets/5421b66258c807c011f35d7739bbad2b.gif" alt="5421b66258c807c011f35d7739bbad2b.gif"></a>
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org33b1234" class="outline-3">
-<h3 id="org33b1234">系统状态</h3>
-<div class="outline-text-3" id="text-org33b1234">
+<div id="outline-container-org7fadc2d" class="outline-3">
+<h3 id="org7fadc2d">系统状态</h3>
+<div class="outline-text-3" id="text-org7fadc2d">
 <p>
 系统状态配置 <code>~/.config/eww/modules/system.yuck</code>
 </p>
@@ -575,7 +585,7 @@ ewww 的最大的定义是定义一个窗口 (window), 然后往下一层是模�
 <span class="w">     </span><span class="ss">:cursor</span><span class="w"> </span><span class="s">&quot;pointer&quot;</span>
 <span class="w">     </span><span class="ss">:width</span><span class="w"> </span><span class="s">&quot;24&quot;</span>
 <span class="w">     </span><span class="ss">:height</span><span class="w"> </span><span class="s">&quot;24&quot;</span>
-<span class="w">     </span><span class="ss">:onclick</span><span class="w"> </span><span class="s">&quot;kitty btop &amp;&quot;</span>
+<span class="w">     </span><span class="ss">:onclick</span><span class="w"> </span><span class="s">&quot;alacritty -e btop &amp;&quot;</span>
 <span class="w">     </span><span class="s">&quot; &quot;</span>
 <span class="w">     </span><span class="p">)</span>
 <span class="w">    </span><span class="p">)</span>
@@ -604,16 +614,16 @@ eww 提供了 <code>EWW_TEMPS</code> 变量，它记录了各种详细的温度�
 </p>
 
 
-<figure id="orge863542">
+<figure id="org3301bf4">
 <a href="/assets/80a65a27102eb79b0e2eb23d0f51dab8.gif" target="_blank" target="_blank"><img src="/assets/80a65a27102eb79b0e2eb23d0f51dab8.gif" alt="80a65a27102eb79b0e2eb23d0f51dab8.gif"></a>
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-orgfeead77" class="outline-3">
-<h3 id="orgfeead77">后台音乐 MPD</h3>
-<div class="outline-text-3" id="text-orgfeead77">
+<div id="outline-container-org51abfbc" class="outline-3">
+<h3 id="org51abfbc">后台音乐 MPD</h3>
+<div class="outline-text-3" id="text-org51abfbc">
 <p>
 安装和配置详见《<a href="/post/20230602T005833" target="_blank">Arch Linux 下 MPD 的配置</a>》。
 </p>
@@ -624,7 +634,7 @@ MPD 模块配置 <code>~/.config/eww/modules/music.yuck</code>.
 
 <div class="org-src-container">
 <pre class="lisp"><span class="p">(</span><span class="nv">deflisten</span><span class="w"> </span><span class="nv">music-status</span>
-<span class="w">  </span><span class="ss">:initial</span><span class="w"> </span><span class="ss">&#39;{</span><span class="s">&quot;title&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="o">,</span><span class="s">&quot;artist&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="o">,</span><span class="s">&quot;state&quot;</span><span class="err">:</span><span class="w"> </span><span class="nv">0}</span><span class="o">&#39;</span>
+<span class="w">  </span><span class="ss">:initial</span><span class="w"> </span><span class="ss">&#39;{</span><span class="s">&quot;title&quot;</span><span class="err">:</span><span class="s">&quot;&quot;</span><span class="o">,</span><span class="s">&quot;artist&quot;</span><span class="err">:</span><span class="s">&quot;&quot;</span><span class="o">,</span><span class="s">&quot;state&quot;</span><span class="ss">:0}</span><span class="o">&#39;</span>
 <span class="w">  </span><span class="s">&quot;scripts/music status&quot;</span><span class="p">)</span>
 
 <span class="p">(</span><span class="nb">defvar</span><span class="w"> </span><span class="nv">show-music</span><span class="w"> </span><span class="s">&quot;false&quot;</span><span class="p">)</span>
@@ -650,7 +660,7 @@ MPD 模块配置 <code>~/.config/eww/modules/music.yuck</code>.
 <span class="w">       </span><span class="ss">:text</span><span class="w"> </span><span class="ss">&#39;${music-status[</span><span class="s">&quot;artist&quot;</span><span class="nv">]}</span><span class="w"> </span><span class="nb">-</span><span class="w"> </span><span class="nv">${music-status[</span><span class="s">&quot;title&quot;</span><span class="nv">]}</span><span class="o">&#39;</span><span class="p">)</span>
 <span class="w">      </span><span class="p">)</span>
 <span class="w">     </span><span class="p">(</span><span class="nv">label</span>
-<span class="w">      </span><span class="ss">:class</span><span class="w"> </span><span class="nv">{music-status[</span><span class="s">&quot;state&quot;</span><span class="nv">]</span><span class="w"> </span><span class="nv">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">?</span><span class="w"> </span><span class="s">&quot;icon-playing&quot;</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="s">&quot;icon&quot;</span><span class="nv">}</span>
+<span class="w">      </span><span class="ss">:class</span><span class="w"> </span><span class="nv">{music-status[</span><span class="s">&quot;state&quot;</span><span class="nv">]</span><span class="w"> </span><span class="nv">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">?</span><span class="w"> </span><span class="s">&quot;icon playing&quot;</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="s">&quot;icon&quot;</span><span class="nv">}</span>
 <span class="w">      </span><span class="ss">:text</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">))</span>
 <span class="w">    </span><span class="p">)</span>
 <span class="w">   </span><span class="p">)</span>
@@ -662,60 +672,48 @@ MPD 模块配置 <code>~/.config/eww/modules/music.yuck</code>.
 </p>
 
 <div class="org-src-container">
-<pre class="python"><span class="ch">#!/usr/bin/python</span>
-<span class="kn">from</span> <span class="nn">mpd.asyncio</span> <span class="kn">import</span> <span class="n">MPDClient</span>
-<span class="kn">import</span> <span class="nn">orjson</span>
-<span class="kn">import</span> <span class="nn">asyncio</span>
+<pre class="python"><span class="ch">#!/usr/bin/elvish</span>
 
-<span class="k">async</span> <span class="k">def</span> <span class="nf">get_status</span><span class="p">(</span><span class="n">client</span><span class="p">:</span> <span class="n">MPDClient</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-    <span class="n">ret</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;artist&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">use</span> <span class="nb">str</span>
+
+<span class="n">fn</span> <span class="n">mpc_status</span> <span class="p">{</span>
+
+  <span class="n">var</span> <span class="n">output</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">&amp;</span><span class="n">title</span><span class="o">=</span><span class="p">(</span><span class="n">mpc</span><span class="o">-</span><span class="n">unix</span> <span class="o">-</span><span class="n">f</span> <span class="s1">&#39;%title%&#39;</span> <span class="n">current</span><span class="p">)</span>
+    <span class="o">&amp;</span><span class="n">artist</span><span class="o">=</span><span class="p">(</span><span class="n">mpc</span><span class="o">-</span><span class="n">unix</span> <span class="o">-</span><span class="n">f</span> <span class="s1">&#39;</span><span class="si">%a</span><span class="s1">rtist%&#39;</span> <span class="n">current</span><span class="p">)</span>
+    <span class="o">&amp;</span><span class="n">state</span><span class="o">=</span><span class="p">(</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nb">str</span><span class="p">:</span><span class="n">contains</span> <span class="p">(</span><span class="n">mpc</span><span class="o">-</span><span class="n">unix</span> <span class="o">|</span> <span class="n">slurp</span><span class="p">)</span> <span class="s2">&quot;[playing]&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">put</span> <span class="p">(</span><span class="n">num</span> <span class="mi">1</span><span class="p">)</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">put</span> <span class="p">(</span><span class="n">num</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="p">})</span>
+  <span class="p">]</span>
+  <span class="n">put</span> <span class="err">$</span><span class="n">output</span> <span class="o">|</span> <span class="n">to</span><span class="o">-</span><span class="n">json</span>
+
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">eq</span> <span class="err">$</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="s2">&quot;status&quot;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">while</span> <span class="err">$</span><span class="n">true</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="n">pgrep</span> <span class="o">-</span><span class="n">x</span> <span class="n">mpd</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
+      <span class="n">mpc_status</span>
+      <span class="n">mpc</span><span class="o">-</span><span class="n">unix</span> <span class="n">idleloop</span> <span class="o">|</span> <span class="n">each</span> <span class="p">{</span>
+        <span class="o">|</span><span class="n">line</span><span class="o">|</span>
+        <span class="n">mpc_status</span>
+      <span class="p">}</span>
+    <span class="p">}</span> <span class="n">catch</span> <span class="n">e</span> <span class="p">{</span>
+      <span class="n">sleep</span> <span class="mi">1</span>
     <span class="p">}</span>
-    <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">status</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">status</span><span class="p">[</span><span class="s2">&quot;state&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;play&quot;</span><span class="p">:</span>
-        <span class="n">ret</span><span class="p">[</span><span class="s2">&quot;state&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">cur</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">currentsong</span><span class="p">()</span>
-    <span class="n">ret</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">ret</span><span class="p">[</span><span class="s2">&quot;artist&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;artist&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">ret</span>
-
-
-<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">client</span> <span class="o">=</span> <span class="n">MPDClient</span><span class="p">()</span>
-
-    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;/tmp/mpd-socket&quot;</span><span class="p">)</span>
-
-            <span class="k">if</span> <span class="n">func</span> <span class="o">==</span> <span class="s2">&quot;status&quot;</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="n">orjson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="k">await</span> <span class="n">get_status</span><span class="p">(</span><span class="n">client</span><span class="p">))</span><span class="o">.</span><span class="n">decode</span><span class="p">(),</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-                <span class="k">async</span> <span class="k">for</span> <span class="n">subsystem</span> <span class="ow">in</span> <span class="n">client</span><span class="o">.</span><span class="n">idle</span><span class="p">():</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="n">orjson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="k">await</span> <span class="n">get_status</span><span class="p">(</span><span class="n">client</span><span class="p">))</span><span class="o">.</span><span class="n">decode</span><span class="p">(),</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-            <span class="k">elif</span> <span class="n">func</span> <span class="o">==</span> <span class="s2">&quot;up&quot;</span><span class="p">:</span>
-                <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">previous</span><span class="p">()</span>
-                <span class="k">break</span>
-
-            <span class="k">elif</span> <span class="n">func</span> <span class="o">==</span> <span class="s2">&quot;down&quot;</span><span class="p">:</span>
-                <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
-                <span class="k">break</span>
-
-            <span class="k">elif</span> <span class="n">func</span> <span class="o">==</span> <span class="s2">&quot;toggle&quot;</span><span class="p">:</span>
-                <span class="n">st</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">status</span><span class="p">()</span>
-                <span class="k">if</span> <span class="n">st</span><span class="p">[</span><span class="s2">&quot;state&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;play&quot;</span><span class="p">:</span>
-                    <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">pause</span><span class="p">()</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
-                <span class="k">break</span>
-        <span class="k">except</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;waiting&quot;</span><span class="p">)</span>
-            <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="kn">import</span> <span class="nn">sys</span>
-    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span></pre>
+  <span class="p">}</span>
+<span class="p">}</span> <span class="k">elif</span> <span class="p">(</span><span class="n">eq</span> <span class="err">$</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="s2">&quot;gui&quot;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">emacs</span> <span class="o">-</span><span class="n">f</span> <span class="n">simple</span><span class="o">-</span><span class="n">mpc</span> <span class="o">--</span><span class="n">name</span> <span class="n">SIMPLEMPC</span> <span class="o">&amp;</span>
+<span class="p">}</span> <span class="k">elif</span> <span class="p">(</span><span class="n">eq</span> <span class="err">$</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="s2">&quot;up&quot;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">mpc</span><span class="o">-</span><span class="n">unix</span> <span class="n">prev</span> <span class="o">-</span><span class="n">q</span>
+<span class="p">}</span> <span class="k">elif</span> <span class="p">(</span><span class="n">eq</span> <span class="err">$</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="s2">&quot;down&quot;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">mpc</span><span class="o">-</span><span class="n">unix</span> <span class="nb">next</span> <span class="o">-</span><span class="n">q</span>
+<span class="p">}</span> <span class="k">elif</span> <span class="p">(</span><span class="n">eq</span> <span class="err">$</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="s2">&quot;toggle&quot;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">mpc</span><span class="o">-</span><span class="n">unix</span> <span class="n">toggle</span>
+<span class="p">}</span></pre>
 </div>
 
 <p>
@@ -740,7 +738,7 @@ eww 这边 <code>revealer</code>, 然后加一个点击事件，用 Emacs 的包
 </p>
 
 
-<figure id="org2ce6ae2">
+<figure id="org64b3716">
 <a href="/assets/0e9146a3dfa7c7332571b1f0ad5a9c1a.gif" target="_blank" target="_blank"><img src="/assets/0e9146a3dfa7c7332571b1f0ad5a9c1a.gif" alt="0e9146a3dfa7c7332571b1f0ad5a9c1a.gif"></a>
 
 <figcaption>悬停展示信息，点击播放，鼠标滚轮下一首，再点击暂停</figcaption>
@@ -748,9 +746,9 @@ eww 这边 <code>revealer</code>, 然后加一个点击事件，用 Emacs 的包
 </div>
 </div>
 
-<div id="outline-container-org6c13d0b" class="outline-3">
-<h3 id="org6c13d0b">电池状态</h3>
-<div class="outline-text-3" id="text-org6c13d0b">
+<div id="outline-container-org81050e5" class="outline-3">
+<h3 id="org81050e5">电池状态</h3>
+<div class="outline-text-3" id="text-org81050e5">
 <p>
 电池状态模块 <code>~/.config/eww/modules/power.yuck</code>
 </p>
@@ -815,19 +813,28 @@ eww 这边 <code>revealer</code>, 然后加一个点击事件，用 Emacs 的包
 </p>
 
 <div class="org-src-container">
-<pre class="sh"><span class="ch">#!/bin/bash</span>
+<pre class="sh"><span class="ch">#!/usr/bin/elvish</span>
 
-<span class="nv">AC_line</span><span class="o">=</span><span class="s2">&quot;/org/freedesktop/UPower/devices/line_power_AC&quot;</span>
-<span class="nv">BAT0</span><span class="o">=</span><span class="s2">&quot;/org/freedesktop/UPower/devices/battery_BAT0&quot;</span>
-<span class="nv">BAT1</span><span class="o">=</span><span class="s2">&quot;/org/freedesktop/UPower/devices/battery_BAT1&quot;</span>
-<span class="nv">linking</span><span class="o">=</span><span class="k">$(</span>upower<span class="w"> </span>-i<span class="w"> </span><span class="nv">$AC_line</span><span class="p">|</span>grep<span class="w"> </span><span class="s2">&quot;online&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;s/^.*online:\s*([a-z]*).*</span>$<span class="s2">/\1/&quot;</span><span class="k">)</span>
-<span class="nv">value0</span><span class="o">=</span><span class="k">$(</span>upower<span class="w"> </span>-i<span class="w"> </span><span class="nv">$BAT0</span><span class="w"> </span><span class="p">|</span>grep<span class="w"> </span><span class="s2">&quot;percentage&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;s/^.*percentage:\s*([0-9]*)%.*</span>$<span class="s2">/\1/&quot;</span><span class="k">)</span>
-<span class="nv">value1</span><span class="o">=</span><span class="k">$(</span>upower<span class="w"> </span>-i<span class="w"> </span><span class="nv">$BAT1</span><span class="w"> </span><span class="p">|</span>grep<span class="w"> </span><span class="s2">&quot;percentage&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;s/^.*percentage:\s*([0-9]*)%.*</span>$<span class="s2">/\1/&quot;</span><span class="k">)</span>
-<span class="nv">aver</span><span class="o">=</span><span class="k">$((</span><span class="o">(</span><span class="nv">$value0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">$value1</span><span class="o">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">2</span><span class="k">))</span>
+use<span class="w"> </span>re
 
+var<span class="w"> </span><span class="nv">AC_line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/org/freedesktop/UPower/devices/line_power_AC&quot;</span>
+var<span class="w"> </span><span class="nv">BAT0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/org/freedesktop/UPower/devices/battery_BAT0&quot;</span>
+var<span class="w"> </span><span class="nv">BAT1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/org/freedesktop/UPower/devices/battery_BAT1&quot;</span>
 
-<span class="nv">ret</span><span class="o">=</span><span class="s2">&quot;{\&quot;linking\&quot;: \&quot;</span><span class="si">${</span><span class="nv">linking</span><span class="si">}</span><span class="s2">\&quot;, \&quot;battery\&quot;: [{\&quot;name\&quot;: \&quot;BAT0\&quot;, \&quot;value\&quot;: </span><span class="si">${</span><span class="nv">value0</span><span class="si">}</span><span class="s2">}, {\&quot;name\&quot;: \&quot;BAT1\&quot;, \&quot;value\&quot;: </span><span class="si">${</span><span class="nv">value1</span><span class="si">}</span><span class="s2">}], \&quot;aver\&quot;: </span><span class="si">${</span><span class="nv">aver</span><span class="si">}</span><span class="s2">}&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="nv">$ret</span></pre>
+var<span class="w"> </span><span class="nv">link</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>re:replace<span class="w"> </span><span class="s2">&quot;(?s)^.*online:\\s+([a-z]*).*</span>$<span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">(</span>upower<span class="w"> </span>-i<span class="w"> </span><span class="nv">$AC_line</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>slurp<span class="o">))</span>
+var<span class="w"> </span><span class="nv">value0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>re:replace<span class="w"> </span><span class="s2">&quot;(?s)^.*percentage:\\s+([0-9]*).*</span>$<span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">(</span>upower<span class="w"> </span>-i<span class="w"> </span><span class="nv">$BAT0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>slurp<span class="o">))</span>
+var<span class="w"> </span><span class="nv">value1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>re:replace<span class="w"> </span><span class="s2">&quot;(?s)^.*percentage:\\s+([0-9]*).*</span>$<span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">(</span>upower<span class="w"> </span>-i<span class="w"> </span><span class="nv">$BAT1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>slurp<span class="o">))</span>
+var<span class="w"> </span><span class="nv">aver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>inexact-num<span class="w"> </span><span class="o">(</span>/<span class="w"> </span><span class="o">(</span>+<span class="w"> </span><span class="nv">$value0</span><span class="w"> </span><span class="nv">$value1</span><span class="o">)</span><span class="w"> </span><span class="m">2</span><span class="o">))</span>
+
+var<span class="w"> </span><span class="nv">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
+<span class="w">  </span><span class="p">&amp;</span><span class="nv">linking</span><span class="o">=</span><span class="nv">$link</span>
+<span class="w">  </span><span class="p">&amp;</span><span class="nv">battery</span><span class="o">=[</span>
+<span class="w">    </span><span class="o">[</span><span class="p">&amp;</span><span class="nv">name</span><span class="o">=</span>BAT0<span class="w"> </span><span class="p">&amp;</span><span class="nv">value</span><span class="o">=(</span>num<span class="w"> </span><span class="nv">$value0</span><span class="o">)]</span>
+<span class="w">    </span><span class="o">[</span><span class="p">&amp;</span><span class="nv">name</span><span class="o">=</span>BAT1<span class="w"> </span><span class="p">&amp;</span><span class="nv">value</span><span class="o">=(</span>num<span class="w"> </span><span class="nv">$value1</span><span class="o">)]</span>
+<span class="w">  </span><span class="o">]</span>
+<span class="w">  </span><span class="p">&amp;</span><span class="nv">aver</span><span class="o">=</span><span class="nv">$aver</span>
+<span class="o">]</span>
+put<span class="w"> </span><span class="nv">$ret</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>to-json</pre>
 </div>
 
 <p>
@@ -840,9 +847,9 @@ eww 这边 <code>revealer</code>, 然后加一个点击事件，用 Emacs 的包
 </div>
 </div>
 
-<div id="outline-container-org7f3c1ac" class="outline-3">
-<h3 id="org7f3c1ac">灯光</h3>
-<div class="outline-text-3" id="text-org7f3c1ac">
+<div id="outline-container-orgb8ea0ee" class="outline-3">
+<h3 id="orgb8ea0ee">灯光</h3>
+<div class="outline-text-3" id="text-orgb8ea0ee">
 <p>
 音量模块 <code>~/.config/eww/modules/backlight.yuck</code>
 </p>
@@ -891,39 +898,51 @@ eww 这边 <code>revealer</code>, 然后加一个点击事件，用 Emacs 的包
 </p>
 
 <div class="org-src-container">
-<pre class="sh"><span class="ch">#!/bin/bash</span>
+<pre class="sh"><span class="ch">#!/usr/bin/elvish</span>
 
-<span class="k">function</span><span class="w"> </span>volume_get_state<span class="w"> </span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="nv">mute</span><span class="o">=</span><span class="k">$(</span>pactl<span class="w"> </span>get-sink-mute<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;s/^Mute: ([a-z]+)</span>$<span class="s2">/\1/&quot;</span><span class="k">)</span>
-<span class="w">    </span><span class="nv">vol</span><span class="o">=</span><span class="k">$(</span>pactl<span class="w"> </span>get-sink-volume<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;s/^.*\s([0-9]+)%.*</span>$<span class="s2">/\1/&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="k">)</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;{\&quot;mute\&quot;: \&quot;</span><span class="nv">$mute</span><span class="s2">\&quot;, \&quot;value\&quot;: </span><span class="k">$((</span><span class="nv">vol</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">5</span><span class="k">))</span><span class="s2">}&quot;</span>
+use<span class="w"> </span>re
+use<span class="w"> </span>str
+
+fn<span class="w"> </span>volume_get_state<span class="w"> </span><span class="o">{</span>
+<span class="w">  </span>var<span class="w"> </span><span class="nv">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
+<span class="w">    </span><span class="p">&amp;</span><span class="nv">mute</span><span class="o">=(</span>re:replace<span class="w"> </span><span class="s2">&quot;^Mute: ([a-z]+)</span>$<span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">(</span>pactl<span class="w"> </span>get-sink-mute<span class="w"> </span><span class="m">0</span><span class="o">))</span>
+<span class="w">    </span><span class="p">&amp;</span><span class="nv">value</span><span class="o">=(</span>re:replace<span class="w"> </span><span class="s2">&quot;^.*\\s([0-9]+)%.*</span>$<span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">(</span>pactl<span class="w"> </span>get-sink-volume<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>read-line<span class="o">))</span>
+<span class="w">  </span><span class="o">]</span>
+<span class="w">  </span><span class="nb">set</span><span class="w"> </span>ret<span class="o">[</span>value<span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>/<span class="w"> </span><span class="nv">$ret</span><span class="o">[</span>value<span class="o">]</span><span class="w"> </span><span class="m">5</span><span class="o">)</span><span class="w"> </span>
+<span class="w">  </span>put<span class="w"> </span><span class="nv">$ret</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>to-json
 <span class="o">}</span>
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;set&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nv">vol</span><span class="o">=</span><span class="k">$((</span><span class="nv">$2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">5</span><span class="k">))</span>
-<span class="w">    </span>pactl<span class="w"> </span>set-sink-volume<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">vol</span><span class="si">}</span><span class="s2">%&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/dev/null
-<span class="k">elif</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;toggle&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span>pactl<span class="w"> </span>set-sink-mute<span class="w"> </span><span class="m">0</span><span class="w"> </span>toggle
-<span class="k">else</span>
-<span class="w">    </span>volume_get_state
-<span class="w">    </span>stdbuf<span class="w"> </span>-oL<span class="w"> </span>pactl<span class="w"> </span>subscribe<span class="w"> </span><span class="p">|</span>
-<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="nv">IFS</span><span class="o">=</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>-r<span class="w"> </span>line
-<span class="w">        </span><span class="k">do</span>
-<span class="w">            </span><span class="o">[[</span><span class="w"> </span><span class="nv">$line</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span><span class="s2">&quot;&#39;change&#39; on sink&quot;</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>volume_get_state
-<span class="w">        </span><span class="k">done</span>
-<span class="k">fi</span></pre>
+
+<span class="k">if</span><span class="w"> </span><span class="o">(</span>!<span class="o">=</span><span class="w"> </span><span class="o">(</span>count<span class="w"> </span><span class="nv">$args</span><span class="o">)</span><span class="w"> </span><span class="m">0</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>eq<span class="w"> </span><span class="nv">$args</span><span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="w"> </span><span class="s2">&quot;set&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>var<span class="w"> </span><span class="nv">vol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>*<span class="w"> </span><span class="nv">$args</span><span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="m">5</span><span class="o">)</span>
+<span class="w">    </span>pactl<span class="w"> </span>set-sink-volume<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="nv">$vol</span><span class="s2">&quot;%&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/dev/null
+<span class="w">  </span><span class="o">}</span><span class="w"> </span><span class="k">elif</span><span class="w"> </span><span class="o">(</span>eq<span class="w"> </span><span class="nv">$args</span><span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="w"> </span><span class="s2">&quot;toggle&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>pactl<span class="w"> </span>set-sink-mute<span class="w"> </span><span class="m">0</span><span class="w"> </span>toggle<span class="w"> </span>&gt;&gt;<span class="w"> </span>/dev/null
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span>volume_get_state
+<span class="w">  </span>pactl<span class="w"> </span>subscribe<span class="w"> </span><span class="p">|</span><span class="w"> </span>each<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="p">|</span>line<span class="p">|</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>str:contains<span class="w"> </span><span class="nv">$line</span><span class="w"> </span><span class="s2">&quot;&#39;change&#39; on sink&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">      </span>volume_get_state
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span></pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org5065faa" class="outline-3">
-<h3 id="org5065faa">音量模块</h3>
-<div class="outline-text-3" id="text-org5065faa">
+<div id="outline-container-org0422efc" class="outline-3">
+<h3 id="org0422efc">音量模块</h3>
+<div class="outline-text-3" id="text-org0422efc">
 <p>
 音量模块 <code>~/.config/eww/modules/volume.yuck</code>
 </p>
 
 <div class="org-src-container">
-<pre class="lisp"><span class="p">(</span><span class="nv">deflisten</span><span class="w"> </span><span class="nv">volume-state</span><span class="w"> </span><span class="ss">:initial</span><span class="w"> </span><span class="ss">&#39;{</span><span class="s">&quot;mute&quot;</span><span class="err">:</span><span class="w"> </span><span class="s">&quot;no&quot;</span><span class="o">,</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="err">:</span><span class="w"> </span><span class="nv">0}</span><span class="o">&#39;</span>
+<pre class="lisp"><span class="p">(</span><span class="nv">deflisten</span><span class="w"> </span><span class="nv">volume-state</span>
+<span class="w">  </span><span class="ss">:initial</span><span class="w"> </span><span class="ss">&#39;{</span><span class="s">&quot;mute&quot;</span><span class="err">:</span><span class="s">&quot;no&quot;</span><span class="o">,</span><span class="s">&quot;value&quot;</span><span class="ss">:0}</span><span class="o">&#39;</span>
 <span class="w">  </span><span class="s">&quot;scripts/volume&quot;</span><span class="p">)</span>
 <span class="p">(</span><span class="nb">defvar</span><span class="w"> </span><span class="nv">show-volume</span><span class="w"> </span><span class="nv">false</span><span class="p">)</span>
 
@@ -952,7 +971,7 @@ eww 这边 <code>revealer</code>, 然后加一个点击事件，用 Emacs 的包
 <span class="w">      </span><span class="p">)</span>
 <span class="w">     </span><span class="p">)</span>
 <span class="w">    </span><span class="p">(</span><span class="nv">eventbox</span>
-<span class="w">     </span><span class="ss">:class</span><span class="w"> </span><span class="nv">{volume-state[</span><span class="s">&quot;mute&quot;</span><span class="nv">]</span><span class="w"> </span><span class="nv">==</span><span class="w"> </span><span class="s">&quot;yes&quot;</span><span class="w"> </span><span class="nv">?</span><span class="w"> </span><span class="ss">&#39;icon-mute</span><span class="o">&#39;</span><span class="err">:</span><span class="w"> </span><span class="ss">&#39;icon&#39;}</span>
+<span class="w">     </span><span class="ss">:class</span><span class="w"> </span><span class="nv">{volume-state[</span><span class="s">&quot;mute&quot;</span><span class="nv">]</span><span class="w"> </span><span class="nv">==</span><span class="w"> </span><span class="s">&quot;yes&quot;</span><span class="w"> </span><span class="nv">?</span><span class="w"> </span><span class="ss">&#39;icon</span><span class="w"> </span><span class="nv">mute</span><span class="o">&#39;</span><span class="err">:</span><span class="w"> </span><span class="ss">&#39;icon&#39;}</span>
 <span class="w">     </span><span class="ss">:onclick</span><span class="w"> </span><span class="s">&quot;scripts/volume toggle&quot;</span>
 <span class="w">     </span><span class="ss">:cursor</span><span class="w"> </span><span class="s">&quot;pointer&quot;</span>
 <span class="w">     </span><span class="ss">:width</span><span class="w"> </span><span class="s">&quot;24&quot;</span>
@@ -969,26 +988,37 @@ eww 这边 <code>revealer</code>, 然后加一个点击事件，用 Emacs 的包
 </p>
 
 <div class="org-src-container">
-<pre class="sh"><span class="ch">#!/bin/bash</span>
+<pre class="sh"><span class="ch">#!/usr/bin/elvish</span>
 
-<span class="k">function</span><span class="w"> </span>volume_get_state<span class="w"> </span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="nv">mute</span><span class="o">=</span><span class="k">$(</span>pactl<span class="w"> </span>get-sink-mute<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;s/^Mute: ([a-z]+)</span>$<span class="s2">/\1/&quot;</span><span class="k">)</span>
-<span class="w">    </span><span class="nv">vol</span><span class="o">=</span><span class="k">$(</span>pactl<span class="w"> </span>get-sink-volume<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;s/^.*\s([0-9]+)%.*</span>$<span class="s2">/\1/&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="k">)</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;{\&quot;mute\&quot;: \&quot;</span><span class="nv">$mute</span><span class="s2">\&quot;, \&quot;value\&quot;: </span><span class="k">$((</span><span class="nv">vol</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">5</span><span class="k">))</span><span class="s2">}&quot;</span>
+use<span class="w"> </span>re
+use<span class="w"> </span>str
+
+fn<span class="w"> </span>volume_get_state<span class="w"> </span><span class="o">{</span>
+<span class="w">  </span>var<span class="w"> </span><span class="nv">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
+<span class="w">    </span><span class="p">&amp;</span><span class="nv">mute</span><span class="o">=(</span>re:replace<span class="w"> </span><span class="s2">&quot;^Mute: ([a-z]+)</span>$<span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">(</span>pactl<span class="w"> </span>get-sink-mute<span class="w"> </span><span class="m">0</span><span class="o">))</span>
+<span class="w">    </span><span class="p">&amp;</span><span class="nv">value</span><span class="o">=(</span>re:replace<span class="w"> </span><span class="s2">&quot;^.*\\s([0-9]+)%.*</span>$<span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">(</span>pactl<span class="w"> </span>get-sink-volume<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>read-line<span class="o">))</span>
+<span class="w">  </span><span class="o">]</span>
+<span class="w">  </span><span class="nb">set</span><span class="w"> </span>ret<span class="o">[</span>value<span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>/<span class="w"> </span><span class="nv">$ret</span><span class="o">[</span>value<span class="o">]</span><span class="w"> </span><span class="m">5</span><span class="o">)</span><span class="w"> </span>
+<span class="w">  </span>put<span class="w"> </span><span class="nv">$ret</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>to-json
 <span class="o">}</span>
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;set&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nv">vol</span><span class="o">=</span><span class="k">$((</span><span class="nv">$2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">5</span><span class="k">))</span>
-<span class="w">    </span>pactl<span class="w"> </span>set-sink-volume<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">vol</span><span class="si">}</span><span class="s2">%&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/dev/null
-<span class="k">elif</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;toggle&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span>pactl<span class="w"> </span>set-sink-mute<span class="w"> </span><span class="m">0</span><span class="w"> </span>toggle
-<span class="k">else</span>
-<span class="w">    </span>volume_get_state
-<span class="w">    </span>stdbuf<span class="w"> </span>-oL<span class="w"> </span>pactl<span class="w"> </span>subscribe<span class="w"> </span><span class="p">|</span>
-<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="nv">IFS</span><span class="o">=</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>-r<span class="w"> </span>line
-<span class="w">        </span><span class="k">do</span>
-<span class="w">            </span><span class="o">[[</span><span class="w"> </span><span class="nv">$line</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span><span class="s2">&quot;&#39;change&#39; on sink&quot;</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>volume_get_state
-<span class="w">        </span><span class="k">done</span>
-<span class="k">fi</span></pre>
+
+<span class="k">if</span><span class="w"> </span><span class="o">(</span>!<span class="o">=</span><span class="w"> </span><span class="o">(</span>count<span class="w"> </span><span class="nv">$args</span><span class="o">)</span><span class="w"> </span><span class="m">0</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>eq<span class="w"> </span><span class="nv">$args</span><span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="w"> </span><span class="s2">&quot;set&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>var<span class="w"> </span><span class="nv">vol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>*<span class="w"> </span><span class="nv">$args</span><span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="m">5</span><span class="o">)</span>
+<span class="w">    </span>pactl<span class="w"> </span>set-sink-volume<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="nv">$vol</span><span class="s2">&quot;%&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/dev/null
+<span class="w">  </span><span class="o">}</span><span class="w"> </span><span class="k">elif</span><span class="w"> </span><span class="o">(</span>eq<span class="w"> </span><span class="nv">$args</span><span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="w"> </span><span class="s2">&quot;toggle&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>pactl<span class="w"> </span>set-sink-mute<span class="w"> </span><span class="m">0</span><span class="w"> </span>toggle<span class="w"> </span>&gt;&gt;<span class="w"> </span>/dev/null
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span>volume_get_state
+<span class="w">  </span>pactl<span class="w"> </span>subscribe<span class="w"> </span><span class="p">|</span><span class="w"> </span>each<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="p">|</span>line<span class="p">|</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>str:contains<span class="w"> </span><span class="nv">$line</span><span class="w"> </span><span class="s2">&quot;&#39;change&#39; on sink&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">      </span>volume_get_state
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span></pre>
 </div>
 
 <p>
@@ -1008,7 +1038,7 @@ eww 这边 <code>revealer</code>, 然后加一个点击事件，用 Emacs 的包
 </p>
 
 
-<figure id="org201d879">
+<figure id="org5d3e230">
 <a href="/assets/b458ba1868b8c5e545864f3bc11c6d82.gif" target="_blank" target="_blank"><img src="/assets/b458ba1868b8c5e545864f3bc11c6d82.gif" alt="b458ba1868b8c5e545864f3bc11c6d82.gif"></a>
 
 </figure>
@@ -1019,9 +1049,9 @@ eww 这边 <code>revealer</code>, 然后加一个点击事件，用 Emacs 的包
 </div>
 </div>
 
-<div id="outline-container-org3838d28" class="outline-3">
-<h3 id="org3838d28">用户模块</h3>
-<div class="outline-text-3" id="text-org3838d28">
+<div id="outline-container-org89e533e" class="outline-3">
+<h3 id="org89e533e">用户模块</h3>
+<div class="outline-text-3" id="text-org89e533e">
 <p>
 其实我不知道用啥名字和图标比较好，这个模块是用来关机重启的。 <code>~/.config/eww/modules/user.yuck</code>
 </p>
@@ -1072,6 +1102,15 @@ eww 这边 <code>revealer</code>, 然后加一个点击事件，用 Emacs 的包
 <span class="w">       </span><span class="p">)</span>
 <span class="w">      </span><span class="p">(</span><span class="nv">eventbox</span>
 <span class="w">       </span><span class="ss">:cursor</span><span class="w"> </span><span class="s">&quot;pointer&quot;</span>
+<span class="w">       </span><span class="ss">:onclick</span><span class="w"> </span><span class="s">&quot;systemctl suspend&quot;</span>
+<span class="w">       </span><span class="ss">:tooltip</span><span class="w"> </span><span class="s">&quot;suspend&quot;</span>
+<span class="w">       </span><span class="ss">:class</span><span class="w"> </span><span class="s">&quot;suspend&quot;</span>
+<span class="w">       </span><span class="ss">:width</span><span class="w"> </span><span class="s">&quot;16&quot;</span>
+<span class="w">       </span><span class="ss">:height</span><span class="w"> </span><span class="s">&quot;16&quot;</span>
+<span class="w">       </span><span class="s">&quot;󰤄 &quot;</span>
+<span class="w">       </span><span class="p">)</span>
+<span class="w">      </span><span class="p">(</span><span class="nv">eventbox</span>
+<span class="w">       </span><span class="ss">:cursor</span><span class="w"> </span><span class="s">&quot;pointer&quot;</span>
 <span class="w">       </span><span class="ss">:onclick</span><span class="w"> </span><span class="s">&quot;loginctl terminate-user $USER&quot;</span>
 <span class="w">       </span><span class="ss">:tooltip</span><span class="w"> </span><span class="s">&quot;log out&quot;</span>
 <span class="w">       </span><span class="ss">:class</span><span class="w"> </span><span class="s">&quot;logout&quot;</span>
@@ -1097,18 +1136,18 @@ eww 这边 <code>revealer</code>, 然后加一个点击事件，用 Emacs 的包
 </div>
 </div>
 
-<div id="outline-container-orgdca5873" class="outline-2">
-<h2 id="orgdca5873">样式</h2>
-<div class="outline-text-2" id="text-orgdca5873">
+<div id="outline-container-org3636e8f" class="outline-2">
+<h2 id="org3636e8f">样式</h2>
+<div class="outline-text-2" id="text-org3636e8f">
 <p>
 样式就是 gtk 的 scss. 通过组件给的 <code>class</code> 参数去选择。这个不是本文的重点，但我状态栏等 GUI 的设计，对于我等没有艺术训练的人来说真的挺困难，功能总能实现，但是样子吧，只能说看的过去，很有后端的风格。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org05f8688" class="outline-2">
-<h2 id="org05f8688">后记</h2>
-<div class="outline-text-2" id="text-org05f8688">
+<div id="outline-container-org23b9382" class="outline-2">
+<h2 id="org23b9382">后记</h2>
+<div class="outline-text-2" id="text-org23b9382">
 <p>
 这篇笔记老早就写了，当时折腾完 Hyprland 就做了记录。只是这几个月兜兜转转，现在才最终落笔。 EWW 神器属于是，资源占用低，动画流畅，配置写起来也很顺畅，调试会给出详细的日志。现在就等一手系统托盘，这个功能出来之后就完美了。
 </p>

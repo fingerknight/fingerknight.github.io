@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Emacs emms 媒体播放器 - 手指骑士的病房</title>
-<link rel="icon" href="/static/favicon.ico"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<link rel="icon" href="/static/favicon.ico"><meta content="text/html;charset=utf-8" http-equiv="Content-Type"><meta content="utf-8" http-equiv="encoding"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
 <body>
 <div id="header">
 <div class="home-page">
@@ -28,42 +28,42 @@
 
 <ul>
 <li>
-<a href="#org6c6bbfa"> 简介 </a></li>
+<a href="#orgb88830c"> 简介 </a></li>
 <li>
-<a href="#org28ba47d"> 安装 </a></li>
+<a href="#orgdfb1b29"> 安装 </a></li>
 <li>
-<a href="#orgb8bdcbb"> 快速配置 </a></li>
+<a href="#org64f43e8"> 快速配置 </a></li>
 <li>
-<a href="#org2416fb5"> 自定义配置 </a>
+<a href="#orgf0f499a"> 自定义配置 </a>
 <ul>
 <li>
-<a href="#orgcfd86ba"> 后端选择 </a></li>
+<a href="#org7f2c71e"> 后端选择 </a></li>
 <li>
-<a href="#orge2e5a0d"> 本地音乐路径 </a></li>
+<a href="#org7ef0368"> 本地音乐路径 </a></li>
 <li>
-<a href="#orga1bf05a"> 本地音乐管理 </a></li>
+<a href="#org3e5bed1"> 本地音乐管理 </a></li>
 <li>
-<a href="#orgc70e442"> 播放列表 </a>
+<a href="#orgb20b91c"> 播放列表 </a>
 <ul>
 <li>
-<a href="#orgee6a0f2"> 播放列表配置 </a></li>
+<a href="#org28a19c1"> 播放列表配置 </a></li>
 <li>
-<a href="#orgdc79441"> 播放列表操作 </a></li>
+<a href="#orgdae1d3a"> 播放列表操作 </a></li>
 </ul>
 </li>
 <li>
-<a href="#orgd576497"> 音量设置 </a></li>
+<a href="#orga3b194c"> 音量设置 </a></li>
 <li>
-<a href="#orgdaf4275"> 歌词配置 </a></li>
+<a href="#orgaf3f97b"> 歌词配置 </a></li>
 <li>
-<a href="#orge596d5d"> 歌词来源 Lyrics-fetcher </a>
+<a href="#orgde279e2"> 歌词来源 Lyrics-fetcher </a>
 <ul>
 <li>
-<a href="#org6cf4f28"> 曲目元数据的添加和统一 </a></li>
+<a href="#org88cf96f"> 曲目元数据的添加和统一 </a></li>
 <li>
-<a href="#orgc0f17b7"> 获取音乐元数据 </a></li>
+<a href="#org7ca35f2"> 获取音乐元数据 </a></li>
 <li>
-<a href="#org6bb6a6c"> lyrics-fetcher 配置 </a></li>
+<a href="#orgdb356af"> lyrics-fetcher 配置 </a></li>
 </ul>
 </li>
 </ul>
@@ -81,9 +81,9 @@
 </div>
 <div id="content">
 
-<div id="outline-container-org6c6bbfa" class="outline-2">
-<h2 id="org6c6bbfa">简介</h2>
-<div class="outline-text-2" id="text-org6c6bbfa">
+<div id="outline-container-orgb88830c" class="outline-2">
+<h2 id="orgb88830c">简介</h2>
+<div class="outline-text-2" id="text-orgb88830c">
 <p>
 EMMS 全称 Emacs Multimedia System ，即 <b>Emacs 的多媒体系统</b>，用于在 Emacs 中展示和播放多媒体 <sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup> ，可以接入多种后端。我把它用来做音乐播放器，离入魔又近了一步。
 </p>
@@ -94,9 +94,9 @@ EMMS 有非常详细的文档，用于参阅检索：《<a href="https://www.gnu
 </div>
 </div>
 
-<div id="outline-container-org28ba47d" class="outline-2">
-<h2 id="org28ba47d">安装</h2>
-<div class="outline-text-2" id="text-org28ba47d">
+<div id="outline-container-orgdfb1b29" class="outline-2">
+<h2 id="orgdfb1b29">安装</h2>
+<div class="outline-text-2" id="text-orgdfb1b29">
 <p>
 可以直接用 <code>package.el</code> 的 <code>M-x package-install RET emms</code> 来安装，也可以下载到本地，通过 <code>(add-to-list 'load-path "/path/to/emms")</code> 来导入。
 </p>
@@ -107,20 +107,21 @@ EMMS 的各个模块的功能拆成了许多小型的库，自定义程度高的
 </div>
 </div>
 
-<div id="outline-container-orgb8bdcbb" class="outline-2">
-<h2 id="orgb8bdcbb">快速配置</h2>
-<div class="outline-text-2" id="text-orgb8bdcbb">
+<div id="outline-container-org64f43e8" class="outline-2">
+<h2 id="org64f43e8">快速配置</h2>
+<div class="outline-text-2" id="text-org64f43e8">
 <p>
 EMMS 在库 <code>emms-setup</code> 给出了标准配置，可以通过它，直接使用标准配置。
 </p>
 
 <div class="org-src-container">
-<pre class="lisp"> <span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;emms-setup</span><span class="p">)</span>
+<pre class="lisp"><span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;emms-setup</span><span class="p">)</span>
+
 <span class="p">(</span><span class="nv">emms-minimalistic</span><span class="p">)</span>
 <span class="c1">;; or</span>
 <span class="p">(</span><span class="nv">emms-all</span><span class="p">)</span>
-<span class="c1">;; (emms-default-players)</span>
- </pre>
+
+<span class="c1">;; (emms-default-players)</span></pre>
 </div>
 
 <ul class="org-ul">
@@ -130,28 +131,28 @@ EMMS 在库 <code>emms-setup</code> 给出了标准配置，可以通过它，�
 </div>
 </div>
 
-<div id="outline-container-org2416fb5" class="outline-2">
-<h2 id="org2416fb5">自定义配置</h2>
-<div class="outline-text-2" id="text-org2416fb5">
+<div id="outline-container-orgf0f499a" class="outline-2">
+<h2 id="orgf0f499a">自定义配置</h2>
+<div class="outline-text-2" id="text-orgf0f499a">
 <p>
 我最后选择的是使用自定义的、模块化的配置，顺便学习一下 EMMS 的相关内容。
 </p>
 </div>
 
-<div id="outline-container-orgcfd86ba" class="outline-3">
-<h3 id="orgcfd86ba">后端选择</h3>
-<div class="outline-text-3" id="text-orgcfd86ba">
+<div id="outline-container-org7f2c71e" class="outline-3">
+<h3 id="org7f2c71e">后端选择</h3>
+<div class="outline-text-3" id="text-org7f2c71e">
 <p>
 我的系统是 <a href="https://www.archlinux.org" target="_blank">Arch Linux</a> ，平时用的多媒体播放器是 <a href="https://mpv.io/" target="_blank">mpv</a> -&#x2013;&#x2014; 之前一直是用来播放视频的，它当然也能播放音乐。调用 EMMS 封装的 mpv 相关接口 <sup>[<a id="fnr:1.2" class="footref" href="#fn:1">1</a>]</sup> ：
 </p>
 
 <div class="org-src-container">
-<pre class="lisp"> <span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;emms-player-mpv</span><span class="p">)</span>
+<pre class="lisp"><span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;emms-player-mpv</span><span class="p">)</span>
+
 <span class="p">(</span><span class="nv">setq-default</span><span class="w"> </span><span class="nv">emms-player-list</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">emms-player-mpv</span><span class="p">)</span>
 <span class="w">              </span><span class="nv">emms-player-mpv-environment</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;PULSE_PROP_media.role=music&quot;</span><span class="p">)</span>
 <span class="w">              </span><span class="nv">emms-player-mpv-parameters</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;--quiet&quot;</span><span class="w"> </span><span class="s">&quot;--really-quiet&quot;</span>
-<span class="w">                                           </span><span class="s">&quot;--no-audio-display&quot;</span><span class="w"> </span><span class="s">&quot;--force-window=no&quot;</span><span class="w"> </span><span class="s">&quot;--vo=null&quot;</span><span class="p">))</span>
- </pre>
+<span class="w">                                           </span><span class="s">&quot;--no-audio-display&quot;</span><span class="w"> </span><span class="s">&quot;--force-window=no&quot;</span><span class="w"> </span><span class="s">&quot;--vo=null&quot;</span><span class="p">))</span></pre>
 </div>
 
 <p>
@@ -160,9 +161,9 @@ EMMS 支持的后端蛮多的，有 ogg123, mpg321, mpv, vlc 等，其余后端�
 </div>
 </div>
 
-<div id="outline-container-orge2e5a0d" class="outline-3">
-<h3 id="orge2e5a0d">本地音乐路径</h3>
-<div class="outline-text-3" id="text-orge2e5a0d">
+<div id="outline-container-org7ef0368" class="outline-3">
+<h3 id="org7ef0368">本地音乐路径</h3>
+<div class="outline-text-3" id="text-org7ef0368">
 <p>
 我转用本地音乐的原因就是<b>稳定</b>。之前尝试过的音乐软件有：
 </p>
@@ -184,9 +185,9 @@ EMMS 支持的后端蛮多的，有 ogg123, mpg321, mpv, vlc 等，其余后端�
 下面是关于本地音乐路径寻找的配置：
 </p>
 <div class="org-src-container">
-<pre class="lisp"> <span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;emms-source-file</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">setq-default</span><span class="w"> </span><span class="nv">emms-source-file-default-directory</span><span class="w"> </span><span class="s">&quot;~/Music/&quot;</span><span class="p">)</span>
- </pre>
+<pre class="lisp"><span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;emms-source-file</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nv">setq-default</span><span class="w"> </span><span class="nv">emms-source-file-default-directory</span><span class="w"> </span><span class="s">&quot;~/Music/&quot;</span><span class="p">)</span></pre>
 </div>
 <p>
 有一个可选变量 <code>emms-source-file-directory-tree-function</code>, 这个变量指定了读取本地音乐的函数，它的默认值是 <code>emms-source-file-directory-tree-internal</code>, 有个备选 <code>emms-source-file-directory-tree-find</code> ，前者速度慢一些，后者速度更快，但是需要有 GNU 的 <code>find</code> 命令。
@@ -198,20 +199,21 @@ EMMS 支持的后端蛮多的，有 ogg123, mpg321, mpv, vlc 等，其余后端�
 </div>
 </div>
 
-<div id="outline-container-orga1bf05a" class="outline-3">
-<h3 id="orga1bf05a">本地音乐管理</h3>
-<div class="outline-text-3" id="text-orga1bf05a">
+<div id="outline-container-org3e5bed1" class="outline-3">
+<h3 id="org3e5bed1">本地音乐管理</h3>
+<div class="outline-text-3" id="text-org3e5bed1">
 <p>
 在默认目录 <code>emms-source-file-default-directory</code> 下，建立子目录，<b>每个子目录代表一张歌单</b>，每个歌单放入相应的本地音乐文件。我写了一个用于快速切换歌单的函数，依赖是 <a href="https://github.com/rejeep/f.el" target="_blank">f.el</a>, 一组与文件目录相关的 API ：
 </p>
 <div class="org-src-container">
-<pre class="lisp"> <span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">emms-switch-playlist</span><span class="w"> </span><span class="p">()</span>
-<span class="w">  </span><span class="err">&quot;</span><span class="nv">Switch</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">new</span><span class="w"> </span><span class="nv">playlist,</span><span class="w"> </span><span class="nv">selected</span><span class="w"> </span><span class="nv">from</span><span class="w"> </span><span class="o">`</span><span class="nv">emms-source-file-default-directory</span><span class="ss">&#39;,</span>
-<span class="nb">and</span><span class="w"> </span><span class="nv">start</span><span class="w"> </span><span class="nv">playing</span><span class="w"> </span><span class="nv">immediately.</span><span class="err">&quot;</span>
+<pre class="lisp"><span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">emms-switch-playlist</span><span class="w"> </span><span class="p">()</span>
+<span class="w">  </span><span class="s">&quot;Switch to a new playlist, selected from `emms-source-file-default-directory&#39;,</span>
+<span class="s">and start playing immediately.&quot;</span>
 <span class="w">  </span><span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
 <span class="w">  </span><span class="c1">;; 如果播放列表打开了，那么先关闭</span>
 <span class="w">  </span><span class="p">(</span><span class="nb">when</span><span class="w"> </span><span class="p">(</span><span class="nv">get-buffer</span><span class="w"> </span><span class="nv">emms-playlist-buffer-name</span><span class="p">)</span>
 <span class="w">    </span><span class="p">(</span><span class="nv">kill-buffer</span><span class="w"> </span><span class="nv">emms-playlist-buffer-name</span><span class="p">))</span>
+
 <span class="w">  </span><span class="c1">;; 添加目录下的音乐文件到播放列表</span>
 <span class="w">  </span><span class="p">(</span><span class="nv">emms-add-directory</span>
 <span class="w">   </span><span class="p">(</span><span class="nv">f-expand</span>
@@ -230,39 +232,39 @@ EMMS 支持的后端蛮多的，有 ogg123, mpg321, mpv, vlc 等，其余后端�
 <span class="w">  </span><span class="c1">;; 重新打开播放列表的 buffer</span>
 <span class="w">  </span><span class="p">(</span><span class="nv">switch-to-buffer-other-window</span><span class="w"> </span><span class="nv">emms-playlist-buffer-name</span><span class="p">)</span>
 <span class="w">  </span><span class="c1">;; 开始播放</span>
-<span class="w">  </span><span class="p">(</span><span class="nv">emms-playlist-mode-play-smart</span><span class="p">))</span>
- </pre>
+<span class="w">  </span><span class="p">(</span><span class="nv">emms-playlist-mode-play-smart</span><span class="p">))</span></pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgc70e442" class="outline-3">
-<h3 id="orgc70e442">播放列表</h3>
-<div class="outline-text-3" id="text-orgc70e442">
+<div id="outline-container-orgb20b91c" class="outline-3">
+<h3 id="orgb20b91c">播放列表</h3>
+<div class="outline-text-3" id="text-orgb20b91c">
 </div>
-<div id="outline-container-orgee6a0f2" class="outline-4">
-<h4 id="orgee6a0f2">播放列表配置</h4>
-<div class="outline-text-4" id="text-orgee6a0f2">
+<div id="outline-container-org28a19c1" class="outline-4">
+<h4 id="org28a19c1">播放列表配置</h4>
+<div class="outline-text-4" id="text-org28a19c1">
 <p>
 播放列表<b>本质上就是一个 buffer</b> ，它把列表中的曲目打印到该 buffer 中，设置其为不可写并创生新的键盘映射。因此理论上说，可以打开多个播放列表，每个播放列表对应不同的歌单。不过似乎没什么必要。
 </p>
 
 <div class="org-src-container">
-<pre class="lisp"> <span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;emms-browser</span><span class="p">)</span>
+<pre class="lisp"><span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;emms-browser</span><span class="p">)</span>
+
 <span class="p">(</span><span class="nv">setq-default</span>
 <span class="w"> </span><span class="c1">;; 使当前播放的曲目居中于播放列表</span>
-<span class="w"> </span><span class="nv">emms-playlist-mode-center-when-go</span><span class="w"> </span><span class="nc">t</span>
+<span class="w"> </span><span class="nv">emms-playlist-mode-center-when-go</span><span class="w"> </span><span class="no">t</span>
 <span class="w"> </span><span class="c1">;; 播放列表的 buffer 的 mode</span>
 <span class="w"> </span><span class="nv">emms-playlist-default-major-mode</span><span class="w"> </span><span class="ss">&#39;emms-playlist-mode</span>
 <span class="w"> </span><span class="c1">;; 播放列表的 buffer 的名字</span>
 <span class="w"> </span><span class="nv">emms-playlist-buffer-name</span><span class="w"> </span><span class="s">&quot;*Music*&quot;</span>
+
 <span class="w"> </span><span class="nv">emms-track-description-function</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nv">track</span><span class="p">)</span>
 <span class="w">                                   </span><span class="s">&quot;Function for describing an EMMS track&quot;</span>
 <span class="w">                                   </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">((</span><span class="nv">name</span><span class="w"> </span><span class="p">(</span><span class="nv">f-base</span><span class="w"> </span><span class="p">(</span><span class="nv">emms-track-name</span><span class="w"> </span><span class="nv">track</span><span class="p">))))</span>
 <span class="w">                                     </span><span class="p">(</span><span class="nv">seq-let</span><span class="w"> </span><span class="p">(</span><span class="nv">artist</span><span class="w"> </span><span class="nv">title</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nv">split-string</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="s">&quot; - &quot;</span><span class="p">)</span>
 <span class="w">                                       </span><span class="p">(</span><span class="nb">format</span><span class="w"> </span><span class="s">&quot;%s - %s&quot;</span><span class="w"> </span><span class="nv">title</span><span class="w"> </span><span class="nv">artist</span><span class="p">))))</span>
-<span class="p">)</span>
- </pre>
+<span class="p">)</span></pre>
 </div>
 
 <p>
@@ -271,9 +273,9 @@ EMMS 支持的后端蛮多的，有 ogg123, mpg321, mpv, vlc 等，其余后端�
 </div>
 </div>
 
-<div id="outline-container-orgdc79441" class="outline-4">
-<h4 id="orgdc79441">播放列表操作</h4>
-<div class="outline-text-4" id="text-orgdc79441">
+<div id="outline-container-orgdae1d3a" class="outline-4">
+<h4 id="orgdae1d3a">播放列表操作</h4>
+<div class="outline-text-4" id="text-orgdae1d3a">
 <p>
 这里列举了一部分，更多的参见手册：<a href="https://www.gnu.org/software/emms/manual/#Interactive-Playlists" target="_blank">https://www.gnu.org/software/emms/manual/#Interactive-Playlists</a>
 </p>
@@ -291,19 +293,20 @@ EMMS 支持的后端蛮多的，有 ogg123, mpg321, mpv, vlc 等，其余后端�
 </div>
 </div>
 
-<div id="outline-container-orgd576497" class="outline-3">
-<h3 id="orgd576497">音量设置</h3>
-<div class="outline-text-3" id="text-orgd576497">
+<div id="outline-container-orga3b194c" class="outline-3">
+<h3 id="orga3b194c">音量设置</h3>
+<div class="outline-text-3" id="text-orga3b194c">
 <p>
 配置：
 </p>
 <div class="org-src-container">
-<pre class="lisp"> <span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;emms-volume</span><span class="p">)</span>
+<pre class="lisp"><span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;emms-volume</span><span class="p">)</span>
+
 <span class="p">(</span><span class="nv">global-set-key</span><span class="w"> </span><span class="p">(</span><span class="nv">kbd</span><span class="w"> </span><span class="s">&quot;C-c +&quot;</span><span class="p">)</span><span class="w"> </span><span class="ss">&#39;emms-volume-mode-plus</span><span class="p">)</span>
 <span class="p">(</span><span class="nv">global-set-key</span><span class="w"> </span><span class="p">(</span><span class="nv">kbd</span><span class="w"> </span><span class="s">&quot;C-c -&quot;</span><span class="p">)</span><span class="w"> </span><span class="ss">&#39;emms-volume-mode-minus</span><span class="p">)</span>
+
 <span class="c1">;; (setq-default emms-volume-change-amount 2</span>
-<span class="w">              </span><span class="c1">;; emms-volume-mode-timeout 2)</span>
- </pre>
+<span class="w">              </span><span class="c1">;; emms-volume-mode-timeout 2)</span></pre>
 </div>
 
 <p>
@@ -320,24 +323,25 @@ EMMS 支持的后端蛮多的，有 ogg123, mpg321, mpv, vlc 等，其余后端�
 </div>
 </div>
 
-<div id="outline-container-orgdaf4275" class="outline-3">
-<h3 id="orgdaf4275">歌词配置</h3>
-<div class="outline-text-3" id="text-orgdaf4275">
+<div id="outline-container-orgaf3f97b" class="outline-3">
+<h3 id="orgaf3f97b">歌词配置</h3>
+<div class="outline-text-3" id="text-orgaf3f97b">
 <p>
 基本配置：
 </p>
 <div class="org-src-container">
-<pre class="lisp"> <span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;emms-lyrics</span><span class="p">)</span>
+<pre class="lisp"><span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;emms-lyrics</span><span class="p">)</span>
+
 <span class="p">(</span><span class="nv">setq-default</span>
 <span class="w"> </span><span class="c1">;; 歌词文件存放路径</span>
 <span class="w"> </span><span class="nv">emms-lyrics-dir</span><span class="w"> </span><span class="s">&quot;~/Music/lyrics&quot;</span>
 <span class="w"> </span><span class="c1">;; 歌词显示在 minibuffer</span>
-<span class="w"> </span><span class="nv">emms-lyrics-display-on-minibuffer</span><span class="w"> </span><span class="nc">t</span>
+<span class="w"> </span><span class="nv">emms-lyrics-display-on-minibuffer</span><span class="w"> </span><span class="no">t</span>
 <span class="w"> </span><span class="c1">;; 歌词不滚动</span>
 <span class="w"> </span><span class="nv">emms-lyrics-scroll-p</span><span class="w"> </span><span class="no">nil</span><span class="p">)</span>
+
 <span class="c1">;; 开启歌词</span>
-<span class="p">(</span><span class="nv">emms-lyrics</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
- </pre>
+<span class="p">(</span><span class="nv">emms-lyrics</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span></pre>
 </div>
 
 <p>
@@ -354,9 +358,9 @@ EMMS 支持的后端蛮多的，有 ogg123, mpg321, mpv, vlc 等，其余后端�
 </div>
 </div>
 
-<div id="outline-container-orge596d5d" class="outline-3">
-<h3 id="orge596d5d">歌词来源 Lyrics-fetcher</h3>
-<div class="outline-text-3" id="text-orge596d5d">
+<div id="outline-container-orgde279e2" class="outline-3">
+<h3 id="orgde279e2">歌词来源 Lyrics-fetcher</h3>
+<div class="outline-text-3" id="text-orgde279e2">
 <p>
 我用的是一个在论坛 <sup>[<a id="fnr:2.1" class="footref" href="#fn:2">2</a>]</sup> 里看到的前辈分享的包 <a href="https://github.com/SqrtMinusOne/lyrics-fetcher.el" target="_blank">lyrics-fetcher</a> 来获取歌词，目前他可以从 <a href="https://docs.genius.com/" target="_blank">genius.com</a> 或者网易云音乐获取，我用的是后者，它更容易找到中文歌的歌词。
 </p>
@@ -370,28 +374,30 @@ lyrics-fetcher 根据歌曲的元数据去查歌词，因此需要保证歌曲�
 </p>
 </div>
 
-<div id="outline-container-org6cf4f28" class="outline-4">
-<h4 id="org6cf4f28">曲目元数据的添加和统一</h4>
-<div class="outline-text-4" id="text-org6cf4f28">
+<div id="outline-container-org88cf96f" class="outline-4">
+<h4 id="org88cf96f">曲目元数据的添加和统一</h4>
+<div class="outline-text-4" id="text-org88cf96f">
 <p>
 我用的是 Python 的 <a href="https://mutagen.readthedocs.io/" target="_blank">mutagen</a> 库来编辑曲目的元数据。
 </p>
 <div class="org-src-container">
-<pre class="bash"> pip<span class="w"> </span>install<span class="w"> </span>mutagen
- </pre>
+<pre class="bash">pip<span class="w"> </span>install<span class="w"> </span>mutagen</pre>
 </div>
 
 <p>
 把歌曲的保存成 <code>歌手 - 歌名.mp3</code> 的格式，然后执行：
 </p>
 <div class="org-src-container">
-<pre class="python"> <span class="kn">import</span> <span class="nn">os</span>
+<pre class="python"><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">mutagen</span>
 <span class="kn">from</span> <span class="nn">mutagen.id3</span> <span class="kn">import</span> <span class="n">ID3</span><span class="p">,</span> <span class="n">TIT2</span><span class="p">,</span> <span class="n">TALB</span><span class="p">,</span> <span class="n">TPE1</span><span class="p">,</span> <span class="n">TPE2</span>
+
 <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">&quot;~/Music/&quot;</span><span class="p">)</span>
+
 <span class="k">for</span> <span class="n">pl</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
     <span class="n">current_playlist</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">pl</span><span class="p">)</span>
     <span class="n">lst</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">current_playlist</span><span class="p">)</span>
+
     <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
         <span class="n">base</span><span class="p">,</span> <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">each</span><span class="p">)</span>
         <span class="n">artist</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; - &quot;</span><span class="p">)</span>
@@ -406,12 +412,12 @@ lyrics-fetcher 根据歌曲的元数据去查歌词，因此需要保证歌曲�
             <span class="n">meta</span><span class="o">.</span><span class="n">add_tags</span><span class="p">()</span>
             <span class="n">meta</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
             <span class="n">audio</span> <span class="o">=</span> <span class="n">ID3</span><span class="p">(</span><span class="n">old_filename</span><span class="p">)</span>
+
         <span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TALB</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">title</span><span class="p">))</span>
         <span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TIT2</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">title</span><span class="p">))</span>
         <span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TPE1</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">artist</span><span class="p">))</span>
         <span class="n">audio</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">TPE2</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">artist</span><span class="p">))</span>
-        <span class="n">audio</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
- </pre>
+        <span class="n">audio</span><span class="o">.</span><span class="n">save</span><span class="p">()</span></pre>
 </div>
 
 <p>
@@ -420,9 +426,9 @@ lyrics-fetcher 根据歌曲的元数据去查歌词，因此需要保证歌曲�
 </div>
 </div>
 
-<div id="outline-container-orgc0f17b7" class="outline-4">
-<h4 id="orgc0f17b7">获取音乐元数据</h4>
-<div class="outline-text-4" id="text-orgc0f17b7">
+<div id="outline-container-org7ca35f2" class="outline-4">
+<h4 id="org7ca35f2">获取音乐元数据</h4>
+<div class="outline-text-4" id="text-org7ca35f2">
 <p>
 EMMS 提供了几种工具的接口，参见：<a href="https://www.gnu.org/software/emms/manual/#Track-Information" target="_blank">https://www.gnu.org/software/emms/manual/#Track-Information</a>.
 </p>
@@ -435,15 +441,16 @@ EMMS 提供了几种工具的接口，参见：<a href="https://www.gnu.org/soft
 然后是 Emacs 的配置。
 </p>
 <div class="org-src-container">
-<pre class="lisp"> <span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;emms-info-tinytag</span><span class="p">)</span>
+<pre class="lisp"><span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;emms-info-tinytag</span><span class="p">)</span>
+
 <span class="p">(</span><span class="nv">setq-default</span>
 <span class="w"> </span><span class="c1">;; 同步获取音乐元信息</span>
-<span class="w"> </span><span class="nv">emms-info-asynchronously</span><span class="w"> </span><span class="kt">nil</span>
+<span class="w"> </span><span class="nv">emms-info-asynchronously</span><span class="w"> </span><span class="no">nil</span>
 <span class="w"> </span><span class="c1">;; 音乐信息获取后端后端</span>
 <span class="w"> </span><span class="nv">emms-info-functions</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">emms-info-tinytag</span><span class="p">))</span>
+
 <span class="c1">;; 获取音乐列表同时获取元信息</span>
-<span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;emms-track-initialize-functions</span><span class="w"> </span><span class="nf">#&#39;</span><span class="nv">emms-info-initialize-track</span><span class="p">)</span>
- </pre>
+<span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;emms-track-initialize-functions</span><span class="w"> </span><span class="nf">#&#39;</span><span class="nv">emms-info-initialize-track</span><span class="p">)</span></pre>
 </div>
 
 <p>
@@ -456,25 +463,27 @@ EMMS 提供了几种工具的接口，参见：<a href="https://www.gnu.org/soft
 </div>
 </div>
 
-<div id="outline-container-org6bb6a6c" class="outline-4">
-<h4 id="org6bb6a6c">lyrics-fetcher 配置</h4>
-<div class="outline-text-4" id="text-org6bb6a6c">
+<div id="outline-container-orgdb356af" class="outline-4">
+<h4 id="orgdb356af">lyrics-fetcher 配置</h4>
+<div class="outline-text-4" id="text-orgdb356af">
 <p>
 最后就是 lyrics-fetcher 的配置了。
 </p>
 <div class="org-src-container">
-<pre class="lisp"> <span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;lyrics-fetcher</span><span class="p">)</span>
+<pre class="lisp"><span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;lyrics-fetcher</span><span class="p">)</span>
+
 <span class="c1">;; 歌词存放目录</span>
 <span class="c1">;; (setq lyrics-fetcher-lyrics-folder &quot;~/Music/lyrics&quot;)</span>
+
 <span class="c1">;; 歌词获取后端：网易云</span>
 <span class="p">(</span><span class="nv">lyrics-fetcher-use-backend</span><span class="w"> </span><span class="ss">&#39;neteasecloud</span><span class="p">)</span>
+
 <span class="c1">;; 播放歌曲前获取歌词</span>
 <span class="p">(</span><span class="nv">add-hook</span><span class="w"> </span><span class="ss">&#39;emms-player-started-hook</span>
 <span class="w">          </span><span class="nf">#&#39;</span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">()</span>
-<span class="w">              </span><span class="p">(</span><span class="nv">lyrics-fetcher-show-lyrics</span><span class="w"> </span><span class="kt">nil</span>
-<span class="w">                                          </span><span class="ss">:suppress-open</span><span class="w"> </span><span class="nc">t</span>
-<span class="w">                                          </span><span class="ss">:suppress-switch</span><span class="w"> </span><span class="no">nil</span><span class="p">)))</span>
- </pre>
+<span class="w">              </span><span class="p">(</span><span class="nv">lyrics-fetcher-show-lyrics</span><span class="w"> </span><span class="no">nil</span>
+<span class="w">                                          </span><span class="ss">:suppress-open</span><span class="w"> </span><span class="no">t</span>
+<span class="w">                                          </span><span class="ss">:suppress-switch</span><span class="w"> </span><span class="no">nil</span><span class="p">)))</span></pre>
 </div>
 
 <p>
