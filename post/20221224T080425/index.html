@@ -28,64 +28,64 @@
 
 <ul>
 <li>
-<a href="#org45a0df2"> 2022-12-12 更新 </a>
+<a href="#org8b61c5c"> 2022-12-12 更新 </a>
 <ul>
 <li>
-<a href="#org9a45a20"> 终端 </a></li>
+<a href="#orga6ce845"> 终端 </a></li>
 <li>
-<a href="#orgdea0c3e"> 浏览器 </a></li>
+<a href="#org4bd054e"> 浏览器 </a></li>
 <li>
-<a href="#org3f9b3dd"> Emacs </a></li>
+<a href="#org04fd909"> Emacs </a></li>
 </ul>
 </li>
 <li>
-<a href="#orgb338293"> 起因 </a></li>
+<a href="#orgfac8392"> 起因 </a></li>
 <li>
-<a href="#orgcb381e5"> 环境 </a></li>
+<a href="#org14de460"> 环境 </a></li>
 <li>
-<a href="#orga919f8e"> 工具安装 </a>
+<a href="#orga21c4f3"> 工具安装 </a>
 <ul>
 <li>
-<a href="#org8c5ef55"> Clash 安装 </a></li>
+<a href="#org82716d4"> Clash 安装 </a></li>
 <li>
-<a href="#orga8647f7"> cgproxy 安装 </a></li>
+<a href="#org70a7e07"> cgproxy 安装 </a></li>
 <li>
-<a href="#org84d53e7"> Pyyaml 安装 </a></li>
+<a href="#org35ca0ba"> Pyyaml 安装 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org33b7222"> Clash 配置 </a>
+<a href="#org571c5cb"> Clash 配置 </a>
 <ul>
 <li>
-<a href="#orgfcce243"> Clash 配置文件 </a>
+<a href="#org00ae056"> Clash 配置文件 </a>
 <ul>
 <li>
-<a href="#orgc86eae3"> 2022-12-12 更新 </a></li>
+<a href="#org481ead4"> 2022-12-12 更新 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org5919707"> Clash 服务 </a>
+<a href="#org49046d5"> Clash 服务 </a>
 <ul>
 <li>
-<a href="#orgc464ab6"> 脚本编写 </a></li>
+<a href="#org4a1c046"> 脚本编写 </a></li>
 <li>
-<a href="#org071fe21"> 流程介绍 </a></li>
+<a href="#org336b5f7"> 流程介绍 </a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<a href="#orgc7a082b"> cgproxy 配置 </a></li>
+<a href="#orge69ba78"> cgproxy 配置 </a></li>
 <li>
-<a href="#org62aede5"> Python 配置 </a></li>
+<a href="#org53701ab"> Python 配置 </a></li>
 <li>
-<a href="#org79230cb"> 结语 </a></li>
+<a href="#org87ea9fb"> 结语 </a></li>
 </ul>
 </nav>
 </div>
 <div id="page">
 <div id="preamble" class="status"><link rel="stylesheet" href="/static/pygments/dracula.css"><h1 class="post-title"> Arch linux 下 clash cgproxy 实现全局代理（透明代理） </h1>
-<div class="post-date">2023-05-17</div>
+<div class="post-date">2023-12-30</div>
 <div class="taglist"><a href="/tag/archlinux"> #archlinux </a>
 <a href="/tag/clash"> #clash </a>
 <a href="/tag/proxy"> #proxy </a>
@@ -93,17 +93,17 @@
 </div>
 <div id="content">
 
-<div id="outline-container-org45a0df2" class="outline-2">
-<h2 id="org45a0df2">2022-12-12 更新</h2>
-<div class="outline-text-2" id="text-org45a0df2">
+<div id="outline-container-org8b61c5c" class="outline-2">
+<h2 id="org8b61c5c">2022-12-12 更新</h2>
+<div class="outline-text-2" id="text-org8b61c5c">
 <p>
 DNS 污染，我解不开，没有相关的知识。最后决定不用全局代理了，为几个必要的、常用的应用单独设置即可。
 </p>
 </div>
 
-<div id="outline-container-org9a45a20" class="outline-3">
-<h3 id="org9a45a20">终端</h3>
-<div class="outline-text-3" id="text-org9a45a20">
+<div id="outline-container-orga6ce845" class="outline-3">
+<h3 id="orga6ce845">终端</h3>
+<div class="outline-text-3" id="text-orga6ce845">
 <p>
 我用的终端是 <a href="https://www.zsh.org" target="_blank">zsh</a> ，配置环境变量 <code>~/.zshrc</code> 或 <code>/.zshenv</code>:
 </p>
@@ -114,18 +114,18 @@ DNS 污染，我解不开，没有相关的知识。最后决定不用全局代�
 </div>
 </div>
 
-<div id="outline-container-orgdea0c3e" class="outline-3">
-<h3 id="orgdea0c3e">浏览器</h3>
-<div class="outline-text-3" id="text-orgdea0c3e">
+<div id="outline-container-org4bd054e" class="outline-3">
+<h3 id="org4bd054e">浏览器</h3>
+<div class="outline-text-3" id="text-org4bd054e">
 <p>
 我用的是 <a href="https://vivaldi.com/" target="_blank">Vivaldi</a> ，基于 Chromium 内核的，因此只需要设置系统代理就好。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org3f9b3dd" class="outline-3">
-<h3 id="org3f9b3dd">Emacs</h3>
-<div class="outline-text-3" id="text-org3f9b3dd">
+<div id="outline-container-org04fd909" class="outline-3">
+<h3 id="org04fd909">Emacs</h3>
+<div class="outline-text-3" id="text-org04fd909">
 <p>
 Emacs 用到的网络请求主要是 <a href="https://gnus.org" target="_blank">GNUS</a> 和一些自己用 <a href="https://github.com/tkf/emacs-request" target="_blank">emacs-request</a> 写的函数：
 </p>
@@ -142,9 +142,9 @@ Emacs 用到的网络请求主要是 <a href="https://gnus.org" target="_blank">
 </div>
 </div>
 
-<div id="outline-container-orgb338293" class="outline-2">
-<h2 id="orgb338293">起因</h2>
-<div class="outline-text-2" id="text-orgb338293">
+<div id="outline-container-orgfac8392" class="outline-2">
+<h2 id="orgfac8392">起因</h2>
+<div class="outline-text-2" id="text-orgfac8392">
 <p>
 上次没主意把 <a href="https://www.v2ray.com" target="_blank">v2ray</a> 升到了 v5 版本，然后出了大问题。尝试回滚，把 v2ray 装回 4.4 ，然后报了错，连不上站点，日志看起来是服务器的问题，事实上我手机一直用着，所以估计 v2ray 是报废了。之前一直用 <a href="https://qv2ray.net" target="_blank">qv2ray</a> + <a href="https://github.com/springzfx/cgproxy" target="_blank">cgproxy</a> 做全局代理<sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup>，很方便，每个应用程序都会走代理，省去很多麻烦 &#x2013; 其实根本就没管过。现在用不了了就考虑折腾一下 clash ，GLaDOS 跟我说 clash 更简单，所以尝试一番。
 </p>
@@ -154,14 +154,14 @@ Emacs 用到的网络请求主要是 <a href="https://gnus.org" target="_blank">
 </p>
 
 
-<figure id="org0f0784f">
+<figure id="orgc7e05f2">
 <a href="/assets/ec554c3ecc1255a56b799104caeba05a.png" target="_blank" target="_blank"><img src="/assets/ec554c3ecc1255a56b799104caeba05a.png" alt="ec554c3ecc1255a56b799104caeba05a.png"></a>
 
 <figcaption>cgproxy 项目简介</figcaption>
 </figure>
 
 
-<figure id="org38272e1">
+<figure id="orgf37e747">
 <a href="/assets/44a15e20e0bad435085963db1dc80c53.png" target="_blank" target="_blank"><img src="/assets/44a15e20e0bad435085963db1dc80c53.png" alt="44a15e20e0bad435085963db1dc80c53.png"></a>
 
 <figcaption>Clash 项目简介</figcaption>
@@ -173,9 +173,9 @@ Emacs 用到的网络请求主要是 <a href="https://gnus.org" target="_blank">
 </div>
 </div>
 
-<div id="outline-container-orgcb381e5" class="outline-2">
-<h2 id="orgcb381e5">环境</h2>
-<div class="outline-text-2" id="text-orgcb381e5">
+<div id="outline-container-org14de460" class="outline-2">
+<h2 id="org14de460">环境</h2>
+<div class="outline-text-2" id="text-org14de460">
 <p>
 本次尝试基于 <code>Arch linux</code> ，对于其他系统，如果你要折腾可能要亲力亲为，我爱莫能助。
 </p>
@@ -191,13 +191,13 @@ Emacs 用到的网络请求主要是 <a href="https://gnus.org" target="_blank">
 </div>
 </div>
 
-<div id="outline-container-orga919f8e" class="outline-2">
-<h2 id="orga919f8e">工具安装</h2>
-<div class="outline-text-2" id="text-orga919f8e">
+<div id="outline-container-orga21c4f3" class="outline-2">
+<h2 id="orga21c4f3">工具安装</h2>
+<div class="outline-text-2" id="text-orga21c4f3">
 </div>
-<div id="outline-container-org8c5ef55" class="outline-3">
-<h3 id="org8c5ef55">Clash 安装</h3>
-<div class="outline-text-3" id="text-org8c5ef55">
+<div id="outline-container-org82716d4" class="outline-3">
+<h3 id="org82716d4">Clash 安装</h3>
+<div class="outline-text-3" id="text-org82716d4">
 <p>
 Clash 的下载页面在<a href="https://github.com/Dreamacro/clash/releases/tag/v1.11.8" target="_blank">这里</a>
 </p>
@@ -219,9 +219,9 @@ Clash 的下载页面在<a href="https://github.com/Dreamacro/clash/releases/tag
 </div>
 </div>
 
-<div id="outline-container-orga8647f7" class="outline-3">
-<h3 id="orga8647f7">cgproxy 安装</h3>
-<div class="outline-text-3" id="text-orga8647f7">
+<div id="outline-container-org70a7e07" class="outline-3">
+<h3 id="org70a7e07">cgproxy 安装</h3>
+<div class="outline-text-3" id="text-org70a7e07">
 <p>
 cgproxy 的下载页面在<a href="https://github.com/springzfx/cgproxy/releases/tag/v0.19" target="_blank">这里</a>
 </p>
@@ -248,9 +248,9 @@ sudo<span class="w"> </span>pacman<span class="w"> </span>-U<span class="w"> </s
 </div>
 </div>
 
-<div id="outline-container-org84d53e7" class="outline-3">
-<h3 id="org84d53e7">Pyyaml 安装</h3>
-<div class="outline-text-3" id="text-org84d53e7">
+<div id="outline-container-org35ca0ba" class="outline-3">
+<h3 id="org35ca0ba">Pyyaml 安装</h3>
+<div class="outline-text-3" id="text-org35ca0ba">
 <p>
 这个库用来解析 <code>yaml</code> 文件， clash 的配置文件就是 <code>yaml</code> 格式。
 </p>
@@ -266,23 +266,25 @@ sudo<span class="w"> </span>pacman<span class="w"> </span>-U<span class="w"> </s
 安装成功
 </p>
 <div class="org-src-container">
-<pre class="nil"># 用 root 权限执行 python
-$ sudo python 
-&gt;&gt; import yaml
-&gt;&gt; yaml.__version__
-&#39;6.0&#39;</pre>
+<pre class="nil">usage: pygmentize [-l LEXER | -g] [-F FILTER[:options]] [-f FORMATTER]
+                  [-O OPTION=value[,OPTION=value,...]] [-P OPTION=value]
+                  [-o OUTPUTFILE] [-v] [-s] [-x] [--json]
+                  [-S STYLE -f formatter | -L [WHAT ...] | -N FILENAME | -C |
+                  -H NAME TYPE | -V | -h] [-a ARG]
+                  [INPUTFILE]
+pygmentize: error: argument -l: expected one argument</pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org33b7222" class="outline-2">
-<h2 id="org33b7222">Clash 配置</h2>
-<div class="outline-text-2" id="text-org33b7222">
+<div id="outline-container-org571c5cb" class="outline-2">
+<h2 id="org571c5cb">Clash 配置</h2>
+<div class="outline-text-2" id="text-org571c5cb">
 </div>
-<div id="outline-container-orgfcce243" class="outline-3">
-<h3 id="orgfcce243">Clash 配置文件</h3>
-<div class="outline-text-3" id="text-orgfcce243">
+<div id="outline-container-org00ae056" class="outline-3">
+<h3 id="org00ae056">Clash 配置文件</h3>
+<div class="outline-text-3" id="text-org00ae056">
 <p>
 clash 的使用：
 </p>
@@ -294,7 +296,7 @@ clash 的使用：
 </p>
 
 <p>
-如果目录没建的话，它会自动生成，同时会去下载 <code>mmdb</code> 。因为在<a href="#org8c5ef55">Clash 安装</a>那里已经装过了，这里就会跳过下载 —— 如果你没装它就自动安装。
+如果目录没建的话，它会自动生成，同时会去下载 <code>mmdb</code> 。因为在<a href="#org82716d4">Clash 安装</a>那里已经装过了，这里就会跳过下载 —— 如果你没装它就自动安装。
 </p>
 
 <p>
@@ -302,7 +304,7 @@ clash 的使用：
 </p>
 
 <p>
-我是写了另一个配置文件，通过 <code>Python</code> 来处理的，在<a href="#org62aede5">Python 配置</a>这一节我会说到，这里我介绍一下那些配置。
+我是写了另一个配置文件，通过 <code>Python</code> 来处理的，在<a href="#org53701ab">Python 配置</a>这一节我会说到，这里我介绍一下那些配置。
 </p>
 <div class="org-src-container">
 <pre class="yaml"><span class="nt">tproxy-port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7893</span>
@@ -320,7 +322,7 @@ clash 的使用：
 </div>
 
 <ul class="org-ul">
-<li><code>tproxy-port</code> 顾名思义，它指定了 <code>tproxy</code> 的监听端口， <code>cgproxy</code> 获取应用流量之后通过这个端口发给 <code>clash</code> ，这个要和 cgrpxoy 的配置一致（见<a href="#orgc7a082b">cgproxy 配置</a>）</li>
+<li><code>tproxy-port</code> 顾名思义，它指定了 <code>tproxy</code> 的监听端口， <code>cgproxy</code> 获取应用流量之后通过这个端口发给 <code>clash</code> ，这个要和 cgrpxoy 的配置一致（见<a href="#orge69ba78">cgproxy 配置</a>）</li>
 <li><code>dns.enable</code> 开启 dns 嗅探</li>
 <li><code>dns.enhanced-mode</code> 有 <code>redir-host</code> 和 <code>fake-ip</code> 两种模式<sup>[<a id="fnr:3.1" class="footref" href="#fn:3">3</a>]</sup>
 <ul class="org-ul">
@@ -340,9 +342,9 @@ clash 的使用：
 </div>
 </div>
 
-<div id="outline-container-orgc86eae3" class="outline-4">
-<h4 id="orgc86eae3">2022-12-12 更新</h4>
-<div class="outline-text-4" id="text-orgc86eae3">
+<div id="outline-container-org481ead4" class="outline-4">
+<h4 id="org481ead4">2022-12-12 更新</h4>
+<div class="outline-text-4" id="text-org481ead4">
 <p>
 在使用期间经历了一次 DNS 污染，去网上查了资料，需要把 dns 服务器的地址改成 TSL 或 TCP 请求 <sup>[<a id="fnr:5.1" class="footref" href="#fn:5">5</a>]</sup> ：
 </p>
@@ -364,17 +366,17 @@ clash 的使用：
 </div>
 </div>
 
-<div id="outline-container-org5919707" class="outline-3">
-<h3 id="org5919707">Clash 服务</h3>
-<div class="outline-text-3" id="text-org5919707">
+<div id="outline-container-org49046d5" class="outline-3">
+<h3 id="org49046d5">Clash 服务</h3>
+<div class="outline-text-3" id="text-org49046d5">
 <p>
 把 clash 作为系统服务，让它随系统启动而启动，同时自己设置守护进程，挂了自己重启<sup>[<a id="fnr:6.1" class="footref" href="#fn:6">6</a>]</sup><sup>, </sup><sup>[<a id="fnr:7.1" class="footref" href="#fn:7">7</a>]</sup>。
 </p>
 </div>
 
-<div id="outline-container-orgc464ab6" class="outline-4">
-<h4 id="orgc464ab6">脚本编写</h4>
-<div class="outline-text-4" id="text-orgc464ab6">
+<div id="outline-container-org4a1c046" class="outline-4">
+<h4 id="org4a1c046">脚本编写</h4>
+<div class="outline-text-4" id="text-org4a1c046">
 <p>
 创立目录 <code>etc/clash</code> ，写一个脚本 <code>clash.sh</code> ，这个脚本用于控制 clash 的启停。要把 <code>CONFIG_DIR</code> 改成你的路径：
 </p>
@@ -471,21 +473,21 @@ systemctl<span class="w"> </span>enbale<span class="w"> </span>clash.service<spa
 </div>
 </div>
 
-<div id="outline-container-org071fe21" class="outline-4">
-<h4 id="org071fe21">流程介绍</h4>
-<div class="outline-text-4" id="text-org071fe21">
+<div id="outline-container-org336b5f7" class="outline-4">
+<h4 id="org336b5f7">流程介绍</h4>
+<div class="outline-text-4" id="text-org336b5f7">
 </div>
 <ul class="org-ul">
-<li><a id="org1c1c203"></a>预处理<br>
-<div class="outline-text-5" id="text-org1c1c203">
+<li><a id="org9602991"></a>预处理<br>
+<div class="outline-text-5" id="text-org9602991">
 <p>
-<code>ExecStartPre</code> 调用控制脚本的 <code>update</code> ，在服务正式启动前作处理。控制脚本的 <code>update</code> 其实就是执行了一个 Python 脚本，用来更新订阅（详见 <a href="#org62aede5">Python 配置</a>）。
+<code>ExecStartPre</code> 调用控制脚本的 <code>update</code> ，在服务正式启动前作处理。控制脚本的 <code>update</code> 其实就是执行了一个 Python 脚本，用来更新订阅（详见 <a href="#org53701ab">Python 配置</a>）。
 </p>
 </div>
 </li>
 
-<li><a id="orgb599f77"></a>启动<br>
-<div class="outline-text-5" id="text-orgb599f77">
+<li><a id="org20f9281"></a>启动<br>
+<div class="outline-text-5" id="text-org20f9281">
 <p>
 <code>ExecStart</code> 调用控制脚本的 <code>start</code> 。
 </p>
@@ -498,8 +500,8 @@ systemctl<span class="w"> </span>enbale<span class="w"> </span>clash.service<spa
 </div>
 </li>
 
-<li><a id="orgc29ede1"></a>停止<br>
-<div class="outline-text-5" id="text-orgc29ede1">
+<li><a id="org781852d"></a>停止<br>
+<div class="outline-text-5" id="text-org781852d">
 <p>
 <code>ExecStop</code> 调用控制脚本的 <code>stop</code> 。
 </p>
@@ -514,9 +516,9 @@ systemctl<span class="w"> </span>enbale<span class="w"> </span>clash.service<spa
 </div>
 </div>
 </div>
-<div id="outline-container-orgc7a082b" class="outline-2">
-<h2 id="orgc7a082b">cgproxy 配置</h2>
-<div class="outline-text-2" id="text-orgc7a082b">
+<div id="outline-container-orge69ba78" class="outline-2">
+<h2 id="orge69ba78">cgproxy 配置</h2>
+<div class="outline-text-2" id="text-orge69ba78">
 <p>
 配置文件位于 <code>/etc/cgproxy/config.json</code>
 </p>
@@ -559,9 +561,9 @@ systemctl<span class="w"> </span>enbale<span class="w"> </span>clash.service<spa
 </div>
 </div>
 
-<div id="outline-container-org62aede5" class="outline-2">
-<h2 id="org62aede5">Python 配置</h2>
-<div class="outline-text-2" id="text-org62aede5">
+<div id="outline-container-org53701ab" class="outline-2">
+<h2 id="org53701ab">Python 配置</h2>
+<div class="outline-text-2" id="text-org53701ab">
 <p>
 这部分是用来更新订阅的。
 </p>
@@ -693,9 +695,9 @@ systemctl<span class="w"> </span>enbale<span class="w"> </span>clash.service<spa
 </div>
 </div>
 
-<div id="outline-container-org79230cb" class="outline-2">
-<h2 id="org79230cb">结语</h2>
-<div class="outline-text-2" id="text-org79230cb">
+<div id="outline-container-org87ea9fb" class="outline-2">
+<h2 id="org87ea9fb">结语</h2>
+<div class="outline-text-2" id="text-org87ea9fb">
 <p>
 至此，clash + cgproxy 的透明代理就配置完成了。
 </p>

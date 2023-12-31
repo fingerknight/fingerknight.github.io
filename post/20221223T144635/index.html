@@ -28,65 +28,65 @@
 
 <ul>
 <li>
-<a href="#org972c49c"> 简介 </a></li>
+<a href="#org153c77c"> 简介 </a></li>
 <li>
-<a href="#org05ec018"> 工具 </a></li>
+<a href="#org04552c7"> 工具 </a></li>
 <li>
-<a href="#org1343a51"> 搭建流程 </a>
+<a href="#org0a12b1d"> 搭建流程 </a>
 <ul>
 <li>
-<a href="#orgb953511"> 安装 Hugo </a></li>
+<a href="#orgaa6fd80"> 安装 Hugo </a></li>
 <li>
-<a href="#orgf7ec1f7"> Github Page 配置 </a></li>
+<a href="#org098e5f8"> Github Page 配置 </a></li>
 <li>
-<a href="#org2559b45"> Hugo 使用 </a></li>
+<a href="#org21c9232"> Hugo 使用 </a></li>
 <li>
-<a href="#org0128667"> 项目目录修改 </a></li>
+<a href="#org082450d"> 项目目录修改 </a></li>
 <li>
-<a href="#orgc48c893"> Hugo 主题 </a></li>
+<a href="#org16c2a42"> Hugo 主题 </a></li>
 <li>
-<a href="#org2d70c12"> 我的 Hugo 配置 </a>
+<a href="#org94dde42"> 我的 Hugo 配置 </a>
 <ul>
 <li>
-<a href="#org18b1f08"> 关于资源目录 </a></li>
+<a href="#orgc42c3a0"> 关于资源目录 </a></li>
 </ul>
 </li>
 <li>
-<a href="#orgeb14c8e"> 安装 ox-hugo </a></li>
+<a href="#org3c60da2"> 安装 ox-hugo </a></li>
 <li>
-<a href="#org1b455c8"> ox-hugo 使用 </a></li>
+<a href="#org60aa23d"> ox-hugo 使用 </a></li>
 <li>
-<a href="#orgd98297b"> 设置评论 </a>
+<a href="#orga13acf7"> 设置评论 </a>
 <ul>
 <li>
-<a href="#org4076783"> LoveIt 的 Bug </a></li>
+<a href="#orgba09431"> LoveIt 的 Bug </a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<a href="#orgfb11ab3"> 工作流程 </a></li>
+<a href="#orgf89d892"> 工作流程 </a></li>
 <li>
-<a href="#org4227ecd"> 自动化 </a></li>
+<a href="#orgde2ee54"> 自动化 </a></li>
 <li>
-<a href="#org02a4017"> 优化 </a>
+<a href="#orgea4eac8"> 优化 </a>
 <ul>
 <li>
-<a href="#orge9880ef"> CDN 设置 </a></li>
+<a href="#org3d57ff3"> CDN 设置 </a></li>
 <li>
-<a href="#org21063ea"> Cloudflare Page </a></li>
+<a href="#org652ec81"> Cloudflare Page </a></li>
 <li>
-<a href="#org2dade09"> Cloudflare + DNS </a></li>
+<a href="#org07b3d7f"> Cloudflare + DNS </a></li>
 </ul>
 </li>
 <li>
-<a href="#orga255f80"> 后记 </a></li>
+<a href="#org82252fe"> 后记 </a></li>
 </ul>
 </nav>
 </div>
 <div id="page">
 <div id="preamble" class="status"><link rel="stylesheet" href="/static/pygments/dracula.css"><h1 class="post-title"> 基于 hugo org mode github page 的静态站点搭建 </h1>
-<div class="post-date">2023-05-17</div>
+<div class="post-date">2023-12-30</div>
 <div class="taglist"><a href="/tag/emacs"> #emacs </a>
 <a href="/tag/githubpage"> #githubpage </a>
 <a href="/tag/hugo"> #hugo </a>
@@ -96,18 +96,18 @@
 </div>
 <div id="content">
 
-<div id="outline-container-org972c49c" class="outline-2">
-<h2 id="org972c49c">简介</h2>
-<div class="outline-text-2" id="text-org972c49c">
+<div id="outline-container-org153c77c" class="outline-2">
+<h2 id="org153c77c">简介</h2>
+<div class="outline-text-2" id="text-org153c77c">
 <p>
 现在已经全面转战 Emacs 和 Org Mode 了，想搭个人博客，折腾了很久。这里记录搭建思路和过程，供参考。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org05ec018" class="outline-2">
-<h2 id="org05ec018">工具</h2>
-<div class="outline-text-2" id="text-org05ec018">
+<div id="outline-container-org04552c7" class="outline-2">
+<h2 id="org04552c7">工具</h2>
+<div class="outline-text-2" id="text-org04552c7">
 <ul class="org-ul">
 <li>Emacs + Org Mode</li>
 <li>Hugo 静态站点生成制作</li>
@@ -118,17 +118,17 @@
 </div>
 </div>
 
-<div id="outline-container-org1343a51" class="outline-2">
-<h2 id="org1343a51">搭建流程</h2>
-<div class="outline-text-2" id="text-org1343a51">
+<div id="outline-container-org0a12b1d" class="outline-2">
+<h2 id="org0a12b1d">搭建流程</h2>
+<div class="outline-text-2" id="text-org0a12b1d">
 <p>
 假定已经安装了 <b>Emacs</b> 和 <b>Git</b> 。
 </p>
 </div>
 
-<div id="outline-container-orgb953511" class="outline-3">
-<h3 id="orgb953511">安装 Hugo</h3>
-<div class="outline-text-3" id="text-orgb953511">
+<div id="outline-container-orgaa6fd80" class="outline-3">
+<h3 id="orgaa6fd80">安装 Hugo</h3>
+<div class="outline-text-3" id="text-orgaa6fd80">
 <p>
 官方的下载页面在这里 <a href="https://gohugo.io/getting-started/installing" target="_blank">https://gohugo.io/getting-started/installing</a> ，根据自己的系统去安装即可。
 </p>
@@ -139,15 +139,15 @@
 </div>
 </div>
 
-<div id="outline-container-orgf7ec1f7" class="outline-3">
-<h3 id="orgf7ec1f7">Github Page 配置</h3>
-<div class="outline-text-3" id="text-orgf7ec1f7">
+<div id="outline-container-org098e5f8" class="outline-3">
+<h3 id="org098e5f8">Github Page 配置</h3>
+<div class="outline-text-3" id="text-org098e5f8">
 <p>
 首先，新建一个仓库，仓库名必须是 <code>&lt;Name&gt;.github.io</code> ， <code>&lt;Name&gt;</code> 是的 github 的昵称。
 </p>
 
 
-<figure id="org6d124cd">
+<figure id="orgf48e029">
 <a href="/assets/0ee8e396ec7b2bad1850f4e7eec4064d.png" target="_blank" target="_blank"><img src="/assets/0ee8e396ec7b2bad1850f4e7eec4064d.png" alt="0ee8e396ec7b2bad1850f4e7eec4064d.png"></a>
 
 </figure>
@@ -173,7 +173,7 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 </p>
 
 
-<figure id="org19d0f50">
+<figure id="org8ce97c6">
 <a href="/assets/a8a20d8dfdd1a69a0ac4a00e4025f44d.png" target="_blank" target="_blank"><img src="/assets/a8a20d8dfdd1a69a0ac4a00e4025f44d.png" alt="a8a20d8dfdd1a69a0ac4a00e4025f44d.png"></a>
 
 </figure>
@@ -184,9 +184,9 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 </div>
 </div>
 
-<div id="outline-container-org2559b45" class="outline-3">
-<h3 id="org2559b45">Hugo 使用</h3>
-<div class="outline-text-3" id="text-org2559b45">
+<div id="outline-container-org21c9232" class="outline-3">
+<h3 id="org21c9232">Hugo 使用</h3>
+<div class="outline-text-3" id="text-org21c9232">
 <p>
 新建项目， <code>blog</code> 是项目目录。
 </p>
@@ -197,7 +197,7 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 <p>
 然后会生成如下的项目：
 </p>
-<pre class="example" id="orgb8ebb24">
+<pre class="example" id="org9fb3ddd">
 ├── blog
 │   ├── archetypes/
 │   ├── config.toml
@@ -213,7 +213,7 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 </p>
 <ul class="org-ul">
 <li><code>archetypes</code>, 内容模板，可以取参考里面看，暂时不用管。</li>
-<li><code>config.toml</code>, 配置文件，详见<a href="#org2d70c12">我的 Hugo 配置</a></li>
+<li><code>config.toml</code>, 配置文件，详见<a href="#org94dde42">我的 Hugo 配置</a></li>
 <li><code>content</code>, 内容目录，用于存放 md 源文件。</li>
 <li><code>data</code>, 数据模板目录，暂时不用管。</li>
 <li><code>layouts</code>, HTML 模板目录，md 生成 HTML 的模板，有一套单独的语言描述。暂时也不用配。</li>
@@ -233,9 +233,9 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 </div>
 </div>
 
-<div id="outline-container-org0128667" class="outline-3">
-<h3 id="org0128667">项目目录修改</h3>
-<div class="outline-text-3" id="text-org0128667">
+<div id="outline-container-org082450d" class="outline-3">
+<h3 id="org082450d">项目目录修改</h3>
+<div class="outline-text-3" id="text-org082450d">
 <p>
 克隆仓库：
 </p>
@@ -246,7 +246,7 @@ git<span class="w"> </span>clone<span class="w"> </span>git@github.com:&lt;Name&
 <p>
 在 <code>blog/project</code> 目录下新目录存放 org 源码的目录（手动建）：
 </p>
-<pre class="example" id="org0a23eda">
+<pre class="example" id="org1baf866">
 ├── project
 │   ├── assets/
 │   ├── posts/
@@ -256,14 +256,14 @@ org 文件就放在 <code>blog/project/posts</code> 下，静态资源就放在 
 </p>
 
 <p>
-因为 Github Page 只能选 <code>/</code> 根目录或者 <code>/docs</code> 目录作为站点目录，所以需要在配置中把站点输出目录修改一下。在<a href="#org2d70c12">我的 Hugo 配置</a>那里我会说的。
+因为 Github Page 只能选 <code>/</code> 根目录或者 <code>/docs</code> 目录作为站点目录，所以需要在配置中把站点输出目录修改一下。在<a href="#org94dde42">我的 Hugo 配置</a>那里我会说的。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgc48c893" class="outline-3">
-<h3 id="orgc48c893">Hugo 主题</h3>
-<div class="outline-text-3" id="text-orgc48c893">
+<div id="outline-container-org16c2a42" class="outline-3">
+<h3 id="org16c2a42">Hugo 主题</h3>
+<div class="outline-text-3" id="text-org16c2a42">
 <p>
 主题可以去官网上找 <a href="https://themes.gohugo.io/" target="_blank">https://themes.gohugo.io/</a> ，我参考的是前辈用的 <a href="https://github.com/dillonzq/LoveIt" target="_blank">LoveIt</a> <sup>[<a id="fnr:2.1" class="footref" href="#fn:2">2</a>]</sup>，功能强大，界面美观，且不会太花哨。
 </p>
@@ -289,9 +289,9 @@ git<span class="w"> </span>submodule<span class="w"> </span>add<span class="w"> 
 </div>
 </div>
 
-<div id="outline-container-org2d70c12" class="outline-3">
-<h3 id="org2d70c12">我的 Hugo 配置</h3>
-<div class="outline-text-3" id="text-org2d70c12">
+<div id="outline-container-org94dde42" class="outline-3">
+<h3 id="org94dde42">我的 Hugo 配置</h3>
+<div class="outline-text-3" id="text-org94dde42">
 <p>
 配置文件可以说三种类型： <code>toml</code>, <code>yaml</code> 和 <code>json</code> ，我用的是 <code>yaml</code> ，简洁；把 LoveIt 官网给的完整配置转成 <code>yaml</code> ，然后手动调整，参考如下。
 </p>
@@ -300,7 +300,7 @@ git<span class="w"> </span>submodule<span class="w"> </span>add<span class="w"> 
 因为配置里面可能会用到密钥什么的，因此不建议公开到 GitHub 上边，所以只上传 <b>Org 源码</b>, <b>静态文件</b>和<b>站点文件</b>。如下所示:
 </p>
 
-<pre class="example" id="orgf0f7049">
+<pre class="example" id="org1ef1a5a">
 ├── project
 │   ├── assets/   # 存放静态文件
 │   ├── posts/    # 存放 org 
@@ -637,9 +637,9 @@ git<span class="w"> </span>submodule<span class="w"> </span>add<span class="w"> 
 </div>
 </div>
 
-<div id="outline-container-org18b1f08" class="outline-4">
-<h4 id="org18b1f08">关于资源目录</h4>
-<div class="outline-text-4" id="text-org18b1f08">
+<div id="outline-container-orgc42c3a0" class="outline-4">
+<h4 id="orgc42c3a0">关于资源目录</h4>
+<div class="outline-text-4" id="text-orgc42c3a0">
 <p>
 假设有个写好了的 md ,位置 <code>content/test.md</code> ，那么它会出现在<b>站点的根目录</b>，也就是需要访问 <code>https://yoursite.com/test.md</code> 。
 </p>
@@ -655,9 +655,9 @@ git<span class="w"> </span>submodule<span class="w"> </span>add<span class="w"> 
 </div>
 </div>
 
-<div id="outline-container-orgeb14c8e" class="outline-3">
-<h3 id="orgeb14c8e">安装 ox-hugo</h3>
-<div class="outline-text-3" id="text-orgeb14c8e">
+<div id="outline-container-org3c60da2" class="outline-3">
+<h3 id="org3c60da2">安装 ox-hugo</h3>
+<div class="outline-text-3" id="text-org3c60da2">
 <p>
 官网的安装页面：<a href="https://ox-hugo.scripter.co/#installation" target="_blank">https://ox-hugo.scripter.co/#installation</a>。
 </p>
@@ -681,13 +681,13 @@ git<span class="w"> </span>submodule<span class="w"> </span>add<span class="w"> 
 </div>
 </div>
 
-<div id="outline-container-org1b455c8" class="outline-3">
-<h3 id="org1b455c8">ox-hugo 使用</h3>
-<div class="outline-text-3" id="text-org1b455c8">
+<div id="outline-container-org60aa23d" class="outline-3">
+<h3 id="org60aa23d">ox-hugo 使用</h3>
+<div class="outline-text-3" id="text-org60aa23d">
 <p>
 Org file 的基础配置
 </p>
-<pre class="example" id="org43f1a00">
+<pre class="example" id="orgba16e7a">
 #+title: 文章标题
 #+date: [2022-09-10 Sat]
 #+hugo_tags: tags1 tags2
@@ -709,7 +709,7 @@ Org file 的基础配置
 <p>
 对于特定文件，可以在文件的头配置里面覆盖掉基础配置。比如“关于”页面 <code>about.org</code> 的内容：
 </p>
-<pre class="example" id="orge4744cb">
+<pre class="example" id="org828c11b">
 #+hugo_base_dir:../blog/
 #+hugo_section: ./
 #+hugo_auto_set_lastmod: t
@@ -725,9 +725,9 @@ Org file 的基础配置
 </div>
 </div>
 
-<div id="outline-container-orgd98297b" class="outline-3">
-<h3 id="orgd98297b">设置评论</h3>
-<div class="outline-text-3" id="text-orgd98297b">
+<div id="outline-container-orga13acf7" class="outline-3">
+<h3 id="orga13acf7">设置评论</h3>
+<div class="outline-text-3" id="text-orga13acf7">
 <p>
 <code>LoveIt</code> 主题给出了很多选择，我用的是 Gitalk<sup>[<a id="fnr:3.1" class="footref" href="#fn:3">3</a>]</sup> ，它是基于 Github 的 Issue 模块设计的。它十分太巧妙，用一个 Github 仓库做评论存储 —— 并不是作为 code 来存。对于每个仓库，都有一个 Issue 区域，用来记录问题和反馈。每条 issue 下面都可以评论 —— 本质上 Issue 就是一个评论区，它在 Github 的作用就是反馈问题，用来当博客评论简直舒服（当然，评论者必须登录 GitHub 之后才能评论）。
 </p>
@@ -737,7 +737,7 @@ Org file 的基础配置
 </p>
 
 
-<figure id="orge70660a">
+<figure id="orgf845edc">
 <a href="/assets/d34b1dfb262ae8296361aa62187c8c7d.png" target="_blank" target="_blank"><img src="/assets/d34b1dfb262ae8296361aa62187c8c7d.png" alt="d34b1dfb262ae8296361aa62187c8c7d.png"></a>
 
 </figure>
@@ -763,7 +763,7 @@ Org file 的基础配置
 </p>
 
 
-<figure id="org846229d">
+<figure id="orgbb8a7f6">
 <a href="/assets/855a13a6d739e9a2ede6a3a1c84360c4.png" target="_blank" target="_blank"><img src="/assets/855a13a6d739e9a2ede6a3a1c84360c4.png" alt="855a13a6d739e9a2ede6a3a1c84360c4.png"></a>
 
 </figure>
@@ -784,7 +784,7 @@ Org file 的基础配置
 </p>
 
 
-<figure id="org19d9c57">
+<figure id="orgbb5d07a">
 <a href="/assets/bbb01de56c80b26da5bec455b1801c7e.png" target="_blank" target="_blank"><img src="/assets/bbb01de56c80b26da5bec455b1801c7e.png" alt="bbb01de56c80b26da5bec455b1801c7e.png"></a>
 
 </figure>
@@ -798,9 +798,9 @@ Org file 的基础配置
 </p>
 </div>
 
-<div id="outline-container-org4076783" class="outline-4">
-<h4 id="org4076783">LoveIt 的 Bug</h4>
-<div class="outline-text-4" id="text-org4076783">
+<div id="outline-container-orgba09431" class="outline-4">
+<h4 id="orgba09431">LoveIt 的 Bug</h4>
+<div class="outline-text-4" id="text-orgba09431">
 <p>
 如果你有好几篇文章同时生成和发布，那么就有可能出现这个 bug ，会导致评论共用，就是 A 文章下面的评论和 B 文章下面的评论一样， A 文章下面发的评论在 B 文章那里也可以看到。
 </p>
@@ -810,7 +810,7 @@ Org file 的基础配置
 </p>
 
 
-<figure id="org491cb1b">
+<figure id="org153a32a">
 <a href="/assets/d37a73ac664364bf59a6680634649d5a.png" target="_blank" target="_blank"><img src="/assets/d37a73ac664364bf59a6680634649d5a.png" alt="d37a73ac664364bf59a6680634649d5a.png"></a>
 
 </figure>
@@ -828,7 +828,7 @@ LoveIt 的默认 <code>id</code> 是写死的，就是 <code>Date</code> ，所�
 </p>
 
 
-<figure id="orgd81c80a">
+<figure id="orge8ca255">
 <a href="/assets/209d9c3ab20e3c8b4a658e73050561e5.png" target="_blank" target="_blank"><img src="/assets/209d9c3ab20e3c8b4a658e73050561e5.png" alt="209d9c3ab20e3c8b4a658e73050561e5.png"></a>
 
 </figure>
@@ -841,9 +841,9 @@ LoveIt 的默认 <code>id</code> 是写死的，就是 <code>Date</code> ，所�
 </div>
 </div>
 
-<div id="outline-container-orgfb11ab3" class="outline-2">
-<h2 id="orgfb11ab3">工作流程</h2>
-<div class="outline-text-2" id="text-orgfb11ab3">
+<div id="outline-container-orgf89d892" class="outline-2">
+<h2 id="orgf89d892">工作流程</h2>
+<div class="outline-text-2" id="text-orgf89d892">
 <p>
 至此<b>一个博客就搭建好了</b>，接下来说明它的工作流程。
 </p>
@@ -865,9 +865,9 @@ git<span class="w"> </span>push</pre>
 </div>
 </div>
 
-<div id="outline-container-org4227ecd" class="outline-2">
-<h2 id="org4227ecd">自动化</h2>
-<div class="outline-text-2" id="text-org4227ecd">
+<div id="outline-container-orgde2ee54" class="outline-2">
+<h2 id="orgde2ee54">自动化</h2>
+<div class="outline-text-2" id="text-orgde2ee54">
 <p>
 如果每次都那么搞就太麻烦了。因此我写了一些东西，使得整个流程直接一步到位，可以参考。
 </p>
@@ -878,31 +878,31 @@ git<span class="w"> </span>push</pre>
 </div>
 </div>
 
-<div id="outline-container-org02a4017" class="outline-2">
-<h2 id="org02a4017">优化</h2>
-<div class="outline-text-2" id="text-org02a4017">
+<div id="outline-container-orgea4eac8" class="outline-2">
+<h2 id="orgea4eac8">优化</h2>
+<div class="outline-text-2" id="text-orgea4eac8">
 </div>
-<div id="outline-container-orge9880ef" class="outline-3">
-<h3 id="orge9880ef">CDN 设置</h3>
-<div class="outline-text-3" id="text-orge9880ef">
+<div id="outline-container-org3d57ff3" class="outline-3">
+<h3 id="org3d57ff3">CDN 设置</h3>
+<div class="outline-text-3" id="text-org3d57ff3">
 <p>
 复制 LoveIt 目录 <code>themes/LoveIt/assets/data/cdn/</code> 到../blog/assets/data/cdn/~ (<code>assets</code> 需要自己创)<sup>[<a id="fnr:4.1" class="footref" href="#fn:4">4</a>]</sup>。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org21063ea" class="outline-3">
-<h3 id="org21063ea">Cloudflare Page</h3>
-<div class="outline-text-3" id="text-org21063ea">
+<div id="outline-container-org652ec81" class="outline-3">
+<h3 id="org652ec81">Cloudflare Page</h3>
+<div class="outline-text-3" id="text-org652ec81">
 <p>
 Cloudflare Page 也可以直接托管静态站点了，它是联动 GitHub ，把仓库的 HTML 等站点文件克隆到它的服务器然后部署。参考《<a href="https://zhuanlan.zhihu.com/p/416269228" target="_blank">几分钟、零基础搭建个人网页！- 高速直连，基于Cloudflare Page - 知乎</a>》。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org2dade09" class="outline-3">
-<h3 id="org2dade09">Cloudflare + DNS</h3>
-<div class="outline-text-3" id="text-org2dade09">
+<div id="outline-container-org07b3d7f" class="outline-3">
+<h3 id="org07b3d7f">Cloudflare + DNS</h3>
+<div class="outline-text-3" id="text-org07b3d7f">
 <p>
 我是自己注册了一个域名，然后用 Cloudflare 托管，具体可以参考我的另一篇博客《<a href="/post/20221223T150015" target="_blank">GiHub Page + Cloudflare + NameSilo 的域名配置</a>》
 </p>
@@ -910,9 +910,9 @@ Cloudflare Page 也可以直接托管静态站点了，它是联动 GitHub ，�
 </div>
 </div>
 
-<div id="outline-container-orga255f80" class="outline-2">
-<h2 id="orga255f80">后记</h2>
-<div class="outline-text-2" id="text-orga255f80">
+<div id="outline-container-org82252fe" class="outline-2">
+<h2 id="org82252fe">后记</h2>
+<div class="outline-text-2" id="text-org82252fe">
 <p>
 搞了好几天终于算可以了，留一些尾巴后面处理。
 </p>

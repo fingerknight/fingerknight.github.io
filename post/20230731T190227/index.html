@@ -28,49 +28,49 @@
 
 <ul>
 <li>
-<a href="#orga25b919"> 前言 </a></li>
+<a href="#org41e2c5d"> 前言 </a></li>
 <li>
-<a href="#org1eb0ae3"> 安装 </a></li>
+<a href="#orgb2e8144"> 安装 </a></li>
 <li>
-<a href="#orgfa3d0d4"> 配置 </a>
+<a href="#orga64353c"> 配置 </a>
 <ul>
 <li>
-<a href="#org4ef6692"> 基本概念 </a></li>
+<a href="#org738d123"> 基本概念 </a></li>
 <li>
-<a href="#org6f505cb"> 键盘映射 Key </a>
+<a href="#org11b11dc"> 键盘映射 Key </a>
 <ul>
 <li>
-<a href="#org8c61756"> 键盘启动程序 </a></li>
+<a href="#orgf3a9707"> 键盘启动程序 </a></li>
 <li>
-<a href="#org6504465"> 键盘启动自定义程序 </a></li>
+<a href="#orgf0f79ed"> 键盘启动自定义程序 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org87d0bfe"> 工作区 Group </a></li>
+<a href="#org3ffa871"> 工作区 Group </a></li>
 <li>
-<a href="#org4b13eff"> 布局排版 Layout </a></li>
+<a href="#orgfdeb30c"> 布局排版 Layout </a></li>
 <li>
-<a href="#orgf539e90"> 屏幕 Screen </a></li>
+<a href="#org578df92"> 屏幕 Screen </a></li>
 <li>
-<a href="#org1ada366"> 窗口间距 </a></li>
+<a href="#org8260128"> 窗口间距 </a></li>
 <li>
-<a href="#orgc056577"> 窗口浮动 </a></li>
+<a href="#org881bda8"> 窗口浮动 </a></li>
 <li>
-<a href="#orgaf3988b"> 钩子 Hook </a></li>
+<a href="#orge89509d"> 钩子 Hook </a></li>
 <li>
-<a href="#orgb32f70e"> 命令行工具 </a></li>
+<a href="#org618450a"> 命令行工具 </a></li>
 <li>
-<a href="#orgfd896d6"> Debug </a></li>
+<a href="#org0416689"> Debug </a></li>
 </ul>
 </li>
 <li>
-<a href="#org3e9e96d"> 后记 </a></li>
+<a href="#org64bf1ef"> 后记 </a></li>
 </ul>
 </nav>
 </div>
 <div id="page">
 <div id="preamble" class="status"><link rel="stylesheet" href="/static/pygments/dracula.css"><h1 class="post-title"> Arch linux 下 qtile 桌面管理器 </h1>
-<div class="post-date">2023-07-31</div>
+<div class="post-date">2023-12-30</div>
 <div class="taglist"><a href="/tag/archlinux"> #archlinux </a>
 <a href="/tag/qtile"> #qtile </a>
 <a href="/tag/wm"> #wm </a>
@@ -78,9 +78,9 @@
 </div>
 <div id="content">
 
-<div id="outline-container-orga25b919" class="outline-2">
-<h2 id="orga25b919">前言</h2>
-<div class="outline-text-2" id="text-orga25b919">
+<div id="outline-container-org41e2c5d" class="outline-2">
+<h2 id="org41e2c5d">前言</h2>
+<div class="outline-text-2" id="text-org41e2c5d">
 <p>
 才折腾完 bspwm 不久（参见<a href="/post/20230628T212213" target="_blank">Bspwm 桌面</a> ），因为心心念念的 eaf-brower, 最后还是想换桌面。 <a href="https://github.com/emacs-eaf/emacs-application-framework" target="_blank">EAF</a> 是一个框架，允许在用户在 Emacs 中运行其他程序，比如浏览器等。我超级喜欢这个理念，所以老早就想迁移到 eaf. 但是因为浏览器需要自己调教，要花时间，就一直拖着（虽然时间花在折腾其他东西上）。终于把桌面调好后，发现 bspwm 用不了，这可难受坏了。
 </p>
@@ -91,18 +91,18 @@
 </div>
 </div>
 
-<div id="outline-container-org1eb0ae3" class="outline-2">
-<h2 id="org1eb0ae3">安装</h2>
-<div class="outline-text-2" id="text-org1eb0ae3">
+<div id="outline-container-orgb2e8144" class="outline-2">
+<h2 id="orgb2e8144">安装</h2>
+<div class="outline-text-2" id="text-orgb2e8144">
 <p>
 对于这种轻量级的桌面非常赞，只需要： <code>yay -S qtile</code>, 又因为有 lightdm, 甚至启动项都不用配，直接就能用了。有一些额外包，如果用它提供的 widget 组件时需要。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgfa3d0d4" class="outline-2">
-<h2 id="orgfa3d0d4">配置</h2>
-<div class="outline-text-2" id="text-orgfa3d0d4">
+<div id="outline-container-orga64353c" class="outline-2">
+<h2 id="orga64353c">配置</h2>
+<div class="outline-text-2" id="text-orga64353c">
 <p>
 相对而言， qtile 的<a href="https://docs.qtile.org/en/latest/" target="_blank">文档</a>写得比较简陋，没有 bspwm 那么详细。
 </p>
@@ -112,18 +112,18 @@
 </p>
 </div>
 
-<div id="outline-container-org4ef6692" class="outline-3">
-<h3 id="org4ef6692">基本概念</h3>
-<div class="outline-text-3" id="text-org4ef6692">
+<div id="outline-container-org738d123" class="outline-3">
+<h3 id="org738d123">基本概念</h3>
+<div class="outline-text-3" id="text-org738d123">
 <p>
 在 qtile 中，显示器是 screen, 工作区是 group, 窗口是 window, 布局是 layout.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org6f505cb" class="outline-3">
-<h3 id="org6f505cb">键盘映射 Key</h3>
-<div class="outline-text-3" id="text-org6f505cb">
+<div id="outline-container-org11b11dc" class="outline-3">
+<h3 id="org11b11dc">键盘映射 Key</h3>
+<div class="outline-text-3" id="text-org11b11dc">
 <p>
 在配置文件中，变量 <code>keys</code> 记录了所有的键盘映射，它是一个列表，元素是键盘对象。样板配置里面给出了例子：
 </p>
@@ -192,9 +192,9 @@
 </div>
 </div>
 
-<div id="outline-container-org8c61756" class="outline-4">
-<h4 id="org8c61756">键盘启动程序</h4>
-<div class="outline-text-4" id="text-org8c61756">
+<div id="outline-container-orgf3a9707" class="outline-4">
+<h4 id="orgf3a9707">键盘启动程序</h4>
+<div class="outline-text-4" id="text-orgf3a9707">
 <p>
 用 <code>lazy.spawn("cmd")</code> 来启动程序。比如把 Win + t 映射到启动 kitty 终端模拟器：
 </p>
@@ -209,9 +209,9 @@ spawn 里面是命令行的命令，可以加参数。
 </div>
 </div>
 
-<div id="outline-container-org6504465" class="outline-4">
-<h4 id="org6504465">键盘启动自定义程序</h4>
-<div class="outline-text-4" id="text-org6504465">
+<div id="outline-container-orgf0f79ed" class="outline-4">
+<h4 id="orgf0f79ed">键盘启动自定义程序</h4>
+<div class="outline-text-4" id="text-orgf0f79ed">
 <p>
 所有的程序都应该是 LazyCall, 所以不能直接把用户自定义的函数映射到键盘上，需要加一个修饰器：
 </p>
@@ -229,15 +229,15 @@ spawn 里面是命令行的命令，可以加参数。
 </p>
 
 <p>
-具体有哪些函数可用，官方并没给，我是手动试出来的。在 <a href="#orgfd896d6">Debug</a> 那一节我会给出我自己的笨蛋方法。
+具体有哪些函数可用，官方并没给，我是手动试出来的。在 <a href="#org0416689">Debug</a> 那一节我会给出我自己的笨蛋方法。
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org87d0bfe" class="outline-3">
-<h3 id="org87d0bfe">工作区 Group</h3>
-<div class="outline-text-3" id="text-org87d0bfe">
+<div id="outline-container-org3ffa871" class="outline-3">
+<h3 id="org3ffa871">工作区 Group</h3>
+<div class="outline-text-3" id="text-org3ffa871">
 <p>
 定义工作区：
 </p>
@@ -267,15 +267,15 @@ spawn 里面是命令行的命令，可以加参数。
 </div>
 </div>
 
-<div id="outline-container-org4b13eff" class="outline-3">
-<h3 id="org4b13eff">布局排版 Layout</h3>
-<div class="outline-text-3" id="text-org4b13eff">
+<div id="outline-container-orgfdeb30c" class="outline-3">
+<h3 id="orgfdeb30c">布局排版 Layout</h3>
+<div class="outline-text-3" id="text-orgfdeb30c">
 <p>
 Qtile 支持多种布局，可以在文档的 build-in layout 那一节看到相关介绍。我采用的是 Bsp, 即 bspwm 的布局，它根据当前窗口的尺寸长边分割，也就是 bspwm 文档中的 <a href="https://github.com/baskerville/bspwm#longest-side-scheme" target="_blank">longest-side-scheme</a>:
 </p>
 
 
-<figure id="org9c00905">
+<figure id="org2c826c9">
 <a href="/assets/a996197475f9055c6672052dee7e9c2d.png" target="_blank" target="_blank"><img src="/assets/a996197475f9055c6672052dee7e9c2d.png" alt="a996197475f9055c6672052dee7e9c2d.png"></a>
 
 </figure>
@@ -305,9 +305,9 @@ Qtile 支持多种布局，可以在文档的 build-in layout 那一节看到相
 </div>
 </div>
 
-<div id="outline-container-orgf539e90" class="outline-3">
-<h3 id="orgf539e90">屏幕 Screen</h3>
-<div class="outline-text-3" id="text-orgf539e90">
+<div id="outline-container-org578df92" class="outline-3">
+<h3 id="org578df92">屏幕 Screen</h3>
+<div class="outline-text-3" id="text-org578df92">
 <p>
 屏幕同样可以设置多个屏幕对应多种不同的展示内容，目前我是单屏，所以实例化一个 <code>Screen</code> 即可。可以在实例化时传入 <code>wallpaper</code> 参数来设置壁纸，也可以用 wallpaper 的 widget. 我这里直接用 Screen 设置，后续可以调用类方法 <code>set_wallpaper</code> 来方便的切换壁纸。
 </p>
@@ -327,15 +327,15 @@ Qtile 支持多种布局，可以在文档的 build-in layout 那一节看到相
 </div>
 </div>
 
-<div id="outline-container-org1ada366" class="outline-3">
-<h3 id="org1ada366">窗口间距</h3>
-<div class="outline-text-3" id="text-org1ada366">
+<div id="outline-container-org8260128" class="outline-3">
+<h3 id="org8260128">窗口间距</h3>
+<div class="outline-text-3" id="text-org8260128">
 <p>
-在<a href="#org4b13eff">布局设置</a>时，传入了 <code>margin</code> 参数，它表示窗口的外边距。如此一来，分割的两个窗口之间的距离其实是两倍的 margin, 因为每个窗口都有一个。以水平分割的两个窗口为例，我更希望的是窗口到屏幕边缘与窗口之间的距离相等，如：
+在<a href="#orgfdeb30c">布局设置</a>时，传入了 <code>margin</code> 参数，它表示窗口的外边距。如此一来，分割的两个窗口之间的距离其实是两倍的 margin, 因为每个窗口都有一个。以水平分割的两个窗口为例，我更希望的是窗口到屏幕边缘与窗口之间的距离相等，如：
 </p>
 
 
-<figure id="orgeabcf10">
+<figure id="org5d7ce72">
 <a href="/assets/08cbaae799b245d1e8abe945325898a4.png" target="_blank" target="_blank"><img src="/assets/08cbaae799b245d1e8abe945325898a4.png" alt="08cbaae799b245d1e8abe945325898a4.png"></a>
 
 </figure>
@@ -346,9 +346,9 @@ Qtile 支持多种布局，可以在文档的 build-in layout 那一节看到相
 </div>
 </div>
 
-<div id="outline-container-orgc056577" class="outline-3">
-<h3 id="orgc056577">窗口浮动</h3>
-<div class="outline-text-3" id="text-orgc056577">
+<div id="outline-container-org881bda8" class="outline-3">
+<h3 id="org881bda8">窗口浮动</h3>
+<div class="outline-text-3" id="text-org881bda8">
 <p>
 如样本配置中的
 </p>
@@ -374,9 +374,9 @@ Qtile 支持多种布局，可以在文档的 build-in layout 那一节看到相
 </div>
 </div>
 
-<div id="outline-container-orgaf3988b" class="outline-3">
-<h3 id="orgaf3988b">钩子 Hook</h3>
-<div class="outline-text-3" id="text-orgaf3988b">
+<div id="outline-container-orge89509d" class="outline-3">
+<h3 id="orge89509d">钩子 Hook</h3>
+<div class="outline-text-3" id="text-orge89509d">
 <p>
 Qtile 用 hook 来加入定制。比如一个简单开机自启动的例子：
 </p>
@@ -439,9 +439,9 @@ Qtile 用 hook 来加入定制。比如一个简单开机自启动的例子：
 </div>
 </div>
 
-<div id="outline-container-orgb32f70e" class="outline-3">
-<h3 id="orgb32f70e">命令行工具</h3>
-<div class="outline-text-3" id="text-orgb32f70e">
+<div id="outline-container-org618450a" class="outline-3">
+<h3 id="org618450a">命令行工具</h3>
+<div class="outline-text-3" id="text-org618450a">
 <p>
 命令行可以用 <code>qtile cmd-obj</code> 来执行操作，完整命令 <code>qtile cmd-obj -o obj -f func</code>.
 </p>
@@ -464,9 +464,9 @@ Qtile 用 hook 来加入定制。比如一个简单开机自启动的例子：
 </div>
 </div>
 
-<div id="outline-container-orgfd896d6" class="outline-3">
-<h3 id="orgfd896d6">Debug</h3>
-<div class="outline-text-3" id="text-orgfd896d6">
+<div id="outline-container-org0416689" class="outline-3">
+<h3 id="org0416689">Debug</h3>
+<div class="outline-text-3" id="text-org0416689">
 <p>
 首先，qtile 会生成一个日志，路径是 <code>~/.local/share/qtile/qtile.log</code>. 路径可以调，但我忘了在那个地方看到的，现在找不到了。
 </p>
@@ -478,9 +478,9 @@ Qtile 用 hook 来加入定制。比如一个简单开机自启动的例子：
 </div>
 </div>
 
-<div id="outline-container-org3e9e96d" class="outline-2">
-<h2 id="org3e9e96d">后记</h2>
-<div class="outline-text-2" id="text-org3e9e96d">
+<div id="outline-container-org64bf1ef" class="outline-2">
+<h2 id="org64bf1ef">后记</h2>
+<div class="outline-text-2" id="text-org64bf1ef">
 <p>
 没太感觉 qtile 用 Python 来写会占用多大资源或者响应多慢，用起来其实还挺 OK, 配置用我最熟悉的 Python 就写一些比较 hack 的方法去和其他比如 eww 模组联动。
 </p>

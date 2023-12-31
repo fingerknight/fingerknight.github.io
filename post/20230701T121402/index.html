@@ -28,30 +28,30 @@
 
 <ul>
 <li>
-<a href="#org96af1f2"> 前言 </a></li>
+<a href="#orgbae279e"> 前言 </a></li>
 <li>
-<a href="#org660e908"> 安装 </a></li>
+<a href="#org832a279"> 安装 </a></li>
 <li>
-<a href="#org0978928"> 配置 </a>
+<a href="#orgf884734"> 配置 </a>
 <ul>
 <li>
-<a href="#org25fbae8"> 发音 </a></li>
+<a href="#orgb127e2d"> 发音 </a></li>
 <li>
-<a href="#org1839685"> 离线词典 </a></li>
+<a href="#orgbfdac97"> 离线词典 </a></li>
 <li>
-<a href="#org5535595"> 在线中文词典 </a></li>
+<a href="#org349931c"> 在线中文词典 </a></li>
 <li>
-<a href="#org6c830ba"> 在线英文词典 </a></li>
+<a href="#org66da8a8"> 在线英文词典 </a></li>
 </ul>
 </li>
 <li>
-<a href="#orgc438c51"> 后记 </a></li>
+<a href="#org62d9d4f"> 后记 </a></li>
 </ul>
 </nav>
 </div>
 <div id="page">
 <div id="preamble" class="status"><link rel="stylesheet" href="/static/pygments/dracula.css"><h1 class="post-title"> Goldendict 终极配置 </h1>
-<div class="post-date">2023-07-02</div>
+<div class="post-date">2023-12-30</div>
 <div class="taglist"><a href="/tag/dictionary"> #dictionary </a>
 <a href="/tag/goldendict"> #goldendict </a>
 <a href="/tag/language"> #language </a>
@@ -59,9 +59,9 @@
 </div>
 <div id="content">
 
-<div id="outline-container-org96af1f2" class="outline-2">
-<h2 id="org96af1f2">前言</h2>
-<div class="outline-text-2" id="text-org96af1f2">
+<div id="outline-container-orgbae279e" class="outline-2">
+<h2 id="orgbae279e">前言</h2>
+<div class="outline-text-2" id="text-orgbae279e">
 <p>
 这两天先是折腾了自己写的词典，我想的是用 C/S 模式，奈何前端 pyqt 启动得还是太慢，兜兜转转又想用回 goldendict. 之前不用是因为自己的错误判断：
 </p>
@@ -72,9 +72,9 @@
 </div>
 </div>
 
-<div id="outline-container-org660e908" class="outline-2">
-<h2 id="org660e908">安装</h2>
-<div class="outline-text-2" id="text-org660e908">
+<div id="outline-container-org832a279" class="outline-2">
+<h2 id="org832a279">安装</h2>
+<div class="outline-text-2" id="text-org832a279">
 <div class="org-src-container">
 <pre class="shell">pacman<span class="w"> </span>-S<span class="w"> </span>goldendict-git<span class="w"> </span>espeak</pre>
 </div>
@@ -85,9 +85,9 @@
 </div>
 </div>
 
-<div id="outline-container-org0978928" class="outline-2">
-<h2 id="org0978928">配置</h2>
-<div class="outline-text-2" id="text-org0978928">
+<div id="outline-container-orgf884734" class="outline-2">
+<h2 id="orgf884734">配置</h2>
+<div class="outline-text-2" id="text-orgf884734">
 <p>
 需要配置的四个内容：
 </p>
@@ -99,18 +99,18 @@
 </ul>
 </div>
 
-<div id="outline-container-org25fbae8" class="outline-3">
-<h3 id="org25fbae8">发音</h3>
-<div class="outline-text-3" id="text-org25fbae8">
+<div id="outline-container-orgb127e2d" class="outline-3">
+<h3 id="orgb127e2d">发音</h3>
+<div class="outline-text-3" id="text-orgb127e2d">
 <p>
 在 Goldendict 的配置用，词典里添加一个程序 Audio <code>espeak %GDOWORD%</code> （默认就有）。更多的选项查看 <code>espeak --help</code> （比如一些口音，默认是英音）。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org1839685" class="outline-3">
-<h3 id="org1839685">离线词典</h3>
-<div class="outline-text-3" id="text-org1839685">
+<div id="outline-container-orgbfdac97" class="outline-3">
+<h3 id="orgbfdac97">离线词典</h3>
+<div class="outline-text-3" id="text-orgbfdac97">
 <p>
 到 <a href="https://github.com/skywind3000/ECDICT-ultimate/releases" target="_blank">Release</a> 下载 mdx 版本的词典，导入即可。
 </p>
@@ -121,9 +121,9 @@
 </div>
 </div>
 
-<div id="outline-container-org5535595" class="outline-3">
-<h3 id="org5535595">在线中文词典</h3>
-<div class="outline-text-3" id="text-org5535595">
+<div id="outline-container-org349931c" class="outline-3">
+<h3 id="org349931c">在线中文词典</h3>
+<div class="outline-text-3" id="text-org349931c">
 <p>
 我会用到的两个：
 </p>
@@ -138,9 +138,9 @@
 </div>
 </div>
 
-<div id="outline-container-org6c830ba" class="outline-3">
-<h3 id="org6c830ba">在线英文词典</h3>
-<div class="outline-text-3" id="text-org6c830ba">
+<div id="outline-container-org66da8a8" class="outline-3">
+<h3 id="org66da8a8">在线英文词典</h3>
+<div class="outline-text-3" id="text-org66da8a8">
 <p>
 直接用 DICT server. 配一个 <code>dict.org</code>, 地址 <code>dict://dict.org</code>, 数据类型 <code>wn</code>. 默认也有。
 </p>
@@ -148,9 +148,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgc438c51" class="outline-2">
-<h2 id="orgc438c51">后记</h2>
-<div class="outline-text-2" id="text-orgc438c51">
+<div id="outline-container-org62d9d4f" class="outline-2">
+<h2 id="org62d9d4f">后记</h2>
+<div class="outline-text-2" id="text-org62d9d4f">
 <p>
 足够简单，但又不失功力。
 </p>

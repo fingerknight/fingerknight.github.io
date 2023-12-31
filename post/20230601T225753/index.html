@@ -28,62 +28,62 @@
 
 <ul>
 <li>
-<a href="#orgcc16f42"> 前言 </a></li>
+<a href="#org8c4c27a"> 前言 </a></li>
 <li>
-<a href="#org3e93f75"> 基础 </a></li>
+<a href="#orgb80eb45"> 基础 </a></li>
 <li>
-<a href="#org47ea318"> 语法 </a>
+<a href="#orge2bf385"> 语法 </a>
 <ul>
 <li>
-<a href="#org6251b62"> 变量定义 </a>
+<a href="#org45305c2"> 变量定义 </a>
 <ul>
 <li>
-<a href="#orge4a9a1e"> defvar </a></li>
+<a href="#orgdda32c4"> defvar </a></li>
 <li>
-<a href="#org9f50d35"> deflisten </a></li>
+<a href="#orgb863ee7"> deflisten </a></li>
 <li>
-<a href="#org8b9c057"> defpoll </a></li>
+<a href="#org4f8d887"> defpoll </a></li>
 </ul>
 </li>
 <li>
-<a href="#org0133666"> 变量使用 </a></li>
+<a href="#orgd6ced09"> 变量使用 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org0e5bb58"> 窗口 </a></li>
+<a href="#org5c40cbc"> 窗口 </a></li>
 <li>
-<a href="#orgc43f0ef"> 状态栏窗口框架 </a></li>
+<a href="#org5441e0e"> 状态栏窗口框架 </a></li>
 <li>
-<a href="#org99ae775"> 功能模块 </a>
+<a href="#orgb1905e5"> 功能模块 </a>
 <ul>
 <li>
-<a href="#org1535f35"> 工作区展示 </a></li>
+<a href="#orgadcecd8"> 工作区展示 </a></li>
 <li>
-<a href="#org6b8633c"> 日期时间 </a></li>
+<a href="#org5339cc6"> 日期时间 </a></li>
 <li>
-<a href="#org7fadc2d"> 系统状态 </a></li>
+<a href="#orgefaf026"> 系统状态 </a></li>
 <li>
-<a href="#org51abfbc"> 后台音乐 MPD </a></li>
+<a href="#org900d196"> 后台音乐 MPD </a></li>
 <li>
-<a href="#org81050e5"> 电池状态 </a></li>
+<a href="#orgbfa53a1"> 电池状态 </a></li>
 <li>
-<a href="#orgb8ea0ee"> 灯光 </a></li>
+<a href="#org28abf37"> 灯光 </a></li>
 <li>
-<a href="#org0422efc"> 音量模块 </a></li>
+<a href="#orgb37e4f6"> 音量模块 </a></li>
 <li>
-<a href="#org89e533e"> 用户模块 </a></li>
+<a href="#orgae11bf1"> 用户模块 </a></li>
 </ul>
 </li>
 <li>
-<a href="#org3636e8f"> 样式 </a></li>
+<a href="#orgbeb2c4e"> 样式 </a></li>
 <li>
-<a href="#org23b9382"> 后记 </a></li>
+<a href="#orga0a13e6"> 后记 </a></li>
 </ul>
 </nav>
 </div>
 <div id="page">
 <div id="preamble" class="status"><link rel="stylesheet" href="/static/pygments/dracula.css"><h1 class="post-title"> Eww 的配置 </h1>
-<div class="post-date">2023-08-26</div>
+<div class="post-date">2023-12-30</div>
 <div class="taglist"><a href="/tag/archlinux"> #archlinux </a>
 <a href="/tag/bspwm"> #bspwm </a>
 <a href="/tag/eww"> #eww </a>
@@ -92,9 +92,9 @@
 </div>
 <div id="content">
 
-<div id="outline-container-orgcc16f42" class="outline-2">
-<h2 id="orgcc16f42">前言</h2>
-<div class="outline-text-2" id="text-orgcc16f42">
+<div id="outline-container-org8c4c27a" class="outline-2">
+<h2 id="org8c4c27a">前言</h2>
+<div class="outline-text-2" id="text-org8c4c27a">
 <p>
 <a href="https://elkowar.github.io/eww/eww.html" target="_blank">EWW</a> 是一个窗口模块工具，可以用于生成各式各样的 widget. 不单单是状态栏，就是可以当作一个类 gtk 等的工具使用，自己做一些窗口样式。
 </p>
@@ -117,35 +117,35 @@
 </div>
 </div>
 
-<div id="outline-container-org3e93f75" class="outline-2">
-<h2 id="org3e93f75">基础</h2>
-<div class="outline-text-2" id="text-org3e93f75">
+<div id="outline-container-orgb80eb45" class="outline-2">
+<h2 id="orgb80eb45">基础</h2>
+<div class="outline-text-2" id="text-orgb80eb45">
 <p>
 配置目录在 <code>~/.config/eww</code>, 配置文件是 <code>/.config/eww/eww.yuck</code>, 样式文件是 <code>/.config/eww/eww.scss</code>.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org47ea318" class="outline-2">
-<h2 id="org47ea318">语法</h2>
-<div class="outline-text-2" id="text-org47ea318">
+<div id="outline-container-orge2bf385" class="outline-2">
+<h2 id="orge2bf385">语法</h2>
+<div class="outline-text-2" id="text-orge2bf385">
 <p>
 eww 用的是是一套自己的语言 yuck. 本质上就是一种 lisp 的方言，写 Emacs Lisp 写多了就没什么压力。
 </p>
 </div>
 
 
-<div id="outline-container-org6251b62" class="outline-3">
-<h3 id="org6251b62">变量定义</h3>
-<div class="outline-text-3" id="text-org6251b62">
+<div id="outline-container-org45305c2" class="outline-3">
+<h3 id="org45305c2">变量定义</h3>
+<div class="outline-text-3" id="text-org45305c2">
 <p>
 Yuck 中有三种变量定义： <code>defvar</code>, <code>deflisten</code> 和 <code>defpoll</code>.
 </p>
 </div>
 
-<div id="outline-container-orge4a9a1e" class="outline-4">
-<h4 id="orge4a9a1e">defvar</h4>
-<div class="outline-text-4" id="text-orge4a9a1e">
+<div id="outline-container-orgdda32c4" class="outline-4">
+<h4 id="orgdda32c4">defvar</h4>
+<div class="outline-text-4" id="text-orgdda32c4">
 <p>
 语法： <code>(defvar name "string")</code>
 </p>
@@ -156,9 +156,9 @@ Yuck 中有三种变量定义： <code>defvar</code>, <code>deflisten</code> 和
 </div>
 </div>
 
-<div id="outline-container-org9f50d35" class="outline-4">
-<h4 id="org9f50d35">deflisten</h4>
-<div class="outline-text-4" id="text-org9f50d35">
+<div id="outline-container-orgb863ee7" class="outline-4">
+<h4 id="orgb863ee7">deflisten</h4>
+<div class="outline-text-4" id="text-orgb863ee7">
 <p>
 语法： <code>(deflisten name [:initial "string"] "cmd")</code>
 </p>
@@ -181,9 +181,9 @@ Yuck 中有三种变量定义： <code>defvar</code>, <code>deflisten</code> 和
 </div>
 </div>
 
-<div id="outline-container-org8b9c057" class="outline-4">
-<h4 id="org8b9c057">defpoll</h4>
-<div class="outline-text-4" id="text-org8b9c057">
+<div id="outline-container-org4f8d887" class="outline-4">
+<h4 id="org4f8d887">defpoll</h4>
+<div class="outline-text-4" id="text-org4f8d887">
 <p>
 语法： <code>(defpoll name :interval "5s" [:initial "string" :run-while var] "cmd")</code>
 </p>
@@ -203,9 +203,9 @@ Yuck 中有三种变量定义： <code>defvar</code>, <code>deflisten</code> 和
 </div>
 </div>
 
-<div id="outline-container-org0133666" class="outline-3">
-<h3 id="org0133666">变量使用</h3>
-<div class="outline-text-3" id="text-org0133666">
+<div id="outline-container-orgd6ced09" class="outline-3">
+<h3 id="orgd6ced09">变量使用</h3>
+<div class="outline-text-3" id="text-orgd6ced09">
 <p>
 eww 的变量使用是定义在一对花括号 <code>{}</code> 中.
 </p>
@@ -230,9 +230,9 @@ eww 的变量使用是定义在一对花括号 <code>{}</code> 中.
 </div>
 </div>
 
-<div id="outline-container-org0e5bb58" class="outline-2">
-<h2 id="org0e5bb58">窗口</h2>
-<div class="outline-text-2" id="text-org0e5bb58">
+<div id="outline-container-org5c40cbc" class="outline-2">
+<h2 id="org5c40cbc">窗口</h2>
+<div class="outline-text-2" id="text-org5c40cbc">
 <p>
 ewww 的最大的定义是定义一个窗口 (window), 然后往下一层是模块 (widget). 一个窗口可以容纳多个模块，而一个模块同样可以嵌套和包含多个子模块。
 </p>
@@ -243,9 +243,9 @@ ewww 的最大的定义是定义一个窗口 (window), 然后往下一层是模�
 </div>
 </div>
 
-<div id="outline-container-orgc43f0ef" class="outline-2">
-<h2 id="orgc43f0ef">状态栏窗口框架</h2>
-<div class="outline-text-2" id="text-orgc43f0ef">
+<div id="outline-container-org5441e0e" class="outline-2">
+<h2 id="org5441e0e">状态栏窗口框架</h2>
+<div class="outline-text-2" id="text-org5441e0e">
 <p>
 整个框架的编写参考了大佬的配置：<a href="https://github.com/end-4/dots-hyprland" target="_blank">GitHub - end-4/dots-hyprland: unleashing the power of eww!</a>。它是 Wall of Fame 的编号一，一上来就看到他的作品<sup>[<a id="fnr:1.1" class="footref" href="#fn:1">1</a>]</sup> 。
 </p>
@@ -317,10 +317,10 @@ ewww 的最大的定义是定义一个窗口 (window), 然后往下一层是模�
 <span class="w">  </span><span class="ss">:monitor</span><span class="w"> </span><span class="mi">0</span>
 <span class="w">  </span><span class="ss">:exclusive</span><span class="w"> </span><span class="nv">true</span>
 <span class="w">  </span><span class="ss">:geometry</span><span class="w"> </span><span class="p">(</span><span class="nv">geometry</span>
-<span class="w">             </span><span class="ss">:x</span><span class="w"> </span><span class="s">&quot;0&quot;</span>
-<span class="w">             </span><span class="ss">:y</span><span class="w"> </span><span class="s">&quot;5&quot;</span>
-<span class="w">             </span><span class="ss">:width</span><span class="w"> </span><span class="s">&quot;1894px&quot;</span>
-<span class="w">             </span><span class="ss">:height</span><span class="w"> </span><span class="s">&quot;26px&quot;</span>
+<span class="w">             </span><span class="c1">;; :y &quot;5&quot;</span>
+<span class="w">             </span><span class="c1">;; :width &quot;1920px&quot;</span>
+<span class="w">             </span><span class="ss">:width</span><span class="w"> </span><span class="s">&quot;100%&quot;</span>
+<span class="w">             </span><span class="c1">;; :height &quot;20px&quot;</span>
 <span class="w">             </span><span class="ss">:anchor</span><span class="w"> </span><span class="s">&quot;top center&quot;</span>
 <span class="w">             </span><span class="p">)</span>
 <span class="w">  </span><span class="ss">:windowtype</span><span class="w"> </span><span class="s">&quot;dock&quot;</span>
@@ -347,13 +347,13 @@ ewww 的最大的定义是定义一个窗口 (window), 然后往下一层是模�
 </div>
 </div>
 
-<div id="outline-container-org99ae775" class="outline-2">
-<h2 id="org99ae775">功能模块</h2>
-<div class="outline-text-2" id="text-org99ae775">
+<div id="outline-container-orgb1905e5" class="outline-2">
+<h2 id="orgb1905e5">功能模块</h2>
+<div class="outline-text-2" id="text-orgb1905e5">
 </div>
-<div id="outline-container-org1535f35" class="outline-3">
-<h3 id="org1535f35">工作区展示</h3>
-<div class="outline-text-3" id="text-org1535f35">
+<div id="outline-container-orgadcecd8" class="outline-3">
+<h3 id="orgadcecd8">工作区展示</h3>
+<div class="outline-text-3" id="text-orgadcecd8">
 <p>
 配置工作区 <code>modules/workspace.yuck</code>
 </p>
@@ -433,15 +433,15 @@ ewww 的最大的定义是定义一个窗口 (window), 然后往下一层是模�
 </p>
 
 
-<figure id="orgca02468">
+<figure id="org4630cf4">
 <a href="/assets/849da2197cf9c6363dd521e44da23908.png" target="_blank" target="_blank"><img src="/assets/849da2197cf9c6363dd521e44da23908.png" alt="849da2197cf9c6363dd521e44da23908.png"></a>
 
 </figure>
 </div>
 </div>
-<div id="outline-container-org6b8633c" class="outline-3">
-<h3 id="org6b8633c">日期时间</h3>
-<div class="outline-text-3" id="text-org6b8633c">
+<div id="outline-container-org5339cc6" class="outline-3">
+<h3 id="org5339cc6">日期时间</h3>
+<div class="outline-text-3" id="text-org5339cc6">
 <p>
 日期时间配置 <code>~/.config/eww/modules/datetime.yuck</code>
 </p>
@@ -509,16 +509,16 @@ ewww 的最大的定义是定义一个窗口 (window), 然后往下一层是模�
 </p>
 
 
-<figure id="orged2ce90">
+<figure id="orgc488b93">
 <a href="/assets/5421b66258c807c011f35d7739bbad2b.gif" target="_blank" target="_blank"><img src="/assets/5421b66258c807c011f35d7739bbad2b.gif" alt="5421b66258c807c011f35d7739bbad2b.gif"></a>
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org7fadc2d" class="outline-3">
-<h3 id="org7fadc2d">系统状态</h3>
-<div class="outline-text-3" id="text-org7fadc2d">
+<div id="outline-container-orgefaf026" class="outline-3">
+<h3 id="orgefaf026">系统状态</h3>
+<div class="outline-text-3" id="text-orgefaf026">
 <p>
 系统状态配置 <code>~/.config/eww/modules/system.yuck</code>
 </p>
@@ -614,16 +614,16 @@ eww 提供了 <code>EWW_TEMPS</code> 变量，它记录了各种详细的温度�
 </p>
 
 
-<figure id="org3301bf4">
+<figure id="org2145f4f">
 <a href="/assets/80a65a27102eb79b0e2eb23d0f51dab8.gif" target="_blank" target="_blank"><img src="/assets/80a65a27102eb79b0e2eb23d0f51dab8.gif" alt="80a65a27102eb79b0e2eb23d0f51dab8.gif"></a>
 
 </figure>
 </div>
 </div>
 
-<div id="outline-container-org51abfbc" class="outline-3">
-<h3 id="org51abfbc">后台音乐 MPD</h3>
-<div class="outline-text-3" id="text-org51abfbc">
+<div id="outline-container-org900d196" class="outline-3">
+<h3 id="org900d196">后台音乐 MPD</h3>
+<div class="outline-text-3" id="text-org900d196">
 <p>
 安装和配置详见《<a href="/post/20230602T005833" target="_blank">Arch Linux 下 MPD 的配置</a>》。
 </p>
@@ -738,7 +738,7 @@ eww 这边 <code>revealer</code>, 然后加一个点击事件，用 Emacs 的包
 </p>
 
 
-<figure id="org64b3716">
+<figure id="org0375855">
 <a href="/assets/0e9146a3dfa7c7332571b1f0ad5a9c1a.gif" target="_blank" target="_blank"><img src="/assets/0e9146a3dfa7c7332571b1f0ad5a9c1a.gif" alt="0e9146a3dfa7c7332571b1f0ad5a9c1a.gif"></a>
 
 <figcaption>悬停展示信息，点击播放，鼠标滚轮下一首，再点击暂停</figcaption>
@@ -746,9 +746,9 @@ eww 这边 <code>revealer</code>, 然后加一个点击事件，用 Emacs 的包
 </div>
 </div>
 
-<div id="outline-container-org81050e5" class="outline-3">
-<h3 id="org81050e5">电池状态</h3>
-<div class="outline-text-3" id="text-org81050e5">
+<div id="outline-container-orgbfa53a1" class="outline-3">
+<h3 id="orgbfa53a1">电池状态</h3>
+<div class="outline-text-3" id="text-orgbfa53a1">
 <p>
 电池状态模块 <code>~/.config/eww/modules/power.yuck</code>
 </p>
@@ -847,9 +847,9 @@ put<span class="w"> </span><span class="nv">$ret</span><span class="w"> </span><
 </div>
 </div>
 
-<div id="outline-container-orgb8ea0ee" class="outline-3">
-<h3 id="orgb8ea0ee">灯光</h3>
-<div class="outline-text-3" id="text-orgb8ea0ee">
+<div id="outline-container-org28abf37" class="outline-3">
+<h3 id="org28abf37">灯光</h3>
+<div class="outline-text-3" id="text-org28abf37">
 <p>
 音量模块 <code>~/.config/eww/modules/backlight.yuck</code>
 </p>
@@ -933,9 +933,9 @@ fn<span class="w"> </span>volume_get_state<span class="w"> </span><span class="o
 </div>
 </div>
 
-<div id="outline-container-org0422efc" class="outline-3">
-<h3 id="org0422efc">音量模块</h3>
-<div class="outline-text-3" id="text-org0422efc">
+<div id="outline-container-orgb37e4f6" class="outline-3">
+<h3 id="orgb37e4f6">音量模块</h3>
+<div class="outline-text-3" id="text-orgb37e4f6">
 <p>
 音量模块 <code>~/.config/eww/modules/volume.yuck</code>
 </p>
@@ -1038,7 +1038,7 @@ fn<span class="w"> </span>volume_get_state<span class="w"> </span><span class="o
 </p>
 
 
-<figure id="org5d3e230">
+<figure id="org8f21428">
 <a href="/assets/b458ba1868b8c5e545864f3bc11c6d82.gif" target="_blank" target="_blank"><img src="/assets/b458ba1868b8c5e545864f3bc11c6d82.gif" alt="b458ba1868b8c5e545864f3bc11c6d82.gif"></a>
 
 </figure>
@@ -1049,9 +1049,9 @@ fn<span class="w"> </span>volume_get_state<span class="w"> </span><span class="o
 </div>
 </div>
 
-<div id="outline-container-org89e533e" class="outline-3">
-<h3 id="org89e533e">用户模块</h3>
-<div class="outline-text-3" id="text-org89e533e">
+<div id="outline-container-orgae11bf1" class="outline-3">
+<h3 id="orgae11bf1">用户模块</h3>
+<div class="outline-text-3" id="text-orgae11bf1">
 <p>
 其实我不知道用啥名字和图标比较好，这个模块是用来关机重启的。 <code>~/.config/eww/modules/user.yuck</code>
 </p>
@@ -1136,18 +1136,18 @@ fn<span class="w"> </span>volume_get_state<span class="w"> </span><span class="o
 </div>
 </div>
 
-<div id="outline-container-org3636e8f" class="outline-2">
-<h2 id="org3636e8f">样式</h2>
-<div class="outline-text-2" id="text-org3636e8f">
+<div id="outline-container-orgbeb2c4e" class="outline-2">
+<h2 id="orgbeb2c4e">样式</h2>
+<div class="outline-text-2" id="text-orgbeb2c4e">
 <p>
 样式就是 gtk 的 scss. 通过组件给的 <code>class</code> 参数去选择。这个不是本文的重点，但我状态栏等 GUI 的设计，对于我等没有艺术训练的人来说真的挺困难，功能总能实现，但是样子吧，只能说看的过去，很有后端的风格。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org23b9382" class="outline-2">
-<h2 id="org23b9382">后记</h2>
-<div class="outline-text-2" id="text-org23b9382">
+<div id="outline-container-orga0a13e6" class="outline-2">
+<h2 id="orga0a13e6">后记</h2>
+<div class="outline-text-2" id="text-orga0a13e6">
 <p>
 这篇笔记老早就写了，当时折腾完 Hyprland 就做了记录。只是这几个月兜兜转转，现在才最终落笔。 EWW 神器属于是，资源占用低，动画流畅，配置写起来也很顺畅，调试会给出详细的日志。现在就等一手系统托盘，这个功能出来之后就完美了。
 </p>
