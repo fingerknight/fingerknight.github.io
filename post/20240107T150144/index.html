@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculus 7 differential - 手指骑士的病房</title>
+<link rel="icon" href="/static/favicon.ico"><meta content="text/html;charset=utf-8" http-equiv="Content-Type"><meta content="utf-8" http-equiv="encoding"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<body>
+<div id="header">
+<div class="home-page">
+<a href="/">手指骑士的病房</a></div><div class="nav">
+<div class="nav item">
+<a href="/tags">标签</a>
+</div>
+<div class="nav item">
+<a href="/archive">归档</a>
+</div>
+<div class="nav item">
+<a href="/about">关于</a>
+</div>
+<div class="nav item">
+<a href="/emacs">Emacs</a>
+</div>
+</div>
+</div>
+<div id="main">
+<div id="toc">
+
+</div>
+<div id="page">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/katex/katex.min.css"><h1 class="post-title"> Calculus 7 differential </h1>
+<div class="post-date">2024-01-13</div>
+<div class="taglist"><a href="/tag/calculus"> #calculus </a>
+<a href="/tag/math"> #math </a>
+</div>
+</div>
+<div id="content">
+<div class="mathblock definition" id="orgaa450aa">
+<p><span class="mathblock title">Definition 7 .1. </span>
+
+Given a function \(f:S(\sube\R) \to \R\), and a point \(a\inS\). We say this function is differentiable/left differentiable/right differentiable at \(a\) if:
+</p>
+
+<ol class="org-ol">
+<li>\(\exists\delta>0\big((a-\delta,a+\delta)/(a-\delta,a]/[a,a+\delta) \sube S\big)\)</li>
+<li>\(\lim_{x\to a/a^-/a^+}\frac{f(x)-f(a)}{x-a}\) exists. Or \(\lim_{h\to 0/0^-/0^+}\frac{f(a+h)-f(a)}{h}\) exists.</li>
+</ol>
+
+<p>
+If this is the case, we call the limit the derivative/left derivative/right derivative of \(f\) at \(a\), and denote it by \(f'(a)=\frac{\dd f(a)}{\dd x} = \frac{\dd f}{\dd x}(a)/f_{-}'(a)/f_{+}'(a)\).
+</p>
+
+<p>
+We say \(f\) is differentiable on \(S\) if it is differentiable at every \(x\in S\).
+</p>
+
+</div>
+
+<div class="mathblock proposition" id="org044a097">
+<span class="mathblock title">Proposition 7 .2. </span>
+<ol class="org-ol">
+<li>If \(f\) is diff./left diff./right diff. at \(a\), then \(f\) is continuous/left conti./right conti..</li>
+<li>\(f\) is diff. at \(a\) iff \(f\) is left diff. and right diff. at \(a\).</li>
+</ol>
+
+</div>
+
+<div class="mathblock proof" id="orgfb04294">
+<p><span class="mathblock title">Proof. </span>
+
+(1)
+</p>
+
+<p>
+\[
+\lim_{x\to a}(f(x)-f(a)) = \lim_{x\to a }\left(\frac{f(x)-f(a)}{x-a}(x-a)\right) = f'(a)\cdot 0 = 0
+\]
+</p>
+
+<p>
+i.e., \(\lim_{x\to a}f(x) = f(a)\).
+</p>
+
+<p>
+For the case of left and right differentiable, exchange \(a\) to \(a^{-}/a^{+}\) will do.
+</p>
+
+<p>
+(2)
+</p>
+
+<p>
+It is easy to prove by the definition of limits. 
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock definition" id="orgeafc2c1">
+<p><span class="mathblock title">Definition 7 .3. </span>
+
+A function \(f:I\to \R\) on an interval \(I\sube \R\), is called a convex function if \(\forall a,b \in I, t\in (0,1)(f((1-t)a+b) \le (1-t)f(a) + tf(b))\). We say it is strictly convex, when \(\le\) is \(<\).
+</p>
+
+</div>
+
+<div class="mathblock proposition" id="orgda93a78">
+<p><span class="mathblock title">Proposition 7 .4. </span>
+
+For any \(a<c<b (\in I)\), these following statements are equivalent:
+</p>
+<ol class="org-ol">
+<li>\(f\) is (strictly) convex</li>
+<li>\(f(c) \le(<) \frac{b-c}{b-a}f(a) + \frac{c-a}{b-a} f(b)\).</li>
+<li>\(\frac{f(c)-f(a)}{c-a}\le(<)\frac{f(b)-f(c)}{b-c}\).</li>
+</ol>
+
+</div>
+
+<div class="mathblock proof" id="orgecbce28">
+<p><span class="mathblock title">Proof. </span>
+
+(1-2)
+</p>
+
+<p>
+Let \(c=(1-t)a + tb\), then \(t = \frac{c-a}{b-a}\) and \(1-t = \frac{b-c}{b-a}\).
+</p>
+
+<p>
+Then,
+</p>
+
+<p>
+\[
+f((1-t)a + tb) &\le& (1-t)f(a) + tf(b) \\
+f(c) & \le & \frac{b-c}{b-a}f(a) + \frac{c-a}{b-a}f(b)
+\]
+</p>
+
+<p>
+(1-3)
+</p>
+
+<p>
+By (1-2),
+</p>
+
+<p>
+\[
+(b-a)f(c) & \le & (b-c)f(a) + (c-a)f(b)\\
+bf(c) - (b-c)f(a) &\le& (c-a)f(b) + af(c)\\
+bf(c) - (b-c)f(a) - cf(c) &\le& (c-a)f(b) + af(c) - cf(c)\\
+(b-c)(f(c) - f(a)) &\le& (c-a)(f(b) - f(c))\\
+\frac{f(c) - f(a)}{c-a} &\le& \frac{f(b) - f(c)}{b-c}
+\]
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock proposition" id="org35ca8eb">
+<p><span class="mathblock title">Proposition 7 .5. </span>
+
+Let \(f,g:S\to\R\), and \(a\in S\) be both differentiable at \(a\).
+</p>
+<ol class="org-ol">
+<li>\((f\pm g)'(a) = f'(a) \pm g'(a)\)</li>
+<li>(Leibnitz's product rule) \((fg)'(a) = f'(a)g(a) + f(a)g'(a)\).</li>
+<li>If \(g(a)\ne 0\), then \(\left(\frac{f}{g}\right)'(a) = \frac{f'(a)g(a) - f(a)g'(a)}{g(a)^2}\).</li>
+</ol>
+
+</div>
+
+<div class="mathblock proof" id="org23659fa">
+<p><span class="mathblock title">Proof. </span>
+
+(1)
+</p>
+
+<p>
+\[
+\frac{f(a+h)\pm g(a+h) - (f(a)\pm g(a))}{h} = \frac{f(a+h) - f(a)}{h} \pm \frac{g(a+h) - g(a)}{h}
+\]
+</p>
+
+<p>
+The left part is the derivative of \((f\pm g)(x)\) at \(a\), and the right part is the \(f'(a) \pm g'(a)\).
+</p>
+
+<p>
+(2)
+</p>
+
+<p>
+\[
+\frac{f(x)g(x) - f(a)g(a)}{x-a} = \frac{f(x) - f(a)}{x-a}g(x) + \frac{g(x) - g(a)}{x-a}f(a)
+\]
+</p>
+
+<p>
+(3) Similar as (2)
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock proposition" id="org7db0a08">
+<p><span class="mathblock title">Proposition 7 .6<span class="mathblock name"> (differentiating inverse functions)</span>. </span>
+
+Let \(f: I \to J\) be continuous bijection between intervals \(I\) and \(J\) in \(\R\). Let \(g: J \to I\) be its inverse map. For \(a\in I\), if \(f\) is differentiable at \(a\) and \(f'(a) \ne 0\), then \(g\) is differentiable at \(f(a)\), and \(g'(f(a)) = \frac{1}{f'(a)}\).
+</p>
+
+</div>
+
+<div class="mathblock proof" id="orgda0b1f6">
+<p><span class="mathblock title">Proof. </span>
+
+Let \(b = f(a)\), then \(a = g(b)\).
+</p>
+
+<p>
+\[
+\frac{g(y) - g(b)}{y-b} &=& \frac{g(y) - a}{f(g(y)) - f(a)}\\
+&=& \frac{1}{\frac{f(g(y)) - f(a)}{g(y) - a}}
+\]
+</p>
+
+<p>
+Let \(F(x) = \frac{1}{\frac{f(x) - f(a)}{x-a}}\), and we have \(\lim{x\to a} = \frac{1}{f'(a)}\).
+</p>
+
+<p>
+The first item is actually \(F(g(y))\). \(g(y) = a\) as \(y\to b\), which means \(F(g(y)) = \lim_{x\to a}F(x) = \frac{1}{f'(a)}\).
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock lemma" id="org85320a7">
+<p><span class="mathblock title">Lemma 7 .7. </span>
+
+Let \(f: S(\sube\R) \to \R\) be a function, and \(a\in S\). \(f\) is differentiable at \(a\) iff there exist \(\eta: S \to \R\) and \(A\in\R\), such that \(f(a+h) = f(a) + Ah + \eta(h)h\) for all \(h\) near 0, and \(\lim_{h\to0}\eta(h) = \eta(0) = 0\). Furthermore, if any side holds, then \(A=f'(a)\).
+</p>
+
+</div>
+
+<div class="mathblock proof" id="orgd092faf">
+<p><span class="mathblock title">Proof. </span>
+
+(\(\Rarr\))
+</p>
+
+<p>
+Let \(A = f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}\), and
+</p>
+
+<p>
+$$
+&eta;(h) = \left \{
+</p>
+\begin{array}{lc}
+\frac{f(a+h) - f(a) - f'(a)h}{h}, & h\ne0\\
+0, & h=0
+\end{array}
+<p>
+\right.
+$$
+</p>
+
+<p>
+It is obvious that \(\eta(h)\) is continous at 0, and \(\eta(0) = 0\).
+</p>
+
+<p>
+We now have found \(A\) and \(\eta(h)\) satisfying conditions.
+</p>
+
+<p>
+(\(\Larr\))
+</p>
+
+<p>
+\[
+\frac{f(a+h) - f(a)}{h} = A + \eta(h)
+\]
+</p>
+
+<p>
+Above item is to \(A\), as \(h\to 0\), which is \(f'(a)\) in fact.
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock theorem" id="orge07211d">
+<p><span class="mathblock title">Theorem 7 .8<span class="mathblock name"> (the chain rule)</span>. </span>
+
+Given \(f: S \to T\), \(g: T \to \R\), and \(a\in S, b=f(a) \in T\). If \(f\) is differentiable at \(a\), and \(g\) is differentiable at \(b\), then \(g\circ f\) is differentiable at \(a\), and \((g\circ f)'(a) = g'(b)f'(a)\).
+</p>
+
+</div>
+
+<div class="mathblock proof" id="org4320517">
+<p><span class="mathblock title">Proof. </span>
+
+For \(g\), we have \(g(y) = g(b) + g'(b)(y-b) + \xi(k)(y-b)\), where \(k=y-b\).
+</p>
+
+<p>
+For \(f\), we have \(f(x) = f(a) = f'(a)(x-a) + \eta(h)(x-a)\), where \(h=x-a\).
+</p>
+
+<p>
+\[
+(g\circ f)(x) &=& (g\circ f)(a) + g'(b)[f'(a)(x-a) + \eta(h)h] + \xi(k)(f'(a)(x-a) + \eta(h)h)\\
+&=&(g\circ f)(a) + g'(b)f'(a)(x-a) + \Delta(h) h
+\]
+, where \(\Delta\) is a bunch of items rest, and its limit at \(0\) is \(\Delta(0) = 0\).
+<span class="QED">□</span>
+</p>
+</div>
+<div id="footnotes">
+<hr>
+<div class="text-footnotes" role="doc-endnotes">
+<ol>
+
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<script defer src="/static/katex/katex.min.js"></script>
+<script defer src="/static/katex/auto-render.min.js"></script>
+<script>
+let macros = {
+"\\C": "\\mathbb{C}",
+"\\N": "\\mathbb{N}",
+"\\Q": "\\mathbb{Q}",
+"\\R": "\\mathbb{R}",
+"\\Z": "\\mathbb{Z}",
+"’": "'"
+};
+document.addEventListener("DOMContentLoaded", function() {
+renderMathInElement(document.getElementById("content"), {
+strict: false,
+delimiters: [
+{"display": true,"left": "$$","right": "$$"},
+{"display": true,"left": "\\[","right": "\\]"},
+{"display": true,"left": "\\begin{equation}","right": "\\end{equation}"},
+{"display": true,"left": "\\begin{equation*}","right": "\\end{equation*}"},
+{"display": true,"left": "\\begin{align}","right": "\\end{align}"},
+{"display": true,"left": "\\begin{align*}","right": "\\end{align*}"},
+{"display": true,"left": "\\begin{alignat}","right": "\\end{alignat}"},
+{"display": true,"left": "\\begin{alignat*}","right": "\\end{alignat*}"},
+{"display": true,"left": "\\begin{gather}","right": "\\end{gather}"},
+{"display": true,"left": "\\begin{CD}","right": "\\end{CD}"},
+{"display": false,"left": "$","right": "$"},
+{"display": false,"left": "\\(","right": "\\)"}
+],
+macros});})
+</script></div>
+</div>
+</div>
+<div id="footer">
+<center> The End </center></div>
+</body>
+</html>
