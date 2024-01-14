@@ -27,16 +27,16 @@
 </div>
 <div id="page">
 <div id="preamble" class="status"><link rel="stylesheet" href="/static/katex/katex.min.css"><h1 class="post-title"> Calculus 7 differential </h1>
-<div class="post-date">2024-01-13</div>
+<div class="post-date">2024-01-14</div>
 <div class="taglist"><a href="/tag/calculus"> #calculus </a>
 <a href="/tag/math"> #math </a>
 </div>
 </div>
 <div id="content">
-<div class="mathblock definition" id="orgaa450aa">
+<div class="mathblock definition" id="org27a6027">
 <p><span class="mathblock title">Definition 7 .1. </span>
 
-Given a function \(f:S(\sube\R) \to \R\), and a point \(a\inS\). We say this function is differentiable/left differentiable/right differentiable at \(a\) if:
+Given a function \(f:S(\sube\R) \to \R\), and a point \(a\in S\). We say this function is differentiable/left differentiable/right differentiable at \(a\) if:
 </p>
 
 <ol class="org-ol">
@@ -45,7 +45,7 @@ Given a function \(f:S(\sube\R) \to \R\), and a point \(a\inS\). We say this fun
 </ol>
 
 <p>
-If this is the case, we call the limit the derivative/left derivative/right derivative of \(f\) at \(a\), and denote it by \(f'(a)=\frac{\dd f(a)}{\dd x} = \frac{\dd f}{\dd x}(a)/f_{-}'(a)/f_{+}'(a)\).
+If this is the case, we call the limit the derivative/left derivative/right derivative of \(f\) at \(a\), and denote it by \(f'(a)=\frac{\d f(a)}{\d x} = \frac{\dd f}{\dd x}(a)/f_{-}'(a)/f_{+}'(a)\).
 </p>
 
 <p>
@@ -54,7 +54,7 @@ We say \(f\) is differentiable on \(S\) if it is differentiable at every \(x\in 
 
 </div>
 
-<div class="mathblock proposition" id="org044a097">
+<div class="mathblock proposition" id="org3d2c42f">
 <span class="mathblock title">Proposition 7 .2. </span>
 <ol class="org-ol">
 <li>If \(f\) is diff./left diff./right diff. at \(a\), then \(f\) is continuous/left conti./right conti..</li>
@@ -63,7 +63,7 @@ We say \(f\) is differentiable on \(S\) if it is differentiable at every \(x\in 
 
 </div>
 
-<div class="mathblock proof" id="orgfb04294">
+<div class="mathblock proof" id="orgb2ffa4d">
 <p><span class="mathblock title">Proof. </span>
 
 (1)
@@ -93,7 +93,7 @@ It is easy to prove by the definition of limits.
 </p>
 </div>
 
-<div class="mathblock definition" id="orgeafc2c1">
+<div class="mathblock definition" id="org464fbb1">
 <p><span class="mathblock title">Definition 7 .3. </span>
 
 A function \(f:I\to \R\) on an interval \(I\sube \R\), is called a convex function if \(\forall a,b \in I, t\in (0,1)(f((1-t)a+b) \le (1-t)f(a) + tf(b))\). We say it is strictly convex, when \(\le\) is \(<\).
@@ -101,7 +101,7 @@ A function \(f:I\to \R\) on an interval \(I\sube \R\), is called a convex functi
 
 </div>
 
-<div class="mathblock proposition" id="orgda93a78">
+<div class="mathblock proposition" id="orge68abec">
 <p><span class="mathblock title">Proposition 7 .4. </span>
 
 For any \(a<c<b (\in I)\), these following statements are equivalent:
@@ -114,7 +114,7 @@ For any \(a<c<b (\in I)\), these following statements are equivalent:
 
 </div>
 
-<div class="mathblock proof" id="orgecbce28">
+<div class="mathblock proof" id="org748919e">
 <p><span class="mathblock title">Proof. </span>
 
 (1-2)
@@ -129,10 +129,14 @@ Then,
 </p>
 
 <p>
-\[
-f((1-t)a + tb) &\le& (1-t)f(a) + tf(b) \\
-f(c) & \le & \frac{b-c}{b-a}f(a) + \frac{c-a}{b-a}f(b)
-\]
+$$
+</p>
+\begin{equation*}
+f((1-t)a + tb) &\le (1-t)f(a) + tf(b) \\
+f(c) & \le  \frac{b-c}{b-a}f(a) + \frac{c-a}{b-a}f(b)
+\end{equation*}
+<p>
+$$
 </p>
 
 <p>
@@ -144,18 +148,22 @@ By (1-2),
 </p>
 
 <p>
-\[
-(b-a)f(c) & \le & (b-c)f(a) + (c-a)f(b)\\
-bf(c) - (b-c)f(a) &\le& (c-a)f(b) + af(c)\\
-bf(c) - (b-c)f(a) - cf(c) &\le& (c-a)f(b) + af(c) - cf(c)\\
-(b-c)(f(c) - f(a)) &\le& (c-a)(f(b) - f(c))\\
-\frac{f(c) - f(a)}{c-a} &\le& \frac{f(b) - f(c)}{b-c}
-\]
+$$
+</p>
+\begin{equation*}
+(b-a)f(c) & \le  (b-c)f(a) + (c-a)f(b)\\
+bf(c) - (b-c)f(a) &\le (c-a)f(b) + af(c)\\
+bf(c) - (b-c)f(a) - cf(c) &\le (c-a)f(b) + af(c) - cf(c)\\
+(b-c)(f(c) - f(a)) &\le (c-a)(f(b) - f(c))\\
+\frac{f(c) - f(a)}{c-a} &\le \frac{f(b) - f(c)}{b-c}
+\end{equation*}
+<p>
+$$
 <span class="QED">□</span>
 </p>
 </div>
 
-<div class="mathblock proposition" id="org35ca8eb">
+<div class="mathblock proposition" id="org47e1ec3">
 <p><span class="mathblock title">Proposition 7 .5. </span>
 
 Let \(f,g:S\to\R\), and \(a\in S\) be both differentiable at \(a\).
@@ -168,7 +176,7 @@ Let \(f,g:S\to\R\), and \(a\in S\) be both differentiable at \(a\).
 
 </div>
 
-<div class="mathblock proof" id="org23659fa">
+<div class="mathblock proof" id="org9f7bfae">
 <p><span class="mathblock title">Proof. </span>
 
 (1)
@@ -200,7 +208,7 @@ The left part is the derivative of \((f\pm g)(x)\) at \(a\), and the right part 
 </p>
 </div>
 
-<div class="mathblock proposition" id="org7db0a08">
+<div class="mathblock proposition" id="org32ff6a5">
 <p><span class="mathblock title">Proposition 7 .6<span class="mathblock name"> (differentiating inverse functions)</span>. </span>
 
 Let \(f: I \to J\) be continuous bijection between intervals \(I\) and \(J\) in \(\R\). Let \(g: J \to I\) be its inverse map. For \(a\in I\), if \(f\) is differentiable at \(a\) and \(f'(a) \ne 0\), then \(g\) is differentiable at \(f(a)\), and \(g'(f(a)) = \frac{1}{f'(a)}\).
@@ -208,17 +216,21 @@ Let \(f: I \to J\) be continuous bijection between intervals \(I\) and \(J\) in 
 
 </div>
 
-<div class="mathblock proof" id="orgda0b1f6">
+<div class="mathblock proof" id="orgfd7d373">
 <p><span class="mathblock title">Proof. </span>
 
 Let \(b = f(a)\), then \(a = g(b)\).
 </p>
 
 <p>
-\[
-\frac{g(y) - g(b)}{y-b} &=& \frac{g(y) - a}{f(g(y)) - f(a)}\\
-&=& \frac{1}{\frac{f(g(y)) - f(a)}{g(y) - a}}
-\]
+$$
+</p>
+\begin{equation*}
+\frac{g(y) - g(b)}{y-b} &= \frac{g(y) - a}{f(g(y)) - f(a)}\\
+&= \frac{1}{\frac{f(g(y)) - f(a)}{g(y) - a}}
+\end{equation*}
+<p>
+$$
 </p>
 
 <p>
@@ -231,7 +243,7 @@ The first item is actually \(F(g(y))\). \(g(y) = a\) as \(y\to b\), which means 
 </p>
 </div>
 
-<div class="mathblock lemma" id="org85320a7">
+<div class="mathblock lemma" id="org0f4575f">
 <p><span class="mathblock title">Lemma 7 .7. </span>
 
 Let \(f: S(\sube\R) \to \R\) be a function, and \(a\in S\). \(f\) is differentiable at \(a\) iff there exist \(\eta: S \to \R\) and \(A\in\R\), such that \(f(a+h) = f(a) + Ah + \eta(h)h\) for all \(h\) near 0, and \(\lim_{h\to0}\eta(h) = \eta(0) = 0\). Furthermore, if any side holds, then \(A=f'(a)\).
@@ -239,7 +251,7 @@ Let \(f: S(\sube\R) \to \R\) be a function, and \(a\in S\). \(f\) is differentia
 
 </div>
 
-<div class="mathblock proof" id="orgd092faf">
+<div class="mathblock proof" id="org44b0269">
 <p><span class="mathblock title">Proof. </span>
 
 (\(\Rarr\))
@@ -250,16 +262,12 @@ Let \(A = f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}\), and
 </p>
 
 <p>
-$$
-&eta;(h) = \left \{
-</p>
-\begin{array}{lc}
-\frac{f(a+h) - f(a) - f'(a)h}{h}, & h\ne0\\
-0, & h=0
-\end{array}
-<p>
-\right.
-$$
+\[
+\eta(h) = \begin{cases}
+\frac{f(a+h) - f(a) - f'(a)h}{h} & h\ne0\\
+0 & h=0
+\end{cases}
+\]
 </p>
 
 <p>
@@ -286,7 +294,7 @@ Above item is to \(A\), as \(h\to 0\), which is \(f'(a)\) in fact.
 </p>
 </div>
 
-<div class="mathblock theorem" id="orge07211d">
+<div class="mathblock theorem" id="org93fba2f">
 <p><span class="mathblock title">Theorem 7 .8<span class="mathblock name"> (the chain rule)</span>. </span>
 
 Given \(f: S \to T\), \(g: T \to \R\), and \(a\in S, b=f(a) \in T\). If \(f\) is differentiable at \(a\), and \(g\) is differentiable at \(b\), then \(g\circ f\) is differentiable at \(a\), and \((g\circ f)'(a) = g'(b)f'(a)\).
@@ -294,7 +302,7 @@ Given \(f: S \to T\), \(g: T \to \R\), and \(a\in S, b=f(a) \in T\). If \(f\) is
 
 </div>
 
-<div class="mathblock proof" id="org4320517">
+<div class="mathblock proof" id="orgb35245e">
 <p><span class="mathblock title">Proof. </span>
 
 For \(g\), we have \(g(y) = g(b) + g'(b)(y-b) + \xi(k)(y-b)\), where \(k=y-b\).
@@ -305,13 +313,54 @@ For \(f\), we have \(f(x) = f(a) = f'(a)(x-a) + \eta(h)(x-a)\), where \(h=x-a\).
 </p>
 
 <p>
-\[
-(g\circ f)(x) &=& (g\circ f)(a) + g'(b)[f'(a)(x-a) + \eta(h)h] + \xi(k)(f'(a)(x-a) + \eta(h)h)\\
-&=&(g\circ f)(a) + g'(b)f'(a)(x-a) + \Delta(h) h
-\]
+$$
+</p>
+\begin{equation*}
+(g\circ f)(x) &= (g\circ f)(a) + g'(b)[f'(a)(x-a) + \eta(h)h] + \xi(k)(f'(a)(x-a) + \eta(h)h)\\
+&=(g\circ f)(a) + g'(b)f'(a)(x-a) + \Delta(h) h
+\end{equation*}
+<p>
+$$
 , where \(\Delta\) is a bunch of items rest, and its limit at \(0\) is \(\Delta(0) = 0\).
 <span class="QED">□</span>
 </p>
+</div>
+
+<div class="mathblock definition" id="orgf0f3c8a">
+<p><span class="mathblock title">Definition 7 .9<span class="mathblock name"> (local extremum)</span>. </span>
+
+Given a function \(f:X\to\R\), where \(X\) is a metric space, and \(a\in X\). We say that \(f\) achieves a local maximum/minimum at \(a\) if \(\exists \delta > 0 \forall x \in B_\delta(a)[f(x) \le(\ge) f(a)]\).
+</p>
+
+</div>
+
+<div class="mathblock proposition" id="org7666cdf">
+<p><span class="mathblock title">Proposition 7 .10. </span>
+
+Given a function \(f:S\to\R\), which achieves a local maximum, \(a\in S\), and the left and right limit of \(\frac{f(x) - f(a)}{x - a}\) at \(a\) both exist. Then \(\lim_{x\to a^+}\frac{f(x) -f(a)}{x-a} \le 0\), and \(\lim_{x\to a^-}\frac{f(x) -f(a)}{x-a} \ge 0\)
+</p>
+
+</div>
+
+<div class="mathblock proof" id="orgb0e1936">
+<p><span class="mathblock title">Proof. </span>
+
+As \(x \to a^+\), \(x-a > 0\), and \(f(x) - f(a) \le 0\) since \(f\) achieves local maximum at \(a\), then \(\frac{f(x) -f(a)}{x - a} \le 0\) when \(x\) gets close to \(a\), i.e., its limit is also less than equal 0.
+</p>
+
+<p>
+Similar for the other side.
+<span class="QED">□</span>
+</p>
+</div>
+
+
+<div class="mathblock theorem" id="orgbae1abb">
+<p><span class="mathblock title">Theorem 7 .11<span class="mathblock name"> (Rolle's theorem)</span>. </span>
+
+Given \(f:[a,b] \to \R\) which is continuous on \([a,b]\) and is differentiable on (a,b), if \(f(a) = f(b)\), then \(\exists c \in (a,b)[f'(c) = 0]\).
+</p>
+
 </div>
 <div id="footnotes">
 <hr>
@@ -332,6 +381,7 @@ let macros = {
 "\\Q": "\\mathbb{Q}",
 "\\R": "\\mathbb{R}",
 "\\Z": "\\mathbb{Z}",
+"\\d": "\\mathrm{d}",
 "’": "'"
 };
 document.addEventListener("DOMContentLoaded", function() {

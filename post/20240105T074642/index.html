@@ -27,13 +27,13 @@
 </div>
 <div id="page">
 <div id="preamble" class="status"><link rel="stylesheet" href="/static/katex/katex.min.css"><h1 class="post-title"> Calculus 6 exponential and logarithm </h1>
-<div class="post-date">2024-01-12</div>
+<div class="post-date">2024-01-14</div>
 <div class="taglist"><a href="/tag/calculus"> #calculus </a>
 <a href="/tag/math"> #math </a>
 </div>
 </div>
 <div id="content">
-<div class="mathblock lemma" id="orgd7cfb62">
+<div class="mathblock lemma" id="org970626a">
 <p><span class="mathblock title">Lemma 6 .1. </span>
 
 Let \(m\in\N\). For every \(a\in[0,\infty)\), there exists a unique \(c\in[0,\infty)\), such that \(c^m=a\).
@@ -41,7 +41,7 @@ Let \(m\in\N\). For every \(a\in[0,\infty)\), there exists a unique \(c\in[0,\in
 
 </div>
 
-<div class="mathblock proof" id="org31657f7">
+<div class="mathblock proof" id="orgda8ad9f">
 <p><span class="mathblock title">Proof. </span>
 
 (Uniqueness)
@@ -77,7 +77,7 @@ By the intermediate value theorem, \(\exists c\in(0,a+1)[f(c)=c^m=a]\).
 </p>
 </div>
 
-<div class="mathblock definition" id="org3c4c476">
+<div class="mathblock definition" id="org3cac85d">
 <p><span class="mathblock title">Definition 6 .2. </span>
 
 For any \(c\ge0\), we define \(a^{\frac{1}{m}}\) to be such a number \(c\). In other words, \(c=a^{\frac{1}{m}} \Lrarr c^m=a\land c\ge0\).
@@ -89,7 +89,7 @@ More generally, for any \(r\in\Q\), we define \(a^r\) to be \((a^n)^m\) if \(r=\
 
 </div>
 
-<div class="mathblock proposition" id="org2463bd4">
+<div class="mathblock proposition" id="org6831d12">
 <p><span class="mathblock title">Proposition 6 .3. </span>
 
 Let \(a>0\) and \(r_1,r_2\in\Q\).
@@ -97,13 +97,13 @@ Let \(a>0\) and \(r_1,r_2\in\Q\).
 
 <ol class="org-ol">
 <li>\(a^{r_1}a^{r_2}=a^{r_1+r_2}\), \((a^{r_1})^{r_2}=a^{r_1r_2}\).</li>
-<li>\(r_1<r_2, a>1 \Rarr a^{r_1}<a^{r_2}\). If \(a<1\), then \(a^{r_1}>a^{r_2}\).</li>
+<li>\(r_1 < r_2, a > 1 \Rarr a^{r_1}<a^{r_2}\). If \(a<1\), then \(a^{r_1}>a^{r_2}\).</li>
 <li>\(\lim_{n\to\infty}a^{\frac{1}{n}}=1\).</li>
 </ol>
 
 </div>
 
-<div class="mathblock proof" id="org6a802a9">
+<div class="mathblock proof" id="orgf9efa7b">
 <p><span class="mathblock title">Proof. </span>
 
 Let \(r_1=n_1/m_1, r_2=n_2/m_2\), where \(n_1,n_2\in\Z, m_1,m_2\in\N\).
@@ -182,7 +182,7 @@ a^{r_1-r_2}=
 </p>
 
 <p>
-since \(r_1<r_2\), then \(r_2-r_1>0\). And
+since \(r_1< r _2\), then \(r_2-r_1 > 0\). And
 </p>
 
 <p>
@@ -192,7 +192,7 @@ since \(r_1<r_2\), then \(r_2-r_1>0\). And
 </p>
 
 <p>
-Thus, \(a^{r_1}<a^{r_2}\).
+Thus, \(a^{r_1} < a^{r_2}\).
 </p>
 
 <p>
@@ -209,7 +209,7 @@ Then \(a=(1+e)^n > C_n^0y^0 + C_n^1y^1=1+ny\), by binomial theorem.
 </p>
 
 <p>
-Therefore, \(0<y<\frac{a-1}{n}\).
+Therefore, \(0 < y < \frac{a-1}{n}\).
 </p>
 
 <p>
@@ -226,7 +226,7 @@ Similarly when \(a<1\).
 </p>
 </div>
 
-<div class="mathblock definition" id="orgaca0969">
+<div class="mathblock definition" id="org82544af">
 <p><span class="mathblock title">Definition 6 .4. </span>
 
 Choose a sequence \(r_n(n\in\N)\), such that \(r_n\in\Q\) for all \(n\), and \(\lim_{n\to\infty}r_n=x\), and then define \(a^x:=\lim_{n\to\infty}a^{r_n}\) if the limit exists.
@@ -242,7 +242,7 @@ However, we need to show the above definition is well-defined. There are some pr
 
 </div>
 
-<div class="mathblock proof" id="org80a5dd7">
+<div class="mathblock proof" id="orgb7bb67d">
 <p><span class="mathblock title">Proof. </span>
 
 (1) The goal also means showing \(a^{r_n}\) is a Cauchy sequence.
@@ -253,26 +253,10 @@ Consider this
 </p>
 
 <p>
-$$
-</p>
-<table>
-
-
-<colgroup>
-<col  class="org-left">
-
-<col  class="org-left">
-</colgroup>
-<tbody>
-<tr>
-<td class="org-left">a^{r_n}-a^{r_m}</td>
-<td class="org-left">=</td>
-</tr>
-</tbody>
-</table>
-<p>
+\[
+\| a^{r_n}-a^{r_m}  | = 
 a^{r_m}|a^{r_n-r_m}-1|
-$$
+\]
 </p>
 
 <p>
@@ -296,7 +280,7 @@ Since \(\{r_n\}\) converges, it is a Cauchy sequence, i.e., when \(n,m\) reach b
 </p>
 
 <p>
-Then we have \(a^{r_n-r_m}<a^{\frac{1}{k}}<1+\frac{\epsilon}{M}\). Similarly, we can obtain \(1-\frac{\epsilon}{M}<a^{\frac{1}{k}}<a^{r_n-r_m}\). (by Archimedean property?)
+Then we have \(a^{r_n-r_m} < a^{\frac{1}{k}} < 1+\frac{\epsilon}{M}\). Similarly, we can obtain \(1-\frac{\epsilon}{M} < a^{\frac{1}{k}} < a^{r_n-r_m}\). (by Archimedean property?)
 </p>
 
 <p>
@@ -304,26 +288,10 @@ Therefore, we have:
 </p>
 
 <p>
-r$$
-</p>
-<table>
-
-
-<colgroup>
-<col  class="org-left">
-
-<col  class="org-left">
-</colgroup>
-<tbody>
-<tr>
-<td class="org-left">a^{r_n}-a^{r_m}</td>
-<td class="org-left">=</td>
-</tr>
-</tbody>
-</table>
-<p>
-a^{r_m}|a^{r_n-r_m}-1| &lt; M&sdot;\frac{\epsilon}{M}=&epsilon;
-$$
+\[
+\|a^{r_n}-a^{r_m}| = 
+a^{r_m}|a^{r_n-r_m}-1| < M\cdot\frac{\epsilon}{M}=\epsilon
+\]
 </p>
 
 <p>
@@ -342,21 +310,21 @@ In other words, \(\{a^{r_n}\}\) is Cauchy, then convergent.
 </p>
 </div>
 
-<div class="mathblock proposition" id="org08fd3e0">
+<div class="mathblock proposition" id="org35bd6c9">
 <p><span class="mathblock title">Proposition 6 .5. </span>
 
 Given \(a>0\),
 </p>
 <ol class="org-ol">
 <li>For \(x_1,x_2\in\R\), then \(a^{x_1}a^{x_2}=a^{x_1+x_2}\), and \((a^{x_1})^{x_2}=a^{x_1x_2}\).</li>
-<li>If \(x_1<x_2\), then \(a^{x_1}<a^{x_2}\) when \(a>1\), vice versa for \(a<1\).</li>
+<li>If \(x_1 < x_2\), then \(a^{x_1} < a^{x_2}\) when \(a>1\), vice versa for \(a < 1\).</li>
 <li>\(f:x\mapsto a^x\) is a continuous map.</li>
 <li>\(\lim_{x\to0}a^x=1\).</li>
 </ol>
 
 </div>
 
-<div class="mathblock proof" id="orgdab545d">
+<div class="mathblock proof" id="org1a27581">
 <p><span class="mathblock title">Proof. </span>
 
 Suppose there are two sequences \(b_n,c_n(\in\Q)\), such that \(\lim_{n\to\infty}b_n=x_1\) and \(\lim_{n\to\infty}c_n=x_2\) where \(x_1,x_2\in\R\).
@@ -425,11 +393,11 @@ Since \(x_1 - x_2 < 0\) and \(a>1\), \(a^{x_1-x_2}<1\). Vice versa.
 </p>
 
 <p>
-Our goal is to show that for any \(x_0\in\R\), we have \(\lim_{x\to\x_0}a^x = a^{x_0}\).
+Our goal is to show that for any \(x_0\in\R\), we have \(\lim_{x\to x_0}a^x = a^{x_0}\).
 </p>
 
 <p>
-We already have \(\lim{n\to\infty}a^{\frac{1}{n}}=1\), and also \(\lim{n\to\infty}a^{\frac{-1}{n}}=1\).
+We already have \(\lim_{n\to\infty}a^{\frac{1}{n}}=1\), and also \(\lim_{n\to\infty}a^{\frac{-1}{n}}=1\).
 </p>
 
 <p>
@@ -459,31 +427,9 @@ Then
 </p>
 
 <p>
-$$
-</p>
-<table>
-
-
-<colgroup>
-<col  class="org-left">
-
-<col  class="org-left">
-
-<col  class="org-left">
-
-<col  class="org-left">
-</colgroup>
-<tbody>
-<tr>
-<td class="org-left">a^x - a^{x_0}</td>
-<td class="org-left">= a^{x_0}</td>
-<td class="org-left">a^{x-x_0} - 1</td>
-<td class="org-left">&lt; a^{x_0} &epsilon;</td>
-</tr>
-</tbody>
-</table>
-<p>
-$$
+\[
+\|a^x - a^{x_0}| = a^{x_0} | a^{x-x_0} - 1 | < a^{x_0} \epsilon
+\]
 </p>
 
 <p>
@@ -500,16 +446,16 @@ By (3), \(a^x\) is continuous, then \(\lim_{x\to0}a^x = a^0 = 1\).
 </p>
 </div>
 
-<div class="mathblock proposition" id="org0c98c3c">
+<div class="mathblock proposition" id="org237f67f">
 <span class="mathblock title">Proposition 6 .6. </span>
 <ol class="org-ol">
 <li>\(f(x)=a^x\) is a bijection if \(a>0\) and \(a\ne1\).</li>
-<li>The inverse map \(log_a:(0,\infty)\to\R\) of exponential functions is also continuous.</li>
+<li>The inverse map \(\log_a:(0,\infty)\to\R\) of exponential functions is also continuous.</li>
 </ol>
 
 </div>
 
-<div class="mathblock proof" id="org96aee24">
+<div class="mathblock proof" id="org404cfc8">
 <p><span class="mathblock title">Proof. </span>
 
 (1)
@@ -536,17 +482,17 @@ Then by intermediate value theorem, there exists a \(c\in(x_1,x_2)\), such that 
 </p>
 
 <p>
-For \(x,x_0\in(0,\infty)\), let \(y=log_ax, y_0=log_ax_0\) which are both in \(\R\).
+For \(x,x_0\in(0,\infty)\), let \(y=\log_ax, y_0=\log_ax_0\) which are both in \(\R\).
 </p>
 
 <p>
-Considering \(|y-y_0| < \epsilon\) for any given \(\epsilon>0\), we have \(y<y_0+\epsilon\), with assuming \(a>1\):
+Considering \(|y-y_0| < \epsilon\) for any given \(\epsilon>0\), we have \(y < y_0+\epsilon\), with assuming \(a > 1\):
 </p>
 
 <p>
-\[
-a^y<a^{y_0+\epsilon}\\
-a^y-a^{y_0}<a^{y_0}(a^\epsilon-1)\\
+\[j
+a^y < a^{y_0+\epsilon}\\
+a^y-a^{y_0} < a^{y_0}(a^\epsilon-1)\\
 x-x_0 < \delta
 \]
 </p>
@@ -556,32 +502,32 @@ for some \(\delta >0\).
 </p>
 
 <p>
-Basically, for any \(\epsilon > 0\), there exists a \(\delta > 0\), such that if \(x - x_0 < \delta\) we have \(|y - y_0 = log_a x - log_a x_0| < \epsilon\), i.e. \(\lim_{x\to x_0} log_a x = log_a x_0\).
+Basically, for any \(\epsilon > 0\), there exists a \(\delta > 0\), such that if \(x - x_0 < \delta\) we have \(|y - y_0 = \log_a x - \log_a x_0| < \epsilon\), i.e. \(\lim_{x\to x_0} \log_a x = \log_a x_0\).
 <span class="QED">□</span>
 </p>
 </div>
 
-<div class="mathblock proposition" id="org40a8af2">
+<div class="mathblock proposition" id="orge886678">
 <p><span class="mathblock title">Proposition 6 .7. </span>
 
 Let \(a>0\), and for any \(b,c>0\).
 </p>
 
 <ol class="org-ol">
-<li>\(log_a(bc) = log_ab + log_ac\)</li>
-<li>\(log_ac = log_ab \cdot log_bc\) if \(b\ne1\)</li>
-<li>If \(a>1\), then \(log_ab>log_ac\), vice versa for \(0<a<1\).</li>
+<li>\(\log_a(bc) = \log_ab + \log_ac\)</li>
+<li>\(\log_ac = \log_ab \cdot \log_bc\) if \(b\ne1\)</li>
+<li>If \(a>1\), then \(\log_ab>\log_ac\), vice versa for \(0<a<1\).</li>
 </ol>
 
 </div>
 
-<div class="mathblock proof" id="orgf0ffafd">
+<div class="mathblock proof" id="org94a223b">
 <p><span class="mathblock title">Proof. </span>
 
 (1)
 \[
-a^{log_a(bc)}=a^{log_ab+log_ac}\\
-bc=a^{log_ab}\cdota^{log_ac}=bc
+a^{\log_a(bc)}=a^{\log_ab+\log_ac}\\
+bc=a^{\log_ab}\cdot a^{\log_ac}=bc
 \]
 </p>
 
@@ -591,22 +537,22 @@ bc=a^{log_ab}\cdota^{log_ac}=bc
 </p>
 </div>
 
-<div class="mathblock proposition" id="orgbe479dc">
+<div class="mathblock proposition" id="orgfb31abf">
 <p><span class="mathblock title">Proposition 6 .8. </span>
 
 \(\lim_{x\to\infty}\left(1+\frac{1}{x}\right)^x = \lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n\) where \(x\in\R\) and \(n\in\N\).
 </p>
 
 <p>
-And we call this limit as a number <i>e</i>, Euler's number.
+And we call this limit as a number \(e\), Euler's number.
 </p>
 
 </div>
 
-<div class="mathblock proof" id="org7b688a3">
+<div class="mathblock proof" id="orgdf8e2fb">
 <p><span class="mathblock title">Proof. </span>
 
-We already know that \(\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n=e\), which means for any \(\forall \espilon > 0\), there exists an \(N\in\N\), such that when the index \(n\) is greater than \(N\), we always have \(e - \epsilon < \left(1+\frac{1}{n}\right)^n < e + \epsilon\).
+We already know that \(\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n=e\), which means for any \(\forall \epsilon > 0\), there exists an \(N\in\N\), such that when the index \(n\) is greater than \(N\), we always have \(e - \epsilon < \left(1+\frac{1}{n}\right)^n < e + \epsilon\).
 </p>
 
 <p>
@@ -614,7 +560,7 @@ Let \(f(x) = \left(1+\frac{1}{x}\right)^x\), and \(F(n) = \left(1+\frac{1}{n}\ri
 </p>
 
 <p>
-Firstly, we restrict \(x\) to be greater than \(n\) for some \(n\ge N\), i.e., \(n<x\).
+Firstly, we restrict \(x\) to be greater than \(n\) for some \(n\ge N\), i.e., \(n < x\).
 </p>
 
 <p>
@@ -622,7 +568,7 @@ We claim that \(F(n) < f(x)\).
 </p>
 
 <p>
-Were this false, we have \(\left(1+\frac{1}{n}\right)^n \ge \left(1+\frac{{1}{x}\right)^x\).
+Were this false, we have \(\left(1+\frac{1}{n}\right)^n \ge \left(1+\frac{1}{x}\right)^x\).
 </p>
 
 <p>
@@ -695,15 +641,15 @@ So with all that, for any \(\epsilon > 0\), there exist \(N\in\N\) and \(n,m\in\
 </p>
 </div>
 
-<div class="mathblock proposition" id="org56bbb3f">
+<div class="mathblock proposition" id="org5c449d8">
 <p><span class="mathblock title">Proposition 6 .9. </span>
 
-\(\lim_{x\to0}\frac{a^x - 1}{x} = log_e a =: lna\) if \(a>0\).
+\(\lim_{x\to0}\frac{a^x - 1}{x} = \log_e a =: lna\) if \(a>0\).
 </p>
 
 </div>
 
-<div class="mathblock proof" id="org8589e1d">
+<div class="mathblock proof" id="org14d00f5">
 <p><span class="mathblock title">Proof. </span>
 
 Proof is divided into two parts.
@@ -719,9 +665,9 @@ Let \(t=a^x - 1\), then \(x = \log_a(1+x)\). Then
 
 <p>
 \[
-\lim_{x\to0^+}\frac{a^x - 1}{x} &=& \lim{t\to\infty}\frac{t}{log_a(1+t)}\\
-&=&\lim{t\to\infty}\frac{1}{log_a(1+t)^{\frac{1}{t}}}\\
-&=&\frac{1}{log_ae}
+\lim_{x\to0^+}\frac{a^x - 1}{x} &=& \lim{t\to\infty}\frac{t}{\log_a(1+t)}\\
+&=&\lim{t\to\infty}\frac{1}{\log_a(1+t)^{\frac{1}{t}}}\\
+&=&\frac{1}{\log_ae}
 &=&\ln a
 \]
 </p>
@@ -768,6 +714,7 @@ let macros = {
 "\\Q": "\\mathbb{Q}",
 "\\R": "\\mathbb{R}",
 "\\Z": "\\mathbb{Z}",
+"\\d": "\\mathrm{d}",
 "’": "'"
 };
 document.addEventListener("DOMContentLoaded", function() {
