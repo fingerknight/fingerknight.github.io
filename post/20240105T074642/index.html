@@ -27,13 +27,13 @@
 </div>
 <div id="page">
 <div id="preamble" class="status"><link rel="stylesheet" href="/static/katex/katex.min.css"><h1 class="post-title"> Calculus 6 exponential and logarithm </h1>
-<div class="post-date">2024-01-14</div>
+<div class="post-date">2024-01-16</div>
 <div class="taglist"><a href="/tag/calculus"> #calculus </a>
 <a href="/tag/math"> #math </a>
 </div>
 </div>
 <div id="content">
-<div class="mathblock lemma" id="org6313ea6">
+<div class="mathblock lemma" id="org6700914">
 <p><span class="mathblock title">Lemma 6 .1. </span>
 
 Let \(m\in\N\). For every \(a\in[0,\infty)\), there exists a unique \(c\in[0,\infty)\), such that \(c^m=a\).
@@ -41,7 +41,7 @@ Let \(m\in\N\). For every \(a\in[0,\infty)\), there exists a unique \(c\in[0,\in
 
 </div>
 
-<div class="mathblock proof" id="org765f6b5">
+<div class="mathblock proof" id="orga720b28">
 <p><span class="mathblock title">Proof. </span>
 
 (Uniqueness)
@@ -68,7 +68,7 @@ Case 2, \(a>0\). Since the map \(f:x\mapsto x^m\) is continuous. (Since \(f(x)=x
 </p>
 
 <p>
-\(f(0)=0<a\). On the other hand, \(f(a+1)=(a+1)^m > a\).
+\(f(0) = 0 < a\). On the other hand, \(f(a+1)=(a+1)^m > a\).
 </p>
 
 <p>
@@ -77,7 +77,7 @@ By the intermediate value theorem, \(\exists c\in(0,a+1)[f(c)=c^m=a]\).
 </p>
 </div>
 
-<div class="mathblock definition" id="org21d16c4">
+<div class="mathblock definition" id="orgba7944c">
 <p><span class="mathblock title">Definition 6 .2. </span>
 
 For any \(c\ge0\), we define \(a^{\frac{1}{m}}\) to be such a number \(c\). In other words, \(c=a^{\frac{1}{m}} \Lrarr c^m=a\land c\ge0\).
@@ -89,7 +89,7 @@ More generally, for any \(r\in\Q\), we define \(a^r\) to be \((a^n)^m\) if \(r=\
 
 </div>
 
-<div class="mathblock proposition" id="org38472f8">
+<div class="mathblock proposition" id="orgb22fa64">
 <p><span class="mathblock title">Proposition 6 .3. </span>
 
 Let \(a>0\) and \(r_1,r_2\in\Q\).
@@ -97,13 +97,13 @@ Let \(a>0\) and \(r_1,r_2\in\Q\).
 
 <ol class="org-ol">
 <li>\(a^{r_1}a^{r_2}=a^{r_1+r_2}\), \((a^{r_1})^{r_2}=a^{r_1r_2}\).</li>
-<li>\(r_1 < r_2, a > 1 \Rarr a^{r_1}<a^{r_2}\). If \(a<1\), then \(a^{r_1}>a^{r_2}\).</li>
+<li>\(r_1 < r_2, a > 1 \Rarr a^{r_1} < a^{r_2}\). If \(a<1\), then \(a^{r_1}>a^{r_2}\).</li>
 <li>\(\lim_{n\to\infty}a^{\frac{1}{n}}=1\).</li>
 </ol>
 
 </div>
 
-<div class="mathblock proof" id="orgb667841">
+<div class="mathblock proof" id="org3f0d5b1">
 <p><span class="mathblock title">Proof. </span>
 
 Let \(r_1=n_1/m_1, r_2=n_2/m_2\), where \(n_1,n_2\in\Z, m_1,m_2\in\N\).
@@ -226,7 +226,7 @@ Similarly when \(a<1\).
 </p>
 </div>
 
-<div class="mathblock definition" id="orgc21763e">
+<div class="mathblock definition" id="org1b84243">
 <p><span class="mathblock title">Definition 6 .4. </span>
 
 Choose a sequence \(r_n(n\in\N)\), such that \(r_n\in\Q\) for all \(n\), and \(\lim_{n\to\infty}r_n=x\), and then define \(a^x:=\lim_{n\to\infty}a^{r_n}\) if the limit exists.
@@ -242,7 +242,7 @@ However, we need to show the above definition is well-defined. There are some pr
 
 </div>
 
-<div class="mathblock proof" id="org26121a3">
+<div class="mathblock proof" id="org2daa024">
 <p><span class="mathblock title">Proof. </span>
 
 (1) The goal also means showing \(a^{r_n}\) is a Cauchy sequence.
@@ -310,7 +310,7 @@ In other words, \(\{a^{r_n}\}\) is Cauchy, then convergent.
 </p>
 </div>
 
-<div class="mathblock proposition" id="org129dfdb">
+<div class="mathblock proposition" id="org9886e66">
 <p><span class="mathblock title">Proposition 6 .5. </span>
 
 Given \(a>0\),
@@ -324,7 +324,7 @@ Given \(a>0\),
 
 </div>
 
-<div class="mathblock proof" id="org48a6fde">
+<div class="mathblock proof" id="org30e233c">
 <p><span class="mathblock title">Proof. </span>
 
 Suppose there are two sequences \(b_n,c_n(\in\Q)\), such that \(\lim_{n\to\infty}b_n=x_1\) and \(\lim_{n\to\infty}c_n=x_2\) where \(x_1,x_2\in\R\).
@@ -446,7 +446,7 @@ By (3), \(a^x\) is continuous, then \(\lim_{x\to0}a^x = a^0 = 1\).
 </p>
 </div>
 
-<div class="mathblock proposition" id="orgba777ba">
+<div class="mathblock proposition" id="orga54755f">
 <span class="mathblock title">Proposition 6 .6. </span>
 <ol class="org-ol">
 <li>\(f(x)=a^x\) is a bijection if \(a>0\) and \(a\ne1\).</li>
@@ -455,7 +455,7 @@ By (3), \(a^x\) is continuous, then \(\lim_{x\to0}a^x = a^0 = 1\).
 
 </div>
 
-<div class="mathblock proof" id="org9ffc2ba">
+<div class="mathblock proof" id="orge2115b0">
 <p><span class="mathblock title">Proof. </span>
 
 (1)
@@ -507,7 +507,7 @@ Basically, for any \(\epsilon > 0\), there exists a \(\delta > 0\), such that if
 </p>
 </div>
 
-<div class="mathblock proposition" id="orgd6befd0">
+<div class="mathblock proposition" id="org148b25a">
 <p><span class="mathblock title">Proposition 6 .7. </span>
 
 Let \(a>0\), and for any \(b,c>0\).
@@ -521,7 +521,7 @@ Let \(a>0\), and for any \(b,c>0\).
 
 </div>
 
-<div class="mathblock proof" id="org5648652">
+<div class="mathblock proof" id="org0894cb9">
 <p><span class="mathblock title">Proof. </span>
 
 (1)
@@ -537,7 +537,7 @@ bc=a^{\log_ab}\cdot a^{\log_ac}=bc
 </p>
 </div>
 
-<div class="mathblock proposition" id="org66e657f">
+<div class="mathblock proposition" id="org9be0753">
 <p><span class="mathblock title">Proposition 6 .8. </span>
 
 \(\lim_{x\to\infty}\left(1+\frac{1}{x}\right)^x = \lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n\) where \(x\in\R\) and \(n\in\N\).
@@ -549,7 +549,7 @@ And we call this limit as a number \(e\), Euler's number.
 
 </div>
 
-<div class="mathblock proof" id="org81d4a11">
+<div class="mathblock proof" id="org5a3f0fd">
 <p><span class="mathblock title">Proof. </span>
 
 We already know that \(\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n=e\), which means for any \(\forall \epsilon > 0\), there exists an \(N\in\N\), such that when the index \(n\) is greater than \(N\), we always have \(e - \epsilon < \left(1+\frac{1}{n}\right)^n < e + \epsilon\).
@@ -575,32 +575,20 @@ Were this false, we have \(\left(1+\frac{1}{n}\right)^n \ge \left(1+\frac{1}{x}\
 We choose \(x=2n\), then
 </p>
 
-<p>
-$$
-</p>
 \begin{align*}
 \left(1+\frac{1}{n}\right)^n $\ge \left(1+\frac{1}{x}\right)^x\\
 $\ge \left(1+\frac{1}{2n}\right)^{2n}\\
 \left(\frac{2n(n+1)}{n(2n+1)}\right)^n $\ge \left(1+\frac{1}{n}\right)^n
 \end{align*}
-<p>
-$$
-</p>
 
 <p>
 It is obvious that the numbers inside parenthesis are both greater than 1, then by monotonicity, we have
 </p>
 
-<p>
-$$
-</p>
 \begin{align*}
 \frac{2(n+1)}{2n+1} $\ge \frac{2n+1}{2n}\\
 0 $\ge 1
 \end{align*}
-<p>
-$$
-</p>
 
 <p>
 This induces a contradiction. Therefore \(F(n) < f(x)\), then \(e - \epsilon < F(n) < f(x)\).
@@ -622,16 +610,10 @@ Since \(m\) is even, there exists a \(k\in\N\) such that \(2k=m\). We can let \(
 Were the claim false, we have
 </p>
 
-<p>
-$$
-</p>
 \begin{align*}
 \left(1+\frac{1}{x}\right)^x $\ge \left(1+\frac{1}{m}\right)^m
 \left(1+\frac{1}{k}\right)^k $\ge \left(1+\frac{1}{2k}\right)^{2k}
 \end{align*}
-<p>
-$$
-</p>
 
 <p>
 Similar as before, we can obtain a contradiction if we keep on deducing.
@@ -653,7 +635,7 @@ So with all that, for any \(\epsilon > 0\), there exist \(N\in\N\) and \(n,m\in\
 </p>
 </div>
 
-<div class="mathblock proposition" id="org559b218">
+<div class="mathblock proposition" id="org91a21f5">
 <p><span class="mathblock title">Proposition 6 .9. </span>
 
 \(\lim_{x\to0}\frac{a^x - 1}{x} = \log_e a =: lna\) if \(a>0\).
@@ -661,7 +643,7 @@ So with all that, for any \(\epsilon > 0\), there exist \(N\in\N\) and \(n,m\in\
 
 </div>
 
-<div class="mathblock proof" id="orgfe4837c">
+<div class="mathblock proof" id="org2645629">
 <p><span class="mathblock title">Proof. </span>
 
 Proof is divided into two parts.
@@ -675,18 +657,12 @@ Proof is divided into two parts.
 Let \(t=a^x - 1\), then \(x = \log_a(1+x)\). Then
 </p>
 
-<p>
-$$
-</p>
 \begin{align*}
 \lim_{x\to0^+}\frac{a^x - 1}{x} &= \lim{t\to\infty}\frac{t}{\log_a(1+t)}\\
 &=\lim{t\to\infty}\frac{1}{\log_a(1+t)^{\frac{1}{t}}}\\
 &=\frac{1}{\log_ae}
 &=\ln a
 \end{align*}
-<p>
-$$
-</p>
 
 <p>
 (2) Consider the right limit.

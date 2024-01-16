@@ -290,20 +290,20 @@ html body {
       html body #main #page #content .mathblock {
         margin-bottom: 1rem;
         font-size: 1rem !important; }
-        html body #main #page #content .mathblock .title {
+        html body #main #page #content .mathblock.title {
           font-weight: bold;
           font-family: serif;
           font-size: 1rem !important;
           color: #f1fa8c; }
-        html body #main #page #content .mathblock .proof span .mathblock {
+        html body #main #page #content .mathblock.proof span.mathblock {
           color: #ffb86c; }
-          html body #main #page #content .mathblock .proof span .mathblock .title {
+          html body #main #page #content .mathblock.proof span.mathblock.title {
             font-weight: normal;
             font-style: italic; }
-          html body #main #page #content .mathblock .proof span .mathblock .name {
+          html body #main #page #content .mathblock.proof span.mathblock.name {
             font-weight: normal;
             font-style: normal; }
-        html body #main #page #content .mathblock .proof span.QED {
+        html body #main #page #content .mathblock.proof .QED {
           float: right; }
   html body #footer {
     padding-top: 2rem;
