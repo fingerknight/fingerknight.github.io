@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculus 8 taylor expansion - 手指骑士的病房</title>
+<link rel="icon" href="/static/favicon.ico"><meta content="text/html;charset=utf-8" http-equiv="Content-Type"><meta content="utf-8" http-equiv="encoding"><link href= "/static/style/style.css" rel="stylesheet" type="text/css" /></head>
+<body>
+<div id="header">
+<div class="home-page">
+<a href="/">手指骑士的病房</a></div><div class="nav">
+<div class="nav item">
+<a href="/tags">标签</a>
+</div>
+<div class="nav item">
+<a href="/archive">归档</a>
+</div>
+<div class="nav item">
+<a href="/about">关于</a>
+</div>
+<div class="nav item">
+<a href="/emacs">Emacs</a>
+</div>
+</div>
+</div>
+<div id="main">
+<div id="toc">
+
+</div>
+<div id="page">
+<div id="preamble" class="status"><link rel="stylesheet" href="/static/katex/katex.min.css"><h1 class="post-title"> Calculus 8 taylor expansion </h1>
+<div class="post-date">2024-01-18</div>
+<div class="taglist"><a href="/tag/calculus"> #calculus </a>
+<a href="/tag/math"> #math </a>
+</div>
+</div>
+<div id="content">
+<div class="mathblock definition" id="orgb612811">
+<p><span class="mathblock title">Definition 8 .1<span class="mathblock name"> (higher derivative)</span>. </span>
+
+Given \(f: S \to \R\), and \(a \in S\). We say \(f\) is k-times differentiable at \(a\) if \(f\) is differentiable at every \(x\) near \(a\), and \(f'\) is (k-1)-times differentiable at \(a\).
+</p>
+
+</div>
+
+<div class="mathblock proposition" id="org0455acd">
+<p><span class="mathblock title">Proposition 8 .2. </span>
+
+Equivalently, here is another definition of higher derivatives.
+</p>
+
+<p>
+Given \(f: S \to \R\), and \(a \in S\). We say \(f\) is k-times differentiable at \(a\) if \(\exists \delta > 0[(a - \delta, a + \delta) \sube S]\) and \(f', f'', \cdots, f^{(k-1)}\) exists on \((a - \delta, a + \delta)\), and \(f^{(k-1)}\) is differentiable at \(a\).
+</p>
+
+</div>
+
+<div class="mathblock proof" id="org0bdd76d">
+<p><span class="mathblock title">Proof. </span>
+
+(\(\Rarr\))
+</p>
+
+<p>
+For times less than \(k-1\), we have:
+</p>
+
+\begin{align*}
+f \text{ is } k\text{-times diff.} &\Rarr f \text{ is diff. near } a{, and } f' \text{ is } (k-1)\text{-times diff. at } a\\
+
+&\Darr
+
+f' \text{ is } (k-1)\text{-times diff.} &\Rarr f' \text{ is diff. near } a{, and } f'' \text{ is } (k-2)\text{-times diff. at } a\\
+
+&\Darr
+
+\vdots
+
+&\Darr
+
+f^{(k-2)} \text{ is } k\text{-times diff.} &\Rarr f^{(k-2)} \text{ is diff. near } a{, and } f^{(k-1)} \text{ is } (k-1)\text{-times diff. at } a\\
+\end{align*}
+
+<p>
+(\(\Larr\))
+</p>
+
+<p>
+\(f^{(k-1)}\) is diff. at \(a\), and \(f^{(k-2)}\) is diff. near \(a\), therefore \(f^{(k-2)}\) is 1-times diff.
+</p>
+
+<p>
+Repeat that, and we will obtain the answer
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock lemma" id="org32e437d">
+<span class="mathblock title">Lemma 8 .3. </span>
+<ol class="org-ol">
+<li>If \(f\) is convex and \(\exists\delta > 0 (a - \delta, a + \delta) \in I\), then \(f_{-}'(a)\) and \(f_{+}'(a)\) both exist, and \(f_{-}'(a) \le f_{+}'(a)\).</li>
+<li></li>
+</ol>
+
+</div>
+
+<div class="mathblock proof" id="orgfbf6933">
+<p><span class="mathblock title">Proof. </span>
+
+(1)
+</p>
+
+<p>
+By proposition 7.4, consider \(a - \delta_1 < a < a + \delta_2\) where \(\delta_1,\delta_2 \le \delta\), we have
+</p>
+
+<p>
+\[
+\frac{f(a) - f(a-\delta_1)}{\delta_1} \le
+\frac{f(a+\delta_2) - f(a)}{\delta_2}
+\]
+</p>
+
+<p>
+Fix \(\delta_1\), and let \(delta_2\) be approaching to \(0\), \(\frac{f(a+\delta_2) - f(a)}{\delta_2}\) is decreasing in the process, and it is bounded. Therefore, \(f_{+}'(a)=\lim_{\delta_2 \to 0}\frac{f(a+\delta_2) - f(a)}{\delta_2}\) exists.
+</p>
+
+<p>
+Similarly, we can obtain that \(f_{-}'(a)\) exists, too.
+</p>
+
+<p>
+And if letting \(\delta_1,\delta_2\) be approaching 0 at the same time, we can obtain that \(f_{-}'(a) \le f_{+}'(a)\).
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock proposition" id="orgad29f2f">
+<p><span class="mathblock title">Proposition 8 .4<span class="mathblock name"> (convex test by 2-times derivativv)</span>. </span>
+
+If \(f: I \to \R\), where \(I\) is an open interval, is 2-times differentiable everywhere, then \(f\) is convex iff \(f''(x) \ge 0\) for all \(x \in I\). 
+</p>
+
+</div>
+<div id="footnotes">
+<hr>
+<div class="text-footnotes" role="doc-endnotes">
+<ol>
+
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<script defer src="/static/katex/katex.min.js"></script>
+<script defer src="/static/katex/auto-render.min.js"></script>
+<script>
+let macros = {
+"\\C": "\\mathbb{C}",
+"\\N": "\\mathbb{N}",
+"\\Q": "\\mathbb{Q}",
+"\\R": "\\mathbb{R}",
+"\\Z": "\\mathbb{Z}",
+"\\d": "\\mathrm{d}",
+"’": "'"
+};
+document.addEventListener("DOMContentLoaded", function() {
+renderMathInElement(document.getElementById("content"), {
+strict: false,
+delimiters: [
+{"display": true,"left": "$$","right": "$$"},
+{"display": true,"left": "\\[","right": "\\]"},
+{"display": true,"left": "\\begin{equation}","right": "\\end{equation}"},
+{"display": true,"left": "\\begin{equation*}","right": "\\end{equation*}"},
+{"display": true,"left": "\\begin{align}","right": "\\end{align}"},
+{"display": true,"left": "\\begin{align*}","right": "\\end{align*}"},
+{"display": true,"left": "\\begin{alignat}","right": "\\end{alignat}"},
+{"display": true,"left": "\\begin{alignat*}","right": "\\end{alignat*}"},
+{"display": true,"left": "\\begin{gather}","right": "\\end{gather}"},
+{"display": true,"left": "\\begin{CD}","right": "\\end{CD}"},
+{"display": false,"left": "$","right": "$"},
+{"display": false,"left": "\\(","right": "\\)"}
+],
+macros});})
+</script></div>
+</div>
+</div>
+<div id="footer">
+<center> The End </center></div>
+</body>
+</html>

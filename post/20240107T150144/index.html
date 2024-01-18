@@ -27,13 +27,13 @@
 </div>
 <div id="page">
 <div id="preamble" class="status"><link rel="stylesheet" href="/static/katex/katex.min.css"><h1 class="post-title"> Calculus 7 differential </h1>
-<div class="post-date">2024-01-16</div>
+<div class="post-date">2024-01-18</div>
 <div class="taglist"><a href="/tag/calculus"> #calculus </a>
 <a href="/tag/math"> #math </a>
 </div>
 </div>
 <div id="content">
-<div class="mathblock definition" id="org479162e">
+<div class="mathblock definition" id="orga8e3f08">
 <p><span class="mathblock title">Definition 7 .1. </span>
 
 Given a function \(f:S(\sube\R) \to \R\), and a point \(a\in S\). We say this function is differentiable/left differentiable/right differentiable at \(a\) if:
@@ -54,7 +54,7 @@ We say \(f\) is differentiable on \(S\) if it is differentiable at every \(x\in 
 
 </div>
 
-<div class="mathblock proposition" id="orgc7a8556">
+<div class="mathblock proposition" id="orge69c4a0">
 <span class="mathblock title">Proposition 7 .2. </span>
 <ol class="org-ol">
 <li>If \(f\) is diff./left diff./right diff. at \(a\), then \(f\) is continuous/left conti./right conti..</li>
@@ -63,7 +63,7 @@ We say \(f\) is differentiable on \(S\) if it is differentiable at every \(x\in 
 
 </div>
 
-<div class="mathblock proof" id="orgc64cd26">
+<div class="mathblock proof" id="orgdcd451f">
 <p><span class="mathblock title">Proof. </span>
 
 (1)
@@ -93,7 +93,7 @@ It is easy to prove by the definition of limits.
 </p>
 </div>
 
-<div class="mathblock definition" id="org19d0412">
+<div class="mathblock definition" id="orgd761003">
 <p><span class="mathblock title">Definition 7 .3. </span>
 
 A function \(f:I\to \R\) on an interval \(I\sube \R\), is called a convex function if \(\forall a,b \in I, t\in (0,1)(f((1-t)a+b) \le (1-t)f(a) + tf(b))\). We say it is strictly convex, when \(\le\) is \(<\).
@@ -101,7 +101,7 @@ A function \(f:I\to \R\) on an interval \(I\sube \R\), is called a convex functi
 
 </div>
 
-<div class="mathblock proposition" id="org671e7af">
+<div class="mathblock proposition" id="org26523c1">
 <p><span class="mathblock title">Proposition 7 .4. </span>
 
 For any \(a < c < b (\in I)\), these following statements are equivalent:
@@ -114,7 +114,7 @@ For any \(a < c < b (\in I)\), these following statements are equivalent:
 
 </div>
 
-<div class="mathblock proof" id="orgaa50e7b">
+<div class="mathblock proof" id="org3c27346">
 <p><span class="mathblock title">Proof. </span>
 
 (1-2)
@@ -151,7 +151,7 @@ bf(c) - (b-c)f(a) - cf(c) &\le (c-a)f(b) + af(c) - cf(c)\\
 </p>
 </div>
 
-<div class="mathblock proposition" id="org6994079">
+<div class="mathblock proposition" id="orgd98867d">
 <p><span class="mathblock title">Proposition 7 .5. </span>
 
 Let \(f,g:S\to\R\), and \(a\in S\) be both differentiable at \(a\).
@@ -164,7 +164,7 @@ Let \(f,g:S\to\R\), and \(a\in S\) be both differentiable at \(a\).
 
 </div>
 
-<div class="mathblock proof" id="org94a326d">
+<div class="mathblock proof" id="org0d41961">
 <p><span class="mathblock title">Proof. </span>
 
 (1)
@@ -196,7 +196,7 @@ The left part is the derivative of \((f\pm g)(x)\) at \(a\), and the right part 
 </p>
 </div>
 
-<div class="mathblock proposition" id="orga0dbbaf">
+<div class="mathblock proposition" id="org3724ca5">
 <p><span class="mathblock title">Proposition 7 .6<span class="mathblock name"> (differentiating inverse functions)</span>. </span>
 
 Let \(f: I \to J\) be continuous bijection between intervals \(I\) and \(J\) in \(\R\). Let \(g: J \to I\) be its inverse map. For \(a\in I\), if \(f\) is differentiable at \(a\) and \(f'(a) \ne 0\), then \(g\) is differentiable at \(f(a)\), and \(g'(f(a)) = \frac{1}{f'(a)}\).
@@ -204,7 +204,7 @@ Let \(f: I \to J\) be continuous bijection between intervals \(I\) and \(J\) in 
 
 </div>
 
-<div class="mathblock proof" id="org75f87e2">
+<div class="mathblock proof" id="org6f7c2fc">
 <p><span class="mathblock title">Proof. </span>
 
 Let \(b = f(a)\), then \(a = g(b)\).
@@ -225,7 +225,7 @@ The first item is actually \(F(g(y))\). \(g(y) = a\) as \(y\to b\), which means 
 </p>
 </div>
 
-<div class="mathblock lemma" id="orgfb7965d">
+<div class="mathblock lemma" id="org774f137">
 <p><span class="mathblock title">Lemma 7 .7. </span>
 
 Let \(f: S(\sube\R) \to \R\) be a function, and \(a\in S\). \(f\) is differentiable at \(a\) iff there exist \(\eta: S \to \R\) and \(A\in\R\), such that \(f(a+h) = f(a) + Ah + \eta(h)h\) for all \(h\) near 0, and \(\lim_{h\to0}\eta(h) = \eta(0) = 0\). Furthermore, if any side holds, then \(A=f'(a)\).
@@ -233,7 +233,7 @@ Let \(f: S(\sube\R) \to \R\) be a function, and \(a\in S\). \(f\) is differentia
 
 </div>
 
-<div class="mathblock proof" id="org5b20258">
+<div class="mathblock proof" id="orgfc80fca">
 <p><span class="mathblock title">Proof. </span>
 
 (\(\Rarr\))
@@ -276,7 +276,7 @@ Above item is to \(A\), as \(h\to 0\), which is \(f'(a)\) in fact.
 </p>
 </div>
 
-<div class="mathblock theorem" id="org5679b5b">
+<div class="mathblock theorem" id="orgc47695e">
 <p><span class="mathblock title">Theorem 7 .8<span class="mathblock name"> (the chain rule)</span>. </span>
 
 Given \(f: S \to T\), \(g: T \to \R\), and \(a\in S, b=f(a) \in T\). If \(f\) is differentiable at \(a\), and \(g\) is differentiable at \(b\), then \(g\circ f\) is differentiable at \(a\), and \((g\circ f)'(a) = g'(b)f'(a)\).
@@ -284,7 +284,7 @@ Given \(f: S \to T\), \(g: T \to \R\), and \(a\in S, b=f(a) \in T\). If \(f\) is
 
 </div>
 
-<div class="mathblock proof" id="orgc1f6437">
+<div class="mathblock proof" id="orgf9f210e">
 <p><span class="mathblock title">Proof. </span>
 
 For \(g\), we have \(g(y) = g(b) + g'(b)(y-b) + \xi(k)(y-b)\), where \(k=y-b\).
@@ -305,7 +305,7 @@ For \(f\), we have \(f(x) = f(a) = f'(a)(x-a) + \eta(h)(x-a)\), where \(h=x-a\).
 </p>
 </div>
 
-<div class="mathblock definition" id="org5495d4d">
+<div class="mathblock definition" id="org2a1e285">
 <p><span class="mathblock title">Definition 7 .9<span class="mathblock name"> (local extremum)</span>. </span>
 
 Given a function \(f:X\to\R\), where \(X\) is a metric space, and \(a\in X\). We say that \(f\) achieves a local maximum/minimum at \(a\) if \(\exists \delta > 0 \forall x \in B_\delta(a)[f(x) \le(\ge) f(a)]\).
@@ -313,7 +313,7 @@ Given a function \(f:X\to\R\), where \(X\) is a metric space, and \(a\in X\). We
 
 </div>
 
-<div class="mathblock proposition" id="org9e93841">
+<div class="mathblock proposition" id="org7513346">
 <p><span class="mathblock title">Proposition 7 .10. </span>
 
 Given a function \(f:S\to\R\), which achieves a local maximum, \(a\in S\), and the left and right limit of \(\frac{f(x) - f(a)}{x - a}\) at \(a\) both exist. Then \(\lim_{x\to a^+}\frac{f(x) -f(a)}{x-a} \le 0\), and \(\lim_{x\to a^-}\frac{f(x) -f(a)}{x-a} \ge 0\). In particular, if \(\lim_{x\to a}\frac{f(x) - f(a)}{x - a}\) exists, then it must be 0.
@@ -321,7 +321,7 @@ Given a function \(f:S\to\R\), which achieves a local maximum, \(a\in S\), and t
 
 </div>
 
-<div class="mathblock proof" id="orgc09c5e6">
+<div class="mathblock proof" id="org4dd42c1">
 <p><span class="mathblock title">Proof. </span>
 
 As \(x \to a^+\), \(x-a > 0\), and \(f(x) - f(a) \le 0\) since \(f\) achieves local maximum at \(a\), then \(\frac{f(x) -f(a)}{x - a} \le 0\) when \(x\) gets close to \(a\), i.e., its limit is also less than equal 0.
@@ -337,7 +337,7 @@ Then we have the derivative is both ge. 0 or le. 0, which means it must be 0.
 </p>
 </div>
 
-<div class="mathblock theorem" id="org15dc931">
+<div class="mathblock theorem" id="org412fa31">
 <p><span class="mathblock title">Theorem 7 .11<span class="mathblock name"> (Rolle's theorem)</span>. </span>
 
 Given \(f:[a,b] \to \R\) which is continuous on \([a,b]\) and is differentiable on (a,b), if \(f(a) = f(b)\), then \(\exists c \in (a,b)[f'(c) = 0]\).
@@ -345,7 +345,7 @@ Given \(f:[a,b] \to \R\) which is continuous on \([a,b]\) and is differentiable 
 
 </div>
 
-<div class="mathblock proof" id="orgbdeb8dd">
+<div class="mathblock proof" id="org903344f">
 <p><span class="mathblock title">Proof. </span>
 
 Since the domain of \(f\) is compact, by Theorem 5.14, \(f\) have global max and min.
@@ -361,15 +361,15 @@ We can obtain local extremum from global max/min. Then by propsition 7.10, we ha
 </p>
 </div>
 
-<div class="mathblock theorem" id="orge3de9be">
+<div class="mathblock theorem" id="orgbc87a70">
 <p><span class="mathblock title">Theorem 7 .12<span class="mathblock name"> (the mean value theorem)</span>. </span>
 
-If \(f:[a,b] \to \R\) is continuous on \([a,b]\) and differentiable on $(a,b), then \(\exists c \in (a,b)[\frac{f(b)-f(a)}{b-a} = f'(c)]\).
+If \(f:[a,b] \to \R\) is continuous on \([a,b]\) and differentiable on \((a,b)\), then \(\exists c \in (a,b)[\frac{f(b)-f(a)}{b-a} = f'(c)]\).
 </p>
 
 </div>
 
-<div class="mathblock proof" id="org5fa0d3e">
+<div class="mathblock proof" id="orgb3d0d65">
 <p><span class="mathblock title">Proof. </span>
 
 Let \(F(x) = f(x) - \left[f(a) + \frac{f(b) - f(a)}{b - a}(x-a)\right]\). Then we know that \(F(a) = 0\), and \(F(b) = 0\), and \(F\) is continuous on \([a,b]\), too.
@@ -381,7 +381,7 @@ By Rolle's theorem, there exists a \(c\in(a,b)\), such that \(F'(c) = 0\), i.e.,
 </p>
 </div>
 
-<div class="mathblock definition" id="org16cf406">
+<div class="mathblock definition" id="org428b17a">
 <p><span class="mathblock title">Definition 7 .13. </span>
 
 A map \(f: X \to Y\) between metric spaces is called Lipschitz if \(\exists C > 0 \forall x,x' \in X [ d(x,x') \le Cd(f(x),f(x')) ]\).
@@ -389,7 +389,7 @@ A map \(f: X \to Y\) between metric spaces is called Lipschitz if \(\exists C > 
 
 </div>
 
-<div class="mathblock proposition" id="org14e7dcc">
+<div class="mathblock proposition" id="org4847a99">
 <p><span class="mathblock title">Proposition 7 .14. </span>
 
 If \(f\) is Lipschitz, then it is uniformly continuous.
@@ -397,7 +397,7 @@ If \(f\) is Lipschitz, then it is uniformly continuous.
 
 </div>
 
-<div class="mathblock proof" id="org58ebde5">
+<div class="mathblock proof" id="orgc9b4788">
 <p><span class="mathblock title">Proof. </span>
 
 
@@ -419,7 +419,7 @@ Let \(\delta = C\epsilon >0\), then we obtain that \(f\) is uniformly continuous
 </p>
 </div>
 
-<div class="mathblock remark" id="org60e095f">
+<div class="mathblock remark" id="org66bea7b">
 <p><span class="mathblock title">Remark 7 .15. </span>
 
 Consider \(f(x) = \sin x\), by the mean value theorem, there exists some \(c\) between \(x\) and \(x'\),
@@ -427,9 +427,9 @@ Consider \(f(x) = \sin x\), by the mean value theorem, there exists some \(c\) b
 
 <p>
 $$
-\left |
+\left|
 \frac{\sin x - \sin x'}{x - x'}
-\right |
+\right|
 </p>
 
 <p>
@@ -450,7 +450,7 @@ That tells us, we can discuss the differentiation of functions to see the contin
 <p>
 #+name; gerneralized mean value theorem
 </p>
-<div class="mathblock theorem" id="org924a381">
+<div class="mathblock theorem" id="orgf7b29c4">
 <p><span class="mathblock title">Theorem 7 .16. </span>
 
 If \(f,g: [a,b] \to \R\) are continuous on \([a,b]\), and differentiable on \((a,b)\), then there exists a \(c \in (a,b)\), such that
@@ -464,7 +464,7 @@ f'(c)[g(b) - g(a)] = g'(c)[f(b) - f(a)]
 
 </div>
 
-<div class="mathblock proof" id="org58c2560">
+<div class="mathblock proof" id="org29df0f1">
 <p><span class="mathblock title">Proof. </span>
 
 Apply Rolle's theorem to \(F(x) = f(x)[g(b) - g(a)] - g(x)[f(b) - f(a)]\). Since \(F(a) = f(a)g(b) - f(a)g(a) - f(b)g(a) + f(a)g(a) = f(a)g(b) - f(b)g(a)\) and \(F(b) = f(b)g(b) - f(b)g(a) - f(b)g(b) + f(a)g(b) = f(a)g(b) - f(b)g(a)\), which are equal, there exists a \(c\) between \(a\) and \(b\), such that \(F'(c) = f'(c)[g(b) - g(a)] - g'(c)[f(b) - f(a)] = 0\).
@@ -472,21 +472,27 @@ Apply Rolle's theorem to \(F(x) = f(x)[g(b) - g(a)] - g(x)[f(b) - f(a)]\). Since
 </p>
 </div>
 
-<div class="mathblock proposition" id="org7505515">
+<div class="mathblock proposition" id="orge7ab6b9">
 <p><span class="mathblock title">Proposition 7 .17. </span>
 
 For \(f,g,h: [a,b] \to \R\), which are both continuous on \([a,b]\) and differentiable on \((a,b)\), there exists a \(c \in (a,b)\), such that
 </p>
 
+<p>
+$$
+</p>
 \begin{vmatrix}
 f(a) & g(a) & h(a) \\
 f(b) & g(b) & h(b) \\
 f'(c) & g'(c) & h'(c)
 \end{vmatrix}
+<p>
+$$
+</p>
 
 </div>
 
-<div class="mathblock proof" id="org1beb569">
+<div class="mathblock proof" id="org1d29370">
 <p><span class="mathblock title">Proof. </span>
 
 It is very easy, with only some writing jobs.
@@ -494,7 +500,7 @@ It is very easy, with only some writing jobs.
 </p>
 </div>
 
-<div class="mathblock theorem" id="orgdee6d77">
+<div class="mathblock theorem" id="orge629eef">
 <p><span class="mathblock title">Theorem 7 .18<span class="mathblock name"> (L'Hospital's rule)</span>. </span>
 
 Given differentiable functions \(f,g: (a,b) \to \R\), where \(a < b\), if
@@ -516,7 +522,7 @@ Given differentiable functions \(f,g: (a,b) \to \R\), where \(a < b\), if
 
 </div>
 
-<div class="mathblock proof" id="org55348b4">
+<div class="mathblock proof" id="orge40ebb2">
 <p><span class="mathblock title">Proof. </span>
 
 
@@ -554,7 +560,6 @@ F(x) =
 f(x) & x\in (a,b)
 0 & x = a
 \end{cases},
-
 G(x) = 
 \begin{cases}
 g(x) & x\in (a,b)
@@ -579,12 +584,9 @@ And we have \(\lim_{x \to a^+} \frac{f'(x)}{g'(x)} = L\), i.e.,
 </p>
 
 <p>
-$$
-&forall; &epsilon; &gt; 0 &delta; &gt; 0 [ a &lt; x &lt; a + &delta; \Rarr \left| \frac{f'(x)}{g'(x)} - L \right| &lt; &epsilon;]
-</p>
-
-<p>
-$$
+\[
+\forall \epsilon > 0 \delta > 0 [ a < x < a + \delta \Rarr \left| \frac{f'(x)}{g'(x)} - L \right| < \epsilon]
+\]
 </p>
 
 <p>
@@ -593,8 +595,8 @@ Since \(a < c < x < a + \delta\),
 
 <p>
 \[
-\frac{f'(c)}{g'(c)} - L \right| < \epsilon
-\frac{f(x)}{g(x)} - L \right| < \epsilon
+\left| \frac{f'(c)}{g'(c)} - L \right| < \epsilon
+\left| \frac{f(x)}{g(x)} - L \right| < \epsilon
 \]
 </p>
 
@@ -685,7 +687,7 @@ By hypothesis,
 
 <p>
 \[
-lim_{y \to a} m(y) = lim_{y \to a} M(y) = lim_{y \to a} \frac{f'(y)}{g'(y)} = L
+\lim_{y \to a} m(y) = \lim_{y \to a} M(y) = \lim_{y \to a} \frac{f'(y)}{g'(y)} = L
 \]
 </p>
 
@@ -694,13 +696,10 @@ and
 </p>
 
 <p>
-$$
-lim_{y &rarr; a}\left(liminf_{x &isin; S_y}\frac{f(x)}{g(x)}\right) = liminf_{y &rarr; a}\frac{f(y)}{g(y)} <br>
-</p>
-
-<p>
-lim_{y &rarr; a}\left(limsup_{x &isin; S_y}\frac{f(x)}{g(x)}\right) = limsup_{y &rarr; a}\frac{f(y)}{g(y)}
-$$
+\[
+\lim_{y \to a}\left(\liminf_{x \in S_y}\frac{f(x)}{g(x)}\right) = \liminf_{y \to a}\frac{f(y)}{g(y)} \\
+\lim_{y \to a}\left(\limsup_{x \in S_y}\frac{f(x)}{g(x)}\right) = \limsup_{y \to a}\frac{f(y)}{g(y)}
+\]
 </p>
 
 <p>
@@ -717,7 +716,59 @@ By the squeeze test,
 </p>
 
 <p>
-so the limit \(\lim{y\to a}\frac{f(y)}{g(y)}\) exists and is equal to \(L\).
+so the limit \(\lim_{y\to a}\frac{f(y)}{g(y)}\) exists and is equal to \(L\).
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock proposition" id="org3ee5720">
+<p><span class="mathblock title">Proposition 7 .19. </span>
+
+Given  differentiable \(f: I \to \R\), where \(I\) is an open interval. For all \(x \in I\), we have
+</p>
+
+<p>
+$$
+f'(x)
+</p>
+\begin{cases}
+\ge 0 & ( > 0)\\
+= 0\\
+\le 0 & ( < 0)\\
+\end{cases}
+
+<p>
+\Rarr
+</p>
+
+<p>
+f\text{ is}
+</p>
+\begin{cases}
+\text{increasing} & \text{strictly increasing}\\
+\text{constant}\\
+\text{decreasing} & \text{strictly decreasing}
+\end{cases}
+<p>
+$$
+</p>
+
+</div>
+
+<div class="mathblock proof" id="org4525fd2">
+<p><span class="mathblock title">Proof. </span>
+
+By the mean value theorem, for any \(x,x' \in I\), and \(x < x'\), there exists some \(c \in (x,x')\), such that
+</p>
+
+<p>
+\[
+f(x') - f(x) = \frac{f(x') - f(x)}{x' - x}(x' - x) = f'(c)(x' - x)
+\]
+</p>
+
+<p>
+Therefore, that whether $f(x') - f(x) is greather or less than 0 depends on the sign of \(f'(c)\).
 <span class="QED">□</span>
 </p>
 </div>
