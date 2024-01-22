@@ -27,14 +27,14 @@
 </div>
 <div id="page">
 <div id="preamble" class="status"><link rel="stylesheet" href="/static/katex/katex.min.css"><h1 class="post-title"> Calculus 1 dedekind cut </h1>
-<div class="post-date">2023-12-30</div>
+<div class="post-date">2024-01-21</div>
 <div class="taglist"><a href="/tag/calculus"> #calculus </a>
 <a href="/tag/math"> #math </a>
 </div>
 </div>
 <div id="content">
-<div class="mathblock definition" id="org1611fc7">
-<p><span class="mathblock title">Definition 1 1. </span>
+<div class="mathblock definition" id="org4cdd4c9">
+<p><span class="mathblock title">Definition 1.1 </span>
 
 Let \(S\sube\R\) and \(r\in\R\). We say that:
 </p>
@@ -50,8 +50,8 @@ Let \(S\sube\R\) and \(r\in\R\). We say that:
 
 </div>
 
-<div class="mathblock definition" id="orge69871a">
-<p><span class="mathblock title">Definition 1 2<span class="mathblock name"> (Dedekind cut)</span>. </span>
+<div class="mathblock definition" id="org783a74f">
+<p><span class="mathblock title">Definition 1.2<span class="mathblock name">(Dedekind cut)</span> </span>
 
 Let \(A,B\sube\R\). We say that \((A,B)\) is a Dedekind cut of $\R\ if:
 </p>
@@ -63,8 +63,8 @@ Let \(A,B\sube\R\). We say that \((A,B)\) is a Dedekind cut of $\R\ if:
 
 </div>
 
-<div class="mathblock proposition" id="org0832a7a">
-<p><span class="mathblock title">Proposition 1 3<span class="mathblock name"> (Dedekind's gapless property)</span>. </span>
+<div class="mathblock proposition" id="org8af138b">
+<p><span class="mathblock title">Proposition 1.3<span class="mathblock name">(Dedekind's gapless property)</span> </span>
 
 If \((A,B)\) is a Dedekind cut of \(\R\), then exactly one of the following happens:
 </p>
@@ -74,8 +74,8 @@ If \((A,B)\) is a Dedekind cut of \(\R\), then exactly one of the following happ
 </ul>
 
 </div>
-<div class="mathblock proof" id="org2c9e537">
-<p><span class="mathblock title">Proof. </span>
+<div class="mathblock proof" id="org4915963">
+<p><span class="mathblock title">Proof </span>
 
 (齐神说要用区间套定理和阿基米德性质，但是我没用上。麻烦高人帮忙看看这个证明有没有问题)
 </p>
@@ -120,15 +120,15 @@ If \(\sup A\in B\), since \(\min B\) doesn't exist, there always exists a \(b_0\
 </p>
 </div>
 
-<div class="mathblock theorem" id="org57aa3bb">
-<p><span class="mathblock title">Theorem 1 4<span class="mathblock name"> (Weierstrass)</span>. </span>
+<div class="mathblock theorem" id="org3516eed">
+<p><span class="mathblock title">Theorem 1.4<span class="mathblock name">(Weierstrass)</span> </span>
 
 Let \(S(\ne\varnothing)\sube\R\). If S has an upper bound, then \(\sup S\) exists.
 </p>
 
 </div>
-<div class="mathblock proof" id="orgc317748">
-<p><span class="mathblock title">Proof. </span>
+<div class="mathblock proof" id="org1fd7ab3">
+<p><span class="mathblock title">Proof </span>
 
 Let \(B:=\{b\in\R|b\text{ is an upper(lower) bound of }S\}\), and \(A:=\R\backslash B\).
 </p>
@@ -156,15 +156,15 @@ By Dedekind's gapless property, \(\min B\) must exist, i.e., \(\sup S\) exists.
 </p>
 </div>
 
-<div class="mathblock proposition" id="orgb7f52c1">
-<p><span class="mathblock title">Proposition 1 5<span class="mathblock name"> (Archimedean property)</span>. </span>
+<div class="mathblock proposition" id="orgb83bd2e">
+<p><span class="mathblock title">Proposition 1.5<span class="mathblock name">(Archimedean property)</span> </span>
 
 \(\forall r\in\R \left[r > 0 \Rarr \exists n\in\N\left[\frac{1}{n} < r\right]\right]\)
 </p>
 
 </div>
-<div class="mathblock proof" id="orgda1dcd4">
-<p><span class="mathblock title">Proof. </span>
+<div class="mathblock proof" id="orga8b54fc">
+<p><span class="mathblock title">Proof </span>
 
 It is equvalent to prove that \(\N\) has no upper bound.
 </p>
@@ -183,6 +183,34 @@ Then we obtain that \(N + 1\) is an upper bound of \(\N\), since it is greater t
 
 <p>
 Thus, \(\N\) has no upper bounds, i.e., Archimedean property is proved.
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock proposition" id="org92dc61c">
+<p><span class="mathblock title">Proposition 1.6 </span>
+
+\(\forall r \in \R\)[ r &gt; 0 \Rarr $&exist; N &isin; \N (N - 1 &le; r &lt; N)]
+</p>
+
+</div>
+
+<div class="mathblock proof" id="org4305f25">
+<p><span class="mathblock title">Proof </span>
+
+By the Archimedean property, there exists \(n \in \N\), such that \(r < n\).
+</p>
+
+<p>
+Let \(U := \{m \in \N | m \ge n\}\), and \(N := \inf U\). Then we have \(r < N\).
+</p>
+
+<p>
+For the contradiction, assume that $ N -1 &gt; r$, i.e., \(N - 1 \in U\), therefore \(N \le N - 1 \Rarr 1 \le 0\).
+</p>
+
+<p>
+Thus, \(N -1 \le r\).
 <span class="QED">□</span>
 </p>
 </div>
@@ -205,6 +233,7 @@ let macros = {
 "\\Q": "\\mathbb{Q}",
 "\\R": "\\mathbb{R}",
 "\\Z": "\\mathbb{Z}",
+"\\d": "\\mathrm{d}",
 "’": "'"
 };
 document.addEventListener("DOMContentLoaded", function() {
