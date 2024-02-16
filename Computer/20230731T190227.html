@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title> Arch Linux 下 Qtile 桌面管理器 - Ward of Dust </title>
+<meta name="author" content="MrDust">
+<link rel="stylesheet" href="/static/Fantasque/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dracula-prism@2.1.16/dist/css/dracula-prism.min.css">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/static/Slippery/style.css"><link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+<div id="preamble" class="status">
+<div class="header">
+<div class="title">
+<a href="/">Ward of Dust</a>
+</div>
+<div class="navigation">
+<a class="item" href="/archive.html">Archives</a>
+<a class="item" href="/taxonomy.html">Taxonomy</a>
+<a class="item" href="/about.html">About</a></div>
+</div>
+</div>
+<div id="content" class="content">
+<h1 class="title">Arch Linux 下 Qtile 桌面管理器</h1>
+<div class="post">
+<div class="metadata">
+<div class="date"><span>2023-07-31</span></div>
+<div class="tags">
+<a class="tag" href="/tag/archlinux.html">#archlinux</a> <a class="tag" href="/tag/post.html">#post</a> <a class="tag" href="/tag/qtile.html">#qtile</a> <a class="tag" href="/tag/wm.html">#wm</a></div>
+<div class="category">
+<a href="/category/Computer.html">$Computer</a>
+</div>
+</div>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#前言">前言</a></li>
+<li><a href="#安装">安装</a></li>
+<li><a href="#配置">配置</a>
+<ul>
+<li><a href="#基本概念">基本概念</a></li>
+<li><a href="#键盘映射 Key">键盘映射 Key</a>
+<ul>
+<li><a href="#键盘启动程序">键盘启动程序</a></li>
+<li><a href="#键盘启动自定义程序">键盘启动自定义程序</a></li>
+</ul>
+</li>
+<li><a href="#工作区 Group">工作区 Group</a></li>
+<li><a href="#布局排版 Layout">布局排版 Layout</a></li>
+<li><a href="#屏幕 Screen">屏幕 Screen</a></li>
+<li><a href="#窗口间距">窗口间距</a></li>
+<li><a href="#窗口浮动">窗口浮动</a></li>
+<li><a href="#钩子 Hook">钩子 Hook</a></li>
+<li><a href="#命令行工具">命令行工具</a></li>
+<li><a href="#Debug">Debug</a></li>
+</ul>
+</li>
+<li><a href="#后记">后记</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-前言" class="outline-2">
+<h2 id="前言"><a href="#前言">前言</a></h2>
+<div class="outline-text-2" id="text-org164d609">
+<p>
+才折腾完 bspwm 不久（参见<a target="_blank" href="/Computer/20230628T212213.html" target="_blank">Bspwm 桌面</a> ），因为心心念念的 eaf-brower, 最后还是想换桌面。 <a target="_blank" href="https://github.com/emacs-eaf/emacs-application-framework">EAF</a> 是一个框架，允许在用户在 Emacs 中运行其他程序，比如浏览器等。我超级喜欢这个理念，所以老早就想迁移到 eaf. 但是因为浏览器需要自己调教，要花时间，就一直拖着（虽然时间花在折腾其他东西上）。终于把桌面调好后，发现 bspwm 用不了，这可难受坏了。
+</p>
+
+<p>
+于是花了两天时间来尝试 <a target="_blank" href="https://github.com/qtile/qtile">Qtile</a>, 一个用 Python 写的桌面，配置用的自然是 Python 语言，虽然可能涉及效率问题，但是在配置方面应当是比 bspwm 来得舒适的。
+</p>
+</div>
+</div>
+
+<div id="outline-container-安装" class="outline-2">
+<h2 id="安装"><a href="#安装">安装</a></h2>
+<div class="outline-text-2" id="text-org9eac653">
+<p>
+对于这种轻量级的桌面非常赞，只需要： <code>yay -S qtile</code>, 又因为有 lightdm, 甚至启动项都不用配，直接就能用了。有一些额外包，如果用它提供的 widget 组件时需要。
+</p>
+</div>
+</div>
+
+<div id="outline-container-配置" class="outline-2">
+<h2 id="配置"><a href="#配置">配置</a></h2>
+<div class="outline-text-2" id="text-org9f140f6">
+<p>
+相对而言， qtile 的<a target="_blank" href="https://docs.qtile.org/en/latest/">文档</a>写得比较简陋，没有 bspwm 那么详细。
+</p>
+
+<p>
+配置路径是 <code>~/.config/config.py</code>, 样板配置在 <code>/usr/share/doc/qtile/default_config.py</code>. 
+</p>
+</div>
+
+<div id="outline-container-基本概念" class="outline-3">
+<h3 id="基本概念"><a href="#基本概念">基本概念</a></h3>
+<div class="outline-text-3" id="text-orgff9ecec">
+<p>
+在 qtile 中，显示器是 screen, 工作区是 group, 窗口是 window, 布局是 layout.
+</p>
+</div>
+</div>
+
+<div id="outline-container-键盘映射 Key" class="outline-3">
+<h3 id="键盘映射 Key"><a href="#键盘映射 Key">键盘映射 Key</a></h3>
+<div class="outline-text-3" id="text-org53d8001">
+<p>
+在配置文件中，变量 <code>keys</code> 记录了所有的键盘映射，它是一个列表，元素是键盘对象。样板配置里面给出了例子：
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-python">mod = "mod4"
+keys = [
+    Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
+    Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
+    Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
+    Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
+    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
+    Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
+    Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
+    Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
+]</code>
+</pre>
+
+</div>
+
+<p>
+首先定义 <code>mod</code> 变量，它是 <code>mod4</code>, 也就是 windows 键。
+</p>
+
+<p>
+键盘对象 <code>Key</code> 接收至少三个参数：
+</p>
+<ul class="org-ul">
+<li>第一个参数是一个列表，表示修饰键，比如上面定义的都需要按住 windows 键，而后四个则需要按住 windows + shift</li>
+<li>第二个参数是热键，很容易理解</li>
+<li>第三个参数是按键映射的函数。 lazy 表示不是立刻执行，而是调度后执行</li>
+</ul>
+
+<p>
+例子中的第四个参数是描述，可选。
+</p>
+
+<p>
+此外， qtile 还提供了 Vim-like 和 Emacs-like 的按键映射。比如我用的 Emacs-like:
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-python">from libqtile.config import EzKey
+
+EzKey.modifier_keys = {
+   'W': 'mod4',
+   'M': 'mod1',
+   'S': 'shift',
+   'C': 'control',
+}</code>
+</pre>
+
+</div>
+
+<p>
+先是映射修饰符，这里是把 Windows 键映射到 <code>W</code>. 在 Emacs 中 Ctrl + Shift + w 记作 <code>C-W</code>, 没有专门的 shift 按键；但是 qtile 有，于是把它映射到 <code>S</code>, 但这样又与 Emacs 中的 meta （也就是 windows ） 键冲突了，就很讨厌。注意， <code>mod1</code> 表示 Alt 键。
+</p>
+
+<p>
+随后的映射就是：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-python">
+# Win + Ctrl + h =&gt; Grow window to the left
+
+Key([mod, "control"], "h", lazy.layout.grow_left())
+
+# Emacs-like
+EzKey("W-C-h", lazy.layout.grow_left())</code>
+</pre>
+
+</div>
+</div>
+
+<div id="outline-container-键盘启动程序" class="outline-4">
+<h4 id="键盘启动程序"><a href="#键盘启动程序">键盘启动程序</a></h4>
+<div class="outline-text-4" id="text-orgb5d190a">
+<p>
+用 <code>lazy.spawn("cmd")</code> 来启动程序。比如把 Win + t 映射到启动 kitty 终端模拟器：
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-python">EzKey("W-t", lazy.spawn("kitty"))</code>
+</pre>
+
+</div>
+
+<p>
+spawn 里面是命令行的命令，可以加参数。
+</p>
+</div>
+</div>
+
+<div id="outline-container-键盘启动自定义程序" class="outline-4">
+<h4 id="键盘启动自定义程序"><a href="#键盘启动自定义程序">键盘启动自定义程序</a></h4>
+<div class="outline-text-4" id="text-org13a3b83">
+<p>
+所有的程序都应该是 LazyCall, 所以不能直接把用户自定义的函数映射到键盘上，需要加一个修饰器：
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-python">@lazy.function
+def my_function(qtile):
+    pass
+
+Key([], "k", my_function())</code>
+</pre>
+
+</div>
+
+<p>
+, 函数固定传入一个 qtile 对象。且在函数体中不能再用 lazy. 想执行程序调用 <code>qtile.cmd_spawn</code>. 想执行切换窗口、工作区等操作，可以用 <code>qtile.groups[i].cmd_toscreen()</code> 找到对应的窗口或工作区来切换。
+</p>
+
+<p>
+具体有哪些函数可用，官方并没给，我是手动试出来的。在 <a href="#Debug">Debug</a> 那一节我会给出我自己的笨蛋方法。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-工作区 Group" class="outline-3">
+<h3 id="工作区 Group"><a href="#工作区 Group">工作区 Group</a></h3>
+<div class="outline-text-3" id="text-org4450467">
+<p>
+定义工作区：
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-python">groups = [Group(str(i)) for i in range(1,10)]
+for i in groups:
+    keys.extend(
+        [
+            EzKey("W-%s" % i.name, lazy.group[i.name].toscreen()),
+            EzKey("W-S-%s" % i.name, lazy.window.togroup(i.name, switch_group=True)),
+        ]
+    )
+
+groups.append(Group("10"))
+keys.extend(
+    [
+        EzKey("W-0", lazy.group["10"].toscreen()),
+        EzKey("W-S-0", lazy.window.togroup("10", switch_group=True)),
+    ]
+)</code>
+</pre>
+
+</div>
+
+<p>
+实例化 Group 对象就是定义了一个工作区，传入工作区的名字，为了保持一致，我定义了第 10 号工作区，通过 Win + 0 切换。
+</p>
+</div>
+</div>
+
+<div id="outline-container-布局排版 Layout" class="outline-3">
+<h3 id="布局排版 Layout"><a href="#布局排版 Layout">布局排版 Layout</a></h3>
+<div class="outline-text-3" id="text-org1f8634a">
+<p>
+Qtile 支持多种布局，可以在文档的 build-in layout 那一节看到相关介绍。我采用的是 Bsp, 即 bspwm 的布局，它根据当前窗口的尺寸长边分割，也就是 bspwm 文档中的 <a target="_blank" href="https://github.com/baskerville/bspwm#longest-side-scheme">longest-side-scheme</a>:
+</p>
+
+
+<div id="org6a9bfaf" class="figure">
+<p><a href="/../assets/a996197475f9055c6672052dee7e9c2d.png" target="_blank">
+<img src="/../assets/a996197475f9055c6672052dee7e9c2d.png" alt="a996197475f9055c6672052dee7e9c2d.png" /></a>
+</p>
+</div>
+
+<p>
+配置如下：
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-python">layouts = [
+    layout.Bsp(
+        border_focus=dracula_purple,
+        border_width=4,
+        margin=5,
+        fair=False,
+    ),
+]</code>
+</pre>
+
+</div>
+
+<p>
+<code>dracula_purple</code> 是 <a target="_blank" href="https://draculatheme.com">Dracula</a> 配色的紫色，自行定义的。 <code>fair</code> 设为 False 分割窗口只会在焦距的窗口分割，不管它的尺寸如何。
+</p>
+
+<p>
+注意到 <code>layouts</code> 是一个列表，也就是说可以设置多个布局方式，通过 <code>lazy.next_layout()</code> 来切换。
+</p>
+</div>
+</div>
+
+<div id="outline-container-屏幕 Screen" class="outline-3">
+<h3 id="屏幕 Screen"><a href="#屏幕 Screen">屏幕 Screen</a></h3>
+<div class="outline-text-3" id="text-org2b3e40c">
+<p>
+屏幕同样可以设置多个屏幕对应多种不同的展示内容，目前我是单屏，所以实例化一个 <code>Screen</code> 即可。可以在实例化时传入 <code>wallpaper</code> 参数来设置壁纸，也可以用 wallpaper 的 widget. 我这里直接用 Screen 设置，后续可以调用类方法 <code>set_wallpaper</code> 来方便的切换壁纸。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-python">screens = [
+    Screen(
+        top=bar.Gap(45),
+        bottom=bar.Gap(5),
+        left=bar.Gap(5),
+        right=bar.Gap(5),
+        wallpaper="~/Pictures/output/15.png",
+        wallpaper_mode='fill'
+    )
+]</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-窗口间距" class="outline-3">
+<h3 id="窗口间距"><a href="#窗口间距">窗口间距</a></h3>
+<div class="outline-text-3" id="text-org7cd7205">
+<p>
+在<a href="#布局排版 Layout">布局设置</a>时，传入了 <code>margin</code> 参数，它表示窗口的外边距。如此一来，分割的两个窗口之间的距离其实是两倍的 margin, 因为每个窗口都有一个。以水平分割的两个窗口为例，我更希望的是窗口到屏幕边缘与窗口之间的距离相等，如：
+</p>
+
+
+<div id="org026f530" class="figure">
+<p><a href="/../assets/08cbaae799b245d1e8abe945325898a4.png" target="_blank">
+<img src="/../assets/08cbaae799b245d1e8abe945325898a4.png" alt="08cbaae799b245d1e8abe945325898a4.png" /></a>
+</p>
+</div>
+
+<p>
+所以在设置了布局的 margin 之后，窗口到屏幕的距离需要再加一个 margin, 这样这三个距离都是两倍 margin. 故在上一节屏幕的设定中，左下右都加了一个距离为 5 的 Gap ，也就是空隙。为什么上边距是 45，是要给 eww 状态栏留空间。
+</p>
+</div>
+</div>
+
+<div id="outline-container-窗口浮动" class="outline-3">
+<h3 id="窗口浮动"><a href="#窗口浮动">窗口浮动</a></h3>
+<div class="outline-text-3" id="text-org5888b79">
+<p>
+如样本配置中的
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-python">floating_layout = layout.Floating(
+    float_rules=[
+        # Run the utility of 'xprop' to see the wm class and name of an X client.
+        *layout.Floating.default_float_rules,
+        Match(wm_class="confirmreset"),  # gitk
+        Match(wm_class="makebranch"),  # gitk
+        Match(wm_class="maketag"),  # gitk
+        Match(wm_class="ssh-askpass"),  # ssh-askpass
+        Match(title="branchdialog"),  # gitk
+        Match(title="pinentry"),  # GPG key password entry
+    ]
+)</code>
+</pre>
+
+</div>
+
+<p>
+添加规则告诉 qtile, 哪些窗口是浮动的。
+</p>
+</div>
+</div>
+
+<div id="outline-container-钩子 Hook" class="outline-3">
+<h3 id="钩子 Hook"><a href="#钩子 Hook">钩子 Hook</a></h3>
+<div class="outline-text-3" id="text-orgecc2b24">
+<p>
+Qtile 用 hook 来加入定制。比如一个简单开机自启动的例子：
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-python">@hook.subscribe.startup_once
+def auto_start():
+    import subprocess
+    import os
+    script = os.path.join(os.path.dirname(__file__), "autostart.sh")
+    subprocess.Popen(script)</code>
+</pre>
+
+</div>
+
+<p>
+在 hook <code>startup_once</code> 也就是启动时这个函数会执行，且只执行一次，restart Qtile 是不会触发这个钩子的。把要自启动的程序写到同目录下的 <code>autostart.sh</code> 脚本中即可。
+</p>
+
+<p>
+或者，我想一些让某些窗口浮动，且居于屏幕中间——虽然可以向 <code>floating_layout</code> 中添加规则，但实际上窗口只是浮动了，但是位置和大小不会改变。例如词典 goldendict:
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-python">@hook.subscribe.client_new
+def goldendict_rule(window):
+    ins, cls = window.window.get_wm_class()
+    if cls == "GoldenDict":
+        window.floating = True
+        window.place(660, 290, 600, 500, 0 , '')</code>
+</pre>
+
+</div>
+
+<p>
+它会在新窗口建立 (钩子 <code>client_new</code> ) 时判断，如果新窗口是 goldendict, 那么浮动，大小设置为 600x500, 且位置居中（通过 x 和 y ）来调整。
+</p>
+
+<p>
+再比如，我想给一个工作区就显示一个应用：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-python">@lazy.function
+def dust_mu4e(qtile):
+    g = qtile.groups[8]
+    g.cmd_toscreen()
+    if not g.windows:
+        qtile.cmd_spawn("emacs -f mu4e")
+
+keys.extend(
+    [
+        EzKey("W-r", dust_mu4e()),
+    ]
+)</code>
+</pre>
+
+</div>
+
+<p>
+,如此按 Win + r, 就会跳转到工作区 9 （索引比名称少 1），如果工作区没窗口，则打开 mu4e.
+</p>
+
+<p>
+更多的钩子可以参考官方文档。
+</p>
+</div>
+</div>
+
+<div id="outline-container-命令行工具" class="outline-3">
+<h3 id="命令行工具"><a href="#命令行工具">命令行工具</a></h3>
+<div class="outline-text-3" id="text-org0181e4c">
+<p>
+命令行可以用 <code>qtile cmd-obj</code> 来执行操作，完整命令 <code>qtile cmd-obj -o obj -f func</code>.
+</p>
+
+<p>
+其中： <code>obj</code> 是对象，有 cmd/bar/group/layout/screen/widget/window/core. cmd 是全局对象，group 是窗口。 <code>func</code> 是要执行的函数，根据对象的不同而不同。
+</p>
+
+<p>
+给几个例子：
+</p>
+<ul class="org-ul">
+<li>重新加载配置文件： <code>qtile cmd-obj -o cmd -f reload_config</code></li>
+<li>切换到工作区 4： <code>qtile cmd-obj -o group 4 -f toscreen</code>.</li>
+</ul>
+
+<p>
+具体还是有些函数，自行 <code>help</code> （用得不太多）。
+</p>
+</div>
+</div>
+
+<div id="outline-container-Debug" class="outline-3">
+<h3 id="Debug"><a href="#Debug">Debug</a></h3>
+<div class="outline-text-3" id="text-org5257baa">
+<p>
+首先，qtile 会生成一个日志，路径是 <code>~/.local/share/qtile/qtile.log</code>. 路径可以调，但我忘了在那个地方看到的，现在找不到了。
+</p>
+
+<p>
+调用 <code>from libqtile.utils import logger</code>, 然后用 <code>logger.warn</code> 去输出（debug 等级都不到）。用 <code>obj.__dir__()</code> 来看 <code>obj</code> 有哪些方法可以调用。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-后记" class="outline-2">
+<h2 id="后记"><a href="#后记">后记</a></h2>
+<div class="outline-text-2" id="text-org1f076e8">
+<p>
+没太感觉 qtile 用 Python 来写会占用多大资源或者响应多慢，用起来其实还挺 OK, 配置用我最熟悉的 Python 就写一些比较 hack 的方法去和其他比如 eww 模组联动。
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<center>
+Powered by <a href="https://orgmode.org">Org Mode</a>.
+</center>
+</div>
+<script src="/static/script.js"></script>
+<script src="/static/prism.js"></script>
+</body>
+</html>

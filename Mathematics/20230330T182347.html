@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title> [Calculus] 4. Metric Space - Ward of Dust </title>
+<meta name="author" content="MrDust">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/static/Slippery/style.css"><link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+<div id="preamble" class="status">
+<div class="header">
+<div class="title">
+<a href="/">Ward of Dust</a>
+</div>
+<div class="navigation">
+<a class="item" href="/archive.html">Archives</a>
+<a class="item" href="/taxonomy.html">Taxonomy</a>
+<a class="item" href="/about.html">About</a></div>
+</div>
+</div>
+<div id="content" class="content">
+<h1 class="title">[Calculus] 4. Metric Space</h1>
+<div class="post">
+<div class="metadata">
+<div class="date"><span>2023-03-30</span></div>
+<div class="tags">
+<a class="tag" href="/tag/post.html">#post</a> <a class="tag" href="/tag/calculus.html">#calculus</a> <a class="tag" href="/tag/math.html">#math</a></div>
+<div class="category">
+<a href="/category/Mathematics.html">$Mathematics</a>
+</div>
+</div>
+<div class="mathblock definition" id="org0bc1087">
+<p><span class="number">Definition 4.1 </span>
+Let \(X\) be a set. A function \(d: X\times X\to\R\) is called a <b>distance/metric</b> function on \(X\) if:
+</p>
+<ol class="org-ol">
+<li>\(\forall x,y\in X[d(x,y) \ge 0]\) and equal sign holds iff \(x=y\);</li>
+<li>\(\forall x,y\in X[d(x,y) = d(y,x)]\);</li>
+<li>\(\forall x,y,z\in X[d(x,z) \le d(x,y) + d(y,z)]\).</li>
+</ol>
+
+</div>
+
+<div class="mathblock proposition" id="org3b79af3">
+<p><span class="number">Proposition 4.2 </span>
+\(\forall x,y,z \in X[ |d(x,y) - d(y,z)| \le d(x,z)]\)
+</p>
+
+</div>
+<div class="mathblock proof" id="org91cbb18">
+<p><span class="number">Proof  </span>
+By definition:
+\[\begin{align*}
+d(x,y) & \le d(x,z) + d(y,z)\\
+d(z,y) & \le d(x,y) + d(x,z)
+\end{align*}\\
+\Darr \\
+\begin{align*}
+d(x,y) - d(y,z) & \le d(x,z) \\
+-d(x,z) & \le d(x,y) - d(y,z)
+\end{align*}\\
+\]
+</p>
+
+<p>
+That is expected.
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock definition" id="org565df5b">
+<p><span class="number">Definition 4.3 </span>
+Let \((X,d)\) be a metric space, and \(S\sube X\).
+</p>
+<ol class="org-ol">
+<li>For \(r > 0\) and \(x_0\in X\), we call \(B_r(x_0) = B(x_0,r) = B_{x_0}(r) := \{x\in X| d(x,x_0) < R\}\) an <b>open ball</b>.</li>
+<li>For \(r > 0\) and \(x_0\in X\), we call \(\overline{B_r(x_0)} = \overline{B(x_0,r)} = \overline{B_{x_0}(r)} := \{x\in X| d(x,x_0) \le R\}\) an <b>closed ball</b>.</li>
+<li>\(S\) is an <b>open set</b> of \((X,d)\) if \(\forall x_0\in S\exists r>0 [ B_r(x_0)\sube S]\).</li>
+<li>\(F\) is an <b>closed set</b> of \((X, d)\) if \(X\backslash F\) is open.</li>
+</ol>
+
+</div>
+
+<div class="mathblock proposition" id="orgeff5c1c">
+<p><span class="number">Proposition 4.4 </span>
+Let \((X,d)\) be a metric space, \(x_0\in X\), and \(r>0\).
+</p>
+<ol class="org-ol">
+<li>\(B_r(x_0)\) is open.</li>
+<li>\(X\backslash\overline{B_r(x_0)} = \{x\in X | d(x,x_0) > r\}\) is open (i.e., \(\overline{B_r(x_0)}\) is closed).</li>
+</ol>
+
+</div>
+<div class="mathblock proof" id="orgbb7734f">
+<p><span class="number">Proof  </span>
+<i>Proof 1.</i>
+</p>
+
+<p>
+For any \(x\in X\), we have \(d(x,x_0) < r\). Let \(r' = \frac{r - d(x,x_0)}{2} > 0\), consider the open ball \(B_{r'}(x)\), \(\forall a \in B_{r'}(x)[d(a,x) < r']\).
+</p>
+
+<p>
+By triangle inequality (definition of metric)
+</p>
+
+<p>
+\[d(a,x_0) \le d(x,x_0) + d(a,x) < d(x,x_0) + r' = \frac{r + d(x,x_0)}{2} < r\]
+</p>
+
+<p>
+Therefore, \(B_{r'}(x) \sube B_r(x_0)\).
+</p>
+
+<p>
+<i>Proof 2.</i>
+</p>
+
+<p>
+Let \(A := X\backslash\overline{B_r(x_0)} = \{x\in X | d(x,x_0) > r\}\).
+</p>
+
+<p>
+For any \(x\in A\), we have \(d(x,x_0) > r\). Let \(r' = \frac{d(x,x_0) - r}{2} > 0\), consider the open ball \(B_{r'}(x)\), \(\forall a \in B_{r'}(x)[-d(a,x) > -r']\).
+</p>
+
+<p>
+By triangle inequality (Proposition 4.2)
+</p>
+
+<p>
+\[d(a,x_0) \ge |d(x,x_0) - d(a,x)| > |d(x,x_0) - r'| = \left|\frac{d(x,x_0) + r}{2}\right| > r\]
+</p>
+
+<p>
+since \(d(x,x_0) > r \Rarr r + d(x,x_0) > 2r\).
+</p>
+
+<p>
+Therefore, \(B_{r'}(x) \sube A\).
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock proposition" id="org2d9d7d1">
+<p><span class="number">Proposition 4.5 </span>
+Let (X,d) be a metric space. Then
+</p>
+<ol class="org-ol">
+<li>\(\varnothing\) is open</li>
+<li>\(O_1,O_2 \underset{\text{open}}{\sube} X \Rarr O_1\cap O_2 \underset{\text{open}}{\sube} X\).</li>
+<li>\(O_\alpha \underset{\text{open}}{\sube} X (\alpha \in A \text{ an index set}) \Rarr \bigcup_{\alpha\in A}O_\alpha \underset{\text{open}}{\sube} X\).</li>
+</ol>
+
+</div>
+<div class="mathblock proof" id="orgfd4bf95">
+<p><span class="number">Proof  </span>
+<i>Proof 1.</i> Were this false, then we <b>can</b> find an \(x_0 \in \varnothing\)&#x2026; however, there is not any elements in \(\varnothing\). Thus \(\varnothing\) is open logically.
+</p>
+
+<p>
+<i>Proof 2.</i> Too obvious. Beginning with \(\forall x_0 \in O_1\cap O_2\), then it comes to \(x_0 \in O_1\) or \(x_0 \in O_2\), and the rest part is natural.
+</p>
+
+<p>
+<i>Proof 3.</i> Still obvious.
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock proposition" id="orga03988d">
+<p><span class="number">Proposition 4.6 </span>
+The following two statements are equivalent:
+</p>
+<ol class="org-ol">
+<li>\(\lim_{n\to\infty} a_n = L\)</li>
+<li>\(\forall U\underset{\text{open}}{\sube} X, L\in U \exists N\in\N [n\ge N \Rarr a_n \in U]\).</li>
+</ol>
+
+</div>
+<div class="mathblock proof" id="org2fa6cea">
+<p><span class="number">Proof  </span>
+(\(\Rarr\))
+</p>
+
+<p>
+For any open set \(U\sube X\), there exists an \(epsilon > 0\), then \(B_\epsilon(L) \sube U\). For this \(\epsilon\), by definition of limit in under concept of metric, there exists an \(N\in\N\), such that \([n\ge N \Rarr d(a_n,L) < \epsilon]\), i.e., \(a_n\in B_\epsilon(L) \sube U\).
+</p>
+
+<p>
+(\(\Larr\))
+</p>
+
+<p>
+For any real number \(\epsilon > 0\), similarly choose an open set \(U := \{u\in X | d(u,L) < \epsilon\}\). Then there exists \(N\in\N\), such that \([n\ge N \Rarr a_n \in U]\), i.e., \(d(a_n, L) < \epsilon\).
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock definition" id="org885c9f8">
+<p><span class="number">Definition 4.7 </span>
+We say a set \(S\sube X\) is <b>bounded</b> with respect to \(d\) if \(\exists r > 0, x_0\in X[S\sube B_r(x_0)]\).
+</p>
+
+</div>
+
+<div class="mathblock theorem" id="orgbcf6d61">
+<p><span class="number">Theorem 4.8 </span>(Bolzano-Weierstrass theorem) 
+If \(a_n\in\R^m(n\in\N)\) is bounded. Then there exists a subsequence \(a_{n(n')}(n'\in\N)\) which is convergent.
+</p>
+
+</div>
+<div class="mathblock proof" id="org8946153">
+<p><span class="number">Proof  </span>
+Choose \(M > 0\), let \(Q_0 := [-M,M]\times[-M,M]\), such that \(a_n\in Q_0\) for all \(n\in\N\). This is possible since \(a_n\) is bounded.
+</p>
+
+<p>
+Divide \(Q_0\) into 4 squares with equal size. There must be <b>infinitely many terms</b> inside one square (Were this false, the 4 squares both have finitely many terms, thus the total terms are finite. This is a contradiction).
+</p>
+
+<p>
+Choose that square, say \(Q_1\), such that \(\left|\{n|a_n\in Q_1\}\right| = \infty\). Select \(n_1\in\N\) such that \(a_{n_1}\in Q_1\).
+</p>
+
+<p>
+Repeating the above operation, we obtain a kind of nested intervals, \(Q_1, Q_2,\cdots\).
+</p>
+
+<p>
+We claim that there exists an \(a\in\R\), such that \(\bigcap_n Q_n = \{a\}\).
+</p>
+
+<p>
+Now we are facing the squares, which are just 2-dimension of intervals. Apply the theorem of nested intervals into two dimension respectively, we can obtain that \(\bigcap_n Q_n \ne \varnothing\).
+</p>
+
+<p>
+And there is only exactly one element is this intersection. Otherwise, there must a case that \(a,a'\) belong to two squares respectively, and no matter which square is selected, it will not get to the other one.
+</p>
+
+<p>
+At last, it can be seen that \(\lim_{k\to\infty}a_{n_k} = a\). Given a radius, there must be a square inside that circle after a big enough \(n\).
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock proposition" id="org0cd6503">
+<p><span class="number">Proposition 4.9 </span>
+Let \((X,d)\) be a metric space, \(F\sube X\). \(F\) is a closed set of \(X\) iff \(\forall a_n\in F(n\in\N)[\lim_{n\to\infty} a_n = a(\in X) \Rarr a \in F]\).
+</p>
+
+</div>
+<div class="mathblock proof" id="orgd9e9a51">
+<p><span class="number">Proof  </span>
+(\(\Rarr\))
+</p>
+
+<p>
+For producing contradiction, assume that there is an sequence \(a_n(n\in\N)\) in \(F\), such that \(\lim_{n\to\infty} a_n = a\) but \(a\notin F\). i.e., \(a\in X\backslash F\).
+</p>
+
+<p>
+\(F\) is closed, then \(X\backslash F\) is open. There exists a radius \(r > 0\), such that \(B_r(a) \sube F\).
+</p>
+
+<p>
+Then for all \(n\in \N\),
+</p>
+
+<p>
+\[ a_n\in F \Rarr a_n \notin B_r(a) \Lrarr d(a_n, a) > r\]
+</p>
+
+<p>
+This contradicts with \(lim_{n\to\infty} a_n = a\).
+</p>
+
+<p>
+(\(\Larr\))
+</p>
+
+<p>
+For producing contradiction, suppose that \(F\) is not closed, and hence \(X\backslash F\) is not open. Thus
+</p>
+
+<p>
+\[\exists a \in X\backslash F \forall r > 0 \exists b \in F[b\in B_r(a)]\]
+</p>
+
+<p>
+Assume that \(L\in X\backslash F\) is that point mentioned above as \(a\). Let \(r_n = \frac{1}{n}(n\in\N)\). Then there exists an element in \(F\), say \(a_1\), such that \(a_1 \in B_{r_1}(L)\), and other element, say \(a_2\), such that \(a_2 \in B_{r_2}(L)\).
+</p>
+
+<p>
+We collect them all, then obtain a sequence \(a_n(n\in\N)\) such that \(a_n\in B_{r_n}(L)\) for all \(n\in \N\).
+</p>
+
+<p>
+For any \(\epsilon > 0\), there exists an \(N\in\N\), such that \(r_N = \frac{1}{N} < \epsilon\), by Archimedean property. And for \(n\ge N\), we have \(d(a_n, L) < r_n < r_N < \epsilon\), i.e., \(\lim_{n\to\infty} a_n = L\).
+</p>
+
+<p>
+However, this leads a contradiction since all the element of \(a_n\) is in \(F\), while its limit is not.
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock definition" id="orgb9c8732">
+<p><span class="number">Definition 4.10 </span>
+Let \((X,d)\) be a metric space, \(S\sube X\), and \(O_\alpha\) is a seires of open sets of \(X\) where \(\alpha\in A\).
+</p>
+<ol class="org-ol">
+<li>\(O_\alpha(\alpha\in A)\) is called an <b>open cover</b> of \(S\) if \(S\sube \bigcup_{\alpha\in A}O_\alpha\).</li>
+<li>\(S\) is called a <b>compact set</b> if \(\forall \text{open cover } O_\alpha(\alpha\in A)\exists \alpha_1,\cdots,\alpha_m\in A[S\sube\bigcup_{j=1}^m O_{\alpha_j}]\).</li>
+</ol>
+
+</div>
+
+<div class="mathblock theorem" id="org91b9ccb">
+<p><span class="number">Theorem 4.11 </span>(Heine-Borel theorem) 
+Let \(S\sube\R^m\). \(S\) is compact iff \(S\) is bounded and closed.
+</p>
+
+</div>
+<div class="mathblock proof" id="org396de45">
+<p><span class="number">Proof  </span>
+(\(\Rarr\))
+</p>
+
+<p>
+\(S\) is compact, then \(S\sube \bigcup_{j=1}^n O_{\alpha_j}\), i.e., \(\bigcup_{j=1}^n O_{\alpha_j}\) is actually an bound of \(S\). Then \(S\) is bounded.
+</p>
+
+<p>
+For contradiction, assume that \(S\) is not closed.
+</p>
+
+<p>
+Since \(S\) is bounded, then we can find a <i>cube</i>: \(\overbrace{[-M,M] \times \cdots \times [-M,M]}^{m}\), denoted by \(O_0\), such that \(S\sube O_0\).
+</p>
+
+<p>
+Divide \(O_0\) into 4 equal-sized <i>cubes</i>. Select that one, say \(C_1\), whose intersection with \(S\) is not closed. (This case must happen, otherwise all <i>cubes'</i> intersection with \(S\) is closed, i.e., \(O_0\cap S = S\) is closed, contradicting with assumption.) And let \(O_1 = O_0 \backslash C1\).
+</p>
+
+<p>
+Repeating the operation, we obtain: \(C_1,C_2,\cdots\), and \(O_1,O_2,\cdots\).
+</p>
+
+<p>
+Select an sequence \(a_1,a_2\cdots\), where \(a_n\in C_n\) for all \(n\in\N\). By the theorem of nested intervals, \(\lim_{n\to\infty}a_n = a\) for some \(a\in\R^m\).
+</p>
+
+<p>
+And we claim that \(O_1,O_2,\cdots\) is an open cover of \(S\). Were this false, \(\exists s\in S\forall n\in\N[s\notin O_n]\), i.e., \(\forall n\in\N[s\in C_n]\). Therefore, \(s = \lim_{n\to\infty} a_n = a\).
+</p>
+
+<p>
+By Proposition 4.9, \(S\) is closed. This is a contradicion.
+</p>
+
+<p>
+Thus, \(S\) is closed.
+</p>
+
+<p>
+(\(\Larr\))
+</p>
+
+<p>
+Suppose that \(S\) is bounded and closed, and \(\exists \text{open cover } O_\alpha(\alpha\in A)\) which admits no finite subcover.
+</p>
+
+<p>
+Choose a cube \(Q_0\) containing \(S\).
+</p>
+
+<p>
+Divide \(Q_0\) into 4 euqal-sized cubes, and select one of them, say \(Q_1\), such that \(Q_1\cap S\) <b>can not be covered by finitely many</b> \(O_\alpha\). (This kind of cube must exist, otherwise all 4 cubes can be coverd by finitely many open sets,  also the whole cube, i.e., \(S\) is compact. This contradics with assumption.)
+</p>
+
+<p>
+Repeat above operation. Like proof of Bolzano-Weierstrass theorem, we obtain \(Q_1,\cdots, Q_n\), and \(\bigcap_n Q_n = {a}\) for some \(a\in\R^m\).
+</p>
+
+<p>
+Choose a seires of points \(s_1,s_2,\cdots\), where \(s_n\in Q_n\cap S\) for all \(n\in\N\). Then \(\lim_{n\to\infty}s_n = a\).
+</p>
+
+<p>
+By Proposition 4.9, \(S\) is closed, \(s_n\in S(n\in\N)\), then \(a\in S\).
+</p>
+
+<p>
+There exists an \(\alpha\in A\), such that \(a\in O_\alpha\). And we can find an open ball \(B\), such that \(a\in B\sube O_\alpha\).
+</p>
+
+<p>
+In above infinitely dividing operations, \(\exists n\in\N[Q_n \sube B\sube O_\alpha]\), i.e., there must be an cube small enough contained inside the open ball.
+</p>
+
+<p>
+However, all \(Q_n\) we choose can not be coverd by finitely many open sets, we now have \(Q_n\) is cover by an open set. This is a contradiction, therefore, \(S\) must be compact.
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock theorem" id="org88b2b13">
+<p><span class="number">Theorem 4.12 </span>(the Lebesgue number of an open cover) 
+Let \((X,d)\) be a metric space and \(K(\sube X)\) a compact set.
+</p>
+
+<p>
+\[\forall O_\alpha \underset{\text{open}}{\sube} K \exists \delta > 0 \forall x \in K \exists \alpha \in A [ B_\delta(x) \sube O_\alpha]\]
+</p>
+
+</div>
+<div class="mathblock proof" id="orgcc95148">
+<p><span class="number">Proof  </span>
+For every \(p\in K\), there exists \(\alpha(p) \in A\) such that \(p\in O_{\alpha(p)}\). \(O_{\alpha(p)}\) is open, and hence \(\exists r(p) > 0 [B_{r(p)}(p) \sube O_{\alpha(p)}]\).
+</p>
+
+<p>
+Then \(B_{\frac{r(p)}{2}}(p)(p\in K)\) form an open cover of \(K\). Thus
+</p>
+
+<p>
+\[\exists p_1,\cdots, p_k \in K[ K\sube \bigcup_{j=1}^k B_{\frac{r(p_j)}{2}}(P_j)]\]
+</p>
+
+<p>
+Let \(\delta = \min\{\frac{r(p_1)}{2}, \cdots, \frac{r(p_k)}{2}\} > 0\).
+</p>
+
+<p>
+For any \(x\in K\), there exists \(p_j(1 \le j \le k)\) such that \(x\in B_{\frac{r(p_j)}{2}}(p_j)\).
+</p>
+
+<p>
+For all \(x'\in B_\delta(x))\), we have
+</p>
+
+<p>
+\[\begin{align*}
+d(x', p_j) &\le d(x',x) + d(x, p_j) \\
+&< \delta + \frac{r(p_j)}{2} \\
+&\le \frac{r(p_j)}{2} + \frac{r(p_j)}{2} = r(p_j)
+\end{align*}\]
+</p>
+
+<p>
+Thus, \(x'\in B_{r(p_j)}(p_j)\sube O_{\alpha(p_j)}\), i.e., \(B_\delta(x) \sube O_{\alpha(p)}\).
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock remark" id="org1c39139">
+<p><span class="number">Remark 4.13 </span>
+Such a \(\delta > 0\) is called a <b>Lebesgue number</b> fo the given open cover \(O_\alpha(\alpha\in A)\).
+</p>
+
+</div>
+
+<div class="mathblock definition" id="org961118f">
+<p><span class="number">Definition 4.14 </span>
+Let (X,d) be a metric space, and \(S\sube X\). A point \(x\in X\) is called
+</p>
+<ol class="org-ol">
+<li>an <b>isolated point</b> of \(S\) if \(\exists \epsilon > 0[ B_\epsilon(x)\cap S = \{x\}]\)</li>
+<li>a <b>limit point</b> of \(S\) if \(\forall \epsilon > 0[B_\epsilon(x)\cap S\backslash\{x\} \ne \varnothing]\)</li>
+<li>an <b>accumulation point</b> of \(S\) if \(\exists a_n\in S(n\in\N)[\lim_{n\to\infty} a_n = x]\)</li>
+</ol>
+
+</div>
+
+<div class="mathblock proposition" id="orgd13985e">
+<p><span class="number">Proposition 4.15 </span>
+Let \((X,d)\) be a metric space, \(S\sube X\). Notation: \(A(x), I(x), L(x)\) means \(x\) is an accumulation/isolation/limit point of \(S\) respectively.
+</p>
+<ol class="org-ol">
+<li>\(\{x \in S | I(x)\} \cap \{x \in S | L(x)\} = \varnothing\)</li>
+<li>\(\{x \in S| A(x)\} = \{x \in S | I(x)\} \cup \{x \in S | L(x)\}\)</li>
+<li>If \(S (\sube K \sube X)\) has infinite elements, and \(K\) is a compact set. Then \(\{x \in S| L(x)\} \ne \varnothing\).</li>
+</ol>
+
+</div>
+<div class="mathblock proof" id="orgcff8666">
+<p><span class="number">Proof  </span>
+For convenience, let \(A := \{x \in S| A(x)\}, I := \{x \in S | I(x)\}, L := \{x \in S | L(x)\}\).
+</p>
+
+<p>
+<i>Proof 1.</i>
+</p>
+
+<p>
+Suppose \(L\cap I \ne \varnothing\), i.e., \(\exists x\in S[x\in L \land x\in I]\).
+</p>
+
+<p>
+\(x\in L \Rarr [B_\epsilon(x)\cap S\backslash\{x\} \ne \varnothing]\), i.e., \(\exists x'\in S[x'\in B_\epsilon(x) \land x' \ne x]\), which contradicts with \(x\in I \Rarr \exists \epsilon > 0 [B_\epsilon(x) \cap S = \varnothing]\).
+</p>
+
+<p>
+Therefore, \(L\cap I = \varnothing\).
+</p>
+
+<p>
+<i>Proof 2.</i>
+</p>
+
+<p>
+(\(\Rarr\))
+</p>
+
+<p>
+For all \(a\in A\), there exists a sequence \(a_n \in S\), such that \(\lim_{n\to\infty} a_n = a\), i.e., \(\forall \epsilon > 0 \exists N\in\N [n \ge N \Rarr d(a_n,a) < \epsilon]\).
+</p>
+
+<p>
+<b>Case I</b>: There are infinitely many terms \(a_j\) which do not euqal to \(a\).
+</p>
+
+<p>
+There stiall infinite terms \(a_j\) such that \(a_j \ne a\) as \(n \ge N\). And hence we have \(B_\epsilon(a)\cap S\backslash\{a\} = \{a_j| j \ge N \land a_j \ne a}\).
+</p>
+
+<p>
+By definition, \(a\) is a limit point, i.e., \(a\in L\).
+</p>
+
+<p>
+<b>Case II</b>: There are only finitely many terms which do not equal to \(a\). And assume \(a_M(M\in\N)\) is the last one, i.e., \(\forall n\ge M[a_n = a]\).
+</p>
+
+<p>
+Let \(N' = \max\{N, M\}\). Then \(n \ge N' \Rarr d(a_n, a) < \epsilon \land a_n = a\). In this case, \(B_\epsilon(a)\cap S = \{a_n| n \ge M\} = \{a\}\).
+</p>
+
+<p>
+By definition, \(a\) is a isolation point, i.e., \(a\in I\).
+</p>
+
+<p>
+(\(\Larr\))
+</p>
+
+<p>
+If \(a\in I\), just select this sequence \(a,a,a,\cdots\) whose elements are both \(a\). It is clear that it converges to \(a\).
+</p>
+
+<p>
+If \(a\in L\), for a given \(\epsilon > 0\), there are points inside \(B_\epsilon(a)\). Collect them all. If they are finite, repeat them in sequence. Then we have a sequence, which is also convergent to \(a\) apparently.
+</p>
+
+<p>
+<i>Proof 3.</i>
+</p>
+
+<p>
+For contradiction, assume that \(L = \varnothing\).
+</p>
+
+<p>
+For all \(x\in S(\sube K)\), there always exists an \(\epsilon > 0\), such that \(B_\epsilon(x) \cap S\backslash\{x\} = \varnothing\). i.e., there are no more else elements inside the ball except center itself.
+</p>
+
+<p>
+Collect all that balls, write them as \(O_{\alpha(x)}\) where \(\alpha(x)\) belongs to some index set determined by \(x\in S(\sube K)\).
+</p>
+
+<p>
+It is obvious that \(O_{\alpha(x)}\) is an open cover of \(S\). However, we can not cover \(S\) with finite sets, since there are infinitely many elements in \(S\). This contradicts with the fact that \(K\) is compact.
+<span class="QED">□</span>
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<center>
+Powered by <a href="https://orgmode.org">Org Mode</a>.
+</center>
+</div>
+<script src="/static/script.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="/static/katex.js"></script></body>
+</html>

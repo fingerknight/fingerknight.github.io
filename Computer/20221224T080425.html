@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title> Arch Linux 下 Clash + cgproxy 实现全局代理（透明代理） - Ward of Dust </title>
+<meta name="author" content="MrDust">
+<link rel="stylesheet" href="/static/Fantasque/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dracula-prism@2.1.16/dist/css/dracula-prism.min.css">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/static/Slippery/style.css"><link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+<div id="preamble" class="status">
+<div class="header">
+<div class="title">
+<a href="/">Ward of Dust</a>
+</div>
+<div class="navigation">
+<a class="item" href="/archive.html">Archives</a>
+<a class="item" href="/taxonomy.html">Taxonomy</a>
+<a class="item" href="/about.html">About</a></div>
+</div>
+</div>
+<div id="content" class="content">
+<h1 class="title">Arch Linux 下 Clash + cgproxy 实现全局代理（透明代理）</h1>
+<div class="post">
+<div class="metadata">
+<div class="date"><span>2022-12-24</span></div>
+<div class="tags">
+<a class="tag" href="/tag/archlinux.html">#archlinux</a> <a class="tag" href="/tag/clash.html">#clash</a> <a class="tag" href="/tag/proxy.html">#proxy</a> <a class="tag" href="/tag/post.html">#post</a></div>
+<div class="category">
+<a href="/category/Computer.html">$Computer</a>
+</div>
+</div>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#2022-12-12 更新">2022-12-12 更新</a>
+<ul>
+<li><a href="#终端">终端</a></li>
+<li><a href="#浏览器">浏览器</a></li>
+<li><a href="#Emacs">Emacs</a></li>
+</ul>
+</li>
+<li><a href="#起因">起因</a></li>
+<li><a href="#环境">环境</a></li>
+<li><a href="#工具安装">工具安装</a>
+<ul>
+<li><a href="#Clash 安装">Clash 安装</a></li>
+<li><a href="#cgproxy 安装">cgproxy 安装</a></li>
+<li><a href="#Pyyaml 安装">Pyyaml 安装</a></li>
+</ul>
+</li>
+<li><a href="#Clash 配置">Clash 配置</a>
+<ul>
+<li><a href="#Clash 配置文件">Clash 配置文件</a>
+<ul>
+<li><a href="#2022-12-12 更新">2022-12-12 更新</a></li>
+</ul>
+</li>
+<li><a href="#Clash 服务">Clash 服务</a>
+<ul>
+<li><a href="#脚本编写">脚本编写</a></li>
+<li><a href="#流程介绍">流程介绍</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#cgproxy 配置">cgproxy 配置</a></li>
+<li><a href="#Python 配置">Python 配置</a></li>
+<li><a href="#结语">结语</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-2022-12-12 更新" class="outline-2">
+<h2 id="2022-12-12 更新"><a href="#2022-12-12 更新">2022-12-12 更新</a></h2>
+<div class="outline-text-2" id="text-org8bc0e9b">
+<p>
+DNS 污染，我解不开，没有相关的知识。最后决定不用全局代理了，为几个必要的、常用的应用单独设置即可。
+</p>
+</div>
+
+<div id="outline-container-终端" class="outline-3">
+<h3 id="终端"><a href="#终端">终端</a></h3>
+<div class="outline-text-3" id="text-org8184e25">
+<p>
+我用的终端是 <a target="_blank" href="https://www.zsh.org">zsh</a> ，配置环境变量 <code>~/.zshrc</code> 或 <code>/.zshenv</code>:
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-bash">export ALL_PROXY="http://127.0.0.1:7890"</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-浏览器" class="outline-3">
+<h3 id="浏览器"><a href="#浏览器">浏览器</a></h3>
+<div class="outline-text-3" id="text-orgc352d4c">
+<p>
+我用的是 <a target="_blank" href="https://vivaldi.com/">Vivaldi</a> ，基于 Chromium 内核的，因此只需要设置系统代理就好。
+</p>
+</div>
+</div>
+
+<div id="outline-container-Emacs" class="outline-3">
+<h3 id="Emacs"><a href="#Emacs">Emacs</a></h3>
+<div class="outline-text-3" id="text-org10ac1ca">
+<p>
+Emacs 用到的网络请求主要是 <a target="_blank" href="https://gnus.org">GNUS</a> 和一些自己用 <a target="_blank" href="https://github.com/tkf/emacs-request">emacs-request</a> 写的函数：
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-lisp">(setq url-proxy-services
+      '(("http" . "127.0.0.1:7890")
+        ("https" . "127.0.0.1:7890"))
+
+      request-curl-options
+      '("-x" "http://127.0.0.1:7890"))</code>
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-起因" class="outline-2">
+<h2 id="起因"><a href="#起因">起因</a></h2>
+<div class="outline-text-2" id="text-org3996874">
+<p>
+上次没主意把 <a target="_blank" href="https://www.v2ray.com">v2ray</a> 升到了 v5 版本，然后出了大问题。尝试回滚，把 v2ray 装回 4.4 ，然后报了错，连不上站点，日志看起来是服务器的问题，事实上我手机一直用着，所以估计 v2ray 是报废了。之前一直用 <a target="_blank" href="https://qv2ray.net">qv2ray</a> + <a target="_blank" href="https://github.com/springzfx/cgproxy">cgproxy</a> 做全局代理<sup class="fsup"><a id="fnr.1.1" class="footref" href="#fn.1" role="doc-backlink">[1]</a></sup>，很方便，每个应用程序都会走代理，省去很多麻烦 &#x2013; 其实根本就没管过。现在用不了了就考虑折腾一下 clash ，GLaDOS 跟我说 clash 更简单，所以尝试一番。
+</p>
+
+<p>
+网上很多教程是配置 <code>iptables</code> ，还考虑什么旁路路由。我实在是不懂，硬着头皮乱配置一通，结果大失败。正心灰意冷之际，突然看到：
+</p>
+
+
+<div id="org201448e" class="figure">
+<p><a href="/../assets/ec554c3ecc1255a56b799104caeba05a.png" target="_blank">
+<img src="/../assets/ec554c3ecc1255a56b799104caeba05a.png" alt="ec554c3ecc1255a56b799104caeba05a.png" /></a>
+</p>
+<p><span class="figure-number">Figure 1: </span>cgproxy 项目简介</p>
+</div>
+
+
+<div id="orgeab66ef" class="figure">
+<p><a href="/../assets/44a15e20e0bad435085963db1dc80c53.png" target="_blank">
+<img src="/../assets/44a15e20e0bad435085963db1dc80c53.png" alt="44a15e20e0bad435085963db1dc80c53.png" /></a>
+</p>
+<p><span class="figure-number">Figure 2: </span>Clash 项目简介</p>
+</div>
+
+<p>
+也就是说，cgproxy是通过 Tproxy 把流量转给 qv2ray 的，而 clash 也支持 Tproxy 。我突然心生一计 ——<b>先睡觉</b>。
+</p>
+</div>
+</div>
+
+<div id="outline-container-环境" class="outline-2">
+<h2 id="环境"><a href="#环境">环境</a></h2>
+<div class="outline-text-2" id="text-org788f4e0">
+<p>
+本次尝试基于 <code>Arch linux</code> ，对于其他系统，如果你要折腾可能要亲力亲为，我爱莫能助。
+</p>
+
+<p>
+需要的工具有：
+</p>
+<ul class="org-ul">
+<li><a target="_blank" href="https://github.com/Dreamacro/clash">clash</a></li>
+<li><a target="_blank" href="https://github.com/springzfx/cgproxy">cgproxy</a></li>
+<li><code>Python3.10</code>, 和一个第三方库 <code>pyyaml</code> 。 这个我是用来更新订阅的，至于大佬们用 <code>curl</code> + <code>sed</code> ，我只能是望尘莫及。</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-工具安装" class="outline-2">
+<h2 id="工具安装"><a href="#工具安装">工具安装</a></h2>
+<div class="outline-text-2" id="text-orgbd5ffe2">
+</div>
+<div id="outline-container-Clash 安装" class="outline-3">
+<h3 id="Clash 安装"><a href="#Clash 安装">Clash 安装</a></h3>
+<div class="outline-text-3" id="text-orgb489692">
+<p>
+Clash 的下载页面在<a target="_blank" href="https://github.com/Dreamacro/clash/releases/tag/v1.11.8">这里</a>
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-bash">sudo pacman -S clash</code>
+</pre>
+
+</div>
+
+<p>
+安装成功
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-bash">clash -v
+# Clash 1.11.8 linux amd64 with go1.19 unknown time</code>
+</pre>
+
+</div>
+
+<p>
+然后去安装规则库<sup class="fsup"><a id="fnr.2.1" class="footref" href="#fn.2" role="doc-backlink">[2]</a></sup>，地址在<a target="_blank" href="https://github.com/alecthw/mmdb_china_ip_list/blob/master/README_en.md#fixed-download-connection">这里</a>。下载 <code>Country.mmdb</code> ， <code>release分支（Daily）</code> ，然后复制到 <code>~/.config/clash</code> 下。如果目录不存在手动创建，这个就是后面用来<b>存配置</b>的地方。
+</p>
+</div>
+</div>
+
+<div id="outline-container-cgproxy 安装" class="outline-3">
+<h3 id="cgproxy 安装"><a href="#cgproxy 安装">cgproxy 安装</a></h3>
+<div class="outline-text-3" id="text-org19c0766">
+<p>
+cgproxy 的下载页面在<a target="_blank" href="https://github.com/springzfx/cgproxy/releases/tag/v0.19">这里</a>
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-bash">yay -S cgproxy</code>
+</pre>
+
+</div>
+
+<p>
+如果 <code>yay</code> 遇到网络问题，可以用<sup class="fsup"><a id="fnr.1.2" class="footref" href="#fn.1" role="doc-backlink">[1]</a></sup>，这样得先安装 <code>wget</code> ：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-bash">wget https://archlinuxstudio.github.io/ArchLinuxTutorial/res/cgproxy-0.19-1-x86_64.pkg.tar.zst
+sudo pacman -U cgproxy-0.19-1-x86_64.pkg.tar.zst</code>
+</pre>
+
+</div>
+
+<p>
+安装成功
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-bash">cgproxy --help
+# Run program with proxy
+# Usage: cgproxy [--help] [--debug] &lt;CMD&gt;</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-Pyyaml 安装" class="outline-3">
+<h3 id="Pyyaml 安装"><a href="#Pyyaml 安装">Pyyaml 安装</a></h3>
+<div class="outline-text-3" id="text-org9d80233">
+<p>
+这个库用来解析 <code>yaml</code> 文件， clash 的配置文件就是 <code>yaml</code> 格式。
+</p>
+
+<p>
+注意，因为最终这些流程要写成系统服务，到时候执行 <code>Python</code> 脚本会以 <code>root</code> 权限去执行，所以 <code>Python</code> 库的安装不能装在普通用户家目录，也就是要用 <code>root</code> 权限去安装。
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-bash">sudo pip pyyaml</code>
+</pre>
+
+</div>
+
+<p>
+安装成功
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-nil"># 用 root 权限执行 python
+$ sudo python 
+&gt;&gt; import yaml
+&gt;&gt; yaml.__version__
+'6.0'</code>
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Clash 配置" class="outline-2">
+<h2 id="Clash 配置"><a href="#Clash 配置">Clash 配置</a></h2>
+<div class="outline-text-2" id="text-orgf5f7c05">
+</div>
+<div id="outline-container-Clash 配置文件" class="outline-3">
+<h3 id="Clash 配置文件"><a href="#Clash 配置文件">Clash 配置文件</a></h3>
+<div class="outline-text-3" id="text-org8963f7c">
+<p>
+clash 的使用：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-bash">clash -d ~/.config/clash</code>
+</pre>
+
+</div>
+<p>
+<code>-d</code> 指定了用哪个目录来作为配置文件目录。
+</p>
+
+<p>
+如果目录没建的话，它会自动生成，同时会去下载 <code>mmdb</code> 。因为在<a href="#Clash 安装">Clash 安装</a>那里已经装过了，这里就会跳过下载 —— 如果你没装它就自动安装。
+</p>
+
+<p>
+配置文件路径就是 <code>~/.config/clash/config.yaml</code> 。我用的是订阅，下载来文件就是一个配好了的 <code>cofnig.yaml</code> 。
+</p>
+
+<p>
+我是写了另一个配置文件，通过 <code>Python</code> 来处理的，在<a href="#Python 配置">Python 配置</a>这一节我会说到，这里我介绍一下那些配置。
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-yaml">tproxy-port: 7893
+
+dns:
+  enable: true
+  enhanced-mode: fake-ip
+  listen: 0.0.0.0:53
+  nameserver:
+    - 119.29.29.29
+    - 114.114.114.114
+  fallback:
+    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query</code>
+</pre>
+
+</div>
+
+<ul class="org-ul">
+<li><code>tproxy-port</code> 顾名思义，它指定了 <code>tproxy</code> 的监听端口， <code>cgproxy</code> 获取应用流量之后通过这个端口发给 <code>clash</code> ，这个要和 cgrpxoy 的配置一致（见<a href="#cgproxy 配置">cgproxy 配置</a>）</li>
+<li><code>dns.enable</code> 开启 dns 嗅探</li>
+<li><code>dns.enhanced-mode</code> 有 <code>redir-host</code> 和 <code>fake-ip</code> 两种模式<sup class="fsup"><a id="fnr.3.1" class="footref" href="#fn.3" role="doc-backlink">[3]</a></sup>
+<ul class="org-ul">
+<li><code>redir-host</code>: 传统的DNS转发模式，局域网根据规则查询DNS请求获取真实IP地址。</li>
+<li><code>fake-ip</code>: 伪造 IP 模式，内部DNS查询得到的是伪造 IP 段的某个地址，局域网使用伪 IP 与 Clash 通信， Clash 会根据伪 IP 找到真实 IP 使用 SOCKS 代理进行通信。</li>
+</ul></li>
+<li><code>dns.listen</code> dns 监听地址，ip 就填 <code>0.0.0.0</code> ，端口填 <code>53</code> 会有冲突，下面会调。</li>
+<li><code>dns.nameserver</code> dns 服务器</li>
+<li><code>dns.fallback</code> 如果GEOIP非 CN 时使用的 dns 服务器<sup class="fsup"><a id="fnr.3.2" class="footref" href="#fn.3" role="doc-backlink">[3]</a></sup></li>
+</ul>
+
+<p>
+为了使 clash 能监听 dns 的 53 端口，要写改 <code>/etc/systemd/resolved.conf</code> 文件<sup class="fsup"><a id="fnr.4.1" class="footref" href="#fn.4" role="doc-backlink">[4]</a></sup>：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-shell">DNSStubListener=no</code>
+</pre>
+
+</div>
+</div>
+
+<div id="outline-container-2022-12-12 更新" class="outline-4">
+<h4 id="2022-12-12 更新"><a href="#2022-12-12 更新">2022-12-12 更新</a></h4>
+<div class="outline-text-4" id="text-orge01320b">
+<p>
+在使用期间经历了一次 DNS 污染，去网上查了资料，需要把 dns 服务器的地址改成 TSL 或 TCP 请求 <sup class="fsup"><a id="fnr.5.1" class="footref" href="#fn.5" role="doc-backlink">[5]</a></sup> ：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-yaml">tproxy-port: 7893
+dns:
+  enable: true
+  enhanced-mode: fake-ip
+  listen: 0.0.0.0:53
+  nameserver:
+    - 'tls://dns.rubyfish.cn:853'
+  fallback:
+    - 'tls://1.1.1.1:853'
+    - 'tcp://1.1.1.1:53'
+    - 'tcp://208.67.222.222:443'
+    - 'tls://dns.google'</code>
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Clash 服务" class="outline-3">
+<h3 id="Clash 服务"><a href="#Clash 服务">Clash 服务</a></h3>
+<div class="outline-text-3" id="text-org7cf98ab">
+<p>
+把 clash 作为系统服务，让它随系统启动而启动，同时自己设置守护进程，挂了自己重启<sup class="fsup"><a id="fnr.6.1" class="footref" href="#fn.6" role="doc-backlink">[6]</a></sup><sup>, </sup><sup class="fsup"><a id="fnr.7.1" class="footref" href="#fn.7" role="doc-backlink">[7]</a></sup>。
+</p>
+</div>
+
+<div id="outline-container-脚本编写" class="outline-4">
+<h4 id="脚本编写"><a href="#脚本编写">脚本编写</a></h4>
+<div class="outline-text-4" id="text-org6e47856">
+<p>
+创立目录 <code>etc/clash</code> ，写一个脚本 <code>clash.sh</code> ，这个脚本用于控制 clash 的启停。要把 <code>CONFIG_DIR</code> 改成你的路径：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-bash">#!/bin/bash
+
+# 配置文件目录
+CONFIG_DIR=/home/&lt;you user name&gt;/.config/clash
+
+update() {
+    # 检查更新
+    python /etc/clash/update.py ${CONFIG_DIR}/env.yaml
+}
+
+start() {
+    # 开启 IP 转发
+    echo "net.ipv4.ip_forward = 1" &gt;&gt; /etc/sysctl.conf &amp;&amp; sysctl -p
+    echo "net.ipv6.conf.all.forwarding = 1" &gt;&gt; /etc/sysctl.conf &amp;&amp; sysctl -p
+
+    # 启动 cgproxy
+    systemctl start cgproxy.service
+
+    # 启动 Clash
+    echo "starting Clash"
+    echo $$ &gt; /var/run/clash.pid
+    /usr/bin/clash -d ${CONFIG_DIR}
+}
+
+stop() {
+    # 关停 cgproxy
+    systemctl stop cgproxy.service
+
+    # 关停 Clash
+    PID=`cat /var/run/clash.pid`
+    kill -9 ${PID}
+    rm /var/run/clash.pid
+
+    # 关闭 IP 转发
+    echo "net.ipv4.ip_forward = 0" &gt;&gt; /etc/sysctl.conf &amp;&amp; sysctl -p
+    echo "net.ipv6.conf.all.forwarding = 0" &gt;&gt; /etc/sysctl.conf &amp;&amp; sysctl -p
+}
+
+status() {
+    echo "TODO"
+}
+
+case $1 in
+    update)
+    update
+    ;;
+    start)
+    start
+    ;;
+    stop)
+    stop
+    ;;
+    status)
+    status
+    ;;
+    *)
+    echo "$0 update | start | stop | status " 
+    ;;
+esac
+</code>
+</pre>
+
+</div>
+
+<p>
+写服务脚本 <code>/etc/systemd/system/clash.service</code> ：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-bash">[Unit]
+Description=Clash Service
+Requires=network-online.target
+After=network.target network-online.target
+
+[Service]
+ExecStartPre=/etc/clash/clash.sh update
+ExecStart=/etc/clash/clash.sh start
+ExecStop=/etc/clash/clash.sh stop
+Restart=on-failure
+RestartPreventExitStatus=23
+
+[Install]
+WantedBy=multi-user.target</code>
+</pre>
+
+</div>
+
+<p>
+更新服务：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-bash">systemctl daemon-reload # 刷新服务
+systemctl start clash.service # 启动服务，目前还不能启动
+systemctl enbale clash.service # 服务开机自启动</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-流程介绍" class="outline-4">
+<h4 id="流程介绍"><a href="#流程介绍">流程介绍</a></h4>
+<div class="outline-text-4" id="text-orgf0db7eb">
+</div>
+<ul class="org-ul">
+<li><a id="预处理"></a>预处理<br />
+<div class="outline-text-5" id="text-org603dff0">
+<p>
+<code>ExecStartPre</code> 调用控制脚本的 <code>update</code> ，在服务正式启动前作处理。控制脚本的 <code>update</code> 其实就是执行了一个 Python 脚本，用来更新订阅（详见 <a href="#Python 配置">Python 配置</a>）。
+</p>
+</div>
+</li>
+
+<li><a id="启动"></a>启动<br />
+<div class="outline-text-5" id="text-org983e75c">
+<p>
+<code>ExecStart</code> 调用控制脚本的 <code>start</code> 。
+</p>
+<ol class="org-ol">
+<li>把 <code>1</code> 写到 <code>ip_forward</code> ，表示要开启 IP 转发。</li>
+<li>启动 cgproxy 服务</li>
+<li>记录当前 clash 服务的 PID ，用于停止服务</li>
+<li>开启 clash ，指定目录</li>
+</ol>
+</div>
+</li>
+
+<li><a id="停止"></a>停止<br />
+<div class="outline-text-5" id="text-orgaeb927d">
+<p>
+<code>ExecStop</code> 调用控制脚本的 <code>stop</code> 。
+</p>
+<ol class="org-ol">
+<li>停止 cgproxy 服务</li>
+<li>根据启动时记录的 PID 去关闭 clash 进程</li>
+<li>把 <code>1</code> 写到 <code>ip_forward</code> ，停止 IP 转发</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-cgproxy 配置" class="outline-2">
+<h2 id="cgproxy 配置"><a href="#cgproxy 配置">cgproxy 配置</a></h2>
+<div class="outline-text-2" id="text-org418d875">
+<p>
+配置文件位于 <code>/etc/cgproxy/config.json</code>
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-json">  {
+    "comment":"For usage, see https://github.com/springzfx/cgproxy",
+
+    "port": 7893,
+    "program_noproxy": ["clash"],
+    "program_proxy": [],
+    "cgroup_noproxy": ["/system.slice/clash.service"],
+    "cgroup_proxy": ["/"],
+    "enable_gateway": false,
+    "enable_dns": true,
+    "enable_udp": true,
+    "enable_tcp": true,
+    "enable_ipv4": true,
+    "enable_ipv6": true,
+    "table": 10007,
+    "fwmark": 39283
+}</code>
+</pre>
+
+</div>
+<p>
+各个选项<sup class="fsup"><a id="fnr.8.1" class="footref" href="#fn.8" role="doc-backlink">[8]</a></sup>：
+</p>
+<ul class="org-ul">
+<li><code>port</code> Tproxy 的端口，就是 clash 配置文件里面指定的 <code>tproxy_port</code></li>
+<li><code>program_noproxy</code> 不走代理的程序，把 <code>clash</code> 排除，不然会流量循环。像我的音乐软件 <code>listen1</code> 就可以加到里面，因所有流量都是国内的，用代理容易出现网络问题</li>
+<li><code>program_proxy</code> 走代理的程序，这里留空，在后面程序组那里配置了</li>
+<li><code>cgroup_noproxy</code> 不在代理的程序组</li>
+<li><code>cgroup_proxy</code> 走代理的程序组， <code>/</code> 表示全部</li>
+</ul>
+<p>
+剩下的就不介绍了，可以参考官网。
+</p>
+
+<p>
+到这里，你可以把服务脚本里边的 <code>ExecStartPre=/etc/clash/clash.sh update</code> 先注释掉。然后更新服务，启动 <code>clash</code> ，应该就可以使用了， <code>curl https://google.com</code> 测试一下。
+</p>
+</div>
+</div>
+
+<div id="outline-container-Python 配置" class="outline-2">
+<h2 id="Python 配置"><a href="#Python 配置">Python 配置</a></h2>
+<div class="outline-text-2" id="text-org06c76b1">
+<p>
+这部分是用来更新订阅的。
+</p>
+
+<p>
+先写一个 py 脚本 <code>/etc/clash/update.py</code> <sup class="fsup"><a id="fnr.9.1" class="footref" href="#fn.9" role="doc-backlink">[9]</a></sup><sup>, </sup><sup class="fsup"><a id="fnr.10.1" class="footref" href="#fn.10" role="doc-backlink">[10]</a></sup><sup>, </sup><sup class="fsup"><a id="fnr.11.1" class="footref" href="#fn.11" role="doc-backlink">[11]</a></sup>：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-python">import yaml
+import http.client
+import traceback
+from urllib.parse import urlparse
+import time
+import sys
+import os
+
+def check_update(interval: int) -&gt; bool:
+    update_file = "/etc/clash/.lastupdate"
+    cur_time = int(time.time())
+    need_update = False
+    with open(update_file, "r+" if os.path.exists(update_file) else "w") as f:
+    s = f.read() if f.readable() else None
+
+    if s:
+        last_update = int(s)
+        # 非空文件，且超过更新间隔
+        if cur_time - last_update &gt;= interval * 3600 * 24:
+        need_update = True
+    else:
+        # 空文件，新建
+        last_update = 0
+        need_update = True
+        f.write(str(cur_time))
+    return need_update
+
+def read_env(env_path: str) -&gt; dict:
+    with open(env_path) as f:
+    s = f.read()
+    data = yaml.safe_load(s)
+    return data
+
+def download_file(url: str) -&gt; bytes:
+    purl = urlparse(url)
+    doamin = purl.netloc
+    path = purl.path
+
+    data = b''
+    try:
+    conn = http.client.HTTPSConnection(doamin)
+    conn.request("GET", path)
+    r = conn.getresponse()
+    print('File downloaded.')
+    data = r.read()
+    except:
+    traceback.print_exc()
+
+    return data
+
+def write_and_update_to_file(file_data: bytes, env_data: dict) -&gt; None:
+    print('Parsing file')
+    try:
+    data = yaml.safe_load(file_data)
+
+    # TPORXY-PORT
+    data["tproxy-port"] = env_data["tproxy_port"]
+
+    # DNS
+    data["dns"]["enable"] = True
+    data["dns"]["listen"] = "0.0.0.0:%d" % env_data["dns_port"]
+    data["dns"]["nameserver"] = env_data["nameserver"]
+    data["dns"]["fallback"] =  env_data["fallback"]
+    data["dns"]["enhanced-mode"] = "fake-ip"
+
+    save_path = env_data["clash_config"]
+    print("Saving file to file: %s" % save_path)
+    with open(save_path, "w") as f:
+        f.write(yaml.safe_dump(data))
+
+    print("Update done")
+    except:
+    traceback.print_exc()
+
+if __name__ == "__main__":
+    env_path = sys.argv[1]
+    env_data = read_env(env_path)
+    if check_update(env_data["interval"]):
+        print("Updating")
+        write_and_update_to_file(
+            download_file(env_data["clash_url"]),
+            env_data
+        )
+    else:
+        print("Donnot update")</code>
+</pre>
+
+</div>
+
+<p>
+配置文件 <code>~/.config/clash/env.yaml</code> ：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-yaml"># TPROXY 端口
+tproxy_port: 7893
+
+# DNS 监听端口
+dns_port: 53
+
+# 订阅地址，一个 yaml 文件
+clash_url: https://xxx/yyy.yaml
+
+# 订阅文件路径
+clash_config: /home/&lt;your user name&gt;/.config/clash/config.yaml
+
+# 更新间隔（单位：天）
+interval: 7
+
+# 内 DNS 服务器
+nameserver:
+  - 119.29.29.29
+  - 114.114.114.114
+
+# 外 DNS 服务器
+fallback:
+  - https://1.1.1.1/dns-query
+  - https://8.8.8.8/dns-query</code>
+</pre>
+
+</div>
+
+<p>
+测试： <code>sudo python /etc/clash/update.py ~/.config/clash/env.yaml</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-结语" class="outline-2">
+<h2 id="结语"><a href="#结语">结语</a></h2>
+<div class="outline-text-2" id="text-org4c3a2ed">
+<p>
+至此，clash + cgproxy 的透明代理就配置完成了。
+</p>
+
+<p>
+如果想用 iptables 的话可以去参考文末给出的文章；想用 qv2ray + cgproxy 的话看参考的第一篇<sup class="fsup"><a id="fnr.1.3" class="footref" href="#fn.1" role="doc-backlink">[1]</a></sup>。
+</p>
+
+<p>
+希望对你有帮助
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div id="fn.1" class="footdef"><span class="footnum"> (1) </span><a class="foot2ref" href="#fnr.1.1" role="doc-backlink"> ⇑ </a><a class="foot2ref" href="#fnr.1.2" role="doc-backlink"> ⇑ </a><a class="foot2ref" href="#fnr.1.3" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+<a target="_blank" href="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/rookie/transparentProxy">全局代理</a>
+</p></div></div>
+
+<div id="fn.2" class="footdef"><span class="footnum"> (2) </span><a class="foot2ref" href="#fnr.2.1" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+<a target="_blank" href="https://wiki.archlinux.org/title/Clash">Clash - ArchWiki</a>
+</p></div></div>
+
+<div id="fn.3" class="footdef"><span class="footnum"> (3) </span><a class="foot2ref" href="#fnr.3.1" role="doc-backlink"> ⇑ </a><a class="foot2ref" href="#fnr.3.2" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+<a target="_blank" href="https://vlike.work/tech/trans_proxy.html">Clash透明代理实现方式总结 - 小V爱折腾</a>
+</p></div></div>
+
+<div id="fn.4" class="footdef"><span class="footnum"> (4) </span><a class="foot2ref" href="#fnr.4.1" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+<a target="_blank" href="https://www.right.com.cn/forum/thread-712362-1-1.html">N1 使用armbian系统设置clash作透明网关-斐讯无线路由器以及其它斐迅网络设备-恩山无线论坛</a>
+</p></div></div>
+
+<div id="fn.5" class="footdef"><span class="footnum"> (5) </span><a class="foot2ref" href="#fnr.5.1" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+<a target="_blank" href="https://github.com/Fndroid/clash_for_windows_pkg/wiki/DNS%E6%B1%A1%E6%9F%93%E5%AF%B9Clash%EF%BC%88for-Windows%EF%BC%89%E7%9A%84%E5%BD%B1%E5%93%8D#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95">DNS污染对Clash（for Windows）的影响 · Fndroid/clash_for_windows_pkg Wiki · GitHub</a>
+</p></div></div>
+
+<div id="fn.6" class="footdef"><span class="footnum"> (6) </span><a class="foot2ref" href="#fnr.6.1" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+<a target="_blank" href="https://xdays.me/Clash%E9%80%8F%E6%98%8E%E4%BB%A3%E7%90%86/">Clash透明代理 | xdays</a>
+</p></div></div>
+
+<div id="fn.7" class="footdef"><span class="footnum"> (7) </span><a class="foot2ref" href="#fnr.7.1" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+<a target="_blank" href="https://juejin.cn/post/6902058779236368392">Clash Linux 自启与更新订阅 - 掘金</a>
+</p></div></div>
+
+<div id="fn.8" class="footdef"><span class="footnum"> (8) </span><a class="foot2ref" href="#fnr.8.1" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+<a target="_blank" href="https://github.com/springzfx/cgproxy#configuration">GitHub - springzfx/cgproxy: Transparent Proxy with cgroup v2。透明代理，配合v2ray/Qv2ray食用最佳</a>
+</p></div></div>
+
+<div id="fn.9" class="footdef"><span class="footnum"> (9) </span><a class="foot2ref" href="#fnr.9.1" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+<a target="_blank" href="https://docs.python.org/zh-cn/3/library/http.client.html">http.client &#x2014; HTTP 协议客户端 — Python 3.10.7 文档</a>
+</p></div></div>
+
+<div id="fn.10" class="footdef"><span class="footnum"> (10) </span><a class="foot2ref" href="#fnr.10.1" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+<a target="_blank" href="https://pyyaml.org/wiki/PyYAMLDocumentation">PyYAML Documentation</a>
+</p></div></div>
+
+<div id="fn.11" class="footdef"><span class="footnum"> (11) </span><a class="foot2ref" href="#fnr.11.1" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+<a target="_blank" href="https://blog.csdn.net/qq_34495095/article/details/120905179">TypeError: load() missing 1 required positional argument: ‘Loader‘_one_wangtester的博客-CSDN博客</a>
+</p></div></div>
+
+
+</div>
+</div></div>
+</div>
+<div id="postamble" class="status">
+<center>
+Powered by <a href="https://orgmode.org">Org Mode</a>.
+</center>
+</div>
+<script src="/static/script.js"></script>
+<script src="/static/prism.js"></script>
+</body>
+</html>

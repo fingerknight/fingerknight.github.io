@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title> GitHub Page 多项目 - Ward of Dust </title>
+<meta name="author" content="MrDust">
+<link rel="stylesheet" href="/static/Fantasque/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dracula-prism@2.1.16/dist/css/dracula-prism.min.css">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/static/Slippery/style.css"><link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+<div id="preamble" class="status">
+<div class="header">
+<div class="title">
+<a href="/">Ward of Dust</a>
+</div>
+<div class="navigation">
+<a class="item" href="/archive.html">Archives</a>
+<a class="item" href="/taxonomy.html">Taxonomy</a>
+<a class="item" href="/about.html">About</a></div>
+</div>
+</div>
+<div id="content" class="content">
+<h1 class="title">GitHub Page 多项目</h1>
+<div class="post">
+<div class="metadata">
+<div class="date"><span>2022-12-23</span></div>
+<div class="tags">
+<a class="tag" href="/tag/dns.html">#dns</a> <a class="tag" href="/tag/githubpage.html">#githubpage</a> <a class="tag" href="/tag/hugo.html">#hugo</a> <a class="tag" href="/tag/site.html">#site</a> <a class="tag" href="/tag/post.html">#post</a></div>
+<div class="category">
+<a href="/category/Computer.html">$Computer</a>
+</div>
+</div>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#简介">简介</a></li>
+<li><a href="#多项目">多项目</a></li>
+<li><a href="#Hugo 配置">Hugo 配置</a>
+<ul>
+<li><a href="#配置文件里的路径">配置文件里的路径</a></li>
+<li><a href="#静态资源的路径">静态资源的路径</a></li>
+</ul>
+</li>
+<li><a href="#子域名">子域名</a>
+<ul>
+<li><a href="#子域名中 Hugo 配置文件里的路径">子域名中 Hugo 配置文件里的路径</a></li>
+<li><a href="#子域名下静态资源的路径">子域名下静态资源的路径</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-简介" class="outline-2">
+<h2 id="简介"><a href="#简介">简介</a></h2>
+<div class="outline-text-2" id="text-orge5403fc">
+<p>
+目前博客已经搭建好了，下一步是要搭一个教程的站点。但是一个 GitHub 帐号只能有一个 Page 站点，而博客用到站点模板和教程用的模板是不一样的。博客是文集，因此文章的目录是随机杂乱的，即使是同一个标签，文章之间也不一定会有关联；教程是一系列文章的集合，顺序是固定的，前后具有很强的因果关系，不能打乱。
+</p>
+
+<p>
+不过之前在哪里瞟到过可以把不同的项目放到不同的 GitHub 仓库，然后 Page 访问就对应不同的子目录即可。经过多方考证和动手操作，如今已经弄好了，这里记录流程思路。
+</p>
+</div>
+</div>
+
+<div id="outline-container-多项目" class="outline-2">
+<h2 id="多项目"><a href="#多项目">多项目</a></h2>
+<div class="outline-text-2" id="text-orgb221eba">
+<p>
+以我为例，我的 GitHub 账户名是 <code>fingerknight</code> ，且我已经建了一个 GitHub Page （如果不会建，可以参考我写的《<a target="_blank" href="/Computer/20221223T144635.html#*Github Page 配置" target="_blank">基于 Hugo + Org Mode + Github Page 的静态站点搭建</a>》），仓库名是 <code>fingerknight.github.io</code> 。
+</p>
+
+<p>
+新建一个仓库，假设名为 <code>math</code> 。到 GitHub Page 的设置，一样正常打开，目录分支选好，然后部署<sup class="fsup"><a id="fnr.1.1" class="footref" href="#fn.1" role="doc-backlink">[1]</a></sup>。等一会就可以看到，它自动将站点设到 <code>fingerknight.github.io/math</code> ，这个就是 <code>math</code> 项目的主页。这样就实现了项目分离了，很简单。
+</p>
+</div>
+</div>
+
+<div id="outline-container-Hugo 配置" class="outline-2">
+<h2 id="Hugo 配置"><a href="#Hugo 配置">Hugo 配置</a></h2>
+<div class="outline-text-2" id="text-orgd6013eb">
+<p>
+首先就是把配置文件里面的 <code>baseURL</code> 改成对应的 url ，比如前面说的 <code>https://fingerknight.github.io/math</code> 。<b>要注意的点来了</b>。
+</p>
+</div>
+
+<div id="outline-container-配置文件里的路径" class="outline-3">
+<h3 id="配置文件里的路径"><a href="#配置文件里的路径">配置文件里的路径</a></h3>
+<div class="outline-text-3" id="text-org68d345f">
+<p>
+这个要具体实测，跟主题的制作有关。比如我用的 <a target="_blank" href="https://github.com/dillonzq/LoveIt">LoveIt</a> 主题，在设置站点顶部目录的时候：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-yaml">menus:
+  main:
+    - name: 主页
+      url: /
+    - name: 标签
+      url: /tags/</code>
+</pre>
+
+</div>
+<p>
+这里可以直接使用 <code>/</code> 和 <code>/tags</code> ，生成的 HTML 会定位到 <code>https://fingerknight.github.io/math/</code> 和 <code>https://fingerknight.github.io/math/tags</code> 。而主页的头像 logo 就不行，
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-yaml">profile:
+  enable: true
+  avatarURL: /math/img/Logo.jpg</code>
+</pre>
+
+</div>
+<p>
+必须要加 <code>math</code> 才找得到。
+</p>
+</div>
+</div>
+
+<div id="outline-container-静态资源的路径" class="outline-3">
+<h3 id="静态资源的路径"><a href="#静态资源的路径">静态资源的路径</a></h3>
+<div class="outline-text-3" id="text-org130f5f7">
+<p>
+这个一定要加。原本所有静态资源都放在 <code>static</code> 目录下即可，现在多了一个子目录，因此要把静态资源移动到 <code>static/math</code> 目录下才正常能找到。而 <code>assets</code> 目录下又不用，里面的东西还是放到 <code>assets</code> 就可以。
+</p>
+
+<p>
+这样就可以做到项目间的分离了。如果你问根目录下的 <code>math</code> 和 <code>math</code> 项目同时启动会怎么样。请别这样做，爱你 :)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-子域名" class="outline-2">
+<h2 id="子域名"><a href="#子域名">子域名</a></h2>
+<div class="outline-text-2" id="text-org722c50f">
+<p>
+子域名的话使用起来其实更简单，不过各个项目之前是子域名的关系，因此没办法在<b>当前子域名内通过简单的相对路径来跳转，只能写全 url</b> ，带来的问题就是不好维护，后续要改的话不简单。
+</p>
+
+<p>
+不过不重要，毕竟现在是跟 Emacs 联动的，后续直接写个函数就好。
+</p>
+
+<ol class="org-ol">
+<li>首先要有一个域名，如果没有可以参考我写的<a target="_blank" href="dns.html">域名配置</a>。</li>
+
+<li>到域名管理平台去添加记录。比如我想把前面的 <code>math</code> 放到子域名，变成 <code>math.fingerknight.icu</code> 。假设之前的记录是</li>
+</ol>
+<div class="org-src-container">
+<pre>
+<code class="language-nil"># A 记录
+A    @(www)    1.1.1.1(GitHub IP)
+# or CNAME
+CNAME    @(www)    fingerknight.github.io</code>
+</pre>
+
+</div>
+<p>
+那么新增一条 <code>CNAME</code> 记录，把他们指向 GitHub Page：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-nil">CNAME    math    fingerknight.github.io</code>
+</pre>
+
+</div>
+
+<ol class="org-ol">
+<li>到 <code>math</code> 仓库配置 GitHub Page 的子域名为 <code>math.fingerknight.icu</code> ，应该就能解析到了。 DNS 从配置到生效可能需要一段时间。</li>
+</ol>
+</div>
+
+<div id="outline-container-子域名中 Hugo 配置文件里的路径" class="outline-3">
+<h3 id="子域名中 Hugo 配置文件里的路径"><a href="#子域名中 Hugo 配置文件里的路径">子域名中 Hugo 配置文件里的路径</a></h3>
+<div class="outline-text-3" id="text-org42da75e">
+<p>
+配置文件里面的 <code>baseURL</code> 改成对应的 url ， <code>https://math.fingerknight.icu/</code> 。其余的则都是<b>以根目录开始</b>。
+</p>
+</div>
+</div>
+
+<div id="outline-container-子域名下静态资源的路径" class="outline-3">
+<h3 id="子域名下静态资源的路径"><a href="#子域名下静态资源的路径">子域名下静态资源的路径</a></h3>
+<div class="outline-text-3" id="text-org55f0cd8">
+<p>
+<b>所有静态资源都以根目录出发</b>，因为已经是不同的域名、不同的地址了。
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div id="fn.1" class="footdef"><span class="footnum"> (1) </span><a class="foot2ref" href="#fnr.1.1" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+<a target="_blank" href="https://www.cnblogs.com/dev2007/p/13947333.html">多项目部署在同一个GitHub Pages - 阿呜的边城 - 博客园</a>
+</p></div></div>
+
+
+</div>
+</div></div>
+</div>
+<div id="postamble" class="status">
+<center>
+Powered by <a href="https://orgmode.org">Org Mode</a>.
+</center>
+</div>
+<script src="/static/script.js"></script>
+<script src="/static/prism.js"></script>
+</body>
+</html>

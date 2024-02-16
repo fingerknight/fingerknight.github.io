@@ -1,0 +1,316 @@
+/* Style for blog */
+html {
+  font-size: 1.15em;
+  font-family: "Slippery", "LXGW Wenkai", serif;
+}
+html body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  line-height: 1.5;
+  background: #fff;
+  color: #1b1f23;
+}
+html body a {
+  text-decoration: none;
+}
+html body a {
+  color: #1b1f23;
+}
+html body a:hover {
+  color: #ff5555;
+}
+html body #preamble .header {
+  display: flex;
+  position: fixed;
+  height: 3rem;
+  line-height: 3rem;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 2em;
+  z-index: 150;
+  background: #e1e4e8;
+}
+html body #preamble .header .title {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+html body #preamble .header .navigation {
+  font-size: 1.25rem;
+}
+html body #preamble .header .navigation a {
+  margin: 0 0.5em;
+}
+html body #content {
+  position: relative;
+  margin: 0 auto;
+  width: 750px;
+  padding: calc(3rem + 1em) 50px;
+  padding-bottom: 1em;
+}
+html body #content h1 {
+  margin: 0;
+  text-align: center;
+}
+html body #content h2, html body #content h3, html body #content h4, html body #content h5, html body #content h6 {
+  margin-top: 0.5em;
+  margin-bottom: 1rem;
+  margin-left: -0.5em;
+}
+html body #content h2 {
+  color: #d03592;
+}
+html body #content h3 {
+  color: #5a32a3;
+}
+html body #content h4 {
+  color: #22863a;
+}
+html body #content h5 {
+  color: #b08800;
+}
+html body #content img {
+  max-width: 740px;
+}
+html body #content [id] {
+  scroll-margin-top: 3.5rem;
+}
+html body #content p {
+  margin: 0.5em 0 1em 0;
+}
+html body #content .org-center {
+  text-align: center;
+}
+html body #content .underline {
+  text-decoration-line: underline;
+}
+html body #content .item {
+  margin: 0.5em 1em;
+  display: flex;
+  justify-content: space-between;
+}
+html body #content .date {
+  color: #586069;
+}
+html body #content .index .org-center {
+  line-height: 5em;
+}
+html body #content .index .item {
+  margin: 1em 0;
+  margin-bottom: 2em;
+  display: block;
+}
+html body #content .index .item .title {
+  font-size: 1.5rem;
+}
+html body #content .index .item .metadata {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5em;
+}
+html body #content .index .item .metadata .date {
+  padding-left: 0.5em;
+}
+html body #content .index .item .metadata .tag {
+  padding-right: 0.2em;
+}
+html body #content .index .item .metadata .category {
+  padding: 0 0.5em;
+}
+html body #content .taxonomy .wrapper {
+  margin: 0 1em;
+}
+html body #content .taxonomy .wrapper a {
+  margin-left: 0.5em;
+  line-height: 2em;
+}
+html body #content .taxonomy .wrapper sup {
+  color: #586069;
+  font-size: 0.7rem;
+}
+html body #content .post a {
+  color: #b31d28;
+}
+html body #content .post a:hover {
+  color: #ff5555;
+}
+html body #content .post h2 a {
+  color: #d03592;
+}
+html body #content .post h2 a:hover {
+  color: #d03592;
+}
+html body #content .post h3 a {
+  color: #5a32a3;
+}
+html body #content .post h3 a:hover {
+  color: #5a32a3;
+}
+html body #content .post h4 a {
+  color: #22863a;
+}
+html body #content .post h4 a:hover {
+  color: #22863a;
+}
+html body #content .post h5 a {
+  color: #b08800;
+}
+html body #content .post h5 a:hover {
+  color: #b08800;
+}
+html body #content .post ul, html body #content .post ol {
+  margin: 0;
+  margin-bottom: 1rem;
+  padding-left: 1em;
+}
+html body #content .post .metadata {
+  text-align: center;
+  margin-bottom: 2em;
+}
+html body #content .post .metadata .date {
+  margin-bottom: 0.5em;
+}
+html body #content .post .metadata .tag {
+  margin: 0 0.1em;
+}
+html body #content .post .metadata .category {
+  margin-top: 0.5em;
+}
+html body #content .post .metadata a {
+  color: #1b1f23;
+}
+html body #content .post .metadata a:hover {
+  color: #ff5555;
+}
+html body #content .post #table-of-contents {
+  left: 850px;
+  position: absolute;
+  width: 300px;
+  overflow: auto;
+  font-size: 0.8em;
+}
+html body #content .post #table-of-contents a {
+  color: #1b1f23;
+}
+html body #content .post #table-of-contents a:hover {
+  color: #ff5555;
+}
+html body #content .post #table-of-contents ul, html body #content .post #table-of-contents ol {
+  margin: 0;
+}
+html body #content .post #table-of-contents h2 {
+  margin: 0;
+  color: #1b1f23;
+}
+html body #content .post #table-of-contents #text-table-of-contents {
+  width: max-content;
+}
+html body #content .post .katex {
+  font-size: 1em !important;
+}
+html body #content .post .mathblock .number {
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+html body #content .post .mathblock.proof .number {
+  font-style: italic;
+  font-weight: normal;
+  text-decoration: underline;
+  text-decoration-style: double;
+}
+html body #content .post .mathblock .QED {
+  float: right;
+}
+html body #content .post .footnum {
+  color: #586069;
+  margin-right: 0.2em;
+}
+html body #content .post a.foot2ref {
+  margin: 0 0.1em;
+  color: #2188ff;
+}
+html body #content .post a.foot2ref:hover {
+  color: #1b1f23;
+}
+html body #content .post .fsup {
+  font-size: small;
+  color: #fff;
+  background: #2188ff;
+}
+html body #content .post .fsup a {
+  color: #fff;
+}
+html body #content .post .fsup a:hover {
+  color: #2188ff;
+}
+html body #content .post .figure {
+  text-align: center;
+  font-size: 0.9em;
+  color: #586069;
+}
+html body #content .post .figure p {
+  margin: 0;
+}
+html body #content .post .figure .figure-number {
+  color: #1b1f23;
+}
+html body #content .post code {
+  font-family: "Fantasque Sans Mono", monospace;
+  background: #282A36;
+  color: #ffb86c;
+  padding: 0.1em 0.5em;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+html body #content .post pre .mermaid {
+  text-align: center;
+}
+html body #content .post pre code {
+  line-height: 1.3;
+  padding: 0;
+}
+html body #content .post blockquote {
+  background: #ffebda;
+  color: #444d56;
+  margin: 2em 0;
+  padding: 2em 4em;
+  font-size: 0.9em;
+  border-radius: 15px;
+}
+html body #content .post blockquote .source {
+  text-align: right;
+  margin: 0;
+}
+html body #content .post table {
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+html body #content .post table tbody {
+  border-top: 1px solid;
+}
+html body #content .post table .t-above {
+  font-size: 0.9em;
+  color: #586069;
+}
+html body #content .post table .t-above .table-number {
+  color: #1b1f23;
+}
+html body #postamble {
+  font-size: 0.9rem;
+  color: #586069;
+  height: 3rem;
+  line-height: 3rem;
+}
+html body #postamble a {
+  color: #586069;
+}
+html body #postamble a:hover {
+  color: #ff5555;
+}
+
+/*# sourceMappingURL=style.css.map */

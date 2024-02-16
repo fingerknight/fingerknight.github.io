@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title> [Arch Linux] 蓝牙配置 - Ward of Dust </title>
+<meta name="author" content="MrDust">
+<link rel="stylesheet" href="/static/Fantasque/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dracula-prism@2.1.16/dist/css/dracula-prism.min.css">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/static/Slippery/style.css"><link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+<div id="preamble" class="status">
+<div class="header">
+<div class="title">
+<a href="/">Ward of Dust</a>
+</div>
+<div class="navigation">
+<a class="item" href="/archive.html">Archives</a>
+<a class="item" href="/taxonomy.html">Taxonomy</a>
+<a class="item" href="/about.html">About</a></div>
+</div>
+</div>
+<div id="content" class="content">
+<h1 class="title">[Arch Linux] 蓝牙配置</h1>
+<div class="post">
+<div class="metadata">
+<div class="date"><span>2023-05-06</span></div>
+<div class="tags">
+<a class="tag" href="/tag/archlinux.html">#archlinux</a> <a class="tag" href="/tag/post.html">#post</a> <a class="tag" href="/tag/buletooth.html">#buletooth</a></div>
+<div class="category">
+<a href="/category/Computer.html">$Computer</a>
+</div>
+</div>
+<div class="org-src-container">
+<pre>
+<code class="language-bash">;; Necessary packages 
+sudo pacman -S bluez bluez-utils pulseaudio-bluetooth pavucontrol pulseaudio-alsa
+
+;; Bluetooth service
+sudo systemctl start bluetooth
+
+;; Pulseaudio sercice
+pulseaudio -k &amp;&amp; pulseaudio --start</code>
+</pre>
+
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<center>
+Powered by <a href="https://orgmode.org">Org Mode</a>.
+</center>
+</div>
+<script src="/static/script.js"></script>
+<script src="/static/prism.js"></script>
+</body>
+</html>

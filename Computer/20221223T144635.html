@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title> 基于 Hugo + Org Mode + Github Page 的静态站点搭建 - Ward of Dust </title>
+<meta name="author" content="MrDust">
+<link rel="stylesheet" href="/static/Fantasque/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dracula-prism@2.1.16/dist/css/dracula-prism.min.css">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/static/Slippery/style.css"><link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+<div id="preamble" class="status">
+<div class="header">
+<div class="title">
+<a href="/">Ward of Dust</a>
+</div>
+<div class="navigation">
+<a class="item" href="/archive.html">Archives</a>
+<a class="item" href="/taxonomy.html">Taxonomy</a>
+<a class="item" href="/about.html">About</a></div>
+</div>
+</div>
+<div id="content" class="content">
+<h1 class="title">基于 Hugo + Org Mode + Github Page 的静态站点搭建</h1>
+<div class="post">
+<div class="metadata">
+<div class="date"><span>2022-12-23</span></div>
+<div class="tags">
+<a class="tag" href="/tag/emacs.html">#emacs</a> <a class="tag" href="/tag/githubpage.html">#githubpage</a> <a class="tag" href="/tag/hugo.html">#hugo</a> <a class="tag" href="/tag/orgmode.html">#orgmode</a> <a class="tag" href="/tag/site.html">#site</a> <a class="tag" href="/tag/post.html">#post</a></div>
+<div class="category">
+<a href="/category/Computer.html">$Computer</a>
+</div>
+</div>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#简介">简介</a></li>
+<li><a href="#工具">工具</a></li>
+<li><a href="#搭建流程">搭建流程</a>
+<ul>
+<li><a href="#安装 Hugo">安装 Hugo</a></li>
+<li><a href="#Github Page 配置">Github Page 配置</a></li>
+<li><a href="#Hugo 使用">Hugo 使用</a></li>
+<li><a href="#项目目录修改">项目目录修改</a></li>
+<li><a href="#Hugo 主题">Hugo 主题</a></li>
+<li><a href="#我的 Hugo 配置">我的 Hugo 配置</a>
+<ul>
+<li><a href="#关于资源目录">关于资源目录</a></li>
+</ul>
+</li>
+<li><a href="#安装 ox-hugo">安装 ox-hugo</a></li>
+<li><a href="#ox-hugo 使用">ox-hugo 使用</a></li>
+<li><a href="#设置评论">设置评论</a>
+<ul>
+<li><a href="#LoveIt 的 Bug">LoveIt 的 Bug</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#工作流程">工作流程</a></li>
+<li><a href="#自动化">自动化</a></li>
+<li><a href="#优化">优化</a>
+<ul>
+<li><a href="#CDN 设置">CDN 设置</a></li>
+<li><a href="#Cloudflare Page">Cloudflare Page</a></li>
+<li><a href="#Cloudflare + DNS">Cloudflare + DNS</a></li>
+</ul>
+</li>
+<li><a href="#后记">后记</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-简介" class="outline-2">
+<h2 id="简介"><a href="#简介">简介</a></h2>
+<div class="outline-text-2" id="text-org4201c5d">
+<p>
+现在已经全面转战 Emacs 和 Org Mode 了，想搭个人博客，折腾了很久。这里记录搭建思路和过程，供参考。
+</p>
+</div>
+</div>
+
+<div id="outline-container-工具" class="outline-2">
+<h2 id="工具"><a href="#工具">工具</a></h2>
+<div class="outline-text-2" id="text-org9b78a47">
+<ul class="org-ul">
+<li>Emacs + Org Mode</li>
+<li>Hugo 静态站点生成制作</li>
+<li>ox-hugo 将 org 文件转换成 md 文件</li>
+<li>GitHub Page 博客托管平台</li>
+<li>Gitalk 博客评论，基于 GitHub 的 Issue</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-搭建流程" class="outline-2">
+<h2 id="搭建流程"><a href="#搭建流程">搭建流程</a></h2>
+<div class="outline-text-2" id="text-org701b3fb">
+<p>
+假定已经安装了 <b>Emacs</b> 和 <b>Git</b> 。
+</p>
+</div>
+
+<div id="outline-container-安装 Hugo" class="outline-3">
+<h3 id="安装 Hugo"><a href="#安装 Hugo">安装 Hugo</a></h3>
+<div class="outline-text-3" id="text-org5c76c85">
+<p>
+官方的下载页面在这里 <a target="_blank" href="https://gohugo.io/getting-started/installing">https://gohugo.io/getting-started/installing</a> ，根据自己的系统去安装即可。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-bash">sudo pacman -S hugo</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-Github Page 配置" class="outline-3">
+<h3 id="Github Page 配置"><a href="#Github Page 配置">Github Page 配置</a></h3>
+<div class="outline-text-3" id="text-org81be653">
+<p>
+首先，新建一个仓库，仓库名必须是 <code>&lt;Name&gt;.github.io</code> ， <code>&lt;Name&gt;</code> 是的 github 的昵称。
+</p>
+
+
+<div id="org65c7645" class="figure">
+<p><a href="/../assets/0ee8e396ec7b2bad1850f4e7eec4064d.png" target="_blank">
+<img src="/../assets/0ee8e396ec7b2bad1850f4e7eec4064d.png" alt="0ee8e396ec7b2bad1850f4e7eec4064d.png" /></a>
+</p>
+</div>
+
+<p>
+如果新建时选了自动建 <code>README.md</code> ，就好了。如果没有执行（里面的 <code>Name</code> 是 github 昵称）：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-bash"># 随便一个 REMAD.md
+echo "# Just a README" &gt;&gt; README.md
+git init
+git add README.md
+git commit -m "first commit"
+# 新基础分支
+git branch -M main
+git remote add origin git@github.com:Name/Name.github.io.git
+# 提交到基础分支
+git push -u origin main</code>
+</pre>
+
+</div>
+
+<p>
+在 <code>Settings</code> 里边，在左边那里点开 <code>Page</code> 。
+</p>
+
+
+<div id="orgc3ddc2c" class="figure">
+<p><a href="/../assets/a8a20d8dfdd1a69a0ac4a00e4025f44d.png" target="_blank">
+<img src="/../assets/a8a20d8dfdd1a69a0ac4a00e4025f44d.png" alt="a8a20d8dfdd1a69a0ac4a00e4025f44d.png" /></a>
+</p>
+</div>
+
+<p>
+至此 GitHub Page 就搭建好了，等几分钟它那边部署，然后就可以去访问 <code>https://&lt;Name&gt;.github.io/</code> 了（&lt;Name&gt; 是 github 昵称），不过现在应该是 404 ，里面什么东西都还没有。
+</p>
+</div>
+</div>
+
+<div id="outline-container-Hugo 使用" class="outline-3">
+<h3 id="Hugo 使用"><a href="#Hugo 使用">Hugo 使用</a></h3>
+<div class="outline-text-3" id="text-org4524a13">
+<p>
+新建项目， <code>blog</code> 是项目目录。
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-bash">hugo new site blog</code>
+</pre>
+
+</div>
+
+<p>
+然后会生成如下的项目：
+</p>
+<pre class="example" id="org84d5916">
+├── blog
+│   ├── archetypes/
+│   ├── config.toml
+│   ├── content/
+│   ├── data/
+│   ├── layouts/
+│   ├── public/
+│   ├── static/
+│   ├── themes/
+</pre>
+<p>
+具体作用如下<sup class="fsup"><a id="fnr.1.1" class="footref" href="#fn.1" role="doc-backlink">[1]</a></sup>：
+</p>
+<ul class="org-ul">
+<li><code>archetypes</code>, 内容模板，可以取参考里面看，暂时不用管。</li>
+<li><code>config.toml</code>, 配置文件，详见<a href="#我的 Hugo 配置">我的 Hugo 配置</a></li>
+<li><code>content</code>, 内容目录，用于存放 md 源文件。</li>
+<li><code>data</code>, 数据模板目录，暂时不用管。</li>
+<li><code>layouts</code>, HTML 模板目录，md 生成 HTML 的模板，有一套单独的语言描述。暂时也不用配。</li>
+<li><code>public</code>, 发布目录，生成的 HTML 会存到这个目录下边。后面需要修改。</li>
+<li><code>themes</code>, 主题目录，用于存放主题相关配置。</li>
+</ul>
+
+<p>
+测试时，进入 <code>blog</code> 目录，使用：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-bash">hugo server</code>
+</pre>
+
+</div>
+<p>
+然后会开启默认端口，从输出信息中可以看到。从浏览器访问就能看到。
+</p>
+</div>
+</div>
+
+<div id="outline-container-项目目录修改" class="outline-3">
+<h3 id="项目目录修改"><a href="#项目目录修改">项目目录修改</a></h3>
+<div class="outline-text-3" id="text-org1e05fd2">
+<p>
+克隆仓库：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-bash"># blog 下
+git clone git@github.com:&lt;Name&gt;/&lt;Name&gt;.github.io.git project</code>
+</pre>
+
+</div>
+<p>
+在 <code>blog/project</code> 目录下新目录存放 org 源码的目录（手动建）：
+</p>
+<pre class="example" id="org8aa91d1">
+├── project
+│   ├── assets/
+│   ├── posts/
+</pre>
+<p>
+org 文件就放在 <code>blog/project/posts</code> 下，静态资源就放在 <code>blog/project/assets</code> 下。
+</p>
+
+<p>
+因为 Github Page 只能选 <code>/</code> 根目录或者 <code>/docs</code> 目录作为站点目录，所以需要在配置中把站点输出目录修改一下。在<a href="#我的 Hugo 配置">我的 Hugo 配置</a>那里我会说的。
+</p>
+</div>
+</div>
+
+<div id="outline-container-Hugo 主题" class="outline-3">
+<h3 id="Hugo 主题"><a href="#Hugo 主题">Hugo 主题</a></h3>
+<div class="outline-text-3" id="text-org5ef3504">
+<p>
+主题可以去官网上找 <a target="_blank" href="https://themes.gohugo.io/">https://themes.gohugo.io/</a> ，我参考的是前辈用的 <a target="_blank" href="https://github.com/dillonzq/LoveIt">LoveIt</a> <sup class="fsup"><a id="fnr.2.1" class="footref" href="#fn.2" role="doc-backlink">[2]</a></sup>，功能强大，界面美观，且不会太花哨。
+</p>
+
+<p>
+先找到主题的 github 仓库 <a target="_blank" href="https://github.com/dillonzq/LoveIt">https://github.com/dillonzq/LoveIt</a>，然后把它作为 hugo 项目的子模块
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-bash"># 在 blog 目录下操作
+git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt</code>
+</pre>
+
+</div>
+<p>
+或者直接克隆也可以。
+</p>
+
+<p>
+配置信息：<a target="_blank" href="https://hugoloveit.com/zh-cn/theme-documentation-basics/#basic-configuration">基础配置</a>，<a target="_blank" href="https://hugoloveit.com/zh-cn/theme-documentation-basics/#3-%E9%85%8D%E7%BD%AE">完整配置</a>。
+</p>
+
+<p>
+复制之后直接贴到 <code>config.toml</code> 即可。
+</p>
+</div>
+</div>
+
+<div id="outline-container-我的 Hugo 配置" class="outline-3">
+<h3 id="我的 Hugo 配置"><a href="#我的 Hugo 配置">我的 Hugo 配置</a></h3>
+<div class="outline-text-3" id="text-orge985f15">
+<p>
+配置文件可以说三种类型： <code>toml</code>, <code>yaml</code> 和 <code>json</code> ，我用的是 <code>yaml</code> ，简洁；把 LoveIt 官网给的完整配置转成 <code>yaml</code> ，然后手动调整，参考如下。
+</p>
+
+<p>
+因为配置里面可能会用到密钥什么的，因此不建议公开到 GitHub 上边，所以只上传 <b>Org 源码</b>, <b>静态文件</b>和<b>站点文件</b>。如下所示:
+</p>
+
+<pre class="example" id="org18de187">
+├── project
+│   ├── assets/   # 存放静态文件
+│   ├── posts/    # 存放 org 
+│   ├── docs/     # 站点文件
+</pre>
+
+<p>
+在 GitHub Page 的设置中把分支那里的目录设置成 <code>/docs</code> （只能是 <code>/(root)</code> 或 <code>/docs</code> ），配置文件中修改输出目录 <code>publishDir</code> 为 <code>project/docs</code> ，以适配 Github Page  ， <code>public</code> 目录就可以不要了，我把这个设置放到了第一行。
+</p>
+
+<p>
+这样源码 org 文件和站点代码都可以被托管到 GitHub 上。
+</p>
+
+<p>
+<code>config.yaml</code>
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-yaml">publishDir: project/docs
+# 站点URL
+baseURL: https://fingerknight.github.io/
+# 默认语言
+defaultContentLanguage: zh-cn
+languageCode: zh-CN
+hasCJKLanguage: true
+# 主题
+theme: LoveIt
+# 网站标题
+title: 手指骑士的病房
+# 作者
+author:
+  name: Finger Knight
+  email: mrdust1880@outlook.com
+  link: https://fingerknight.github.io/about
+# 默认每页列表显示的文章数目
+paginate: 12
+# 谷歌分析代号 [UA-XXXXXXXX-X]
+googleAnalytics: ""
+# 版权描述，仅仅用于 SEO
+copyright: ""
+# 是否使用 robots.txt
+enableRobotsTXT: true
+# 是否使用 git 信息
+enableGitInfo: false
+# 是否使用 emoji 代码
+enableEmoji: true
+# 忽略一些构建错误
+ignoreErrors: ["error-remote-getjson", "error-missing-instagram-accesstoken"]
+
+# 标记语言设置
+markup:
+  highlight:
+    noClasses: false
+    codeFences: true
+    guessSyntax: true
+    lineNos: true
+    lineNumbersInTable: true
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    renderer:
+      # 是否在文档中直接使用 HTML 标签
+      unsafe: true
+  # 目录
+  tableOfContents:
+    startLevel: 2
+    endLevel: 6
+
+# 网站地图配置
+sitemap:
+  changefreq: weekly
+  filename: sitemap.xml
+  priority: 0.5
+
+# Permalinks 配置
+Permalinks:
+  posts: ':filename'
+
+# 输出设置
+
+outputs:
+  home:
+    - HTML
+    - JSON
+  page:
+    - HTML
+    - MarkDown
+  section:
+    - HTML
+  taxonomy:
+    - HTML
+  taxonomyTerm:
+    - HTML
+
+# 语言设置
+language:
+  zh-cn:
+    contentDir: content
+    languageName: 中文
+
+# 菜单设置
+menus:
+  main:
+    - identifier: main
+      pre: &lt;i class="fa-solid fa-house"&gt;&lt;/i&gt;
+      post: ''
+      name: 
+      url: /
+      title: 主页
+      weight: 1
+    - identifier: tags
+      pre: &lt;i class="fa-solid fa-tags"&gt;&lt;/i&gt;
+      post: ''
+      name: ''
+      url: /tags/
+      title: 标签
+      weight: 2
+    - identifier: posts
+      pre: &lt;i class="fa-solid fa-layer-group"&gt;&lt;/i&gt;
+      post: ''
+      name: ''
+      url: /posts/
+      title: 归档
+      weight: 3
+    - identifier: about
+      pre: &lt;i class="fa-solid fa-bed-pulse"&gt;&lt;/i&gt;
+      post: ''
+      name: ''
+      url: /about
+      title: 病历
+      weight: 4
+
+
+# 参数设置
+params:
+  # 网站默认主题样式 ["auto", "light", "dark"]
+  defaultTheme: "auto"
+  # 哪种哈希函数用来 SRI, 为空时表示不使用 SRI
+  # ["sha256", "sha384", "sha512", "md5"]
+  fingerprint: "sha256"
+  # 日期格式
+  dateFormat: "2006-01-02"
+
+  # 网站标题, 用于 Open Graph 和 Twitter Cards
+  title: "手指骑士的病房"
+  # 网站描述, 用于 RSS, SEO, Open Graph 和 Twitter Cards
+  description: "痴人说梦"
+  # 网站图片, 用于 Open Graph 和 Twitter Cards
+  # images:
+  #   - /logo.png
+
+  # 首部元素
+  header:
+    # 桌面端导航栏模式 ["fixed", "normal", "auto"]
+    desktopMode: fixed
+    # 移动端导航栏模式 ["fixed", "normal", "auto"]
+    mobileMode: auto
+    title:
+      # logo: /avatar.png
+      name: 手指骑士的病房
+      pre: ''
+      post: ''
+      typeit: false
+
+  # 尾部元素
+  footer:
+    enable: true
+    custom: ''
+    hugo: true
+    copyright: true
+    # 是否显示作者
+    author: true
+    # 网站创立年份
+    since: 2022
+    icp: ''
+    # 许可协议信息 (支持 HTML 格式)
+    license: &lt;a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"&gt;CC BY-NC 4.0&lt;/a&gt;
+
+  # Section (所有文章) 页面配置
+  section:
+    # section 页面每页显示文章数量
+    paginate: 20
+    # 日期格式 (月和日)
+    dateFormat: 01-02
+    # RSS 文章数目
+    rss: 10
+
+  # List (目录或标签) 页面配置
+  list:
+    paginate: 20
+    dateFormat: 01-02
+    rss: 10
+
+  # 主页配置
+  home:
+    # RSS 文章数目
+    rss: 10
+    # 主页个人信息
+    profile:
+      enable: true
+      # gravatarEmail: ''
+      avatarURL: /img/YunRuAvatar.jpg
+      title: ''
+      subtitle: 痴人说梦
+      typeit: false
+      # 是否显示社交账号
+      social: false
+      # 免责声明
+      disclaimer: ''
+      # 主页文章列表
+    posts:
+      enable: true
+      paginate: 5
+      defaultHiddenFromHomePage: false
+
+  # 文章页面全局配置
+  page:
+    # 是否在主页隐藏一篇文章
+    hiddenFromHomePage: false
+    # 是否在搜索结果中隐藏一篇文章
+    hiddenFromSearch: false
+    # 是否使用 fontawesome 扩展语法
+    fontawesome: true
+    # 是否在 RSS 中显示全文内容
+    rssFullText: false
+
+    prev: false
+    next: false
+    linktomarkdown: false
+
+    # 开启上下篇
+    nav: false
+
+    # 目录
+    toc:
+      enable: true
+      #  是否保持使用文章前面的静态目录
+      keepStatic: false
+      # 是否侧边目录自动折叠展开
+      auto: false
+
+    # 代码
+    code:
+      # 是否显示代码块的复制按钮
+      copy: true
+      # 默认展开显示的代码行数
+      maxShownLines: 50
+
+    # KaTeX 数学公式
+    math:
+      enable: true
+      inlineLeftDelimiter: ''
+      inlineRightDelimiter: ''
+      blockLeftDelimiter: ''
+      blockRightDelimiter: ''
+      copyTex: true
+      mhchem: true
+
+    # 地图
+    mapbox:
+      accessToken: ''
+      lightStyle: 'mapbox://styles/mapbox/light-v10?optimize=true'
+      darkStyle: 'mapbox://styles/mapbox/dark-v10?optimize=true'
+      navigation: true
+      geolocate: true
+      scale: true
+      fullscreen: true
+
+    # 关闭分享
+    share:
+      enable: false
+
+    # 评论看后面
+    # comment:
+    #   enable: true
+    #   gitalk:
+
+    # 第三方静态资源
+    library:
+      css: {}
+      js: {}
+
+    # 页面 SEO 配置
+    seo:
+      images: []
+      publisher:
+        name: ''
+        logoUrl: ''
+
+  # TypeIt 配置
+  typeit:
+    speed: 100
+    cursorSpeed: 1000
+    cursorChar: '|'
+    duration: -1
+
+  # 网站 SEO 配置
+  seo:
+    image: ''
+    thumbnailUrl: ''
+
+  #  第三方库文件的 CDN 设置
+  # CDN 数据文件名称, 默认不启用
+  # ["jsdelivr.yml"]
+  # 位于 "themes/LoveIt/assets/data/cdn/" 目录
+  # 可以在你的项目下相同路径存放你自己的数据文件:
+  # "assets/data/cdn/"
+  # cdn:
+  #   data: ''
+
+  # 搜索设置
+  search:
+    enable: true
+    # 搜索引擎的类型 ["lunr", "algolia"]
+    type: lunr
+    # 文章内容最长索引长度
+    contentLength: 4000
+    # 搜索框的占位提示语
+    placeholder: ''
+    # 最大结果数目
+    maxResultLength: 10
+    # 结果内容片段长度
+    snippetLength: 50
+    # 搜索结果中高亮部分的 HTML 标签
+    highlightTag: em
+    # 是否在搜索索引中使用基于 baseURL 的绝对路径
+    absoluteURL: false
+</code>
+</pre>
+
+</div>
+</div>
+
+<div id="outline-container-关于资源目录" class="outline-4">
+<h4 id="关于资源目录"><a href="#关于资源目录">关于资源目录</a></h4>
+<div class="outline-text-4" id="text-orgc06c06c">
+<p>
+假设有个写好了的 md ,位置 <code>content/test.md</code> ，那么它会出现在<b>站点的根目录</b>，也就是需要访问 <code>https://yoursite.com/test.md</code> 。
+</p>
+
+<p>
+同理，静态资源是存在 <code>static</code> 下边的，假如你有网站图标和某个 css 在它下边， <code>static/favicon.ico</code> 和 <code>static/test.css</code> ，那么访问的时候是 <code>https://yoursite.com/favicon.ico</code> 和 <code>https://yoursite.com/test.css</code> 。
+</p>
+
+<p>
+所以对于文本中出现的图片，可以新建一个目录 <code>static/assets/</code> ,放在里面，后续访问就是 <code>https://yoursite.com/assets/xx</code> 。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-安装 ox-hugo" class="outline-3">
+<h3 id="安装 ox-hugo"><a href="#安装 ox-hugo">安装 ox-hugo</a></h3>
+<div class="outline-text-3" id="text-orgfce7536">
+<p>
+官网的安装页面：<a target="_blank" href="https://ox-hugo.scripter.co/#installation">https://ox-hugo.scripter.co/#installation</a>。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-lisp">(with-eval-after-load 'ox
+  (require 'ox-hugo)
+  (setq org-hugo-base-dir ../blog/"
+    ;; org-hugo-section "posts"
+    org-hugo-default-static-subdirectory-for-externals "img"
+    org-hugo-auto-set-lastmod t
+    org-hugo-export-with-toc nil))</code>
+</pre>
+
+</div>
+<ul class="org-ul">
+<li><code>org-hugo-base-dir</code>, 项目的根目录</li>
+<li><code>org-hugo-section</code>, 文档的目录，相对于 <code>contnet</code> 而言。如果值是 <code>posts</code> ，它的路径就是 ../blog/content/posts/~ 。这里注释了是因为默认就是 <code>posts</code></li>
+<li><code>org-hugo-auto-set-lastmod</code>, 自动修改“最近更新时间”</li>
+<li><code>org-hugo-export-with-toc</code>, 是是否开启文档目录。这个目录放到文章开头， Hugo 配置里面有目录了，所以不用。</li>
+<li><code>org-hugo-default-static-subdirectory-for-externals</code>, 静态文件的目录，相对于 <code>static</code> 而言。例如它的值是 <code>img</code>, 那么图片就会存在 ../blog/static/img~</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-ox-hugo 使用" class="outline-3">
+<h3 id="ox-hugo 使用"><a href="#ox-hugo 使用">ox-hugo 使用</a></h3>
+<div class="outline-text-3" id="text-org42badd6">
+<p>
+Org file 的基础配置
+</p>
+<pre class="example" id="org13bb857">
+#+title: 文章标题
+#+date: [2022-09-10 Sat]
+#+hugo_tags: tags1 tags2
+#+hugo_categories: Class
+#+hugo_draft: true
+</pre>
+
+<p>
+解释如下：
+</p>
+<ul class="org-ul">
+<li><code>title</code>, 文章标题</li>
+<li><code>date</code>, 文章创建日期</li>
+<li><code>hugo_tags</code>, 标签。空格分隔</li>
+<li><code>hugo_categories</code>, 分类</li>
+<li><code>hugo_draft</code>, 是否为草稿，如果是的话，不会发布</li>
+</ul>
+
+<p>
+对于特定文件，可以在文件的头配置里面覆盖掉基础配置。比如“关于”页面 <code>about.org</code> 的内容：
+</p>
+<pre class="example" id="org5aed0d6">
+#+hugo_base_dir:../blog/
+#+hugo_section: ./
+#+hugo_auto_set_lastmod: t
+#+hugo_custom_front_matter: :toc false
+</pre>
+<p>
+这样就使得输出的 <code>about.md</code> 直接在 <code>blog/content/</code> 下面，覆盖了 <code>.emacs</code> 配置里面写的 <code>blog/content/posts</code>
+</p>
+
+<p>
+使用命令 <code>C-c C-e H h</code> ，输出当前文件为 md，这是启动 <code>hugo server</code> 就能看到了。
+</p>
+</div>
+</div>
+
+<div id="outline-container-设置评论" class="outline-3">
+<h3 id="设置评论"><a href="#设置评论">设置评论</a></h3>
+<div class="outline-text-3" id="text-orga195b74">
+<p>
+<code>LoveIt</code> 主题给出了很多选择，我用的是 Gitalk<sup class="fsup"><a id="fnr.3.1" class="footref" href="#fn.3" role="doc-backlink">[3]</a></sup> ，它是基于 Github 的 Issue 模块设计的。它十分太巧妙，用一个 Github 仓库做评论存储 —— 并不是作为 code 来存。对于每个仓库，都有一个 Issue 区域，用来记录问题和反馈。每条 issue 下面都可以评论 —— 本质上 Issue 就是一个评论区，它在 Github 的作用就是反馈问题，用来当博客评论简直舒服（当然，评论者必须登录 GitHub 之后才能评论）。
+</p>
+
+<p>
+首先建立一个 Github App，我找不到在哪里，教程里面的 url 直接跳转：<a target="_blank" href="https://github.com/settings/applications/new">Register GiHub Application</a>.
+</p>
+
+
+<div id="orgfa64705" class="figure">
+<p><a href="/../assets/d34b1dfb262ae8296361aa62187c8c7d.png" target="_blank">
+<img src="/../assets/d34b1dfb262ae8296361aa62187c8c7d.png" alt="d34b1dfb262ae8296361aa62187c8c7d.png" /></a>
+</p>
+</div>
+
+<p>
+之后可以到个人设置 - <code>Developer Settings</code> - <code>OAuth Apps</code> 里面管理。
+</p>
+
+<p>
+建好之后会生成一个 <code>Cilent ID</code> 和一个 <code>Client Secrets</code> ，记着。
+</p>
+
+<p>
+然后到 Hugo 的配置里面。如果你用的是我的配置，那么文件就在 <code>params.yaml</code> 里面，如果用的官方单文件配置，找到对应位置即可。
+</p>
+
+<p>
+找到评论这一块，关键词 <code>comment</code> 。 <code>enable</code> 设为 <code>true</code> ，表示开启评论。
+</p>
+
+<p>
+配置 Gitalk ， <code>enable</code> 也设为 <code>true</code> ，然加上几条配置。
+</p>
+
+
+<div id="org4456695" class="figure">
+<p><a href="/../assets/855a13a6d739e9a2ede6a3a1c84360c4.png" target="_blank">
+<img src="/../assets/855a13a6d739e9a2ede6a3a1c84360c4.png" alt="855a13a6d739e9a2ede6a3a1c84360c4.png" /></a>
+</p>
+</div>
+
+<ul class="org-ul">
+<li><code>owner</code>, 仓库拥有者，你的 Github 昵称。</li>
+<li><code>admin</code>, 仓库管理者，一个列表，里面也是你的 Github 昵称。</li>
+<li><code>repo</code>, 仓库名，指明要用哪个仓库的 Issue 来存评论。我用的和博客同一个仓库，方便自动化，你也可以用其他的仓库。只需要名称，我的某个仓库 <code>fingerknight/some-repo</code> ，那么这里就填 <code>some-repo</code></li>
+<li><code>clientId</code>, <code>clientSecret</code> ，就是刚才的提到的。</li>
+</ul>
+
+<p>
+注意，这个 Github 仓库一定要是公开的 <code>public</code> ，不然会出现找不到。
+</p>
+
+<p>
+第一次使用可能会出现如下情况：
+</p>
+
+
+<div id="org45df981" class="figure">
+<p><a href="/../assets/bbb01de56c80b26da5bec455b1801c7e.png" target="_blank">
+<img src="/../assets/bbb01de56c80b26da5bec455b1801c7e.png" alt="bbb01de56c80b26da5bec455b1801c7e.png" /></a>
+</p>
+</div>
+
+<p>
+这是因为对应的 Issue 还没建立，点 <code>使用 Github 登录</code> ，做一些授权就好了。此外，对于新的一篇文章，需要用你带着 Github 的 Cookie 去访问一次，它就会自动建立 Issue，否则，比如其他人看也会出现这个情况。
+</p>
+
+<p>
+目前在 LoveIt 那边有提需求说应该把这个自动化，但目前 (2022-09-12) 还没有实现。
+</p>
+</div>
+
+<div id="outline-container-LoveIt 的 Bug" class="outline-4">
+<h4 id="LoveIt 的 Bug"><a href="#LoveIt 的 Bug">LoveIt 的 Bug</a></h4>
+<div class="outline-text-4" id="text-org076d537">
+<p>
+如果你有好几篇文章同时生成和发布，那么就有可能出现这个 bug ，会导致评论共用，就是 A 文章下面的评论和 B 文章下面的评论一样， A 文章下面发的评论在 B 文章那里也可以看到。
+</p>
+
+<p>
+这个问题是因为二者共用了同一个 Issue ，或者说定位到了同一个 Issue 。Gitalk 是用一个 <code>id</code> 关键字区分不同文章的，你去你的 Issue 可以看到，每个 Issue 都有两个标签，一个是 <code>Gitalk</code> ，一个默认是标准格式日期（我的不是是因为我改了）。前者用来让 Gitalk 知道哪些 Issue 是用来存评论的，哪些是真的问题反馈；后者就是 <code>id</code> ，用来区分不同文章的。
+</p>
+
+
+<div id="orge9d0d98" class="figure">
+<p><a href="/../assets/d37a73ac664364bf59a6680634649d5a.png" target="_blank">
+<img src="/../assets/d37a73ac664364bf59a6680634649d5a.png" alt="d37a73ac664364bf59a6680634649d5a.png" /></a>
+</p>
+</div>
+
+<p>
+LoveIt 的默认 <code>id</code> 是写死的，就是 <code>Date</code> ，所以如果几篇文章同时发布， <code>Date</code> 就是一样的，那就会定位到同一个 Issue 。
+</p>
+
+<p>
+2022-09-11 我已经向项目提了一个 <a target="_blank" href="https://github.com/dillonzq/LoveIt/issues/743">Bug 的 Issue</a> ，等待后续结果。
+</p>
+
+<p>
+手动改如下。在 <code>blog/themes/LoveIt/layouts/partials/comment.html</code> 里面边，找到 Gitalk 相关代码：
+</p>
+
+
+<div id="orgced6b12" class="figure">
+<p><a href="/../assets/209d9c3ab20e3c8b4a658e73050561e5.png" target="_blank">
+<img src="/../assets/209d9c3ab20e3c8b4a658e73050561e5.png" alt="209d9c3ab20e3c8b4a658e73050561e5.png" /></a>
+</p>
+</div>
+
+<p>
+把图示中 <code>id</code> 后面的 <code>.Date</code> 给改掉。 Gitalk 官网说长度小于 50 ，参照网友的意见用 MD5 摘要，所以我改成 <code>(md5 .File.Path)</code> ，文章相对于 <code>blog/content/</code> 的相对路径的 MD5 摘要。
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-工作流程" class="outline-2">
+<h2 id="工作流程"><a href="#工作流程">工作流程</a></h2>
+<div class="outline-text-2" id="text-orgfa89d0f">
+<p>
+至此<b>一个博客就搭建好了</b>，接下来说明它的工作流程。
+</p>
+<ol class="org-ol">
+<li>编写 org 文件。把博客文章的内容写到 org 文件中，记得加头部设置。</li>
+<li>格式化 org 为 md。使用命令 <code>C-c C-e H h</code> 格式化。</li>
+<li>发布成 HTML。把所有要发布的内容格式化成 md 后，可以 <code>hugo server</code> 测试一下，或者直接发布，使用 <code>hugo</code> 就可以看到 <code>project/docs</code> 目录下生成了站点文件。</li>
+<li>最后提交到 Github</li>
+</ol>
+<div class="org-src-container">
+<pre>
+<code class="language-bash">git add *
+git commit -m "注释"
+git push</code>
+</pre>
+
+</div>
+
+<p>
+等一会儿再去访问你的 github.io 应该就好了。
+</p>
+</div>
+</div>
+
+<div id="outline-container-自动化" class="outline-2">
+<h2 id="自动化"><a href="#自动化">自动化</a></h2>
+<div class="outline-text-2" id="text-orga9dc893">
+<p>
+如果每次都那么搞就太麻烦了。因此我写了一些东西，使得整个流程直接一步到位，可以参考。
+</p>
+
+<p>
+地址：<a target="_blank" href="https://github.com/fingerknight/org-hugo-lazy.el">https://github.com/fingerknight/org-hugo-lazy.el</a>，这个流程就是基于我上述的搭建过程写的，如果你是完全按照我上面的搭建 Hugo ，那么这个扩展应该很容易上手。
+</p>
+</div>
+</div>
+
+<div id="outline-container-优化" class="outline-2">
+<h2 id="优化"><a href="#优化">优化</a></h2>
+<div class="outline-text-2" id="text-org67cbd35">
+</div>
+<div id="outline-container-CDN 设置" class="outline-3">
+<h3 id="CDN 设置"><a href="#CDN 设置">CDN 设置</a></h3>
+<div class="outline-text-3" id="text-org61121d0">
+<p>
+复制 LoveIt 目录 <code>themes/LoveIt/assets/data/cdn/</code> 到../blog/assets/data/cdn/~ (<code>assets</code> 需要自己创)<sup class="fsup"><a id="fnr.4.1" class="footref" href="#fn.4" role="doc-backlink">[4]</a></sup>。
+</p>
+</div>
+</div>
+
+<div id="outline-container-Cloudflare Page" class="outline-3">
+<h3 id="Cloudflare Page"><a href="#Cloudflare Page">Cloudflare Page</a></h3>
+<div class="outline-text-3" id="text-orgd1da6f1">
+<p>
+Cloudflare Page 也可以直接托管静态站点了，它是联动 GitHub ，把仓库的 HTML 等站点文件克隆到它的服务器然后部署。参考《<a target="_blank" href="https://zhuanlan.zhihu.com/p/416269228">几分钟、零基础搭建个人网页！- 高速直连，基于Cloudflare Page - 知乎</a>》。
+</p>
+</div>
+</div>
+
+<div id="outline-container-Cloudflare + DNS" class="outline-3">
+<h3 id="Cloudflare + DNS"><a href="#Cloudflare + DNS">Cloudflare + DNS</a></h3>
+<div class="outline-text-3" id="text-org94a3465">
+<p>
+我是自己注册了一个域名，然后用 Cloudflare 托管，具体可以参考我的另一篇博客《<a target="_blank" href="/Computer/20221223T150015.html" target="_blank">GiHub Page + Cloudflare + NameSilo 的域名配置</a>》
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-后记" class="outline-2">
+<h2 id="后记"><a href="#后记">后记</a></h2>
+<div class="outline-text-2" id="text-orgc085e56">
+<p>
+搞了好几天终于算可以了，留一些尾巴后面处理。
+</p>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> 评论功能</li>
+<li class="on"><code>[X]</code> CDN 加速</li>
+<li class="on"><code>[X]</code> 样式调一下，这个主题整体显得比较挤，还有字体。如果有精力把配色也改一下</li>
+<li class="off"><code>[&#xa0;]</code> 还有就是 SEO 、挂友链，挤进搜索引擎，增加曝光度，这个貌似 LoveIt 已经帮忙调好了。</li>
+</ul>
+
+<p>
+希望对你有帮助！
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div id="fn.1" class="footdef"><span class="footnum"> (1) </span><a class="foot2ref" href="#fnr.1.1" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+<a target="_blank" href="https://www.jianshu.com/p/c5297a8bb1e7">Hugo 不完美教程 - II: Hugo 目录组织 - 简书</a>
+</p></div></div>
+
+<div id="fn.2" class="footdef"><span class="footnum"> (2) </span><a class="foot2ref" href="#fnr.2.1" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+<a target="_blank" href="https://wowow005.github.io/posts/20../%E5%A6%82%E4%BD%95%E7%94%A8hugo%E5%92%8Corg-mode%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">如何用 hugo 和 org-mode 搭建个人博客 - 牧师的博客</a>
+</p></div></div>
+
+<div id="fn.3" class="footdef"><span class="footnum"> (3) </span><a class="foot2ref" href="#fnr.3.1" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+Gitalk: <a target="_blank" href="https://github.com/gitalk/gitalk/">https://github.com/gitalk/gitalk/</a>
+</p></div></div>
+
+<div id="fn.4" class="footdef"><span class="footnum"> (4) </span><a class="foot2ref" href="#fnr.4.1" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+<a target="_blank" href="https://www.techkoala.top/hugo_loveit_q_a/">Hugo 搭配 LoveIt 技巧总结 - TechKoala - Input/Output</a>
+</p></div></div>
+
+
+</div>
+</div></div>
+</div>
+<div id="postamble" class="status">
+<center>
+Powered by <a href="https://orgmode.org">Org Mode</a>.
+</center>
+</div>
+<script src="/static/script.js"></script>
+<script src="/static/prism.js"></script>
+</body>
+</html>

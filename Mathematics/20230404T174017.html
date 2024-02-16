@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title> [Calculus] 5. Functions - Ward of Dust </title>
+<meta name="author" content="MrDust">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/static/Slippery/style.css"><link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+<div id="preamble" class="status">
+<div class="header">
+<div class="title">
+<a href="/">Ward of Dust</a>
+</div>
+<div class="navigation">
+<a class="item" href="/archive.html">Archives</a>
+<a class="item" href="/taxonomy.html">Taxonomy</a>
+<a class="item" href="/about.html">About</a></div>
+</div>
+</div>
+<div id="content" class="content">
+<h1 class="title">[Calculus] 5. Functions</h1>
+<div class="post">
+<div class="metadata">
+<div class="date"><span>2023-04-04</span></div>
+<div class="tags">
+<a class="tag" href="/tag/post.html">#post</a> <a class="tag" href="/tag/calculus.html">#calculus</a> <a class="tag" href="/tag/math.html">#math</a></div>
+<div class="category">
+<a href="/category/Mathematics.html">$Mathematics</a>
+</div>
+</div>
+<div class="mathblock definition" id="org3f1bbe2">
+<p><span class="number">Definition 5.1 </span>
+Let \(X,Y\), and let \(P(x,y)\) be a property pertaining to two objects \(x\in X, y\in Y\), such that for every \(x\in X\), there is exactly one \(y\in Y\) for which \(P(x,y)\) is true. We define the <b>function</b> \(f: X\to Y\) defined by \(P\) on the domain \(X\) and range \(Y\) to be the object which, given any input \(x\in X\), assigns an output \(f(x)\in Y\), defined to be the unique object \(f(x)\) for which \(P(x,f(x))\) is true.<sup class="fsup"><a id="fnr.1.1" class="footref" href="#fn.1" role="doc-backlink">[1]</a></sup>
+</p>
+
+</div>
+
+<div class="mathblock definition" id="org547e05e">
+<p><span class="number">Definition 5.2 </span>
+Let \(a\in X\) and \(b\in Y\). We say that \(\lim_{x\to a} f(x) = b\) if
+</p>
+
+<p>
+\[\forall \epsilon > 0 \exists \delta > 0 \forall x\in S[0 < d(x,a) < \delta \Rarr d(f(x),b) < \epsilon]\]
+</p>
+
+</div>
+
+<div class="mathblock remark" id="org9374a8b">
+<p><span class="number">Remark 5.3 </span>
+If there exists \(r > 0\) such that \(B_r(a) \cap S = \varnothing\), then \(\lim_{x\to a}f(x) = b\) holds for every \(b\in Y\).
+</p>
+
+</div>
+
+<div class="mathblock proposition" id="org0edd14f">
+<p><span class="number">Proposition 5.4 </span>
+If \(a\) is a limit point of \(S\), and \(\lim_{x\to a}f(x) = b, \lim_{x\to a} f(x) = b'\), then \(b=b'\).
+</p>
+
+</div>
+<div class="mathblock proof" id="org403bb97">
+<p><span class="number">Proof  </span>
+Suppose \(b\ne b'\), and \(d(b,b') = 3\epsilon\) where \(\epsilon\) is a positive real.
+</p>
+
+<p>
+By definition, for that \(\epsilon\), there exists $\delta_1,\delta_2 &gt;0, such that
+</p>
+
+<p>
+\[ 0 < d(x, a) < \delta_1 \Rarr d(f(x), b) < \epsilon \\
+0 < d(x, a) < \delta_2 \Rarr d(f(x), b') < \epsilon\]
+</p>
+
+<p>
+Let \(\delta = \min\{\delta_1,\delta_2\}\). Then \(0 < d(x,a) < \delta \Rarr d(b,b') \le d(f(x), b) + d(f(x), b') < 2\epsilon\). This is a contradiction.
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock lemma" id="org3e69b58">
+<p><span class="number">Lemma 5.5 </span>
+Let \(f:X\to\R\) be a function. If \(f\) is convergent at some point, then \(f\) is bounded.
+</p>
+
+</div>
+<div class="mathblock proof" id="org2fffc15">
+<p><span class="number">Proof  </span>
+Suppose that \(f\) is not bounded, i.e., \(\forall M > 0 \exists x\in X[|f(x)| > M]\).
+</p>
+
+<p>
+Let \(b:=\lim_{x\to a}f(x)\).
+</p>
+
+<p>
+By definition of limit, \(\forall \epsilon > 0 \exists \delta > 0[0 < d(x,a) < \delta \Rarr |f(x) - b| < \epsilon]\).
+</p>
+
+<p>
+Choose sufficiently big \(\epsilon\) such that \(b + \epsilon > 0\) (since \(b\) may be less than 0), and choose \(M = 2(b+\epsilon)\). Then we have
+</p>
+
+<p>
+\[ M = 2(b+\epsilon) < f(x) < b + \epsilon\]
+</p>
+
+<p>
+this is a contradiction. And hence \(f\) is bounded.
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock proposition" id="org7c89601">
+<p><span class="number">Proposition 5.6 </span>
+Let \((Y,d_y) = (\R^m, d_2)\) and \(f,g: S\to Y\), and let \(\lim_{x\to a} f(x) = b\) and \(\lim_{x\to a} g(x) = c\)
+</p>
+<ol class="org-ol">
+<li>\(\lim_{x\to a}\big(f(x)\pm g(x)\big) = b \pm c\);</li>
+<li>If \((Y,d_y) = (\R, d_2)\), then \(\lim_{x\to a}f(x)g(x) = \big(\lim_{x\to a}f(x)\big)\big(\lim_{x\to a} g(x)\big)\);</li>
+<li>If \((Y,d_y) = (\R, d_2)\) and \(c\ne 0\), then there exists \(\delta > 0\) such that \(g(x)\ne 0\) for all \(x(\ne a) \in B_\delta(a) \cap S\), and \(\lim_{x\to a}\frac{f(x)}{g(x)} = \frac b c\).</li>
+</ol>
+
+</div>
+<div class="mathblock proof" id="org2c416bf">
+<p><span class="number">Proof  </span>
+(for short)
+</p>
+
+<p>
+<i>Proof 1.</i>
+</p>
+
+<p>
+\[|(f(x) \pm g(x)) - (b \pm c)| = |(f(x) - b) \pm (g(x - c))| \le |f(x) - b) + |g(x) - c| < 2\epsilon\]
+</p>
+
+<p>
+<i>Proof 2.</i>
+</p>
+
+<p>
+\[\begin{align*}|f(x)g(x) - bc|
+&= |f(x)g(x) + f(x)c - f(x)c - bc| \\
+&= |f(x)(g(x) - c) + c(f(x) -b)| \\
+&le |f(x)|g(x) - c| + |c||f(x) - b| \\
+& < (M + |c|)\epsilon
+\end{align*}\]
+</p>
+
+<p>
+for some \(M > 0\) such that \(|f(x)| \le M\) for all \(x\in S\) since $f must be bounded (by Lemma 5.5).
+</p>
+
+<p>
+<i>Proof 3.</i>
+</p>
+
+<p>
+Suppose that \(\delta\) does not exist, i.e., \(\forall \delta > 0\exists x(\ne a)\in B_\delta(x)\cap S[g(x) = 0 \Rarr d(g(x), 0) = 0]\).
+</p>
+
+<p>
+Let \(d(c,0) = 2\epsilon\) where \(\epsilon > 0\).
+</p>
+
+<p>
+By definition, \(x(\ne a)\in B_\delta(x)\cap S \Rarr d(g(x), c) < \epsilon\). Then
+</p>
+
+<p>
+\[d(c,0) = 2\epsilon \le d(g(x),c) + d(g(x),0) < \epsilon\]
+</p>
+
+<p>
+Thus that \(\delta\) must exist, such that \(g(x) \ne 0\) for all \(x\) in the ball. And
+</p>
+
+<p>
+\[\begin{align*}|\frac{f(x)}{g(x)} - \frac{b}{c}|
+&= |\frac{f(x)c - g(x)b}{g(x)c}| \\
+&= |\frac{f(x)c - g(x)b}{g(x)c} + f(x)g(x) - f(x)g(x)| \\
+&= |\frac{f(x)(c - g(x)) + g(x)(f(x)-b)}{g(x)c}| \\
+&\le \frac{|f(x)||c - g(x)| + |g(x)||f(x)-b|}{|g(x)c|} \\
+&\le |f(x)||c - g(x)| + |g(x)||f(x)-b| \\
+& < (|f(x)| + |g(x)|)\epsilon \\
+& \le (M_1 + M_2|)\epsilon
+\end{align*}\]
+</p>
+
+<p>
+for some \(M_1,M_2 > 0\) since \(f,g\) are both bounded (by Lemma 5.5)
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock proposition" id="org0379313">
+<p><span class="number">Proposition 5.7 </span>
+Let \(X,Y,Z\) be metric spaces, \(S \sube X, T \sube Y\), and \(f: S\to T, g: T\to Z\). If \(\lim_{x\to a} f(x) = b\), \(\lim_{y\to b} g(y) = c\) and \(b\notin f(S)\), then \(\lim_{x\to a} (g\circ f) (x) = c\).
+</p>
+
+</div>
+<div class="mathblock proof" id="org7d49839">
+<p><span class="number">Proof  </span>
+\[\forall \epsilon > 0 \exists \delta' > 0 \forall y \in T[d(y,b) < \delta' \Rarr d(g(y), c) < \epsilon]\]
+</p>
+
+<p>
+For this \(\delta' >0\), there exists a \(\delta >0\), such that for all \(x\in S\), we have
+</p>
+
+<p>
+\[d(x,a) < \delta \Rarr d(f(x), b) < \delta' \Rarr d(g(f(x)), c) < \epsilon]\]
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock remark" id="org68ba3a2">
+<p><span class="number">Remark 5.8 </span>
+If '\(b\notin f(S)\)' is not guaranteed, then the conclusion may be false. Here is an example.
+</p>
+
+<p>
+Let \(X = Y = \R, Z = [0, + \infty]\), \(S = \R, T = [0, +\infty]\), and let \(f(x) = x^2, g(y) = 3\sqrt{y}\), and consider \(a = -1\). Then we have \(b = \lim_{x\to -1}f(x) = 1, c = \lim_{y\to 1} g(y) = 3\).
+</p>
+
+<p>
+However, let \(h(x) = (g\circ f)(x) = 3x\) from \(\R\) to \([0, +\infty]\), then \(\lim_{x\to -1}h(x) = -3\).
+</p>
+
+</div>
+
+<div class="mathblock definition" id="org7813841">
+<p><span class="number">Definition 5.9 </span>(continuous functions) 
+Give a function \(f: S \to Y\), and \(a\in S\). We say that \(f\) is continuous at \(a\) if \(\lim_{x\to a} f(x) = f(a)\). Furthermore, we say \(f\) is a continuous function if it is continuous at <b>every</b> \(a\in S\).
+</p>
+
+</div>
+
+<div class="mathblock proposition" id="org9af2792">
+<p><span class="number">Proposition 5.10 </span>
+The following statements are equivalent:
+</p>
+<ol class="org-ol">
+<li>\(f: S (\sube X) \to Y\) is a continuous function</li>
+<li>\(\forall V\underset{\text{open}}{\sube} Y \exists U\underset{\text{open}}{\sube} X[a\in U, f(a)\in V \Rarr f(U\cap S) \sube V)]\).</li>
+<li>\(\forall V\underset{\text{open}}{\sube} Y [f^{-1}(V) \underset{\text{open}}{\sube}S]\).</li>
+</ol>
+
+</div>
+<div class="mathblock proof" id="org741c4e7">
+<p><span class="number">Proof  </span>
+<b>Proof 1-2</b>
+</p>
+
+<p>
+For every point \(a \in S\), and \(f(a) \in Y\).
+</p>
+
+<p>
+(\(\Rarr\))
+</p>
+
+<p>
+For any open set \(V\sube Y\), there exists an \(\epsilon > 0\), such that \(B_\epsilon(f(a)) \sube V\) by definition.
+</p>
+
+<p>
+For this \(\epsilon\), \(\exists \delta > 0 \forall x\in S[d(x,a) < \delta \Rarr d(f(x), f(a)) < \epsilon \Rarr f(x) \in V]\).
+</p>
+
+<p>
+Let \(U\) be any other open set such that \(U\cap S \sube B_\delta(a)\). Then we have \(\forall x \in U\cap S\Rarr f(x) \in V\), i.e., \(f(U \cap S) \sube V\).
+</p>
+
+<p>
+(\(\Larr\))
+</p>
+
+<p>
+For every \(\epsilon > 0\), we can always find an open set \(V\) such that \(V \sube B_\epsilon(f(a))\).
+</p>
+
+<p>
+There exist \(\delta_1 > 0\) such that \(B_{\delta_1}(a) \sube U\). And by definition, \(\exists \delta_2 > 0 [B_{\delta_2}(a) \sube S]\). Let \(\delta = \min\{\delta_1,\delta_2\}\), then \(B_\delta(a) \sube B\cap S\).
+</p>
+
+<p>
+\[\forall x\in B_\delta(a) \sube U\cap S \Rarr f(x) \in V \sube B_\epsilon(f(a)) \Rarr d(f(x), f(a)) < \epsilon\]
+</p>
+
+<p>
+i.e., \(\lim{x\to a} f(x) = f(a)\).
+</p>
+
+<p>
+<b>Proof 1-3</b>
+</p>
+
+<p>
+(\(\Rarr\))
+</p>
+
+<p>
+\(\forall x \in f^{-1}(V) (f(x) \in V) \exists \epsilon > 0 [B_\epsilon(f(x)) \sube V]\).
+</p>
+
+<p>
+Since \(f\) is continuous, \(exists \delta >0 [y\in B_\delta(x) \Rarr f(y) \in B_\epsilon(f(x)) \sube V]\), i.e., \(B_\delta(x) \sube f^{-1}(V)\).
+</p>
+
+<p>
+Thus, \(f^{-1}(V)\) is open in \(S\).
+</p>
+
+<p>
+(\(\Larr\))
+</p>
+
+<p>
+For contradiction, suppose that \(f\) is not continuous, i.e, \(\exists x_0 \exists \epsilon > 0 \forall \delta > 0 \exists x \in S[d(x,x_0) < \delta \Rarr d(f(x),f(x_0)) \ge \epsilon]\).
+</p>
+
+<p>
+Let \(V := B_\epsilon(f(x_0))(\sube Y)\). Then \(f^{-1}(V)\) is open too.
+</p>
+
+<p>
+For \(x_0  \in f^{-1}(V)\), there exists an \(r > 0\), such that \(B_r(x_0) \sube f^{-1}(V)\), i.e.,
+</p>
+
+<p>
+\(\forall x \in S[d(x, x_0) < r \Rarr f(x) \in V \Lrarr d(f(x),f(x_0)) < \epsilon]\). A contradiction against the supposition.
+</p>
+
+<p>
+Thus \(f\) is continuous
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock proposition" id="org09d81b4">
+<p><span class="number">Proposition 5.11 </span>
+Let \(f: X\to Y, g: Y \to Z\) be functions. If \(f\) is continuous at \(a\) and \(g\) is continuous at \(f(a)\), then \(g\circ f\) is continuous at \(a\).
+</p>
+
+</div>
+<div class="mathblock proof" id="org3fdd3ac">
+<p><span class="number">Proof  </span>
+Similar as Proposition 5.7
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock lemma" id="orgb7fb1be">
+<p><span class="number">Lemma 5.12 </span>
+If \(f: X \to Y\), and \(A\sube B \sube Y\), then \(f^{-1}(A) \sube f^{-1}(B)\).
+</p>
+
+</div>
+<div class="mathblock proof" id="org3ed4c79">
+<p><span class="number">Proof  </span>
+Were this false, \(\exists x\in f^{-1}(A)[x\notin f^{-1}(B) \Lrarr f(x) \notin B]\).
+</p>
+
+<p>
+However, \(f(x)\sube A\sube B\), which makes a contradiction.
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock proposition" id="org9116ce6">
+<p><span class="number">Proposition 5.13 </span>
+If \(f:X\to Y\) is continuous, \(K(\sube X)\) is compact, then \(f(K)(\sube Y)\) is also compact.
+</p>
+
+</div>
+<div class="mathblock proof" id="orge1cbb4f">
+<p><span class="number">Proof  </span>
+For any given open cover \(V_\alpha(\alpha\in A)\) of \(f(K)\), i.e., \(f(K)\sube \bigcup_{\alpha\in A}V_\alpha}\).
+</p>
+
+<p>
+By Lemma 5.12, \(f^{-1}(f(K)) \sube f^{-1}(\bigcup_{\alpha\in A} V_\alpha)\). And \(K\sube f^{-1}(f(K)), f^{-1}(\bigcup_{\alpha\in A} V_\alpha) = \bigcup_{\alpha\in A}f^{-1}(V_\alpha)\).
+</p>
+
+<p>
+\(f^{-1}(V_\alpha)\) is open in \(X\) for all \(\alpha \in A\). Since \(K\) is compact, \(\exists \alpha_1, \cdots, \alpha_m \in A[K\sube \bigcup_{i = 1}^m f^{-1}(V_{\alpha_i}) = f^{-1}(\bigcup_{i = 1}^m V_{\alpha_i})]\).
+</p>
+
+<p>
+And hence, \(f(K) \sube \bigcup_{i = 1}^m V_{\alpha_i}\), which means \(f(K)\) is compact.
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock theorem" id="orgb728f25">
+<p><span class="number">Theorem 5.14 </span>
+Given \(f:K(\sube X) \to \R\). If \(K\) is compact, then \(\max\{f(x)|x\in K\}\) and \(\min\{f(x)|x\in K\}\) exist.
+</p>
+
+</div>
+<div class="mathblock proof" id="org1f39dba">
+<p><span class="number">Proof  </span>
+By Proposition 5.13, \(f(K)\) is a compact set in \(\R\). By Heine-Borel theorem, \(f(K)\) is bounded and closed.
+</p>
+
+<p>
+\(\sup f(K)\) and \(\inf f(K)\) exist since \(f(K)\) is bounded.
+</p>
+
+<p>
+And \(\sup f(K)\) and \(\inf f(K)\) are both accumulation points.
+</p>
+
+<p>
+By Proposition 7.9, \(f(K)\) is closed, then \(\sup f(K),\inf f(K) \in f(K)\).
+</p>
+
+<p>
+i.e., \(\max f(K) = \sup f(K),\min f(K) = \inf f(K)\).
+<span class="QED">□</span>
+</p>
+</div>
+
+<div class="mathblock theorem" id="orgfaf1d76">
+<p><span class="number">Theorem 5.15 </span>(the intermediate value theorem) 
+Let \(f:[a,b] \to \R\) be a continuous function. \(\forall L\in(f(a),f(b))\exists c\in [a,b][L=f(c)]\).
+</p>
+
+</div>
+<div class="mathblock proof" id="org40dda05">
+<p><span class="number">Proof  </span>
+Without loss of generality, suppose that \(f(a) < f(b)\).
+</p>
+
+<p>
+Let \(a_0 = a, b_0 = b\).
+</p>
+
+<p>
+Consider \(f\left(\frac{a+b}{2}\right)\). If:
+</p>
+<ol class="org-ol">
+<li>\(f\left(\frac{a+b}{2}\right) = L\), then \(\frac{a+b}{2}\) is the point we are looking for.</li>
+<li>\(f\left(\frac{a+b}{2}\right) < L\), let \(a_1 = \frac{a+b}{2}, b_1 = b\)</li>
+<li>\(f\left(\frac{a+b}{2}\right) > L\), let \(a_1 = a, b_1 = \frac{a+b}{2}\).</li>
+</ol>
+
+<p>
+Repeating the operation, we may obtain \([a_n, b_n]\) which is nested intervals with \(f(a_n) < L < f(b_n) (n\in\N)\).
+</p>
+
+<p>
+By theorem of nested intervals, \(\bigcap_{n=1}^\infty [a_n, b_n] = \{c\}\) for some \(c\).
+</p>
+
+<p>
+We claim that \(f(c) = L\).
+<span class="QED">□</span>
+</p>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div id="fn.1" class="footdef"><span class="footnum"> (1) </span><a class="foot2ref" href="#fnr.1.1" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+Terence Tao: Analysis I (Third Edition)
+</p></div></div>
+
+
+</div>
+</div></div>
+</div>
+<div id="postamble" class="status">
+<center>
+Powered by <a href="https://orgmode.org">Org Mode</a>.
+</center>
+</div>
+<script src="/static/script.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="/static/katex.js"></script></body>
+</html>

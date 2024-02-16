@@ -1,0 +1,3509 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title> Emacs 配置 - Ward of Dust </title>
+<meta name="author" content="MrDust">
+<link rel="stylesheet" href="/static/Fantasque/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dracula-prism@2.1.16/dist/css/dracula-prism.min.css">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/static/Slippery/style.css"><link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+<div id="preamble" class="status">
+<div class="header">
+<div class="title">
+<a href="/">Ward of Dust</a>
+</div>
+<div class="navigation">
+<a class="item" href="/archive.html">Archives</a>
+<a class="item" href="/taxonomy.html">Taxonomy</a>
+<a class="item" href="/about.html">About</a></div>
+</div>
+</div>
+<div id="content" class="content">
+<h1 class="title">Emacs 配置</h1>
+<div class="post">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#前言">前言</a></li>
+<li><a href="#前配置 early-init">前配置 early-init</a>
+<ul>
+<li><a href="#定义基本变量">定义基本变量</a></li>
+<li><a href="#启动加速 <sup class="fsup"><a id="fnr.1.1" class="footref" href="#fn.1" role="doc-backlink">[1]</a></sup> <sup>, </sup><sup class="fsup"><a id="fnr.2.1" class="footref" href="#fn.2" role="doc-backlink">[2]</a></sup>">启动加速 </a></li>
+<li><a href="#编码设置 <sup class="fsup"><a id="fnr.3.1" class="footref" href="#fn.3" role="doc-backlink">[3]</a></sup>">编码设置 </a></li>
+<li><a href="#GUI 设置">GUI 设置</a></li>
+<li><a href="#杂七杂八的设置">杂七杂八的设置</a></li>
+<li><a href="#结束 early-init">结束 early-init</a></li>
+</ul>
+</li>
+<li><a href="#插件安装">插件安装</a></li>
+<li><a href="#环境变量">环境变量</a></li>
+<li><a href="#SetupEl">SetupEl</a>
+<ul>
+<li><a href="#简介">简介</a></li>
+<li><a href="#安装">安装</a></li>
+<li><a href="#子系统与上下文">子系统与上下文</a></li>
+<li><a href="#绑定">绑定</a></li>
+<li><a href="#包调用">包调用</a></li>
+<li><a href="#赋值">赋值</a></li>
+<li><a href="#钩子">钩子</a></li>
+<li><a href="#条件">条件</a></li>
+<li><a href="#自定义关键字">自定义关键字</a>
+<ul>
+<li><a href="#:doc">:doc</a></li>
+<li><a href="#:git">:git</a></li>
+<li><a href="#:load-path">:load-path</a></li>
+<li><a href="#:autoload">:autoload</a></li>
+<li><a href="#:after">:after</a></li>
+<li><a href="#:diminish">:diminish</a></li>
+<li><a href="#:advice">:advice</a></li>
+<li><a href="#:face">:face</a></li>
+<li><a href="#:lazy">:lazy</a></li>
+<li><a href="#:global">:global</a></li>
+<li><a href="#:disabled">:disabled</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#基础设置">基础设置</a>
+<ul>
+<li><a href="#Emacs 函数库">Emacs 函数库</a></li>
+<li><a href="#基本按键映射">基本按键映射</a></li>
+<li><a href="#Minibuffer">Minibuffer</a></li>
+</ul>
+</li>
+<li><a href="#外观设置">外观设置</a>
+<ul>
+<li><a href="#字体设置">字体设置</a></li>
+<li><a href="#主题设置">主题设置</a></li>
+<li><a href="#图标">图标</a></li>
+</ul>
+</li>
+<li><a href="#编辑设置">编辑设置</a>
+<ul>
+<li><a href="#基本编辑操作">基本编辑操作</a></li>
+<li><a href="#文件自动刷新">文件自动刷新</a></li>
+<li><a href="#保存历史记录和光标位置">保存历史记录和光标位置</a></li>
+<li><a href="#窗口设置">窗口设置</a>
+<ul>
+<li><a href="#窗口分割">窗口分割</a></li>
+<li><a href="#窗口间移动">窗口间移动</a></li>
+</ul>
+</li>
+<li><a href="#括号增强">括号增强</a>
+<ul>
+<li><a href="#高亮括号">高亮括号</a></li>
+<li><a href="#Smart Parens">Smart Parens</a></li>
+</ul>
+</li>
+<li><a href="#补全增强">补全增强</a>
+<ul>
+<li><a href="#补全前端">补全前端</a></li>
+<li><a href="#补全后端">补全后端</a></li>
+<li><a href="#补全模版">补全模版</a></li>
+</ul>
+</li>
+<li><a href="#Minibuffer 增强">Minibuffer 增强</a></li>
+<li><a href="#Isearch 增强">Isearch 增强</a></li>
+<li><a href="#连续按键">连续按键</a></li>
+</ul>
+</li>
+<li><a href="#编程">编程</a>
+<ul>
+<li><a href="#显示">显示</a>
+<ul>
+<li><a href="#行号">行号</a></li>
+<li><a href="#高亮当前行">高亮当前行</a></li>
+<li><a href="#彩色括号">彩色括号</a></li>
+<li><a href="#不显示 eldoc">不显示 eldoc</a></li>
+<li><a href="#缩进提示">缩进提示</a></li>
+</ul>
+</li>
+<li><a href="#移动到缩进行首">移动到缩进行首</a></li>
+<li><a href="#代码折叠">代码折叠</a></li>
+<li><a href="#LSP">LSP</a></li>
+<li><a href="#Tree-sitter">Tree-sitter</a></li>
+<li><a href="#YAML">YAML</a></li>
+<li><a href="#Emacs Lisp">Emacs Lisp</a>
+<ul>
+<li><a href="#elisp-def">elisp-def</a></li>
+</ul>
+</li>
+<li><a href="#Yuck">Yuck</a></li>
+<li><a href="#Sxhkd">Sxhkd</a></li>
+<li><a href="#Jinja2">Jinja2</a></li>
+<li><a href="#Markdown">Markdown</a></li>
+<li><a href="#Elvish">Elvish</a></li>
+<li><a href="#Lua">Lua</a></li>
+</ul>
+</li>
+<li><a href="#Org mode">Org mode</a>
+<ul>
+<li><a href="#快速改变 heading">快速改变 heading</a></li>
+<li><a href="#快速插入">快速插入</a></li>
+<li><a href="#Org Agenda">Org Agenda</a></li>
+<li><a href="#样式美化">样式美化</a></li>
+<li><a href="#排版">排版</a></li>
+<li><a href="#Latex 导出">Latex 导出</a></li>
+<li><a href="#快速查询">快速查询</a></li>
+</ul>
+</li>
+<li><a href="#工具">工具</a>
+<ul>
+<li><a href="#输入法">输入法</a></li>
+<li><a href="#文件管理">文件管理</a></li>
+<li><a href="#中文分词">中文分词</a></li>
+<li><a href="#大纲展示">大纲展示</a></li>
+<li><a href="#摘抄库">摘抄库</a></li>
+<li><a href="#记忆工具">记忆工具</a></li>
+<li><a href="#音乐播放器">音乐播放器</a></li>
+<li><a href="#邮件和订阅">邮件和订阅</a></li>
+<li><a href="#日志">日志</a></li>
+<li><a href="#番茄闹钟">番茄闹钟</a></li>
+<li><a href="#笔记管理">笔记管理</a></li>
+<li><a href="#博客生成">博客生成</a></li>
+<li><a href="#书籍管理">书籍管理</a></li>
+<li><a href="#文档阅读">文档阅读</a>
+<ul>
+<li><a href="#EPUB">EPUB</a></li>
+<li><a href="#PDF">PDF</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#配置结束">配置结束</a></li>
+</ul>
+</div>
+</div>
+<p>
+Philosophies from Meow
+</p>
+<ol class="org-ol">
+<li>distinguish word and symbol</li>
+<li>select THINGS: paren, squared, etc.</li>
+<li>Redesign my key mapping.</li>
+</ol>
+
+<div id="outline-container-前言" class="outline-2">
+<h2 id="前言"><a href="#前言">前言</a></h2>
+<div class="outline-text-2" id="text-orgda61f8f">
+<p>
+Emacs 配置分享，下载路径在 GitHub 上：<a target="_blank" href="https://github.com/fingerknight/.emacs.d">https://github.com/fingerknight/.emacs.d</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-前配置 early-init" class="outline-2">
+<h2 id="前配置 early-init"><a href="#前配置 early-init">前配置 early-init</a></h2>
+<div class="outline-text-2" id="text-org14ef45a">
+</div>
+
+<div id="outline-container-定义基本变量" class="outline-3">
+<h3 id="定义基本变量"><a href="#定义基本变量">定义基本变量</a></h3>
+<div class="outline-text-3" id="text-orgb9d7905">
+<p>
+定义家目录以及四个目录分类：
+</p>
+<ul class="org-ul">
+<li><code>modules</code>, 插件的存放路径</li>
+<li><code>libraries</code>, 自己写的插件</li>
+</ul>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">;;; -*- lexical-binding: t; -*-
+
+(defconst user-home-directory
+  (pcase system-type
+    ('windows-nt "%userprofile%/")
+    (otherwise "~/"))
+  "User Home directory")
+
+(defconst user-module-directory
+  (expand-file-name "modules" user-emacs-directory)
+  "Where to save the original pacakges")
+
+(defconst user-library-directory
+  (expand-file-name "libraries" user-emacs-directory)
+  "Where to save the custom libraries")
+
+;; Create directories if necessary
+(dolist (type '("module" "library"))
+  (let* ((var-name (intern (concat "user-"
+                                   type
+                                   "-directory")))
+         (dir (symbol-value var-name)))
+    (unless (file-directory-p dir)
+      (make-directory dir))))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-启动加速 <sup class="fsup"><a id="fnr.1.1" class="footref" href="#fn.1" role="doc-backlink">[1]</a></sup> <sup>, </sup><sup class="fsup"><a id="fnr.2.1" class="footref" href="#fn.2" role="doc-backlink">[2]</a></sup>" class="outline-3">
+<h3 id="启动加速 <sup class="fsup"><a id="fnr.1.1" class="footref" href="#fn.1" role="doc-backlink">[1]</a></sup> <sup>, </sup><sup class="fsup"><a id="fnr.2.1" class="footref" href="#fn.2" role="doc-backlink">[2]</a></sup>"><a href="#启动加速 <sup class="fsup"><a id="fnr.1.1" class="footref" href="#fn.1" role="doc-backlink">[1]</a></sup> <sup>, </sup><sup class="fsup"><a id="fnr.2.1" class="footref" href="#fn.2" role="doc-backlink">[2]</a></sup>">启动加速 <sup class="fsup"><a id="fnr.1.1" class="footref" href="#fn.1" role="doc-backlink">[1]</a></sup> <sup>, </sup><sup class="fsup"><a id="fnr.2.1" class="footref" href="#fn.2" role="doc-backlink">[2]</a></sup></a></h3>
+<div class="outline-text-3" id="text-orgbdee46a">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">;;; Basic settings
+;; Speed up starting
+(setq gc-cons-percentage 1.0
+      gc-cons-threshold most-positive-fixnum
+      package-enable-at-startup nil
+      inhibit-compacting-font-caches t)
+
+(let ((old-file-name-handler-alist file-name-handler-alist))
+  ;; https://emacs.nasy.moe/#%E5%88%9D--early-init-
+  (setq-default file-name-handler-alist nil)
+  (defun restore--default ()
+    "Restore gc setting to default."
+    (setq file-name-handler-alist
+          (delete-dups (append file-name-handler-alist
+                               old-file-name-handler-alist))
+          inhibit-trace nil))
+  (add-hook 'emacs-startup-hook #'restore--default))
+
+(setq-default bidi-display-reordering 'left-to-right)
+(setq-default bidi-paragraph-direction 'left-to-right)
+(setq bidi-inhibit-bpa t)</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-编码设置 <sup class="fsup"><a id="fnr.3.1" class="footref" href="#fn.3" role="doc-backlink">[3]</a></sup>" class="outline-3">
+<h3 id="编码设置 <sup class="fsup"><a id="fnr.3.1" class="footref" href="#fn.3" role="doc-backlink">[3]</a></sup>"><a href="#编码设置 <sup class="fsup"><a id="fnr.3.1" class="footref" href="#fn.3" role="doc-backlink">[3]</a></sup>">编码设置 <sup class="fsup"><a id="fnr.3.1" class="footref" href="#fn.3" role="doc-backlink">[3]</a></sup></a></h3>
+<div class="outline-text-3" id="text-orgf0bee9b">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">;; Coding System
+(setq locale-coding-system 'utf-8)
+(set-language-environment "UTF-8")
+(set-default-coding-systems 'utf-8)
+(set-buffer-file-coding-system 'utf-8-unix)
+(set-clipboard-coding-system 'utf-8-unix)
+(set-file-name-coding-system 'utf-8-unix)
+(set-keyboard-coding-system 'utf-8-unix)
+(set-next-selection-coding-system 'utf-8-unix)
+(set-selection-coding-system 'utf-8-unix)
+(set-terminal-coding-system 'utf-8-unix)
+(prefer-coding-system 'utf-8)</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-GUI 设置" class="outline-3">
+<h3 id="GUI 设置"><a href="#GUI 设置">GUI 设置</a></h3>
+<div class="outline-text-3" id="text-orgac1599d">
+<p>
+窗口最大化，关闭各种栏栏框框。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">;; GUI
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+(add-to-list 'default-frame-alist '(vertical-scroll-bars . nil))
+(add-to-list 'default-frame-alist '(horizontal-scroll-bars . nil))
+(add-to-list 'default-frame-alist '(tool-bar-lines . 0))
+(add-to-list 'default-frame-alist '(menu-bar-lines . 0))
+;; (add-to-list 'default-frame-alist '(alpha-background . 85))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-杂七杂八的设置" class="outline-3">
+<h3 id="杂七杂八的设置"><a href="#杂七杂八的设置">杂七杂八的设置</a></h3>
+<div class="outline-text-3" id="text-org4a2248e">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">;; Misc
+(setq url-proxy-services '(("http" . "127.0.0.1:7890")
+                           ("https" . "127.0.0.1:7890"))
+      ring-bell-function 'ignore
+      make-backup-files nil
+      mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil))
+      mouse-wheel-progressive-speed nil
+      next-line-add-newlines t
+      confirm-kill-processes nil
+      enable-recursive-minibuffers t
+      frame-inhibit-implied-resize t
+      ad-redefinition-action 'accept
+      inhibit-startup-message t
+      inhibit-startup-echo-area-message t
+      initial-major-mode 'fundamental-mode
+      initial-scratch-message nil
+      initial-scratch-message nil
+      echo-keystrokes 0.25
+      custom-file (expand-file-name "custom.el" user-emacs-directory)
+      )</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-结束 early-init" class="outline-3">
+<h3 id="结束 early-init"><a href="#结束 early-init">结束 early-init</a></h3>
+<div class="outline-text-3" id="text-orgb2a6fd4">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(provide 'early-init)</code>
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-插件安装" class="outline-2">
+<h2 id="插件安装"><a href="#插件安装">插件安装</a></h2>
+<div class="outline-text-2" id="text-orgbc873af">
+<p>
+折腾来折腾去，还是 git 插件到本地来得实在，直接 load 就行，不考虑编译。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">;;; -*- lexical-binding: t; -*-
+
+;;; Packages
+(require 'vc-git)
+
+(defun git-install (pkg url)
+  "Install pacakges by Git.
+PKG should be a  symbol, and URL should be a string.
+
+If PKG has already existed, then try to reinstall it."
+  (let* ((pkg-name (symbol-name pkg))
+         (dir (expand-file-name pkg-name user-module-directory)))
+    (unless (file-exists-p dir)
+      (message "Fetching %s..." pkg-name)
+      (vc-git-clone url dir nil))))
+
+(defun git-update-all ()
+  "Pull all the repositories in `user-module-directory'"
+  (interactive)
+  (dolist (path (directory-files user-module-directory
+                                 t "[^.]"))
+    (let* ((default-directory path)
+           (proc (vc-git-pull nil)))
+      (set-process-sentinel
+       proc
+       (lambda (process state)         
+         (when (string= (string-trim state) "finished")
+           (with-current-buffer (process-buffer process)
+             (message (buffer-string))
+             (kill-buffer))))))))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-环境变量" class="outline-2">
+<h2 id="环境变量"><a href="#环境变量">环境变量</a></h2>
+<div class="outline-text-2" id="text-orgfce69c8">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(dolist (path (directory-files user-module-directory
+                               t "[^.]"))
+  (add-to-list 'load-path path))
+
+(dolist (path (directory-files user-library-directory
+                               t "[^.]"))
+  (add-to-list 'load-path path))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-SetupEl" class="outline-2">
+<h2 id="SetupEl"><a href="#SetupEl">SetupEl</a></h2>
+<div class="outline-text-2" id="text-orge98761d">
+</div>
+<div id="outline-container-简介" class="outline-3">
+<h3 id="简介"><a href="#简介">简介</a></h3>
+<div class="outline-text-3" id="text-org3c15289">
+<p>
+<a target="_blank" href="https://git.sr.ht/~pkal/setup">setup.el</a> 是一套宏，可以用于做包和模块的管理。与各种包管理器类似，在 <code>(setup feature ...)</code> 中通过各种关键字来实现各种各样的功能。它提供了一套基础的关键字，很基础。但是自定义关键字非常简单。
+</p>
+
+<p>
+setup.el 内置关键字有：
+</p>
+<ul class="org-ul">
+<li>上下文 <code>:with-feature</code>, <code>:with-mode</code>, <code>:with-map</code>, <code>:with-hook</code>, <code>:with-function</code></li>
+<li>绑定 <code>:global</code> <code>:bind</code>, <code>:unbind</code>, <code>:rebind</code>, <code>:bind-into</code></li>
+<li>包调用 <code>:package</code>, <code>:requrie</code>, <code>:as-load</code></li>
+<li>赋值 <code>:option</code>, <code>:local-set</code></li>
+<li>钩子 <code>:hook</code>, <code>:hook-into</code>, <code>local-hook</code></li>
+<li>条件 <code>:only-if</code>, <code>:file-match</code>, <code>:when-loaded</code>, <code>:and</code>, <code>:if-package</code>, <code>:if-feature</code></li>
+</ul>
+<p>
+看一个简单的例子：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup rainbow-delimiters
+  (:package rainbow-delimiters)
+  (:require rainbow-delimiters-mode)
+  (:hook-into prog-mode)
+  ;; more body
+  )</code>
+</pre>
+
+</div>
+
+<p>
+定义了一个 <code>rainbow-delimiters</code> 的子系统； <code>:package</code> 是说如果给定的包不存在，则会通过 <code>packge-install</code> 去安装它； <code>:require</code> 就是 require 这个包； <code>:hook-into</code> 就是把 <code>rainbow-delimiters-mode</code> 添加到 <code>prog-mode-hook</code> 中。之后还可以写上各种各样的函数。
+</p>
+
+<p>
+<a target="_blank" href="https://www.emacswiki.org/emacs/SetupEl">Emacs Wiki</a> 上给出了许多详细完好的例子。
+</p>
+</div>
+</div>
+
+<div id="outline-container-安装" class="outline-3">
+<h3 id="安装"><a href="#安装">安装</a></h3>
+<div class="outline-text-3" id="text-orgc78f513">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">;;; SetupEl
+(git-install 'setup "https://git.sr.ht/~pkal/setup")
+(add-to-list 'load-path (expand-file-name "setup" user-module-directory))
+(require 'setup)</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-子系统与上下文" class="outline-3">
+<h3 id="子系统与上下文"><a href="#子系统与上下文">子系统与上下文</a></h3>
+<div class="outline-text-3" id="text-org300d9ca">
+<p>
+<code>(setup feature)</code> 表明配置一个名为 <code>feature</code> 的子系统。这个名字可以任意，可以是已存在的包名。如果是后者，后续可以方便的传入一些参数。
+</p>
+
+<p>
+setup 子系统的过程中，会保持几个变量： <code>feature</code>, <code>mode</code>, <code>map</code>, <code>hook</code>, <code>function</code>, 这几个变量都应与子系统相关联，使得子系统配置过程中变量的调用更加可靠。
+</p>
+
+<p>
+<code>feature</code> 就是一个子系统，在逻辑上是一堆变量和函数的集合，不太合适也可以把它理解为 package 。feature 会延伸出其他变量的定义。
+</p>
+
+<p>
+比如给定 feature 为 <code>rainbow-delimiters</code>, 在不做改动的情况下：
+</p>
+<ul class="org-ul">
+<li>mode 是 feature 的延拓，为 <code>rainbow-delimiters-mode</code></li>
+<li>function 同 mode</li>
+<li>hook 是 mode 的延拓，为 <code>rainbow-delimiters-mode-hook</code></li>
+<li>map 是 mode 的延拓，为 <code>rainbow-delimiters-mode-map</code></li>
+</ul>
+
+<p>
+这些延拓都是为了后续使用的方便。如前面例子，要加一个 hook, 本来的写法应该是
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)</code>
+</pre>
+
+</div>
+
+<p>
+在 setup 下是
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(:hook-into prog-mode)</code>
+</pre>
+
+</div>
+
+<p>
+<code>prog-mode</code> 会延拓成 <code>prog-mode-hook</code>; <code>:hook-into</code> 会把当前系统的 function 也就是 <code>rainbow-delimiters-mode</code> （默认情况下同 mode）加入到钩子中。如此做一番抽象，配置就显得明晰而简练。
+</p>
+
+<p>
+那几个 with 相关的关键字是为了改变当前系统下的默认延拓。比较典型的例子，minad 大神开发的插件如 vertico, corfu. <code>(setup cofu)</code> 系统下的 map 默认为 <code>corfu-mode-map</code>, 因为 feature 延拓为 mode, 再延拓为 map. 但是人家实际上的 map 是 <code>corfu-map</code>, 这时就需要用 with 来改变上下文：
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup corfu
+  (:with-map corfu-map
+    ;; 系统d  map 切换到 `corfu-map'
+
+    )
+  )</code>
+</pre>
+
+</div>
+
+<p>
+注意， <code>:with-feature</code> 和 <code>:with-mode</code> 依然会改变 function, map 和 hook, 因为它们是前二者的延拓. 只有 with 后三者不会影响其他的变量。
+</p>
+
+<p>
+至此，你应该大致理解了子系统内部的几个变量的关系，以及窥探了后续绑定和使用过程的抽象所带来的便利。接下来便是对各个关键词进行介绍。
+</p>
+</div>
+</div>
+
+<div id="outline-container-绑定" class="outline-3">
+<h3 id="绑定"><a href="#绑定">绑定</a></h3>
+<div class="outline-text-3" id="text-orge82fec9">
+<p>
+<code>:global</code> 用于全局绑定，无关 feature. 如 <code>(:global "RET" newline-and-indent)</code>
+</p>
+
+<p>
+<code>:bind</code> 绑定到当前系统的 map. 如 <code>(:with-feature org (:bind "C-c s" org-schedule))</code>  就会在 <code>org-mode-map</code> 下绑定按键。它是 <code>after-loaded</code> 的（详见<a href="#自定义关键字">自定义关键字</a>），也就是它会等当前系统加载之后才绑定（防止对应的变量还没有定义），所以展开之后其实是：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(with-eval-after-load 'org
+  (define-key 'org-mode-map "C-c s" #'org-schedule))</code>
+</pre>
+
+</div>
+
+<p>
+此外，它还是 <code>repeatable</code> 的，也就是可以连续绑定，如：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(:bind "C-c s" org-schedule
+       "C-s d" org-deadlin)</code>
+</pre>
+
+</div>
+
+<p>
+,所有五个绑定关键字都是 <code>repeatable</code>, 也就是可以连续输入。
+</p>
+
+<p>
+<code>:unbind</code> 清空按键绑定， <code>:rebind</code> 重新绑定按键。
+</p>
+
+<p>
+<code>:bind-into</code> 绑定特定的 map. 比如说前面的 corfu 的例子，可以不用 <code>:with-map</code> 切换上下文，直接 <code>(:bind-into corfu-map ...)</code> 即可。
+</p>
+
+<p>
+除了 <code>:global</code> 的绑定都是 <code>after-loaded</code> 的，只要 feature 设置正确了，就不会出现 map 还没定义的情况。
+</p>
+</div>
+</div>
+
+<div id="outline-container-包调用" class="outline-3">
+<h3 id="包调用"><a href="#包调用">包调用</a></h3>
+<div class="outline-text-3" id="text-org24e3380">
+<p>
+前面提到过 <code>:package</code> 是用来安装包的，它指定了 shorthand （详见<a href="#自定义关键字">自定义关键字</a>），所以可以用来做 feature. 如下面这个系统的 feature 是 <code>simple</code>.
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:package simple)
+  )</code>
+</pre>
+
+</div>
+
+<p>
+<code>:package</code> 是 repeatable 所以可以一次安装多个包。但是只有第一个包会作为系统的 feature. 因为我并不是用的自带 <code>package.el</code> 的安装插件，所以后续我会写一个自定义的安装插件的关键字。
+</p>
+
+<p>
+<code>:require</code> 调用包，repeatable, 且有 shorthand, 所以同样可以作为系统的 feature.
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:require cl-lib)
+  )</code>
+</pre>
+
+</div>
+
+<p>
+<code>:also-load</code> 用来 require 后续包。它是 after-loaded, 因此只要在 feature 加载之后才会调用，强调调用顺序。
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup cofu
+  (:also-load corfu-popinfo)
+  (:audoload corfu-mode))</code>
+</pre>
+
+</div>
+<p>
+只要在使用了 <code>corfu-mode</code> 这个 autoload 后，corfu 这个 feature 加载，然后才会 requrie <code>corfu-popinfo</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-赋值" class="outline-3">
+<h3 id="赋值"><a href="#赋值">赋值</a></h3>
+<div class="outline-text-3" id="text-org55e8255">
+<p>
+<code>:option</code> 是一个集大成的赋值方法，它是 repeatable, 因此使用方法和 <code>setq</code> 类似。如
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(:option savehist-autosave-interval 300
+         history-length 1000
+         kill-ring-max 300
+         history-delete-duplicates t)</code>
+</pre>
+
+</div>
+
+<p>
+说它集大成的之一是它集成了 <code>set-default</code> 和 <code>custom</code>, 也就是它可以用来设置 custom 的变量，且无视赋值位置，这一来便无需知晓某个变量的赋值应该是在 require 之前还是之后。
+</p>
+
+<p>
+其二是因为它还能对列表进行赋值。以环境变量为例，设置都是 <code>(add-to-list 'load-path "path")</code>. 通过 <code>:option</code> 设置为 <code>(:option (prepend load-path) "path")</code>.
+</p>
+
+<p>
+<code>prepend</code> 意思是把输入插入到列表前端，如果以存在则跳过。对应的是 <code>append</code>, 把输入放置到列表末尾。还有一个 <code>remove</code>, 就是把输入从列表中移除。
+</p>
+
+<p>
+输入可以是一个列表，然后声名方式改变：
+</p>
+<ul class="org-ul">
+<li><code>prepend*</code> 把输入列表中的每个元素按顺序插入到列表变量（也就是上面例子中的 <code>load-path</code> ）的开头，如果以存在则跳过</li>
+<li><code>append*</code> 把输入列表中的每个元素按顺序接入到列表变量的末尾，如果以存在则跳过</li>
+<li><code>remove*</code> 移除列表变量中所有在输入列表中的元素</li>
+</ul>
+
+<p>
+还有一个局部赋值的关键字 <code>:local-set</code>, 使用方法与 <code>:option</code> 相同，只是它用的是 <code>setq-local</code> 来在当前 buffer 中进行局部赋值。
+</p>
+</div>
+</div>
+
+<div id="outline-container-钩子" class="outline-3">
+<h3 id="钩子"><a href="#钩子">钩子</a></h3>
+<div class="outline-text-3" id="text-org1317c77">
+<p>
+<code>:hook</code>, repeatable, 输入的是函数，把这些函数都钩到当前系统的 hook 中。如：
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup prog-mode
+  (:hook hl-mode))</code>
+</pre>
+
+</div>
+
+<p>
+用的更多的是 <code>:hook-into</code>, 同样 repeatable, 输入的是钩子，把当前系统的函数添加到这些钩子中。如把 <code>elisp-def-mode</code> 添加到钩子 <code>emacs-lisp-mode-hook</code> 和 <code>ielm-mode-hook</code> 中：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup elisp-def
+  (:require elisp-def)
+  (:hook-into emacs-lisp-mode ielm-mode))</code>
+</pre>
+
+</div>
+
+<p>
+<code>local-hook</code> 同 <code>:hook</code>, 只是局部添加钩子。
+</p>
+
+<p>
+以上的钩子操作都不是 after-loaded, 也就是需要钩子触发前 require 或 autoload 对应的函数。
+</p>
+</div>
+</div>
+
+<div id="outline-container-条件" class="outline-3">
+<h3 id="条件"><a href="#条件">条件</a></h3>
+<div class="outline-text-3" id="text-orgfa18029">
+<p>
+<code>:only-if</code> 判断条件，条件为假时整个 setup 退出。
+</p>
+
+<p>
+<code>:file-match</code> 这个就是常用的 mode 匹配文件名的配置。比如要把 yaml-mode 匹配到 <code>.yml</code> 或 <code>.yaml</code> 为后缀的文件，则配置：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:require yaml-mode)
+  (:file-match "\\.\\(yml\\|yaml\\)\\'"))</code>
+</pre>
+
+</div>
+
+<p>
+<code>:when-loaded</code> 当系统 feature 加载之后执行的操作， <code>(:when-loaded ...)</code> 等价于 <code>(with-eval-after-load 'feature ...)</code>. 当时文档中不建议使用这个关键字，因为它潜在的使用的系统 feature, 应该明确指定等待哪个 feature 加载。后续使用改良后的 <code>:after</code> 。
+</p>
+
+<p>
+<code>:if-package</code> 如果包未安装则退出， <code>:if-feature</code> 如果不是 feature (feature 未加载则退出)。简单理解，前者是看包有没有安装到本地，后者是看包有没有加载到 Emacs. 
+</p>
+
+<p>
+<code>:and</code> 多个判断条件，使用同 <code>cond</code>, 当有一个为假时，setup 退出。最后一个判断 <b>*条件</b>用来修改 feature. 我自己没用过这个关键字，具体行为不太清楚。
+</p>
+</div>
+</div>
+
+<div id="outline-container-自定义关键字" class="outline-3">
+<h3 id="自定义关键字"><a href="#自定义关键字">自定义关键字</a></h3>
+<div class="outline-text-3" id="text-org7a0ee5b">
+<p>
+<a target="_blank" href="https://www.emacswiki.org/emacs/SetupEl">Emacs Wiki</a> 上给出了许多有用的自定义关键字，我使用了其中一些。自定义关键字的框架是：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup-define :keywords
+  macro
+  args...)</code>
+</pre>
+
+</div>
+
+<p>
+其中，macro 返回一段宏，args 指定关键字的属性。
+</p>
+
+<p>
+setup 的执行过程就是把 body 当作宏来执行，因此关键字函数返回的便是一段宏，或者可执行的代码。
+</p>
+</div>
+
+<div id="outline-container-:doc" class="outline-4">
+<h4 id=":doc"><a href="#:doc">:doc</a></h4>
+<div class="outline-text-4" id="text-orgfb6604e">
+<p>
+先定义一个简单的 <code>:doc</code>, 用来记录当前系统的文档信息 <sup class="fsup"><a id="fnr.1.2" class="footref" href="#fn.1" role="doc-backlink">[1]</a></sup>。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup-define :doc
+  (lambda (_)
+    nil)
+  :documentation "Document for the setup package."
+  :repeatable t)</code>
+</pre>
+
+</div>
+
+<p>
+macro 返回的是 nil, 也就是这个关键词并不会真正参与到 setup 中，它的作用只是在代码中作为 document 的存在，让人看见。这里有两个参数： <code>:documentation</code> 当前关键字的文档， <code>:repeatable</code> 前面提到过的，是否可重复，如以下：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup dash
+  (:doc "A modern list API for Emacs."
+        "https://github.com/magnars/dash.el")
+  (:require dash))</code>
+</pre>
+
+</div>
+
+<p>
+看起来输入的是两个参数，但因为是 repeatable, 实际上是两个参数返回了两个宏，并不是两个参数同时传到一个宏。
+</p>
+</div>
+</div>
+
+<div id="outline-container-:git" class="outline-4">
+<h4 id=":git"><a href="#:git">:git</a></h4>
+<div class="outline-text-4" id="text-org69ead8c">
+<p>
+写一个 <code>:git</code> 作为 <code>:package</code> 的替代：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup-define :git
+  (lambda (package url)
+    `(progn
+       (git-install ',package ,url)
+       (add-to-list 'load-path (expand-file-name (format "%s" ',package)
+                                                 user-module-directory))))
+  :documentation "Install package by Git if it hasn't been installed yet.
+CON is a list, with package-name as first element,
+and Git repository URL as second element.
+The first PACKAGE can be used to deduce the feature context."
+  :repeatable t
+  :shorthand #'cadr)</code>
+</pre>
+
+</div>
+
+<p>
+使用如下：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git no-littering "https://github.com/emacscollective/no-littering"
+             compat "https://github.com/emacsmirror/compat"))</code>
+</pre>
+
+</div>
+
+<p>
+<code>:git</code> 的定义输入的是两个参数，同时又是 repeatable, 因此输入参数一定是偶数，两两一组传入，返回一半数量的宏。
+</p>
+
+<p>
+这里定义了 <code>:shorthand</code>, 它是一个函数，传入整个关键字函数，其返回值可以作为新的 feature. 如上面的例子就是将整个 <code>(:git compat "https://github.com/emacsmirror/compat" no-littering "https://github.com/emacscollective/no-littering")</code> 作为一个列表传入，返回的是 <code>no-littering</code>,  <code>no-littering</code> 就可以作为系统的 feature.
+</p>
+</div>
+</div>
+
+<div id="outline-container-:load-path" class="outline-4">
+<h4 id=":load-path"><a href="#:load-path">:load-path</a></h4>
+<div class="outline-text-4" id="text-org9d6feaa">
+<p>
+定义环境变量关键字，它可以传入一个 sexp, 把它的返回值加入环境变量，也可以是绝对路径，还可以是相对路径，相对于当前 feature 所在的路径（就是 <code>guess-path</code> ），最后返回一个 <code>add-to-list</code> 的宏。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup-define :load-path
+  (lambda (path)
+    (when (and (stringp path)
+               (not (file-name-absolute-p path)))
+      (let ((guess-path (expand-file-name
+                         path
+                         (expand-file-name (format "%s" (setup-get 'feature))
+                                           user-module-directory))))
+        (when (file-exists-p guess-path)
+          (setq path guess-path))))
+    `(add-to-list 'load-path ,path))
+  :documentation "Update load-path."
+  :repeatable t)</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-:autoload" class="outline-4">
+<h4 id=":autoload"><a href="#:autoload">:autoload</a></h4>
+<div class="outline-text-4" id="text-org8cddd4d">
+<p>
+<code>:autoload</code> 是基于当前系统的 feature 去查找，必要时用 <code>:with-feature</code> 切换上下文 <sup class="fsup"><a id="fnr.4.1" class="footref" href="#fn.4" role="doc-backlink">[4]</a></sup>。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup-define :autoload
+  (lambda (func)
+    (let ((fn (if (memq (car-safe func)
+                        '(quote function))
+                  (cadr func)
+                func)))
+      `(unless (fboundp (quote ,fn))
+         (autoload (function ,fn) ,(symbol-name (setup-get 'feature)) nil t))))
+  :documentation "Autoload COMMAND if it is not already bound."
+  :repeatable t
+  :signature '(FUNC ...))</code>
+</pre>
+
+</div>
+<p>
+这里有一个新的参数 <code>:signature</code> ，它是嵌入文档中的信息，用于解释输入的参数。上面给的意思就是在文档中说明输入可以是一串函数。
+</p>
+</div>
+</div>
+
+<div id="outline-container-:after" class="outline-4">
+<h4 id=":after"><a href="#:after">:after</a></h4>
+<div class="outline-text-4" id="text-org3bb6c7f">
+<p>
+改良版的 <code>:when-loaded</code>, 它明确指定一个 feature 来使用 <code>with-eval-after-load</code>.
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup-define :after
+  (lambda (features &amp;rest body)
+    (let (bodies)
+      (dolist (feature (if (listp features) features (list features)))
+        (push `(with-eval-after-load ',feature
+                 (:with-feature ,feature
+                   ,@body))
+              bodies))
+      (macroexp-progn (nreverse bodies))))
+  :documentation "Eval BODY after FEATURES.
+If FEATURES is a list, apply BODY to all elements inside."
+  :indent 1)</code>
+</pre>
+
+</div>
+
+<p>
+这里有一个新的参数 <code>:indent</code> ，它用来控制 emacs 显示这段关键词相关代码时的缩进。类型是整数，表示第几个参数换行时缩进。以内置的 <code>:bind-into</code> 为例。如果不设置（即为 0），那么它就会是这样的缩进：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(:bind-into map
+            "C-c" cmd)</code>
+</pre>
+
+</div>
+
+<p>
+丑的过于离谱。设置 <code>:indent 1</code> 之后就会是：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(:bind-into map
+  "C-c" cmd)</code>
+</pre>
+
+</div>
+
+<p>
+这样看上去就舒服多了。这样应当可以理解它的作用了。
+</p>
+</div>
+</div>
+
+<div id="outline-container-:diminish" class="outline-4">
+<h4 id=":diminish"><a href="#:diminish">:diminish</a></h4>
+<div class="outline-text-4" id="text-org3f7d376">
+<p>
+名字取自 <a target="_blank" href="https://github.com/myrjola/diminish.el">diminish.el</a> 包，用来移除当前 minor-mode 在 mode-line 上的显示 <sup class="fsup"><a id="fnr.4.2" class="footref" href="#fn.4" role="doc-backlink">[4]</a></sup>。
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup-define :diminish
+  (lambda ()
+    (let ((mode (setup-get 'mode)))
+      `(:option minor-mode-alist
+                (delq (assq ',mode minor-mode-alist)
+                      minor-mode-alist))))
+  :documentation "Hide the mode-line lighter of the current mode."
+  :after-loaded t)</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-:advice" class="outline-4">
+<h4 id=":advice"><a href="#:advice">:advice</a></h4>
+<div class="outline-text-4" id="text-orge4b31b4">
+<p>
+添加 advice, 采用的是类似 <code>define-advice</code> 的形式 <sup class="fsup"><a id="fnr.4.3" class="footref" href="#fn.4" role="doc-backlink">[4]</a></sup>。
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup-define :advice
+  (lambda (symbol where arglist &amp;rest body)
+    (let ((name (gensym "setup-advice-")))
+      `(progn
+         (defun ,name ,arglist ,@body)
+         (advice-add ',symbol ,where #',name))))
+  :documentation "Add a piece of advice on a function.
+See `advice-add' for more details."
+  :after-loaded t
+  :debug '(sexp sexp function-form)
+  :indent 3)</code>
+</pre>
+
+</div>
+
+<p>
+使用方法：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(:advice old-func :before (a b c)
+  body)
+
+;; 等价于
+(define-advice old-func (:before (a b c))
+  body)
+
+;; 等价于
+(advice-add old-func
+  :before
+  (lambda ()
+    body))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-:face" class="outline-4">
+<h4 id=":face"><a href="#:face">:face</a></h4>
+<div class="outline-text-4" id="text-org60062ac">
+<p>
+这个关键字和 <code>:advice</code> 一样有点无聊，但是还是把它包装起来了。通过调用 <code>set-face-attribute</code> 方法来设置字体样式。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup-define :face
+  (lambda (face prop spec)
+    `(set-face-attribute ',face nil ,prop ,spec))
+  :documentation "Set FACE's attributes."
+  :repeatable '(1 . t)
+  :after-loaded t
+  :indent 1)</code>
+</pre>
+
+</div>
+
+<p>
+这里 repeatable 出现了一种新的赋值方式，一个关联列表。前者表示公共参数的数量，后者表示各自的剩余参数的数量，t 表示全部。
+</p>
+
+<p>
+以这个 <code>:face</code> 为例：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(:face common
+  a b
+  c d)</code>
+</pre>
+
+</div>
+
+<p>
+此时会返回两个宏，分别是 <code>(:face common a b)</code>, <code>(:face common c d)</code>. 前一个 repeatable 表示公共参数的数量，如果为 1，那么第一个参数就会都传入不同的宏中，如果为 2 就会作为前两个参数都传入不同的宏中，以此类推。
+</p>
+
+<p>
+t 表示补满剩下的参数。公共参数为 1，还需传入 2 个参数，所以最终得到 2 个宏。假设公共参数为 2，还需传入 1 个参数，所以最终得到 3 个宏（总共 5 个参数）。
+</p>
+
+<p>
+希望你能理解。
+</p>
+
+<p>
+所以 <code>:face</code> 使用方法：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(:face line-number-current-line
+  :foreground (face-attribute 'error :foreground)
+  :background (face-attribute 'highlight :background)
+  :weight 'bold
+  :slant 'normal)</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-:lazy" class="outline-4">
+<h4 id=":lazy"><a href="#:lazy">:lazy</a></h4>
+<div class="outline-text-4" id="text-org50caaae">
+<p>
+懒加载，把要执行的 body 封装到一个函数里面，执行这个函数才会释放里面的内容。比如有一些比较大的插件就可以用 lazy 封装，把封装得到的函数绑定到快捷键上，当快捷键触发时才 requrie 。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup-define :lazy
+  (lambda (name commands &amp;rest body)
+    (unless (boundp 'setup-lazy--list)
+      (defvar setup-lazy--list nil))
+    (setq name (intern (format "setup-lazy-%s" name))
+          body (setup-expand body))
+    `(defun ,name ()
+       (interactive)
+       (unless (member ',name setup-lazy--list)
+         ,body
+         (add-to-list 'setup-lazy--list ',name))
+       ,commands))
+  :documentation "Lazy load. Generate a function, named `setup-lazy-NAME',
+ wrapping all BODY in it. COMMANDS will be executed after BODY. From that on,
+`setup-lazy-NAME' can always replace COMMANDS"
+  :indent 2)</code>
+</pre>
+
+</div>
+
+<p>
+例子：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(:lazy dirvish (dirvish)
+  (:require dirvish)
+  (:option dirvish-override-dired-mode t))</code>
+</pre>
+
+</div>
+
+<p>
+这段代码会生成一个函数 <code>setup-lazy-dirvish</code>, 执行之后它会先 require <code>dirivsh</code>, 设置覆盖 dired mode, 最后执行 <code>(dirvish)</code>. 如果不调用这个函数，里面的 require 什么的都不会加载。一旦加载之后，再次调用 <code>setup-lazy-dirvish</code>, body 也不再会去执行，只会执行 command 也就是 <code>(dirvish)</code>. 此时 <code>(setup-lazy-dirvish)</code> 和  <code>(dirvish)</code> 已经等价了，所以快捷键绑定前者即可。
+</p>
+</div>
+</div>
+
+<div id="outline-container-:global" class="outline-4">
+<h4 id=":global"><a href="#:global">:global</a></h4>
+<div class="outline-text-4" id="text-org15ccad8">
+<p>
+原本 <code>:global</code> 就是单纯用来绑定全局按键的，现在加一个 hook, 把对应的按键也绑到 minibuffer 上，这是去除 modalka 的重要一步
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup-define :global
+  (lambda (key command)
+    `(progn
+       (global-set-key ,key ,command)
+       (define-key minibuffer-mode-map ,key ,command)))
+  :documentation "Globally bind KEY to COMMAND, also in minibuffer."
+  :debug '(form sexp)
+  :ensure '(kbd func)
+  :repeatable t)</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-:disabled" class="outline-4">
+<h4 id=":disabled"><a href="#:disabled">:disabled</a></h4>
+<div class="outline-text-4" id="text-org128bb53">
+<p>
+停止后续setup, 用来调试或者弃用某个 feature.
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup-define :disabled
+  #'setup-quit
+  :documentation "Unconditionally abort the evaluation of the current body.")</code>
+</pre>
+
+</div>
+
+<p>
+无参数，直接在最开始 <code>(:disabled)</code> 即可。
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-基础设置" class="outline-2">
+<h2 id="基础设置"><a href="#基础设置">基础设置</a></h2>
+<div class="outline-text-2" id="text-org6283be7">
+</div>
+<div id="outline-container-Emacs 函数库" class="outline-3">
+<h3 id="Emacs 函数库"><a href="#Emacs 函数库">Emacs 函数库</a></h3>
+<div class="outline-text-3" id="text-org9448262">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git dash "https://github.com/magnars/dash.el")
+  (:doc "A modern list API for Emacs."))
+
+(setup (:git s "https://github.com/magnars/s.el")
+  (:doc "String manipulation library"))
+
+(setup (:git f "https://github.com/rejeep/f.el")
+  (:doc "Modern APIs for working with files and directories"))
+
+(setup (:git ts "https://github.com/alphapapa/ts.el")
+  (:doc "A date and time library for Emacs."))
+
+(setup (:git ht "https://github.com/Wilfred/ht.el")
+  (:doc "The missing hash table library for Emacs."))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-基本按键映射" class="outline-3">
+<h3 id="基本按键映射"><a href="#基本按键映射">基本按键映射</a></h3>
+<div class="outline-text-3" id="text-orgb77a80d">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup keys
+  (:doc "Basic key settings.")
+  (:global
+   ;; "RET" newline-and-indent
+           "C-h" backward-char
+           "C-j" next-line
+           "C-k" previous-line
+           "C-l" forward-char
+           "C-e" backward-word
+           "C-r" forward-word
+           "C-a" dust/beginning-of-line
+           "C-b" dust/end-of-line
+           "C-w" kill-ring-save
+           "M-w" kill-region
+           "M-r" scroll-up-command
+           "M-e" scroll-down-command            
+           "C-z" undo
+           "M-z" undo-redo            
+           "C-t" recenter-top-bottom
+           "M-t" move-to-window-line-top-bottom
+           "C-q" comment-line
+           "C-s" save-buffer            
+           "C-r" dust/forward-word
+           "C-e" dust/backward-word
+
+           "C-&lt;backspace&gt;" dust/delete-previous-word
+           "C-&lt;delete&gt;" dust/delete-next-word
+           "C-p" help-command)
+  )</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-Minibuffer" class="outline-3">
+<h3 id="Minibuffer"><a href="#Minibuffer">Minibuffer</a></h3>
+<div class="outline-text-3" id="text-org0725ada">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup minibuffer
+  (:doc "Settings on minibuffer.")
+  (:bind "C-j" next-line)
+  (:with-hook minibuffer-setup-hook
+    (:hook (lambda ()
+             (when (eq this-command 'eval-expression)
+               (corfu-mode t)
+               (smartparens-mode t))))))</code>
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-外观设置" class="outline-2">
+<h2 id="外观设置"><a href="#外观设置">外观设置</a></h2>
+<div class="outline-text-2" id="text-orgc651f53">
+</div>
+<div id="outline-container-字体设置" class="outline-3">
+<h3 id="字体设置"><a href="#字体设置">字体设置</a></h3>
+<div class="outline-text-3" id="text-org2a80dd3">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup faces
+  (:doc "Faces setting")
+  (:with-hook window-setup-hook
+    (:hook (lambda ()
+             ;; default
+             (set-face-attribute 'default nil
+                                 :font
+                                 (font-spec :family "FantasqueSansM Nerd Font Mono"
+                                            :size 20))
+             ;; unicode
+             (set-fontset-font t 'unicode "WenQuanYi Zen Hei Mono")
+             ;; cn
+             (set-fontset-font t 'han (font-spec :family "LXGW WenKai Mono"))
+             ))))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-主题设置" class="outline-3">
+<h3 id="主题设置"><a href="#主题设置">主题设置</a></h3>
+<div class="outline-text-3" id="text-org3cba1ab">
+<p>
+<a target="_blank" href="https://draculatheme.com/">Dracule Theme</a> 的忠实粉丝就是我了，恨不得整个操作系统都用上。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git dracula-theme "https://github.com/dracula/emacs")
+  (:doc "theme settings")
+  (:require dracula-theme)
+  (load-theme 'dracula t))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-图标" class="outline-3">
+<h3 id="图标"><a href="#图标">图标</a></h3>
+<div class="outline-text-3" id="text-orgfb77fc0">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git all-the-icons "https://github.com/domtronn/all-the-icons.el")
+  (:doc "A collection of various Icon Fonts within Emacs"))</code>
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-编辑设置" class="outline-2">
+<h2 id="编辑设置"><a href="#编辑设置">编辑设置</a></h2>
+<div class="outline-text-2" id="text-orgcb06df3">
+</div>
+<div id="outline-container-基本编辑操作" class="outline-3">
+<h3 id="基本编辑操作"><a href="#基本编辑操作">基本编辑操作</a></h3>
+<div class="outline-text-3" id="text-orgd2ec8a1">
+<p>
+定义了包括光标移动、复制粘贴、选择删除等一系列相关操作，以及快捷键定义。
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup simple
+  (:doc "Basic editing commands for Emacs")
+  (:option tab-width 4
+           tab-always-indent 'complete
+           indent-tabs-mode nil
+           global-visual-line-mode t)
+
+  (:with-mode visual-line-mode
+    (:diminish))
+
+  (fset 'yes-or-no-p 'y-or-n-p)
+
+  (defun dust/newline-and-indent-1 ()
+    (interactive)
+    (end-of-line)
+    (newline-and-indent))
+  (defun dust/newline-and-indent-2 ()
+    (interactive)
+    (beginning-of-line)
+    (newline-and-indent)
+    (previous-line))
+  (:global "C-o" dust/newline-and-indent-1
+           "M-o" dust/newline-and-indent-2)
+
+  (defun dust/forward-word (&amp;optional N)
+    (interactive "P")
+    (forward-word N))
+  (defun dust/backward-word (&amp;optional N)
+    (interactive "P")
+    (backward-word))
+
+  (defun dust/beginning-of-line ()
+    (interactive)
+    (beginning-of-line))
+  (defun dust/end-of-line ()
+    (interactive)
+    (end-of-line))
+
+  (defun dust/select-next-word (&amp;optional N)
+    (interactive "p")
+    (when (use-region-p)
+      (keyboard-escape-quit))
+    (set-mark-command nil)
+    (dust/forward-word N))
+  (defun dust/select-previous-word (&amp;optional N)
+    (interactive "p")
+    (dust/select-next-word (- (or N 1))))
+
+  (defun dust/select-word-at-point ()
+    (interactive)
+    (dust/forward-word) ; in case at the beginning of word
+    (dust/backward-word) ; 
+    (dust/select-next-word))
+  (defun dust/select-line (&amp;optional N)
+    (interactive)
+    (when (use-region-p)
+      (keyboard-escape-quit))
+    (dust/beginning-of-line)
+    (set-mark-command nil)
+    (move-end-of-line N))
+
+  (defun dust/select-to-beginning-of-line ()
+    (interactive)
+    (when (use-region-p)
+      (keyboard-escape-quit))
+    (set-mark-command nil)
+    (dust/beginning-of-line))
+  (defun dust/select-to-end-of-line ()
+    (interactive)
+    (when (use-region-p)
+      (keyboard-escape-quit))
+    (set-mark-command nil)
+    (dust/end-of-line))
+
+  (defun dust/delete-previous-word (&amp;optional N)
+    (interactive "P")
+    (dust/select-previous-word N)
+    (delete-active-region))
+
+  (defun dust/delete-next-word (&amp;optional N)
+    (interactive "P")
+    (dust/select-next-word N)
+    (delete-active-region))
+
+  (defun dust/delete-word-at-point ()
+    (interactive)
+    (dust/select-word-at-point)
+    (delete-active-region))
+
+  (defun dust/delete-line (&amp;optional N)
+    (interactive "p")
+    (dust/select-line N)
+    (delete-active-region))
+
+  (defun dust/delete-to-beginning-of-line ()
+    (interactive)
+    (dust/select-to-beginning-of-line)
+    (delete-active-region))
+  (defun dust/delete-to-end-of-line ()
+    (interactive)
+    (dust/select-to-end-of-line)
+    (delete-active-region))
+
+  (define-prefix-command 'dust/select-map)
+  (define-prefix-command 'dust/delete-map)
+  (define-prefix-command 'dust/find-map)
+
+  (:bind-into dust/select-map
+    "C-v" set-mark-command
+    "C-h" mark-whole-buffer
+    "C-d" dust/select-word-at-point
+    "C-r" dust/select-next-word
+    "C-e" dust/select-previous-word
+    "C-l" dust/select-line
+    "C-a" dust/select-to-beginning-of-line
+    "C-b" dust/select-to-end-of-line)
+
+  (:bind-into dust/delete-map
+    "C-d" dust/delete-word-at-point
+    "C-r" dust/delete-next-word
+    "C-e" dust/delete-previous-word
+    "C-l" dust/delete-line
+    "C-a" dust/delete-to-beginning-of-line
+    "C-b" dust/delete-to-end-of-line)
+
+  (:global "C-v" dust/select-map
+           "C-d" dust/delete-map
+           "C-f" dust/find-map)
+
+
+  )</code>
+</pre>
+
+</div>
+
+<p>
+选中区域后粘贴会删除选中文本（符合日常习惯）
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup delsel
+  (:doc "Delete selection if you insert")
+  (:with-mode delete-selection-mode
+    (:hook-into  after-init)))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-文件自动刷新" class="outline-3">
+<h3 id="文件自动刷新"><a href="#文件自动刷新">文件自动刷新</a></h3>
+<div class="outline-text-3" id="text-org87fb747">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup autorevert
+  (:doc "Revert buffers when files on disk change")
+  (:with-hook find-file-hook
+    (:hook global-auto-revert-mode)))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-保存历史记录和光标位置" class="outline-3">
+<h3 id="保存历史记录和光标位置"><a href="#保存历史记录和光标位置">保存历史记录和光标位置</a></h3>
+<div class="outline-text-3" id="text-org84ca3d7">
+<p>
+我确实没想到还能在这种地方 hook, 看了前辈的配置直接震惊一整晚 <sup class="fsup"><a id="fnr.2.2" class="footref" href="#fn.2" role="doc-backlink">[2]</a></sup>。
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup savehist
+  (:doc "Save minibuffer history")
+  (:option savehist-additional-variables
+           '(mark-ring
+             global-mark-ring
+             search-ring
+             regexp-search-ring
+             extended-command-history)
+
+           savehist-autosave-interval 300
+           history-length 1000
+           kill-ring-max 300
+           history-delete-duplicates t)
+  (:hook-into minibuffer-setup))
+
+(setup saveplace
+  (:doc "automatically save place in files")
+  (:with-hook find-file-hook
+    (:hook save-place-mode)))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-窗口设置" class="outline-3">
+<h3 id="窗口设置"><a href="#窗口设置">窗口设置</a></h3>
+<div class="outline-text-3" id="text-org16b14dc">
+</div>
+<div id="outline-container-窗口分割" class="outline-4">
+<h4 id="窗口分割"><a href="#窗口分割">窗口分割</a></h4>
+<div class="outline-text-4" id="text-orgea38a8d">
+<p>
+选择 buffer, 水平或垂直分隔。
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup window
+  (:doc "Operations about windows")
+  (defun dust/split-window-right (buffer)
+    (interactive "bChoose buffer: \n")
+    (select-window (split-window-right))
+    (switch-to-buffer buffer))
+  (defun dust/split-window-below (buffer)
+    (interactive "bChoose buffer: \n")
+    (select-window (split-window-below))
+    (switch-to-buffer buffer))
+  (:global "C-x 2" dust/split-window-below
+           "C-x 3" dust/split-window-right))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-窗口间移动" class="outline-4">
+<h4 id="窗口间移动"><a href="#窗口间移动">窗口间移动</a></h4>
+<div class="outline-text-4" id="text-orgd7fb0da">
+<p>
+使用数字编号在窗口间快速移动。原包好久不维护了，define-minor-mode 没有用关键字参数导致一直报 warning. 于是用了 pr 列表里面的一个 fork.
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git winum "https://github.com/norris-young/emacs-winum")
+  (:doc "Navigate Emacs windows and frames using numbers ")
+  (:autoload winum-mode)
+  (:hook-into window-setup-hook)
+  (:global "M-0" winum-select-window-0
+           "M-1" winum-select-window-1
+           "M-2" winum-select-window-2
+           "M-3" winum-select-window-3
+           "M-4" winum-select-window-4
+           "M-5" winum-select-window-5
+           "M-6" winum-select-window-6
+           "M-7" winum-select-window-7
+           "M-8" winum-select-window-8
+           "M-9" winum-select-window-9)
+  (:option winum-auto-assign-0-to-minibuffer t
+           winum-auto-setup-mode-line t))</code>
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-括号增强" class="outline-3">
+<h3 id="括号增强"><a href="#括号增强">括号增强</a></h3>
+<div class="outline-text-3" id="text-org8e6aee3">
+</div>
+<div id="outline-container-高亮括号" class="outline-4">
+<h4 id="高亮括号"><a href="#高亮括号">高亮括号</a></h4>
+<div class="outline-text-4" id="text-orgd589c6d">
+<p>
+高亮包围当前光标位置的括号，并用方框标识。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup paren
+    (:doc "Highlight matching paren")
+    (:with-mode show-paren-mode
+      (:hook-into prog-mode))
+    (:option show-paren-delay 0)
+    (:advice show-paren-function :around (fn)
+      (cond ((looking-at-p "\\s(") (funcall fn))
+            (t (save-excursion
+                 (ignore-errors (backward-up-list))
+                 (funcall fn)))))
+    (:face show-paren-match
+      :box `(:line-width -1
+             :color ,(face-attribute 'default
+                                     :foreground))))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-Smart Parens" class="outline-4">
+<h4 id="Smart Parens"><a href="#Smart Parens">Smart Parens</a></h4>
+<div class="outline-text-4" id="text-orgba653ff">
+<p>
+增强版的 electric-pair-mode, 同时提供了一些基于括号的操作，参见<a target="_blank" href="https://ebzzry.com/en/emacs-pairs/">Emacs and Pairs</a>.
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git smartparens "https://github.com/Fuco1/smartparens")
+  (:doc "A minor mode for dealing with pairs in Emacs.")
+  (:lazy sp nil
+    (:require smartparens-config)
+    (:diminish)
+    (:with-mode turn-on-smartparens-strict-mode
+      (:hook-into prog-mode))
+    (:option smartparens-global-mode t)
+    (:bind-into smartparens-mode-map
+      "M-a" sp-beginning-of-sexp
+      "M-b" sp-end-of-sexp
+
+      "M-s" sp-backward-up-sexp
+      "M-d" sp-down-sexp
+
+      "M-\\" sp-unwrap-sexp
+      "M-]" sp-forward-slurp-sexp
+      "M-[" sp-backward-slurp-sexp
+      "M-{" sp-forward-barf-sexp
+      "M-}" sp-backward-barf-sexp
+
+      "M-m" sp-select-next-thing
+      "C-d C-l" sp-kill-whole-line
+      "C-d C-d" sp-kill-sexp
+
+      "M-j" sp-next-sexp
+      "M-k" sp-previous-sexp
+      "M-l" sp-forward-symbol
+      "M-h" sp-backward-symbol)
+    )
+  (:with-function setup-lazy-sp
+    (:hook-into window-setup))
+)</code>
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-补全增强" class="outline-3">
+<h3 id="补全增强"><a href="#补全增强">补全增强</a></h3>
+<div class="outline-text-3" id="text-orgd304b65">
+</div>
+<div id="outline-container-补全前端" class="outline-4">
+<h4 id="补全前端"><a href="#补全前端">补全前端</a></h4>
+<div class="outline-text-4" id="text-org4b264dc">
+<p>
+弹框补全 corfu. 图标用的是 kind-all-the-icons, 源自论坛大佬：<a target="_blank" href="https://emacs-china.org/t/corfu-all-the-icons-icon/20907">糊了一个 corfu 适用的 all-the-icons 的 icon 效果 - Emacs-general - Emacs China</a>。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git corfu "https://github.com/minad/corfu")
+  (:doc "Corfu enhances in-buffer completion with a small completion popup.")
+  (:load-path "extensions")
+  (:autoload corfu-mode)
+  (:also-load corfu-popupinfo corfu-history)
+  (:option corfu-auto t
+           corfu-auto-delay 0
+           corfu-auto-prefix 1
+           corfu-popupinfo-delay 0)
+  (:bind-into corfu-map
+    "C-r" corfu-scroll-down
+    "C-e" corfu-scroll-up
+    "C-j" corfu-next
+    "C-k" corfu-previous
+    "M-n" corfu-popupinfo-scroll-up
+    "M-p" corfu-popupinfo-scroll-down)  
+  (:hook corfu-popupinfo-mode corfu-history-mode)
+  (:hook-into prog-mode ielm-mode)
+  )
+
+(setup (:git kind-all-the-icons "https://github.com/Hirozy/kind-all-the-icons")
+  (:after corfu
+    (:require kind-all-the-icons)
+    (:option (append corfu-margin-formatters) 'kind-all-the-icons-margin-formatter)))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-补全后端" class="outline-4">
+<h4 id="补全后端"><a href="#补全后端">补全后端</a></h4>
+<div class="outline-text-4" id="text-org07de16b">
+<p>
+cape 提供了多种补全后端，目前用得并不多。
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git cape "https://github.com/minad/cape")
+  (:doc "Completion At Point Extensions")
+  (:autoload cape-dabbrev
+             cape-file)
+  (:option (append completion-at-point-functions) 'cape-file
+           ;; (append completion-at-point-functions) 'cape-dabbrev
+           ))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-补全模版" class="outline-4">
+<h4 id="补全模版"><a href="#补全模版">补全模版</a></h4>
+<div class="outline-text-4" id="text-org7b4904f">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git yasnippet "https://github.com/joaotavora/yasnippet")
+  (:doc "a template system for Emacs.")
+  (:when-loaded
+    (:option (append yas-snippet-dirs) "~/.emacs.d/snippets"))
+  )</code>
+</pre>
+
+</div>
+
+<p>
+暂时用这个，目前还没开始填自己的模版。用着感觉没 Yasnippet 方便。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git tempel "https://github.com/minad/tempel"
+             tempel-collection "https://github.com/Crandel/tempel-collection")
+  (:doc "A tiny template package for Emacs")
+  (:disabled)
+  (defun tempel-setup-capf ()
+    ;; Add the Tempel Capf to `completion-at-point-functions'.
+    ;; `tempel-expand' only triggers on exact matches. Alternatively use
+    ;; `tempel-complete' if you want to see all matches, but then you
+    ;; should also configure `tempel-trigger-prefix', such that Tempel
+    ;; does not trigger too often when you don't expect it. NOTE: We add
+    ;; `tempel-expand' *before* the main programming mode Capf, such
+    ;; that it will be tried first.
+    (require 'tempel-collection)
+    (setq-local completion-at-point-functions
+                (cons #'tempel-expand
+                      completion-at-point-functions)))
+  ;; (:option tempel-path (no-littering-expand-etc-file-name "templates"))
+  (:with-function tempel-setup-capf
+    (:hook-into conf-mode
+                prog-mode))
+  (:when-loaded
+    (:global "C-=" tempel-complete)))</code>
+</pre>
+
+</div>
+
+<p>
+模板：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">python-mode python-ts-mode
+
+(name "if __name__ == \"__main__\":" n&gt;)</code>
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Minibuffer 增强" class="outline-3">
+<h3 id="Minibuffer 增强"><a href="#Minibuffer 增强">Minibuffer 增强</a></h3>
+<div class="outline-text-3" id="text-orga56fc3d">
+<p>
+新三件套 (vertico, orderless, consult)
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git vertico "https://github.com/minad/vertico")
+  (:doc "a performant and minimalistic vertical completion UI")
+  (:load-path "extensions")
+  (:autoload vertico-mode)
+  (:also-load vertico-directory vertico-mouse)
+  (:option vertico-scroll-margin 0
+           vertico-cycle t
+           vertico-resize t)
+  (:hook-into pre-command)
+  (:hook vertico-mouse-mode)
+  (:bind-into vertico-map
+    "RET" vertico-directory-enter
+    "DEL" vertico-directory-delete-char
+    "C-DEL" vertico-directory-delete-word
+    "M-DEL" vertico-directory-up))
+
+(setup (:git orderless "https://github.com/oantolin/orderless")
+  (:doc "An orderless completion style.")  
+  (:require orderless)
+  (:option completion-styles '(orderless
+                               substring
+                               partial-completion
+                               basic)
+           completion-category-defaults nil
+           completion-category-overrides nil
+           completion-category-defaults nil
+           completion-category-overrides '((file (styles . (partial-completion))))))
+
+(setup (:git marginalia "https://github.com/minad/marginalia")
+  (:doc "Add marginalia to the minibuffer completions.")
+  (:autoload marginalia-mode)
+  (:hook all-the-icons-completion-mode)
+  (:hook-into vertico-mode))
+
+(setup (:git all-the-icons-completion "https://github.com/iyefrat/all-the-icons-completion")
+  (:doc "Add icons to completion candidates")
+  (:autoload all-the-icons-completion-mode)
+  (:hook-into marginalia-mode))
+
+(setup (:git embark "https://github.com/oantolin/embark")
+  (:doc "Make it easy to choose a command to run based on what is near point")
+  (:autoload embark-act embark-dwim embark-prefix-help-command)
+  (:option prefix-help-command #'embark-prefix-help-command
+
+           (append display-buffer-alist)
+           '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
+             nil
+             (window-parameters (mode-line-format . none))))
+  (:global  "C-/" embark-act
+            "C-?" embark-dwim))
+
+(setup (:git consult "https://github.com/minad/consult")
+  (:doc "Search and navigation commands based on the Emacs completion function")
+  (:lazy consult nil
+    (:require consult)
+    (:also-load consult-imenu)
+    (:bind-into dust/find-map
+      "C-f" consult-line
+      "C-l" consult-goto-line
+      "C-m" consult-mark
+      "C-S-m" consult-global-mark
+      "C-d" consult-ripgrep
+      "C-s" consult-imenu))
+  (:with-function setup-lazy-consult
+    (:hook-into pre-command)))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-Isearch 增强" class="outline-3">
+<h3 id="Isearch 增强"><a href="#Isearch 增强">Isearch 增强</a></h3>
+<div class="outline-text-3" id="text-org670b4e5">
+<p>
+使用 phi-search, 支持 emacs-rime
+</p>
+
+<p>
+我加了一个 hook 使得每次打开 phi-search 的时候都会自动输入上次搜索的字符串，然后选中。如果需要，直接 phi-search-next; 若不要，直接输入新字符即可。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git phi-search "https://github.com/zk-phi/phi-search")
+  (:doc "Another incremental search &amp; replace")
+  (:autoload phi-search phi-search-backward)
+  (:global "C-." phi-search
+           "C-," phi-search-backward)
+  (:option phi-search-limit 10000)
+  (defvar dust/phi-search--last-search nil)
+  (defun dust/phi--insert-last-search ()
+      "Use last search if no region actives."
+      (when dust/phi-search--last-search
+        (insert dust/phi-search--last-search)
+        (mark-whole-buffer)))
+  (:when-loaded
+    (:advice phi-search--search-initialize :before (&amp;rest _)
+      (unless (use-region-p)
+        (setq dust/phi-search--last-search phi-search--last-executed))))
+
+  (:with-function dust/phi--insert-last-search
+    (:hook-into phi-search-init phi-replace-init))
+
+  (:with-feature phi-replace
+    (:autoload phi-replace-query)
+    (:global "C-f C-r" phi-replace-query)))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-连续按键" class="outline-3">
+<h3 id="连续按键"><a href="#连续按键">连续按键</a></h3>
+<div class="outline-text-3" id="text-org1113a48">
+<p>
+有时候需要需要连续用到几个组合键，比如在 Org Mode 中，下一个标题的按键是 <code>C-c C-n</code>, 连续使用就需要多次按下这个组合键，使用起来甚是不便。Hydra 就是用来解决这类问题的插件。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git hydra "https://github.com/abo-abo/hydra")
+  (:doc "Tie related commands into a family of short bindings")
+  (:autoload defhydra))</code>
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-编程" class="outline-2">
+<h2 id="编程"><a href="#编程">编程</a></h2>
+<div class="outline-text-2" id="text-org5c60dfd">
+</div>
+<div id="outline-container-显示" class="outline-3">
+<h3 id="显示"><a href="#显示">显示</a></h3>
+<div class="outline-text-3" id="text-org13a4fe7">
+</div>
+<div id="outline-container-行号" class="outline-4">
+<h4 id="行号"><a href="#行号">行号</a></h4>
+<div class="outline-text-4" id="text-org2bd1d48">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup display-line-numbers
+  (:doc "Interface for display-line-numbers")
+  (:option display-line-numbers-type 'relative)
+  (:hook-into prog-mode)
+  (:face line-number
+    :slant 'italic)
+  (:face line-number-current-line
+    :foreground (face-attribute 'error :foreground)
+    :background (face-attribute 'highlight :background)
+    :weight 'bold
+    :slant 'normal))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-高亮当前行" class="outline-4">
+<h4 id="高亮当前行"><a href="#高亮当前行">高亮当前行</a></h4>
+<div class="outline-text-4" id="text-orgc8e3a43">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup hl-line
+  (:doc "Highlight the current line")
+  (:hook-into prog-mode))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-彩色括号" class="outline-4">
+<h4 id="彩色括号"><a href="#彩色括号">彩色括号</a></h4>
+<div class="outline-text-4" id="text-org2245e56">
+<p>
+对不同层次的括号使用不同颜色，对 Lisp 这种多重括号尤其有效。
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git rainbow-delimiters "https://github.com/Fanael/rainbow-delimiters")
+    (:doc "Highlight delimiters according to their depth.")
+    (:autoload rainbow-delimiters-mode)
+    (:hook-into prog-mode))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-不显示 eldoc" class="outline-4">
+<h4 id="不显示 eldoc"><a href="#不显示 eldoc">不显示 eldoc</a></h4>
+<div class="outline-text-4" id="text-orgd88bcf9">
+<p>
+还要单独为这个写一个 setup, 多捞哦。
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup eldoc
+  (:doc "Show function arglist or variable docstring in echo area")
+  (:diminish))</code>
+</pre>
+
+</div>
+</div>
+</div>
+<div id="outline-container-缩进提示" class="outline-4">
+<h4 id="缩进提示"><a href="#缩进提示">缩进提示</a></h4>
+<div class="outline-text-4" id="text-org93d1e18">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git highlight-indent-guides "https://github.com/DarthFennec/highlight-indent-guides")
+  (:doc "This minor mode highlights indentation levels via font-lock.")
+  (:autoload highlight-indent-guides-mode)
+  (:diminish)
+  (:hook-into prog-mode)
+  (:option highlight-indent-guides-method 'character
+           highlight-indent-guides-auto-enabled nil)
+  (:face highlight-indent-guides-odd-face
+    :foreground (face-attribute 'shadow :foreground))
+  (:face highlight-indent-guides-even-face
+    :foreground (face-attribute 'shadow :foreground))
+  (:face highlight-indent-guides-character-face
+    :foreground (face-attribute 'shadow :foreground)))</code>
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-移动到缩进行首" class="outline-3">
+<h3 id="移动到缩进行首"><a href="#移动到缩进行首">移动到缩进行首</a></h3>
+<div class="outline-text-3" id="text-org7b70b76">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git mwim "https://github.com/alezost/mwim.el")
+  (:doc "Operations of Cursor moving")
+  (:autoload mwim-beginning-of-code-or-line
+             mwim-end-of-code-or-line)
+  (defalias 'dust/beginning-of-line 'mwim-beginning-of-code-or-line)
+  (defalias 'dust/end-of-line 'mwim-end-of-code-or-line))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-代码折叠" class="outline-3">
+<h3 id="代码折叠"><a href="#代码折叠">代码折叠</a></h3>
+<div class="outline-text-3" id="text-orgeba3886">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup hideshow
+  (:doc "Minor mode cmds to selectively display code/comment blocks")
+  (:with-mode hs-minor-mode
+    (:diminish)
+    (:hook-into prog-mode)
+    (:bind "C-c C-v C-c" hs-toggle-hiding
+           "C-c C-v C-h" hs-hide-block
+           "C-c C-v C-s" hs-show-block
+           "C-c C-v C-t" hs-hide-all
+           "C-c C-v C-a" hs-show-all
+           "C-c C-v C-l" hs-hide-level)))</code>
+</pre>
+
+</div>
+</div>
+</div>
+<div id="outline-container-LSP" class="outline-3">
+<h3 id="LSP"><a href="#LSP">LSP</a></h3>
+<div class="outline-text-3" id="text-org23946ba">
+<p>
+不搞开发，能用就行。不 hook <code>prog-mode</code> 的原因是写比如 elisp 就没必要启动用它。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup eglot
+  (:doc "A emacs LSP client")
+  ;; (:disabled)
+  (:autoload eglot-ensure)
+  (:with-function eglot-ensure
+    (:hook-into python-ts-mode
+                ;; yaml-ts-mode
+                ;; js-ts-mode
+                ;; mhtml-mode
+                scss-mode
+                lua-mode
+                elvish-mode
+                ;; latex-mode
+                ))
+  (:option eldoc-echo-area-use-multiline-p 1)
+  (:when-loaded
+    (:option (append* eglot-server-programs)
+             '((elvish-mode "elvish" "-lsp")))))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-Tree-sitter" class="outline-3">
+<h3 id="Tree-sitter"><a href="#Tree-sitter">Tree-sitter</a></h3>
+<div class="outline-text-3" id="text-orge71c2ab">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup treesit
+  (:doc "A parser generator tool and an incremental parsing library.")
+  ;; (:option treesit-extra-load-path (list (no-littering-expand-var-file-name "tree-sitter")))
+  (:git treesit-auto "https://github.com/renzmann/treesit-auto")
+  (:with-feature treesit-auto
+    (:autoload global-treesit-auto-mode)
+    (global-treesit-auto-mode)))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-YAML" class="outline-3">
+<h3 id="YAML"><a href="#YAML">YAML</a></h3>
+<div class="outline-text-3" id="text-org71cc429">
+<p>
+偶尔会用到。
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git yaml-mode "https://github.com/yoshiki/yaml-mode")
+  (:doc "Support for YAML Language")
+  (:autoload yaml-mode)
+  (:file-match "\\.\\(yml\\|yaml\\)\\'"))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-Emacs Lisp" class="outline-3">
+<h3 id="Emacs Lisp"><a href="#Emacs Lisp">Emacs Lisp</a></h3>
+<div class="outline-text-3" id="text-org3de261d">
+</div>
+<div id="outline-container-elisp-def" class="outline-4">
+<h4 id="elisp-def"><a href="#elisp-def">elisp-def</a></h4>
+<div class="outline-text-4" id="text-org69bcaf0">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git elisp-def "https://github.com/Wilfred/elisp-def")
+  (:doc "Go to the definition of the symbol at point.")
+  (:autoload elisp-def-mode)
+  (:hook-into emacs-lisp-mode ielm-mode)
+  (:diminish))</code>
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Yuck" class="outline-3">
+<h3 id="Yuck"><a href="#Yuck">Yuck</a></h3>
+<div class="outline-text-3" id="text-org9a2bd50">
+<p>
+Yuck 是窗口图形模块套件 <a target="_blank" href="https://elkowar.github.io/eww/">EWW</a> 的语言，基于 Lisp.
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git yuck-mode "https://github.com/mmcjimsey26/yuck-mode")
+  (:doc "Emacs major mode for editing yuck configuration files")
+  (:autoload yuck-mode)
+  (:file-match "\\.\\(yuck\\)\\'"))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-Sxhkd" class="outline-3">
+<h3 id="Sxhkd"><a href="#Sxhkd">Sxhkd</a></h3>
+<div class="outline-text-3" id="text-org5e32b99">
+<p>
+bspwm 下的键盘映射配置。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git sxhkd-mode "https://github.com/xFA25E/sxhkd-mode")
+  (:doc "A major mode for editing sxhkdrc")
+  (:autoload sxhkd-mode)
+  (:file-match (rx "sxhkdrc" string-end)))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-Jinja2" class="outline-3">
+<h3 id="Jinja2"><a href="#Jinja2">Jinja2</a></h3>
+<div class="outline-text-3" id="text-org98c45c3">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git jinja2-mode "https://github.com/paradoxxxzero/jinja2-mode")
+  (:doc "Jinja2 mode for emacs")
+  (:autoload jinja2-mode)
+  (:file-match "\\.\\(jinja2\\)\\'"))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-Markdown" class="outline-3">
+<h3 id="Markdown"><a href="#Markdown">Markdown</a></h3>
+<div class="outline-text-3" id="text-org8d3b24c">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git markdown-mode "https://github.com/jrblevin/markdown-mode")
+  (:doc "Support for Markdown")
+  (:autoload markdown-mode)
+  (:option markdown-command "multimarkdown")
+  (:file-match "\\.md\\'"))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-Elvish" class="outline-3">
+<h3 id="Elvish"><a href="#Elvish">Elvish</a></h3>
+<div class="outline-text-3" id="text-orga365b85">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git elvish-mode "https://github.com/ALSchwalm/elvish-mode")
+  (:doc "A major mode for the Elvish programming language")
+  (:autoload elvish-mode)
+  (:file-match "\\.elv\\'")
+  (:option (append interpreter-mode-alist)
+           '("elvish" . elvish-mode)))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-Lua" class="outline-3">
+<h3 id="Lua"><a href="#Lua">Lua</a></h3>
+<div class="outline-text-3" id="text-org4ed0311">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git lua-mode "https://github.com/immerrr/lua-mode")
+  (:doc "")
+  (:autoload lua-mode)
+  (:file-match "\\.lua$")
+  (:option (append interpreter-mode-alist)
+           '("lua" . lua-mode)))</code>
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-Org mode" class="outline-2">
+<h2 id="Org mode"><a href="#Org mode">Org mode</a></h2>
+<div class="outline-text-2" id="text-org002349b">
+<p>
+Org mode 原本是一个基于 outline 的任务管理，但是因为提供了丰富的语言标记，以及结合 emacs 提供导出、发布等各种操作，它已然成为一个强大的笔记、管理、收集等集一体的系统。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup org
+  (:doc "keeping notes, maintaining ToDo lists,"
+        "and doing project planning")
+  (:when-loaded
+    (:option org-todo-keywords
+             '((sequence "TODO(t)"
+                         "DOING(i)"
+                         "WAIT(w@/!)"
+                         "|"
+                         "DONE(d!)"
+                         "CANCELED(c@)"))
+             org-todo-keyword-faces
+             '(("TODO" . (:background "red3" :foreground "white" :weight bold))
+               ("DOING" . (:background "SteelBlue" :foreground "white" :weight bold))
+               ("WAIT" . (:background "orange" :foreground "white" :weight bold))
+               ("DONE" . (:background "SeaGreen4" :foreground "white" :weight bold))
+               ("CANCELED" . (:foreground "#b6b6b2" :weight bold :strike-through "#b6b6b2"))))
+    (:option org-edit-src-content-indentation 0
+             ;; org-auto-align-tags nil
+             org-tags-column 0
+             org-use-sub-superscripts nil
+             org-link-file-path-type 'relative
+             org-startup-truncated t)
+
+    (:bind "C-c e" org-edit-src-code
+           "C-j" next-line)
+
+    (defhydra hydra-org-next-visible-heading ()
+      "Go to org next/previous visible heading"
+      ("n" org-next-visible-heading)
+      ("p" org-previous-visible-heading))
+    (defhydra hydra-org-previous-visible-heading ()
+      "Go to org next/previous visible heading"
+      ("n" org-next-visible-heading)
+      ("p" org-previous-visible-heading))
+
+    (:advice hydra-org-next-visible-heading/body :before (&amp;rest args)
+      (org-next-visible-heading 1))
+    (:advice hydra-org-previous-visible-heading/body :before (&amp;rest args)
+      (org-previous-visible-heading 1))
+
+    (:bind "C-c C-n" hydra-org-next-visible-heading/body
+           "C-c C-p" hydra-org-previous-visible-heading/body)
+
+    ;; prettify
+    (:face org-checkbox :box nil)
+    (:face org-level-1 :weight 'semi-bold :height 1.6)
+    (:face org-level-2 :weight 'semi-bold :height 1.45)
+    (:face org-level-3 :weight 'semi-bold :height 1.3)
+    (:face org-level-4 :weight 'semi-bold :height 1.15)
+    (:face org-level-5 :weight 'semi-bold :height 1.0)
+    (:face org-level-6 :weight 'semi-bold :height 1.0)
+    (:face org-tag
+      :weight 'normal
+      :foreground "#afeeee")
+
+    ))</code>
+</pre>
+
+</div>
+</div>
+
+<div id="outline-container-快速改变 heading" class="outline-3">
+<h3 id="快速改变 heading"><a href="#快速改变 heading">快速改变 heading</a></h3>
+<div class="outline-text-3" id="text-org6cf6cb3">
+<p>
+通过快捷键来快速调整 headline 等级。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup dust/org-heading
+  (:after org
+    (:require s)
+    (defun dust/org-headline-set (N)
+      "Set org headline"
+      (when (and (org-at-heading-p)
+                 (/= N
+                     (save-excursion
+                       (beginning-of-line)
+                       (length
+                        (nth 1
+                             (s-match org-heading-regexp
+                                      (buffer-substring-no-properties
+                                       (point)
+                                       (+ (point) 10))))))))
+        (org-toggle-heading))
+      (when (and (&gt;= N 1)
+                 (&lt;= N 6))
+        (org-toggle-heading N)))
+    (defun dust/org-headline-set-1 () (interactive) (dust/org-headline-set 1))
+    (defun dust/org-headline-set-2 () (interactive) (dust/org-headline-set 2))
+    (defun dust/org-headline-set-3 () (interactive) (dust/org-headline-set 3))
+    (defun dust/org-headline-set-4 () (interactive) (dust/org-headline-set 4))
+    (defun dust/org-headline-set-5 () (interactive) (dust/org-headline-set 5))
+    (defun dust/org-headline-set-6 () (interactive) (dust/org-headline-set 6))
+
+    (:bind-into org-mode-map
+      "C-c h 1" dust/org-headline-set-1
+      "C-c h 2" dust/org-headline-set-2
+      "C-c h 3" dust/org-headline-set-3
+      "C-c h 4" dust/org-headline-set-4
+      "C-c h 5" dust/org-headline-set-5
+      "C-c h 6" dust/org-headline-set-6))
+  )</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-快速插入" class="outline-3">
+<h3 id="快速插入"><a href="#快速插入">快速插入</a></h3>
+<div class="outline-text-3" id="text-org93800d9">
+<ol class="org-ol">
+<li>输入一个 URL, 尝试自动获取返回的 HTML 的 <code>&lt;title&gt;</code>, 如果有就把它作为 org-link 的 description.</li>
+<li>给定一个存放图片的目录，按最近修改时间排序</li>
+<li>按键录入</li>
+</ol>
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup dust/org-insert
+  (:after org
+    (:require dash f)
+
+    (defun dust/org-link--fetch-title-by-url (uri)
+      (let (title)
+        (with-current-buffer (url-retrieve-synchronously
+                              uri t nil 10)
+          (let* ((dom (libxml-parse-html-region
+                       (point-min) (point-max))))
+            (setq title 
+                  (and dom
+                       (dom-text (dom-by-tag dom 'title))))))
+        (unless (or title
+                    (length= title 0))
+          (message "Failed to get title."))
+        title))
+
+    (defun dust/org-link-make-description-function (link desc)
+      (let* ((tmp (string-split link ":")) 
+             (protocol (car tmp))
+             (path (string-join (cdr tmp) ":")))
+        (pcase protocol
+          ((or "http" "https")
+           (dust/org-link--fetch-title-by-url link))
+          ("denote"
+           (denote-retrieve-title-value (denote-get-path-by-id path) 'org))
+          (_ desc))))
+
+    (:option org-link-make-description-function
+             #'dust/org-link-make-description-function)
+
+
+    (defun dust/org-insert-key-sequence ()
+      "Insert key sequnce"
+      (interactive)
+      (insert (key-description
+               (read-key-sequence-vector "Pressing... "))))
+
+    (defcustom org-img-directory "~/Note/assets"
+      "Where the images are")
+
+    (org-link-set-parameters "img"
+                             :follow #'org-open-file
+                             ;; :export #'org-img-export
+                             :store #'org-img-store-link
+                             :complete #'org-img-completion
+                             :htmlize-link #'org-img-htmlize
+                             )
+
+    (defcustom org-img-viewer "nomacs %s"
+      "Program to view image.")
+
+    (:option (append org-file-apps)
+              (cons (image-file-name-regexp)
+                    org-img-viewer))
+
+    (defun org-img-open (path _)
+      (message "%s" _)
+      (call-process ))
+
+    (defun org-img-export ()
+      )
+
+    (defun org-img--sort-completion-table (completions)
+      (lambda (string pred action)
+        (if (eq action 'metadata)
+            `(metadata (display-sort-function . ,#'identity))
+          (complete-with-action action completions string pred))))
+
+    (defun org-img-completion ()
+      (let ((images (--sort (&gt;= (f-modification-time it 'seconds)
+                                (f-modification-time other 'seconds))
+                            (f-files org-img-directory))))
+        (completing-read "Insert image: "
+                         (org-img--sort-completion-table images)
+                         nil t)
+        )
+      )
+
+    (defun org-img-htmlize ()
+      (f-relative "/home/mrdust/Note/assets/s33781062.jpg" org-img-directory)
+      )
+
+    (defun dust/org-insert-image ()
+      "Insert image from Special directory into current buffer."
+      (interactive)
+      (let ((images (--sort (&gt;= (f-modification-time it 'seconds)
+                                (f-modification-time other 'seconds))
+                            (f-files dust/org-image-directory)))
+            (cur-file (f-this-file)))
+        (if (not cur-file)
+            (message "Current buffer is not a file: %s" (buffer-name
+                                                         (current-buffer)))
+          (insert (format "[[file:%s]]\n"
+                          (f-relative
+                           (completing-read
+                            "Insert image: "
+
+                            (dust/org-image--sort-completion-table images)
+                            nil t)
+                           (f-dirname cur-file)))))))
+
+    (:bind-into org-mode-map
+      "C-c C-i" dust/org-insert-uri
+      "C-c C-m" dust/org-insert-image
+      "C-c M-k" dust/org-insert-key-sequence)))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-Org Agenda" class="outline-3">
+<h3 id="Org Agenda"><a href="#Org Agenda">Org Agenda</a></h3>
+<div class="outline-text-3" id="text-org70602f0">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup org-agenda
+  (:doc "Org Agenda settings")
+  (:global "C-\\" org-cycle-agenda-files)
+  (:option org-agenda-files '("~/Agendas"))
+  (:when-loaded
+
+    (:option org-agenda-tags-column 0
+             org-agenda-use-time-grid t
+             org-agenda-time-grid '((daily today require-timed)
+                                    (700 1200 1800 2300)
+                                    "......"
+                                    "----------------")
+             org-agenda-start-with-follow-mode t
+             org-agenda-skip-scheduled-if-done t)))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-样式美化" class="outline-3">
+<h3 id="样式美化"><a href="#样式美化">样式美化</a></h3>
+<div class="outline-text-3" id="text-orgbd0dcfe">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git org-modern "https://github.com/minad/org-modern")
+  (:doc "A modern style for Org buffers")
+  (:disabled)
+  (:autoload global-org-modern-mode)
+  (:option org-hide-emphasis-markers t
+           org-modern-list '((?+ . "◦")
+                             (?- . "•")
+                             (?* . "•"))
+           org-modern-checkbox nil
+           org-modern-todo-faces
+           `(("TODO"  :background "red3" :foreground "white" :weight bold)
+             ("DOING" :background "SteelBlue" :foreground "white" :weight bold)
+             ("WAIT" :background "orange" :foreground "white" :weight bold)
+             ("DONE" :background "SeaGreen4" :foreground "white" :weight bold)
+             ("CANCELED"
+              :foreground ,(face-attribute 'fringe :foreground)
+              :weight bold
+              :strike-through ,(face-attribute 'fringe :foreground))))
+  (:with-mode global-org-modern-mode
+    (:hook-into org-mode)))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-排版" class="outline-3">
+<h3 id="排版"><a href="#排版">排版</a></h3>
+<div class="outline-text-3" id="text-org09e043f">
+<p>
+采用左右两侧留白，页面集中到中部的排版。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git olivetti "https://github.com/rnkn/olivetti")
+  (:doc "A simple Emacs minor mode for a nice writing environment.")
+  (:diminish)
+  (:autoload olivetti-mode)
+  (:option olivetti-body-width 110)
+  (:hook-into org-mode))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-Latex 导出" class="outline-3">
+<h3 id="Latex 导出"><a href="#Latex 导出">Latex 导出</a></h3>
+<div class="outline-text-3" id="text-org631c3c0">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup org-latex
+  (:doc "Org Latex Environment")
+  (:after org
+    (:option org-latex-listings t
+             org-latex-pdf-process
+             '("xelatex -interaction nonstopmode -output-directory %o %f"
+               "xelatex -interaction nonstopmode -output-directory %o %f"
+               "xelatex -interaction nonstopmode -output-directory %o %f")
+             org-latex-compiler "xelatex"
+             (append org-latex-packages-alist) '("" "xeCJK"))
+    ;; Beamer
+    (:option org-beamer-frame-level 2
+             org-beamer-outline-frame-title "Content")))</code>
+</pre>
+
+</div>
+</div>
+</div>
+<div id="outline-container-快速查询" class="outline-3">
+<h3 id="快速查询"><a href="#快速查询">快速查询</a></h3>
+<div class="outline-text-3" id="text-org375e111">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git org-ql "https://github.com/alphapapa/org-ql"
+             org-super-agenda "https://github.com/alphapapa/org-super-agenda"
+             peg "https://github.com/emacsmirror/peg"
+             ov "https://github.com/emacsorphanage/ov")
+  (:doc "A query language for Org files.")
+  (:with-feature org-ql-search
+    (:autoload org-ql-search))
+  (:with-feature org-ql-view
+    (:when-loaded
+      (:bind-into org-ql-view-map
+        "q" (lambda () (interactive) (quit-window t))))))</code>
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-工具" class="outline-2">
+<h2 id="工具"><a href="#工具">工具</a></h2>
+<div class="outline-text-2" id="text-orga5ec131">
+</div>
+<div id="outline-container-输入法" class="outline-3">
+<h3 id="输入法"><a href="#输入法">输入法</a></h3>
+<div class="outline-text-3" id="text-org5753bd1">
+<p>
+Emacs 的 RIME 输入法，只要断言做得好，就可以丝滑地在中英文输入法之间切换，且不会影响快捷键的使用。
+</p>
+
+<p>
+在激活了 emacs-rime 后退出 emacs 会进入一段时间的卡死状态，在 Issue <a target="_blank" href="https://github.com/DogLooksGood/emacs-rime/issues/161#issuecomment-979907791">#161</a> 中给出了一个方案，就是在 emacs 关闭时主动关闭 rime-lib. 这个函数是从 so 库里面都出来的，我找不到哪里可以 with-eval-after-load. 所以我用了一个 trick, 在激活输入法后给 <code>kill-emacs-hook</code> 加上 <code>rime-lib-finalize</code>.
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git rime "https://github.com/DogLooksGood/emacs-rime"
+             posframe "https://github.com/tumashu/posframe")
+  (:doc "RIME input method in Emacs")
+  (:lazy rime (toggle-input-method)
+    (:require rime)
+    (:option default-input-method "rime"
+             ;; rime-user-data-dir "~/.local/share/fcitx5/rime/"
+             rime-user-data-dir "~/.emacs.d/rime/"
+             )
+
+    (defun my-predicate-punctuation-after-space-cc-p ()
+      (let* ((start (save-excursion
+                      (re-search-backward
+                       "[^\s]"
+                       nil
+                       t)))
+             (string (buffer-substring
+                      (if start start 1)
+                      (point))))
+        (string-match "\\cc +" string)))
+
+    (:option rime-inline-ascii-trigger 'shift-l
+             rime-show-preedit 'inline
+             rime-show-candidate 'posframe
+             rime-deactivate-when-exit-minibuffer nil)
+    (:option rime-disable-predicates
+             '(rime-predicate-prog-in-code-p
+               my-predicate-punctuation-after-space-cc-p
+               rime-predicate-after-alphabet-char-p
+               rime-predicate-org-in-src-block-p))
+
+    (defun dust/rime-finalize ()
+      (add-hook 'kill-emacs-hook #'rime-lib-finalize)
+      (remove-hook 'input-method-activate-hook #'dust/rime-finalize))
+    (:with-hook input-method-activate-hook
+      (:hook dust/rime-finalize))
+
+    (:hook (lambda ()
+             (when (rime--ascii-mode-p)
+               (rime--inline-ascii)))))
+  (:global "C-&lt;SPC&gt;" setup-lazy-rime))</code>
+</pre>
+
+</div>
+</div>
+</div>
+<div id="outline-container-文件管理" class="outline-3">
+<h3 id="文件管理"><a href="#文件管理">文件管理</a></h3>
+<div class="outline-text-3" id="text-org7952dee">
+<p>
+Dirvish 是一个非常优秀的文件管理器，优美的前端，集成 Dired, 它完全能够作为一个独立的基于命令行的文件管理器使用（我确实也是把它作为系统默认的文件管理器使用）
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git dirvish "https://github.com/alexluigit/dirvish")
+  (:doc "An improved version of the Emacs inbuilt package Dired")
+  (:lazy dirvish (dirvish)
+    (:require dirvish)
+    (:load-path "extensions")
+    (:also-load dirvish-icons
+                dirvish-emerge
+                dirvish-quick-access
+                dirvish-subtree
+                subr-x)
+    (:option dirvish-quick-access-entries
+             '(("h" "~/")
+               ("e" "~/.emacs.d/")
+               ("g" "~/gh-repo/")
+               ("n" "~/Note/")
+               ("G" "~/.emacs.d/etc/gnus/")))
+
+    (:option dirvish-preview-dispatchers '(image gif audio archive))
+    (dirvish-define-preview exa (file)
+      "Use `exa' to generate directory preview."
+      :require ("exa") ; tell Dirvish to check if we have the executable
+      (when (file-directory-p file) ; we only interest in directories here
+        `(shell . ("exa" "-al" "--color=always" "--icons"
+                   "--group-directories-first" ,file))))
+    (:option (append dirvish-preview-dispatchers) 'exa)
+
+    (defun dust/dirvish--truncate-line (&amp;rest _)
+      (setq-local truncate-lines t))
+
+    (dirvish-emerge-define-predicate is-dir
+      "If item is a directory"
+      (equal (car type) 'dir))
+
+    (:option dirvish-use-header-line nil
+             dirvish-attributes '(subtree-state all-the-icons file-size)
+             delete-by-moving-to-trash t
+             dirvish-mode-line-height 21
+             dirvish-redisplay-debounce 1
+             dired-listing-switches
+             "-l --almost-all --human-readable --group-directories-first --no-group --time-style=iso"
+
+             dirvish-emerge-groups
+             '(("Hidden" (regex . "^\\."))
+               ("Directory" (predicate . is-dir))
+               ("Documents" (extensions "pdf" "tex" "bib" "epub"))
+               ("Video" (extensions "mp4" "mkv" "webm"))
+               ("Picture" (extensions "jpg" "png" "svg" "gif"))
+               ("Audio" (extensions "mp3" "flac" "wav" "ape" "aac"))
+               ("Archive" (extensions "gz" "rar" "zip"))
+               ("Org" (extensions "org"))
+               ("Emacs Lisp" (extensions "el"))
+               ("Python" (extensions "py"))
+               ("Files" (regex . ".*"))))
+
+    (:option dirvish-override-dired-mode t)
+
+    (:with-hook dirvish-find-entry-hook
+      (:hook dust/dirvish--truncate-line))
+    (:with-mode dirvish-emerge-mode
+      (:hook-into dirvish-setup))
+
+    (:bind-into dirvish-mode-map
+      "a" dirvish-quick-access
+      "j" dired-next-line
+      "k" dired-previous-line
+      "f" dired-goto-file
+      "b" dired-up-directory
+      "n" dirvish-emerge-next-group
+      "p" dirvish-emerge-previous-group
+      "TAB" dirvish-subtree-toggle
+      "M-t" dirvish-layout-toggle
+      "z" dired
+      "SPC" dired-find-file))
+  (:global "C-x C-d" setup-lazy-dirvish))</code>
+</pre>
+
+</div>
+</div>
+</div>
+<div id="outline-container-中文分词" class="outline-3">
+<h3 id="中文分词"><a href="#中文分词">中文分词</a></h3>
+<div class="outline-text-3" id="text-org301edc1">
+<p>
+基于中文分词的词语移动。Emacs 内置的 forward-word/backward-word 遇上中文会直接跑到句子结束。用了 jieba 分词就可以实现中文词语的 forward/backward.
+</p>
+
+<p>
+目前只在 org mode 下开启，我对于中文分词的需求也来源于 org mode.
+</p>
+
+<p>
+jieba.el 在每个 Emacs 应用打开都会启动一个 node-js 的服务器，我想把 jieba.el 作前后端分离，在我的系统中只跑一个，所有客户端都连接它即可。一来减少内存占用，二来加快启动，这样就可以全局下开启 jieba mode 而不需要考虑拖慢启动时间。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git jieba "https://github.com/cireu/jieba.el"
+             jsonrpc "https://github.com/paritytech/jsonrpc/")
+  (:doc "Things about selection and deletion supporting CN words")
+  (:diminish)
+  (:lazy jieba nil
+    (:require jieba)
+    (defalias 'dust/forward-word 'jieba-forward-word)
+    (defalias 'dust/backward-word 'jieba-backward-word)
+    (defalias 'dust/select-word-at-point 'jieba-mark-word)
+    (jieba-mode t))
+  (:with-function setup-lazy-jieba
+    (:hook-into org-mode)))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-大纲展示" class="outline-3">
+<h3 id="大纲展示"><a href="#大纲展示">大纲展示</a></h3>
+<div class="outline-text-3" id="text-orgb1a704e">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git imenu-list "https://github.com/bmag/imenu-list")
+  (:doc "A automatically updated buffer with imenu entries.")  
+  (:autoload imenu-list-smart-toggle)
+  (:global "C-'" imenu-list-smart-toggle)
+  (:option imenu-list-focus-after-activation t
+           imenu-list-position 'left
+           imenu-list-size 0.2)
+  (defun dust/imenu-list--truncate-line (&amp;rest _)
+    (with-current-buffer (imenu-list-get-buffer-create)
+      (setq-local truncate-lines t)))
+  (:when-loaded
+    (:with-hook imenu-list-after-jump-hook
+      (:hook recenter-top-bottom))
+    (:with-hook imenu-list-update-hook
+      (:hook dust/imenu-list--truncate-line))))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-摘抄库" class="outline-3">
+<h3 id="摘抄库"><a href="#摘抄库">摘抄库</a></h3>
+<div class="outline-text-3" id="text-org803992b">
+<p>
+自己写的一个摘抄管理，用 sqlite3 数据库。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git excerpt "https://github.com/fingerknight/excerpt.el"
+             emacsql "https://github.com/magit/emacsql")
+  (:doc "Excerpt management")
+  (:autoload excerpt)
+  ;; (:option excerpt-dir (no-littering-expand-var-file-name "excerpt"))
+  )</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-记忆工具" class="outline-3">
+<h3 id="记忆工具"><a href="#记忆工具">记忆工具</a></h3>
+<div class="outline-text-3" id="text-org0c106f8">
+<p>
+卡片记忆方法，虽然并不是很卡片。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git org-drill "https://github.com/louietan/org-drill"
+             persist "https://github.com/emacs-straight/persist")
+  (:doc "An Spaced Repetition System")
+  (:autoload org-drill)
+  (:option drill-directory "~/Drill/"
+           org-drill-maximum-items-per-session 40
+           org-drill-maximum-duration 30)
+  (defun dust/drill ()
+    "Start to drill."
+    (interactive)
+    (setq org-drill-scope
+          (f-files (f-expand (completing-read
+                              "What to drill: "
+                              (-map #'f-base                
+                                    (f-directories drill-directory))
+                              nil t)
+                             drill-directory)))
+    (org-drill))
+  (defalias 'destructuring-bind 'cl-destructuring-bind))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-音乐播放器" class="outline-3">
+<h3 id="音乐播放器"><a href="#音乐播放器">音乐播放器</a></h3>
+<div class="outline-text-3" id="text-org07ecfbd">
+<p>
+MPD 的前端，其实还是用的 MPC, 所以它是 MPD 前端的前端。简单但够用。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git simple-mpc "https://github.com/jorenvo/simple-mpc")
+  (:doc "A GNU Emacs major mode that acts as a front end to mpc.")
+  (:autoload simple-mpc)
+  (:option simple-mpc-playlist-format "%title%\t%artist%\t%time%"
+           simple-mpc-table-separator "\t")
+  (:when-loaded
+    (defun dust/simple-mpc-load-playlist (playlist-name)
+      "Rewrite load playlist such that:
+1. Clean play list before loading;
+2. Shuffle play lists after loading.
+3. Show play list after loading."
+      (interactive
+       (list
+        (completing-read "Playlist: " (simple-mpc-call-mpc-strings "lsplaylists"))))
+      (message "%s %s" "Loading playlist" playlist-name)
+      (simple-mpc-clear-current-playlist)
+      (simple-mpc-call-mpc nil (list "load" playlist-name))
+      (simple-mpc-shuffle-current-playlist)
+      (simple-mpc-maybe-refresh-playlist)
+      (simple-mpc-view-current-playlist))
+    (defalias 'simple-mpc-load-playlist 'dust/simple-mpc-load-playlist)))
+</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-邮件和订阅" class="outline-3">
+<h3 id="邮件和订阅"><a href="#邮件和订阅">邮件和订阅</a></h3>
+<div class="outline-text-3" id="text-org8cc8ed6">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup gnus
+  (:doc "A newsreader for GNU Emacs"
+        "See `etc/gnus/init.el'")
+  (:option gnus-home-directory (expand-file-name "gnus" user-emacs-directory)))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-日志" class="outline-3">
+<h3 id="日志"><a href="#日志">日志</a></h3>
+<div class="outline-text-3" id="text-orge597ce5">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git org-journal "https://github.com/bastibe/org-journal")
+  (:doc "A simple personal diary / journal using in Emacs.")
+  (:autoload org-journal-new-entry)
+  (:when-loaded
+    (defun org-journal-file-header-func (time)
+      "Custom function to create journal header."
+      (concat "#+title: Daily Journal\n"
+              "#+startup: overview\n\n"))
+    (defun org-journal-find-location ()
+      ;; Open today's journal, but specify a non-nil prefix argument in order to
+      ;; inhibit inserting the heading; org-capture will insert the heading.
+      (org-journal-new-entry t)
+      (goto-char (point-max)))
+
+    ;; "https://github.com/bastibe/org-journal/issues/369"
+    ;; (defconst org-journal--cache-file
+      ;; (no-littering-expand-var-file-name "org-journal.cache"))
+    (:option org-journal-dir "~/Journal"
+             org-journal-find-file 'find-file
+
+             org-journal-date-format "%Y-%m-%d, %a"
+             org-journal-carryover-items
+             "TODO=\"TODO\"|TODO=\"DOING\"|TODO=\"WAIT\""
+
+             org-journal-file-type 'daily
+             org-journal-file-header 'org-journal-file-header-func
+
+             org-journal-enable-cache t
+
+             org-journal-file-format "%Y%m%d.org"
+             org-journal-hide-entries-p nil
+
+             org-journal-enable-agenda-integration t))
+  (defun dust/org-journal-new-journal ()
+    (interactive)
+    (org-journal-new-entry t))
+  (:global "C-c C-j" dust/org-journal-new-journal))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-番茄闹钟" class="outline-3">
+<h3 id="番茄闹钟"><a href="#番茄闹钟">番茄闹钟</a></h3>
+<div class="outline-text-3" id="text-orgd41997e">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git org-pomodoro "https://github.com/marcinkoziej/org-pomodoro"
+             alert "https://github.com/jwiegley/alert")
+  (:doc "Basic support for Pomodoro technique in Org Mode.")
+  (:disabled)
+  (:autoload org-pomodoro)
+  (:option org-pomodoro-start-sound-p t
+           org-pomodoro-length 25
+           org-pomodoro-short-break-length 5
+           org-pomodoro-long-break-length 30)
+  (:bind-into org-agenda-mode-map "G" org-pomodoro)
+  (:with-hook org-pomodoro-long-break-finished-hook
+    (lambda () (setq org-pomodoro-count 0))))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-笔记管理" class="outline-3">
+<h3 id="笔记管理"><a href="#笔记管理">笔记管理</a></h3>
+<div class="outline-text-3" id="text-org64f52d7">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git denote "https://github.com/protesilaos/denote")
+  (:doc "A simple note-taking tool for Emacs")
+  (:autoload denote denote-dired-mode)
+  (defun denote-subdirectory-with-template ()
+    "Create note while prompting for a subdirectory.
+
+Available candidates include the value of the variable
+`denote-directory' and any subdirectory thereof.
+
+This is equivalent to calling `denote' when `denote-prompts' is
+set to '(subdirectory title keywords)."
+    (declare (interactive-only t))
+    (interactive)
+    (let ((denote-prompts '(template subdirectory title keywords)))
+      (call-interactively #'denote)))
+  (:option
+   denote-directory "~/Note"
+
+   denote-date-format "&lt;%Y-%m-%d %a&gt;"
+
+   denote-infer-keywords t
+   denote-sort-keywords t
+   denote-file-type 'org
+
+   denote-prompts '(subdirectory title keywords)
+   denote-excluded-directories-regexp "^assets\\|^static"
+
+   ;; Pick dates, where relevant, with Org's advanced interface:
+   denote-date-prompt-use-org-read-date t
+   denote-allow-multi-word-keywords nil
+
+   xref-search-program 'ripgrep
+
+   denote-templates
+   `((book . ,(concat "#+book_author: \n"
+                      "#+book_translator: \n"
+                      "#+book_publisher: \n"
+                      "#+book_publish_date: \n\n"
+                      "#+startup: overview\n\n"
+                      "* Outline\n"
+                      ":PROPERTIES:\n"
+                      ":VISIBILITY: all\n"
+                      ":END:\n\n"
+                      "* Conclusion\n"
+                      ":PROPERTIES:\n"
+                      ":VISIBILITY: all\n"
+                      ":END:\n\n"
+                      "* Excerpts\n"
+                      ":PROPERTIES:\n"
+                      ":VISIBILITY: children\n"
+                      ":END:\n"))
+     (blog . ,(concat "#+publish: nil\n\n"))))
+  (:when-loaded
+    (:face denote-faces-date
+      :foreground (face-attribute 'font-lock-function-name-face :foreground))
+    (:face denote-faces-delimiter
+      :foreground (face-attribute 'font-lock-comment-face :foreground))
+    (:face denote-faces-extension
+      :foreground (face-attribute 'font-lock-comment-face :foreground))
+    (:face denote-faces-keywords
+      :foreground (face-attribute 'font-lock-keyword-face :foreground))
+    (:face denote-faces-title
+      :foreground (face-attribute 'font-lock-string-face :foreground)))
+  (:with-mode denote-dired-mode
+    (:hook-into dired-mode)))</code>
+</pre>
+
+</div>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git consult-notes "https://github.com/mclear-tools/consult-notes")
+  (:doc "Easily select notes via consult.")
+  (:autoload consult-notes-denote-mode)
+  (:with-hook minibuffer-setup-hook
+    (:hook consult-notes-denote-mode)))</code>
+</pre>
+
+</div>
+</div>
+</div>
+<div id="outline-container-博客生成" class="outline-3">
+<h3 id="博客生成"><a href="#博客生成">博客生成</a></h3>
+<div class="outline-text-3" id="text-orgfc2b78b">
+<p>
+基于 <a target="_blank" href="https://github.com/bastibe/org-static-blog">org-static-blog</a> 写的自用的 publish 系统。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup org-blog
+  (:doc "Blog publishing system")
+  (:autoload org-blog-publish)
+  (:option org-blog-publish-directory "~/blog/"
+           org-blog-posts-directory "~/Note/"
+           org-blog-static-directory "~/Note/static/"
+           org-blog-assets-directory "~/Note/assets/"
+           ;; org-blog-cache-file (no-littering-expand-var-file-name
+                                ;; "org-blog-cache.json")
+           )
+  (:option org-blog-meta-title "手指骑士的病房"
+           org-blog-meta-slogan "I choose to see the beauty."
+           org-blog-meta-author "Finger Knight"
+           org-blog-index-length 5
+           org-blog-use-preview t
+           org-blog-enable-tags t
+           org-blog-use-pygmentize t
+
+           org-export-with-sub-superscripts nil
+
+           org-export-with-toc nil
+           org-export-with-section-numbers nil)
+  (:option org-blog-page-head-template
+           (list "&lt;link rel=\"icon\" href=\"/static/favicon.ico\"&gt;"
+                 "&lt;meta content=\"text/html;charset=utf-8\" http-equiv=\"Content-Type\"&gt;"
+                 "&lt;meta content=\"utf-8\" http-equiv=\"encoding\"&gt;"
+                 "&lt;link href= \"/static/style/style.css\" rel=\"stylesheet\" type=\"text/css\" /&gt;"))
+
+  (:option org-blog-page-header-template
+           (concat "&lt;div class=\"home-page\"&gt;\n"
+                   (format "&lt;a href=\"/\"&gt;%s&lt;/a&gt;" org-blog-meta-title)
+                   "&lt;/div&gt;"
+                   "&lt;div class=\"nav\"&gt;\n"
+
+                   "&lt;div class=\"nav item\"&gt;\n"
+                   "&lt;a href=\"/tags\"&gt;标签&lt;/a&gt;\n"
+                   "&lt;/div&gt;\n"
+
+                   "&lt;div class=\"nav item\"&gt;\n"
+                   "&lt;a href=\"/archive\"&gt;归档&lt;/a&gt;\n"
+                   "&lt;/div&gt;\n"
+
+                   "&lt;div class=\"nav item\"&gt;\n"
+                   "&lt;a href=\"/about\"&gt;关于&lt;/a&gt;\n"
+                   "&lt;/div&gt;\n"
+
+                   "&lt;div class=\"nav item\"&gt;\n"
+                   "&lt;a href=\"/emacs\"&gt;Emacs&lt;/a&gt;\n"
+                   "&lt;/div&gt;\n"
+
+                   "&lt;/div&gt;\n"))
+  (:with-hook org-blog-pre-hook
+    (:hook (lambda ()
+             (shell-command-to-string
+              "python ~/scripts/sass2css.py ~/Note/style.scss ~/Note/static/style/style.css"))))
+  (:option org-blog-third-party
+           (list
+            (cons 'math
+                  (cons
+                   "&lt;link rel=\"stylesheet\" href=\"/static/katex/katex.min.css\"&gt;"
+                   (concat "&lt;script defer src=\"/static/katex/katex.min.js\"&gt;&lt;/script&gt;\n"
+                           "&lt;script defer src=\"/static/katex/auto-render.min.js\"&gt;&lt;/script&gt;\n"
+                           "&lt;script&gt;\n"
+                           "let macros = {
+\"\\\\C\": \"\\\\mathbb{C}\",
+\"\\\\N\": \"\\\\mathbb{N}\",
+\"\\\\Q\": \"\\\\mathbb{Q}\",
+\"\\\\R\": \"\\\\mathbb{R}\",
+\"\\\\Z\": \"\\\\mathbb{Z}\",
+\"’\": \"'\"
+};\n"
+                           "document.addEventListener(\"DOMContentLoaded\", function() {
+renderMathInElement(document.getElementById(\"content\"), {
+strict: false,
+delimiters: [
+{\"display\": true,\"left\": \"$$\",\"right\": \"$$\"},
+{\"display\": true,\"left\": \"\\\\[\",\"right\": \"\\\\]\"},
+{\"display\": true,\"left\": \"\\\\begin{equation}\",\"right\": \"\\\\end{equation}\"},
+{\"display\": true,\"left\": \"\\\\begin{equation*}\",\"right\": \"\\\\end{equation*}\"},
+{\"display\": true,\"left\": \"\\\\begin{align}\",\"right\": \"\\\\end{align}\"},
+{\"display\": true,\"left\": \"\\\\begin{align*}\",\"right\": \"\\\\end{align*}\"},
+{\"display\": true,\"left\": \"\\\\begin{alignat}\",\"right\": \"\\\\end{alignat}\"},
+{\"display\": true,\"left\": \"\\\\begin{alignat*}\",\"right\": \"\\\\end{alignat*}\"},
+{\"display\": true,\"left\": \"\\\\begin{gather}\",\"right\": \"\\\\end{gather}\"},
+{\"display\": true,\"left\": \"\\\\begin{CD}\",\"right\": \"\\\\end{CD}\"},
+{\"display\": false,\"left\": \"$\",\"right\": \"$\"},
+{\"display\": false,\"left\": \"\\\\(\",\"right\": \"\\\\)\"}
+],
+macros});})\n"
+                           "&lt;/script&gt;")))
+
+            (cons 'highlight
+                  (cons
+                   "&lt;link rel=\"stylesheet\" href=\"/static/highlight/dracula.css\"&gt;"
+                   (concat "&lt;script src=\"/static/highlight/highlight.min.js\"&gt;&lt;/script&gt;\n"
+                           "&lt;script&gt;\n"
+                           "Array.from(document.querySelectorAll('#content pre')).forEach(
+node =&gt; {
+let codeElement = node.querySelector(\"code\"),
+    excludes = [\"mermaid\"];
+
+if (!codeElement){
+return
+}
+let language = codeElement.getAttribute(\"class\").replace(/^language-/, \"\");
+if (excludes.includes(language)) {
+return
+}
+
+if (language == \"emacs-lisp\" || language == \"elisp\") {
+codeElement.setAttribute(\"class\", \"language-lisp\");
+}
+
+hljs.highlightElement(codeElement);
+});\n"
+                           "&lt;/script&gt;")))
+
+            (cons 'mermaid
+                  (cons
+                   ""
+                   (concat "&lt;script src=\"/static/mermaid/mermaid.min.js\"&gt;&lt;/script&gt;\n"
+                           "&lt;script&gt;\n"
+                           "mermaid.initialize({theme: 'dark', securityLevel: 'loose'});\n"
+                           "&lt;/script&gt;")))
+            (cons 'highlight-pygments
+                  (cons
+                   "&lt;link rel=\"stylesheet\" href=\"/static/pygments/dracula.css\"&gt;"
+                   ""))
+            )))</code>
+</pre>
+
+</div>
+</div>
+</div>
+<div id="outline-container-书籍管理" class="outline-3">
+<h3 id="书籍管理"><a href="#书籍管理">书籍管理</a></h3>
+<div class="outline-text-3" id="text-org97c5ee3">
+<p>
+用 org mode 的 Attachment 来做书籍管理。 <code>:PROPERTIES:</code> 里填上各种信息，然后对应的文件名字归一化。加一个 advice, 使得文档打开使用当前窗口，而不是默认的 find-file-other-window.
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup org-book
+  (:doc "book management")
+  (:option dust/org-book-file "~/Books/books.org")
+  (:after org
+    (require 'dash)
+    (require 'f)
+    (require 'ol)
+    (require 'org-attach)
+    (defun dust/org-book-setup ()
+      (when (and (buffer-file-name (current-buffer))
+                 (file-equal-p dust/org-book-file
+                               (buffer-file-name (current-buffer))))
+        (require 'org-attach)
+        (setq-local org-attach-id-to-path-function-list
+                    (reverse
+                     (-snoc (reverse org-attach-id-to-path-function-list)
+                            (lambda (id) id))))))
+    (defun dust/org-book-normalize-name (attach-dir)
+      (--each (f-files attach-dir)
+        (let* ((props (org-entry-properties (point)))
+               (title (assoc-default "ITEM" props))
+               (author (assoc-default "AUTHOR" props))
+               (publiser (assoc-default "PUBLISHER" props))
+               (date (assoc-default "DATE" props))
+               (trans (assoc-default "TRANSLATOR" props))
+               (ext (f-ext it))
+               (name title))
+          (when author
+            (setq name (concat name "-" author)))
+          (when trans
+            (setq name (concat name "-" trans)))
+          (when publiser
+            (setq name (concat name "-" publiser)))
+          (when date
+            (setq name (concat name "-" date)))
+          (setq name (format "%s.%s" name ext))
+          (rename-file it (f-expand name attach-dir) t))))
+    (:hook dust/org-book-setup)
+    (:local-hook org-attach-after-change-hook dust/org-book-normalize-name)
+    (:advice org-attach-open :around (fn &amp;optional arg)
+      (let ((org-link-frame-setup (assoc-delete-all 'file
+                                                    (copy-alist org-link-frame-setup))))
+        (push '(file . find-file) org-link-frame-setup)
+        (funcall fn arg))))
+  (defun org-book ()
+    (interactive)
+    (find-file dust/org-book-file))
+  (defun org-book-add (title author &amp;optional date publisher translator)
+    ;; (interactive (concat "sTitle: \n"
+    ;;                      "sAuthor: \n"
+    ;;                      "sDate(optional): \n"
+    ;;                      "sPublisher(optional): \n"
+    ;;                      "sTranslater(optional): "))
+    (interactive "sTitle: \nsAuthor: \nsDate(optional): \nsPublisher(optional): \nsTranslater(optional): ")
+    (goto-char (point-max))
+    (org-insert-heading-after-current)
+    (insert title "\n")
+    (call-interactively #'org-set-tags-command)
+    (org-set-property "AUTHOR" author)
+    (when date
+      (org-set-property "DATE" date))
+    (when publisher
+      (org-set-property "PUBLISHER" publisher))
+    (when translator
+      (org-set-property "TRANSLATOR" translator))
+    (call-interactively #'org-attach-attach-mv)
+    )
+
+  )</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-文档阅读" class="outline-3">
+<h3 id="文档阅读"><a href="#文档阅读">文档阅读</a></h3>
+<div class="outline-text-3" id="text-org6d6cf14">
+</div>
+<div id="outline-container-EPUB" class="outline-4">
+<h4 id="EPUB"><a href="#EPUB">EPUB</a></h4>
+<div class="outline-text-4" id="text-org797bc0e">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git nov "https://depp.brause.cc/nov.el.git"
+             esxml "https://github.com/tali713/esxml")
+  (:doc "Major mode for reading EPUBs in Emacs.")
+  (:autoload nov-mode)
+  (:file-match "\\.epub\\'"))</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-PDF" class="outline-4">
+<h4 id="PDF"><a href="#PDF">PDF</a></h4>
+<div class="outline-text-4" id="text-orgf987a13">
+<p>
+要执行一遍 <code>/pdf-tools/server/autobuild</code>, 它自动安装 epdfinfo 到指定位置。 <code>pdf-view-restore</code> 用来保存文档阅读到的位置，下次打开后自动跳转过去。
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(setup (:git pdf-tools "https://github.com/vedang/pdf-tools"
+             tablist "https://github.com/politza/tablist"
+             pdf-view-restore "https://github.com/007kevin/pdf-view-restore")
+  (:doc "A replacement of DocView for PDF files.")
+  (:load-path "lisp" "server")
+  (:option pdf-info-epdfinfo-program (expand-file-name
+                                      "pdf-tools/server/epdfinfo"
+                                      user-module-directory))
+
+  (:with-hook doc-view-mode-hook
+    (:hook (lambda ()
+             (require 'pdf-tools)
+             (pdf-tools-install-noverify)
+             (auto-revert-mode 0))))
+
+  (:when-loaded
+    (:also-load pdf-history pdf-annot pdf-links pdf-outline
+                pdf-misc pdf-isearch pdf-cache
+                pdf-view-restore)
+    (:with-hook pdf-view-mode-hook
+      (:hook pdf-view-restore-mode))
+    (:option (remove* pdf-tools-enabled-modes)
+             '(pdf-sync-minor-mode
+               pdf-occur-global-minor-mode
+               pdf-virtual-global-minor-mode))))</code>
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-配置结束" class="outline-2">
+<h2 id="配置结束"><a href="#配置结束">配置结束</a></h2>
+<div class="outline-text-2" id="text-orgcf2c548">
+<div class="org-src-container">
+<pre>
+<code class="language-elisp">(defun startup-echo-area-message ()
+  (emacs-init-time "Emacs starts in %.2f sec. Enjoy hacking :)"))
+
+(with-eval-after-load 'init
+  (setq gc-cons-threshold (* 16 1024 1024)))
+
+(provide 'init)</code>
+</pre>
+
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div id="fn.1" class="footdef"><span class="footnum"> (1) </span><a class="foot2ref" href="#fnr.1.1" role="doc-backlink"> ⇑ </a><a class="foot2ref" href="#fnr.1.2" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+<a target="_blank" href="https://emacs.nasy.moe">Nasy Emacs 配置</a>
+</p></div></div>
+
+<div id="fn.2" class="footdef"><span class="footnum"> (2) </span><a class="foot2ref" href="#fnr.2.1" role="doc-backlink"> ⇑ </a><a class="foot2ref" href="#fnr.2.2" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+<a target="_blank" href="https://github.com/alexluigit/emacs-grandview">GitHub - alexluigit/emacs-grandview: 原非大观。</a>
+</p></div></div>
+
+<div id="fn.3" class="footdef"><span class="footnum"> (3) </span><a class="foot2ref" href="#fnr.3.1" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+<a target="_blank" href="https://emacs-china.org/t/lsp-bridge/20786/1208?u=fingerknight">lsp-bridge &#x2013; 速度最快的语法补全插件 - #1208，来自 blove - Emacs-general - Emacs China</a>
+</p></div></div>
+
+<div id="fn.4" class="footdef"><span class="footnum"> (4) </span><a class="foot2ref" href="#fnr.4.1" role="doc-backlink"> ⇑ </a><a class="foot2ref" href="#fnr.4.2" role="doc-backlink"> ⇑ </a><a class="foot2ref" href="#fnr.4.3" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+<a target="_blank" href="https://www.emacswiki.org/emacs/SetupEl">EmacsWiki: Setup El</a>
+</p></div></div>
+
+
+</div>
+</div></div>
+</div>
+<div id="postamble" class="status">
+<center>
+Powered by <a href="https://orgmode.org">Org Mode</a>.
+</center>
+</div>
+<script src="/static/script.js"></script>
+<script src="/static/prism.js"></script>
+</body>
+</html>

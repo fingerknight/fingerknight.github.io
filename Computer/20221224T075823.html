@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title> Arch Linux 各种软件的折腾 - Ward of Dust </title>
+<meta name="author" content="MrDust">
+<link rel="stylesheet" href="/static/Fantasque/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dracula-prism@2.1.16/dist/css/dracula-prism.min.css">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/static/Slippery/style.css"><link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+<div id="preamble" class="status">
+<div class="header">
+<div class="title">
+<a href="/">Ward of Dust</a>
+</div>
+<div class="navigation">
+<a class="item" href="/archive.html">Archives</a>
+<a class="item" href="/taxonomy.html">Taxonomy</a>
+<a class="item" href="/about.html">About</a></div>
+</div>
+</div>
+<div id="content" class="content">
+<h1 class="title">Arch Linux 各种软件的折腾</h1>
+<div class="post">
+<div class="metadata">
+<div class="date"><span>2022-12-24</span></div>
+<div class="tags">
+<a class="tag" href="/tag/archlinux.html">#archlinux</a> <a class="tag" href="/tag/post.html">#post</a></div>
+<div class="category">
+<a href="/category/Computer.html">$Computer</a>
+</div>
+</div>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#网盘">网盘</a></li>
+<li><a href="#MPV 播放器">MPV 播放器</a></li>
+<li><a href="#清理不用的软件包">清理不用的软件包</a></li>
+<li><a href="#GIF 录制 Peek + Screen Key">GIF 录制 Peek + Screen Key</a></li>
+<li><a href="#安装之前版本的包">安装之前版本的包</a></li>
+<li><a href="#GitHub 升级子模块">GitHub 升级子模块</a></li>
+<li><a href="#usbutils">usbutils</a></li>
+<li><a href="#Arch Linux CN 仓库">Arch Linux CN 仓库</a></li>
+<li><a href="#ThinkPad x270 指纹">ThinkPad x270 指纹</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-网盘" class="outline-2">
+<h2 id="网盘"><a href="#网盘">网盘</a></h2>
+<div class="outline-text-2" id="text-orga5bbc20">
+<ul class="org-ul">
+<li>百度网盘： <a target="_blank" href="https://github.com/foyoux/aligo">GitHub - foyoux/aligo: 🔥简单、易用、可扩展的阿里云盘 API 接口库🚀</a></li>
+<li>阿里网盘： <a target="_blank" href="https://github.com/foyoux/aligo">GitHub - foyoux/aligo: 🔥简单、易用、可扩展的阿里云盘 API 接口库🚀</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-MPV 播放器" class="outline-2">
+<h2 id="MPV 播放器"><a href="#MPV 播放器">MPV 播放器</a></h2>
+<div class="outline-text-2" id="text-org2dc8f39">
+<p>
+简单无比的播放器，它的功能也少。目前需要的是播放列表，不然每次只能播放完一个视频就要手动点开下一个。
+</p>
+
+<p>
+插件: <a target="_blank" href="https://github.com/jonniek/mpv-playlistmanager">GitHub - jonniek/mpv-playlistmanager: Mpv lua script to create and manage playlists</a>
+</p>
+
+<p>
+放到在 mpv 配置文件目录下。 <code>playlistmanager.lua</code> 放到  <code>~/.config/mpv/scripts/</code> 下，这是插件的位置；然后 <code>playlistmanager.conf</code> 放到 <code>~/.config/mpv/script-opts</code> 下，这是配置文件的位置。
+</p>
+
+<p>
+指定加载的文件后缀，不够后面再补充
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-nil">loadfiles_filetypes=["mp4","m4a","mkv","avi","flv","m4v","wmv"]</code>
+</pre>
+
+</div>
+
+<p>
+加载同一目录下的所以文件
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-nil">loadfiles_on_start=yes
+loadfiles_on_idle_start=yes</code>
+</pre>
+
+</div>
+
+<p>
+列表字体大小，根据配置文件里面的说明调整，我只需要改大小就可以。
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-nil">style_ass_tags={\fs10}</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-清理不用的软件包" class="outline-2">
+<h2 id="清理不用的软件包"><a href="#清理不用的软件包">清理不用的软件包</a></h2>
+<div class="outline-text-2" id="text-org398049d">
+<div class="org-src-container">
+<pre>
+<code class="language-bash">sudo pacman -Qqdt | sudo pacman -Rs -</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-GIF 录制 Peek + Screen Key" class="outline-2">
+<h2 id="GIF 录制 Peek + Screen Key"><a href="#GIF 录制 Peek + Screen Key">GIF 录制 Peek + Screen Key</a></h2>
+<div class="outline-text-2" id="text-org0413278">
+<div class="org-src-container">
+<pre>
+<code class="language-bash">sudo pacman -S peek screenkey</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-安装之前版本的包" class="outline-2">
+<h2 id="安装之前版本的包"><a href="#安装之前版本的包">安装之前版本的包</a></h2>
+<div class="outline-text-2" id="text-orgf1680c9">
+<p>
+缓存地址： <code>/var/cache/pacman/pkg</code>
+</p>
+
+<p>
+安装： <code>sudo pacman -U /var/cache/pacman/pkg/xxxx.pkg.tar.zst</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-GitHub 升级子模块" class="outline-2">
+<h2 id="GitHub 升级子模块"><a href="#GitHub 升级子模块">GitHub 升级子模块</a></h2>
+<div class="outline-text-2" id="text-orge4f6546">
+<div class="org-src-container">
+<pre>
+<code class="language-bash">git submodule update --remote</code>
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-usbutils" class="outline-2">
+<h2 id="usbutils"><a href="#usbutils">usbutils</a></h2>
+<div class="outline-text-2" id="text-orge080d2b">
+<p>
+问题：
+</p>
+<ul class="org-ul">
+<li>找不到 <code>lsusb</code></li>
+</ul>
+
+<p>
+安装 <code>sudo pacman -S usbutils</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-Arch Linux CN 仓库" class="outline-2">
+<h2 id="Arch Linux CN 仓库"><a href="#Arch Linux CN 仓库">Arch Linux CN 仓库</a></h2>
+<div class="outline-text-2" id="text-org92c05d5">
+<ul class="org-ul">
+<li><p>
+向 <code>/etc/pacman.conf</code> 添加：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-nil">[archlinuxcn]
+Server = https://repo.archlinuxcn.org/$arch</code>
+</pre>
+
+</div></li>
+<li><code>sudo pacman -Sy &amp;&amp; sudo pacman -S archlinuxcn-keyring</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-ThinkPad x270 指纹" class="outline-2">
+<h2 id="ThinkPad x270 指纹"><a href="#ThinkPad x270 指纹">ThinkPad x270 指纹</a></h2>
+<div class="outline-text-2" id="text-orgfc8ea05">
+<p>
+到 arch 官网上才看到的： <a target="_blank" href="https://wiki.archlinux.org/title/Lenovo_ThinkPad_X270">https://wiki.archlinux.org/title/Lenovo_ThinkPad_X270</a>
+</p>
+
+<ul class="org-ul">
+<li><p>
+安装 <code>python-validity</code>:
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-bash">yay -S python-validity</code>
+</pre>
+
+</div></li>
+<li>启动服务 <code>sudo systemctl start systemctl status python3-validity</code></li>
+<li>录入指纹 <code>fprintd-enroll -f 手指</code>, 手指类型：
+<ul class="org-ul">
+<li><code>left-thumb</code>: 左手拇指</li>
+<li><code>left-index</code>: 左手食指</li>
+<li><code>left-middle-finger</code>: 左手中指</li>
+<li><code>left-ring-finger</code>: 左手无名指</li>
+<li><code>left—little-finger</code>: 左手小指</li>
+<li>把 left 改成 right 就是右手</li>
+<li>录指纹的时候多抬起几次，直到它自行结束 "Enroll result: enroll-completed"</li>
+</ul></li>
+<li>检验指纹 <code>fprintd-verify</code> 。 <code>verify-match</code> 表示识别成功， <code>verify-no-match</code> 表示失败</li>
+<li>添加到 SDDM 登录界面： <code>vim /etc/pam.d/system-local-login</code>, 在最上方加 <code>auth sufficient pam_fprintd.so</code></li>
+<li>添加到 KDE 锁屏：  <code>vim /etc/pam.d/kde</code>, 在最上方加 <code>auth sufficient pam_fprintd.so</code></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<center>
+Powered by <a href="https://orgmode.org">Org Mode</a>.
+</center>
+</div>
+<script src="/static/script.js"></script>
+<script src="/static/prism.js"></script>
+</body>
+</html>

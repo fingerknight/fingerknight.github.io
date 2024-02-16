@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title> Alist 多网盘管理的尝试 - Ward of Dust </title>
+<meta name="author" content="MrDust">
+<link rel="stylesheet" href="/static/Fantasque/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dracula-prism@2.1.16/dist/css/dracula-prism.min.css">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/static/Slippery/style.css"><link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+<div id="preamble" class="status">
+<div class="header">
+<div class="title">
+<a href="/">Ward of Dust</a>
+</div>
+<div class="navigation">
+<a class="item" href="/archive.html">Archives</a>
+<a class="item" href="/taxonomy.html">Taxonomy</a>
+<a class="item" href="/about.html">About</a></div>
+</div>
+</div>
+<div id="content" class="content">
+<h1 class="title">Alist 多网盘管理的尝试</h1>
+<div class="post">
+<div class="metadata">
+<div class="date"><span>2022-12-24</span></div>
+<div class="tags">
+<a class="tag" href="/tag/alist.html">#alist</a> <a class="tag" href="/tag/archlinux.html">#archlinux</a> <a class="tag" href="/tag/netdisk.html">#netdisk</a> <a class="tag" href="/tag/post.html">#post</a></div>
+<div class="category">
+<a href="/category/Computer.html">$Computer</a>
+</div>
+</div>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#简介">简介</a></li>
+<li><a href="#alist 安装">alist 安装</a>
+<ul>
+<li><a href="#安装">安装</a></li>
+<li><a href="#配置">配置</a></li>
+<li><a href="#启用">启用</a>
+<ul>
+<li><a href="#获取管理员信息">获取管理员信息</a></li>
+</ul>
+</li>
+<li><a href="#登录后台">登录后台</a></li>
+<li><a href="#添加存储">添加存储</a></li>
+<li><a href="#部署">部署</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-简介" class="outline-2">
+<h2 id="简介"><a href="#简介">简介</a></h2>
+<div class="outline-text-2" id="text-orgde9d9f3">
+<p>
+看到果核大佬发的一个多网盘的管理工具《<a target="_blank" href="https://www.ghxi.com/wx20221027.html">网盘太多不好管理？用上这个神器试试！ - 果核剥壳</a>》，目前用的网盘工具还是分开的 CLI ，便想在 Arch 上尝试一下。
+</p>
+</div>
+</div>
+
+<div id="outline-container-alist 安装" class="outline-2">
+<h2 id="alist 安装"><a href="#alist 安装">alist 安装</a></h2>
+<div class="outline-text-2" id="text-orgeb3173e">
+<p>
+项目地址在这里：<a target="_blank" href="https://github.com/alist-org/alist">https://github.com/alist-org/alist</a>
+</p>
+
+<p>
+文档地址：<a target="_blank" href="https://alist.nn.ci/">Home | AList Docs</a>
+</p>
+</div>
+
+<div id="outline-container-安装" class="outline-3">
+<h3 id="安装"><a href="#安装">安装</a></h3>
+<div class="outline-text-3" id="text-orge6b0b02">
+<p>
+下载安装脚本：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-bash">curl -fsSL "https://alist.nn.ci/v3.sh" &gt;&gt; v3.sh
+# or
+wget "https://alist.nn.ci/v3.sh"</code>
+</pre>
+
+</div>
+
+<ul class="org-ul">
+<li>安装： <code>bash v3.sh install</code></li>
+<li>升级： <code>bash v3.sh update</code></li>
+<li>卸载： <code>bash v3.sh uninstall</code></li>
+</ul>
+
+<p>
+默认安装路径是 <code>/opt/alist</code> ，如果像安装/升级/卸载在其他路径把它加到后面：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-bash">bash v3.sh install/update/uninstall &lt;path&gt;</code>
+</pre>
+
+</div>
+
+<p>
+安装成功后会生成一个服务 <code>alist.service</code>, 通过 <code>systemctl</code> 来控制。
+</p>
+</div>
+</div>
+
+<div id="outline-container-配置" class="outline-3">
+<h3 id="配置"><a href="#配置">配置</a></h3>
+<div class="outline-text-3" id="text-org8b29ad7">
+<p>
+我是默认的安装路径，在 <code>/opt/alist</code> ，目录结构：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-nil">.
+├── alist
+├── data
+│   ├── config.json
+│   ├── data.db
+│   └── temp
+└── log
+    └── log.log</code>
+</pre>
+
+</div>
+<ul class="org-ul">
+<li><code>alist</code> 是执行脚本</li>
+<li><code>data</code> 是数据目录， <code>config.json</code> 是配置文件，其他的是数据</li>
+<li><code>log</code> 日志目录，最开始应该是没有的。</li>
+</ul>
+
+<p>
+配置文件如下：
+</p>
+<div class="org-src-container">
+<pre>
+<code class="language-js">{
+  "force": false,
+  "address": "0.0.0.0",
+  "port": 5244,
+  "site_url": "",
+  "cdn": "",
+  "jwt_secret": "random generated",
+  "token_expires_in": 48,
+  "database": {
+    "type": "sqlite3",
+    "host": "",
+    "port": 0,
+    "user": "",
+    "password": "",
+    "name": "",
+    "db_file": "data/data.db",
+    "table_prefix": "x_",
+    "ssl_mode": ""
+  },
+  "scheme": {
+    "https": false,
+    "cert_file": "",
+    "key_file": ""
+  },
+  "temp_dir": "data/temp",
+  "log": {
+    "enable": true,
+    "name": "log/log.log",
+    "max_size": 10,
+    "max_backups": 5,
+    "max_age": 28,
+    "compress": false
+  }
+}</code>
+</pre>
+
+</div>
+
+<p>
+各配置项的用途参考官网：<a target="_blank" href="https://alist.nn.ci/zh/config/configuration.html">https://alist.nn.ci/zh/config/configuration.html</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-启用" class="outline-3">
+<h3 id="启用"><a href="#启用">启用</a></h3>
+<div class="outline-text-3" id="text-org74e524d">
+</div>
+<div id="outline-container-获取管理员信息" class="outline-4">
+<h4 id="获取管理员信息"><a href="#获取管理员信息">获取管理员信息</a></h4>
+<div class="outline-text-4" id="text-org1f588c7">
+<p>
+<code>sudo ./alist admin --data alist-dir</code>
+</p>
+<ul class="org-ul">
+<li><code>alist-dir</code> 就是 Alist 的 data 的目录，如果不给这个参数，就会在当前目录下建一个 data.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-登录后台" class="outline-3">
+<h3 id="登录后台"><a href="#登录后台">登录后台</a></h3>
+<div class="outline-text-3" id="text-orgb8af91b">
+<p>
+原谅我没在文档中找到进入后台的办法，最终是在 b 站一个 up 主的视频里面才看到的 <sup class="fsup"><a id="fnr.1.1" class="footref" href="#fn.1" role="doc-backlink">[1]</a></sup>。
+</p>
+
+<p>
+访问： <code>http://localhost:5244/@login</code> ，输入管理员信息即可。
+</p>
+
+<p>
+这是它会跳转到 index 主页，但是因为还没添加网盘，所以会报错 <code>failed get storage: can't find storage with rawPath: /</code>  ，这个在文档里面提到了 <sup class="fsup"><a id="fnr.2.1" class="footref" href="#fn.2" role="doc-backlink">[2]</a></sup> 。
+</p>
+
+<p>
+访问： <code>http://localhost:5244/@manage</code> ，登录到管理界面。
+</p>
+</div>
+</div>
+
+<div id="outline-container-添加存储" class="outline-3">
+<h3 id="添加存储"><a href="#添加存储">添加存储</a></h3>
+<div class="outline-text-3" id="text-org0d9e3f6">
+<p>
+在列表左边 <code>存储</code> 那里添加，按照官网的文档添加就行。
+</p>
+</div>
+</div>
+
+<div id="outline-container-部署" class="outline-3">
+<h3 id="部署"><a href="#部署">部署</a></h3>
+<div class="outline-text-3" id="text-org21f12f4">
+<p>
+部署参照官网，我是把它当作客户端来用，不想用命令行了。
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div id="fn.1" class="footdef"><span class="footnum"> (1) </span><a class="foot2ref" href="#fnr.1.1" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+<a target="_blank" href="https://www.bilibili.com/video/BV1BP411G7q9/">【Alist】Alist V3 "全新版本" 使用 安装/启动 教程！ 保姆级/傻瓜式/手把手 教学！！_哔哩哔哩_bilibili</a>
+</p></div></div>
+
+<div id="fn.2" class="footdef"><span class="footnum"> (2) </span><a class="foot2ref" href="#fnr.2.1" role="doc-backlink"> ⇑ </a>
+ <div class="footpara" role="doc-footnote"><p class="footpara">
+<a target="_blank" href="https://alist.nn.ci/zh/faq/why.html">Why | AList文档</a>
+</p></div></div>
+
+
+</div>
+</div></div>
+</div>
+<div id="postamble" class="status">
+<center>
+Powered by <a href="https://orgmode.org">Org Mode</a>.
+</center>
+</div>
+<script src="/static/script.js"></script>
+<script src="/static/prism.js"></script>
+</body>
+</html>

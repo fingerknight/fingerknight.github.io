@@ -1,0 +1,8 @@
+@font-face{
+    font-family: "Slippery";
+    font-style: normal;
+    src: url(SlipperyTrial-Regular.otf) format('opentype'),
+         url(SlipperyTrial-Bold.otf) format('opentype'),
+         url(SlipperyTrial-BoldItalic.otf) format('opentype'),
+         url(SlipperyTrial-RegularItalic.otf) format('opentype');
+}

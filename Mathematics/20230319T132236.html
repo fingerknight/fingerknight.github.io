@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title> 数学学习的一些心得 - Ward of Dust </title>
+<meta name="author" content="MrDust">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/static/Slippery/style.css"><link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+<div id="preamble" class="status">
+<div class="header">
+<div class="title">
+<a href="/">Ward of Dust</a>
+</div>
+<div class="navigation">
+<a class="item" href="/archive.html">Archives</a>
+<a class="item" href="/taxonomy.html">Taxonomy</a>
+<a class="item" href="/about.html">About</a></div>
+</div>
+</div>
+<div id="content" class="content">
+<h1 class="title">数学学习的一些心得</h1>
+<div class="post">
+<div class="metadata">
+<div class="date"><span>2023-03-19</span></div>
+<div class="tags">
+<a class="tag" href="/tag/post.html">#post</a> <a class="tag" href="/tag/math.html">#math</a> <a class="tag" href="/tag/muse.html">#muse</a></div>
+<div class="category">
+<a href="/category/Mathematics.html">$Mathematics</a>
+</div>
+</div>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#学习基础：逻辑">学习基础：逻辑</a></li>
+<li><a href="#第一原理：从定义出发">第一原理：从定义出发</a></li>
+<li><a href="#解决过程：例行公事">解决过程：例行公事</a></li>
+<li><a href="#先验知识：收集整理">先验知识：收集整理</a></li>
+<li><a href="#最后">最后</a></li>
+</ul>
+</div>
+</div>
+<p>
+朋友跟我提到，作为一个数学爱好者，是否有一些学习经验给想学习数学的入门者。虽然各种数学入门都看过，我自己却没有总结出什么经验，便以此为契机，分享一下自己摸爬打滚的历经。
+</p>
+
+<div id="outline-container-学习基础：逻辑" class="outline-2">
+<h2 id="学习基础：逻辑"><a href="#学习基础：逻辑">学习基础：逻辑</a></h2>
+<div class="outline-text-2" id="text-org498c898">
+<p>
+数学是建立在逻辑学的基础上，首先要掌握的便是数理逻辑相关知识，比如命题的“与或非”，蕴涵命题的概念等等。数学上最重要的“反证法”，就是从逻辑基础而来的。
+</p>
+
+<p>
+要证明“If A. Then B”，即“\(A\Rarr B\)”, A 蕴涵 B, 反证并不是要证明 \(\lnot B \Rarr\lnot A\)（我之前一直以为如此）。
+</p>
+
+<p>
+在逻辑上，\(A \Rarr B\) 与 \(\lnot A \lor B\) 是等价的，可以从二者的真值看出来。反证，就是要让整个命题的逻辑为假，即 \(\lnot(\lnot A\lor B)\), 用德摩根律打开： \(A \land \lnot B\), 也就是用前提和结论的反命题作为新的前提，向前推导。因为整个命题逻辑为假，在推导过程中就一定会出现自相矛盾的地方，如此便说明了，在前提 A 给定的情况下，结论 B 不能为假。
+</p>
+
+<p>
+当然，并不需要真的把逻辑学学得多么透彻，只需要了解一些数理逻辑相关的知识，方便做数学推论即可。这部分可以看陶哲轩 Analysis I 的附录 <i>the basis of mathametical logic</i>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-第一原理：从定义出发" class="outline-2">
+<h2 id="第一原理：从定义出发"><a href="#第一原理：从定义出发">第一原理：从定义出发</a></h2>
+<div class="outline-text-2" id="text-orge7e545a">
+<p>
+“<b>从定义出发</b>”，这个是听了齐神的课收获最大的一句话。在尝试解决某个数学难题之前，先通过逻辑的视角去分析问题中各个概念的内涵。
+</p>
+
+<p>
+比如一个命题“单调有界数列必收敛”，要证明它，需要理清“什么是数列”、“什么叫单调”、“什么叫有界”、“什么叫收敛”。在明确概念之后，立刻可以得出定义它们的逻辑语句：
+</p>
+<ul class="org-ul">
+<li>单调： \(\forall n,m\in\N[n < m \Rarr a_n \le a_m]\) (或者 \(a_n \ge a_m\))</li>
+<li>有界： \(\forall n\in\N \exists M\in\R[|a_n| \le M]\)</li>
+<li>收敛：\(\forall \epsilon > 0 \exists N \in\N ,L\in\R[n\ge N\Rarr |a_n - L| \le \epsilon]\)</li>
+</ul>
+
+<p>
+如此便能把人类语言的数学命题，转换成逻辑符号数学命题。这是最重要的一步，连具体的问题是什么都不清楚，何谈解决。在概念明晰之后，很多联接会自动生成，马上就能反应到根据这个定义，下一步可以怎么推演。
+</p>
+</div>
+</div>
+
+<div id="outline-container-解决过程：例行公事" class="outline-2">
+<h2 id="解决过程：例行公事"><a href="#解决过程：例行公事">解决过程：例行公事</a></h2>
+<div class="outline-text-2" id="text-org8953bde">
+<p>
+数学的逻辑是演绎，也就是推理，因此某些相关命题在逻辑上有着大致相似的行为。简单来说，就是先看一遍某个命题的证明或解决过程，在解决相似的问题时，前者的推理过程中的很多步骤都是重复或者相关的。比如在证明与极限相关的命题，需要不厌其烦地写出极限的定义，然后用各种不等式缩放来完成；在证明线性相关的命题，需要多次反复写出各种 \(x_1,\cdots,x_n\), \(v_1,\cdots, v_n\).
+</p>
+
+<p>
+所以，当遇上解决不了的数学难题时，先去看看前置的、相关的问题是如何解决的，说不定依葫芦画瓢就能把问题解决了。例行公事的目的在于培养数学习惯，在新情境下就知道可以以何种方式将各种符号连接在一起。
+</p>
+</div>
+</div>
+
+<div id="outline-container-先验知识：收集整理" class="outline-2">
+<h2 id="先验知识：收集整理"><a href="#先验知识：收集整理">先验知识：收集整理</a></h2>
+<div class="outline-text-2" id="text-orge9468be">
+<p>
+因为数学过程大多是例行公事的，如此重要的事情便是要准备足够多的“公事”，在解决问题时可以一个个检验哪个“公事”能够套上去。在某个解决不了的、即使看了前置问题依旧如此的问题，去看大佬们的解答，看看别人用了那些巧妙的思路，然后把它加到自己的“公事”候选中，在下次再遇到新问题时，就可以搬出来试一试。
+</p>
+</div>
+</div>
+
+<div id="outline-container-最后" class="outline-2">
+<h2 id="最后"><a href="#最后">最后</a></h2>
+<div class="outline-text-2" id="text-org738ca38">
+<p>
+强烈建议去把齐神的微积分课程看一遍，搭配陶哲轩的 Analysis 教材，从基础的工作出发推演整个微积分大厦，最重要的是在过程中收获数学的演绎思维和逻辑。
+</p>
+
+<ul class="org-ul">
+<li>B 站链接（感谢 up 主的分享）：
+<ul class="org-ul">
+<li>微积分一：<a target="_blank" href="https://www.bilibili.com/video/BV1Tt411p7xz">https://www.bilibili.com/video/BV1Tt411p7xz</a></li>
+<li>微积分二：<a target="_blank" href="https://www.bilibili.com/video/BV15t411p7vq">https://www.bilibili.com/video/BV15t411p7vq</a></li>
+</ul></li>
+<li>教材链接（libgen）：
+<ul class="org-ul">
+<li>分析一：<a target="_blank" href="https://libgen.is/book/index.php?md5=16B33496FF989F9D2551EA46B609144A">https://libgen.is/book/index.php?md5=16B33496FF989F9D2551EA46B609144A</a></li>
+<li>分析二：<a target="_blank" href="https://libgen.is/book/index.php?md5=16E33AA5D5DFB96C964E441DB9A8892A">https://libgen.is/book/index.php?md5=16E33AA5D5DFB96C964E441DB9A8892A</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<center>
+Powered by <a href="https://orgmode.org">Org Mode</a>.
+</center>
+</div>
+<script src="/static/script.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="/static/katex.js"></script></body>
+</html>

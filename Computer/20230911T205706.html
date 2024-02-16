@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title> Rime 的终极方案 - Ward of Dust </title>
+<meta name="author" content="MrDust">
+<link rel="stylesheet" href="/static/Fantasque/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dracula-prism@2.1.16/dist/css/dracula-prism.min.css">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/static/Slippery/style.css"><link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+<div id="preamble" class="status">
+<div class="header">
+<div class="title">
+<a href="/">Ward of Dust</a>
+</div>
+<div class="navigation">
+<a class="item" href="/archive.html">Archives</a>
+<a class="item" href="/taxonomy.html">Taxonomy</a>
+<a class="item" href="/about.html">About</a></div>
+</div>
+</div>
+<div id="content" class="content">
+<h1 class="title">Rime 的终极方案</h1>
+<div class="post">
+<div class="metadata">
+<div class="date"><span>2023-09-11</span></div>
+<div class="tags">
+<a class="tag" href="/tag/archlinux.html">#archlinux</a> <a class="tag" href="/tag/post.html">#post</a> <a class="tag" href="/tag/emacs.html">#emacs</a> <a class="tag" href="/tag/rime.html">#rime</a></div>
+<div class="category">
+<a href="/category/Computer.html">$Computer</a>
+</div>
+</div>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#前言">前言</a></li>
+<li><a href="#安装">安装</a></li>
+<li><a href="#双拼配置">双拼配置</a></li>
+<li><a href="#Emacs Rime">Emacs Rime</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-前言" class="outline-2">
+<h2 id="前言"><a href="#前言">前言</a></h2>
+<div class="outline-text-2" id="text-orgd32c98e">
+<p>
+在独到猫大的新博文《<a target="_blank" href="https://manateelazycat.github.io/2023/04/05/emacs-rime-ice/">Emacs 里用雾凇拼音实现流畅中文输入</a>》后，重新摆弄了一下自己 Rime 输入法，重新优化了配置文件，改源使得所有额外的东西都可以通过 AUR 安装，整合了 Emacs 的 rime 和系统的 rime. 之前 Rime 的配置可以参考《<a target="_blank" href="/Computer/20221224T074950.html" target="_blank">Arch Linux 下 RIME 配置小鹤双拼</a>》，过多的内容这里不赘述。
+</p>
+</div>
+</div>
+
+<div id="outline-container-安装" class="outline-2">
+<h2 id="安装"><a href="#安装">安装</a></h2>
+<div class="outline-text-2" id="text-org2d45f34">
+<div class="org-src-container">
+<pre>
+<code class="language-bash">yay -S fcitx5-im librime fcitx5-rime rime-ice fcitx5-pinyin-moegirl-rime rime-pinyin-zhwiki</code>
+</pre>
+
+</div>
+
+<ul class="org-ul">
+<li>前三个是核心部件， <code>fcitx5-im</code> 输入法框架， <code>librime</code> rime 的 core, <code>fcitx5-rime</code> fcitx5 下 rime 的接口，它会安装一些基础的输入法方案</li>
+<li><a target="_blank" href="https://github.com/iDvel/rime-ice">rime-ice</a>, 一套完整的 rime 拼音输入法方案，包括双拼、英语等等。它包含了包括基础词库在内的一系列大词库，比如腾讯</li>
+<li><code>fcitx5-pinyin-moegirl-rime</code> 萌娘百科词库， <code>rime-pinyin-zhwiki</code> 中文维基词库</li>
+</ul>
+
+<p>
+所有这些东西都会安装在 <code>/usr/share/rime-data/</code> 目录下。
+</p>
+</div>
+</div>
+
+<div id="outline-container-双拼配置" class="outline-2">
+<h2 id="双拼配置"><a href="#双拼配置">双拼配置</a></h2>
+<div class="outline-text-2" id="text-orgdfbd431">
+<p>
+Rime-ice 它包含了包括双拼在内的一系列方案，且它的方案 ID 和 RIME 官方的双拼 ID 重合了。它内置了许多功能，比如英语输入，我不知道 custom 配置的 patch 对应的键值设为空行不行，拿官方那个简单的版本来改个 ID 就行了。
+</p>
+
+<p>
+命名就叫 <code>dust_flypy.schema.yaml</code>:
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-yaml"># Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: dust_flypy
+  name: 小鹤双拼
+  version: "0.18"
+  author:
+    - fork by Mr Dust
+    - double pinyin layout by 鶴
+    - Rime schema by 佛振 &lt;chen.sst@gmail.com&gt;
+  description: |
+    为了避免于 rime-ice 的小鹤双拼冲突而 fork 的方案
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 西文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+  - name: simplification
+    states: [ 漢字, 汉字 ]
+  - name: ascii_punct
+    states: [ 。，, ．， ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - reverse_lookup_translator
+    - script_translator
+  filters:
+    - simplifier
+    - uniquifier
+
+speller:
+  alphabet: zyxwvutsrqponmlkjihgfedcba
+  delimiter: " '"
+  algebra:
+    - erase/^xx$/
+    - derive/^([jqxy])u$/$1v/
+    - derive/^([aoe])([ioun])$/$1$1$2/
+    - xform/^([aoe])(ng)?$/$1$1$2/
+    - xform/iu$/Q/
+    - xform/(.)ei$/$1W/
+    - xform/uan$/R/
+    - xform/[uv]e$/T/
+    - xform/un$/Y/
+    - xform/^sh/U/
+    - xform/^ch/I/
+    - xform/^zh/V/
+    - xform/uo$/O/
+    - xform/ie$/P/
+    - xform/i?ong$/S/
+    - xform/ing$|uai$/K/
+    - xform/(.)ai$/$1D/
+    - xform/(.)en$/$1F/
+    - xform/(.)eng$/$1G/
+    - xform/[iu]ang$/L/
+    - xform/(.)ang$/$1H/
+    - xform/ian$/M/
+    - xform/(.)an$/$1J/
+    - xform/(.)ou$/$1Z/
+    - xform/[iu]a$/X/
+    - xform/iao$/N/
+    - xform/(.)ao$/$1C/
+    - xform/ui$/V/
+    - xform/in$/B/
+    - xlit/QWRTYUIOPSDFGHJKLZXCVBNM/qwrtyuiopsdfghjklzxcvbnm/
+    #- abbrev/^(.).+$/$1/
+
+translator:
+  dictionary: dust_flypy
+  prism: double_pinyin_flypy
+  preedit_format:
+    - xform/([bpmfdtnljqx])n/$1iao/
+    - xform/(\w)g/$1eng/
+    - xform/(\w)q/$1iu/
+    - xform/(\w)w/$1ei/
+    - xform/([dtnlgkhjqxyvuirzcs])r/$1uan/
+    - xform/(\w)t/$1ve/
+    - xform/(\w)y/$1un/
+    - xform/([dtnlgkhvuirzcs])o/$1uo/
+    - xform/(\w)p/$1ie/
+    - xform/([jqx])s/$1iong/
+    - xform/(\w)s/$1ong/
+    - xform/(\w)d/$1ai/
+    - xform/(\w)f/$1en/
+    - xform/(\w)h/$1ang/
+    - xform/(\w)j/$1an/
+    - xform/([gkhvuirzcs])k/$1uai/
+    - xform/(\w)k/$1ing/
+    - xform/([jqxnl])l/$1iang/
+    - xform/(\w)l/$1uang/
+    - xform/(\w)z/$1ou/
+    - xform/([gkhvuirzcs])x/$1ua/
+    - xform/(\w)x/$1ia/
+    - xform/(\w)c/$1ao/
+    - xform/([dtgkhvuirzcs])v/$1ui/
+    - xform/(\w)b/$1in/
+    - xform/(\w)m/$1ian/
+    - xform/([aoe])\1(\w)/$1$2/
+    - "xform/(^|[ '])v/$1zh/"
+    - "xform/(^|[ '])i/$1ch/"
+    - "xform/(^|[ '])u/$1sh/"
+    - xform/([jqxy])v/$1u/
+    - xform/([nl])v/$1ü/
+
+reverse_lookup:
+  dictionary: stroke
+  enable_completion: true
+  prefix: "`"
+  suffix: "'"
+  tips: 〔筆畫〕
+  preedit_format:
+    - xlit/hspnz/一丨丿丶乙/
+  comment_format:
+    - xform/([nl])v/$1ü/
+
+punctuator:
+  import_preset: default
+  half_shape:
+    "!": "！"
+    "\"":
+      pair:
+        - "“"
+        - "”"
+    "#": "#"
+    "$": "$"
+    "%": "%"
+    "*": "*"
+    "'":
+      pair:
+        - "‘"
+        - "’"
+    ",": "，"
+    "-": "-"
+    ".": "。"
+    "/": "/"
+    "\\": "、"
+    "[": "【"
+    "]": "】"
+    "{": "「"
+    "}": "」"
+    "&lt;": "《"
+    "&gt;": "》"
+    "^": "……"
+    "_": "——"
+    "`": "`"
+    "|": "·"
+    "~": "~"
+
+key_binder:
+  import_preset: default
+
+recognizer:
+  import_preset: default
+  patterns:
+    reverse_lookup: "`[a-z]*'?$"
+
+custom_phrase:
+  dictionary: ""
+  user_dict: custom_phrase
+  db_class: stabledb
+  enable_completion: false
+  enable_sentence: false
+  initial_quality: 1</code>
+</pre>
+
+</div>
+
+<p>
+参照 rime-ice 把默认词库改为 <code>dust_flypy</code>, 对应文件为 <code>dust_flypy.dict.yaml</code>:
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-yaml"># Rime dictionary
+# encoding: utf-8
+
+---
+name: dust_flypy
+version: "2024-02-06"
+sort: by_weight
+import_tables:
+  - cn_dicts/8105     # 字表
+  # - cn_dicts/41448    # 大字表（按需启用）
+  - cn_dicts/base     # 基础词库
+  - cn_dicts/ext      # 扩展词库
+  - cn_dicts/tencent  # 腾讯词向量（大词库，部署时间较长）
+  - cn_dicts/others   # 一些杂项
+  - moegirl
+  - zhwiki
+...</code>
+</pre>
+
+</div>
+
+<p>
+把词典添加进入。我前面提一嘴 rime 词库的安装位置，是因为 rime-ice 的词库是在 <code>/usr/share/rime-data/cn_dicts</code> 下的。
+</p>
+
+<p>
+虽然没什么用，为了完整性，还是单独写一个 <code>dust_flypy.custom.yaml</code>, 把默认模式设为英文：
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-yaml">patch:
+  switches:
+    - name: ascii_mode
+      reset: 1
+      states: [ 中文, 西文 ]</code>
+</pre>
+
+</div>
+
+<p>
+最后是写 <code>default.custom.yaml</code>:
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-yaml">patch:
+  schema_list:
+    - schema: dust_flypy
+  switcher:
+    hotkeys:
+      - Control+grave
+    save_options:
+      - full_shape
+      - ascii_punct
+      - simplification
+
+    # 用半角斜线而不是奇丑无比的全角斜线做分隔符。
+    option_list_separator: "/"
+
+  menu/page_size: 9
+
+  ascii_composer: # 设置caps、shift、control等键的作用
+    good_old_caps_lock: true # 若为true，caps只切换大小写
+    switch_key:
+      Shift_L: commit_code
+      Shift_R: noop
+      Control_L: noop
+      Control_R: noop
+      Caps_Lock: commit_code
+      Eisu_toggle: clear
+
+  key_binder/bindings:
+    - {accept: minus, send: Page_Up, when: has_menu}
+    - {accept: equal, send: Page_Down, when: has_menu}
+    - {accept: "Control+g", send: Escape, when: composing}</code>
+</pre>
+
+</div>
+
+<p>
+把 <code>schema_list</code> 改一下即可。
+</p>
+
+<p>
+看猫大把候选词数量设为 9 个，才发现候选词多了更好，毕竟两个手操作，减少翻页概率。
+</p>
+</div>
+</div>
+
+<div id="outline-container-Emacs Rime" class="outline-2">
+<h2 id="Emacs Rime"><a href="#Emacs Rime">Emacs Rime</a></h2>
+<div class="outline-text-2" id="text-orgab101b0">
+<p>
+Emacs 配置如下：
+</p>
+
+<div class="org-src-container">
+<pre>
+<code class="language-emacs-lisp">(setup (:git rime "https://github.com/DogLooksGood/emacs-rime"
+             posframe "https://github.com/tumashu/posframe")
+  (:doc "RIME input method in Emacs")
+  (:lazy rime (toggle-input-method)
+    (:require rime)
+    (:option default-input-method "rime"
+             rime-user-data-dir "~/.local/share/fcitx5/rime/")
+
+    (defun my-predicate-punctuation-after-space-cc-p ()
+      (let* ((start (save-excursion
+                      (re-search-backward
+                       "[^\s]"
+                       nil
+                       t)))
+             (string (buffer-substring
+                      (if start start 1)
+                      (point))))
+        (string-match "\\cc +" string)))
+
+    (:option rime-inline-ascii-trigger 'shift-l
+             rime-show-preedit 'inline
+             rime-show-candidate 'posframe
+             rime-deactivate-when-exit-minibuffer nil)
+    (:option rime-disable-predicates
+             '(rime-predicate-prog-in-code-p
+               my-predicate-punctuation-after-space-cc-p
+               rime-predicate-after-alphabet-char-p
+               rime-predicate-org-in-src-block-p))
+
+    (defun dust/rime-finalize ()
+      (add-hook 'kill-emacs-hook #'rime-lib-finalize)
+      (remove-hook 'input-method-activate-hook #'dust/rime-finalize))
+    (:with-hook input-method-activate-hook
+      (:hook dust/rime-finalize))
+
+    (:hook (lambda ()
+             (when (rime--ascii-mode-p)
+               (rime--inline-ascii)))))
+  (:modalka "C-&lt;SPC&gt;" setup-lazy-rime))</code>
+</pre>
+
+</div>
+
+<p>
+设置默认输入法，设置 rime 配置路径，调一些断言，使得 emacs-rime 可以在特定场合自动切换中英文，以及在 Emacs 退出的时候关闭 librime.
+</p>
+
+<p>
+这里加了一个 hook, 意思是 emacs-rime 激活的时候，toggle 一下输入法。在系统的配置中，默认的输入法是英文，真正使用时要按一下 <code>shift</code>. emacs-rime 读取配置后自然也是英文状态，也需要切换，为了省事就 hook 一下，激活的时候自动却换。
+</p>
+
+<p>
+之前因为这个，我还以为是 emacs-rime 的 bug, 一直都维护两套 rime 配置，而我用 emacs-rime 更多些。我一直不明白 rime 的同步原理，于是现在相当于把之前养了好久的词库丢掉重新开始。只能说很麻。
+</p>
+
+<p>
+至于 <code>setup</code> 和那些关键字的作用，详见《<a target="_blank" href="/20230617T173209.html#SetupEl" target="_blank">Emacs 配置</a>》，它们就是方便管理配置。
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<center>
+Powered by <a href="https://orgmode.org">Org Mode</a>.
+</center>
+</div>
+<script src="/static/script.js"></script>
+<script src="/static/prism.js"></script>
+</body>
+</html>

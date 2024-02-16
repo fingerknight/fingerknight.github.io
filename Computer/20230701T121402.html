@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title> GoldenDict 终极配置 - Ward of Dust </title>
+<meta name="author" content="MrDust">
+<link rel="stylesheet" href="/static/Fantasque/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dracula-prism@2.1.16/dist/css/dracula-prism.min.css">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/static/Slippery/style.css"><link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+<div id="preamble" class="status">
+<div class="header">
+<div class="title">
+<a href="/">Ward of Dust</a>
+</div>
+<div class="navigation">
+<a class="item" href="/archive.html">Archives</a>
+<a class="item" href="/taxonomy.html">Taxonomy</a>
+<a class="item" href="/about.html">About</a></div>
+</div>
+</div>
+<div id="content" class="content">
+<h1 class="title">GoldenDict 终极配置</h1>
+<div class="post">
+<div class="metadata">
+<div class="date"><span>2023-07-01</span></div>
+<div class="tags">
+<a class="tag" href="/tag/post.html">#post</a> <a class="tag" href="/tag/dictionary.html">#dictionary</a> <a class="tag" href="/tag/goldendict.html">#goldendict</a> <a class="tag" href="/tag/language.html">#language</a></div>
+<div class="category">
+<a href="/category/Computer.html">$Computer</a>
+</div>
+</div>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#前言">前言</a></li>
+<li><a href="#安装">安装</a></li>
+<li><a href="#配置">配置</a>
+<ul>
+<li><a href="#发音">发音</a></li>
+<li><a href="#离线词典">离线词典</a></li>
+<li><a href="#在线中文词典">在线中文词典</a></li>
+<li><a href="#在线英文词典">在线英文词典</a></li>
+</ul>
+</li>
+<li><a href="#后记">后记</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-前言" class="outline-2">
+<h2 id="前言"><a href="#前言">前言</a></h2>
+<div class="outline-text-2" id="text-org13fc1eb">
+<p>
+这两天先是折腾了自己写的词典，我想的是用 C/S 模式，奈何前端 pyqt 启动得还是太慢，兜兜转转又想用回 goldendict. 之前不用是因为自己的错误判断：
+</p>
+<ul class="org-ul">
+<li>每次启动 goldendict 都会去索引词库，比较吃性能。但我每次都会把进程关掉，故每次启动电脑风扇都呼呼作响；</li>
+<li>goldendict 的 GUI 样式改不了暗色，后来才知道跟我设定的默认 qt 主题有关.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-安装" class="outline-2">
+<h2 id="安装"><a href="#安装">安装</a></h2>
+<div class="outline-text-2" id="text-org90bc85e">
+<div class="org-src-container">
+<pre>
+<code class="language-shell">pacman -S goldendict-git espeak</code>
+</pre>
+
+</div>
+
+<p>
+其中，espeak 用于播放发音。
+</p>
+</div>
+</div>
+
+<div id="outline-container-配置" class="outline-2">
+<h2 id="配置"><a href="#配置">配置</a></h2>
+<div class="outline-text-2" id="text-org39ebdf9">
+<p>
+需要配置的四个内容：
+</p>
+<ul class="org-ul">
+<li>发音：用 espeak 来实现单词的发音，无需考虑音频文件</li>
+<li>离线词典：用 <a target="_blank" href="https://github.com/skywind3000/ECDICT-ultimate">ECDICT</a> 的 ultimate 版本，无需考虑构词</li>
+<li>在线中文词典：查一些偏词，或者中文查英文，只需一个即可</li>
+<li>在线英文词典：或许有用吧</li>
+</ul>
+</div>
+
+<div id="outline-container-发音" class="outline-3">
+<h3 id="发音"><a href="#发音">发音</a></h3>
+<div class="outline-text-3" id="text-orgae3b1be">
+<p>
+在 Goldendict 的配置用，词典里添加一个程序 Audio <code>espeak %GDOWORD%</code> （默认就有）。更多的选项查看 <code>espeak --help</code> （比如一些口音，默认是英音）。
+</p>
+</div>
+</div>
+
+<div id="outline-container-离线词典" class="outline-3">
+<h3 id="离线词典"><a href="#离线词典">离线词典</a></h3>
+<div class="outline-text-3" id="text-orgf73ecae">
+<p>
+到 <a target="_blank" href="https://github.com/skywind3000/ECDICT-ultimate/releases">Release</a> 下载 mdx 版本的词典，导入即可。
+</p>
+
+<p>
+只能说大佬太厉害了。
+</p>
+</div>
+</div>
+
+<div id="outline-container-在线中文词典" class="outline-3">
+<h3 id="在线中文词典"><a href="#在线中文词典">在线中文词典</a></h3>
+<div class="outline-text-3" id="text-orgbd0501a">
+<p>
+我会用到的两个：
+</p>
+<ul class="org-ul">
+<li>海词： <code>https://dict.cn/search?q=%GDWORD%</code></li>
+<li>欧路： <code>https://dict.eudic.net/dicts/en/%GDWORD%</code></li>
+</ul>
+
+<p>
+启用一个就行，两个有多点多余（每个都会显示很长）。
+</p>
+</div>
+</div>
+
+<div id="outline-container-在线英文词典" class="outline-3">
+<h3 id="在线英文词典"><a href="#在线英文词典">在线英文词典</a></h3>
+<div class="outline-text-3" id="text-org4399482">
+<p>
+直接用 DICT server. 配一个 <code>dict.org</code>, 地址 <code>dict://dict.org</code>, 数据类型 <code>wn</code>. 默认也有。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-后记" class="outline-2">
+<h2 id="后记"><a href="#后记">后记</a></h2>
+<div class="outline-text-2" id="text-org934d378">
+<p>
+足够简单，但又不失功力。
+</p>
+
+<p>
+以上。
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<center>
+Powered by <a href="https://orgmode.org">Org Mode</a>.
+</center>
+</div>
+<script src="/static/script.js"></script>
+<script src="/static/prism.js"></script>
+</body>
+</html>
